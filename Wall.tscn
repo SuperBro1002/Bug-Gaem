@@ -6,7 +6,6 @@
 size = Vector2(21, 21)
 
 [node name="StaticBody2D" type="StaticBody2D"]
-position = Vector2(160, 96)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

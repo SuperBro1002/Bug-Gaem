@@ -2,6 +2,7 @@
 extends CharacterBody2D
 class_name Unit_class
 
+@export var ID = 0
 @export var MaxHP = 20
 @export var CurrentHP = 20
 @export var MaxAP = 5
@@ -22,25 +23,47 @@ func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init)
 	TrueInit = True_init
 	CurrentInit = current_init
 
+func get_id():
+	# Returns the id of this unit
+	return ID
+
+
 func get_current_hp():
 	# Returns unit's current hp
 	return CurrentHP
+
+func add_current_hp(num):
+	# Adds given num to unit's current hp
+	CurrentHP = CurrentHP + num
+
 
 func get_max_hp():
 	# Returns unit's max hp
 	return MaxHP
 
+
 func get_current_ap():
 	# Returns unit's current ap
 	return CurrentAP
+
+func add_current_ap(num):
+	# Adds given num to unit's current ap
+	CurrentAP = CurrentAP + num
+
 
 func get_max_ap():
 	# Returns unit's max ap
 	return MaxAP
 
+
 func get_current_init():
 	# Returns unit's current initiative
 	return CurrentInit
+
+func set_current_init(num):
+	# Sets unit's current initiative to given num
+	CurrentInit = num
+
 
 func get_true_init():
 	# Returns unit's actual initiative stat
