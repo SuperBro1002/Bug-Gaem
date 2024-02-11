@@ -2,6 +2,11 @@
 extends CharacterBody2D
 class_name Unit_class
 
+enum fac {
+	ALLY,
+	ENEMY
+}
+
 @export var ID = 0
 @export var MaxHP = 20
 @export var CurrentHP = 20
@@ -9,12 +14,13 @@ class_name Unit_class
 @export var CurrentAP = 5
 @export var TrueInit = 7
 @export var CurrentInit = 3
+@export var Faction = fac.ALLY
 
 func _enter_tree():
 	#init_stats(MaxHP, CurrentHP, MaxAP, CurrentAP, TrueInit, CurrentInit)
 	pass
 
-func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init):
+func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init, faction):
 	# Assign the given values to their respective stats
 	MaxHP = max_hp
 	CurrentHP = current_hp
@@ -22,6 +28,7 @@ func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init)
 	CurrentAP = current_ap
 	TrueInit = True_init
 	CurrentInit = current_init
+	Faction = faction
 
 func get_id():
 	# Returns the id of this unit
@@ -68,3 +75,8 @@ func set_current_init(num):
 func get_true_init():
 	# Returns unit's actual initiative stat
 	return TrueInit
+
+
+func get_faction():
+	# Returns unit's alignment
+	return Faction

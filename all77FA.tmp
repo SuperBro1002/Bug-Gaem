@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://en47igj175g3"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_3ggrc"]
+[ext_resource type="Script" path="res://ally.gd" id="1_jp7xx"]
 [ext_resource type="Texture2D" uid="uid://be6fwr24wfi47" path="res://addons/units_plugin/playerGrey_walk1.png" id="2_rt13x"]
 [ext_resource type="Texture2D" uid="uid://2oyd0wphfc6k" path="res://Assets/Portraits/playerGrey_walk2.png" id="2_u2d8j"]
 
@@ -21,8 +21,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_3ggrc")
+[node name="Ally" type="CharacterBody2D"]
+script = ExtResource("1_jp7xx")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
