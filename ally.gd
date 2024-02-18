@@ -4,23 +4,17 @@ var speed = 0
 const maxSpeed = 12000
 var screenSize
 
-const UP = Vector2(0, -1)
-const RIGHT = Vector2(1, 0)
-const DOWN = Vector2(0, 1)
-const LEFT = Vector2(-1, 0)
+var direction = Vector2i()
 
-var direction = Vector2()
-
-
-enum faction {
-	ALLY,
-	ENEMY
-}
+var type
+var grid
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screenSize = get_viewport_rect().size
-	init_stats(1,2,3,4,5,6,faction.ALLY)
+	grid = get_parent()
+	type = grid.faction.ALLY
+	init_stats(1,2,3,4,5,6,type)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -35,30 +29,31 @@ func _process(delta):
 #		$AnimatedSprite2D.play()
 #	else:
 #		$AnimatedSprite2D.stop()
-	var isMoving = Input.is_action_pressed("up") or Input.is_action_pressed("right") or Input.is_action_pressed("down") or Input.is_action_pressed("left")
+	var isMoving = Input.is_action_pressed("right") or Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left")
 	
-	direction = Vector2()
+	direction = Vector2i()
 	if isMoving:
 		speed = maxSpeed
 		
 		if Input.is_action_pressed("up"):
-			direction += UP
+			direction.y = -1
 		elif Input.is_action_pressed("down"):
-			direction += DOWN
+			direction.y = 1
 		if Input.is_action_pressed("left"):
-			direction += LEFT
+			direction.x = -1
 		elif Input.is_action_pressed("right"):
-			direction += RIGHT
+			direction.x = 1
 	else:
 		speed = 0
 	
-	velocity = speed * direction.normalized()  * delta
+	var target_pos = grid.update_unit_pos(self)
+	position = target_pos
 	
+	var directionFloat = Vector2(direction)
+	
+	velocity = speed * directionFloat.normalized() * delta
 	move_and_slide()
 	
-
-func test_call():
-	print("HELLO WORLD")
 
 func ability1():
 	# Trigger first skill when in range

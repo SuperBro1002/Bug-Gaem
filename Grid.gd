@@ -14,51 +14,16 @@ enum Terrain {
 	SHORT_WALL
 }
 
+enum faction {
+	ALLY,
+	ENEMY
+}
+
 var wallpiece = preload("res://Wall.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Generates the grid array
-#	for x in range(grid_size.x):
-#		grid.append([])
-#		for y in range(grid_size.y):
-#			grid[x].append(null)
-#			i += 1
-#	print (grid)
-	
-#	var grid_pos_test = Vector2(3,9)
-#	var local_pos = map_to_local(grid_pos_test)
-	
-#	for x in range(grid_size.x):
-#		for y in range(grid_size.y):
-#			var grid_pos_test1 = Vector2(x,y)
-#			var local_pos1 = map_to_local(grid_pos_test1) 
-#			var new_wall = wallpiece.instantiate()
-#			new_wall.position = local_pos1
-#			add_child(new_wall)
-	
-	# Create a new wall at a given coordinate and print the map and local coords 
-#	var new_wall = wallpiece.instantiate()
-#	new_wall.position = local_pos
-#	print(grid_pos_test)
-#	print(local_pos)
-#	add_child(new_wall)
-	
-#	var Player = get_node("Player")
-#	var testMaxHP = Player.get_max_hp()
-#	print(testMaxHP)
-	#var StartingPos = update_unit_pos(Player)
 	pass
-
-# Draws squares to show grid tile positions
-func make_test_tiles():
-	for x in range(grid_size.x):
-		for y in range(grid_size.y):
-			var grid_pos_test1 = Vector2(x,y)
-			var local_pos1 = map_to_local(grid_pos_test1) 
-			var new_wall = wallpiece.instantiate()
-			new_wall.position = local_pos1
-			add_child(new_wall)
 
 # Generates an empty grid
 func gen_grid_array():
@@ -71,14 +36,9 @@ func gen_grid_array():
 func init_grid(gridArray):
 	grid = gridArray
 	
-	for x in range(grid_size.x):
-		for y in range(grid_size.y):
+	for y in range(grid_size.y):
+		for x in range(grid_size.x):
 			grid[x][y] = [grid[x][y],null] # Sets every position on the array to have an array containing the terrain id and a null spot for unit data
-
-func print_all_tile_characters():
-	for x in range(grid_size.x):
-		for y in range(grid_size.y):
-			print(grid[x][y][1])
 
 # Get the unit on a given tile
 func get_tile_character(Vector2):
@@ -93,38 +53,70 @@ func get_unit_grid_pos(unit):
 # Places the parameter into the unit data slot of the tile the unit is currently at
 func pair_unit_to_tile(unit):
 	var grid_pos = get_unit_grid_pos(unit)
-	grid[grid_pos.x][grid_pos.y][1] = unit
+	grid[grid_pos.y][grid_pos.x][1] = unit
 
-func get_tile_data(x,y):
+# Prints the contents of the given tile
+func get_tile_data(y,x):
 	print ("TILE HAS ", grid[x][y])
 	print(grid[x][y][1].get_current_hp())
 
-# Outputs the grid in the console.
-func print_grid():
-	print(grid)
-
-func draw_grid():
-	# Draws the grid
-	pass
-
-func is_cell_vacant(pos):
+# Checks if the cell in the given direction has no unit in it
+func is_cell_vacant(pos, direction):
 	# Return true if cell is vacant and standable, otherwise return false
-	var isOpen = false
-	var grid_pos = local_to_map(pos)
+	var grid_pos = local_to_map(pos) + direction
 	
 	if grid_pos.x < grid_size.x and grid_pos.x >= 0:
 		if grid_pos.y < grid_size.y and grid_pos.y >= 0:
 			return true if grid[grid_pos.x][grid_pos.y][0] == 0 && grid[grid_pos.x][grid_pos.y][1] == null else false
+	return false
 
-func update_unit_pos(child, new_pos):
+# Removes unit from previous grid position and places them in the new position
+func update_unit_pos(child):
 	# Move a child to a new position in the grid array
 	# Returns the new target position of child
-	pass
+	var grid_pos = local_to_map(child.position)
+	print(grid_pos)
+	grid[grid_pos.x][grid_pos.y][1] = null
+	
+	var new_grid_pos = grid_pos + child.direction
+	grid[new_grid_pos.x][new_grid_pos.y][1] = child.type
+	
+	var target_pos = map_to_local(new_grid_pos) #+ half_tile_size
+	return target_pos
 
 func count_down():
 	# Decrement any timers 
 	pass
 
+func draw_grid():
+	# Draws the grid
+	pass
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+# TESTING FUNCTIONS
+
+
+# Draws squares to show grid tile positions
+func make_test_tiles():
+	for x in range(grid_size.x):
+		for y in range(grid_size.y):
+			var grid_pos_test1 = Vector2(x,y)
+			var local_pos1 = map_to_local(grid_pos_test1) 
+			var new_wall = wallpiece.instantiate()
+			new_wall.position = local_pos1
+			add_child(new_wall)
+
+# Outputs the grid in the console.
+func print_grid():
+	print(grid)
+
+# Prints all the unit data in the grid
+func print_all_tile_characters():
+	for x in range(grid_size.x):
+		for y in range(grid_size.y):
+			print(grid[x][y][1])
+

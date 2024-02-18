@@ -3,14 +3,12 @@ extends Unit_class
 var speed = 225
 var screenSize
 
-enum faction {
-	ALLY,
-	ENEMY
-}
+var type
 
 func _ready():
 	screenSize = get_viewport_rect().size
-	init_stats(55,66,77,88,99,111,faction.ENEMY)
+	type = get_parent().faction.ENEMY
+	init_stats(55,66,77,88,99,111,type)
 
 func test_call():
 	print("GOODBYE WORLD")

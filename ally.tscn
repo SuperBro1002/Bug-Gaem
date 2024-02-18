@@ -22,6 +22,7 @@ animations = [{
 }]
 
 [node name="Ally" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_jp7xx")
 metadata/_edit_group_ = true
 
