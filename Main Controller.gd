@@ -20,7 +20,7 @@ func _ready():
 	make_unit_list() # Puts all the unit nodes into a list
 	
 	
-	#$Grid.print_grid()
+	$Grid.print_grid()
 	$Grid.make_test_tiles()
 	#$Grid.get_tile_character(Vector2(5,3))
 	

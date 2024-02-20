@@ -63,26 +63,26 @@ func get_tile_data(y,x):
 # Checks if the cell in the given direction has no unit in it
 func is_cell_vacant(pos, direction):
 	# Return true if cell is vacant and standable, otherwise return false
-	var grid_pos = local_to_map(pos) + direction
+	var try_grid_pos = local_to_map(pos) + Vector2i(direction)
 	
-	if grid_pos.x < grid_size.x and grid_pos.x >= 0:
-		if grid_pos.y < grid_size.y and grid_pos.y >= 0:
-			return true if grid[grid_pos.x][grid_pos.y][0] == 0 && grid[grid_pos.x][grid_pos.y][1] == null else false
+	if try_grid_pos.x < grid_size.x and try_grid_pos.x >= 0:
+		if try_grid_pos.y < grid_size.y and try_grid_pos.y >= 0:
+			return true if grid[try_grid_pos.y][try_grid_pos.x][0] == 0 && grid[try_grid_pos.y][try_grid_pos.x][1] == null else false
 	return false
 
 # Removes unit from previous grid position and places them in the new position
-func update_unit_pos(child):
+func update_unit_pos(child, dir):
 	# Move a child to a new position in the grid array
 	# Returns the new target position of child
 	var grid_pos = local_to_map(child.position)
-	print(grid_pos)
-	grid[grid_pos.x][grid_pos.y][1] = null
+	grid[grid_pos.y][grid_pos.x][1] = null
 	
-	var new_grid_pos = grid_pos + child.direction
-	grid[new_grid_pos.x][new_grid_pos.y][1] = child.type
+	var new_grid_pos = grid_pos + Vector2i(child.inputs[dir])
+	grid[new_grid_pos.y][new_grid_pos.x][1] = child
 	
-	var target_pos = map_to_local(new_grid_pos) #+ half_tile_size
-	return target_pos
+	var target_pos = Vector2i(map_to_local(new_grid_pos)) + half_tile_size
+	#return target_pos
+	print(grid)
 
 func count_down():
 	# Decrement any timers 
@@ -113,6 +113,16 @@ func make_test_tiles():
 # Outputs the grid in the console.
 func print_grid():
 	print(grid)
+
+# Prints the parameter's position
+func print_unit_coord(child):
+	print(local_to_map(child.position))
+
+# Prints the data of the parameter's tile object
+func print_current_tile(child):
+	var testx = local_to_map(child.position)
+	#print (testx.x)
+	print(grid[testx.y][testx.x])
 
 # Prints all the unit data in the grid
 func print_all_tile_characters():

@@ -21,8 +21,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Ally" type="CharacterBody2D"]
-motion_mode = 1
+[node name="Ally" type="Area2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_jp7xx")
 metadata/_edit_group_ = true
 

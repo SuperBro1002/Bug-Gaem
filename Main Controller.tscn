@@ -23,10 +23,10 @@ position = Vector2(-40, 448)
 
 [node name="Ally" parent="Grid" instance=ExtResource("4_oc2b5")]
 z_index = 1
-position = Vector2(312, 336)
+position = Vector2(224, 472)
 
 [node name="Enemy" parent="Grid" instance=ExtResource("6_0nm7y")]
-position = Vector2(184, 224)
+position = Vector2(160, 344)
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
