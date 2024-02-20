@@ -2,6 +2,8 @@ extends Unit_class
 
 var screenSize
 
+var animationSpeed = 3
+var moving = false
 var tile_size = 64
 var inputs = {"right": Vector2.RIGHT,
 			"left": Vector2.LEFT,
@@ -29,6 +31,8 @@ func _process(delta):
 	print(grid)
 
 func _unhandled_input(event):
+	if moving:
+		return
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
 			move(dir)
@@ -36,7 +40,14 @@ func _unhandled_input(event):
 func move(dir):
 	if grid.is_cell_vacant(position, inputs[dir]):
 		grid.update_unit_pos(self, dir)
-		position += inputs[dir] * tile_size
+		#position += inputs[dir] * tile_size
+		var tween = create_tween()
+		tween.tween_property(self, "position",
+		position + inputs[dir] * tile_size, 1.0/animationSpeed).set_trans(Tween.TRANS_SINE)
+		moving = true
+		await tween.finished
+		moving = false
+
 
 func ability1():
 	# Trigger first skill when in range
