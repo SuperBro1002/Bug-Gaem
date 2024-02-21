@@ -28,7 +28,8 @@ func _process(delta):
 #	grid.print_unit_coord(self)
 #	grid.print_current_tile(self)
 #	print("  ")
-	print(grid)
+	#print(grid)
+	pass
 
 func _unhandled_input(event):
 	if moving:
@@ -43,7 +44,7 @@ func move(dir):
 		#position += inputs[dir] * tile_size
 		var tween = create_tween()
 		tween.tween_property(self, "position",
-		position + inputs[dir] * tile_size, 1.0/animationSpeed).set_trans(Tween.TRANS_SINE)
+		position + inputs[dir] * tile_size, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 		moving = true
 		await tween.finished
 		moving = false

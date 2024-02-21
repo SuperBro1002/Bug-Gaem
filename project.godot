@@ -15,6 +15,10 @@ run/main_scene="res://Main Controller.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AutoloadMe="*res://AutoloadMe.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/units_plugin/plugin.cfg")

@@ -80,16 +80,12 @@ func update_unit_pos(child, dir):
 	var new_grid_pos = grid_pos + Vector2i(child.inputs[dir])
 	grid[new_grid_pos.y][new_grid_pos.x][1] = child
 	
-	var target_pos = Vector2i(map_to_local(new_grid_pos)) + half_tile_size
+	#var target_pos = Vector2i(map_to_local(new_grid_pos)) + half_tile_size
 	#return target_pos
-	print(grid)
+	#print(grid)
 
 func count_down():
 	# Decrement any timers 
-	pass
-
-func draw_grid():
-	# Draws the grid
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
