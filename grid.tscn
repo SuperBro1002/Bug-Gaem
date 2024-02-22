@@ -83,11 +83,6 @@ use_texture_padding = false
 4:7/0 = 0
 4:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:7/0/physics_layer_0/angular_velocity = 0.0
-0:6/0 = 0
-0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:6/0/physics_layer_0/angular_velocity = 0.0
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 32, 32, -32, -32, -32, -32, 32)
-0:6/0/custom_data_0 = true
 1:6/0 = 0
 1:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:6/0/physics_layer_0/angular_velocity = 0.0
@@ -831,6 +826,11 @@ use_texture_padding = false
 21:11/0 = 0
 21:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:11/0/physics_layer_0/angular_velocity = 0.0
+0:6/0 = 0
+0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:6/0/physics_layer_0/angular_velocity = 0.0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 32, 32, -32, -32, -32, -32, 32)
+0:6/0/custom_data_0 = true
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_11tbf"]
 resource_name = "particles"

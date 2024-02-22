@@ -23,14 +23,6 @@ animations = [{
 
 [node name="Enemy" type="Area2D"]
 script = ExtResource("1_15b7p")
-ID = null
-MaxHP = null
-CurrentHP = null
-MaxAP = null
-CurrentAP = null
-TrueInit = null
-CurrentInit = null
-Faction = null
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
