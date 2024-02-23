@@ -16,6 +16,11 @@ enum fac {
 @export var CurrentInit = 3
 @export var Faction = fac.ALLY
 
+@onready var grid = get_parent()
+
+@onready var start = grid.convert_to_local(position)
+@onready var end = grid.convert_to_local(position)
+
 func _enter_tree():
 	#init_stats(MaxHP, CurrentHP, MaxAP, CurrentAP, TrueInit, CurrentInit)
 	pass

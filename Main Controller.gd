@@ -10,7 +10,7 @@ var unitList = []
 var test
 
 func _ready():
-	var LD = $Level_Data
+	pass
 
 func process():
 	pass
