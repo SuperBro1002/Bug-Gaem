@@ -1,6 +1,5 @@
 extends Node
 
-@onready var tileMap = $Grid
 @onready var tile_size = Vector2i(64, 64)
 var astarGrid = AStarGrid2D.new()
 var gridSize
@@ -10,7 +9,7 @@ func _ready():
 	initialize_grid()
 
 func initialize_grid():
-	gridSize = Vector2i(10,10)# / tileSize
+	gridSize = Vector2i(18,10)# / tileSize
 	astarGrid.size = gridSize
 	astarGrid.cell_size = tile_size
 	astarGrid.offset = tile_size / 2

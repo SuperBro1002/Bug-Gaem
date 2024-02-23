@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 AutoloadMe="*res://AutoloadMe.gd"
 
+[display]
+
+window/size/viewport_height=640
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/units_plugin/plugin.cfg")

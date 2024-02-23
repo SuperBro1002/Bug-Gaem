@@ -6,9 +6,10 @@ extends TileMap
 #@onready var end = local_to_map($Ally.position)
 #@onready var tileSize = AutoloadMe.tile_size
 #
-#func _ready():
+func _ready():
 #	initialize_grid()
-#
+	pass
+
 #func initialize_grid():
 #	gridSize = Vector2i(10,10)# / tileSize
 #	astarGrid.size = gridSize
