@@ -5,7 +5,6 @@ var ray
 var animationSpeed = 3
 var moving = false
 
-@onready var tileMap = $Grid
 @onready var tileSize = AutoloadMe.tile_size
 @onready var astarGrid = AutoloadMe.astarGrid
 
@@ -18,7 +17,6 @@ var inputs = {"right": Vector2.RIGHT,
 func _ready():
 	ray = $RayCast2D
 	init_stats(1,2,3,4,5,6,type)
-	print(grid.get_used_rect()) #HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	
 	position = position.snapped((Vector2.ZERO) * tileSize.x)
 
@@ -32,6 +30,9 @@ func _unhandled_input(event):
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
 			move(dir)
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_SPACE:
+			SignalBus.endTurn.emit()
 
 func move(dir):
 	ray.target_position = inputs[dir] * tileSize.x
@@ -50,6 +51,8 @@ func move(dir):
 			moving = true
 			await tween.finished
 			moving = false
+
+
 
 func ability1():
 	# Trigger first skill when in range

@@ -25,6 +25,9 @@ func _enter_tree():
 	#init_stats(MaxHP, CurrentHP, MaxAP, CurrentAP, TrueInit, CurrentInit)
 	pass
 
+func onTurnStart():
+	pass
+
 func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init, faction):
 	# Assign the given values to their respective stats
 	MaxHP = max_hp

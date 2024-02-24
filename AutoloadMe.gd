@@ -6,7 +6,6 @@ var gridSize
 
 func _ready():
 	print("I AM BORNE")
-	initialize_grid()
 
 func initialize_grid():
 	gridSize = Vector2i(18,10)# / tileSize
@@ -17,3 +16,5 @@ func initialize_grid():
 	astarGrid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 
 #	astarGrid.region = tileMap.get_used_rect()
+
+

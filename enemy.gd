@@ -9,6 +9,9 @@ func _ready():
 	screenSize = get_viewport_rect().size
 	init_stats(55,66,77,88,99,111,type)
 
+func onTurnStart():
+	SignalBus.endTurn.emit()
+
 func test_call():
 	print("GOODBYE WORLD")
 
