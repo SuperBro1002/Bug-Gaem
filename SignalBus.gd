@@ -1,10 +1,9 @@
 extends Node
 
-signal endTurnPos(unit, pos)
+signal hasMoved(unit, pos)
 signal endTurn
+signal currentUnit
+signal endRound
 
 func _ready():
 	pass
-
-func onGo():
-	print("HI")

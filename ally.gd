@@ -1,6 +1,6 @@
 extends Unit_class
 
-var type
+var type = fac.ALLY
 var ray
 var animationSpeed = 3
 var moving = false
@@ -16,23 +16,13 @@ var inputs = {"right": Vector2.RIGHT,
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ray = $RayCast2D
-	init_stats(1,2,3,4,5,6,type)
+	init_stats(1,2,4,4,5,6,type,0)
 	
 	position = position.snapped((Vector2.ZERO) * tileSize.x)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-func _unhandled_input(event):
-	if moving:
-		return
-	for dir in inputs.keys():
-		if event.is_action_pressed(dir):
-			move(dir)
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_SPACE:
-			SignalBus.endTurn.emit()
 
 func move(dir):
 	ray.target_position = inputs[dir] * tileSize.x
@@ -52,7 +42,15 @@ func move(dir):
 			await tween.finished
 			moving = false
 
+func onTurnStart():
+	start = grid.local_to_map(position)
+	print("ALLY TURN START")
 
+func on_turn_end():
+	BatonPass = -1
+	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
+	reset_ap()
+	SignalBus.endTurn.emit()
 
 func ability1():
 	# Trigger first skill when in range

@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://g3w1funomr7r"]
+[gd_scene load_steps=6 format=3 uid="uid://g3w1funomr7r"]
 
 [ext_resource type="Script" path="res://Main Controller.gd" id="1_t3feu"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://grid.tscn" id="2_vsppx"]
 [ext_resource type="PackedScene" uid="uid://en47igj175g3" path="res://ally.tscn" id="4_oc2b5"]
 [ext_resource type="Script" path="res://InitManager.gd" id="5_jbks5"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://enemy.tscn" id="6_0nm7y"]
-[ext_resource type="Script" path="res://jeff.gd" id="6_7jncv"]
 
 [node name="Main_Controller" type="Node2D"]
 position = Vector2(0, 16)
@@ -28,11 +27,6 @@ position = Vector2(736, 416)
 [node name="Enemy" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_0nm7y")]
 position = Vector2(96.0001, 104)
 scale = Vector2(1, 1)
-
-[node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_0nm7y")]
-position = Vector2(480, -48)
-scale = Vector2(1, 1)
-script = ExtResource("6_7jncv")
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3

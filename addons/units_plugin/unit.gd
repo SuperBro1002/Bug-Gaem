@@ -4,7 +4,8 @@ class_name Unit_class
 
 enum fac {
 	ALLY,
-	ENEMY
+	ENEMY,
+	NONE
 }
 
 @export var ID = 0
@@ -14,9 +15,10 @@ enum fac {
 @export var CurrentAP = 5
 @export var TrueInit = 7
 @export var CurrentInit = 3
-@export var Faction = fac.ALLY
+@export var Faction = fac.NONE
+@export var BatonPass = 0
 
-@onready var grid = get_parent()
+@onready var grid = get_parent().get_parent().get_parent()
 
 @onready var start = grid.convert_to_local(position)
 @onready var end = grid.convert_to_local(position)
@@ -28,7 +30,7 @@ func _enter_tree():
 func onTurnStart():
 	pass
 
-func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init, faction):
+func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init, faction, bp):
 	# Assign the given values to their respective stats
 	MaxHP = max_hp
 	CurrentHP = current_hp
@@ -37,6 +39,7 @@ func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init,
 	TrueInit = True_init
 	CurrentInit = current_init
 	Faction = faction
+	BatonPass = bp
 
 func get_id():
 	# Returns the id of this unit
@@ -65,6 +68,8 @@ func add_current_ap(num):
 	# Adds given num to unit's current ap
 	CurrentAP = CurrentAP + num
 
+func reset_ap():
+	CurrentAP = MaxAP
 
 func get_max_ap():
 	# Returns unit's max ap
@@ -88,3 +93,16 @@ func get_true_init():
 func get_faction():
 	# Returns unit's alignment
 	return Faction
+
+func set_batonpass(num):
+	BatonPass = num
+
+func get_batonpass():
+	return BatonPass
+
+func on_turn_end():
+	BatonPass = -1
+	SignalBus.endTurn.emit()
+	
+
+
