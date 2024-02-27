@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Bug Game"
-run/main_scene="res://Main Controller.tscn"
+run/main_scene="res://Scenes/Main Controller.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-AutoloadMe="*res://AutoloadMe.gd"
-SignalBus="*res://SignalBus.gd"
+AutoloadMe="*res://Scripts/AutoloadMe.gd"
+SignalBus="*res://Scripts/SignalBus.gd"
 
 [display]
 
