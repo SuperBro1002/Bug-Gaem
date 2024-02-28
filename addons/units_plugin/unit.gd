@@ -8,6 +8,12 @@ enum fac {
 	NONE
 }
 
+enum TS {
+	BATONPASS,
+	ACTED,
+	NOTACTED
+}
+
 @export var ID = 0
 @export var MaxHP = 20
 @export var CurrentHP = 20
@@ -50,23 +56,38 @@ func get_current_hp():
 	# Returns unit's current hp
 	return CurrentHP
 
-func add_current_hp(num):
+func gain_health(num):
 	# Adds given num to unit's current hp
 	CurrentHP = CurrentHP + num
+	if CurrentHP > MaxHP:
+		CurrentHP = MaxHP
 
+func lose_health(num):
+	CurrentHP = CurrentHP - num
+	if CurrentHP < 0:
+		CurrentHP = 0
 
 func get_max_hp():
 	# Returns unit's max hp
 	return MaxHP
 
 
+
 func get_current_ap():
 	# Returns unit's current ap
 	return CurrentAP
 
-func add_current_ap(num):
+func gain_ap(num):
 	# Adds given num to unit's current ap
 	CurrentAP = CurrentAP + num
+	if CurrentAP > MaxAP:
+		CurrentAP = MaxAP
+
+func lose_ap(num):
+	CurrentAP = CurrentAP - num
+	if CurrentAP < 0:
+		CurrentAP = 0
+
 
 func reset_ap():
 	CurrentAP = MaxAP
@@ -94,11 +115,20 @@ func get_faction():
 	# Returns unit's alignment
 	return Faction
 
-func set_batonpass(num):
-	BatonPass = num
+
+func give_batonpass():
+	BatonPass = TS.BATONPASS
+
+func set_has_acted():
+	BatonPass = TS.ACTED
+
+func reset_acted():
+	BatonPass = TS.NOTACTED
 
 func get_batonpass():
 	return BatonPass
+
+
 
 func on_turn_end():
 	BatonPass = -1
