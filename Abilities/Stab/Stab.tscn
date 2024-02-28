@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1ceubwohxui3"]
+
+[ext_resource type="Script" path="res://Abilities/Stab/Stab.gd" id="1_jaih1"]
+[ext_resource type="Texture2D" uid="uid://doxc8dv2sdn5o" path="res://icon.svg" id="2_44w0p"]
+
+[node name="Stab" type="Node"]
+script = ExtResource("1_jaih1")
+damage = 2
+
+[node name="Hitbox" type="RayCast2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Hitbox"]
+position = Vector2(0.093643, 31.9599)
+scale = Vector2(-0.0533166, 0.57609)
+texture = ExtResource("2_44w0p")

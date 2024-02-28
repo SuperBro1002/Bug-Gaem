@@ -133,6 +133,11 @@ func get_batonpass():
 func on_turn_end():
 	BatonPass = -1
 	SignalBus.endTurn.emit()
-	
+
+func load_ability(name):
+	var scene = load("res://Abilities/" + name + "/" + name + ".tscn")
+	var sceneNode = scene.instantiate()
+	add_child(sceneNode)
+	return sceneNode
 
 

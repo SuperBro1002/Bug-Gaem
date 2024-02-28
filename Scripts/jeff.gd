@@ -15,5 +15,5 @@ func onTurnStart():
 
 func on_turn_end():
 	print("JEFF PASSES TURN")
-	BatonPass = -1
+	set_has_acted()
 	SignalBus.endRound.emit()

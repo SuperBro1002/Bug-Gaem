@@ -16,7 +16,7 @@ func onTurnStart():
 
 func on_turn_end():
 	print("ENEMY PASSES TURN")
-	BatonPass = -1
+	set_has_acted()
 	SignalBus.endTurn.emit()
 
 func ability1():

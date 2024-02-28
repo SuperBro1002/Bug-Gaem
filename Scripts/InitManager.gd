@@ -13,13 +13,13 @@ func _ready():
 func next_turn():
 	for i in (unitList.size()):
 		#print("CURRENT INDEX: ",i)
-		if unitList[i].get_batonpass() == 1:
+		if unitList[i].get_batonpass() == unitList[i].TS.BATONPASS:
 			currentUnitTurn = unitList[i]
 			print("FOUND BATON PASS TARGET", currentUnitTurn)
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.onTurnStart()
 			return
-		elif unitList[i].get_batonpass() == 0:
+		elif unitList[i].get_batonpass() == unitList[i].TS.NOTACTED:
 			currentUnitTurn = unitList[i]
 			print("FOUND NORMAL TARGET", currentUnitTurn)
 			SignalBus.currentUnit.emit(currentUnitTurn)
@@ -28,7 +28,7 @@ func next_turn():
 
 func next_round():
 	for j in (unitList.size()):
-		unitList[j].set_batonpass(0)
+		unitList[j].reset_acted()
 	currentUnitTurn = unitList[0]
 	print("ROUND END. RESETTING", currentUnitTurn)
 	SignalBus.currentUnit.emit(currentUnitTurn)
