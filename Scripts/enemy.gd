@@ -7,15 +7,15 @@ var type = fac.ENEMY
 
 func _ready():
 	screenSize = get_viewport_rect().size
-	init_stats(55,66,77,88,99,111,type,0)
+	init_stats(55,66,77,88,99,111,type,TS.NOTACTED)
 
 func onTurnStart():
 	#reset_ap()
-	print("ENEMY TURN START")
+	print("	enemy turn start")
 	on_turn_end()
 
 func on_turn_end():
-	print("ENEMY PASSES TURN")
+	print("	enemy passes turn")
 	set_has_acted()
 	SignalBus.endTurn.emit()
 

@@ -14,6 +14,17 @@ enum TS {
 	NOTACTED
 }
 
+#enum methodType {
+#	"GAIN_HEALTH",
+#	"LOSE_HEALTH",
+#	"GAIN_AP",
+#	"LOSE_AP",
+#	"ON_TURN_START"
+#}
+
+var passiveList = []
+
+
 @export var ID = 0
 @export var MaxHP = 20
 @export var CurrentHP = 20
@@ -22,7 +33,7 @@ enum TS {
 @export var TrueInit = 7
 @export var CurrentInit = 3
 @export var Faction = fac.NONE
-@export var BatonPass = 0
+@export var BatonPass = TS.NOTACTED
 
 @onready var grid = get_parent().get_parent().get_parent()
 
@@ -62,10 +73,13 @@ func gain_health(num):
 	if CurrentHP > MaxHP:
 		CurrentHP = MaxHP
 
-func lose_health(num):
-	CurrentHP = CurrentHP - num
+func lose_health(dmgVal):
+	
+	dmgVal = run_passives("LOSE_HEALTH", dmgVal)
+	CurrentHP = CurrentHP - dmgVal
 	if CurrentHP < 0:
 		CurrentHP = 0
+	print("NEW HEALTH: ", CurrentHP)
 
 func get_max_hp():
 	# Returns unit's max hp
@@ -88,13 +102,13 @@ func lose_ap(num):
 	if CurrentAP < 0:
 		CurrentAP = 0
 
-
 func reset_ap():
 	CurrentAP = MaxAP
 
 func get_max_ap():
 	# Returns unit's max ap
 	return MaxAP
+
 
 
 func get_current_init():
@@ -105,15 +119,16 @@ func set_current_init(num):
 	# Sets unit's current initiative to given num
 	CurrentInit = num
 
-
 func get_true_init():
 	# Returns unit's actual initiative stat
 	return TrueInit
 
 
+
 func get_faction():
 	# Returns unit's alignment
 	return Faction
+
 
 
 func give_batonpass():
@@ -131,8 +146,7 @@ func get_batonpass():
 
 
 func on_turn_end():
-	BatonPass = -1
-	SignalBus.endTurn.emit()
+	pass
 
 func load_ability(name):
 	var scene = load("res://Abilities/" + name + "/" + name + ".tscn")
@@ -140,4 +154,15 @@ func load_ability(name):
 	add_child(sceneNode)
 	return sceneNode
 
+func add_passive(name):
+	var scene = load("res://Passives/" + name + "/" + name + ".tscn")
+	var sceneNode = scene.instantiate()
+	add_child(sceneNode)
+	passiveList.append(sceneNode)
+
+func run_passives(mType, arg):
+	for i in passiveList.size():
+		if mType == passiveList[i].get_type():
+			arg = passiveList[i].execute(arg)
+	return arg
 

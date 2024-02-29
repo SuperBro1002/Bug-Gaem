@@ -5,10 +5,10 @@ var astarGrid = AStarGrid2D.new()
 var gridSize
 var turnPointer
 
-var inputs = {"right": Vector2.RIGHT,
-			"left": Vector2.LEFT,
-			"up": Vector2.UP,
-			"down": Vector2.DOWN}
+var inputs = {"move_right": Vector2.RIGHT,
+			"move_left": Vector2.LEFT,
+			"move_up": Vector2.UP,
+			"move_down": Vector2.DOWN}
 
 func _ready():
 	print("I AM BORNE")
@@ -22,8 +22,6 @@ func initialize_grid():
 	astarGrid.update()
 	astarGrid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 
-#	astarGrid.region = tileMap.get_used_rect()
-
 func _unhandled_input(event):
 	if turnPointer == null:
 		print("NO UNIT")
@@ -36,8 +34,8 @@ func _unhandled_input(event):
 				turnPointer.move(inputs[dir])
 				
 		if event is InputEventKey:
-			if event.pressed and event.keycode == KEY_SPACE:
-				print("SPACE PRESSED")
+			if Input.is_action_pressed("space"):
+				print("space pressed")
 				turnPointer.on_turn_end()
 	else: return
 

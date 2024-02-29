@@ -7,13 +7,13 @@ var type = fac.NONE
 
 func _ready():
 	screenSize = get_viewport_rect().size
-	init_stats(0,0,0,0,0,-999,type,0)
+	init_stats(0,0,0,0,0,-999,type,TS.NOTACTED)
 
 func onTurnStart():
-	print("JEFF TURN START")
+	print("	jeff turn start")
 	on_turn_end()
 
 func on_turn_end():
-	print("JEFF PASSES TURN")
+	print("	jeff passes turn")
 	set_has_acted()
 	SignalBus.endRound.emit()

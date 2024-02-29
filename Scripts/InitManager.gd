@@ -12,16 +12,15 @@ func _ready():
 # Probably main function
 func next_turn():
 	for i in (unitList.size()):
-		#print("CURRENT INDEX: ",i)
 		if unitList[i].get_batonpass() == unitList[i].TS.BATONPASS:
 			currentUnitTurn = unitList[i]
-			print("FOUND BATON PASS TARGET", currentUnitTurn)
+			print("FOUND BATON PASS TARGET: ", currentUnitTurn)
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.onTurnStart()
 			return
 		elif unitList[i].get_batonpass() == unitList[i].TS.NOTACTED:
 			currentUnitTurn = unitList[i]
-			print("FOUND NORMAL TARGET", currentUnitTurn)
+			print("FOUND NORMAL TARGET: ", currentUnitTurn)
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.onTurnStart()
 			return
@@ -30,7 +29,7 @@ func next_round():
 	for j in (unitList.size()):
 		unitList[j].reset_acted()
 	currentUnitTurn = unitList[0]
-	print("ROUND END. RESETTING", currentUnitTurn)
+	print("ROUND END. RESETTING: ", currentUnitTurn)
 	SignalBus.currentUnit.emit(currentUnitTurn)
 	currentUnitTurn.onTurnStart()
 
@@ -38,7 +37,7 @@ func next_round():
 func make_unit_list():
 	unitList = unitMan.get_children()
 	sort_unit_list()
-	print(unitList)
+	print("UnitList: ", unitList)
 
 func get_unit_list():
 	return unitList

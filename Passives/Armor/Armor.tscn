@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbo2jy0mu7xvp"]
+
+[ext_resource type="Script" path="res://Passives/Armor/Armor.gd" id="1_unkir"]
+
+[node name="Armor" type="Node"]
+script = ExtResource("1_unkir")

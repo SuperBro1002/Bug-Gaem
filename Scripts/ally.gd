@@ -11,16 +11,18 @@ var ability1 = load_ability("Stab")
 @onready var tileSize = AutoloadMe.tile_size
 @onready var astarGrid = AutoloadMe.astarGrid
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ray = $RayCast2D
-	init_stats(1,2,4,4,5,6,type,0)
+	init_stats(10,10,4,4,5,6,type,TS.NOTACTED)
+	add_passive("Armor")
+	add_passive("Armor")
+	lose_health(1)
 	
 	position = position.snapped((Vector2.ZERO) * tileSize.x)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func move(dir):
@@ -43,7 +45,7 @@ func move(dir):
 
 func onTurnStart():
 	start = grid.local_to_map(position)
-	print("ALLY TURN START")
+	print("	ally turn start")
 
 func on_turn_end():
 	set_has_acted()

@@ -5,7 +5,7 @@ extends TileMap
 #@onready var start = local_to_map($Ally.position)
 #@onready var end = local_to_map($Ally.position)
 #@onready var tileSize = AutoloadMe.tile_size
-#
+
 func _ready():
 #	initialize_grid()
 	pass
