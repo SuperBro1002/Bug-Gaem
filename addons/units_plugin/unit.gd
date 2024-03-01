@@ -14,17 +14,18 @@ enum TS {
 	NOTACTED
 }
 
-#enum methodType {
-#	"GAIN_HEALTH",
-#	"LOSE_HEALTH",
-#	"GAIN_AP",
-#	"LOSE_AP",
-#	"ON_TURN_START"
-#}
+enum methodType {
+	GAIN_HEALTH,
+	LOSE_HEALTH,
+	GAIN_AP,
+	LOSE_AP,
+	ON_TURN_START
+}
 
 var passiveList = []
+var incoming_dmg_type = null # pierce, null
 
-
+@export var Name = "Default"
 @export var ID = 0
 @export var MaxHP = 20
 @export var CurrentHP = 20
@@ -36,15 +37,11 @@ var passiveList = []
 @export var BatonPass = TS.NOTACTED
 
 @onready var grid = get_parent().get_parent().get_parent()
-
 @onready var start = grid.convert_to_local(position)
 @onready var end = grid.convert_to_local(position)
 
 func _enter_tree():
 	#init_stats(MaxHP, CurrentHP, MaxAP, CurrentAP, TrueInit, CurrentInit)
-	pass
-
-func onTurnStart():
 	pass
 
 func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init, faction, bp):
@@ -67,15 +64,15 @@ func get_current_hp():
 	# Returns unit's current hp
 	return CurrentHP
 
-func gain_health(num):
+func gain_health(recoverVal):
 	# Adds given num to unit's current hp
-	CurrentHP = CurrentHP + num
+	recoverVal = run_passives(methodType.GAIN_HEALTH, recoverVal)
+	CurrentHP = CurrentHP + recoverVal
 	if CurrentHP > MaxHP:
 		CurrentHP = MaxHP
 
 func lose_health(dmgVal):
-	
-	dmgVal = run_passives("LOSE_HEALTH", dmgVal)
+	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
 	CurrentHP = CurrentHP - dmgVal
 	if CurrentHP < 0:
 		CurrentHP = 0
@@ -145,8 +142,19 @@ func get_batonpass():
 
 
 
+func onTurnStart():
+	start = grid.local_to_map(position)
+	run_passives(methodType.ON_TURN_START, null)
+	print("	", Name, " turn start.")
+
 func on_turn_end():
-	pass
+	set_has_acted()
+	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
+	reset_ap()
+	print("	", Name, " has acted.")
+	SignalBus.endTurn.emit()
+
+
 
 func load_ability(name):
 	var scene = load("res://Abilities/" + name + "/" + name + ".tscn")
@@ -161,8 +169,13 @@ func add_passive(name):
 	passiveList.append(sceneNode)
 
 func run_passives(mType, arg):
+	print(passiveList)
 	for i in passiveList.size():
 		if mType == passiveList[i].get_type():
 			arg = passiveList[i].execute(arg)
 	return arg
 
+func delete_passive(passiveNode):
+	# Receive a signal from passives when their turn count hits 0?
+	# find the given node in the array and remove
+	pass

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3wxbu0q3xqj0"]
+
+[ext_resource type="Script" path="res://Passives/Poison/Poison.gd" id="1_4sdox"]
+
+[node name="Poison" type="Node"]
+script = ExtResource("1_4sdox")

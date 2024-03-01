@@ -17,8 +17,9 @@ func _ready():
 	init_stats(10,10,4,4,5,6,type,TS.NOTACTED)
 	add_passive("Armor")
 	add_passive("Armor")
-	lose_health(1)
+	add_passive("Poison")
 	
+	print("HP: ", CurrentHP)
 	position = position.snapped((Vector2.ZERO) * tileSize.x)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,16 +43,6 @@ func move(dir):
 			moving = true
 			await tween.finished
 			moving = false
-
-func onTurnStart():
-	start = grid.local_to_map(position)
-	print("	ally turn start")
-
-func on_turn_end():
-	set_has_acted()
-	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
-	reset_ap()
-	SignalBus.endTurn.emit()
 
 func activate_ability1():
 	abilityQueued = ability1

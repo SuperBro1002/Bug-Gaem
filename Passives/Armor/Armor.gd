@@ -1,12 +1,12 @@
-extends Node
+extends Passive_class
 
-var type = "LOSE_HEALTH"
-
-func get_type():
-	return type
+func _enter_tree():
+	type = methodType.LOSE_HEALTH
 
 func execute(num):
-	num = num - 1
-	if num < 0:
-		num = 0
-	return num
+	if get_parent().incoming_dmg_type != "pierce":
+		num = num - 1
+		if num < 0:
+			num = 0
+		return num
+	else: return num

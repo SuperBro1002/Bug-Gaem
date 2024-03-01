@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://can80b37fu1mx"]
+
+[ext_resource type="Script" path="res://Passives/Bless/Bless.gd" id="1_dwr6p"]
+
+[node name="Bless" type="Node"]
+script = ExtResource("1_dwr6p")

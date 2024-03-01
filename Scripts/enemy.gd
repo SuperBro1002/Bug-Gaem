@@ -9,15 +9,11 @@ func _ready():
 	screenSize = get_viewport_rect().size
 	init_stats(55,66,77,88,99,111,type,TS.NOTACTED)
 
+# OVERLOADS FUNCTION IN UNIT
 func onTurnStart():
 	#reset_ap()
 	print("	enemy turn start")
 	on_turn_end()
-
-func on_turn_end():
-	print("	enemy passes turn")
-	set_has_acted()
-	SignalBus.endTurn.emit()
 
 func ability1():
 	# Trigger first skill when in range

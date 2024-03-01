@@ -24,13 +24,16 @@ script = ExtResource("3_m2yok")
 [node name="Ally" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
 z_index = 1
 position = Vector2(736, 416)
+Name = "Ally"
 
 [node name="Enemy" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 position = Vector2(96.0001, 104)
+Name = "Enemy"
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 position = Vector2(480, -48)
 script = ExtResource("6_cdygi")
+Name = "Jeff"
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
