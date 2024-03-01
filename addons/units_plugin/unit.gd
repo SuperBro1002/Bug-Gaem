@@ -171,11 +171,17 @@ func add_passive(name):
 func run_passives(mType, arg):
 	print(passiveList)
 	for i in passiveList.size():
-		if mType == passiveList[i].get_type():
-			arg = passiveList[i].execute(arg)
+		if passiveList[i] != null:
+			if mType == passiveList[i].get_type():
+				arg = passiveList[i].execute(arg)
+	find_and_delete_passives()
 	return arg
 
-func delete_passive(passiveNode):
-	# Receive a signal from passives when their turn count hits 0?
-	# find the given node in the array and remove
-	pass
+func find_and_delete_passives():
+	# checks if passive countdown == 0
+	# Removes passive from passiveList and signals them to delete themselves
+	for i in passiveList.size():
+		if passiveList[i] != null:
+			if passiveList[i].turnsRemaining <= 0:
+				passiveList.remove_at(i)
+				SignalBus.deletePassives.emit()

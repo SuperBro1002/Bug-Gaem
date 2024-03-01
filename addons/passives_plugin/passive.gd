@@ -15,3 +15,7 @@ var type
 
 func get_type():
 	return type
+
+func passive_remove():
+	queue_free()
+	print("Remove ", self)
