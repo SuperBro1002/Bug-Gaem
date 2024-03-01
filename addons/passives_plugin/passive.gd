@@ -18,4 +18,4 @@ func get_type():
 
 func passive_remove():
 	queue_free()
-	print("Remove ", self)
+	#print("Remove ", self)

@@ -168,12 +168,16 @@ func add_passive(name):
 	add_child(sceneNode)
 	passiveList.append(sceneNode)
 
+
+# PROBABLY VERY JANK. MAY NEED TO CHANGE HOW RESIZING THE ARRAY IS HANDLED
 func run_passives(mType, arg):
-	print(passiveList)
 	for i in passiveList.size():
-		if passiveList[i] != null:
-			if mType == passiveList[i].get_type():
-				arg = passiveList[i].execute(arg)
+		#print(i, " ----- ", passiveList.size())
+		#print(passiveList.size())
+		if i < passiveList.size():
+			if passiveList[i] != null:
+				if mType == passiveList[i].get_type():
+					arg = passiveList[i].execute(arg)
 	find_and_delete_passives()
 	return arg
 
@@ -181,7 +185,10 @@ func find_and_delete_passives():
 	# checks if passive countdown == 0
 	# Removes passive from passiveList and signals them to delete themselves
 	for i in passiveList.size():
-		if passiveList[i] != null:
-			if passiveList[i].turnsRemaining <= 0:
-				passiveList.remove_at(i)
-				SignalBus.deletePassives.emit()
+		if i < passiveList.size():
+			if passiveList[i] != null:
+				if passiveList[i].turnsRemaining <= 0:
+					passiveList.remove_at(i)
+					SignalBus.deletePassives.emit()
+		else:
+			i = 0
