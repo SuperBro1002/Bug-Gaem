@@ -145,6 +145,7 @@ func get_batonpass():
 func onTurnStart():
 	start = grid.local_to_map(position)
 	run_passives(methodType.ON_TURN_START, null)
+	find_and_delete_passives()
 	print("	", Name, " turn start.")
 
 func on_turn_end():
@@ -178,17 +179,14 @@ func run_passives(mType, arg):
 			if passiveList[i] != null:
 				if mType == passiveList[i].get_type():
 					arg = passiveList[i].execute(arg)
-	find_and_delete_passives()
 	return arg
 
 func find_and_delete_passives():
 	# checks if passive countdown == 0
 	# Removes passive from passiveList and signals them to delete themselves
 	for i in passiveList.size():
-		if i < passiveList.size():
-			if passiveList[i] != null:
-				if passiveList[i].turnsRemaining <= 0:
-					passiveList.remove_at(i)
-					SignalBus.deletePassives.emit()
+		if i < passiveList.size() and passiveList[i] != null and passiveList[i].turnsRemaining <= 0:
+			passiveList.remove_at(i)
+			SignalBus.deletePassives.emit()
 		else:
 			i = 0

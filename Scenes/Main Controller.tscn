@@ -21,10 +21,17 @@ script = ExtResource("3_m2yok")
 
 [node name="UnitManager" type="Node" parent="Grid/InitManager"]
 
-[node name="Ally" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
+[node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
 z_index = 1
 position = Vector2(736, 416)
 Name = "Ally"
+MaxHP = 12
+CurrentHP = 12
+MaxAP = 8
+CurrentAP = 8
+TrueInit = 10
+CurrentInit = 0
+Faction = 0
 
 [node name="Enemy" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 position = Vector2(96.0001, 104)

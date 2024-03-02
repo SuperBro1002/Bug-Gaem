@@ -14,13 +14,13 @@ func next_turn():
 	for i in (unitList.size()):
 		if unitList[i].get_batonpass() == unitList[i].TS.BATONPASS:
 			currentUnitTurn = unitList[i]
-			print("FOUND BATON PASS TARGET: ", currentUnitTurn)
+			#print("FOUND BATON PASS TARGET: ", currentUnitTurn)
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.onTurnStart()
 			return
 		elif unitList[i].get_batonpass() == unitList[i].TS.NOTACTED:
 			currentUnitTurn = unitList[i]
-			print("FOUND NORMAL TARGET: ", currentUnitTurn)
+			#print("FOUND NORMAL TARGET: ", currentUnitTurn)
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.onTurnStart()
 			return

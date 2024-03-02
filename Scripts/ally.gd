@@ -14,9 +14,10 @@ var ability1 = load_ability("Stab")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ray = $RayCast2D
-	init_stats(20,20,4,4,5,6,type,TS.NOTACTED)
+	#init_stats(20,20,4,4,5,6,type,TS.NOTACTED)
 	add_passive("Armor")
 	add_passive("Armor")
+	add_passive("Poison")
 	add_passive("Poison")
 	add_passive("Poison")
 	print("HP: ", CurrentHP)

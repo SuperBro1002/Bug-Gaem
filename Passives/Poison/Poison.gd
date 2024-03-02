@@ -7,6 +7,6 @@ func _enter_tree():
 
 func execute(num):
 	get_parent().incoming_dmg_type = "pierce"
-	get_parent().lose_health(1)
 	print("POISON DAMAGE TAKEN")
+	get_parent().lose_health(1)
 	turnsRemaining -= 1
