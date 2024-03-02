@@ -10,12 +10,12 @@ enum methodType {
 	ON_TURN_START
 }
 
-var turnsRemaining = 100
+var turnsRemaining = 1000
 var type
 
 func get_type():
 	return type
 
 func passive_remove():
-	queue_free()
-	print("Remove ", self)
+	if turnsRemaining <= 0:
+		queue_free()

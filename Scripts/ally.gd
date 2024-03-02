@@ -20,7 +20,6 @@ func _ready():
 	add_passive("Poison")
 	add_passive("Poison")
 	add_passive("Poison")
-	print("HP: ", CurrentHP)
 	position = position.snapped((Vector2.ZERO) * tileSize.x)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

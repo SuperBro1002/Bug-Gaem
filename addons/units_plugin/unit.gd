@@ -76,7 +76,6 @@ func lose_health(dmgVal):
 	CurrentHP = CurrentHP - dmgVal
 	if CurrentHP < 0:
 		CurrentHP = 0
-	print("NEW HEALTH: ", CurrentHP)
 
 func get_max_hp():
 	# Returns unit's max hp
@@ -173,12 +172,8 @@ func add_passive(name):
 # PROBABLY VERY JANK. MAY NEED TO CHANGE HOW RESIZING THE ARRAY IS HANDLED
 func run_passives(mType, arg):
 	for i in passiveList.size():
-		#print(i, " ----- ", passiveList.size())
-		#print(passiveList.size())
-		if i < passiveList.size():
-			if passiveList[i] != null:
-				if mType == passiveList[i].get_type():
-					arg = passiveList[i].execute(arg)
+		if passiveList[i] != null and mType == passiveList[i].get_type():
+			arg = passiveList[i].execute(arg)
 	return arg
 
 func find_and_delete_passives():
