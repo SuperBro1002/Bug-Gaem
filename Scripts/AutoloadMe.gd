@@ -14,8 +14,8 @@ func _ready():
 	print("I AM BORNE")
 	SignalBus.connect("currentUnit",set_current_unit)
 
-func initialize_grid():
-	gridSize = Vector2i(18,10)# / tileSize
+func initialize_grid(gridX, gridY):
+	gridSize = Vector2i(gridX,gridY)
 	astarGrid.size = gridSize
 	astarGrid.cell_size = tile_size
 	astarGrid.offset = tile_size / 2

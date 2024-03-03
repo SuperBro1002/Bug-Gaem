@@ -24,6 +24,7 @@ script = ExtResource("3_m2yok")
 [node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
 z_index = 1
 position = Vector2(736, 416)
+scale = Vector2(1, 1)
 Name = "Ally"
 MaxHP = 12
 CurrentHP = 12
@@ -33,12 +34,20 @@ TrueInit = 10
 CurrentInit = 0
 Faction = 0
 
-[node name="Enemy" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(96.0001, 104)
-Name = "Enemy"
+[node name="Robo Poly" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
+position = Vector2(480, 224)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+MaxHP = 3
+CurrentHP = 3
+MaxAP = 6
+CurrentAP = 6
+TrueInit = 25
+CurrentInit = 0
+Faction = 1
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(480, -48)
+position = Vector2(480, -32)
 script = ExtResource("6_cdygi")
 Name = "Jeff"
 

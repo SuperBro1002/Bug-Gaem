@@ -7,7 +7,7 @@ var type = fac.ENEMY
 
 func _ready():
 	screenSize = get_viewport_rect().size
-	init_stats(55,66,77,88,99,111,type,TS.NOTACTED)
+	#init_stats(55,66,77,88,99,111,type,TS.NOTACTED)
 
 # OVERLOADS FUNCTION IN UNIT
 func onTurnStart():

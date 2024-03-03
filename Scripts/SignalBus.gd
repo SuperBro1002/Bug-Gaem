@@ -5,3 +5,4 @@ signal endTurn
 signal currentUnit
 signal endRound
 signal deletePassives
+signal updateGrid
