@@ -44,6 +44,9 @@ func move(dir):
 			await tween.finished
 			moving = false
 
+func unique_turn_start():
+	pass
+
 func activate_ability1():
 	abilityQueued = ability1
 	ability1.queue(self)

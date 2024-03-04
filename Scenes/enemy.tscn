@@ -23,6 +23,7 @@ animations = [{
 
 [node name="Enemy" type="Area2D"]
 scale = Vector2(0.8, 0.8)
+collision_layer = 2
 script = ExtResource("1_15b7p")
 metadata/_edit_group_ = true
 

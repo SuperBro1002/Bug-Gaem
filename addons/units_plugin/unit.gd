@@ -141,11 +141,18 @@ func get_batonpass():
 
 
 
-func onTurnStart():
+func on_turn_start():
 	start = grid.local_to_map(position)
 	run_passives(methodType.ON_TURN_START, null)
 	find_and_delete_passives()
+	
+	grid.update_grid_collision()
+	
 	print("	", Name, " turn start.")
+	unique_turn_start()
+
+func unique_turn_start():
+	pass
 
 func on_turn_end():
 	set_has_acted()

@@ -9,7 +9,7 @@ func _ready():
 	screenSize = get_viewport_rect().size
 	init_stats(0,0,0,0,0,-999,type,TS.NOTACTED)
 
-func onTurnStart():
+func on_turn_start():
 	print("	jeff turn start")
 	on_turn_end()
 

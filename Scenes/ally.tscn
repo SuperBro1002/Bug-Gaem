@@ -41,6 +41,8 @@ frame_progress = 0.289879
 visible = false
 position = Vector2(-3.8147e-06, 3.8147e-06)
 target_position = Vector2(3.8147e-06, 80)
+collision_mask = 2
+collide_with_areas = true
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(-2.38419e-06, -30)

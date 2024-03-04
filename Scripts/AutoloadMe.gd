@@ -4,6 +4,8 @@ extends Node
 var astarGrid = AStarGrid2D.new()
 var gridSize
 var turnPointer
+var isAllyTurn = false
+var globalUnitList
 
 var inputs = {"move_right": Vector2.RIGHT,
 			"move_left": Vector2.LEFT,
@@ -14,8 +16,8 @@ func _ready():
 	print("I AM BORNE")
 	SignalBus.connect("currentUnit",set_current_unit)
 
-func initialize_grid(gridX, gridY):
-	gridSize = Vector2i(gridX,gridY)
+func initialize_grid(gridLengthX, gridLengthY):
+	gridSize = Vector2i(gridLengthX,gridLengthY)
 	astarGrid.size = gridSize
 	astarGrid.cell_size = tile_size
 	astarGrid.offset = tile_size / 2
@@ -41,4 +43,6 @@ func _unhandled_input(event):
 
 func set_current_unit(unit):
 	turnPointer = unit
-
+	if (turnPointer.get_faction() == 0):
+		isAllyTurn = true
+	else: isAllyTurn == false

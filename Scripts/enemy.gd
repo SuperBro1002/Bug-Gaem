@@ -9,8 +9,7 @@ func _ready():
 	screenSize = get_viewport_rect().size
 	#init_stats(55,66,77,88,99,111,type,TS.NOTACTED)
 
-# OVERLOADS FUNCTION IN UNIT
-func onTurnStart():
+func unique_turn_start():
 	#reset_ap()
 	print("	enemy turn start")
 	on_turn_end()

@@ -47,7 +47,7 @@ CurrentInit = 0
 Faction = 1
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(480, -32)
+position = Vector2(800, -32)
 script = ExtResource("6_cdygi")
 Name = "Jeff"
 

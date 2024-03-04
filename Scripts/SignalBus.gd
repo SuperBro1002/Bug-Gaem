@@ -6,3 +6,4 @@ signal currentUnit
 signal endRound
 signal deletePassives
 signal updateGrid
+signal currOppFac(affil)
