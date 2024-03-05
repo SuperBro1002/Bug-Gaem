@@ -31,7 +31,6 @@ func move(dir):
 	ray.force_raycast_update()
 	
 	if !ray.is_colliding():
-		
 		end = grid.local_to_map(position) + Vector2i(dir) #WEIRD STUFF WITH GRID.LOCAL
 		var pathArray = astarGrid.get_point_path(start, end)
 		
@@ -43,6 +42,8 @@ func move(dir):
 			moving = true
 			await tween.finished
 			moving = false
+	
+	print("Local: ", position, "  Map: ", grid.local_to_map(position))
 
 func unique_turn_start():
 	pass
