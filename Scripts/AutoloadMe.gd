@@ -45,4 +45,5 @@ func set_current_unit(unit):
 	turnPointer = unit
 	if (turnPointer.get_faction() == 0):
 		isAllyTurn = true
-	else: isAllyTurn == false
+	else: 
+		isAllyTurn = false
