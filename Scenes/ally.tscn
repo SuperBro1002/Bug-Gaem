@@ -1,20 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://en47igj175g3"]
+[gd_scene load_steps=5 format=3 uid="uid://en47igj175g3"]
 
 [ext_resource type="Script" path="res://Scripts/ally.gd" id="1_xhul3"]
-[ext_resource type="Texture2D" uid="uid://be6fwr24wfi47" path="res://addons/units_plugin/playerGrey_walk1.png" id="2_rt13x"]
-[ext_resource type="Texture2D" uid="uid://2oyd0wphfc6k" path="res://Assets/Portraits/playerGrey_walk2.png" id="2_u2d8j"]
+[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Allies/Allies/Atlus/Atlus_Base_Still.png" id="2_mg1tv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rh4pl"]
 size = Vector2(75, 75)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_13gq4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_r36r4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rt13x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_u2d8j")
+"texture": ExtResource("2_mg1tv")
 }],
 "loop": true,
 "name": &"default",
@@ -33,9 +29,9 @@ scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_rh4pl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-sprite_frames = SubResource("SpriteFrames_13gq4")
-frame_progress = 0.289879
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_r36r4")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 visible = false

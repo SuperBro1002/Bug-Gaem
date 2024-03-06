@@ -27,6 +27,12 @@ func _process(_delta):
 	pass
 
 func move(dir):
+	
+	match [dir == Vector2.RIGHT, dir == Vector2.LEFT]:
+		[true,false]:
+			$AnimatedSprite2D.set_flip_h(false)
+		[false,true]:
+			$AnimatedSprite2D.set_flip_h(true)
 	ray.target_position = dir * tileSize.x
 	ray.force_raycast_update()
 	
@@ -43,7 +49,7 @@ func move(dir):
 			await tween.finished
 			moving = false
 	
-	print("Local: ", position, "  Map: ", grid.local_to_map(position))
+	
 
 func unique_turn_start():
 	pass
