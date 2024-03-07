@@ -36,9 +36,12 @@ func _unhandled_input(event):
 				turnPointer.move(inputs[dir])
 				
 		if event is InputEventKey:
-			if Input.is_action_pressed("space"):
+			if Input.is_action_just_pressed("space"):
 				print("space pressed")
 				turnPointer.on_turn_end()
+		if Input.is_action_just_pressed("left_click"):
+			if turnPointer.abilityQueued != null:
+				turnPointer.abilityQueued.queue(turnPointer)
 	else: return
 
 func set_current_unit(unit):

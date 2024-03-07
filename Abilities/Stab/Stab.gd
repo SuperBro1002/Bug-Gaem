@@ -7,6 +7,7 @@ var stab = load("res://Abilities/Stab/Stab.tscn")
 var actualRange = 64
 var caster
 var direction = null
+var clickedPos
 
 func _ready():
 	range_convert()
@@ -21,9 +22,10 @@ func queue(user):
 	# Use AOE box to calc all targets
 	# Use rays to check LOS
 	# Use AStar to calc all valid targets
-	
-	while user.abilityQueued != null:
-		pass
+	clickedPos = get_parent().grid.get_global_mouse_position()
+		
+	clickedPos = get_parent().grid.convert_to_map(clickedPos)
+	print(clickedPos)
 
 func execute(_targetUnits, _targetTiles):
 	# for every target in target units[]

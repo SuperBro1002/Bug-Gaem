@@ -99,6 +99,7 @@ offset_right = 864.0
 offset_bottom = 483.944
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 shortcut_context = NodePath("InfoBox/AbilityBox")
 script = ExtResource("8_s1abg")
 
@@ -129,6 +130,7 @@ offset_left = 66.64
 offset_top = -51.0
 offset_right = 287.64
 offset_bottom = 53.0
+mouse_filter = 2
 
 [node name="Ability1" type="Button" parent="CanvasLayer/UI/InfoBox/AbilityBox"]
 layout_mode = 2

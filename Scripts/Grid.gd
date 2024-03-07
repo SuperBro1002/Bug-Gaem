@@ -37,6 +37,6 @@ func update_grid_collision():
 					[true,false,true]:
 						AutoloadMe.astarGrid.set_point_solid(tilePos, false)
 
-func convert_to_local(localPos):
+func convert_to_map(localPos):
 	return local_to_map(localPos)
 

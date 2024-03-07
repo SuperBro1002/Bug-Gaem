@@ -37,8 +37,8 @@ var incoming_dmg_type = null # pierce, null
 @export var BatonPass = TS.NOTACTED
 
 @onready var grid = get_parent().get_parent().get_parent()
-@onready var start = grid.convert_to_local(position)
-@onready var end = grid.convert_to_local(position)
+@onready var start = grid.convert_to_map(position)
+@onready var end = grid.convert_to_map(position)
 
 func _enter_tree():
 	#init_stats(MaxHP, CurrentHP, MaxAP, CurrentAP, TrueInit, CurrentInit)

@@ -63,8 +63,6 @@ func activate_ability(num):
 		abilityQueued = ability2
 	elif num == 3:
 		abilityQueued = ability3
-	
-	abilityQueued.queue(self)
 
 func deactivate_ability():
 	abilityQueued = null
