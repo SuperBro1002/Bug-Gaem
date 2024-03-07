@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnnbo0npeyvc2"
-path="res://.godot/imported/Lumoth_ReceiveHit_Still.png-4f2429fce8f6f4b95ac011316f91f93c.ctex"
+uid="uid://drc43v81fyvl5"
+path="res://.godot/imported/Atlus_ReceiveHit_Still.png-d01bb81ef8696a4e11230538d8fe24f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Allies/Lumoth/Lumoth_ReceiveHit_Still.png"
-dest_files=["res://.godot/imported/Lumoth_ReceiveHit_Still.png-4f2429fce8f6f4b95ac011316f91f93c.ctex"]
+source_file="res://Assets/Sprites/Allies/Atlus/Atlus_ReceiveHit_Still.png"
+dest_files=["res://.godot/imported/Atlus_ReceiveHit_Still.png-d01bb81ef8696a4e11230538d8fe24f5.ctex"]
 
 [params]
 

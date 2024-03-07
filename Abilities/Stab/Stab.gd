@@ -16,15 +16,17 @@ func range_convert():
 	actualRange = tileRange * AutoloadMe.tile_size.x
 	$Hitbox.target_position = Vector2(0, actualRange)
 
-func queue():
+func queue(user):
 	# Use AStar to calc valid AOE range
 	# Use AOE box to calc all targets
 	# Use rays to check LOS
 	# Use AStar to calc all valid targets
-	pass
+	
+	while user.abilityQueued != null:
+		pass
 
 func execute(_targetUnits, _targetTiles):
-	# for eavery target in target units[]
+	# for every target in target units[]
 		# For each target in target_tiles[]
 	pass
 

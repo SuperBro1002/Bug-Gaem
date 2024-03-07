@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd1j54mf7ccc1"
-path="res://.godot/imported/Termitator_Attack_Still.png-da4251129ce3b0a0ffbd1e871abf5488.ctex"
+uid="uid://cxltgjwyjm1sv"
+path="res://.godot/imported/Paramantis_ReceiveHit_Still.png-9c2a978394871d1cda865c29309533ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Enemies/Termitator/Termitator_Attack_Still.png"
-dest_files=["res://.godot/imported/Termitator_Attack_Still.png-da4251129ce3b0a0ffbd1e871abf5488.ctex"]
+source_file="res://Assets/Sprites/Allies/Paramantis/Paramantis_ReceiveHit_Still.png"
+dest_files=["res://.godot/imported/Paramantis_ReceiveHit_Still.png-9c2a978394871d1cda865c29309533ef.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqwtf1u3pdpvu"
-path="res://.godot/imported/Triss_Base_Still.png-2a1ac2e81a22c787f46b7337cf939416.ctex"
+uid="uid://dncvvv7ua5dws"
+path="res://.godot/imported/Paramantis_Base_Still.png-9a469251baf66fa49ada88aae3088a65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Allies/Triss/Triss_Base_Still.png"
-dest_files=["res://.godot/imported/Triss_Base_Still.png-2a1ac2e81a22c787f46b7337cf939416.ctex"]
+source_file="res://Assets/Sprites/Allies/Paramantis/Paramantis_Base_Still.png"
+dest_files=["res://.godot/imported/Paramantis_Base_Still.png-9a469251baf66fa49ada88aae3088a65.ctex"]
 
 [params]
 

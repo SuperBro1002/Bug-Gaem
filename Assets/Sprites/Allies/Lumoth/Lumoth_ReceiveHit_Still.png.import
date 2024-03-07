@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gv7rpptu5uvm"
-path="res://.godot/imported/Triss_Attack_Still.png-4007ef30042b72557667cf0bec9d9784.ctex"
+uid="uid://dnnbo0npeyvc2"
+path="res://.godot/imported/Lumoth_ReceiveHit_Still.png-610f9b00626138b903867d9864e0e969.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Allies/Triss/Triss_Attack_Still.png"
-dest_files=["res://.godot/imported/Triss_Attack_Still.png-4007ef30042b72557667cf0bec9d9784.ctex"]
+source_file="res://Assets/Sprites/Allies/Lumoth/Lumoth_ReceiveHit_Still.png"
+dest_files=["res://.godot/imported/Lumoth_ReceiveHit_Still.png-610f9b00626138b903867d9864e0e969.ctex"]
 
 [params]
 

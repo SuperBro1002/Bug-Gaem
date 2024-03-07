@@ -7,6 +7,8 @@ var moving = false
 var abilityQueued = null
 
 var ability1 = load_ability("Stab")
+var ability2
+var ability3
 
 @onready var tileSize = AutoloadMe.tile_size
 @onready var astarGrid = AutoloadMe.astarGrid
@@ -54,10 +56,15 @@ func move(dir):
 func unique_turn_start():
 	pass
 
-func activate_ability1():
-	abilityQueued = ability1
-	ability1.queue(self)
+func activate_ability(num):
+	if num == 1:
+		abilityQueued = ability1
+	elif num == 2:
+		abilityQueued = ability2
+	elif num == 3:
+		abilityQueued = ability3
+	
+	abilityQueued.queue(self)
 
-func ability2():
-	# Trigger second skill when in range
-	pass
+func deactivate_ability():
+	abilityQueued = null

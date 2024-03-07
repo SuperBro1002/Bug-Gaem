@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jn40mj77l7xd"
-path="res://.godot/imported/Termitator_ReceiveHit_Still.png-4611cd78728811e125272dfc9e1c870b.ctex"
+uid="uid://bibwqlm4bjjl6"
+path="res://.godot/imported/Termitator_Base_Still.png-6774fd67686dc6c35fd4af3ea9a53a0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Enemies/Termitator/Termitator_ReceiveHit_Still.png"
-dest_files=["res://.godot/imported/Termitator_ReceiveHit_Still.png-4611cd78728811e125272dfc9e1c870b.ctex"]
+source_file="res://Assets/Sprites/Enemies/Termitator/Termitator_Base_Still.png"
+dest_files=["res://.godot/imported/Termitator_Base_Still.png-6774fd67686dc6c35fd4af3ea9a53a0c.ctex"]
 
 [params]
 

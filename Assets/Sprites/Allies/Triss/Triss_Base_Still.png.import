@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1nt85gi6kh8g"
-path="res://.godot/imported/Lumoth_Base_Still.png-b9cc16058fd8ff0aee4fe1c38676f4eb.ctex"
+uid="uid://dqwtf1u3pdpvu"
+path="res://.godot/imported/Triss_Base_Still.png-fc7ce7a02ebd44cef5f6777af52422e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Allies/Lumoth/Lumoth_Base_Still.png"
-dest_files=["res://.godot/imported/Lumoth_Base_Still.png-b9cc16058fd8ff0aee4fe1c38676f4eb.ctex"]
+source_file="res://Assets/Sprites/Allies/Triss/Triss_Base_Still.png"
+dest_files=["res://.godot/imported/Triss_Base_Still.png-fc7ce7a02ebd44cef5f6777af52422e6.ctex"]
 
 [params]
 

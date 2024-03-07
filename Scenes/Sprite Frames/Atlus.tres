@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bg2fds46ouabi"]
 
-[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Allies/Allies/Atlus/Atlus_Base_Still.png" id="1_w6xlw"]
+[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Allies/Atlus/Atlus_Base_Still.png" id="1_w6xlw"]
 
 [resource]
 resource_name = "Atlus"

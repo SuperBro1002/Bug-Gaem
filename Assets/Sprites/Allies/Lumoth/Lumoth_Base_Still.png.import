@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg0fsw0q2sxwa"
-path="res://.godot/imported/Robopoly_Base_Still.png-3f893c3b2a20aada602bc1b04cd4d8f0.ctex"
+uid="uid://c1nt85gi6kh8g"
+path="res://.godot/imported/Lumoth_Base_Still.png-b5bb42f83c89878f530dfb34198c2581.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Enemies/Robopoly/Robopoly_Base_Still.png"
-dest_files=["res://.godot/imported/Robopoly_Base_Still.png-3f893c3b2a20aada602bc1b04cd4d8f0.ctex"]
+source_file="res://Assets/Sprites/Allies/Lumoth/Lumoth_Base_Still.png"
+dest_files=["res://.godot/imported/Lumoth_Base_Still.png-b5bb42f83c89878f530dfb34198c2581.ctex"]
 
 [params]
 

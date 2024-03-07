@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq0difd66nq8a"
-path="res://.godot/imported/Lumoth_SpellCast_Still.png-be18d3e96e1c0b22248a46a901b46bcf.ctex"
+uid="uid://c12qhikn1t1e3"
+path="res://.godot/imported/Triss_ReceiveHit_Still.png-5b08daf9549136d8f969e4d5fd459bc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Allies/Lumoth/Lumoth_SpellCast_Still.png"
-dest_files=["res://.godot/imported/Lumoth_SpellCast_Still.png-be18d3e96e1c0b22248a46a901b46bcf.ctex"]
+source_file="res://Assets/Sprites/Allies/Triss/Triss_ReceiveHit_Still.png"
+dest_files=["res://.godot/imported/Triss_ReceiveHit_Still.png-5b08daf9549136d8f969e4d5fd459bc8.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://swhe8ve7hobh"
-path="res://.godot/imported/Milibyte_Base_Still.png-574b401b112aa1df00d588b7bb4eed4b.ctex"
+uid="uid://baj87vuw4htut"
+path="res://.godot/imported/Atlus_Base_Still.png-22b5940e97082858befee3d561b74bbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Enemies/Milibyte/Milibyte_Base_Still.png"
-dest_files=["res://.godot/imported/Milibyte_Base_Still.png-574b401b112aa1df00d588b7bb4eed4b.ctex"]
+source_file="res://Assets/Sprites/Allies/Atlus/Atlus_Base_Still.png"
+dest_files=["res://.godot/imported/Atlus_Base_Still.png-22b5940e97082858befee3d561b74bbc.ctex"]
 
 [params]
 

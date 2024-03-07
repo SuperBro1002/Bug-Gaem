@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxltgjwyjm1sv"
-path="res://.godot/imported/Paramantis_ReceiveHit_Still.png-a8277846ef859125d320e9ef0b3ae803.ctex"
+uid="uid://swhe8ve7hobh"
+path="res://.godot/imported/Milibyte_Base_Still.png-a98a11d6f86894eee41e496a5fd6f0ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Allies/Paramantis/Paramantis_ReceiveHit_Still.png"
-dest_files=["res://.godot/imported/Paramantis_ReceiveHit_Still.png-a8277846ef859125d320e9ef0b3ae803.ctex"]
+source_file="res://Assets/Sprites/Enemies/Milibyte/Milibyte_Base_Still.png"
+dest_files=["res://.godot/imported/Milibyte_Base_Still.png-a98a11d6f86894eee41e496a5fd6f0ff.ctex"]
 
 [params]
 

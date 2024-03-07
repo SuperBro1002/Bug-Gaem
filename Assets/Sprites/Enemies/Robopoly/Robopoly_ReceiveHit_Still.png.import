@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drc43v81fyvl5"
-path="res://.godot/imported/Atlus_ReceiveHit_Still.png-dc51a9de72d4e974924736b89436c94c.ctex"
+uid="uid://df4ajtwoosql0"
+path="res://.godot/imported/Robopoly_ReceiveHit_Still.png-cf119dd93ae2df5af8a60e00ab1eb767.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Allies/Atlus/Atlus_ReceiveHit_Still.png"
-dest_files=["res://.godot/imported/Atlus_ReceiveHit_Still.png-dc51a9de72d4e974924736b89436c94c.ctex"]
+source_file="res://Assets/Sprites/Enemies/Robopoly/Robopoly_ReceiveHit_Still.png"
+dest_files=["res://.godot/imported/Robopoly_ReceiveHit_Still.png-cf119dd93ae2df5af8a60e00ab1eb767.ctex"]
 
 [params]
 
