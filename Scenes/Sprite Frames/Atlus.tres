@@ -1,0 +1,15 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bg2fds46ouabi"]
+
+[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Allies/Allies/Atlus/Atlus_Base_Still.png" id="1_w6xlw"]
+
+[resource]
+resource_name = "Atlus"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w6xlw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

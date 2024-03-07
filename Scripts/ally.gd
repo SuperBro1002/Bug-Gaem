@@ -12,7 +12,7 @@ var ability1 = load_ability("Stab")
 @onready var astarGrid = AutoloadMe.astarGrid
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready():	
 	ray = $RayCast2D
 	#init_stats(20,20,4,4,5,6,type,TS.NOTACTED)
 	add_passive("Armor")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=8 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
 [ext_resource type="Script" path="res://Scripts/InitManager.gd" id="3_m2yok"]
 [ext_resource type="PackedScene" uid="uid://en47igj175g3" path="res://Scenes/ally.tscn" id="4_tt5vw"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="5_4smxl"]
+[ext_resource type="SpriteFrames" uid="uid://fy8e8wgvo05l" path="res://Scenes/Sprite Frames/Triss.tres" id="5_l4uwr"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="6_cdygi"]
 
 [node name="Main_Controller" type="Node2D"]
@@ -22,7 +23,7 @@ script = ExtResource("3_m2yok")
 z_index = 1
 position = Vector2(160, 416)
 scale = Vector2(1, 1)
-Name = "Ally"
+Name = "Atlus"
 MaxHP = 12
 CurrentHP = 12
 MaxAP = 8
@@ -35,14 +36,17 @@ Faction = 0
 z_index = 1
 position = Vector2(161, 225)
 scale = Vector2(1, 1)
-Name = "Ally"
-MaxHP = 12
-CurrentHP = 12
+Name = "Triss"
+MaxHP = 8
+CurrentHP = 8
 MaxAP = 8
 CurrentAP = 8
-TrueInit = 10
+TrueInit = 20
 CurrentInit = 0
 Faction = 0
+
+[node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Triss" index="1"]
+sprite_frames = ExtResource("5_l4uwr")
 
 [node name="Robo Poly" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 position = Vector2(608, 160)
@@ -61,11 +65,70 @@ position = Vector2(352, -32)
 script = ExtResource("6_cdygi")
 Name = "Jeff"
 
-[node name="GUI" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 16.0
-offset_top = 24.0
-offset_right = 56.0
-offset_bottom = 64.0
-metadata/_edit_use_anchors_ = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -864.0
+offset_top = -486.0
+offset_right = 864.0
+offset_bottom = 486.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -256.0
+offset_right = 296.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 65
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "HIII
+"
+
+[node name="Button4" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "HIII
+"
+
+[node name="Button5" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "HIII
+"
+
+[node name="Button6" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "HIII
+"
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "HIII
+"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "HELLOOOO
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(384, 384)
+
+[editable path="Grid/InitManager/UnitManager/Atlus"]
+[editable path="Grid/InitManager/UnitManager/Triss"]
+[editable path="Grid/InitManager/UnitManager/Robo Poly"]

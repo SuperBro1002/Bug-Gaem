@@ -22,8 +22,10 @@ SignalBus="*res://Scripts/SignalBus.gd"
 
 [display]
 
-window/size/viewport_width=768
-window/size/viewport_height=768
+window/size/viewport_width=1728
+window/size/viewport_height=972
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
