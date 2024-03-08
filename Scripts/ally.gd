@@ -14,14 +14,12 @@ var ability3
 @onready var astarGrid = AutoloadMe.astarGrid
 
 # Called when the node enters the scene tree for the first time.
-func _ready():	
+func _ready():
 	ray = $RayCast2D
-	#init_stats(20,20,4,4,5,6,type,TS.NOTACTED)
+	
+	# NOTE: NEED TO FIGURE OUT A WAY TO SET INHERENT PASSIVES FOR DIFFERENT UNITS IN EDITOR
 	add_passive("Armor")
 	add_passive("Armor")
-	add_passive("Poison")
-	add_passive("Poison")
-	add_passive("Poison")
 	position = position.snapped((Vector2.ZERO) * tileSize.x)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,7 +27,6 @@ func _process(_delta):
 	pass
 
 func move(dir):
-	
 	match [dir == Vector2.RIGHT, dir == Vector2.LEFT]:
 		[true,false]:
 			$AnimatedSprite2D.set_flip_h(false)
@@ -66,3 +63,4 @@ func activate_ability(num):
 
 func deactivate_ability():
 	abilityQueued = null
+	AutoloadMe.validQueue = false
