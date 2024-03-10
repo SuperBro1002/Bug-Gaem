@@ -7,6 +7,7 @@ func _toggled(button_pressed):
 	if button_pressed == true:
 		SignalBus.ability.emit(1,true)
 	else:
+		AutoloadMe.queueState = false
 		SignalBus.ability.emit(1,false)
 
 func unpress():

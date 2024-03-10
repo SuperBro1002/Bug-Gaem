@@ -3,6 +3,10 @@ extends Unit_class
 var speed = 225
 var screenSize
 
+var ability1 = load_ability(SetAbility1)
+var ability2 = load_ability(SetAbility2)
+var ability3 = load_ability(SetAbility3)
+
 var type = fac.ENEMY
 
 func _ready():
@@ -13,11 +17,3 @@ func unique_turn_start():
 	#reset_ap()
 	print("	enemy turn start")
 	on_turn_end()
-
-func ability1():
-	# Trigger first skill when in range
-	pass
-
-func ability2():
-	# Trigger second skill when in range
-	pass

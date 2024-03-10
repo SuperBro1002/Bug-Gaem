@@ -6,9 +6,9 @@ var animationSpeed = 3
 var moving = false
 var abilityQueued = null
 
-var ability1 = load_ability("Stab")
-var ability2
-var ability3
+var ability1 = load_ability(SetAbility1)
+var ability2 = load_ability(SetAbility2)
+var ability3 = load_ability(SetAbility3)
 
 @onready var tileSize = AutoloadMe.tile_size
 @onready var astarGrid = AutoloadMe.astarGrid
@@ -47,8 +47,6 @@ func move(dir):
 			moving = true
 			await tween.finished
 			moving = false
-	
-	
 
 func unique_turn_start():
 	pass

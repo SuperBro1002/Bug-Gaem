@@ -8,5 +8,6 @@ signal deletePassives
 signal updateGrid
 signal currOppFac(affil)
 signal ability(abilityNum, state)
+signal activelyQueueing(status)
 signal abilityIsQueued
 signal abilityExecuted
