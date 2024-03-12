@@ -11,4 +11,4 @@ signal ability(abilityNum, state)
 signal activelyQueueing(status)
 signal abilityIsQueued
 signal abilityExecuted
-signal apUpdate
+signal updateUI

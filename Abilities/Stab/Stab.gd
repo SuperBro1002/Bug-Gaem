@@ -53,6 +53,11 @@ func execute():
 		# For each target in target_tiles[]
 	print("EXECUTED")
 	print(targetUnits)
+	
+	for i in targetUnits.size():
+		targetUnits[i].lose_health(7)
+	
+	SignalBus.updateUI.emit(get_parent())
 	SignalBus.abilityExecuted.emit()
 
 func _on_area_2d_area_entered(area):

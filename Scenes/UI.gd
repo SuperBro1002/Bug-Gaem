@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	SignalBus.connect("currentUnit", set_ui)
-	SignalBus.connect("apUpdate", changeAP)
+	SignalBus.connect("updateUI", set_ui)
 
 func set_ui(unit):
 	if unit.get_faction() == unit.fac.ALLY:
@@ -14,10 +14,7 @@ func set_ui(unit):
 		
 		var hpVal = str(unit.get_current_hp()) + " / " + str(unit.get_max_hp())
 		$InfoBox/HPValue.set_text(hpVal)
-		
-		var apVal = str(unit.get_max_ap()) + " / " + str(unit.get_max_ap())
+		print("hp:", unit.get_temp_ap())
+		print("RUNNING")
+		var apVal = str(unit.get_temp_ap()) + " / " + str(unit.get_max_ap())
 		$InfoBox/APValue.set_text(apVal)
-
-func changeAP(tempAP, maxAP):
-	var apVal = str(tempAP) + " / " + str(maxAP)
-	$InfoBox/APValue.set_text(apVal)

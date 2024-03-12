@@ -17,8 +17,8 @@ var ability3# = load_ability(SetAbility3)
 func _ready():
 	ray = $RayCast2D
 	# NOTE: NEED TO FIGURE OUT A WAY TO SET INHERENT PASSIVES FOR DIFFERENT UNITS IN EDITOR
-	add_passive("Armor")
-	add_passive("Armor")
+	#add_passive("Armor")
+	#add_passive("Armor")
 	position = position.snapped((Vector2.ZERO) * tileSize.x)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,14 +38,14 @@ func move(dir):
 		end = grid.local_to_map(position) + Vector2i(dir) #WEIRD STUFF WITH GRID.LOCAL
 		var pathArray = astarGrid.get_point_path(start, end)
 		
-		#NEED TEMP AP FOR CALCULATING WITH ACTION AFTERWARDS
 		if get_current_ap() >= (pathArray.size() - 1):
 			var tween = create_tween()
 			tween.tween_property(self, "position",
 			position + dir * tileSize.x, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 			tempAP = self.get_current_ap() - pathArray.size() + 1
 			#print("AP: ", tempAP)
-			SignalBus.apUpdate.emit(tempAP, get_max_ap())
+			#SignalBus.apUpdate.emit(tempAP, get_max_ap())
+			SignalBus.updateUI.emit(self)
 			moving = true
 			await tween.finished
 			moving = false
