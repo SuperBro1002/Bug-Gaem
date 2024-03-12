@@ -860,7 +860,6 @@ sources/0 = SubResource("TileSetAtlasSource_7xis4")
 sources/1 = SubResource("TileSetScenesCollectionSource_11tbf")
 
 [node name="Grid" type="TileMap"]
-visible = false
 tile_set = SubResource("TileSet_fx28d")
 format = 2
 layer_0/name = "Terrain"

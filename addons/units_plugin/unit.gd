@@ -42,6 +42,7 @@ var incoming_dmg_type = null # pierce, null
 @onready var tempAP = get_max_ap()
 @onready var grid = get_parent().get_parent().get_parent()
 @onready var start = grid.convert_to_map(position)
+@onready var abilityStartPoint = grid.convert_to_map(position)
 @onready var end = grid.convert_to_map(position)
 
 func _enter_tree():

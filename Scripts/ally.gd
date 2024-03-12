@@ -49,6 +49,7 @@ func move(dir):
 			moving = true
 			await tween.finished
 			moving = false
+			abilityStartPoint = grid.convert_to_map(position)
 
 func unique_turn_start():
 	pass

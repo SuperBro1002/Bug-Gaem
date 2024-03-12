@@ -29,7 +29,11 @@ func initialize_grid(gridLengthX, gridLengthY):
 	movementGrid.update()
 	movementGrid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 	
-	abilityRangeGrid = movementGrid
+	abilityRangeGrid.size = gridSize
+	abilityRangeGrid.cell_size = tile_size
+	abilityRangeGrid.offset = tile_size / 2
+	abilityRangeGrid.update()
+	abilityRangeGrid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 
 func _unhandled_input(event):
 	if turnPointer == null:
