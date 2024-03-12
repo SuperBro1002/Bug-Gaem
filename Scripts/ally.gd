@@ -7,8 +7,8 @@ var moving = false
 var abilityQueued = null
 
 var ability1 = load_ability(SetAbility1)
-var ability2 = load_ability(SetAbility2)
-var ability3 = load_ability(SetAbility3)
+var ability2# = load_ability(SetAbility2)
+var ability3# = load_ability(SetAbility3)
 
 @onready var tileSize = AutoloadMe.tile_size
 @onready var astarGrid = AutoloadMe.astarGrid
@@ -16,7 +16,6 @@ var ability3 = load_ability(SetAbility3)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ray = $RayCast2D
-	
 	# NOTE: NEED TO FIGURE OUT A WAY TO SET INHERENT PASSIVES FOR DIFFERENT UNITS IN EDITOR
 	add_passive("Armor")
 	add_passive("Armor")
@@ -44,6 +43,9 @@ func move(dir):
 			var tween = create_tween()
 			tween.tween_property(self, "position",
 			position + dir * tileSize.x, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+			tempAP = self.get_current_ap() - pathArray.size() + 1
+			#print("AP: ", tempAP)
+			SignalBus.apUpdate.emit(tempAP, get_max_ap())
 			moving = true
 			await tween.finished
 			moving = false

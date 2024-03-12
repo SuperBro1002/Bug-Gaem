@@ -1,6 +1,7 @@
 extends Node
 
 var stab = load("res://Abilities/Stab/Stab.tscn")
+var Name = "Stab"
 
 @export var damage = 0
 @export var tileRange = 1

@@ -44,25 +44,35 @@ z_index = 1
 position = Vector2(160, 416)
 scale = Vector2(1, 1)
 Name = "Atlus"
+ID = null
 MaxHP = 12
 CurrentHP = 12
 MaxAP = 8
 CurrentAP = 8
 TrueInit = 10
 CurrentInit = 0
+SetAbility1 = null
+SetAbility2 = null
+SetAbility3 = null
 Faction = 0
+BatonPass = null
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
 position = Vector2(160, 288)
 scale = Vector2(1, 1)
 Name = "Triss"
+ID = null
 MaxHP = 8
 CurrentHP = 8
 MaxAP = 8
 CurrentAP = 8
 TrueInit = 20
 CurrentInit = 0
+SetAbility1 = null
+SetAbility2 = null
+SetAbility3 = null
 Faction = 0
+BatonPass = null
 
 [node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Triss" index="1"]
 sprite_frames = ExtResource("5_l4uwr")

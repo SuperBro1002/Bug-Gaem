@@ -39,6 +39,7 @@ var incoming_dmg_type = null # pierce, null
 @export var Faction = fac.NONE
 @export var BatonPass = TS.NOTACTED
 
+@onready var tempAP = get_max_ap()
 @onready var grid = get_parent().get_parent().get_parent()
 @onready var start = grid.convert_to_map(position)
 @onready var end = grid.convert_to_map(position)
@@ -103,10 +104,14 @@ func lose_ap(num):
 
 func reset_ap():
 	CurrentAP = MaxAP
+	tempAP = MaxAP
 
 func get_max_ap():
 	# Returns unit's max ap
 	return MaxAP
+
+func get_temp_ap():
+	return tempAP
 
 
 

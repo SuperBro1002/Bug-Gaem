@@ -4,8 +4,8 @@ var speed = 225
 var screenSize
 
 var ability1 = load_ability(SetAbility1)
-var ability2 = load_ability(SetAbility2)
-var ability3 = load_ability(SetAbility3)
+var ability2# = load_ability(SetAbility2)
+var ability3# = load_ability(SetAbility3)
 
 var type = fac.ENEMY
 
