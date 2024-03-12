@@ -11,7 +11,7 @@ var ability2# = load_ability(SetAbility2)
 var ability3# = load_ability(SetAbility3)
 
 @onready var tileSize = AutoloadMe.tile_size
-@onready var astarGrid = AutoloadMe.astarGrid
+@onready var astarGrid = AutoloadMe.movementGrid
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

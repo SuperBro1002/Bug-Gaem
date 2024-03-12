@@ -14,7 +14,6 @@ func set_ui(unit):
 		
 		var hpVal = str(unit.get_current_hp()) + " / " + str(unit.get_max_hp())
 		$InfoBox/HPValue.set_text(hpVal)
-		print("hp:", unit.get_temp_ap())
-		print("RUNNING")
+		
 		var apVal = str(unit.get_temp_ap()) + " / " + str(unit.get_max_ap())
 		$InfoBox/APValue.set_text(apVal)

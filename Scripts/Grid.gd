@@ -22,20 +22,20 @@ func update_grid_collision():
 			var tileData = get_cell_tile_data(0, tilePos)
 			
 			if tileData == null or tileData.get_custom_data("walkable") == false:
-				AutoloadMe.astarGrid.set_point_solid(tilePos)
+				AutoloadMe.movementGrid.set_point_solid(tilePos)
 			
 			
 			# Looks thru the unitList, determines if the 
 			for i in AutoloadMe.globalUnitList.size():
 				match[local_to_map(AutoloadMe.globalUnitList[i].position) == tilePos, AutoloadMe.isAllyTurn, AutoloadMe.globalUnitList[i].get_faction() == 1]:
 					[true,true,true]:
-						AutoloadMe.astarGrid.set_point_solid(tilePos)
+						AutoloadMe.movementGrid.set_point_solid(tilePos)
 					[true,true,false]:
-						AutoloadMe.astarGrid.set_point_solid(tilePos, false)
+						AutoloadMe.movementGrid.set_point_solid(tilePos, false)
 					[true,false,false]:
-						AutoloadMe.astarGrid.set_point_solid(tilePos)
+						AutoloadMe.movementGrid.set_point_solid(tilePos)
 					[true,false,true]:
-						AutoloadMe.astarGrid.set_point_solid(tilePos, false)
+						AutoloadMe.movementGrid.set_point_solid(tilePos, false)
 
 func convert_to_map(localPos):
 	return local_to_map(localPos)

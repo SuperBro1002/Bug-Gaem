@@ -1,7 +1,8 @@
 extends Node
 
 @onready var tile_size = Vector2i(64, 64)
-var astarGrid = AStarGrid2D.new()
+var movementGrid = AStarGrid2D.new()
+var abilityRangeGrid = AStarGrid2D.new()
 var gridSize
 var turnPointer
 var isAllyTurn = false
@@ -22,11 +23,13 @@ func _ready():
 
 func initialize_grid(gridLengthX, gridLengthY):
 	gridSize = Vector2i(gridLengthX,gridLengthY)
-	astarGrid.size = gridSize
-	astarGrid.cell_size = tile_size
-	astarGrid.offset = tile_size / 2
-	astarGrid.update()
-	astarGrid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
+	movementGrid.size = gridSize
+	movementGrid.cell_size = tile_size
+	movementGrid.offset = tile_size / 2
+	movementGrid.update()
+	movementGrid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
+	
+	abilityRangeGrid = movementGrid
 
 func _unhandled_input(event):
 	if turnPointer == null:
