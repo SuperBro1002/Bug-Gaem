@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=17 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
@@ -12,7 +12,6 @@
 [ext_resource type="Script" path="res://Scenes/Ability1.gd" id="9_kbuyh"]
 [ext_resource type="PackedScene" uid="uid://b0ntl6bwun7r8" path="res://Scenes/Unit_Initiative_Box.tscn" id="11_c8x18"]
 [ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Allies/Atlus/Atlus_Base_Still.png" id="11_um6k4"]
-[ext_resource type="Texture2D" uid="uid://bofj7xwd6mfhg" path="res://Assets/Maps_Tiles/tutorial_map.png" id="13_pfrlb"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_gei7j"]
 device = -1
@@ -241,14 +240,6 @@ layout_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(384, 384)
-
-[node name="TutorialMap" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(383.5, 388.5)
-scale = Vector2(2.10742, 2.10742)
-texture = ExtResource("13_pfrlb")
-
-[connection signal="texture_changed" from="CanvasLayer/UI/InfoBox/PortraitBox/Sprite2D" to="CanvasLayer/UI" method="_on_sprite_2d_texture_changed"]
 
 [editable path="Grid/InitManager/UnitManager/Atlus"]
 [editable path="Grid/InitManager/UnitManager/Triss"]
