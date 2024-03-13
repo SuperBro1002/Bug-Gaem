@@ -6,6 +6,7 @@ var stab
 var Name
 
 @export var damage = 0
+@export var apCost = 0
 @export var tileRange = 1
 @export var distanceRange = 1
 var actualRange = 64
@@ -29,26 +30,24 @@ func range_convert():
 	$Hitbox.target_position = Vector2(0, actualRange)
 
 func queue():
-	# Use AStar to calc valid AOE range
-	# Use AOE box to calc all targets
-	# Use AStar to calc all valid targets
-	if get_parent().Name == AutoloadMe.turnPointer.Name:
-		clickedPos = get_parent().grid.get_global_mouse_position()
-		clickedPos = get_parent().grid.local_to_map(clickedPos)
-		clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,clickedPos)
-		
-		if clickedDistance.size() - 1 <= distanceRange:
-			$Area2D.position = get_parent().grid.map_to_local(clickedPos)
-			$Area2D/SelectionBox.set_visible(true)
+	if get_parent().get_temp_ap() - apCost >= 0:
+		if get_parent().Name == AutoloadMe.turnPointer.Name:
+			clickedPos = get_parent().grid.get_global_mouse_position()
+			clickedPos = get_parent().grid.local_to_map(clickedPos)
+			clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,clickedPos)
 			
-			await get_tree().create_timer(0.1).timeout
-			
-			if !targetUnits.is_empty():
-				SignalBus.activelyQueueing.emit(true)
-			else:
-				SignalBus.activelyQueueing.emit(false)
-			
-			print(targetUnits)
+			if clickedDistance.size() - 1 <= distanceRange:
+				$Area2D.position = get_parent().grid.map_to_local(clickedPos)
+				$Area2D/SelectionBox.set_visible(true)
+				
+				await get_tree().create_timer(0.1).timeout
+				
+				if !targetUnits.is_empty():
+					SignalBus.activelyQueueing.emit(true)
+				else:
+					SignalBus.activelyQueueing.emit(false)
+				
+				print(targetUnits)
 
 func dequeue(num, state):
 	if state == false:
@@ -58,6 +57,9 @@ func dequeue(num, state):
 
 func execute():
 	pass
+
+func get_ap_cost():
+	return apCost
 
 func _on_area_2d_area_entered(area):
 	targetUnits.append(area)

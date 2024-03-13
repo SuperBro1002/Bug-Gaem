@@ -12,3 +12,4 @@ signal activelyQueueing(status)
 signal abilityIsQueued
 signal abilityExecuted
 signal updateUI
+signal apChanged

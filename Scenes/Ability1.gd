@@ -1,7 +1,11 @@
 extends Button
 
+var APcost
+
 func _ready():
 	SignalBus.connect("abilityExecuted",unpress)
+	SignalBus.connect("currentUnit", assign_ap_cost)
+	SignalBus.connect("apChanged", button_state)
 
 func _toggled(button_pressed):
 	if button_pressed == true:
@@ -12,3 +16,14 @@ func _toggled(button_pressed):
 
 func unpress():
 	button_pressed = false
+
+func button_state():
+	if AutoloadMe.turnPointer.get_temp_ap() - APcost <= 0:
+		self.set_disabled(true)
+	else:
+		self.set_disabled(false)
+
+func assign_ap_cost(current):
+	if current.get_faction() == current.fac.ALLY:
+		APcost = current.ability1.get_ap_cost()
+		#print("Button 1 AP: ", APcost)

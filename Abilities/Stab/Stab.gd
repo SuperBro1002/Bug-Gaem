@@ -15,12 +15,6 @@ extends Ability_class
 #var clickedDistance
 #@onready var abilityGrid = AutoloadMe.abilityRangeGrid
 
-#func _ready():
-#	damage = 0
-#	tileRange = 1
-#	distanceRange = 1
-#	actualRange = 64
-
 func execute():
 	# for every target in target units[]
 		# For each target in target_tiles[]
@@ -28,7 +22,7 @@ func execute():
 	print(targetUnits)
 	
 	for i in targetUnits.size():
-		targetUnits[i].lose_health(7)
+		targetUnits[i].lose_health(damage)
 	
 	SignalBus.updateUI.emit(get_parent())
 	SignalBus.abilityExecuted.emit()
