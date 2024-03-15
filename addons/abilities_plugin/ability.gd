@@ -60,10 +60,8 @@ func execute():
 
 func post_execute():
 	SignalBus.abilityExecuted.emit(self)
-#	AutoloadMe.turnPointer.lose_temp_ap(apCost)
-#	AutoloadMe.turnPointer.set_current_ap(AutoloadMe.turnPointer.get_temp_ap())
-#	AutoloadMe.turnPointer.start = 
-	SignalBus.updateUI.emit(get_parent())
+	if AutoloadMe.isAllyTurn == true:
+		SignalBus.updateUI.emit(get_parent())
 
 func get_ap_cost():
 	return apCost

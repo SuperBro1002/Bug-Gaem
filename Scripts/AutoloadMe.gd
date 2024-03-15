@@ -7,6 +7,7 @@ var gridSize
 var turnPointer
 var isAllyTurn = false
 var globalUnitList
+var globalAllyList
 var validQueue = false
 var queueState = false
 
@@ -76,3 +77,5 @@ func set_current_unit(unit):
 		isAllyTurn = true
 	else: 
 		isAllyTurn = false
+	
+	SignalBus.updateGrid.emit()

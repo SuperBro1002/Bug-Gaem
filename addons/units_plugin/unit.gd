@@ -177,7 +177,7 @@ func on_turn_end():
 	SignalBus.endTurn.emit()
 
 func on_execute(abilityUsed):
-	if AutoloadMe.turnPointer == self:
+	if AutoloadMe.turnPointer == self and Faction == fac.ALLY:
 		print(self, "Ability Aftermath")
 		lose_temp_ap(abilityUsed.apCost)
 		set_current_ap(get_temp_ap())

@@ -15,6 +15,7 @@ func _ready():
 	AutoloadMe.initialize_grid(gridLengthX, gridLengthY)
 
 func update_grid_collision():
+	AutoloadMe.movementGrid.update()
 	for x in gridLengthX:
 		for y in gridLengthY:
 			var tilePos = Vector2i(x,y)
@@ -30,12 +31,6 @@ func update_grid_collision():
 				match[local_to_map(AutoloadMe.globalUnitList[i].position) == tilePos, AutoloadMe.isAllyTurn, AutoloadMe.globalUnitList[i].get_faction() == 1]:
 					[true,true,true]:
 						AutoloadMe.movementGrid.set_point_solid(tilePos)
-					[true,true,false]:
-						AutoloadMe.movementGrid.set_point_solid(tilePos, false)
-					[true,false,false]:
-						AutoloadMe.movementGrid.set_point_solid(tilePos)
-					[true,false,true]:
-						AutoloadMe.movementGrid.set_point_solid(tilePos, false)
 
 func convert_to_map(localPos):
 	return local_to_map(localPos)

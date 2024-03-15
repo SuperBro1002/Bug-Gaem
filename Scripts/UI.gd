@@ -19,5 +19,8 @@ func set_ui(unit):
 		var apVal = str(unit.get_temp_ap()) + " / " + str(unit.get_max_ap())
 		$InfoBox/APValue.set_text(apVal)
 
+func toggle_UI():
+	pass
+
 func draw_init_box():
 	pass

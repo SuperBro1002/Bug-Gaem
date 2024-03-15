@@ -1,6 +1,7 @@
 extends Node
 
 var unitList
+var allyList = []
 var currentUnitTurn
 @onready var unitMan = $UnitManager
 
@@ -37,9 +38,16 @@ func next_round():
 func make_unit_list():
 	unitList = unitMan.get_children()
 	sort_unit_list()
+	
+	for i in unitList.size():
+		if unitList[i].get_faction() == unitList[i].fac.ALLY:
+			allyList.append(unitList[i])
+	
+	AutoloadMe.globalAllyList = allyList
 	AutoloadMe.globalUnitList = unitList
 	SignalBus.updateInitBox.emit()
 	print("UnitList: ", unitList)
+	print("AllList: ", allyList)
 
 func get_unit_list():
 	return unitList

@@ -2,7 +2,7 @@ extends Unit_class
 
 var type = fac.ALLY
 var ray
-var animationSpeed = 3
+var animationSpeed = 4
 var moving = false
 var abilityQueued = null
 

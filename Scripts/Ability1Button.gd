@@ -17,8 +17,9 @@ func _toggled(button_pressed):
 func unpress(_ability):
 	button_pressed = false
 
+#LOOK INTO CURRENT AP AT THIS POINT!!!!!!!!!!!
 func button_state():
-	if AutoloadMe.turnPointer.get_temp_ap() - APcost <= 0:
+	if AutoloadMe.turnPointer.get_temp_ap() - APcost < 0 or AutoloadMe.turnPointer.get_current_ap() <= 0:
 		self.set_disabled(true)
 	else:
 		self.set_disabled(false)

@@ -10,7 +10,7 @@ size = Vector2(64, 64)
 
 [node name="Stab" type="Node"]
 script = ExtResource("1_jaih1")
-damage = 7
+damage = 4
 apCost = 2
 
 [node name="Hitbox" type="RayCast2D" parent="."]

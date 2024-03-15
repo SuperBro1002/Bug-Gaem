@@ -55,7 +55,7 @@ CurrentHP = 12
 MaxAP = 8
 CurrentAP = 8
 TrueInit = 10
-CurrentInit = 0
+CurrentInit = 10
 Faction = 0
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
@@ -67,7 +67,7 @@ CurrentHP = 8
 MaxAP = 8
 CurrentAP = 8
 TrueInit = 20
-CurrentInit = 0
+CurrentInit = 20
 Faction = 0
 
 [node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Triss" index="1"]
