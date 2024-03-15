@@ -15,6 +15,9 @@ extends Ability_class
 #var clickedDistance
 #@onready var abilityGrid = AutoloadMe.abilityRangeGrid
 
+func _enter_tree():
+	targetType = get_parent().fac.ENEMY
+
 func execute():
 	# for every target in target units[]
 		# For each target in target_tiles[]

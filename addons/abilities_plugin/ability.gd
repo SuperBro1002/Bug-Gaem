@@ -9,6 +9,7 @@ var Name
 @export var apCost = 0
 @export var tileRange = 1
 @export var distanceRange = 1
+var targetType = 0
 var actualRange = 64
 var caster
 var direction = null
@@ -30,13 +31,20 @@ func range_convert():
 	$Hitbox.target_position = Vector2(0, actualRange)
 
 func queue():
+	var affilMatch = false
 	if get_parent().get_temp_ap() - apCost >= 0:
 		if get_parent().Name == AutoloadMe.turnPointer.Name:
 			clickedPos = get_parent().grid.get_global_mouse_position()
 			clickedPos = get_parent().grid.local_to_map(clickedPos)
 			clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,clickedPos)
 			
-			if clickedDistance.size() - 1 <= distanceRange:
+			for i in AutoloadMe.globalUnitList.size() - 1:
+				if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position):
+					if AutoloadMe.globalUnitList[i].get_faction() == targetType:
+						affilMatch = true
+						print("HULLO ", AutoloadMe.globalUnitList[i])
+			
+			if clickedDistance.size() - 1 <= distanceRange and affilMatch == true:
 				$Area2D.position = get_parent().grid.map_to_local(clickedPos)
 				$Area2D/SelectionBox.set_visible(true)
 				
