@@ -24,5 +24,4 @@ func execute():
 	for i in targetUnits.size():
 		targetUnits[i].lose_health(damage)
 	
-	SignalBus.updateUI.emit(get_parent())
-	SignalBus.abilityExecuted.emit()
+	post_execute()

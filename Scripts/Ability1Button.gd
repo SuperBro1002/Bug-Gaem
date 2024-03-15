@@ -14,7 +14,7 @@ func _toggled(button_pressed):
 		AutoloadMe.queueState = false
 		SignalBus.ability.emit(1,false)
 
-func unpress():
+func unpress(_ability):
 	button_pressed = false
 
 func button_state():

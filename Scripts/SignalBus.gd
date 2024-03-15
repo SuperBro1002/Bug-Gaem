@@ -10,6 +10,7 @@ signal currOppFac(affil)
 signal ability(abilityNum, state)
 signal activelyQueueing(status)
 signal abilityIsQueued
-signal abilityExecuted
+signal abilityExecuted(ability)
 signal updateUI
 signal apChanged
+signal updateInitBox

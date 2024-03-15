@@ -46,8 +46,7 @@ var incoming_dmg_type = null # pierce, null
 @onready var end = grid.convert_to_map(position)
 
 func _enter_tree():
-	#init_stats(MaxHP, CurrentHP, MaxAP, CurrentAP, TrueInit, CurrentInit)
-	pass
+	SignalBus.connect("abilityExecuted",on_execute)
 
 func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init, faction, bp):
 	# Assign the given values to their respective stats
@@ -92,6 +91,9 @@ func get_current_ap():
 	# Returns unit's current ap
 	return CurrentAP
 
+func set_current_ap(num):
+	CurrentAP = num
+
 func gain_ap(num):
 	# Adds given num to unit's current ap
 	CurrentAP = CurrentAP + num
@@ -102,6 +104,11 @@ func lose_ap(num):
 	CurrentAP = CurrentAP - num
 	if CurrentAP < 0:
 		CurrentAP = 0
+
+func lose_temp_ap(num):
+	tempAP = tempAP - num
+	if tempAP < 0:
+		tempAP = 0
 
 func reset_ap():
 	CurrentAP = MaxAP
@@ -149,7 +156,6 @@ func get_batonpass():
 	return BatonPass
 
 
-
 func on_turn_start():
 	start = grid.local_to_map(position)
 	run_passives(methodType.ON_TURN_START, null)
@@ -170,6 +176,12 @@ func on_turn_end():
 	print("	", Name, " has acted.")
 	SignalBus.endTurn.emit()
 
+func on_execute(abilityUsed):
+	if AutoloadMe.turnPointer == self:
+		print(self, "Ability Aftermath")
+		lose_temp_ap(abilityUsed.apCost)
+		set_current_ap(get_temp_ap())
+		AutoloadMe.turnPointer.start = grid.local_to_map(position)
 
 
 func load_ability(name):

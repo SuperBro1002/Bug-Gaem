@@ -38,6 +38,7 @@ func make_unit_list():
 	unitList = unitMan.get_children()
 	sort_unit_list()
 	AutoloadMe.globalUnitList = unitList
+	SignalBus.updateInitBox.emit()
 	print("UnitList: ", unitList)
 
 func get_unit_list():
