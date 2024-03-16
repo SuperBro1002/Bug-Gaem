@@ -24,6 +24,7 @@ func unique_turn_start():
 	lengthList = []
 	target = null
 	print("	enemy turn start")
+	grid.set_enemy_collision()
 	
 	for i in AutoloadMe.globalAllyList.size():
 		end = grid.local_to_map(AutoloadMe.globalAllyList[i].position)

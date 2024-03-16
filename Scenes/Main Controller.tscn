@@ -95,6 +95,30 @@ TrueInit = 28
 CurrentInit = 0
 Faction = 1
 
+[node name="Robo Poly3" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
+position = Vector2(480, 224)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+MaxHP = 3
+CurrentHP = 3
+MaxAP = 6
+CurrentAP = 6
+TrueInit = 28
+CurrentInit = 0
+Faction = 1
+
+[node name="Robo Poly2" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
+position = Vector2(544, 544)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+MaxHP = 3
+CurrentHP = 3
+MaxAP = 6
+CurrentAP = 6
+TrueInit = 28
+CurrentInit = 0
+Faction = 1
+
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 visible = false
 position = Vector2(384, -48)
@@ -285,3 +309,5 @@ texture = ExtResource("14_lspid")
 [editable path="Grid/InitManager/UnitManager/Atlus"]
 [editable path="Grid/InitManager/UnitManager/Triss"]
 [editable path="Grid/InitManager/UnitManager/Robo Poly"]
+[editable path="Grid/InitManager/UnitManager/Robo Poly3"]
+[editable path="Grid/InitManager/UnitManager/Robo Poly2"]

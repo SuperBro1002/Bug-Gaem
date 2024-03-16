@@ -8,6 +8,7 @@ var turnPointer
 var isAllyTurn = false
 var globalUnitList
 var globalAllyList
+var globalEnemyList
 var validQueue = false
 var queueState = false
 
