@@ -5,7 +5,7 @@ class_name Ability_class
 var stab
 var Name
 
-@export var damage = 0
+#@export var damage = 0
 @export var apCost = 0
 @export var tileRange = 1
 @export var distanceRange = 1
@@ -67,6 +67,7 @@ func execute():
 	pass
 
 func post_execute():
+	targetUnits.clear()
 	SignalBus.abilityExecuted.emit(self)
 	if AutoloadMe.isAllyTurn == true:
 		SignalBus.updateUI.emit(get_parent())

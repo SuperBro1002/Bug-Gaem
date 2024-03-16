@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://db2kh7e4g04b8"]
+
+[ext_resource type="Script" path="res://Passives/Trap/Trap.gd" id="1_lf0ym"]
+
+[node name="Trap" type="Node"]
+script = ExtResource("1_lf0ym")

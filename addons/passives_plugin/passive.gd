@@ -7,7 +7,9 @@ enum methodType {
 	LOSE_HEALTH,
 	GAIN_AP,
 	LOSE_AP,
-	ON_TURN_START
+	ON_TURN_START,
+	ON_TURN_END,
+	IMMEDIATE_PERSISTING
 }
 
 var turnsRemaining = 1000

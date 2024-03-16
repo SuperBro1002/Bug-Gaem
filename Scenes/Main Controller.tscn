@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=24 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/CombatManager.gd" id="8_3eshf"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="9_qg5lv"]
 [ext_resource type="Script" path="res://Scripts/Ability1Button.gd" id="10_fxut6"]
+[ext_resource type="Script" path="res://Scripts/Ability2Button.gd" id="11_a6atw"]
 [ext_resource type="PackedScene" uid="uid://b0ntl6bwun7r8" path="res://Scenes/Unit_Initiative_Box.tscn" id="11_c8x18"]
 [ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Allies/Atlus/Atlus_Base_Still.png" id="11_um6k4"]
 [ext_resource type="Texture2D" uid="uid://bofj7xwd6mfhg" path="res://Assets/Maps_Tiles/tutorial_map.png" id="13_pfrlb"]
@@ -23,6 +24,14 @@ unicode = 49
 
 [sub_resource type="Shortcut" id="Shortcut_11fnr"]
 events = [SubResource("InputEventKey_gei7j")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ps161"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_wweb6"]
+events = [SubResource("InputEventKey_ps161")]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4gjyx"]
 font_size = 36
@@ -56,6 +65,7 @@ MaxAP = 8
 CurrentAP = 8
 TrueInit = 10
 CurrentInit = 10
+SetAbility2 = "Grapple"
 Faction = 0
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
@@ -67,7 +77,7 @@ CurrentHP = 8
 MaxAP = 8
 CurrentAP = 8
 TrueInit = 20
-CurrentInit = 20
+CurrentInit = 5
 Faction = 0
 
 [node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Triss" index="1"]
@@ -81,7 +91,7 @@ MaxHP = 3
 CurrentHP = 3
 MaxAP = 6
 CurrentAP = 6
-TrueInit = 25
+TrueInit = 28
 CurrentInit = 0
 Faction = 1
 
@@ -150,7 +160,10 @@ script = ExtResource("10_fxut6")
 
 [node name="Ability2Button" type="Button" parent="CanvasLayer/UI/InfoBox/AbilityBox"]
 layout_mode = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_wweb6")
 text = "Ability 2"
+script = ExtResource("11_a6atw")
 
 [node name="Ability3Button" type="Button" parent="CanvasLayer/UI/InfoBox/AbilityBox"]
 layout_mode = 2

@@ -19,7 +19,8 @@ enum methodType {
 	LOSE_HEALTH,
 	GAIN_AP,
 	LOSE_AP,
-	ON_TURN_START
+	ON_TURN_START,
+	ON_TURN_END
 }
 
 var passiveList = []
@@ -44,6 +45,8 @@ var incoming_dmg_type = null # pierce, null
 @onready var start = grid.convert_to_map(position)
 @onready var abilityStartPoint = grid.convert_to_map(position)
 @onready var end = grid.convert_to_map(position)
+
+var canMove = true
 
 func _enter_tree():
 	SignalBus.connect("abilityExecuted",on_execute)
@@ -171,6 +174,7 @@ func unique_turn_start():
 
 func on_turn_end():
 	set_has_acted()
+	canMove = true
 	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
 	reset_ap()
 	print("	", Name, " has acted.")
@@ -188,6 +192,7 @@ func load_ability(name):
 	var scene = load("res://Abilities/" + name + "/" + name + ".tscn")
 	var sceneNode = scene.instantiate()
 	add_child(sceneNode)
+	print("Found ", name)
 	return sceneNode
 
 func add_passive(name):
@@ -212,4 +217,4 @@ func find_and_delete_passives():
 			passiveList.remove_at(i)
 			SignalBus.deletePassives.emit()
 		else:
-			i = 0
+			i = 0 # THIS SEEMS TO WORK BUT I FEEL LIKE IT SHOULDN'T
