@@ -10,11 +10,11 @@ func _ready():
 func _toggled(button_pressed):
 	if button_pressed == true:
 		get_node("../Ability1Button").unpress(null)
-		get_node("../Ability3Button").unpress(null)
-		SignalBus.ability.emit(2,true)
+		get_node("../Ability2Button").unpress(null)
+		SignalBus.ability.emit(3,true)
 	else:
 		AutoloadMe.queueState = false
-		SignalBus.ability.emit(2,false)
+		SignalBus.ability.emit(3,false)
 
 func unpress(_ability):
 	button_pressed = false
@@ -28,5 +28,5 @@ func button_state():
 
 func assign_ap_cost(current):
 	if current.get_faction() == current.fac.ALLY:
-		APcost = current.ability2.get_ap_cost()
+		APcost = current.ability3.get_ap_cost()
 		#print("Button 1 AP: ", APcost)

@@ -20,7 +20,8 @@ func next_turn():
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.on_turn_start()
 			return
-		elif unitList[i].get_batonpass() == unitList[i].TS.NOTACTED:
+	for i in (unitList.size()):
+		if unitList[i].get_batonpass() == unitList[i].TS.NOTACTED:
 			currentUnitTurn = unitList[i]
 			#print("FOUND NORMAL TARGET: ", currentUnitTurn)
 			SignalBus.currentUnit.emit(currentUnitTurn)
@@ -30,6 +31,7 @@ func next_turn():
 func next_round():
 	for j in (unitList.size()):
 		unitList[j].reset_acted()
+		unitList[j].reset_ap()
 	currentUnitTurn = unitList[0]
 	print("ROUND END. RESETTING: ", currentUnitTurn)
 	SignalBus.currentUnit.emit(currentUnitTurn)
@@ -39,7 +41,6 @@ func next_round():
 func make_unit_list():
 	unitList = unitMan.get_children()
 	sort_unit_list()
-	
 	for i in unitList.size():
 		if unitList[i].get_faction() == unitList[i].fac.ALLY:
 			allyList.append(unitList[i])

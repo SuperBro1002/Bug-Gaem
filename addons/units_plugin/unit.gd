@@ -47,6 +47,7 @@ var incoming_dmg_type = null # pierce, null
 @onready var end = grid.convert_to_map(position)
 
 var canMove = true
+var storedBatonPass = TS.NOTACTED
 
 func _enter_tree():
 	SignalBus.connect("abilityExecuted",on_execute)
@@ -147,6 +148,7 @@ func get_faction():
 
 
 func give_batonpass():
+	storedBatonPass = BatonPass
 	BatonPass = TS.BATONPASS
 
 func set_has_acted():
@@ -154,12 +156,14 @@ func set_has_acted():
 
 func reset_acted():
 	BatonPass = TS.NOTACTED
+	storedBatonPass = BatonPass
 
 func get_batonpass():
 	return BatonPass
 
 
 func on_turn_start():
+	print(self, " ", CurrentAP)
 	start = grid.local_to_map(position)
 	run_passives(methodType.ON_TURN_START, null)
 	find_and_delete_passives()
@@ -173,11 +177,18 @@ func unique_turn_start():
 	pass
 
 func on_turn_end():
-	set_has_acted()
+	print(self, " ", tempAP)
+	if BatonPass == TS.BATONPASS:
+		BatonPass = storedBatonPass
+	else:
+		set_has_acted()
+	
 	canMove = true
 	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
-	reset_ap()
 	print("	", Name, " has acted.")
+	unique_turn_end()
+
+func unique_turn_end():
 	SignalBus.endTurn.emit()
 
 func on_execute(abilityUsed):

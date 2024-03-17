@@ -8,7 +8,7 @@ var abilityQueued = null
 
 @onready var ability1 = load_ability(SetAbility1)
 @onready var ability2 = load_ability(SetAbility2)
-@onready var ability3# = load_ability(SetAbility3)
+@onready var ability3 = load_ability(SetAbility3)
 
 @onready var tileSize = AutoloadMe.tile_size
 @onready var astarGrid = AutoloadMe.movementGrid
@@ -55,6 +55,10 @@ func move(dir):
 func unique_turn_start():
 	SignalBus.apChanged.emit()
 	SignalBus.updateUI.emit(self)
+
+func unique_turn_end():
+	set_current_ap(get_temp_ap())
+	SignalBus.endTurn.emit()
 
 func activate_ability(num):
 	if num == 1:

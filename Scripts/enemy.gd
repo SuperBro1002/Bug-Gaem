@@ -17,13 +17,11 @@ var shortestPath = 10000
 func _ready():
 	screenSize = get_viewport_rect().size
 	#add_passive("Trap")
-	#init_stats(55,66,77,88,99,111,type,TS.NOTACTED)
 
 func unique_turn_start():
 	shortestPath = 10000
 	lengthList = []
 	target = null
-	print("	enemy turn start")
 	grid.set_enemy_collision()
 	
 	for i in AutoloadMe.globalAllyList.size():
@@ -50,7 +48,7 @@ func unique_turn_start():
 				await tween.finished
 	
 	pathArray = astarGrid.get_point_path(grid.local_to_map(position), end)
-	print("AP: ", CurrentAP)
+	
 	while CurrentAP >= ability1.get_ap_cost() and pathArray.size() <= 2:
 		ability1.targetUnits.append(target)
 		ability1.execute()

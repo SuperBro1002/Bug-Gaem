@@ -10,7 +10,7 @@ func _ready():
 func _toggled(button_pressed):
 	if button_pressed == true:
 		get_node("../Ability2Button").unpress(null)
-		#get_node("../Ability3Button").unpress(null)
+		get_node("../Ability3Button").unpress(null)
 		SignalBus.ability.emit(1,true)
 	else:
 		AutoloadMe.queueState = false
