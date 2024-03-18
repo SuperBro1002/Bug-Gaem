@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0ntl6bwun7r8"]
+[gd_scene load_steps=5 format=3 uid="uid://b0ntl6bwun7r8"]
 
 [ext_resource type="Script" path="res://Scenes/Unit_Initiative_Box.gd" id="1_0skit"]
 [ext_resource type="Texture2D" uid="uid://dj1fiy06dxn1l" path="res://Assets/HUD/Init_Sprites/Atlus_Base_Still.png" id="1_755gw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mbmbs"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_wkm5q"]
+font_size = 12
 
 [node name="CenterContainer" type="Control"]
 custom_minimum_size = Vector2(60, 40)
@@ -16,3 +22,19 @@ texture_filter = 1
 position = Vector2(32, 72)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_755gw")
+
+[node name="hpField" type="Label" parent="."]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 64.0
+offset_bottom = 143.0
+text = "HP: 1111"
+label_settings = SubResource("LabelSettings_mbmbs")
+
+[node name="apField" type="Label" parent="."]
+layout_mode = 0
+offset_top = 134.0
+offset_right = 64.0
+offset_bottom = 157.0
+text = "AP: 1111"
+label_settings = SubResource("LabelSettings_wkm5q")

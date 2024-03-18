@@ -69,8 +69,7 @@ func execute():
 func post_execute():
 	targetUnits.clear()
 	SignalBus.abilityExecuted.emit(self)
-	if AutoloadMe.isAllyTurn == true:
-		SignalBus.updateUI.emit(get_parent())
+	SignalBus.updateUI.emit(get_parent())
 
 func get_ap_cost():
 	return apCost

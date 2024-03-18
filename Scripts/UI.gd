@@ -1,5 +1,7 @@
 extends Control
 
+var boxArray = []
+
 func _ready():
 	SignalBus.connect("currentUnit", set_ui)
 	SignalBus.connect("updateUI", set_ui)
@@ -19,12 +21,15 @@ func set_ui(unit):
 		
 		var apVal = str(unit.get_temp_ap()) + " / " + str(unit.get_max_ap())
 		$InfoBox/APValue.set_text(apVal)
+		
+	for i in boxArray.size():
+		boxArray[i].update_display()
 
 func toggle_UI():
 	pass
 
 func draw_init_box():
-	var boxArray = []
+	boxArray = []
 	var sceneNode
 	
 	if get_node("../UI/ColorRect/HBoxContainer").get_children() != []:
@@ -34,7 +39,7 @@ func draw_init_box():
 		var scene = load("res://Scenes/Unit_Initiative_Box.tscn")
 		sceneNode = scene.instantiate()
 #		get_node("../CenterContainer/Sprite2D").texture = load("res://Assets/HUD/Init_Sprites/" + AutoloadMe.globalUnitList[i].fileName + "_Base_Still.png")
-		sceneNode.assign_sprite(AutoloadMe.globalUnitList[i].fileName)
+		sceneNode.assign_unit(AutoloadMe.globalUnitList[i])
 		boxArray.append(sceneNode)
 		if i == 0:
 			get_node("../UI/ColorRect/HBoxContainer").add_child(sceneNode)
