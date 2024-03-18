@@ -1,11 +1,5 @@
 extends TileMap
 
-#var astarGrid = AStarGrid2D.new()
-#var gridSize
-#@onready var start = local_to_map($Ally.position)
-#@onready var end = local_to_map($Ally.position)
-#@onready var tileSize = AutoloadMe.tile_size
-
 @onready var gridLengthX = get_used_rect().size.x
 @onready var gridLengthY = get_used_rect().size.y
 var oppFac

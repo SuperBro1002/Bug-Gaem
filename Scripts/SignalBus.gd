@@ -15,3 +15,4 @@ signal updateUI
 signal apChanged
 signal updateInitBox
 signal deleteInitObject
+signal adjustZoom

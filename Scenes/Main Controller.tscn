@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=27 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bofj7xwd6mfhg" path="res://Assets/Maps_Tiles/tutorial_map.png" id="13_pfrlb"]
 [ext_resource type="Texture2D" uid="uid://cxhgdv3ubm0ks" path="res://Assets/Maps_Tiles/fountain.png" id="14_fai0c"]
 [ext_resource type="Texture2D" uid="uid://drsv20o13l0qq" path="res://Assets/Grid.png" id="14_lspid"]
+[ext_resource type="Script" path="res://Scenes/Camera2D.gd" id="14_yc3dj"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_gei7j"]
 device = -1
@@ -297,6 +298,7 @@ offset_bottom = 152.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(384, 384)
+script = ExtResource("14_yc3dj")
 
 [node name="TutorialMapSprite" type="Sprite2D" parent="."]
 texture_filter = 1
