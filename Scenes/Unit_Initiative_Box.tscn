@@ -1,16 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0ntl6bwun7r8"]
+[gd_scene load_steps=3 format=3 uid="uid://b0ntl6bwun7r8"]
 
-[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Allies/Atlus/Atlus_Base_Still.png" id="1_l4s2v"]
+[ext_resource type="Script" path="res://Scenes/Unit_Initiative_Box.gd" id="1_0skit"]
+[ext_resource type="Texture2D" uid="uid://dj1fiy06dxn1l" path="res://Assets/HUD/Init_Sprites/Atlus_Base_Still.png" id="1_755gw"]
 
 [node name="CenterContainer" type="Control"]
 custom_minimum_size = Vector2(60, 40)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 72.0
+offset_right = 64.0
 offset_bottom = 112.0
+script = ExtResource("1_0skit")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(32, 72)
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("1_l4s2v")
+texture = ExtResource("1_755gw")

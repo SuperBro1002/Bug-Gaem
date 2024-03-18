@@ -27,6 +27,7 @@ var passiveList = []
 var incoming_dmg_type = null # pierce, null
 
 @export var Name = "Default"
+@export var fileName = "Default"
 @export var ID = 0
 @export var MaxHP = 20
 @export var CurrentHP = 20
@@ -161,6 +162,12 @@ func reset_acted():
 func get_batonpass():
 	return BatonPass
 
+func death():
+	# Remove from unitLists
+	# Refresh grid collision
+	# Redraw init boxes
+	# free from queue
+	pass
 
 func on_turn_start():
 	print(self, " ", CurrentAP)

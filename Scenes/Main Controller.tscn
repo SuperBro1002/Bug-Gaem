@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=26 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="9_qg5lv"]
 [ext_resource type="Script" path="res://Scripts/Ability1Button.gd" id="10_fxut6"]
 [ext_resource type="Script" path="res://Scripts/Ability2Button.gd" id="11_a6atw"]
-[ext_resource type="PackedScene" uid="uid://b0ntl6bwun7r8" path="res://Scenes/Unit_Initiative_Box.tscn" id="11_c8x18"]
 [ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Allies/Atlus/Atlus_Base_Still.png" id="11_um6k4"]
 [ext_resource type="Script" path="res://Scripts/Ability3Button.gd" id="12_v0gh6"]
 [ext_resource type="Texture2D" uid="uid://bofj7xwd6mfhg" path="res://Assets/Maps_Tiles/tutorial_map.png" id="13_pfrlb"]
@@ -68,6 +67,7 @@ z_index = 1
 position = Vector2(160, 416)
 scale = Vector2(1, 1)
 Name = "Atlus"
+fileName = "Atlus"
 MaxHP = 12
 CurrentHP = 12
 MaxAP = 8
@@ -82,12 +82,13 @@ Faction = 0
 position = Vector2(160, 288)
 scale = Vector2(1, 1)
 Name = "Triss"
+fileName = "Triss"
 MaxHP = 8
 CurrentHP = 8
 MaxAP = 8
 CurrentAP = 8
 TrueInit = 20
-CurrentInit = 4
+CurrentInit = 5
 Faction = 0
 
 [node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Triss" index="1"]
@@ -97,18 +98,20 @@ sprite_frames = ExtResource("5_l4uwr")
 position = Vector2(224, 416)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
+fileName = "Robopoly"
 MaxHP = 3
 CurrentHP = 3
 MaxAP = 6
 CurrentAP = 6
 TrueInit = 28
-CurrentInit = 5
+CurrentInit = 7
 Faction = 1
 
 [node name="Robo Poly3" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 position = Vector2(480, 224)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
+fileName = "Robopoly"
 MaxHP = 3
 CurrentHP = 3
 MaxAP = 6
@@ -121,12 +124,12 @@ Faction = 1
 position = Vector2(544, 544)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
+fileName = "Robopoly"
 MaxHP = 3
 CurrentHP = 3
 MaxAP = 6
 CurrentAP = 6
 TrueInit = 28
-CurrentInit = 0
 Faction = 1
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
@@ -134,6 +137,9 @@ visible = false
 position = Vector2(384, -48)
 script = ExtResource("6_cdygi")
 Name = "Jeff"
+fileName = "Jeff"
+TrueInit = -100
+CurrentInit = -100
 
 [node name="CombatManager" type="Node" parent="Grid"]
 script = ExtResource("8_3eshf")
@@ -288,12 +294,6 @@ color = Color(0.356863, 0.266667, 0.843137, 1)
 layout_mode = 0
 offset_right = 840.0
 offset_bottom = 152.0
-
-[node name="CenterContainer2" parent="CanvasLayer/UI/ColorRect/HBoxContainer" instance=ExtResource("11_c8x18")]
-layout_mode = 2
-
-[node name="CenterContainer" parent="CanvasLayer/UI/ColorRect/HBoxContainer" instance=ExtResource("11_c8x18")]
-layout_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(384, 384)

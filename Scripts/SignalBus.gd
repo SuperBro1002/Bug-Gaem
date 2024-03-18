@@ -14,3 +14,4 @@ signal abilityExecuted(ability)
 signal updateUI
 signal apChanged
 signal updateInitBox
+signal deleteInitObject

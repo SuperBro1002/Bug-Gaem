@@ -4,6 +4,7 @@ func _ready():
 	SignalBus.connect("currentUnit", set_ui)
 	SignalBus.connect("updateUI", set_ui)
 	SignalBus.connect("updateInitBox", draw_init_box)
+	draw_init_box()
 
 func set_ui(unit):
 	if unit.get_faction() == unit.fac.ALLY:
@@ -23,4 +24,27 @@ func toggle_UI():
 	pass
 
 func draw_init_box():
-	pass
+	var boxArray = []
+	var sceneNode
+	
+	if get_node("../UI/ColorRect/HBoxContainer").get_children() != []:
+		clear_init_box()
+	
+	for i in AutoloadMe.globalUnitList.size() - 1:
+		var scene = load("res://Scenes/Unit_Initiative_Box.tscn")
+		sceneNode = scene.instantiate()
+#		get_node("../CenterContainer/Sprite2D").texture = load("res://Assets/HUD/Init_Sprites/" + AutoloadMe.globalUnitList[i].fileName + "_Base_Still.png")
+		sceneNode.assign_sprite(AutoloadMe.globalUnitList[i].fileName)
+		boxArray.append(sceneNode)
+		if i == 0:
+			get_node("../UI/ColorRect/HBoxContainer").add_child(sceneNode)
+		else:
+			boxArray[i - 1].add_sibling(sceneNode)
+	print("BOXY: ", boxArray)
+
+func clear_init_box():
+	var nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
+	
+	for i in nodeList:
+		get_node("../UI/ColorRect/HBoxContainer").remove_child(nodeList[i])
+		SignalBus.deleteInitObject.emit()
