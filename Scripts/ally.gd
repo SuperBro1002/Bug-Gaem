@@ -45,7 +45,7 @@ func move(dir):
 				tween.tween_property(self, "position",
 				position + dir * tileSize.x, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 				tempAP = self.get_current_ap() - pathArray.size() + 1
-				SignalBus.apChanged.emit()
+				SignalBus.changeButtonState.emit()
 				SignalBus.updateUI.emit(self)
 				moving = true
 				await tween.finished
@@ -53,7 +53,7 @@ func move(dir):
 				abilityStartPoint = grid.convert_to_map(position)
 
 func unique_turn_start():
-	SignalBus.apChanged.emit()
+	SignalBus.changeButtonState.emit()
 	SignalBus.updateUI.emit(self)
 
 func unique_turn_end():

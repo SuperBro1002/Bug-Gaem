@@ -171,6 +171,7 @@ func death():
 
 func on_turn_start():
 	print(self, " ", CurrentAP)
+	SignalBus.changeButtonState.emit()
 	start = grid.local_to_map(position)
 	run_passives(methodType.ON_TURN_START, null)
 	find_and_delete_passives()

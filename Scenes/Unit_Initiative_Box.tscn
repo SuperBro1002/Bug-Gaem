@@ -10,12 +10,27 @@ font_size = 12
 font_size = 12
 
 [node name="CenterContainer" type="Control"]
-custom_minimum_size = Vector2(60, 40)
+custom_minimum_size = Vector2(64, 152)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 64.0
-offset_bottom = 112.0
+offset_bottom = 152.0
 script = ExtResource("1_0skit")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 112.0
+color = Color(0, 0.172549, 0.517647, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 34.0
+offset_right = 62.0
+offset_bottom = 110.0
+color = Color(0, 0.517647, 0.968627, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

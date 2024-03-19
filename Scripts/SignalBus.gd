@@ -12,7 +12,8 @@ signal activelyQueueing(status)
 signal abilityIsQueued
 signal abilityExecuted(ability)
 signal updateUI
-signal apChanged
+signal changeButtonState
 signal updateInitBox
 signal deleteInitObject
 signal adjustZoom
+signal moveCamera

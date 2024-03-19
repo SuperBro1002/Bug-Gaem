@@ -61,11 +61,14 @@ func _unhandled_input(event):
 				print("space pressed")
 				turnPointer.on_turn_end()
 		
+		if Input.is_action_just_pressed("right_click"):
+			SignalBus.moveCamera.emit()
+		
 		if Input.is_action_just_pressed("zoom_in"):
-			SignalBus.adjustZoom.emit(0.1)
+			SignalBus.adjustZoom.emit(0.5)
 		
 		if Input.is_action_just_pressed("zoom_out"):
-			SignalBus.adjustZoom.emit(-0.1)
+			SignalBus.adjustZoom.emit(-0.5)
 	
 	else: return
 
