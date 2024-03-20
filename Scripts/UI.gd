@@ -1,12 +1,13 @@
 extends Control
 
 var boxArray = []
-var nodeList
+var nodeList = []
 
 func _ready():
 	SignalBus.connect("currentUnit", set_ui)
 	SignalBus.connect("updateUI", set_ui)
 	SignalBus.connect("updateInitBox", draw_init_box)
+	SignalBus.connect("actedUI", set_init_colors)
 	draw_init_box()
 
 func set_ui(unit):
@@ -32,8 +33,6 @@ func toggle_UI():
 func draw_init_box():
 	boxArray = []
 	var sceneNode
-	nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
-	
 	
 	if nodeList != []:
 		clear_init_box()
@@ -48,6 +47,11 @@ func draw_init_box():
 			get_node("../UI/ColorRect/HBoxContainer").add_child(sceneNode)
 		else:
 			boxArray[i - 1].add_sibling(sceneNode)
+	nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
+
+func set_init_colors():
+	for i in nodeList.size():
+		nodeList[i].set_colors()
 
 func clear_init_box():
 	nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()

@@ -190,6 +190,7 @@ func on_turn_end():
 	
 	canMove = true
 	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
+	SignalBus.actedUI.emit()
 	print("	", Name, " has acted.")
 	unique_turn_end()
 

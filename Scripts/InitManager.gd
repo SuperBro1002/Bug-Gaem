@@ -29,6 +29,7 @@ func next_round():
 	for j in (AutoloadMe.globalUnitList.size()):
 		AutoloadMe.globalUnitList[j].reset_acted()
 		AutoloadMe.globalUnitList[j].reset_ap()
+	SignalBus.actedUI.emit()
 	currentUnitTurn = AutoloadMe.globalUnitList[0]
 	print("ROUND END. RESETTING: ", currentUnitTurn)
 	SignalBus.currentUnit.emit(currentUnitTurn)

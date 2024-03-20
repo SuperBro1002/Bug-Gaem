@@ -18,3 +18,4 @@ signal deleteInitObject
 signal adjustZoom
 signal moveCamera
 signal deleteMe(unit)
+signal actedUI

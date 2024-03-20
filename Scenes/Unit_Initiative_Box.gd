@@ -19,6 +19,13 @@ func update_display():
 	
 	var apVal = str(myUnit.get_current_ap()) + " / " + str(myUnit.get_max_ap())
 	$apField.set_text("AP: " + apVal)
+
+
+func set_colors():
+	if myUnit.get_batonpass() == myUnit.TS.ACTED:
+		set_modulate(Color(0.42, 0.42, 0.42))
+	else:
+		set_modulate(Color(1,1,1))
 	
 
 func remove_me():
