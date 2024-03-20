@@ -17,3 +17,4 @@ signal updateInitBox
 signal deleteInitObject
 signal adjustZoom
 signal moveCamera
+signal deleteMe(unit)

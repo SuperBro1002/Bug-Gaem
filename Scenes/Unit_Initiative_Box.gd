@@ -4,6 +4,7 @@ var myUnit
 
 func _ready():
 	SignalBus.connect("deleteInitObject", remove_me)
+	SignalBus.connect("deleteMe", death)
 
 func assign_unit(unit):
 	myUnit = unit
@@ -22,3 +23,18 @@ func update_display():
 
 func remove_me():
 	queue_free()
+
+func death(toBeDeleted):
+	if toBeDeleted == myUnit:
+		if myUnit.Faction == myUnit.fac.ENEMY:
+			AutoloadMe.globalUnitList.erase(myUnit)
+			if myUnit.Faction == myUnit.fac.ALLY:
+				AutoloadMe.globalAllyList.erase(myUnit)
+			else:
+				AutoloadMe.globalEnemyList.erase(myUnit)
+			
+			get_parent().get_parent().get_parent().nodeList = []
+			SignalBus.updateInitBox.emit()
+			SignalBus.updateGrid.emit()
+			myUnit.queue_free()
+			queue_free()

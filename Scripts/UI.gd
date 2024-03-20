@@ -1,6 +1,7 @@
 extends Control
 
 var boxArray = []
+var nodeList
 
 func _ready():
 	SignalBus.connect("currentUnit", set_ui)
@@ -31,8 +32,10 @@ func toggle_UI():
 func draw_init_box():
 	boxArray = []
 	var sceneNode
+	nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
 	
-	if get_node("../UI/ColorRect/HBoxContainer").get_children() != []:
+	
+	if nodeList != []:
 		clear_init_box()
 	
 	for i in AutoloadMe.globalUnitList.size() - 1:
@@ -45,11 +48,9 @@ func draw_init_box():
 			get_node("../UI/ColorRect/HBoxContainer").add_child(sceneNode)
 		else:
 			boxArray[i - 1].add_sibling(sceneNode)
-	print("BOXY: ", boxArray)
 
 func clear_init_box():
-	var nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
-	
+	nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
 	for i in nodeList:
-		get_node("../UI/ColorRect/HBoxContainer").remove_child(nodeList[i])
+		get_node("../UI/ColorRect/HBoxContainer").remove_child(i)
 		SignalBus.deleteInitObject.emit()

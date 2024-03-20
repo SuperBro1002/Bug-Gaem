@@ -1,8 +1,5 @@
 extends Node
 
-var unitList
-var allyList = []
-var enemyList = []
 var currentUnitTurn
 @onready var unitMan = $UnitManager
 
@@ -13,42 +10,45 @@ func _ready():
 
 # Probably main function
 func next_turn():
-	for i in (unitList.size()):
-		if unitList[i].get_batonpass() == unitList[i].TS.BATONPASS:
-			currentUnitTurn = unitList[i]
+	for i in (AutoloadMe.globalUnitList.size()):
+		if AutoloadMe.globalUnitList[i].get_batonpass() == AutoloadMe.globalUnitList[i].TS.BATONPASS:
+			currentUnitTurn = AutoloadMe.globalUnitList[i]
 			#print("FOUND BATON PASS TARGET: ", currentUnitTurn)
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.on_turn_start()
 			return
-	for i in (unitList.size()):
-		if unitList[i].get_batonpass() == unitList[i].TS.NOTACTED:
-			currentUnitTurn = unitList[i]
+	for i in (AutoloadMe.globalUnitList.size()):
+		if AutoloadMe.globalUnitList[i].get_batonpass() == AutoloadMe.globalUnitList[i].TS.NOTACTED:
+			currentUnitTurn = AutoloadMe.globalUnitList[i]
 			#print("FOUND NORMAL TARGET: ", currentUnitTurn)
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.on_turn_start()
 			return
 
 func next_round():
-	for j in (unitList.size()):
-		unitList[j].reset_acted()
-		unitList[j].reset_ap()
-	currentUnitTurn = unitList[0]
+	for j in (AutoloadMe.globalUnitList.size()):
+		AutoloadMe.globalUnitList[j].reset_acted()
+		AutoloadMe.globalUnitList[j].reset_ap()
+	currentUnitTurn = AutoloadMe.globalUnitList[0]
 	print("ROUND END. RESETTING: ", currentUnitTurn)
 	SignalBus.currentUnit.emit(currentUnitTurn)
 	currentUnitTurn.on_turn_start()
 
 # Secret unit in last pos to end round
 func make_unit_list():
-	unitList = unitMan.get_children()
+	var unitList = unitMan.get_children()
+	var allyList = []
+	var enemyList = []
+	AutoloadMe.globalUnitList = unitList
+	
 	sort_unit_list()
 	for i in unitList.size():
 		if unitList[i].get_faction() == unitList[i].fac.ALLY:
-			allyList.append(unitList[i])
+			allyList.append(AutoloadMe.globalUnitList[i])
 		elif unitList[i].get_faction() == unitList[i].fac.ENEMY:
-			enemyList.append(unitList[i])
+			enemyList.append(AutoloadMe.globalUnitList[i])
 	
 	AutoloadMe.globalAllyList = allyList
-	AutoloadMe.globalUnitList = unitList
 	AutoloadMe.globalEnemyList = enemyList
 	SignalBus.updateInitBox.emit()
 	print("UnitList: ", unitList)
@@ -56,10 +56,10 @@ func make_unit_list():
 	print("EnemyList: ", enemyList)
 
 func get_unit_list():
-	return unitList
+	return AutoloadMe.globalUnitList
 
 func sort_unit_list():
-	unitList.sort_custom(func(a,b): return a.CurrentInit > b.CurrentInit)
+	AutoloadMe.globalUnitList.sort_custom(func(a,b): return a.CurrentInit > b.CurrentInit)
 
 func get_current_turn():
 	return currentUnitTurn

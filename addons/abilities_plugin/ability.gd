@@ -70,6 +70,8 @@ func post_execute():
 	targetUnits.clear()
 	SignalBus.abilityExecuted.emit(self)
 	SignalBus.updateUI.emit(get_parent())
+	if get_parent().Faction == get_parent().fac.ALLY:
+		SignalBus.changeButtonState.emit()
 
 func get_ap_cost():
 	return apCost

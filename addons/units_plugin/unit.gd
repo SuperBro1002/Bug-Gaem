@@ -85,6 +85,8 @@ func lose_health(dmgVal):
 	CurrentHP = CurrentHP - dmgVal
 	if CurrentHP < 0:
 		CurrentHP = 0
+	if CurrentHP == 0:
+		SignalBus.deleteMe.emit(self)
 
 func get_max_hp():
 	# Returns unit's max hp
@@ -162,12 +164,7 @@ func reset_acted():
 func get_batonpass():
 	return BatonPass
 
-func death():
-	# Remove from unitLists
-	# Refresh grid collision
-	# Redraw init boxes
-	# free from queue
-	pass
+
 
 func on_turn_start():
 	print(self, " ", CurrentAP)

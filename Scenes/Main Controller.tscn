@@ -327,7 +327,7 @@ position = Vector2(384, 383)
 texture = SubResource("PlaceholderTexture2D_46uv7")
 
 [node name="GridOverlay" type="Sprite2D" parent="GridOverlayMask"]
-modulate = Color(1, 1, 1, 0.466667)
+modulate = Color(1, 1, 1, 0.113725)
 texture_filter = 1
 texture = ExtResource("17_lbcx0")
 
