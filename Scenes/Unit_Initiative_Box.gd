@@ -33,11 +33,12 @@ func remove_me():
 
 func death(toBeDeleted):
 	if toBeDeleted == myUnit:
-		if myUnit.Faction == myUnit.fac.ENEMY:
+		if myUnit.Faction == myUnit.fac.ENEMY: #TEMP IF STATEMENT TO PREVENT ALLIES FROM BEING ERASED
 			AutoloadMe.globalUnitList.erase(myUnit)
 			if myUnit.Faction == myUnit.fac.ALLY:
 				AutoloadMe.globalAllyList.erase(myUnit)
 			else:
+				AutoloadMe.deathCount += 1
 				AutoloadMe.globalEnemyList.erase(myUnit)
 			
 			get_parent().get_parent().get_parent().nodeList = []
