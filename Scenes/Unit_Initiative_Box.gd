@@ -11,7 +11,6 @@ func assign_unit(unit):
 	var spritePath = load("res://Assets/HUD/Init_Sprites/" + myUnit.fileName + "_Base_Still.png")
 	get_node("Sprite2D").texture = spritePath
 	update_display()
-	#print("UIIIIIIIIIIIIIII ", get_node("Sprite2D"))
 
 func update_display():
 	var hpVal = str(myUnit.get_current_hp()) + " / " + str(myUnit.get_max_hp())
