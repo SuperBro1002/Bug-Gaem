@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
 [ext_resource type="Script" path="res://Scripts/InitManager.gd" id="3_m2yok"]
-[ext_resource type="PackedScene" uid="uid://en47igj175g3" path="res://Scenes/ally.tscn" id="4_tt5vw"]
+[ext_resource type="PackedScene" uid="uid://cofaiq0bowqml" path="res://Scenes/ally.tscn" id="4_tt5vw"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="5_4smxl"]
 [ext_resource type="SpriteFrames" uid="uid://fy8e8wgvo05l" path="res://Scenes/Sprite Frames/Triss.tres" id="5_l4uwr"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="6_cdygi"]
@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://Scripts/Ability3Button.gd" id="12_v0gh6"]
 [ext_resource type="Texture2D" uid="uid://bofj7xwd6mfhg" path="res://Assets/Maps_Tiles/tutorial_map.png" id="13_pfrlb"]
 [ext_resource type="Texture2D" uid="uid://cxhgdv3ubm0ks" path="res://Assets/Maps_Tiles/fountain.png" id="14_fai0c"]
-[ext_resource type="Script" path="res://Scenes/Camera2D.gd" id="14_yc3dj"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="14_i827p"]
 [ext_resource type="Texture2D" uid="uid://0hgw2imncrvb" path="res://Assets/Maps_Tiles/GridLayer.png" id="17_lbcx0"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_gei7j"]
@@ -66,13 +66,12 @@ script = ExtResource("3_m2yok")
 [node name="UnitManager" type="Node" parent="Grid/InitManager"]
 
 [node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
-z_index = 1
 position = Vector2(160, 416)
 scale = Vector2(1, 1)
 Name = "Atlus"
 fileName = "Atlus"
-MaxHP = 12
-CurrentHP = 12
+MaxHP = 120
+CurrentHP = 120
 MaxAP = 8
 CurrentAP = 8
 TrueInit = 10
@@ -102,8 +101,8 @@ position = Vector2(224, 416)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
-MaxHP = 3
-CurrentHP = 3
+MaxHP = 10
+CurrentHP = 10
 MaxAP = 6
 CurrentAP = 6
 TrueInit = 28
@@ -141,6 +140,8 @@ position = Vector2(384, -48)
 script = ExtResource("6_cdygi")
 Name = "Jeff"
 fileName = "Jeff"
+MaxHP = 200
+CurrentHP = 200
 TrueInit = -100
 CurrentInit = -100
 
@@ -295,14 +296,13 @@ color = Color(0.356863, 0.266667, 0.843137, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/ColorRect"]
 layout_mode = 0
-offset_left = 4.0
-offset_right = 836.0
+offset_right = 832.0
 offset_bottom = 152.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 4
 position = Vector2(384, 384)
-script = ExtResource("14_yc3dj")
+script = ExtResource("14_i827p")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
 visible = false

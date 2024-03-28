@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6aok4igip3j3"]
+
+[ext_resource type="Script" path="res://Scripts/floating_hp_bar.gd" id="1_lhr8h"]
+
+[node name="Floating_HP_Bar" type="Control"]
+custom_minimum_size = Vector2(-1, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -40.0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 24.0
+pivot_offset = Vector2(40, -16)
+script = ExtResource("1_lhr8h")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="Temp_HP_Box" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 8.0
+pivot_offset = Vector2(40, -16)
+color = Color(1, 1, 1, 0)
+
+[node name="HP_Seg_Holder" type="HFlowContainer" parent="Temp_HP_Box"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_right = 80.0
+offset_bottom = 8.0
+pivot_offset = Vector2(40, -16)
+
+[node name="ProgressBar" type="ProgressBar" parent="Temp_HP_Box"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 16.0
+offset_right = 64.0
+offset_bottom = 8.0
+show_percentage = false

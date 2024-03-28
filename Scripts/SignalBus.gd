@@ -1,6 +1,7 @@
 extends Node
 
 signal hasMoved(unit, pos)
+signal startTurn
 signal endTurn
 signal currentUnit
 signal endRound
@@ -19,3 +20,5 @@ signal adjustZoom
 signal moveCamera
 signal deleteMe(unit)
 signal actedUI
+signal updateFloatingHP
+signal updateFloatingAP

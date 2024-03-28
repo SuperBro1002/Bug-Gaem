@@ -52,6 +52,20 @@ var storedBatonPass = TS.NOTACTED
 
 func _enter_tree():
 	SignalBus.connect("abilityExecuted",on_execute)
+	make_floating_hp()
+	make_floating_ap()
+	
+
+func make_floating_hp():
+	var scene = load("res://Scenes/floating_hp_bar.tscn")
+	var sceneNode = scene.instantiate()
+	add_child(sceneNode)
+
+func make_floating_ap():
+	var scene = load("res://Scenes/floating_ap.tscn")
+	var sceneNode = scene.instantiate()
+	add_child(sceneNode)
+
 
 func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init, faction, bp):
 	# Assign the given values to their respective stats
@@ -79,6 +93,7 @@ func gain_health(recoverVal):
 	CurrentHP = CurrentHP + recoverVal
 	if CurrentHP > MaxHP:
 		CurrentHP = MaxHP
+	SignalBus.updateFloatingHP.emit(self)
 
 func lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
@@ -87,6 +102,7 @@ func lose_health(dmgVal):
 		CurrentHP = 0
 	if CurrentHP == 0:
 		SignalBus.deleteMe.emit(self)
+	SignalBus.updateFloatingHP.emit(self)
 
 func get_max_hp():
 	# Returns unit's max hp
@@ -168,6 +184,7 @@ func get_batonpass():
 
 func on_turn_start():
 	print(self, " ", CurrentAP)
+	SignalBus.startTurn.emit()
 	SignalBus.changeButtonState.emit()
 	start = grid.local_to_map(position)
 	run_passives(methodType.ON_TURN_START, null)

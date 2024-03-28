@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0ntl6bwun7r8"]
 
-[ext_resource type="Script" path="res://Scenes/Unit_Initiative_Box.gd" id="1_0skit"]
 [ext_resource type="Texture2D" uid="uid://dj1fiy06dxn1l" path="res://Assets/HUD/Init_Sprites/Atlus_Base_Still.png" id="1_755gw"]
+[ext_resource type="Script" path="res://Scripts/Unit_Initiative_Box.gd" id="1_ldvsk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mbmbs"]
 font_size = 12
@@ -15,7 +15,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 64.0
 offset_bottom = 152.0
-script = ExtResource("1_0skit")
+script = ExtResource("1_ldvsk")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0

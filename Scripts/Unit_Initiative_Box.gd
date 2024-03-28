@@ -31,6 +31,7 @@ func remove_me():
 	queue_free()
 
 func death(toBeDeleted):
+	# Removes unit from UnitLists so it won't be added to InitBox
 	if toBeDeleted == myUnit:
 		if myUnit.Faction == myUnit.fac.ENEMY: #TEMP IF STATEMENT TO PREVENT ALLIES FROM BEING ERASED
 			AutoloadMe.globalUnitList.erase(myUnit)
@@ -40,7 +41,7 @@ func death(toBeDeleted):
 				AutoloadMe.deathCount += 1
 				AutoloadMe.globalEnemyList.erase(myUnit)
 			
-			get_parent().get_parent().get_parent().nodeList = []
+			#get_parent().get_parent().get_parent().nodeList = [] # 
 			SignalBus.updateInitBox.emit()
 			SignalBus.updateGrid.emit()
 			myUnit.queue_free()

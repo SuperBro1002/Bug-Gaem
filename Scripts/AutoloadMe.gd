@@ -42,6 +42,17 @@ func _unhandled_input(event):
 	if turnPointer == null:
 		print("NO UNIT")
 		return
+	
+	if Input.is_action_just_pressed("right_click"):
+		SignalBus.moveCamera.emit()
+		
+	if Input.is_action_just_pressed("zoom_in"):
+		SignalBus.adjustZoom.emit(0.5)
+		
+	if Input.is_action_just_pressed("zoom_out"):
+		SignalBus.adjustZoom.emit(-0.5)
+	
+	
 	if turnPointer.Faction == turnPointer.fac.ALLY:
 		if turnPointer.moving:
 			return
@@ -61,15 +72,6 @@ func _unhandled_input(event):
 			elif queueState == false:
 				print("space pressed")
 				turnPointer.on_turn_end()
-		
-		if Input.is_action_just_pressed("right_click"):
-			SignalBus.moveCamera.emit()
-		
-		if Input.is_action_just_pressed("zoom_in"):
-			SignalBus.adjustZoom.emit(0.5)
-		
-		if Input.is_action_just_pressed("zoom_out"):
-			SignalBus.adjustZoom.emit(-0.5)
 	
 	else: return
 

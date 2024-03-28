@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://catv757s5fcdy"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 5.0
+offset_bottom = 8.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_horizontal_guides_ = []
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 8.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1, 8)
+layout_mode = 0
+offset_left = 1.0
+offset_right = 4.0
+offset_bottom = 8.0
+color = Color(0.6, 0, 0, 1)
+metadata/_edit_vertical_guides_ = [1.0]
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1, 8)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 2.0
+offset_right = 3.0
+offset_bottom = 8.0
+color = Color(0.819608, 0, 0, 1)
+metadata/_edit_vertical_guides_ = [1.0]
