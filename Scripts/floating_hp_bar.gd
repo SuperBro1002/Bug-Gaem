@@ -13,9 +13,6 @@ func make_bar():
 	$Temp_HP_Box/ProgressBar.set_max(maxHP)
 	$Temp_HP_Box/ProgressBar.set_value(maxHP)
 	
-	
-	
-	
 	for i in maxHP:
 		var scene = load("res://Scenes/hp_seg.tscn")
 		var sceneNode = scene.instantiate()
