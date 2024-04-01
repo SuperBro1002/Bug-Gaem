@@ -1,5 +1,6 @@
 extends Control
 
+var animationSpeed = 4
 var boxArray = []
 var nodeList
 
@@ -8,6 +9,7 @@ func _ready():
 	SignalBus.connect("updateUI", set_ui)
 	SignalBus.connect("updateInitBox", draw_init_box)
 	SignalBus.connect("actedUI", set_init_colors)
+	SignalBus.connect("mouseHovering", toggle_secondary)
 	draw_init_box()
 
 func set_ui(unit):
@@ -60,3 +62,11 @@ func clear_init_box():
 	for i in nodeList:
 		get_node("../UI/ColorRect/HBoxContainer").remove_child(i)
 		SignalBus.deleteInitObject.emit()
+
+func toggle_secondary(isHovering):
+	var tween = create_tween()
+	if isHovering:
+		tween.tween_property(get_node("../UI/SecondaryInfoBox"), "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	else:
+		tween.tween_property(get_node("../UI/SecondaryInfoBox"), "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+

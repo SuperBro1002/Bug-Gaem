@@ -47,6 +47,7 @@ var incoming_dmg_type = null # pierce, null
 @onready var abilityStartPoint = grid.convert_to_map(position)
 @onready var end = grid.convert_to_map(position)
 
+var myHPBar
 var canMove = true
 var storedBatonPass = TS.NOTACTED
 
@@ -252,3 +253,11 @@ func find_and_delete_passives():
 			SignalBus.deletePassives.emit()
 		else:
 			i = 0 # THIS SEEMS TO WORK BUT I FEEL LIKE IT SHOULDN'T
+
+func _mouse_shape_enter(shape_idx):
+	myHPBar.fade(true)
+	SignalBus.mouseHovering.emit(true)
+
+func _mouse_shape_exit(shape_idx):
+	myHPBar.fade(false)
+	SignalBus.mouseHovering.emit(false)

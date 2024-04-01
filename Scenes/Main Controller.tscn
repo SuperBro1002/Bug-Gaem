@@ -166,6 +166,19 @@ mouse_filter = 2
 shortcut_context = NodePath("InfoBox/AbilityBox")
 script = ExtResource("9_qg5lv")
 
+[node name="SecondaryInfoBox" type="ColorRect" parent="CanvasLayer/UI"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -590.0
+offset_top = 23.0
+offset_right = -16.0
+offset_bottom = 381.0
+grow_horizontal = 0
+color = Color(0.360784, 0.270588, 0.839216, 0.501961)
+
 [node name="InfoBox" type="ColorRect" parent="CanvasLayer/UI"]
 layout_mode = 1
 anchors_preset = 8
@@ -180,7 +193,7 @@ offset_bottom = 508.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.774753, 0.774753)
-color = Color(0.141286, 0.351438, 0.842539, 1)
+color = Color(0.141176, 0.352941, 0.843137, 1)
 
 [node name="AbilityBox" type="HBoxContainer" parent="CanvasLayer/UI/InfoBox"]
 layout_mode = 1
@@ -321,12 +334,13 @@ z_index = 1
 texture_filter = 1
 texture = ExtResource("14_fai0c")
 
-[node name="GridOverlayMask" type="Sprite2D" parent="."]
+[node name="GridOverlayMask" type="Sprite2D" parent="TutorialMapSprite"]
 clip_children = 1
-position = Vector2(384, 383)
+position = Vector2(0.237259, -2.60983)
+scale = Vector2(0.474514, 0.474514)
 texture = SubResource("PlaceholderTexture2D_46uv7")
 
-[node name="GridOverlay" type="Sprite2D" parent="GridOverlayMask"]
+[node name="GridOverlay" type="Sprite2D" parent="TutorialMapSprite/GridOverlayMask"]
 modulate = Color(1, 1, 1, 0.113725)
 texture_filter = 1
 texture = ExtResource("17_lbcx0")

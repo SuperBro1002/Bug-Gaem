@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/floating_hp_bar.gd" id="1_lhr8h"]
 
 [node name="Floating_HP_Bar" type="Control"]
+modulate = Color(1, 1, 1, 0.501961)
 clip_contents = true
 layout_mode = 3
 anchors_preset = 0
@@ -11,6 +12,7 @@ offset_top = 16.0
 offset_right = 44.0
 offset_bottom = 31.0
 pivot_offset = Vector2(40, -16)
+mouse_filter = 2
 script = ExtResource("1_lhr8h")
 metadata/_edit_horizontal_guides_ = []
 
@@ -19,6 +21,7 @@ layout_mode = 0
 offset_right = 80.0
 offset_bottom = 8.0
 pivot_offset = Vector2(40, -16)
+mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
 [node name="HP_Seg_Holder" type="FlowContainer" parent="Temp_HP_Box"]
@@ -29,6 +32,7 @@ offset_left = 8.0
 offset_right = 70.0
 offset_bottom = 9.0
 pivot_offset = Vector2(32, -16)
+mouse_filter = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 7
 
@@ -39,4 +43,5 @@ layout_mode = 0
 offset_left = 16.0
 offset_right = 64.0
 offset_bottom = 8.0
+mouse_filter = 2
 show_percentage = false
