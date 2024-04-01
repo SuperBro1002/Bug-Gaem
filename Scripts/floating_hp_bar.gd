@@ -1,5 +1,6 @@
 extends Control
 
+var animationSpeed = 4
 var maxHP
 var currentHP
 var segList = []
@@ -10,6 +11,7 @@ func _ready():
 	make_bar()
 
 func make_bar():
+	get_parent().myHPBar = self
 	$Temp_HP_Box/ProgressBar.set_max(maxHP)
 	$Temp_HP_Box/ProgressBar.set_value(maxHP)
 	
@@ -36,4 +38,11 @@ func update(myUnit):
 			await get_tree().create_timer(0.05).timeout
 		else:
 			segList[i].set_visible(true)
-	
+
+func fade(isHovering):
+	print(isHovering)
+	var tween = create_tween()
+	if isHovering:
+		tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	else:
+		tween.tween_property(self, "modulate:a", 0.5, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)

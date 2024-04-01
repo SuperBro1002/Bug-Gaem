@@ -7,6 +7,7 @@ offset_right = 5.0
 offset_bottom = 8.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 metadata/_edit_horizontal_guides_ = []
 
 [node name="ColorRect2" type="ColorRect" parent="."]
@@ -14,6 +15,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 5.0
 offset_bottom = 8.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -24,6 +26,7 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 4.0
 offset_bottom = 7.0
+mouse_filter = 2
 color = Color(0.6, 0, 0, 1)
 metadata/_edit_vertical_guides_ = [1.0]
 
@@ -35,5 +38,6 @@ offset_left = 2.0
 offset_top = 1.0
 offset_right = 3.0
 offset_bottom = 7.0
+mouse_filter = 2
 color = Color(0.819608, 0, 0, 1)
 metadata/_edit_vertical_guides_ = [1.0]

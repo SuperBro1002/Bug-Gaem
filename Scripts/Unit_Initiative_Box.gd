@@ -10,6 +10,8 @@ func assign_unit(unit):
 	myUnit = unit
 	var spritePath = load("res://Assets/HUD/Init_Sprites/" + myUnit.fileName + "_Base_Still.png")
 	get_node("Sprite2D").texture = spritePath
+	if unit.get_faction() == unit.fac.ENEMY:
+		$affilBox.set_color(Color(1,0.1,0.2,1,))
 	update_display()
 
 func update_display():
