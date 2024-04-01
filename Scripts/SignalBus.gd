@@ -22,4 +22,3 @@ signal deleteMe(unit)
 signal actedUI
 signal updateFloatingHP
 signal updateFloatingAP
-signal mouseHovering(isHovering)
