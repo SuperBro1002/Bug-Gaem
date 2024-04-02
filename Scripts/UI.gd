@@ -26,7 +26,7 @@ func set_ui(unit):
 		var apVal = str(unit.get_temp_ap()) + " / " + str(unit.get_max_ap())
 		$InfoBox/APValue.set_text(apVal)
 		SignalBus.updateFloatingAP.emit(unit.get_temp_ap())
-		
+	
 	for i in boxArray.size():
 		boxArray[i].update_display()
 

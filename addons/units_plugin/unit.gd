@@ -255,9 +255,12 @@ func find_and_delete_passives():
 			i = 0 # THIS SEEMS TO WORK BUT I FEEL LIKE IT SHOULDN'T
 
 func _mouse_shape_enter(shape_idx):
-	myHPBar.fade(true)
-	SignalBus.mouseHovering.emit(true)
+	if AutoloadMe.turnPointer != self or Faction == fac.ENEMY:
+		myHPBar.fade(true)
+		AutoloadMe.hoveredUnit = self
+		SignalBus.mouseHovering.emit(true)
 
 func _mouse_shape_exit(shape_idx):
-	myHPBar.fade(false)
-	SignalBus.mouseHovering.emit(false)
+	if AutoloadMe.hoveredUnit == self:
+		myHPBar.fade(false)
+		SignalBus.mouseHovering.emit(false)

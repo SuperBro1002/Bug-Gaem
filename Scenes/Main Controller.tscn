@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=29 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/CombatManager.gd" id="8_3eshf"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="9_qg5lv"]
 [ext_resource type="Script" path="res://Scripts/Ability1Button.gd" id="10_fxut6"]
+[ext_resource type="PackedScene" uid="uid://gdr7wfqwmtao" path="res://Scenes/secondary_info_box.tscn" id="10_tm0nh"]
 [ext_resource type="Script" path="res://Scripts/Ability2Button.gd" id="11_a6atw"]
 [ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Allies/Atlus/Atlus_Base_Still.png" id="11_um6k4"]
 [ext_resource type="Script" path="res://Scripts/Ability3Button.gd" id="12_v0gh6"]
@@ -166,18 +167,17 @@ mouse_filter = 2
 shortcut_context = NodePath("InfoBox/AbilityBox")
 script = ExtResource("9_qg5lv")
 
-[node name="SecondaryInfoBox" type="ColorRect" parent="CanvasLayer/UI"]
+[node name="SecondaryInfoBox" parent="CanvasLayer/UI" instance=ExtResource("10_tm0nh")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -590.0
-offset_top = 23.0
-offset_right = -16.0
-offset_bottom = 381.0
-grow_horizontal = 0
-color = Color(0.360784, 0.270588, 0.839216, 0.501961)
+anchor_left = 0.991
+anchor_top = 0.024
+anchor_right = 0.991
+anchor_bottom = 0.024
+offset_left = -574.448
+offset_top = -0.232
+offset_right = -0.44812
+offset_bottom = 357.768
 
 [node name="InfoBox" type="ColorRect" parent="CanvasLayer/UI"]
 layout_mode = 1

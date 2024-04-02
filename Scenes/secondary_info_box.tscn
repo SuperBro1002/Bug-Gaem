@@ -1,0 +1,153 @@
+[gd_scene load_steps=7 format=3 uid="uid://gdr7wfqwmtao"]
+
+[ext_resource type="Script" path="res://Scripts/secondary_info_box.gd" id="1_oorkw"]
+[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Allies/Atlus/Atlus_Base_Still.png" id="2_pfi1r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8j6oi"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_cwfcy"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_ds8f4"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_cten2"]
+font_size = 12
+
+[node name="SecondaryInfoBox" type="ColorRect"]
+custom_minimum_size = Vector2(380, 0)
+anchors_preset = -1
+offset_left = 1116.0
+offset_top = 16.0
+offset_right = 1695.0
+offset_bottom = 396.0
+size_flags_vertical = 3
+color = Color(0.141176, 0.352941, 0.843137, 1)
+script = ExtResource("1_oorkw")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+offset_left = 144.0
+offset_top = 6.0
+offset_right = 236.0
+offset_bottom = 59.0
+text = "Atlus"
+label_settings = SubResource("LabelSettings_8j6oi")
+
+[node name="Abilities" type="Label" parent="."]
+layout_mode = 2
+offset_left = 12.0
+offset_top = 129.0
+offset_right = 163.0
+offset_bottom = 182.0
+text = "Abilities"
+label_settings = SubResource("LabelSettings_8j6oi")
+metadata/_edit_use_anchors_ = true
+
+[node name="HPLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 142.0
+offset_top = 57.0
+offset_right = 196.0
+offset_bottom = 96.0
+text = "HP:"
+label_settings = SubResource("LabelSettings_cwfcy")
+
+[node name="PortraitBox" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 122.0
+offset_bottom = 122.0
+color = Color(0.168627, 0.164706, 0.592157, 1)
+
+[node name="PortraitSprite" type="Sprite2D" parent="PortraitBox"]
+texture_filter = 1
+position = Vector2(55.9999, 54)
+scale = Vector2(2.858, 2.858)
+texture = ExtResource("2_pfi1r")
+
+[node name="HPValue" type="Label" parent="."]
+layout_mode = 2
+offset_left = 194.0
+offset_top = 57.0
+offset_right = 260.0
+offset_bottom = 96.0
+text = "num"
+label_settings = SubResource("LabelSettings_cwfcy")
+
+[node name="APLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 142.0
+offset_top = 97.0
+offset_right = 187.0
+offset_bottom = 136.0
+text = "AP:"
+label_settings = SubResource("LabelSettings_cwfcy")
+
+[node name="APValue" type="Label" parent="."]
+layout_mode = 2
+offset_left = 192.0
+offset_top = 95.0
+offset_right = 251.0
+offset_bottom = 134.0
+text = "num"
+label_settings = SubResource("LabelSettings_cwfcy")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 178.0
+offset_right = 571.0
+offset_bottom = 426.0
+columns = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 34
+
+[node name="Ability1" type="Label" parent="GridContainer/MarginContainer"]
+layout_mode = 2
+text = "Ability 1"
+max_lines_visible = 1
+
+[node name="Description1" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat placerat ipsum quis faucibus. Pellentesque condimentum risus eu urna imperdiet, ac imperdiet libero iaculis. Integer metus turpis, eleifend quis accumsan id, vehicula a elit."
+label_settings = SubResource("LabelSettings_ds8f4")
+autowrap_mode = 2
+max_lines_visible = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 34
+
+[node name="Ability2" type="Label" parent="GridContainer/MarginContainer2"]
+layout_mode = 2
+text = "Ability 2"
+
+[node name="Description2" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat placerat ipsum quis faucibus. Pellentesque condimentum risus eu urna imperdiet, ac imperdiet libero iaculis. Integer metus turpis, eleifend quis accumsan id, vehicula a elit. "
+label_settings = SubResource("LabelSettings_cten2")
+autowrap_mode = 2
+max_lines_visible = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 34
+
+[node name="Ability3" type="Label" parent="GridContainer/MarginContainer3"]
+layout_mode = 2
+text = "Ability 3"
+
+[node name="Description3" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat placerat ipsum quis faucibus. Pellentesque condimentum risus eu urna imperdiet, ac imperdiet libero iaculis. Integer metus turpis, eleifend quis accumsan id, vehicula a elit. "
+label_settings = SubResource("LabelSettings_cten2")
+autowrap_mode = 2
+max_lines_visible = 5

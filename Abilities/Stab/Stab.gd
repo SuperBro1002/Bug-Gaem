@@ -1,7 +1,9 @@
 extends Ability_class
 
+
 func _enter_tree():
 	targetType = get_parent().fac.ENEMY
+	description = "Deals 2 damage to a single target. "
 
 func execute():
 	# for every target in target units[]

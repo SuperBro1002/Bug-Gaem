@@ -4,8 +4,8 @@ var speed = 225
 var screenSize
 
 @onready var ability1 = load_ability(SetAbility1)
-@onready var ability2# = load_ability(SetAbility2)
-@onready var ability3# = load_ability(SetAbility3)
+@onready var ability2 = load_ability(SetAbility1)
+@onready var ability3 = load_ability(SetAbility1)
 
 var animationSpeed = 4
 var type = fac.ENEMY

@@ -4,6 +4,7 @@ class_name Ability_class
 
 var stab
 var Name
+var description
 
 #@export var damage = 0
 @export var apCost = 0

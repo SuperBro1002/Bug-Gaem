@@ -12,6 +12,7 @@ var globalEnemyList
 var validQueue = false
 var queueState = false
 var deathCount = 0
+var hoveredUnit = null
 
 var inputs = {"move_right": Vector2.RIGHT,
 			"move_left": Vector2.LEFT,
