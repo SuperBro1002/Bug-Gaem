@@ -2,7 +2,7 @@
 extends Node
 class_name Ability_class
 
-var stab
+var Tackle
 var Name
 var description
 

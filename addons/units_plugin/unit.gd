@@ -35,9 +35,9 @@ var incoming_dmg_type = null # pierce, null
 @export var CurrentAP = 5
 @export var TrueInit = 7
 @export var CurrentInit = 3
-@export var SetAbility1 = "Stab"
-@export var SetAbility2 = "Stab"
-@export var SetAbility3 = "Stab"
+@export var SetAbility1 = "Tackle"
+@export var SetAbility2 = "Tackle"
+@export var SetAbility3 = "Tackle"
 @export var Faction = fac.NONE
 @export var BatonPass = TS.NOTACTED
 
