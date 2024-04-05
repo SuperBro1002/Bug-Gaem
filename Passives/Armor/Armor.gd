@@ -8,5 +8,6 @@ func execute(num):
 		num = num - 1
 		if num < 0:
 			num = 0
+		turnsRemaining = 0
 		return num
 	else: return num

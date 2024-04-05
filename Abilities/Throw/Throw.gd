@@ -82,8 +82,8 @@ func execute():
 			if occupiedPos == true:
 				#Tweens target to the bouncePos
 				targetUnits[i].lose_health(4)
+				collatUnit.lose_health(4)
 			
-			collatUnit.lose_health(4)
 			targetUnits[i].give_batonpass()
 		
 		post_execute()

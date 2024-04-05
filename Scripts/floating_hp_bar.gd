@@ -38,6 +38,7 @@ func update(myUnit):
 			await get_tree().create_timer(0.05).timeout
 		else:
 			segList[i].set_visible(true)
+			await get_tree().create_timer(0.05).timeout
 
 func fade(isHovering):
 	print(isHovering)
