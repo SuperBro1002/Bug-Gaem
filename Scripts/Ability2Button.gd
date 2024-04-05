@@ -21,8 +21,12 @@ func unpress(_ability):
 
 #LOOK INTO CURRENT AP AT THIS POINT!!!!!!!!!!!
 func button_state():
-	if AutoloadMe.turnPointer.get_temp_ap() - APcost < 0 or AutoloadMe.turnPointer.get_current_ap() <= 0 or AutoloadMe.turnPointer.get_faction() != AutoloadMe.turnPointer.fac.ALLY:
+	if AutoloadMe.turnPointer.get_temp_ap() - APcost < 0 or AutoloadMe.turnPointer.get_current_ap() <= 0 or AutoloadMe.turnPointer.get_faction() != AutoloadMe.turnPointer.fac.ALLY or AutoloadMe.notOverlapped == false:
 		self.set_disabled(true)
+		if AutoloadMe.turnPointer.get_faction() == AutoloadMe.turnPointer.fac.ALLY:
+			AutoloadMe.queueState = false
+			SignalBus.ability.emit(1,false)
+			button_pressed = false
 	else:
 		self.set_disabled(false)
 

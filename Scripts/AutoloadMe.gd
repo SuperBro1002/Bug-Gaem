@@ -13,6 +13,7 @@ var validQueue = false
 var queueState = false
 var deathCount = 0
 var hoveredUnit = null
+var notOverlapped = true
 
 var inputs = {"move_right": Vector2.RIGHT,
 			"move_left": Vector2.LEFT,
@@ -70,7 +71,7 @@ func _unhandled_input(event):
 			print(validQueue, " ", queueState)
 			if validQueue == true and queueState == true:
 				turnPointer.abilityQueued.execute()
-			elif queueState == false:
+			elif queueState == false and notOverlapped == true:
 				print("space pressed")
 				turnPointer.on_turn_end()
 	

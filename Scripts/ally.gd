@@ -27,6 +27,7 @@ func _process(_delta):
 	pass
 
 func move(dir):
+	print("Cum ", AutoloadMe.notOverlapped)
 	if canMove == true:
 		match [dir == Vector2.RIGHT, dir == Vector2.LEFT]:
 			[true,false]:
@@ -71,3 +72,14 @@ func activate_ability(num):
 func deactivate_ability():
 	abilityQueued = null
 	AutoloadMe.validQueue = false
+
+
+func _on_area_entered(area):
+	AutoloadMe.notOverlapped = false
+	SignalBus.changeButtonState.emit()
+	print("ENTER")
+
+func _on_area_exited(area):
+	AutoloadMe.notOverlapped = true
+	SignalBus.changeButtonState.emit()
+	print("EXIT")
