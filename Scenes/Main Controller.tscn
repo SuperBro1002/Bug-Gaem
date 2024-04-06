@@ -131,19 +131,6 @@ TrueInit = 28
 CurrentInit = 7
 Faction = 1
 
-[node name="Robo Poly3" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(480, 224)
-scale = Vector2(1, 1)
-Name = "Robo Poly"
-fileName = "Robopoly"
-MaxHP = 3
-CurrentHP = 3
-MaxAP = 6
-CurrentAP = 6
-TrueInit = 28
-CurrentInit = 2
-Faction = 1
-
 [node name="Robo Poly2" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 position = Vector2(416, 160)
 scale = Vector2(1, 1)
@@ -156,8 +143,8 @@ CurrentAP = 6
 TrueInit = 28
 Faction = 1
 
-[node name="Robo Poly4" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(479, 161)
+[node name="Robo Poly3" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
+position = Vector2(544, 542)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
@@ -166,18 +153,7 @@ CurrentHP = 3
 MaxAP = 6
 CurrentAP = 6
 TrueInit = 28
-Faction = 1
-
-[node name="Robo Poly5" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(352, 158)
-scale = Vector2(1, 1)
-Name = "Robo Poly"
-fileName = "Robopoly"
-MaxHP = 3
-CurrentHP = 3
-MaxAP = 6
-CurrentAP = 6
-TrueInit = 28
+CurrentInit = 2
 Faction = 1
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
@@ -395,7 +371,5 @@ texture = ExtResource("17_lbcx0")
 [editable path="Grid/InitManager/UnitManager/Triss"]
 [editable path="Grid/InitManager/UnitManager/Lumoth"]
 [editable path="Grid/InitManager/UnitManager/Robo Poly"]
-[editable path="Grid/InitManager/UnitManager/Robo Poly3"]
 [editable path="Grid/InitManager/UnitManager/Robo Poly2"]
-[editable path="Grid/InitManager/UnitManager/Robo Poly4"]
-[editable path="Grid/InitManager/UnitManager/Robo Poly5"]
+[editable path="Grid/InitManager/UnitManager/Robo Poly3"]

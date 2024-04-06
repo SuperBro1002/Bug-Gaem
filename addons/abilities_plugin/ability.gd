@@ -24,8 +24,6 @@ func _ready():
 	SignalBus.connect("ability",dequeue)
 	range_convert()
 	$Area2D/SelectionBox.set_visible(false)
-	#$Area2D.scale = Vector2(tileRange,tileRange)
-	#print($Hitbox.target_position)
 
 func range_convert():
 	actualRange = tileRange * AutoloadMe.tile_size.x
@@ -36,10 +34,9 @@ func queue():
 		clickedPos = get_parent().grid.get_global_mouse_position()
 		clickedPos = get_parent().grid.local_to_map(clickedPos)
 		clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,clickedPos)
-		print("I start: ", get_parent().abilityStartPoint)
+		
 		for i in AutoloadMe.globalUnitList.size() - 1:
 			if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position):
-				print("HULLO ", AutoloadMe.globalUnitList[i])
 				if clickedDistance.size() - 1 <= distanceRange and AutoloadMe.globalUnitList[i].get_faction() == targetType:
 					$Area2D.position = get_parent().grid.map_to_local(clickedPos)
 					$Area2D/SelectionBox.set_visible(true)

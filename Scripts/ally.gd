@@ -76,9 +76,7 @@ func deactivate_ability():
 func _on_area_entered(_area):
 	AutoloadMe.notOverlapped = false
 	SignalBus.changeButtonState.emit()
-	print("ENTER")
 
 func _on_area_exited(_area):
 	AutoloadMe.notOverlapped = true
 	SignalBus.changeButtonState.emit()
-	print("EXIT")

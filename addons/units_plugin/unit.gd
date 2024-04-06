@@ -28,7 +28,6 @@ var incoming_dmg_type = null # pierce, null
 
 @export var Name = "Default"
 @export var fileName = "Default"
-@export var ID = 0
 @export var MaxHP = 20
 @export var CurrentHP = 20
 @export var MaxAP = 5
@@ -79,11 +78,6 @@ func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init,
 	Faction = faction
 	BatonPass = bp
 
-func get_id():
-	# Returns the id of this unit
-	return ID
-
-
 func get_current_hp():
 	# Returns unit's current hp
 	return CurrentHP
@@ -102,6 +96,7 @@ func lose_health(dmgVal):
 	if CurrentHP < 0:
 		CurrentHP = 0
 	SignalBus.updateFloatingHP.emit(self)
+	incoming_dmg_type = null
 
 
 func get_max_hp():

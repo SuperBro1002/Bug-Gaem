@@ -8,7 +8,6 @@ func _enter_tree():
 func execute(num):
 	get_parent().canMove = false
 	turnsRemaining -= 1
-	#print("Turns remaining: ", turnsRemaining)
 
 func passive_remove():
 	if turnsRemaining <= 0:

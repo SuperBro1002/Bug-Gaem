@@ -44,7 +44,6 @@ func draw_init_box():
 	for i in AutoloadMe.globalUnitList.size() - 1:
 		var scene = load("res://Scenes/Unit_Initiative_Box.tscn")
 		sceneNode = scene.instantiate()
-#		get_node("../CenterContainer/Sprite2D").texture = load("res://Assets/HUD/Init_Sprites/" + AutoloadMe.globalUnitList[i].fileName + "_Base_Still.png")
 		sceneNode.assign_unit(AutoloadMe.globalUnitList[i])
 		boxArray.append(sceneNode)
 		if i == 0:

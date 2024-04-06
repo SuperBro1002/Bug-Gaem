@@ -14,14 +14,12 @@ func next_turn():
 	for i in (AutoloadMe.globalUnitList.size()):
 		if AutoloadMe.globalUnitList[i].get_batonpass() == AutoloadMe.globalUnitList[i].TS.BATONPASS:
 			currentUnitTurn = AutoloadMe.globalUnitList[i]
-			#print("FOUND BATON PASS TARGET: ", currentUnitTurn)
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.on_turn_start()
 			return
 	for i in (AutoloadMe.globalUnitList.size()):
 		if AutoloadMe.globalUnitList[i].get_batonpass() == AutoloadMe.globalUnitList[i].TS.NOTACTED:
 			currentUnitTurn = AutoloadMe.globalUnitList[i]
-			#print("FOUND NORMAL TARGET: ", currentUnitTurn)
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.on_turn_start()
 			return
@@ -45,6 +43,7 @@ func make_unit_list():
 	
 	sort_unit_list()
 	for i in unitList.size():
+		unitList[i].position = unitList[i].grid.map_to_local(unitList[i].grid.local_to_map(unitList[i].position))
 		if unitList[i].get_faction() == unitList[i].fac.ALLY:
 			allyList.append(AutoloadMe.globalUnitList[i])
 		elif unitList[i].get_faction() == unitList[i].fac.ENEMY:

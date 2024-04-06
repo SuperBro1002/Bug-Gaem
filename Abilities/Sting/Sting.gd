@@ -13,6 +13,7 @@ func execute():
 	
 	for i in targetUnits.size():
 		targetUnits[i].lose_health(4)
+		get_parent().incoming_dmg_type = "pierce"
 		get_parent().lose_health(1)
 	
 	post_execute()

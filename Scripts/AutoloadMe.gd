@@ -68,11 +68,9 @@ func _unhandled_input(event):
 				turnPointer.abilityQueued.queue()
 		
 		if Input.is_action_just_pressed("space"):
-			print(validQueue, " ", queueState)
 			if validQueue == true and queueState == true:
 				turnPointer.abilityQueued.execute()
 			elif queueState == false and notOverlapped == true:
-				print("space pressed")
 				turnPointer.on_turn_end()
 	
 	else: return

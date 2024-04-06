@@ -20,8 +20,6 @@ func make_bar():
 		var sceneNode = scene.instantiate()
 		$Temp_HP_Box/HP_Seg_Holder.add_child(sceneNode)
 		segList.append(sceneNode)
-	print(segList)
-	#print($HP_Seg_Holder.get_children())
 
 func update(myUnit):
 	if myUnit != get_parent():
@@ -31,7 +29,6 @@ func update(myUnit):
 	
 	$Temp_HP_Box/ProgressBar.set_value(currentHP)
 	
-	#print(currentHP, "/", maxHP)
 	for i in segList.size():
 		if i > currentHP - 1:
 			segList[i].set_visible(false)
@@ -44,7 +41,6 @@ func update(myUnit):
 		SignalBus.deleteMe.emit(get_parent())
 
 func fade(isHovering):
-	print(isHovering)
 	var tween = create_tween()
 	if isHovering:
 		tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)

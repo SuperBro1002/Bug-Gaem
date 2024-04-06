@@ -19,7 +19,6 @@ func update_grid_collision():
 			if tileData == null or tileData.get_custom_data("walkable") == false:
 				AutoloadMe.movementGrid.set_point_solid(tilePos)
 			
-			
 			# Looks thru the unitList, determines if the 
 			for i in AutoloadMe.globalUnitList.size():
 				match[local_to_map(AutoloadMe.globalUnitList[i].position) == tilePos, AutoloadMe.isAllyTurn, AutoloadMe.globalUnitList[i].get_faction() == 1]:

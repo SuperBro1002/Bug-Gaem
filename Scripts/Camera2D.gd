@@ -8,8 +8,6 @@ func _ready():
 	SignalBus.connect("moveCamera", move_me)
 
 func zoom_me(factor):
-	print("Camera: ", self)
-	
 	if (factor < 0 and get_zoom().x <= 0.9) or (factor > 0 and get_zoom().x >= 4.5):
 		return
 	

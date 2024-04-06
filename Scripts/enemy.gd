@@ -36,8 +36,7 @@ func unique_turn_start():
 	end = grid.local_to_map(target.position)
 	
 	var pathArray = astarGrid.get_point_path(start, end)
-#	print("end: ", start, ", ", end)
-#	print("Target: ", target, ", ", pathArray)
+
 	if canMove == true:
 		for i in pathArray.size() - 1:
 			if CurrentAP != 0:

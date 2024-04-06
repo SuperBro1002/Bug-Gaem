@@ -33,4 +33,3 @@ func button_state():
 func assign_ap_cost(current):
 	if current.get_faction() == current.fac.ALLY:
 		APcost = current.ability2.get_ap_cost()
-		#print("Button 1 AP: ", APcost)
