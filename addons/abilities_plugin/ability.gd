@@ -36,7 +36,7 @@ func queue():
 		clickedPos = get_parent().grid.get_global_mouse_position()
 		clickedPos = get_parent().grid.local_to_map(clickedPos)
 		clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,clickedPos)
-		
+		print("I start: ", get_parent().abilityStartPoint)
 		for i in AutoloadMe.globalUnitList.size() - 1:
 			if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position):
 				print("HULLO ", AutoloadMe.globalUnitList[i])
@@ -73,7 +73,8 @@ func get_ap_cost():
 	return apCost
 
 func _on_area_2d_area_entered(area):
-	targetUnits.append(area)
+	if area.get_faction() == targetType:
+		targetUnits.append(area)
 
 func _on_area_2d_area_exited(area):
 	targetUnits.erase(area)

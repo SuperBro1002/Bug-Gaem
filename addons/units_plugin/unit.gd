@@ -101,9 +101,8 @@ func lose_health(dmgVal):
 	CurrentHP = CurrentHP - dmgVal
 	if CurrentHP < 0:
 		CurrentHP = 0
-	if CurrentHP == 0:
-		SignalBus.deleteMe.emit(self)
 	SignalBus.updateFloatingHP.emit(self)
+
 
 func get_max_hp():
 	# Returns unit's max hp
@@ -188,6 +187,7 @@ func on_turn_start():
 	SignalBus.startTurn.emit()
 	SignalBus.changeButtonState.emit()
 	start = grid.local_to_map(position)
+	abilityStartPoint = grid.convert_to_map(position)
 	run_passives(methodType.ON_TURN_START, null)
 	find_and_delete_passives()
 	

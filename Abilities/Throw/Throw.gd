@@ -79,16 +79,20 @@ func execute():
 	
 		for i in targetUnits.size():
 			targetUnits[i].position = get_parent().grid.map_to_local(newPos)
+			
+			targetUnits[i].abilityStartPoint = targetUnits[i].grid.convert_to_map(newPos) # CHANGE WHEN COLLATERAL MOVEMENT IS ADDED
+			
 			if occupiedPos == true:
 				#Tweens target to the bouncePos
 				targetUnits[i].lose_health(4)
 				collatUnit.lose_health(4)
+				
 			
 			targetUnits[i].give_batonpass()
 		
 		post_execute()
 
-func dequeue(num, state):
+func dequeue(_num, state):
 	if state == false:
 		clickedPos = null
 		newPos = null

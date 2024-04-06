@@ -10,6 +10,7 @@ func _ready():
 
 # Probably main function
 func next_turn():
+	print("LOOK AT ME!", AutoloadMe.globalUnitList)
 	for i in (AutoloadMe.globalUnitList.size()):
 		if AutoloadMe.globalUnitList[i].get_batonpass() == AutoloadMe.globalUnitList[i].TS.BATONPASS:
 			currentUnitTurn = AutoloadMe.globalUnitList[i]
