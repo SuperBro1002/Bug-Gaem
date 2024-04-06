@@ -11,11 +11,8 @@ func fill_me(_isHovering):
 	unit = AutoloadMe.hoveredUnit
 	if unit == null:
 		return
-	var faction = "Allies"
-	if unit.get_faction() != unit.fac.ALLY:
-		faction = "Enemies"
 	
-	var portraitRes = load("res://Assets/Sprites/" + faction + "/" + unit.fileName + "/" + unit.fileName + "_Base_Still.png")
+	var portraitRes = load("res://Assets/Sprites/" + unit.fileName + "/" + unit.fileName + "_Base_Still.png")
 	get_node("../SecondaryInfoBox/PortraitBox/PortraitSprite").texture = portraitRes
 	
 	$Name.set_text(unit.Name)

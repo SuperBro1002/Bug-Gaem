@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drc43v81fyvl5"
-path="res://.godot/imported/Atlus_ReceiveHit_Still.png-d01bb81ef8696a4e11230538d8fe24f5.ctex"
+uid="uid://cd1j54mf7ccc1"
+path="res://.godot/imported/Termitator_Attack_Still.png-1a55152fd6d68490558fc77b108dc3f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Atlus/Atlus_ReceiveHit_Still.png"
-dest_files=["res://.godot/imported/Atlus_ReceiveHit_Still.png-d01bb81ef8696a4e11230538d8fe24f5.ctex"]
+source_file="res://Assets/Sprites/Termitator/Termitator_Attack_Still.png"
+dest_files=["res://.godot/imported/Termitator_Attack_Still.png-1a55152fd6d68490558fc77b108dc3f8.ctex"]
 
 [params]
 

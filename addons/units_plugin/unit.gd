@@ -54,6 +54,28 @@ func _enter_tree():
 	SignalBus.connect("abilityExecuted",on_execute)
 	make_floating_hp()
 	make_floating_ap()
+
+func clone(OGUnit):
+	Name = OGUnit.Name
+	fileName = OGUnit.fileName
+	MaxHP = OGUnit.MaxHP
+	CurrentHP = OGUnit.CurrentHP
+	MaxAP = OGUnit.MaxAP
+	CurrentAP = OGUnit.CurrentAP
+	TrueInit = OGUnit.TrueInit
+	CurrentInit = OGUnit.CurrentInit
+	SetAbility1 = OGUnit.SetAbility1
+	SetAbility2 = OGUnit.SetAbility2
+	SetAbility3 = OGUnit.SetAbility3
+	Faction = fac.ALLY
+	BatonPass = TS.BATONPASS
+	tempAP = MaxAP
+	position = OGUnit.position
+	start = grid.convert_to_map(OGUnit.position)
+	end = grid.convert_to_map(OGUnit.position)
+	abilityStartPoint = grid.convert_to_map(OGUnit.position)
+	get_node("AnimatedSprite2D:sprite_frames").set_sprite_frames(load("res://Scenes/Sprite Frames/" + OGUnit.fileName + ".tres"))
+	get_node("AnimatedSprite2D:Scale.set_scale(Vector2(2,2))")
 	
 
 func make_floating_hp():

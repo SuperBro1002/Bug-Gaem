@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg0fsw0q2sxwa"
-path="res://.godot/imported/Robopoly_Base_Still.png-435af81b8a1b0125fe8e908928db296b.ctex"
+uid="uid://cxltgjwyjm1sv"
+path="res://.godot/imported/Paramantis_ReceiveHit_Still.png-ae0d8d90f49ab49b596a0d2533cbadf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Robopoly/Robopoly_Base_Still.png"
-dest_files=["res://.godot/imported/Robopoly_Base_Still.png-435af81b8a1b0125fe8e908928db296b.ctex"]
+source_file="res://Assets/Sprites/Paramantis/Paramantis_ReceiveHit_Still.png"
+dest_files=["res://.godot/imported/Paramantis_ReceiveHit_Still.png-ae0d8d90f49ab49b596a0d2533cbadf7.ctex"]
 
 [params]
 

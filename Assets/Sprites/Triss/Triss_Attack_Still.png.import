@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxltgjwyjm1sv"
-path="res://.godot/imported/Paramantis_ReceiveHit_Still.png-9c2a978394871d1cda865c29309533ef.ctex"
+uid="uid://gv7rpptu5uvm"
+path="res://.godot/imported/Triss_Attack_Still.png-ddf8e329b1bfb824dc378e20b3bba7ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Paramantis/Paramantis_ReceiveHit_Still.png"
-dest_files=["res://.godot/imported/Paramantis_ReceiveHit_Still.png-9c2a978394871d1cda865c29309533ef.ctex"]
+source_file="res://Assets/Sprites/Triss/Triss_Attack_Still.png"
+dest_files=["res://.godot/imported/Triss_Attack_Still.png-ddf8e329b1bfb824dc378e20b3bba7ad.ctex"]
 
 [params]
 

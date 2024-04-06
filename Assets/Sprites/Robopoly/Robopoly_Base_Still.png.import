@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bibwqlm4bjjl6"
-path="res://.godot/imported/Termitator_Base_Still.png-6774fd67686dc6c35fd4af3ea9a53a0c.ctex"
+uid="uid://bg0fsw0q2sxwa"
+path="res://.godot/imported/Robopoly_Base_Still.png-7301df715a27f7d460ea44b7b694cc09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Termitator/Termitator_Base_Still.png"
-dest_files=["res://.godot/imported/Termitator_Base_Still.png-6774fd67686dc6c35fd4af3ea9a53a0c.ctex"]
+source_file="res://Assets/Sprites/Robopoly/Robopoly_Base_Still.png"
+dest_files=["res://.godot/imported/Robopoly_Base_Still.png-7301df715a27f7d460ea44b7b694cc09.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxpystbdcj8eu"
-path="res://.godot/imported/Robopoly_Attack_Still.png-120e7b72960ae16d0d7467b6ccffa63f.ctex"
+uid="uid://cq0difd66nq8a"
+path="res://.godot/imported/Lumoth_SpellCast_Still.png-026ad33b75cacff05168c4da38689dd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Robopoly/Robopoly_Attack_Still.png"
-dest_files=["res://.godot/imported/Robopoly_Attack_Still.png-120e7b72960ae16d0d7467b6ccffa63f.ctex"]
+source_file="res://Assets/Sprites/Lumoth/Lumoth_SpellCast_Still.png"
+dest_files=["res://.godot/imported/Lumoth_SpellCast_Still.png-026ad33b75cacff05168c4da38689dd6.ctex"]
 
 [params]
 

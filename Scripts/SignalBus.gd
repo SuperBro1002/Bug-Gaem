@@ -23,3 +23,4 @@ signal actedUI
 signal updateFloatingHP
 signal updateFloatingAP
 signal mouseHovering(isHovering)
+signal remakeUnitList

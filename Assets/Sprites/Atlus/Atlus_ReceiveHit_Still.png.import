@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gv7rpptu5uvm"
-path="res://.godot/imported/Triss_Attack_Still.png-2e184e7d413907a9298aa2c95211b395.ctex"
+uid="uid://drc43v81fyvl5"
+path="res://.godot/imported/Atlus_ReceiveHit_Still.png-b1e6137c6bd000aa6cd73e50143a5fa6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Triss/Triss_Attack_Still.png"
-dest_files=["res://.godot/imported/Triss_Attack_Still.png-2e184e7d413907a9298aa2c95211b395.ctex"]
+source_file="res://Assets/Sprites/Atlus/Atlus_ReceiveHit_Still.png"
+dest_files=["res://.godot/imported/Atlus_ReceiveHit_Still.png-b1e6137c6bd000aa6cd73e50143a5fa6.ctex"]
 
 [params]
 

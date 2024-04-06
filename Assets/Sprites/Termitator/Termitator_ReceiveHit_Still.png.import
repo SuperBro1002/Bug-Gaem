@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1nt85gi6kh8g"
-path="res://.godot/imported/Lumoth_Base_Still.png-b5bb42f83c89878f530dfb34198c2581.ctex"
+uid="uid://jn40mj77l7xd"
+path="res://.godot/imported/Termitator_ReceiveHit_Still.png-0e20d06567db92b2bb238781fd8eae4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Lumoth/Lumoth_Base_Still.png"
-dest_files=["res://.godot/imported/Lumoth_Base_Still.png-b5bb42f83c89878f530dfb34198c2581.ctex"]
+source_file="res://Assets/Sprites/Termitator/Termitator_ReceiveHit_Still.png"
+dest_files=["res://.godot/imported/Termitator_ReceiveHit_Still.png-0e20d06567db92b2bb238781fd8eae4f.ctex"]
 
 [params]
 

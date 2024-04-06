@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://d4ellltyf6slv"]
 
-[ext_resource type="Texture2D" uid="uid://c1nt85gi6kh8g" path="res://Assets/Sprites/Allies/Lumoth/Lumoth_Base_Still.png" id="1_kyjdt"]
+[ext_resource type="Texture2D" uid="uid://c1nt85gi6kh8g" path="res://Assets/Sprites/Lumoth/Lumoth_Base_Still.png" id="1_kyjdt"]
 
 [resource]
 resource_name = "Lumoth"

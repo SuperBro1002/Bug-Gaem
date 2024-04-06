@@ -7,6 +7,7 @@ func _ready():
 	make_unit_list()
 	SignalBus.connect("endTurn", next_turn)
 	SignalBus.connect("endRound", next_round)
+	SignalBus.connect("remakeUnitList", make_unit_list)
 
 # Probably main function
 func next_turn():

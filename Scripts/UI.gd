@@ -14,7 +14,7 @@ func _ready():
 
 func set_ui(unit):
 	if unit.get_faction() == unit.fac.ALLY:
-		var portraitRes = load("res://Assets/Sprites/Allies/" + unit.Name + "/" + unit.Name + "_Base_Still.png")
+		var portraitRes = load("res://Assets/Sprites/" + unit.fileName + "/" + unit.fileName + "_Base_Still.png")
 		get_node("../UI/InfoBox/PortraitBox/PortraitSprite").texture = portraitRes
 		
 		var nameVal = unit.Name

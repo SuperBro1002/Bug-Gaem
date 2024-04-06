@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnnbo0npeyvc2"
-path="res://.godot/imported/Lumoth_ReceiveHit_Still.png-610f9b00626138b903867d9864e0e969.ctex"
+uid="uid://bxpystbdcj8eu"
+path="res://.godot/imported/Robopoly_Attack_Still.png-85fee2275fbbb316e11432747e6f50d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Lumoth/Lumoth_ReceiveHit_Still.png"
-dest_files=["res://.godot/imported/Lumoth_ReceiveHit_Still.png-610f9b00626138b903867d9864e0e969.ctex"]
+source_file="res://Assets/Sprites/Robopoly/Robopoly_Attack_Still.png"
+dest_files=["res://.godot/imported/Robopoly_Attack_Still.png-85fee2275fbbb316e11432747e6f50d9.ctex"]
 
 [params]
 

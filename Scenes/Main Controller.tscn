@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=32 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
 [ext_resource type="Script" path="res://Scripts/InitManager.gd" id="3_m2yok"]
 [ext_resource type="PackedScene" uid="uid://cofaiq0bowqml" path="res://Scenes/ally.tscn" id="4_tt5vw"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="5_4smxl"]
+[ext_resource type="SpriteFrames" uid="uid://bg2fds46ouabi" path="res://Scenes/Sprite Frames/Atlus.tres" id="5_5o71r"]
 [ext_resource type="SpriteFrames" uid="uid://dwsvpciaod0yg" path="res://Scenes/Sprite Frames/Paramantis.tres" id="5_73cei"]
 [ext_resource type="SpriteFrames" uid="uid://fy8e8wgvo05l" path="res://Scenes/Sprite Frames/Triss.tres" id="5_l4uwr"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="6_cdygi"]
@@ -14,7 +15,7 @@
 [ext_resource type="Script" path="res://Scripts/Ability1Button.gd" id="10_fxut6"]
 [ext_resource type="PackedScene" uid="uid://gdr7wfqwmtao" path="res://Scenes/secondary_info_box.tscn" id="10_tm0nh"]
 [ext_resource type="Script" path="res://Scripts/Ability2Button.gd" id="11_a6atw"]
-[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Allies/Atlus/Atlus_Base_Still.png" id="11_um6k4"]
+[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlus/Atlus_Base_Still.png" id="11_um6k4"]
 [ext_resource type="Script" path="res://Scripts/Ability3Button.gd" id="12_v0gh6"]
 [ext_resource type="Texture2D" uid="uid://bofj7xwd6mfhg" path="res://Assets/Maps_Tiles/tutorial_map.png" id="13_pfrlb"]
 [ext_resource type="Texture2D" uid="uid://cxhgdv3ubm0ks" path="res://Assets/Maps_Tiles/fountain.png" id="14_fai0c"]
@@ -80,6 +81,9 @@ SetAbility2 = "Grapple"
 SetAbility3 = "Throw"
 Faction = 0
 
+[node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Atlus" index="1"]
+sprite_frames = ExtResource("5_5o71r")
+
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
 position = Vector2(160, 288)
 scale = Vector2(1, 1)
@@ -118,6 +122,7 @@ fileName = "Paramantis"
 MaxHP = 12
 MaxAP = 4
 TrueInit = 30
+SetAbility1 = "X-Slash"
 SetAbility2 = "Grapple"
 SetAbility3 = "Throw"
 Faction = 0
@@ -146,7 +151,7 @@ TrueInit = 28
 Faction = 1
 
 [node name="Robo Poly3" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(544, 542)
+position = Vector2(225, 546)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"

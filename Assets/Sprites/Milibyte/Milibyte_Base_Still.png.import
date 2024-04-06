@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqwtf1u3pdpvu"
-path="res://.godot/imported/Triss_Base_Still.png-fc7ce7a02ebd44cef5f6777af52422e6.ctex"
+uid="uid://swhe8ve7hobh"
+path="res://.godot/imported/Milibyte_Base_Still.png-1ca2f7b66deab1adc0cea73fa0f6419a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Allies/Triss/Triss_Base_Still.png"
-dest_files=["res://.godot/imported/Triss_Base_Still.png-fc7ce7a02ebd44cef5f6777af52422e6.ctex"]
+source_file="res://Assets/Sprites/Milibyte/Milibyte_Base_Still.png"
+dest_files=["res://.godot/imported/Milibyte_Base_Still.png-1ca2f7b66deab1adc0cea73fa0f6419a.ctex"]
 
 [params]
 

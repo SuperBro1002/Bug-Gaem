@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://fy8e8wgvo05l"]
 
-[ext_resource type="Texture2D" uid="uid://dqwtf1u3pdpvu" path="res://Assets/Sprites/Allies/Triss/Triss_Base_Still.png" id="1_2mano"]
+[ext_resource type="Texture2D" uid="uid://dqwtf1u3pdpvu" path="res://Assets/Sprites/Triss/Triss_Base_Still.png" id="1_2mano"]
 
 [resource]
 resource_name = "Triss"

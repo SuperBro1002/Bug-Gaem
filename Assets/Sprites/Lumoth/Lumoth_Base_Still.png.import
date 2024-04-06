@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://swhe8ve7hobh"
-path="res://.godot/imported/Milibyte_Base_Still.png-a98a11d6f86894eee41e496a5fd6f0ff.ctex"
+uid="uid://c1nt85gi6kh8g"
+path="res://.godot/imported/Lumoth_Base_Still.png-af29c0a2c2aa28b33bca218322969cef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Milibyte/Milibyte_Base_Still.png"
-dest_files=["res://.godot/imported/Milibyte_Base_Still.png-a98a11d6f86894eee41e496a5fd6f0ff.ctex"]
+source_file="res://Assets/Sprites/Lumoth/Lumoth_Base_Still.png"
+dest_files=["res://.godot/imported/Lumoth_Base_Still.png-af29c0a2c2aa28b33bca218322969cef.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dwsvpciaod0yg"]
 
-[ext_resource type="Texture2D" uid="uid://dncvvv7ua5dws" path="res://Assets/Sprites/Allies/Paramantis/Paramantis_Base_Still.png" id="1_sux0n"]
+[ext_resource type="Texture2D" uid="uid://dncvvv7ua5dws" path="res://Assets/Sprites/Paramantis/Paramantis_Base_Still.png" id="1_sux0n"]
 
 [resource]
 resource_name = "Paramantis"
