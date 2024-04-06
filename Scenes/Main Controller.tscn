@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=31 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
 [ext_resource type="Script" path="res://Scripts/InitManager.gd" id="3_m2yok"]
 [ext_resource type="PackedScene" uid="uid://cofaiq0bowqml" path="res://Scenes/ally.tscn" id="4_tt5vw"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="5_4smxl"]
+[ext_resource type="SpriteFrames" uid="uid://dwsvpciaod0yg" path="res://Scenes/Sprite Frames/Paramantis.tres" id="5_73cei"]
 [ext_resource type="SpriteFrames" uid="uid://fy8e8wgvo05l" path="res://Scenes/Sprite Frames/Triss.tres" id="5_l4uwr"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="6_cdygi"]
 [ext_resource type="SpriteFrames" uid="uid://d4ellltyf6slv" path="res://Scenes/Sprite Frames/Lumoth.tres" id="6_o1qg1"]
@@ -73,11 +74,8 @@ scale = Vector2(1, 1)
 Name = "Atlus"
 fileName = "Atlus"
 MaxHP = 12
-CurrentHP = 12
 MaxAP = 8
-CurrentAP = 8
-TrueInit = 10
-CurrentInit = 10
+TrueInit = 25
 SetAbility2 = "Grapple"
 SetAbility3 = "Throw"
 Faction = 0
@@ -88,11 +86,8 @@ scale = Vector2(1, 1)
 Name = "Triss"
 fileName = "Triss"
 MaxHP = 8
-CurrentHP = 8
 MaxAP = 8
-CurrentAP = 8
 TrueInit = 20
-CurrentInit = 5
 SetAbility1 = "Sting"
 SetAbility3 = "Sacrifice_Sting"
 Faction = 0
@@ -106,11 +101,8 @@ scale = Vector2(1, 1)
 Name = "Lumoth"
 fileName = "Lumoth"
 MaxHP = 8
-CurrentHP = 8
 MaxAP = 10
-CurrentAP = 10
 TrueInit = 15
-CurrentInit = 15
 SetAbility1 = "Heal"
 SetAbility2 = "Shield"
 Faction = 0
@@ -118,17 +110,29 @@ Faction = 0
 [node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Lumoth" index="1"]
 sprite_frames = ExtResource("6_o1qg1")
 
+[node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
+position = Vector2(161, 546)
+scale = Vector2(1, 1)
+Name = "Paramantis"
+fileName = "Paramantis"
+MaxHP = 12
+MaxAP = 4
+TrueInit = 30
+SetAbility2 = "Grapple"
+SetAbility3 = "Throw"
+Faction = 0
+
+[node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Paramantis" index="1"]
+sprite_frames = ExtResource("5_73cei")
+
 [node name="Robo Poly" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 position = Vector2(224, 416)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
 MaxHP = 10
-CurrentHP = 10
 MaxAP = 6
-CurrentAP = 6
 TrueInit = 28
-CurrentInit = 7
 Faction = 1
 
 [node name="Robo Poly2" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
@@ -137,9 +141,7 @@ scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
 MaxHP = 3
-CurrentHP = 3
 MaxAP = 6
-CurrentAP = 6
 TrueInit = 28
 Faction = 1
 
@@ -149,11 +151,8 @@ scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
 MaxHP = 3
-CurrentHP = 3
 MaxAP = 6
-CurrentAP = 6
 TrueInit = 28
-CurrentInit = 2
 Faction = 1
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
@@ -163,9 +162,7 @@ script = ExtResource("6_cdygi")
 Name = "Jeff"
 fileName = "Jeff"
 MaxHP = 200
-CurrentHP = 200
 TrueInit = -100
-CurrentInit = -100
 
 [node name="CombatManager" type="Node" parent="Grid"]
 script = ExtResource("8_3eshf")
@@ -370,6 +367,7 @@ texture = ExtResource("17_lbcx0")
 [editable path="Grid/InitManager/UnitManager/Atlus"]
 [editable path="Grid/InitManager/UnitManager/Triss"]
 [editable path="Grid/InitManager/UnitManager/Lumoth"]
+[editable path="Grid/InitManager/UnitManager/Paramantis"]
 [editable path="Grid/InitManager/UnitManager/Robo Poly"]
 [editable path="Grid/InitManager/UnitManager/Robo Poly2"]
 [editable path="Grid/InitManager/UnitManager/Robo Poly3"]

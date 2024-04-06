@@ -1,0 +1,15 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dwsvpciaod0yg"]
+
+[ext_resource type="Texture2D" uid="uid://dncvvv7ua5dws" path="res://Assets/Sprites/Allies/Paramantis/Paramantis_Base_Still.png" id="1_sux0n"]
+
+[resource]
+resource_name = "Paramantis"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sux0n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
