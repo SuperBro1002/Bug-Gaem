@@ -58,6 +58,7 @@ func unique_turn_start():
 
 func unique_turn_end():
 	set_current_ap(get_temp_ap())
+	print("Trigger")
 	SignalBus.endTurn.emit()
 
 func activate_ability(num):

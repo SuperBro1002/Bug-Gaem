@@ -46,6 +46,7 @@ var incoming_dmg_type = null # pierce, null
 @onready var abilityStartPoint = grid.convert_to_map(position)
 @onready var end = grid.convert_to_map(position)
 
+var isPossessed = false
 var myHPBar
 var canMove = true
 var storedBatonPass = TS.NOTACTED
@@ -56,10 +57,13 @@ func _enter_tree():
 	make_floating_ap()
 
 func clone(OGUnit):
+	isPossessed = true
 	Name = OGUnit.Name
 	fileName = OGUnit.fileName
+	set_name("Possessed " + Name)
 	MaxHP = OGUnit.MaxHP
 	CurrentHP = OGUnit.CurrentHP
+	SignalBus.updateFloatingHP.emit(self)
 	MaxAP = OGUnit.MaxAP
 	CurrentAP = OGUnit.CurrentAP
 	TrueInit = OGUnit.TrueInit
@@ -75,14 +79,15 @@ func clone(OGUnit):
 	end = grid.convert_to_map(OGUnit.position)
 	abilityStartPoint = grid.convert_to_map(OGUnit.position)
 	get_node("AnimatedSprite2D:sprite_frames").set_sprite_frames(load("res://Scenes/Sprite Frames/" + OGUnit.fileName + ".tres"))
-	get_node("AnimatedSprite2D:Scale.set_scale(Vector2(2,2))")
-	
+	get_node(".:Scale").set_scale(Vector2(1,1))
+	get_node("AnimatedSprite2D:Scale").set_scale(Vector2(2,2))
+	add_passive("Doom")
 
 func make_floating_hp():
 	var scene = load("res://Scenes/floating_hp_bar.tscn")
 	var sceneNode = scene.instantiate()
 	add_child(sceneNode)
-
+ 
 func make_floating_ap():
 	var scene = load("res://Scenes/floating_ap.tscn")
 	var sceneNode = scene.instantiate()
@@ -217,7 +222,8 @@ func unique_turn_start():
 	pass
 
 func on_turn_end():
-	print(self, " ", tempAP)
+	run_passives(methodType.ON_TURN_END, null)
+	find_and_delete_passives
 	if BatonPass == TS.BATONPASS:
 		BatonPass = storedBatonPass
 	else:

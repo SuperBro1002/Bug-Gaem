@@ -11,7 +11,7 @@ func show_me():
 	set_visible(true)
 
 func hide_me():
-	if get_parent() != AutoloadMe.turnPointer:
+	if get_parent() != AutoloadMe.turnPointer or (get_parent().isPossessed == true and get_parent() == AutoloadMe.turnPointer):
 		return
 	set_visible(false)
 
@@ -20,7 +20,6 @@ func update(val):
 		return
 	else:
 		$AP_Counter.set_text(str(val))
-		
 	
 	if val == get_parent().get_max_ap():
 		set_modulate(Color(0,1,1,1))
