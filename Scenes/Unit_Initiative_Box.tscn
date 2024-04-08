@@ -17,6 +17,14 @@ offset_right = 64.0
 offset_bottom = 152.0
 script = ExtResource("1_ldvsk")
 
+[node name="CurrentUnit" type="ColorRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 112.0
+color = Color(1, 1, 1, 0)
+
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0
 offset_top = 32.0
@@ -39,7 +47,6 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_755gw")
 
 [node name="hpField" type="Label" parent="."]
-layout_mode = 0
 offset_top = 120.0
 offset_right = 64.0
 offset_bottom = 143.0

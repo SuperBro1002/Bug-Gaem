@@ -1,10 +1,15 @@
 extends Control
 
 var myUnit
+var tween
+var colorTween
 
 func _ready():
 	SignalBus.connect("deleteInitObject", remove_me)
 	SignalBus.connect("deleteMe", death)
+	SignalBus.connect("startTurn", glow)
+	SignalBus.connect("endTurn", kill_glow)
+	SignalBus.connect("endRound", reset_colors)
 
 func assign_unit(unit):
 	myUnit = unit
@@ -23,11 +28,34 @@ func update_display():
 
 
 func set_colors():
-	if myUnit.get_batonpass() == myUnit.TS.ACTED:
-		set_modulate(Color(0.42, 0.42, 0.42))
-	else:
-		set_modulate(Color(1,1,1))
-	
+	if myUnit.get_batonpass() == myUnit.TS.ACTED and myUnit == AutoloadMe.turnPointer:
+		colorTween = create_tween()
+		colorTween.tween_property(self, "modulate", Color(0.42, 0.42, 0.42), 0.2).set_trans(Tween.TRANS_SINE)
+
+func reset_colors():
+	await get_tree().create_timer(0.2).timeout
+	if colorTween:
+		colorTween.kill()
+	colorTween = create_tween()
+	colorTween.tween_property(self, "modulate", Color(1, 1, 1), 0.2).set_trans(Tween.TRANS_SINE)
+
+func glow():
+	if tween:
+		tween.kill()
+	while AutoloadMe.turnPointer == myUnit:
+			tween = create_tween()
+			
+			tween.tween_property($CurrentUnit, "color:a", 0.4, 1.0).set_trans(Tween.TRANS_SINE)
+			await tween.finished
+			
+			tween = create_tween()
+			
+			tween.tween_property($CurrentUnit, "color:a", 0, 1.0).set_trans(Tween.TRANS_SINE)
+			await tween.finished
+
+
+func kill_glow():
+	$CurrentUnit.set_color(Color(1,1,1,0))
 
 func remove_me():
 	queue_free()

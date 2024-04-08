@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=31 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
@@ -10,7 +10,6 @@
 [ext_resource type="SpriteFrames" uid="uid://fy8e8wgvo05l" path="res://Scenes/Sprite Frames/Triss.tres" id="5_l4uwr"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="6_cdygi"]
 [ext_resource type="SpriteFrames" uid="uid://d4ellltyf6slv" path="res://Scenes/Sprite Frames/Lumoth.tres" id="6_o1qg1"]
-[ext_resource type="Script" path="res://Scripts/CombatManager.gd" id="8_3eshf"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="9_qg5lv"]
 [ext_resource type="Script" path="res://Scripts/Ability1Button.gd" id="10_fxut6"]
 [ext_resource type="PackedScene" uid="uid://gdr7wfqwmtao" path="res://Scenes/secondary_info_box.tscn" id="10_tm0nh"]
@@ -168,9 +167,6 @@ Name = "Jeff"
 fileName = "Jeff"
 MaxHP = 200
 TrueInit = -100
-
-[node name="CombatManager" type="Node" parent="Grid"]
-script = ExtResource("8_3eshf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

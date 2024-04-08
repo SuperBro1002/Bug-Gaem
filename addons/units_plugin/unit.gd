@@ -57,6 +57,7 @@ func _enter_tree():
 	make_floating_ap()
 
 func clone(OGUnit):
+	set_visible(false)
 	isPossessed = true
 	Name = OGUnit.Name
 	fileName = OGUnit.fileName
@@ -82,6 +83,8 @@ func clone(OGUnit):
 	get_node(".:Scale").set_scale(Vector2(1,1))
 	get_node("AnimatedSprite2D:Scale").set_scale(Vector2(2,2))
 	add_passive("Doom")
+	await get_tree().create_timer(0.5).timeout
+	set_visible(true)
 
 func make_floating_hp():
 	var scene = load("res://Scenes/floating_hp_bar.tscn")

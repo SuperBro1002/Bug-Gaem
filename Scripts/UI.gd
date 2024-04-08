@@ -10,6 +10,7 @@ func _ready():
 	SignalBus.connect("updateInitBox", draw_init_box)
 	SignalBus.connect("actedUI", set_init_colors)
 	SignalBus.connect("mouseHovering", toggle_secondary)
+	SignalBus.connect("startTurn", show_infoBox)
 	draw_init_box()
 
 func set_ui(unit):
@@ -69,3 +70,8 @@ func toggle_secondary(isHovering):
 	else:
 		tween.tween_property(get_node("../UI/SecondaryInfoBox"), "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
+func show_infoBox():
+	if AutoloadMe.turnPointer.get_faction() == AutoloadMe.turnPointer.fac.ALLY and $InfoBox.is_visible() == false:
+		$InfoBox.set_visible(true)
+	elif AutoloadMe.turnPointer.get_faction() == AutoloadMe.turnPointer.fac.ENEMY and $InfoBox.is_visible() == true:
+		$InfoBox.set_visible(false)

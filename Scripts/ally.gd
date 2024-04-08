@@ -15,6 +15,7 @@ var abilityQueued = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SignalBus.connect("ability",toggle_unit_ability)
 	ray = $RayCast2D
 	# NOTE: NEED TO FIGURE OUT A WAY TO SET INHERENT PASSIVES FOR DIFFERENT UNITS IN EDITOR
 #	add_passive("Trap")
@@ -68,6 +69,13 @@ func activate_ability(num):
 		abilityQueued = ability2
 	elif num == 3:
 		abilityQueued = ability3
+
+func toggle_unit_ability(num, state):
+	if state == true:
+		activate_ability(num)
+		SignalBus.abilityIsQueued.emit()
+	else:
+		deactivate_ability()
 
 func deactivate_ability():
 	abilityQueued = null
