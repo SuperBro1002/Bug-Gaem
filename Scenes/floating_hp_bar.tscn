@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6aok4igip3j3"]
+[gd_scene load_steps=2 format=3 uid="uid://crhr8ias0sv2t"]
 
 [ext_resource type="Script" path="res://Scripts/floating_hp_bar.gd" id="1_lhr8h"]
 

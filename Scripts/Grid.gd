@@ -26,6 +26,7 @@ func update_grid_collision():
 						AutoloadMe.movementGrid.set_point_solid(tilePos)
 
 func set_enemy_collision():
+	AutoloadMe.movementGrid.update()
 	for x in gridLengthX:
 		for y in gridLengthY:
 			var tilePos = Vector2i(x,y)

@@ -1,0 +1,201 @@
+[gd_scene load_steps=15 format=3 uid="uid://batl7dw1ds002"]
+
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_gtd5a"]
+[ext_resource type="PackedScene" uid="uid://gdr7wfqwmtao" path="res://Scenes/secondary_info_box.tscn" id="2_qk2sv"]
+[ext_resource type="Script" path="res://Scripts/Ability1Button.gd" id="3_t2pqd"]
+[ext_resource type="Script" path="res://Scripts/Ability2Button.gd" id="4_7yk03"]
+[ext_resource type="Script" path="res://Scripts/Ability3Button.gd" id="5_vdsmd"]
+[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlus/Atlus_Base_Still.png" id="6_18ayx"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_gei7j"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_11fnr"]
+events = [SubResource("InputEventKey_gei7j")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ps161"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_wweb6"]
+events = [SubResource("InputEventKey_ps161")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_n7owk"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_1reh3"]
+events = [SubResource("InputEventKey_n7owk")]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4gjyx"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_s1hfu"]
+font_size = 26
+
+[node name="UILayer" type="CanvasLayer"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.498
+anchor_right = 0.5
+anchor_bottom = 0.498
+offset_left = -864.0
+offset_top = -484.056
+offset_right = 864.0
+offset_bottom = 483.944
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_gtd5a")
+
+[node name="SecondaryInfoBox" parent="UI" instance=ExtResource("2_qk2sv")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.991
+anchor_top = 0.024
+anchor_right = 0.991
+anchor_bottom = 0.024
+offset_left = -574.448
+offset_top = -0.232
+offset_right = -0.44812
+offset_bottom = 357.768
+
+[node name="InfoBox" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -848.0
+offset_top = 316.0
+offset_right = -208.0
+offset_bottom = 508.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.774753, 0.774753)
+color = Color(0.141176, 0.352941, 0.843137, 1)
+
+[node name="AbilityBox" type="HBoxContainer" parent="UI/InfoBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.5
+anchor_right = 0.499
+anchor_bottom = 0.5
+offset_left = 66.64
+offset_top = -51.0
+offset_right = 287.64
+offset_bottom = 53.0
+mouse_filter = 2
+
+[node name="Ability1Button" type="Button" parent="UI/InfoBox/AbilityBox"]
+layout_mode = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_11fnr")
+text = "Ability 1"
+script = ExtResource("3_t2pqd")
+
+[node name="Ability2Button" type="Button" parent="UI/InfoBox/AbilityBox"]
+layout_mode = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_wweb6")
+text = "Ability 2"
+script = ExtResource("4_7yk03")
+
+[node name="Ability3Button" type="Button" parent="UI/InfoBox/AbilityBox"]
+layout_mode = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_1reh3")
+text = "Ability 3"
+script = ExtResource("5_vdsmd")
+
+[node name="Name" type="Label" parent="UI/InfoBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.306612
+anchor_top = 0.103959
+anchor_right = 0.306612
+anchor_bottom = 0.171667
+offset_left = -0.0400085
+offset_top = -19.96
+offset_right = 199.96
+offset_bottom = 20.04
+text = "Atlus"
+label_settings = SubResource("LabelSettings_4gjyx")
+metadata/_edit_use_anchors_ = true
+
+[node name="PortraitBox" type="ColorRect" parent="UI/InfoBox"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 182.0
+offset_bottom = 180.0
+color = Color(0.168627, 0.164706, 0.592157, 1)
+
+[node name="PortraitSprite" type="Sprite2D" parent="UI/InfoBox/PortraitBox"]
+texture_filter = 1
+position = Vector2(84.5495, 84.5496)
+scale = Vector2(5.01757, 5.01757)
+texture = ExtResource("6_18ayx")
+
+[node name="HPLabel" type="Label" parent="UI/InfoBox"]
+layout_mode = 0
+offset_left = 206.517
+offset_top = 69.6998
+offset_right = 249.517
+offset_bottom = 108.7
+text = "HP:"
+label_settings = SubResource("LabelSettings_s1hfu")
+
+[node name="HPValue" type="Label" parent="UI/InfoBox"]
+layout_mode = 0
+offset_left = 258.147
+offset_top = 69.6998
+offset_right = 317.147
+offset_bottom = 108.7
+text = "num"
+label_settings = SubResource("LabelSettings_s1hfu")
+
+[node name="APLabel" type="Label" parent="UI/InfoBox"]
+layout_mode = 0
+offset_left = 206.517
+offset_top = 109.713
+offset_right = 249.517
+offset_bottom = 148.713
+text = "AP:"
+label_settings = SubResource("LabelSettings_s1hfu")
+
+[node name="APValue" type="Label" parent="UI/InfoBox"]
+layout_mode = 2
+offset_left = 256.856
+offset_top = 108.422
+offset_right = 315.856
+offset_bottom = 147.422
+text = "num"
+label_settings = SubResource("LabelSettings_s1hfu")
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = 313.0
+offset_right = 848.0
+offset_bottom = 465.0
+color = Color(0.356863, 0.266667, 0.843137, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ColorRect"]
+layout_mode = 0
+offset_right = 832.0
+offset_bottom = 152.0

@@ -1,16 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbhw70q7i08gc"]
+[gd_scene load_steps=5 format=3 uid="uid://b5vecfwsiww3x"]
 
-[ext_resource type="Script" path="res://Abilities/X-Slash/X-Slash.gd" id="1_7ben8"]
-[ext_resource type="Texture2D" uid="uid://doxc8dv2sdn5o" path="res://icon.svg" id="2_sqqrx"]
+[ext_resource type="Script" path="res://Abilities/Toxic_Thrash/Toxic_Thrash.gd" id="1_i117j"]
+[ext_resource type="Texture2D" uid="uid://doxc8dv2sdn5o" path="res://icon.svg" id="2_qkbrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyjuf"]
 size = Vector2(64, 64)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mw3e8"]
 
-[node name="X-Slash" type="Node"]
-script = ExtResource("1_7ben8")
-apCost = 3
+[node name="Toxic_Thrash" type="Node"]
+script = ExtResource("1_i117j")
+apCost = 2
 
 [node name="Hitbox" type="RayCast2D" parent="."]
 
@@ -18,7 +18,7 @@ apCost = 3
 visible = false
 position = Vector2(0.093643, 31.9599)
 scale = Vector2(-0.0533166, 0.57609)
-texture = ExtResource("2_sqqrx")
+texture = ExtResource("2_qkbrs")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
@@ -32,7 +32,7 @@ visible = false
 position = Vector2(-0.0108279, 0.104773)
 rotation = 1.57057
 scale = Vector2(0.508015, -0.579799)
-texture = ExtResource("2_sqqrx")
+texture = ExtResource("2_qkbrs")
 
 [node name="SelectionBox" type="Sprite2D" parent="Area2D"]
 modulate = Color(0, 0, 1, 0.301961)

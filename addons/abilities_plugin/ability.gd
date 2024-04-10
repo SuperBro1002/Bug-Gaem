@@ -63,6 +63,7 @@ func post_execute():
 	targetUnits.clear()
 	SignalBus.abilityExecuted.emit(self)
 	SignalBus.updateUI.emit(get_parent())
+	AutoloadMe.isExecuting = true
 	if get_parent().Faction == get_parent().fac.ALLY:
 		SignalBus.changeButtonState.emit()
 

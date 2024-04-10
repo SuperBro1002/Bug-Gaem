@@ -40,6 +40,8 @@ func reset_colors():
 	colorTween.tween_property(self, "modulate", Color(1, 1, 1), 0.2).set_trans(Tween.TRANS_SINE)
 
 func glow():
+	if get_parent() == null:
+		return
 	if tween:
 		tween.kill()
 	while AutoloadMe.turnPointer == myUnit:
@@ -63,6 +65,7 @@ func remove_me():
 func death(toBeDeleted):
 	# Removes unit from UnitLists so it won't be added to InitBox
 	if toBeDeleted == myUnit:
+		print("I AM DYING")
 		AutoloadMe.globalUnitList.erase(myUnit)
 		AutoloadMe.globalEnemyList.erase(myUnit)
 		AutoloadMe.globalAllyList.erase(myUnit)
