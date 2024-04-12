@@ -33,6 +33,8 @@ func queue():
 	if get_parent().get_temp_ap() - apCost >= 0:
 		clickedPos = get_parent().grid.get_global_mouse_position()
 		clickedPos = get_parent().grid.local_to_map(clickedPos)
+		if !abilityGrid.is_in_bounds(clickedPos.x, clickedPos.y):
+			return
 		clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,clickedPos)
 		
 		for i in AutoloadMe.globalUnitList.size() - 1:
@@ -63,7 +65,7 @@ func post_execute():
 	targetUnits.clear()
 	SignalBus.abilityExecuted.emit(self)
 	SignalBus.updateUI.emit(get_parent())
-	AutoloadMe.isExecuting = true
+	AutoloadMe.isExecuting = false
 	if get_parent().Faction == get_parent().fac.ALLY:
 		SignalBus.changeButtonState.emit()
 

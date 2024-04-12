@@ -18,6 +18,14 @@ func _ready():
 	screenSize = get_viewport_rect().size
 	#add_passive("Trap")
 
+func spawning_in():
+	get_node("AnimatedSprite2D:sprite_frames").set_sprite_frames(load("res://Scenes/Sprite Frames/" + fileName + ".tres"))
+	get_node(".:Scale").set_scale(Vector2(1,1))
+	get_node("AnimatedSprite2D:Scale").set_scale(Vector2(2,2))
+	SignalBus.updateFloatingHP.emit(self)
+	print("FUCK")
+	SignalBus.remakeUnitList.emit()
+
 func unique_turn_start():
 	shortestPath = 10000
 	lengthList = [] # List of distances to different opposing units

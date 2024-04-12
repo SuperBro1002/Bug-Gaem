@@ -108,6 +108,12 @@ func init_stats(max_hp, current_hp, max_ap, current_ap, True_init, current_init,
 	Faction = faction
 	BatonPass = bp
 
+func set_name(str):
+	Name = str
+
+func set_fileName(str):
+	fileName = str
+
 func get_current_hp():
 	# Returns unit's current hp
 	return CurrentHP

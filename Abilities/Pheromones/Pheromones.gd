@@ -7,6 +7,8 @@ func _enter_tree():
 	description = "Draws all enemies 2 tiles closer to this unit."
 
 func queue():
+	if AutoloadMe.turnPointer != get_parent() or get_parent().abilityQueued != get_parent().ability3:
+		return
 	if !AutoloadMe.globalEnemyList.is_empty():
 		targetUnits = AutoloadMe.globalEnemyList.duplicate()
 		SignalBus.activelyQueueing.emit(true)

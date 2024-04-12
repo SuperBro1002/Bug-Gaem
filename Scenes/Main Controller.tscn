@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=19 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bofj7xwd6mfhg" path="res://Assets/Maps_Tiles/tutorial_map.png" id="13_pfrlb"]
 [ext_resource type="Texture2D" uid="uid://cxhgdv3ubm0ks" path="res://Assets/Maps_Tiles/fountain.png" id="14_fai0c"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="14_i827p"]
+[ext_resource type="PackedScene" uid="uid://b31vcfng888xw" path="res://Scenes/spawner.tscn" id="16_uxiej"]
 [ext_resource type="Texture2D" uid="uid://0hgw2imncrvb" path="res://Assets/Maps_Tiles/GridLayer.png" id="17_lbcx0"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rfeji"]
@@ -39,7 +40,7 @@ Name = "Atlus"
 fileName = "Atlus"
 MaxHP = 12
 MaxAP = 14
-TrueInit = 25
+TrueInit = 50
 SetAbility2 = "Grapple"
 SetAbility3 = "Throw"
 Faction = 0
@@ -166,6 +167,18 @@ texture = SubResource("PlaceholderTexture2D_46uv7")
 modulate = Color(1, 1, 1, 0.113725)
 texture_filter = 1
 texture = ExtResource("17_lbcx0")
+
+[node name="Spawner" parent="." instance=ExtResource("16_uxiej")]
+position = Vector2(671, 414)
+groupID = 1
+setName = "Robo Poly"
+setFileName = "Robopoly"
+setHP = 10
+setAP = 10
+setInit = 40
+ability1 = "Tackle"
+ability2 = "Tackle"
+ability3 = "Tackle"
 
 [editable path="Grid/InitManager/UnitManager/Atlus"]
 [editable path="Grid/InitManager/UnitManager/Triss"]

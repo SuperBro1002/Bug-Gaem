@@ -25,6 +25,7 @@ func next_turn():
 			return
 
 func next_round():
+	AutoloadMe.roundNum += 1
 	for j in (AutoloadMe.globalUnitList.size()):
 		AutoloadMe.globalUnitList[j].reset_acted()
 		AutoloadMe.globalUnitList[j].reset_ap()
@@ -36,6 +37,7 @@ func next_round():
 # Secret unit in last pos to end round
 func make_unit_list():
 	var unitList = unitMan.get_children()
+	print("Children are ", unitList)
 	var allyList = []
 	var enemyList = []
 	AutoloadMe.globalUnitList = unitList
