@@ -59,7 +59,7 @@ func queue():
 				if newPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position):
 					occupiedPos = true
 					collatUnit = AutoloadMe.globalUnitList[i]
-					# SET BOUNCE POS HERE SOMEHOW
+					bouncePos = get_parent().grid.flood_fill_first(newPos)
 					
 			$Area2D2.position = get_parent().grid.map_to_local(newPos)
 			$Area2D2/SelectionBox.set_visible(true)
@@ -86,7 +86,9 @@ func execute():
 				#Tweens target to the bouncePos
 				targetUnits[i].lose_health(4)
 				collatUnit.lose_health(4)
-				
+				#await get_tree().create_timer(0.5).timeout
+				targetUnits[i].position = get_parent().grid.map_to_local(bouncePos)
+				targetUnits[i].abilityStartPoint = targetUnits[i].grid.convert_to_map(bouncePos)
 			
 			targetUnits[i].give_batonpass()
 		

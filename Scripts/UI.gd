@@ -94,8 +94,3 @@ func clear_tile_Overlays():
 	if tiles != null:
 		for i in tiles.size():
 			tiles[i].queue_free()
-			#$"../../Grid/ValidTiles".queue_free()
-			#var holder = Node.new()
-			#holder.set_name("ValidTiles")
-			#$"../../Grid".add_child(holder)
-			print("HERE ", $"../../Grid".get_children())
