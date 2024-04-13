@@ -3,6 +3,7 @@ extends TileMap
 @onready var gridLengthX = get_used_rect().size.x
 @onready var gridLengthY = get_used_rect().size.y
 var oppFac
+var directions = [Vector2.UP,Vector2.RIGHT,Vector2.DOWN,Vector2.LEFT]
 
 func _ready():
 	SignalBus.connect("updateGrid", update_grid_collision)
@@ -40,7 +41,46 @@ func set_enemy_collision():
 				if local_to_map(AutoloadMe.globalEnemyList[i].position) == tilePos and AutoloadMe.globalEnemyList[i] != AutoloadMe.turnPointer:
 					AutoloadMe.movementGrid.set_point_solid(tilePos)
 
-
 func convert_to_map(localPos):
 	return local_to_map(localPos)
 
+func is_in_bounds(point):
+	if point.x < 0 or point.x > gridLengthX:
+		return false
+	if point.y < 0 or point.y >gridLengthY:
+		return false
+	return true
+
+func flood_fill_movement(start, maxDistance):
+	var validTiles = []
+	var searchStack = [local_to_map(start)]
+	
+	while !searchStack.is_empty():
+		var current = searchStack.pop_back()
+		
+		if !is_in_bounds(current):
+			continue
+		if current in validTiles:
+			continue
+		if AutoloadMe.movementGrid.is_point_solid(current):
+			print("IM SOLID IDIOT")
+			continue
+		
+		var pathArray = AutoloadMe.movementGrid.get_point_path(local_to_map(start),current)
+		var distance = pathArray.size() - 1
+		if distance > maxDistance:
+			continue
+		
+		validTiles.append(current)
+		
+		for i in directions:
+			var coords = Vector2(Vector2i(current) + Vector2i(i))
+			if AutoloadMe.movementGrid.is_point_solid(coords):
+				continue
+			if coords in validTiles:
+				continue
+			
+			searchStack.append(coords)
+	for i in validTiles.size():
+		validTiles[i] = map_to_local(validTiles[i])
+	return validTiles

@@ -21,6 +21,6 @@ func execute():
 			
 			SignalBus.remakeUnitList.emit()
 			#await get_tree().create_timer(1).timeout
-			targetUnits[i].lose_health(4)
+		targetUnits[i].lose_health(4)
 	
 	post_execute()

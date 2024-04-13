@@ -28,6 +28,8 @@ func set_ui(unit):
 		$InfoBox/APValue.set_text(apVal)
 		SignalBus.updateFloatingAP.emit(unit.get_temp_ap())
 	
+	flood_fill()
+	
 	for i in boxArray.size():
 		boxArray[i].update_display()
 
@@ -75,3 +77,25 @@ func show_infoBox():
 		$InfoBox.set_visible(true)
 	elif AutoloadMe.turnPointer.get_faction() == AutoloadMe.turnPointer.fac.ENEMY and $InfoBox.is_visible() == true:
 		$InfoBox.set_visible(false)
+
+func flood_fill():
+	clear_tile_Overlays()
+	if AutoloadMe.turnPointer.get_faction() != AutoloadMe.turnPointer.fac.ALLY:
+		return
+	var tiles = AutoloadMe.turnPointer.get_reachable_tiles()
+	for i in tiles.size():
+		var tileOverlay = Sprite2D.new()
+		tileOverlay.texture = load("res://Assets/HUD/ValidTile.png")
+		$"../../Grid/ValidTiles".add_child(tileOverlay)
+		tileOverlay.position = tiles[i]
+
+func clear_tile_Overlays():
+	var tiles = $"../../Grid/ValidTiles".get_children()
+	if tiles != null:
+		for i in tiles.size():
+			tiles[i].queue_free()
+			#$"../../Grid/ValidTiles".queue_free()
+			#var holder = Node.new()
+			#holder.set_name("ValidTiles")
+			#$"../../Grid".add_child(holder)
+			print("HERE ", $"../../Grid".get_children())

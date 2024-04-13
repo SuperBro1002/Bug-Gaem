@@ -27,6 +27,9 @@ func _ready():
 func _process(_delta):
 	pass
 
+func get_reachable_tiles():
+	return grid.flood_fill_movement(grid.map_to_local(start), CurrentAP)
+
 func move(dir):
 	if canMove == true:
 		match [dir == Vector2.RIGHT, dir == Vector2.LEFT]:
