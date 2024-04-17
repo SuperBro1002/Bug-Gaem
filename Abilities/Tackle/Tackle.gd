@@ -12,6 +12,8 @@ func execute():
 	print(targetUnits)
 	
 	for i in targetUnits.size():
+		if targetUnits == null:
+			return
 		targetUnits[i].lose_health(2)
 	
 	post_execute()

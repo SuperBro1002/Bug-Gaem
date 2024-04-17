@@ -36,16 +36,17 @@ func queue():
 			
 			for i in AutoloadMe.globalUnitList.size() - 1:
 				if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position): # Checks if a unit is present at clickedPos
-					if clickedDistance.size() - 1 <= distanceRange and AutoloadMe.globalUnitList[i].get_faction() == targetType: # Checks if ClickedPos is within the ability's designated tile range and is the proper alignment
+					if clickedDistance.size() - 1 <= distanceRange: # Checks if ClickedPos is within the ability's designated tile range and is the proper alignment
 						$Area2D.position = get_parent().grid.map_to_local(clickedPos) # Moves the collision box to clickedPos. If any unit is within this box, they are added to a targetList
 						$Area2D/SelectionBox.set_visible(true)
 						
 						await get_tree().create_timer(0.1).timeout
-						
 						if !targetUnits.is_empty(): # Checks if a target is found and signals if the game can allow an input to trigger the execute method
 							SignalBus.activelyQueueing.emit(true)
+							print("NO KILL")
 						else:
 							SignalBus.activelyQueueing.emit(false)
+							print("KILL")
 						
 						print(targetUnits)
 	else:
@@ -97,9 +98,12 @@ func execute():
 func dequeue(_num, state):
 	if state == false:
 		clickedPos = null
+		AutoloadMe.isExecuting = false
 		newPos = null
 		$Area2D/SelectionBox.set_visible(false)
 		$Area2D.position = Vector2(0,0)
 		$Area2D2/SelectionBox.set_visible(false)
 		$Area2D2.position = Vector2(0,0)
 
+func _on_area_2d_area_entered(area):
+	targetUnits.append(area)

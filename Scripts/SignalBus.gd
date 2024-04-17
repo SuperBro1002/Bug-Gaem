@@ -24,3 +24,4 @@ signal updateFloatingHP
 signal updateFloatingAP
 signal mouseHovering(isHovering)
 signal remakeUnitList
+signal spawnGroup

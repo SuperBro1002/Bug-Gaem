@@ -32,6 +32,8 @@ func unique_turn_start():
 	target = null
 	grid.set_enemy_collision()
 	
+	await get_tree().create_timer(2).timeout
+	
 	for i in AutoloadMe.globalAllyList.size():
 		end = grid.local_to_map(AutoloadMe.globalAllyList[i].position)
 		lengthList.append(AutoloadMe.movementGrid.get_point_path(start, end).size())
