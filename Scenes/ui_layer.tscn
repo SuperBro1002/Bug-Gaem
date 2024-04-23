@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://batl7dw1ds002"]
+[gd_scene load_steps=16 format=3 uid="uid://batl7dw1ds002"]
 
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="1_gtd5a"]
 [ext_resource type="PackedScene" uid="uid://gdr7wfqwmtao" path="res://Scenes/secondary_info_box.tscn" id="2_qk2sv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Ability2Button.gd" id="4_7yk03"]
 [ext_resource type="Script" path="res://Scripts/Ability3Button.gd" id="5_vdsmd"]
 [ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlus/Atlus_Base_Still.png" id="6_18ayx"]
+[ext_resource type="Script" path="res://Scripts/MainPortrait.gd" id="7_257wd"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_gei7j"]
 device = -1
@@ -145,6 +146,7 @@ texture_filter = 1
 position = Vector2(84.5495, 84.5496)
 scale = Vector2(5.01757, 5.01757)
 texture = ExtResource("6_18ayx")
+script = ExtResource("7_257wd")
 
 [node name="HPLabel" type="Label" parent="UI/InfoBox"]
 layout_mode = 0

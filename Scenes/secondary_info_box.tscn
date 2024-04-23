@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://gdr7wfqwmtao"]
+[gd_scene load_steps=8 format=3 uid="uid://gdr7wfqwmtao"]
 
 [ext_resource type="Script" path="res://Scripts/secondary_info_box.gd" id="1_oorkw"]
 [ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlus/Atlus_Base_Still.png" id="2_pfi1r"]
+[ext_resource type="Script" path="res://Scripts/ReplyPortrait.gd" id="3_ukt7y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8j6oi"]
 font_size = 36
@@ -17,7 +18,7 @@ font_size = 12
 
 [node name="SecondaryInfoBox" type="ColorRect"]
 custom_minimum_size = Vector2(380, 0)
-offset_left = 1116.0
+offset_left = 1315.0
 offset_top = 16.0
 offset_right = 1695.0
 offset_bottom = 396.0
@@ -65,9 +66,10 @@ color = Color(0.168627, 0.164706, 0.592157, 1)
 
 [node name="PortraitSprite" type="Sprite2D" parent="PortraitBox"]
 texture_filter = 1
-position = Vector2(55.9999, 54)
-scale = Vector2(2.858, 2.858)
+position = Vector2(55, 55)
+scale = Vector2(3.28524, 3.28524)
 texture = ExtResource("2_pfi1r")
+script = ExtResource("3_ukt7y")
 
 [node name="HPValue" type="Label" parent="."]
 layout_mode = 2
@@ -98,10 +100,10 @@ label_settings = SubResource("LabelSettings_cwfcy")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 2
-offset_left = 9.0
-offset_top = 178.0
-offset_right = 571.0
-offset_bottom = 426.0
+offset_left = 10.0
+offset_top = 179.0
+offset_right = 370.0
+offset_bottom = 478.0
 columns = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
@@ -116,7 +118,7 @@ max_lines_visible = 1
 [node name="Description1" type="Label" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat placerat ipsum quis faucibus. Pellentesque condimentum risus eu urna imperdiet, ac imperdiet libero iaculis. Integer metus turpis, eleifend quis accumsan id, vehicula a elit."
+text = "Just fucking punches someone, dealing 4 damage."
 label_settings = SubResource("LabelSettings_ds8f4")
 autowrap_mode = 2
 max_lines_visible = 5
@@ -132,7 +134,7 @@ text = "Ability 2"
 [node name="Description2" type="Label" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat placerat ipsum quis faucibus. Pellentesque condimentum risus eu urna imperdiet, ac imperdiet libero iaculis. Integer metus turpis, eleifend quis accumsan id, vehicula a elit. "
+text = "A beam of holy moonlight heals the target for 3 HP. Can also trigger special effects on flowers."
 label_settings = SubResource("LabelSettings_cten2")
 autowrap_mode = 2
 max_lines_visible = 5
@@ -148,7 +150,7 @@ text = "Ability 3"
 [node name="Description3" type="Label" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat placerat ipsum quis faucibus. Pellentesque condimentum risus eu urna imperdiet, ac imperdiet libero iaculis. Integer metus turpis, eleifend quis accumsan id, vehicula a elit. "
+text = "The target is held in the user's grasp, unable to move on their own for 1 turn. Deals 5 damage"
 label_settings = SubResource("LabelSettings_cten2")
 autowrap_mode = 2
 max_lines_visible = 5
