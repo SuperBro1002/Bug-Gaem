@@ -4,7 +4,8 @@ extends Ability_class
 func _enter_tree():
 	SignalBus.connect("abilityIsQueued", queue)
 	targetType = get_parent().fac.ENEMY
-	description = "Draws all enemies 2 tiles closer to this unit."
+	Name = "Pheromones"
+	description = "Draws all enemies 2 tiles closer to this unit. 2 AP"
 
 func queue():
 	if AutoloadMe.turnPointer != get_parent() or get_parent().abilityQueued != get_parent().ability3:

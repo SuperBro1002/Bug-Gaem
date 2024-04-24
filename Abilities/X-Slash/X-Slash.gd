@@ -4,7 +4,8 @@ var sceneNode
 
 func _enter_tree():
 	targetType = get_parent().fac.ENEMY
-	description = "Deals 4 damage to a single target. If the target dies from this attack, they become possessed, and receive baton pass. They then perish after taking one turn."
+	Name = "X-Slash"
+	description = "Deals 4 damage to a single target. If the target dies from this attack, they become possessed, and receive baton pass. They then perish after taking one turn. 3 AP"
 
 func execute():
 	# for every target in target units[]

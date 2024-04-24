@@ -22,7 +22,8 @@ var validTargetPos
 func _enter_tree():
 	$Area2D2/SelectionBox.set_visible(false)
 	targetType = get_parent().fac.ALLY
-	description = "Select an adjacent unit to throw to a space within 6 tiles. If there is a unit in the target's new space, both units take 4 damage and the former is pushed off the tile. Unit being thrown gains Baton Pass."
+	Name = "Throw"
+	description = "Select an adjacent unit to throw to a space within 6 tiles. If there is a unit in the target's new space, both units take 4 damage and the former is pushed off the tile. Unit being thrown gains Baton Pass. 4 AP"
 
 func queue():
 	collatUnit = null

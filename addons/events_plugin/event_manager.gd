@@ -11,6 +11,8 @@ enum objectiveType {
 @export var objectiveNum = 5
 var isComplete = false
 
+func _ready():
+	SignalBus.connect("checkEvents", start_round_event_check)
 
 func start_round_event_check():
 	check_objective()
@@ -35,6 +37,9 @@ func local_side_round_events():
 func activate_spawners():
 	pass
 
+# Match statements checking current progress
+func objective_progress_events():
+	pass
 
 # Figure out exactly what kind of events we'll have. May or may not need post-ability/death/damaged/etc event functions
 

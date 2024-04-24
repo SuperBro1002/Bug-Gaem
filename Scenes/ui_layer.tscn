@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://Scripts/Ability3Button.gd" id="5_vdsmd"]
 [ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlus/Atlus_Base_Still.png" id="6_18ayx"]
 [ext_resource type="Script" path="res://Scripts/MainPortrait.gd" id="7_257wd"]
+[ext_resource type="PackedScene" uid="uid://42m7teprqnkh" path="res://Scenes/ability_box_object.tscn" id="8_kxv4v"]
+
 
 [sub_resource type="InputEventKey" id="InputEventKey_gei7j"]
 device = -1
@@ -201,3 +203,18 @@ color = Color(0.356863, 0.266667, 0.843137, 1)
 layout_mode = 0
 offset_right = 832.0
 offset_bottom = 152.0
+
+[node name="AbilityDescBox" parent="UI" instance=ExtResource("7_kxv4v")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 677.0
+offset_right = 656.0
+offset_bottom = 825.0
+
+[connection signal="mouse_entered" from="UI/InfoBox/AbilityBox/Ability1Button" to="UI" method="_on_ability_1_button_mouse_entered"]
+[connection signal="mouse_exited" from="UI/InfoBox/AbilityBox/Ability1Button" to="UI" method="_on_ability_1_button_mouse_exited"]
+[connection signal="mouse_entered" from="UI/InfoBox/AbilityBox/Ability2Button" to="UI" method="_on_ability_2_button_mouse_entered"]
+[connection signal="mouse_exited" from="UI/InfoBox/AbilityBox/Ability2Button" to="UI" method="_on_ability_2_button_mouse_exited"]
+[connection signal="mouse_entered" from="UI/InfoBox/AbilityBox/Ability3Button" to="UI" method="_on_ability_3_button_mouse_entered"]
+[connection signal="mouse_exited" from="UI/InfoBox/AbilityBox/Ability3Button" to="UI" method="_on_ability_3_button_mouse_exited"]
