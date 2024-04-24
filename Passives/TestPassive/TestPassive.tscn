@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://nu8a7ta8buyf"]
+
+[ext_resource type="Script" path="res://Passives/TestPassive/TestPassive.gd" id="1_a813e"]
+
+[node name="TestPassive" type="Node"]
+script = ExtResource("1_a813e")

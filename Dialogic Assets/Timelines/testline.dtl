@@ -1,0 +1,12 @@
+label First
+if {AutoloadMe.turnPointer.get_current_hp()} != 2:
+	jump Low HP
+label Intro
+Lumoth: By the light of Lunalesca, we shall not falter! [pause=0.2] Let her moonlight heal you!
+[end_timeline]
+label Neutral
+Lumoth: <Lunalesca, please, keep us safe./Am I holding my staff right? I don't think I'm holding it right./Serene mind, still body. Serene mind, still body./If you are watching, please guide my hand./How many more will it take, Lunalesca?/This oil is never going to wash out, is it?>
+[end_timeline]
+label Low HP
+Lumoth: <Lunalesca, oh goddess, please don't let it end here./Perhaps I should save some of the blessings for myself./Were we not chosen?>
+[end_timeline]

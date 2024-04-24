@@ -25,4 +25,6 @@ signal updateFloatingAP
 signal mouseHovering(isHovering)
 signal remakeUnitList
 signal spawnGroup
+signal changeMainPortrait(filename)
+signal changeReplyPortrait(filename)
 signal checkEvents
