@@ -4,7 +4,7 @@ extends Ability_class
 func _enter_tree():
 	targetType = get_parent().fac.ENEMY
 	Name = "Sacrifice Sting"
-	description = "Lose all HP and attack all enemies surrounding you."
+	description = "Lose all HP and attack all enemies surrounding you. (All HP)"
 	SignalBus.connect("ability",hijack)
 
 func hijack(num, state):
