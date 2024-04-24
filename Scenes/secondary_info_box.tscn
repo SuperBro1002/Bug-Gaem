@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://gdr7wfqwmtao"]
+[gd_scene load_steps=8 format=3 uid="uid://gdr7wfqwmtao"]
 
 [ext_resource type="Script" path="res://Scripts/secondary_info_box.gd" id="1_oorkw"]
 [ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlus/Atlus_Base_Still.png" id="2_pfi1r"]
+[ext_resource type="Script" path="res://Scripts/ReplyPortrait.gd" id="3_c87lh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8j6oi"]
 font_size = 36
@@ -17,7 +18,7 @@ font_size = 12
 
 [node name="SecondaryInfoBox" type="ColorRect"]
 custom_minimum_size = Vector2(380, 0)
-offset_left = 1315.0
+offset_left = 1113.0
 offset_top = 16.0
 offset_right = 1695.0
 offset_bottom = 396.0
@@ -68,6 +69,7 @@ texture_filter = 1
 position = Vector2(55, 55)
 scale = Vector2(3.28524, 3.28524)
 texture = ExtResource("2_pfi1r")
+script = ExtResource("3_c87lh")
 
 [node name="HPValue" type="Label" parent="."]
 layout_mode = 2
@@ -100,8 +102,8 @@ label_settings = SubResource("LabelSettings_cwfcy")
 layout_mode = 2
 offset_left = 10.0
 offset_top = 179.0
-offset_right = 370.0
-offset_bottom = 478.0
+offset_right = 571.0
+offset_bottom = 366.0
 columns = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer"]

@@ -19,10 +19,8 @@ config/icon="res://icon.svg"
 
 AutoloadMe="*res://Scripts/AutoloadMe.gd"
 SignalBus="*res://Scripts/SignalBus.gd"
-
 PortraitManager="*res://Scripts/PortraitManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-
 
 [debug]
 
