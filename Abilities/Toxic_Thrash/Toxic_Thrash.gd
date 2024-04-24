@@ -3,6 +3,7 @@ extends Ability_class
 
 func _enter_tree():
 	targetType = get_parent().fac.ENEMY
+	Name = "Toxic Thrash"
 	description = "Deals 2 damage and inflicts poison to a single target."
 
 func execute():

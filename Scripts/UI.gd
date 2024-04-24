@@ -3,6 +3,9 @@ extends Control
 var animationSpeed = 4
 var boxArray = []
 var nodeList
+var ability1
+var ability2
+var ability3
 
 func _ready():
 	SignalBus.connect("currentUnit", set_ui)
@@ -27,6 +30,10 @@ func set_ui(unit):
 		var apVal = str(unit.get_temp_ap()) + " / " + str(unit.get_max_ap())
 		$InfoBox/APValue.set_text(apVal)
 		SignalBus.updateFloatingAP.emit(unit.get_temp_ap())
+		ability1 = unit.ability1
+		ability2 = unit.ability2
+		ability3 = unit.ability3
+	
 	
 	flood_fill()
 	
@@ -94,3 +101,37 @@ func clear_tile_Overlays():
 	if tiles != null:
 		for i in tiles.size():
 			tiles[i].queue_free()
+
+
+func _on_ability_1_button_mouse_entered():
+	var tween = create_tween()
+	$AbilityDescBox.set_my_text(ability1)
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+
+
+func _on_ability_1_button_mouse_exited():
+	var tween = create_tween()
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+
+
+func _on_ability_2_button_mouse_entered():
+	var tween = create_tween()
+	$AbilityDescBox.set_my_text(ability2)
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+
+
+func _on_ability_2_button_mouse_exited():
+	var tween = create_tween()
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+
+
+
+func _on_ability_3_button_mouse_entered():
+	var tween = create_tween()
+	$AbilityDescBox.set_my_text(ability3)
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+
+
+func _on_ability_3_button_mouse_exited():
+	var tween = create_tween()
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)

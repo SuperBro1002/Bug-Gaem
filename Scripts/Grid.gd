@@ -52,11 +52,13 @@ func is_in_bounds(point):
 	return true
 
 func is_occupied_by_ally(pos):
+	print(AutoloadMe.globalAllyList)
 	for i in AutoloadMe.globalAllyList.size():
+		print(pos, " ", local_to_map(AutoloadMe.globalAllyList[i].position))
 		if pos == local_to_map(AutoloadMe.globalAllyList[i].position):
+			print("ALLY")
 			return true
-		else:
-			return false
+	return false
 
 func flood_fill_movement(start, maxDistance):
 	var validTiles = []
@@ -104,20 +106,24 @@ func flood_fill_first(start):
 		if current in searchedTiles:
 			continue
 		if is_occupied_by_ally(current):
+			print("I AM ALLY", AutoloadMe.movementGrid.is_point_solid(current))
+			
 			continue
 		if !AutoloadMe.movementGrid.is_point_solid(current):
+			print("NOT SOLID")
 			return current
 		
 		searchedTiles.append(current)
 		
 		for i in directions:
 			var coords = Vector2(Vector2i(current) + Vector2i(i))
-			
+			print("IS COORDS ", AutoloadMe.movementGrid.is_point_solid(coords))
 			if !AutoloadMe.movementGrid.is_point_solid(coords):
+				print("NOT SOLID 2")
 				return coords
 			if coords in searchedTiles:
 				continue
 			
 			searchStack.append(coords)
-	
+	print("TESTING ", firstValid)
 	return firstValid
