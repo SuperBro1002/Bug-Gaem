@@ -8,6 +8,7 @@ var ability2
 var ability3
 
 func _ready():
+	get_parent().set_visible(true)
 	SignalBus.connect("currentUnit", set_ui)
 	SignalBus.connect("updateUI", set_ui)
 	SignalBus.connect("updateInitBox", draw_init_box)
@@ -108,7 +109,6 @@ func _on_ability_1_button_mouse_entered():
 	$AbilityDescBox.set_my_text(ability1)
 	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
-
 func _on_ability_1_button_mouse_exited():
 	var tween = create_tween()
 	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
@@ -119,18 +119,15 @@ func _on_ability_2_button_mouse_entered():
 	$AbilityDescBox.set_my_text(ability2)
 	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
-
 func _on_ability_2_button_mouse_exited():
 	var tween = create_tween()
 	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
-
 
 
 func _on_ability_3_button_mouse_entered():
 	var tween = create_tween()
 	$AbilityDescBox.set_my_text(ability3)
 	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
-
 
 func _on_ability_3_button_mouse_exited():
 	var tween = create_tween()

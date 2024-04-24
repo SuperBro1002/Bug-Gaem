@@ -8,6 +8,7 @@ var directions = [Vector2.UP,Vector2.RIGHT,Vector2.DOWN,Vector2.LEFT]
 func _ready():
 	SignalBus.connect("updateGrid", update_grid_collision)
 	AutoloadMe.initialize_grid(gridLengthX, gridLengthY)
+	print("GRID X: ", gridLengthX)
 
 func update_grid_collision():
 	AutoloadMe.movementGrid.update()
