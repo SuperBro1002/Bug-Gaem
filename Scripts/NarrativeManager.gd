@@ -15,4 +15,7 @@ func set_timeline():
 					current_timeline = "res://Dialogic Assets/Timelines/" + passive.timeline + ".dtl"
 					var node := Dialogic.start(current_timeline, passive.label)
 					node.register_character(load("res://Dialogic Assets/Characters/Atlas.dch"), get_child(0))
+					node.register_character(load("res://Dialogic Assets/Characters/Lumoth.dch"), get_child(0))
+					node.register_character(load("res://Dialogic Assets/Characters/Triss.dch"), get_child(0))
+					node.register_character(load("res://Dialogic Assets/Characters/Paramantis.dch"), get_child(0))
 	print("No timeline to use")

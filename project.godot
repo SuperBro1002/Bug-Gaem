@@ -41,7 +41,7 @@ layout/style_list=["res://Dialogic Assets/Styles/Default.tres"]
 layout/default_style="res://Dialogic Assets/Styles/Default.tres"
 glossary/default_case_sensitive=true
 variables={
-"Var": ""
+"hp_percent": 0.0
 }
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
