@@ -32,7 +32,6 @@ func next_round():
 	currentUnitTurn = AutoloadMe.globalUnitList[0]
 	print("ROUND END. RESETTING: ", currentUnitTurn)
 	SignalBus.currentUnit.emit(currentUnitTurn)
-	SignalBus.checkEvents.emit()
 	currentUnitTurn.on_turn_start()
 
 # Secret unit in last pos to end round

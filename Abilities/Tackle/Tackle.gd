@@ -3,8 +3,7 @@ extends Ability_class
 
 func _enter_tree():
 	targetType = get_parent().fac.ENEMY
-	Name = "Tackle"
-	description = "Deals 2 damage to a single target. 4 AP"
+	description = "Deals 2 damage to a single target. "
 
 func execute():
 	# for every target in target units[]
