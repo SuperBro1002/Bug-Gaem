@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=21 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
 [ext_resource type="Script" path="res://Scripts/EM1.gd" id="2_ikr7x"]
 [ext_resource type="PackedScene" uid="uid://tgpcor2pwjrk" path="res://Scenes/init_manager.tscn" id="3_4mpdr"]
+[ext_resource type="PackedScene" uid="uid://dimryoawtb8dt" path="res://Scenes/narrative_manager.tscn" id="3_fr05d"]
 [ext_resource type="PackedScene" uid="uid://cofaiq0bowqml" path="res://Scenes/ally.tscn" id="4_tt5vw"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="5_4smxl"]
 [ext_resource type="SpriteFrames" uid="uid://bg2fds46ouabi" path="res://Scenes/Sprite Frames/Atlus.tres" id="5_5o71r"]
@@ -28,6 +29,8 @@ script = ExtResource("1_7imgs")
 
 [node name="EM1" type="Node" parent="."]
 script = ExtResource("2_ikr7x")
+
+[node name="NarrativeManager" parent="." instance=ExtResource("3_fr05d")]
 
 [node name="Grid" parent="." instance=ExtResource("2_8duao")]
 visible = false
