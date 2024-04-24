@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dimryoawtb8dt"]
+
+[ext_resource type="Script" path="res://Scripts/NarrativeManager.gd" id="1_f0ixf"]
+
+[node name="NarrativeManager" type="Node"]
+script = ExtResource("1_f0ixf")
+
+[node name="BubbleMarker1" type="Marker2D" parent="."]
+position = Vector2(-345, 726)
+
+[node name="BubbleMarker2" type="Marker2D" parent="."]
+position = Vector2(982, -51)
