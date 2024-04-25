@@ -187,6 +187,18 @@ ability1 = "Tackle"
 ability2 = "Tackle"
 ability3 = "Tackle"
 
+[node name="Spawner2" parent="." instance=ExtResource("16_uxiej")]
+position = Vector2(349, 675)
+groupID = 1
+setName = "Robo Poly"
+setFileName = "Robopoly"
+setHP = 10
+setAP = 10
+setInit = 40
+ability1 = "Tackle"
+ability2 = "Tackle"
+ability3 = "Tackle"
+
 [editable path="Grid/InitManager/UnitManager/Atlus"]
 [editable path="Grid/InitManager/UnitManager/Triss"]
 [editable path="Grid/InitManager/UnitManager/Lumoth"]

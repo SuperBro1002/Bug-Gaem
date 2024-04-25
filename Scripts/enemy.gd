@@ -19,11 +19,15 @@ func _ready():
 	#add_passive("Trap")
 
 func spawning_in():
+	set_modulate(Color(1,1,1,0))
 	get_node("AnimatedSprite2D:sprite_frames").set_sprite_frames(load("res://Scenes/Sprite Frames/" + fileName + ".tres"))
 	get_node(".:Scale").set_scale(Vector2(1,1))
 	get_node("AnimatedSprite2D:Scale").set_scale(Vector2(2,2))
+	
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	
 	SignalBus.updateFloatingHP.emit(self)
-	print("FUCK")
 	SignalBus.remakeUnitList.emit()
 
 func unique_turn_start():

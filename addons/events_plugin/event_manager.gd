@@ -12,13 +12,15 @@ enum objectiveType {
 var isComplete = false
 
 func _ready():
-	SignalBus.connect("checkEvents", start_round_event_check)
+	pass
 
 func start_round_event_check():
+	print("EVENTS")
 	check_objective()
 	main_round_events()
 	global_side_round_events()
 	local_side_round_events()
+
 	activate_spawners()
 
 # Handles narrative / Objective related events 

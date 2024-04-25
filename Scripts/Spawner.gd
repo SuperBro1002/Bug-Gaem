@@ -17,7 +17,7 @@ var notObstructed = true
 func _ready():
 	SignalBus.connect("spawnGroup", spawn)
 	set_visible(false)
-	spawn(1)
+	#spawn(1)
 
 func spawn(idCalled):
 	if idCalled != groupID:
@@ -50,8 +50,6 @@ func spawn(idCalled):
 	
 	get_node("../Grid/InitManager/UnitManager").add_child(newUnit)
 	newUnit.spawning_in()
-	
-	print("KILL MEEEEE", get_node("../Grid/InitManager/UnitManager").get_children())
 
 # on_enter signal nodes to determine when new spawn needs to be set by changed notObstructed
 

@@ -33,6 +33,8 @@ func set_colors():
 		colorTween.tween_property(self, "modulate", Color(0.42, 0.42, 0.42), 0.2).set_trans(Tween.TRANS_SINE)
 
 func reset_colors():
+	if get_tree() == null:
+		return
 	await get_tree().create_timer(0.2).timeout
 	if colorTween:
 		colorTween.kill()

@@ -118,7 +118,7 @@ max_lines_visible = 1
 [node name="Description1" type="Label" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Just fucking punches someone, dealing 4 damage."
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue lorem, vestibulum non ante a, iaculis semper nunc. "
 label_settings = SubResource("LabelSettings_ds8f4")
 autowrap_mode = 2
 max_lines_visible = 5
@@ -134,7 +134,7 @@ text = "Ability 2"
 [node name="Description2" type="Label" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "A beam of holy moonlight heals the target for 3 HP. Can also trigger special effects on flowers."
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue lorem, vestibulum non ante a, iaculis semper nunc. "
 label_settings = SubResource("LabelSettings_cten2")
 autowrap_mode = 2
 max_lines_visible = 5
@@ -150,7 +150,7 @@ text = "Ability 3"
 [node name="Description3" type="Label" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "The target is held in the user's grasp, unable to move on their own for 1 turn. Deals 5 damage"
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue lorem, vestibulum non ante a, iaculis semper nunc. "
 label_settings = SubResource("LabelSettings_cten2")
 autowrap_mode = 2
 max_lines_visible = 5

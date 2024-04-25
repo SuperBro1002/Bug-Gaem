@@ -26,13 +26,14 @@ func next_turn():
 
 func next_round():
 	AutoloadMe.roundNum += 1
+	SignalBus.checkEvents.emit()
 	for j in (AutoloadMe.globalUnitList.size()):
 		AutoloadMe.globalUnitList[j].reset_acted()
 		AutoloadMe.globalUnitList[j].reset_ap()
 	currentUnitTurn = AutoloadMe.globalUnitList[0]
 	print("ROUND END. RESETTING: ", currentUnitTurn)
 	SignalBus.currentUnit.emit(currentUnitTurn)
-	SignalBus.checkEvents.emit()
+	
 	currentUnitTurn.on_turn_start()
 
 # Secret unit in last pos to end round

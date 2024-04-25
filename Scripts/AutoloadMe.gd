@@ -15,7 +15,7 @@ var deathCount = 0
 var hoveredUnit = null
 var notOverlapped = true
 var isExecuting = false
-var roundNum = 0
+var roundNum = 1
 
 var inputs = {"move_right": Vector2.RIGHT,
 			"move_left": Vector2.LEFT,
