@@ -259,7 +259,7 @@ func load_ability(name):
 	var scene = load("res://Abilities/" + name + "/" + name + ".tscn")
 	var sceneNode = scene.instantiate()
 	add_child(sceneNode)
-	print("Found ", name)
+	#print("Found ", name)
 	return sceneNode
 
 func add_passive(name):

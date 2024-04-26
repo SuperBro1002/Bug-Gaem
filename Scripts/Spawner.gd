@@ -40,7 +40,7 @@ func spawn(idCalled):
 	newUnit.SetAbility2 = ability2
 	newUnit.SetAbility3 = ability3
 	newUnit.Faction = setFaction
-	
+	print("OBI? ", notObstructed)
 	if notObstructed:
 		newUnit.position = myPos
 	else:

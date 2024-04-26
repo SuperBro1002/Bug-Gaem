@@ -41,7 +41,7 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 [node name="UnitManager" type="Node" parent="Grid/InitManager"]
 
 [node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
-position = Vector2(159, 417)
+position = Vector2(95, 417)
 scale = Vector2(1, 1)
 Name = "Atlus"
 fileName = "Atlus"
@@ -56,7 +56,7 @@ Faction = 0
 sprite_frames = ExtResource("5_5o71r")
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
-position = Vector2(94, 542)
+position = Vector2(226, 481)
 scale = Vector2(1, 1)
 Name = "Triss"
 fileName = "Triss"
@@ -71,7 +71,7 @@ Faction = 0
 sprite_frames = ExtResource("5_l4uwr")
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
-position = Vector2(96, 289)
+position = Vector2(167, 544)
 scale = Vector2(1, 1)
 Name = "Lumoth"
 fileName = "Lumoth"
@@ -86,12 +86,12 @@ Faction = 0
 sprite_frames = ExtResource("6_o1qg1")
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
-position = Vector2(160, 161)
+position = Vector2(163, 352)
 scale = Vector2(1, 1)
 Name = "Paramantis"
 fileName = "Paramantis"
 MaxHP = 12
-MaxAP = 4
+MaxAP = 10
 TrueInit = 30
 SetAbility1 = "X-Slash"
 SetAbility2 = "Toxic_Thrash"
@@ -102,7 +102,7 @@ Faction = 0
 sprite_frames = ExtResource("5_73cei")
 
 [node name="Robo Poly" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(542, 160)
+position = Vector2(286, 156)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
@@ -112,7 +112,7 @@ TrueInit = 28
 Faction = 1
 
 [node name="Robo Poly2" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(416, 160)
+position = Vector2(550, 225)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
@@ -122,7 +122,7 @@ TrueInit = 28
 Faction = 1
 
 [node name="Robo Poly3" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(225, 546)
+position = Vector2(542, 552)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
@@ -176,8 +176,8 @@ texture_filter = 1
 texture = ExtResource("17_lbcx0")
 
 [node name="Spawner" parent="." instance=ExtResource("16_uxiej")]
+z_index = -1
 position = Vector2(671, 414)
-groupID = 1
 setName = "Robo Poly"
 setFileName = "Robopoly"
 setHP = 10
@@ -188,7 +188,8 @@ ability2 = "Tackle"
 ability3 = "Tackle"
 
 [node name="Spawner2" parent="." instance=ExtResource("16_uxiej")]
-position = Vector2(349, 675)
+z_index = -1
+position = Vector2(227, 419)
 groupID = 1
 setName = "Robo Poly"
 setFileName = "Robopoly"

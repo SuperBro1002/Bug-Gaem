@@ -73,8 +73,10 @@ func get_ap_cost():
 	return apCost
 
 func _on_area_2d_area_entered(area):
-	if area.get_faction() == targetType:
+	if area.get_parent() == self.get_parent().get_parent() and area.get_faction() == targetType:
+		print("HI")
 		targetUnits.append(area)
 
 func _on_area_2d_area_exited(area):
-	targetUnits.erase(area)
+	if area.get_parent() == self.get_parent().get_parent():
+		targetUnits.erase(area)

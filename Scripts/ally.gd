@@ -84,10 +84,14 @@ func deactivate_ability():
 	AutoloadMe.validQueue = false
 
 
-func _on_area_entered(_area):
-	AutoloadMe.notOverlapped = false
-	SignalBus.changeButtonState.emit()
+func _on_area_entered(area):
+	if self == AutoloadMe.turnPointer and get_parent() == area.get_parent():
+		AutoloadMe.notOverlapped = false
+		SignalBus.changeButtonState.emit()
 
-func _on_area_exited(_area):
-	AutoloadMe.notOverlapped = true
-	SignalBus.changeButtonState.emit()
+func _on_area_exited(area):
+	if self == AutoloadMe.turnPointer and get_parent() == area.get_parent() and !has_overlapping_areas():
+		print(get_overlapping_areas(), !has_overlapping_areas())
+		AutoloadMe.notOverlapped = true
+		SignalBus.changeButtonState.emit()
+		print(self ," Is it clear? ", AutoloadMe.notOverlapped)
