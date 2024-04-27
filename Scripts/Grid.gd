@@ -107,6 +107,7 @@ func flood_fill_movement(start, maxDistance):
 				continue
 			
 			searchStack.append(coords)
+	
 	for i in validTiles.size():
 		validTiles[i] = map_to_local(validTiles[i])
 	return validTiles

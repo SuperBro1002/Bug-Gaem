@@ -70,14 +70,15 @@ func _unhandled_input(event):
 			if turnPointer.abilityQueued != null:
 				turnPointer.abilityQueued.queue()
 		
-		if Input.is_action_just_pressed("space") and !isExecuting:
+		if Input.is_action_just_pressed("trigger_ability") and !isExecuting:
 			print(validQueue, " ", queueState)
 			if validQueue == true and queueState == true:
 				isExecuting = true
 				turnPointer.run_passives(turnPointer.methodType.ABILITY_EXECUTE, null)
 				turnPointer.abilityQueued.execute()
-			elif queueState == false and notOverlapped == true:
-				turnPointer.on_turn_end()
+				
+		if Input.is_action_just_pressed("end_turn") and !isExecuting and queueState == false and notOverlapped == true:
+			turnPointer.on_turn_end()
 	
 	else: return
 

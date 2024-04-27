@@ -42,6 +42,6 @@ func execute():
 				var tween = create_tween()
 				tween.tween_property(targetUnits[i], "position", pathArray[j], 1.0 / targetUnits[i].animationSpeed).set_trans(Tween.TRANS_SINE)
 				await tween.finished
-		AutoloadMe.movementGrid.update()
+		get_parent().grid.update_grid_collision()
 	
 	post_execute()
