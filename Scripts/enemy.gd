@@ -64,6 +64,8 @@ func unique_turn_start():
 	
 	while CurrentAP >= ability1.get_ap_cost() and pathArray.size() <= 2:
 		ability1.targetUnits.append(target)
+		AutoloadMe.currentAbility = ability1
+		run_passives(methodType.ABILITY_EXECUTE, null)
 		ability1.execute()
 		CurrentAP -= ability1.get_ap_cost()
 		

@@ -16,6 +16,7 @@ var hoveredUnit = null
 var notOverlapped = true
 var isExecuting = false
 var roundNum = 1
+var currentAbility
 
 var inputs = {"move_right": Vector2.RIGHT,
 			"move_left": Vector2.LEFT,
@@ -73,6 +74,7 @@ func _unhandled_input(event):
 			print(validQueue, " ", queueState)
 			if validQueue == true and queueState == true:
 				isExecuting = true
+				turnPointer.run_passives(turnPointer.methodType.ABILITY_EXECUTE, null)
 				turnPointer.abilityQueued.execute()
 			elif queueState == false and notOverlapped == true:
 				turnPointer.on_turn_end()

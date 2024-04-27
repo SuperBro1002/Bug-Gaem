@@ -20,7 +20,9 @@ enum methodType {
 	GAIN_AP,
 	LOSE_AP,
 	ON_TURN_START,
-	ON_TURN_END
+	ON_TURN_END,
+	IMMEDIATE_PERSISTING,
+	ABILITY_EXECUTE
 }
 
 var passiveList = []
@@ -232,7 +234,7 @@ func unique_turn_start():
 
 func on_turn_end():
 	run_passives(methodType.ON_TURN_END, null)
-	find_and_delete_passives
+	find_and_delete_passives()
 	if BatonPass == TS.BATONPASS:
 		BatonPass = storedBatonPass
 	else:

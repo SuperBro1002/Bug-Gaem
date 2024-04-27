@@ -30,6 +30,7 @@ func range_convert():
 	$Hitbox.target_position = Vector2(0, actualRange)
 
 func queue():
+	AutoloadMe.currentAbility = self
 	if get_parent().get_temp_ap() - apCost >= 0:
 		clickedPos = get_parent().grid.get_global_mouse_position()
 		clickedPos = get_parent().grid.local_to_map(clickedPos)

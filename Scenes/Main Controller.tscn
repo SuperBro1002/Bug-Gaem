@@ -71,7 +71,7 @@ Faction = 0
 sprite_frames = ExtResource("5_l4uwr")
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
-position = Vector2(167, 544)
+position = Vector2(224, 415)
 scale = Vector2(1, 1)
 Name = "Lumoth"
 fileName = "Lumoth"
@@ -80,6 +80,7 @@ MaxAP = 10
 TrueInit = 15
 SetAbility1 = "Heal"
 SetAbility2 = "Shield"
+SetAbility3 = "Blood_Moon"
 Faction = 0
 
 [node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Lumoth" index="1"]
@@ -102,7 +103,7 @@ Faction = 0
 sprite_frames = ExtResource("5_73cei")
 
 [node name="Robo Poly" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(286, 156)
+position = Vector2(225, 220)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
@@ -112,7 +113,7 @@ TrueInit = 28
 Faction = 1
 
 [node name="Robo Poly2" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(550, 225)
+position = Vector2(165, 294)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
@@ -130,6 +131,7 @@ MaxHP = 3
 MaxAP = 6
 TrueInit = 28
 Faction = 1
+BatonPass = 1
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 visible = false
@@ -143,6 +145,7 @@ TrueInit = -100
 [node name="UILayer" parent="." instance=ExtResource("11_p2cr2")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 z_index = 4
 position = Vector2(384, 384)
 script = ExtResource("14_i827p")

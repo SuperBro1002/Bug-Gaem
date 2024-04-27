@@ -19,13 +19,13 @@ func fill_me(_isHovering):
 	$HPValue.set_text(str(unit.get_current_hp(), " / ", unit.get_max_hp()))
 	$APValue.set_text(str(unit.get_current_ap(), " / ", unit.get_max_ap()))
 	
-	$GridContainer/MarginContainer/Ability1.set_text(unit.SetAbility1)
+	$GridContainer/MarginContainer/Ability1.set_text(unit.ability1.Name)
 	$GridContainer/Description1.set_text(unit.ability1.description)
 	
-	$GridContainer/MarginContainer2/Ability2.set_text(unit.SetAbility2)
+	$GridContainer/MarginContainer2/Ability2.set_text(unit.ability2.Name)
 	$GridContainer/Description2.set_text(unit.ability2.description)
 	
-	$GridContainer/MarginContainer3/Ability3.set_text(unit.SetAbility3)
+	$GridContainer/MarginContainer3/Ability3.set_text(unit.ability3.Name)
 	$GridContainer/Description3.set_text(unit.ability3.description)
 
 func handleDead(DyingUnit):

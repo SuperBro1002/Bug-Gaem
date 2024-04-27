@@ -8,6 +8,7 @@
 offset_right = 640.0
 offset_bottom = 148.0
 scale = Vector2(0.775, 0.775)
+mouse_filter = 2
 color = Color(0.141176, 0.352941, 0.843137, 1)
 script = ExtResource("1_hhao4")
 
