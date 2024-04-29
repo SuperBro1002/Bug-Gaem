@@ -62,8 +62,9 @@ Name = "Triss"
 fileName = "Triss"
 MaxHP = 8
 MaxAP = 8
-TrueInit = 20
+TrueInit = 60
 SetAbility1 = "Sting"
+SetAbility2 = "Carry"
 SetAbility3 = "Sacrifice_Sting"
 Faction = 0
 
@@ -111,6 +112,7 @@ MaxHP = 10
 MaxAP = 6
 TrueInit = 28
 Faction = 1
+BatonPass = 1
 
 [node name="Robo Poly2" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 position = Vector2(165, 294)

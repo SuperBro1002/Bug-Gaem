@@ -26,6 +26,7 @@ func _enter_tree():
 	description = "Select an adjacent unit to throw to a space within 6 tiles. If there is a unit in the target's new space, both units take 4 damage and the former is pushed off the tile. Unit being thrown gains Baton Pass. 4 AP"
 
 func queue():
+	AutoloadMe.currentAbility = self
 	collatUnit = null
 	validTargetPos = false
 	occupiedPos = false
@@ -44,15 +45,15 @@ func queue():
 						await get_tree().create_timer(0.1).timeout
 						if !targetUnits.is_empty(): # Checks if a target is found and signals if the game can allow an input to trigger the execute method
 							SignalBus.activelyQueueing.emit(true)
-							print("NO KILL")
 						else:
 							SignalBus.activelyQueueing.emit(false)
-							print("KILL")
-						
 						print(targetUnits)
 	else:
 		newPos = get_parent().grid.get_global_mouse_position()
 		newPos = get_parent().grid.local_to_map(newPos) # Grabs mouse pos and converts it to grid
+		for i in targetUnits:
+			if newPos == get_parent().grid.local_to_map(i.position):
+				return
 		clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,newPos) # Makes a list of the shortest path of tiles between the parent and clickedPos
 		print(clickedDistance.size() - 1)
 		if clickedDistance.size() - 1 <= 6 and newPos.x >= 1 and newPos.y >= 1 and newPos.x <= AutoloadMe.gridSize.x - 2 and newPos.y <= AutoloadMe.gridSize.y - 2:

@@ -138,6 +138,8 @@ func flood_fill_first(start):
 		for i in directions:
 			var coords = Vector2(Vector2i(current) + Vector2i(i))
 			
+			if !is_in_bounds(coords):
+				continue
 			if AutoloadMe.movementGrid.is_point_solid(coords):
 				continue
 			if coords in searchedTiles:

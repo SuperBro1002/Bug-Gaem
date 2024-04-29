@@ -64,6 +64,7 @@ func execute():
 
 func post_execute():
 	targetUnits.clear()
+	get_parent().grid.update_grid_collision()
 	SignalBus.abilityExecuted.emit(self)
 	SignalBus.updateUI.emit(get_parent())
 	AutoloadMe.isExecuting = false

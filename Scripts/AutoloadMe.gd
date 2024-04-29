@@ -11,6 +11,7 @@ var globalAllyList
 var globalEnemyList
 var validQueue = false
 var queueState = false
+var allowEndTurn = true
 var deathCount = 0
 var hoveredUnit = null
 var notOverlapped = true
@@ -77,7 +78,7 @@ func _unhandled_input(event):
 				turnPointer.run_passives(turnPointer.methodType.ABILITY_EXECUTE, null)
 				turnPointer.abilityQueued.execute()
 				
-		if Input.is_action_just_pressed("end_turn") and !isExecuting and queueState == false and notOverlapped == true:
+		if Input.is_action_just_pressed("end_turn") and !isExecuting and queueState == false and notOverlapped == true and allowEndTurn == true:
 			turnPointer.on_turn_end()
 	
 	else: return

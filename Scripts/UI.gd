@@ -35,7 +35,6 @@ func set_ui(unit):
 		ability2 = unit.ability2
 		ability3 = unit.ability3
 	
-	
 	flood_fill()
 	
 	for i in boxArray.size():

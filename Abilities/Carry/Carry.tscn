@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgtkfxb5rparq"]
+
+[ext_resource type="Script" path="res://Abilities/Carry/Carry.gd" id="1_lgtlw"]
+[ext_resource type="Texture2D" uid="uid://doxc8dv2sdn5o" path="res://icon.svg" id="2_jnti6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyjuf"]
+size = Vector2(64, 64)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mw3e8"]
+
+[node name="Carry" type="Node"]
+script = ExtResource("1_lgtlw")
+
+[node name="Hitbox" type="RayCast2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Hitbox"]
+visible = false
+position = Vector2(0.093643, 31.9599)
+scale = Vector2(-0.0533166, 0.57609)
+texture = ExtResource("2_jnti6")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qyjuf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
+visible = false
+position = Vector2(-0.0108279, 0.104773)
+rotation = 1.57057
+scale = Vector2(0.508015, -0.579799)
+texture = ExtResource("2_jnti6")
+
+[node name="SelectionBox" type="Sprite2D" parent="Area2D"]
+modulate = Color(0, 0, 1, 0.301961)
+z_index = 1
+scale = Vector2(64, 64)
+texture = SubResource("PlaceholderTexture2D_mw3e8")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
