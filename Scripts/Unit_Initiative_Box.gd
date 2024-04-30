@@ -76,6 +76,7 @@ func death(toBeDeleted):
 		
 		SignalBus.updateInitBox.emit()
 		SignalBus.updateGrid.emit()
+		SignalBus.updateUI.emit(AutoloadMe.turnPointer)
 		myUnit.queue_free()
 		
 		if AutoloadMe.turnPointer == toBeDeleted:

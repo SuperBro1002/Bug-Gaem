@@ -96,6 +96,8 @@ func execute():
 			targetUnits[i].give_batonpass()
 		
 		post_execute()
+	else:
+		AutoloadMe.isExecuting = false
 
 func dequeue(_num, state):
 	if state == false:

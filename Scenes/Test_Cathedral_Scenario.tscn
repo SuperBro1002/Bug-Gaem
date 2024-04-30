@@ -20,7 +20,6 @@ position = Vector2(481, 1051)
 
 [node name="Lumoth" parent="Main_Controller/Grid/InitManager/UnitManager" index="2"]
 position = Vector2(611, 991)
-MaxAP = 4
 
 [node name="Paramantis" parent="Main_Controller/Grid/InitManager/UnitManager" index="3"]
 position = Vector2(672, 1056)

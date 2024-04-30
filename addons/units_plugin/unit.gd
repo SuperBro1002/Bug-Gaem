@@ -76,7 +76,7 @@ func clone(OGUnit):
 	SetAbility3 = OGUnit.SetAbility3
 	Faction = fac.ALLY
 	BatonPass = TS.BATONPASS
-	tempAP = MaxAP
+	tempAP = CurrentAP
 	position = OGUnit.position
 	start = grid.convert_to_map(OGUnit.position)
 	end = grid.convert_to_map(OGUnit.position)
