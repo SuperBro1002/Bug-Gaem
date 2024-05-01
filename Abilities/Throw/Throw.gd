@@ -1,18 +1,5 @@
 extends Ability_class
 
-#@export var apCost = 0
-#@export var tileRange = 1
-#@export var distanceRange = 1
-#var targetType = 0
-#var actualRange = 64
-#var caster
-#var direction = null
-#var clickedPos
-#var targetUnits = []
-#var targetTiles
-#var clickedDistance
-#@onready var abilityGrid = AutoloadMe.abilityRangeGrid
-
 var occupiedPos = false
 var collatUnit
 var newPos

@@ -11,6 +11,7 @@ size = Vector2(64, 64)
 [node name="Pheromones" type="Node"]
 script = ExtResource("1_bno81")
 apCost = 2
+myType = 3
 
 [node name="Hitbox" type="RayCast2D" parent="."]
 

@@ -90,7 +90,7 @@ func _on_area_entered(area):
 		SignalBus.changeButtonState.emit()
 
 func _on_area_exited(area):
-	if self == AutoloadMe.turnPointer and get_parent() == area.get_parent() and !has_overlapping_areas():
+	if (self == AutoloadMe.turnPointer and get_parent() == area.get_parent()) or (self == AutoloadMe.turnPointer and !has_overlapping_areas()):
 		print(get_overlapping_areas(), !has_overlapping_areas())
 		AutoloadMe.notOverlapped = true
 		SignalBus.changeButtonState.emit()

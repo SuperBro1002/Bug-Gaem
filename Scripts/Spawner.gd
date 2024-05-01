@@ -45,6 +45,7 @@ func spawn(idCalled):
 		newUnit.position = myPos
 	else:
 		# Calc nearest open tile
+		print("Am obtructed")
 		spawnPos = AutoloadMe.turnPointer.grid.flood_fill_first(AutoloadMe.turnPointer.grid.local_to_map(myPos))
 		newUnit.position = spawnPos
 	
@@ -59,4 +60,5 @@ func _on_area_entered(area):
 	notObstructed = false
 
 func _on_area_exited(area):
-	notObstructed = true
+	if AutoloadMe.turnPointer.grid.is_tile_open(position):
+		notObstructed = true

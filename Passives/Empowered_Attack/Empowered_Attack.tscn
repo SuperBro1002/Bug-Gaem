@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtfmbnj3ty8da"]
+
+[ext_resource type="Script" path="res://Passives/Empowered_Attack/Empowered_Attack.gd" id="1_stne7"]
+
+[node name="Empowered_Attack" type="Node"]
+script = ExtResource("1_stne7")

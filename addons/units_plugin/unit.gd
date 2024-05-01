@@ -130,6 +130,7 @@ func gain_health(recoverVal):
 
 func lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
+	dmgVal *= AutoloadMe.currentAbility.dmgMod
 	CurrentHP = CurrentHP - dmgVal
 	if CurrentHP < 0:
 		CurrentHP = 0
@@ -289,7 +290,6 @@ func find_and_delete_passives():
 			i = 0 # THIS SEEMS TO WORK BUT I FEEL LIKE IT SHOULDN'T
 
 func _mouse_shape_enter(shape_idx):
-	if AutoloadMe.turnPointer != self or Faction == fac.ENEMY:
 		myHPBar.fade(true)
 		AutoloadMe.hoveredUnit = self
 		SignalBus.mouseHovering.emit(true)

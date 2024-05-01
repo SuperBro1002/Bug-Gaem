@@ -11,6 +11,7 @@ size = Vector2(64, 64)
 [node name="Shield" type="Node"]
 script = ExtResource("1_gl0o1")
 apCost = 4
+myType = 2
 
 [node name="Hitbox" type="RayCast2D" parent="."]
 

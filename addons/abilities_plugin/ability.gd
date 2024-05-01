@@ -6,28 +6,28 @@ var Tackle
 var Name
 var description
 
+enum abilityType{
+	DAMAGING,
+	HEALING,
+	STATUS,
+	NEUTRAL
+}
+
 #@export var damage = 0
 @export var apCost = 0
-@export var tileRange = 1
 @export var distanceRange = 1
+@export var myType = abilityType.DAMAGING
+
+var dmgMod = 1
 var targetType = 0
-var actualRange = 64
-var caster
-var direction = null
 var clickedPos
 var targetUnits = []
-var targetTiles
 var clickedDistance
 @onready var abilityGrid = AutoloadMe.abilityRangeGrid
 
 func _ready():
 	SignalBus.connect("ability",dequeue)
-	range_convert()
 	$Area2D/SelectionBox.set_visible(false)
-
-func range_convert():
-	actualRange = tileRange * AutoloadMe.tile_size.x
-	$Hitbox.target_position = Vector2(0, actualRange)
 
 func queue():
 	AutoloadMe.currentAbility = self
@@ -63,6 +63,7 @@ func execute():
 	pass
 
 func post_execute():
+	dmgMod = 1
 	targetUnits.clear()
 	get_parent().grid.update_grid_collision()
 	SignalBus.abilityExecuted.emit(self)

@@ -41,14 +41,14 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 [node name="UnitManager" type="Node" parent="Grid/InitManager"]
 
 [node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
-position = Vector2(95, 417)
+position = Vector2(418, 549)
 scale = Vector2(1, 1)
 Name = "Atlus"
 fileName = "Atlus"
 MaxHP = 12
 MaxAP = 8
 TrueInit = 25
-SetAbility2 = "Grapple"
+SetAbility2 = "Empower"
 SetAbility3 = "Throw"
 Faction = 0
 
@@ -72,12 +72,12 @@ Faction = 0
 sprite_frames = ExtResource("5_l4uwr")
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
-position = Vector2(224, 415)
+position = Vector2(551, 287)
 scale = Vector2(1, 1)
 Name = "Lumoth"
 fileName = "Lumoth"
 MaxHP = 8
-MaxAP = 4
+MaxAP = 10
 TrueInit = 15
 SetAbility1 = "Heal"
 SetAbility2 = "Shield"
@@ -88,7 +88,7 @@ Faction = 0
 sprite_frames = ExtResource("6_o1qg1")
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
-position = Vector2(161, 544)
+position = Vector2(226, 355)
 scale = Vector2(1, 1)
 Name = "Paramantis"
 fileName = "Paramantis"
@@ -104,7 +104,7 @@ Faction = 0
 sprite_frames = ExtResource("5_73cei")
 
 [node name="Robo Poly" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(225, 220)
+position = Vector2(353, 159)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
@@ -112,10 +112,9 @@ MaxHP = 10
 MaxAP = 6
 TrueInit = 28
 Faction = 1
-BatonPass = 1
 
 [node name="Robo Poly2" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(165, 294)
+position = Vector2(94, 292)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
@@ -133,7 +132,26 @@ MaxHP = 3
 MaxAP = 6
 TrueInit = 28
 Faction = 1
-BatonPass = 1
+
+[node name="Robo Poly4" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
+position = Vector2(102, 609)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+fileName = "Robopoly"
+MaxHP = 3
+MaxAP = 6
+TrueInit = 28
+Faction = 1
+
+[node name="Robo Poly5" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
+position = Vector2(683, 162)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+fileName = "Robopoly"
+MaxHP = 3
+MaxAP = 6
+TrueInit = 28
+Faction = 1
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 visible = false
@@ -212,3 +230,5 @@ ability3 = "Tackle"
 [editable path="Grid/InitManager/UnitManager/Robo Poly"]
 [editable path="Grid/InitManager/UnitManager/Robo Poly2"]
 [editable path="Grid/InitManager/UnitManager/Robo Poly3"]
+[editable path="Grid/InitManager/UnitManager/Robo Poly4"]
+[editable path="Grid/InitManager/UnitManager/Robo Poly5"]

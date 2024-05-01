@@ -78,6 +78,12 @@ func is_occupied_by_ally(pos):
 			return true
 	return false
 
+func is_tile_open(pos):
+	if !AutoloadMe.movementGrid.is_point_solid(local_to_map(pos)) and !is_occupied_by_ally(local_to_map(pos)):
+		return true
+	else:
+		return false
+
 func flood_fill_movement(start, maxDistance):
 	var validTiles = []
 	var searchStack = [local_to_map(start)]
@@ -120,7 +126,7 @@ func flood_fill_first(start):
 	
 	print("8,8 IS SOLID? ", AutoloadMe.movementGrid.is_point_solid(Vector2(8,8)))
 	while !searchStack.is_empty():
-		var current = searchStack.pop_back()
+		var current = searchStack.pop_front()
 		for i in directions:
 			searchStack.append(Vector2(Vector2i(current) + Vector2i(i)))
 		
@@ -129,9 +135,10 @@ func flood_fill_first(start):
 		if current in searchedTiles:
 			continue
 		if is_occupied_by_ally(current):
+			print("Occupied by ally!")
 			continue
 		if !AutoloadMe.movementGrid.is_point_solid(current):
-			print("MEMEME")
+			print("FOUND A VALID POINT")
 			return map_to_local(current)
 		
 		searchedTiles.append(current)
