@@ -118,7 +118,7 @@ func flood_fill_first(start):
 	var searchStack = [start]
 	var firstValid = Vector2i(-1,-1)
 	
-	
+	print("8,8 IS SOLID? ", AutoloadMe.movementGrid.is_point_solid(Vector2(8,8)))
 	while !searchStack.is_empty():
 		var current = searchStack.pop_back()
 		for i in directions:
@@ -131,6 +131,7 @@ func flood_fill_first(start):
 		if is_occupied_by_ally(current):
 			continue
 		if !AutoloadMe.movementGrid.is_point_solid(current):
+			print("MEMEME")
 			return map_to_local(current)
 		
 		searchedTiles.append(current)

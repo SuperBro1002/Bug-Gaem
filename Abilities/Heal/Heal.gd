@@ -5,7 +5,7 @@ var healNum = 2
 func _enter_tree():
 	targetType = get_parent().fac.ALLY
 	Name = "Heal"
-	description = "Heals an adjacent ally for 2 health. 3 AP"
+	description = "Heals an adjacent ally for 3 health. 6 AP"
 
 func execute():
 	# for every target in target units[]
@@ -16,6 +16,6 @@ func execute():
 	for i in targetUnits.size():
 		targetUnits[i].gain_health(healNum)
 	
-	healNum = 2
+	healNum = 3
 	
 	post_execute()

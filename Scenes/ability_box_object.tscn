@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/ability_box_object.gd" id="1_hhao4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vjti6"]
+font_size = 19
 
 [node name="AbilityBox" type="ColorRect"]
 offset_right = 640.0

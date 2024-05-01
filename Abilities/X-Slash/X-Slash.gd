@@ -5,7 +5,7 @@ var sceneNode
 func _enter_tree():
 	targetType = get_parent().fac.ENEMY
 	Name = "X-Slash"
-	description = "Deals 4 damage to a single target. If the target dies from this attack, they become possessed, and receive baton pass. They then perish after taking one turn. 3 AP"
+	description = "Deals 3 damage to a single enemy and grants baton pass. If the target dies from this attack, they become possessed, and receive baton pass. They then perish after taking one turn. 3 AP"
 
 func execute():
 	# for every target in target units[]
@@ -14,7 +14,7 @@ func execute():
 	print(targetUnits)
 	
 	for i in targetUnits.size():
-		if targetUnits[i].get_current_hp() - 4 <= 0:
+		if targetUnits[i].get_current_hp() - 3 <= 0:
 			var scene = load("res://Scenes/ally.tscn")
 			sceneNode = scene.instantiate()
 			get_node("../..").add_child(sceneNode)
@@ -22,6 +22,8 @@ func execute():
 			
 			SignalBus.remakeUnitList.emit()
 			#await get_tree().create_timer(1).timeout
-		targetUnits[i].lose_health(4)
+		else:
+			targetUnits[i].give_batonpass()
+		targetUnits[i].lose_health(3)
 	
 	post_execute()
