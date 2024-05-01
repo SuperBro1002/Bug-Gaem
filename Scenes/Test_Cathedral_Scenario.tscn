@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://clws6xe5hm1lu"]
+[gd_scene load_steps=3 format=3 uid="uid://2fq43ce4n22h"]
 
-[ext_resource type="PackedScene" uid="uid://u4oeqtd2cyye" path="res://Scenes/Main Controller.tscn" id="1_uxtqp"]
-[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="2_7l1s0"]
+[ext_resource type="PackedScene" uid="uid://u4oeqtd2cyye" path="res://Scenes/Main Controller.tscn" id="1_iqotg"]
+[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="2_cmv7p"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Main_Controller" parent="." instance=ExtResource("1_uxtqp")]
+[node name="Main_Controller" parent="." instance=ExtResource("1_iqotg")]
 
 [node name="Grid" parent="Main_Controller" index="2"]
 visible = true
@@ -30,7 +30,7 @@ position = Vector2(219, 797)
 MaxHP = 3
 BatonPass = 2
 
-[node name="Robo Poly4" parent="Main_Controller/Grid/InitManager/UnitManager" index="5" instance=ExtResource("2_7l1s0")]
+[node name="Robo Poly4" parent="Main_Controller/Grid/InitManager/UnitManager" index="5" instance=ExtResource("2_cmv7p")]
 position = Vector2(735, 290)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
@@ -40,7 +40,7 @@ MaxAP = 6
 TrueInit = 28
 Faction = 1
 
-[node name="Robo Poly5" parent="Main_Controller/Grid/InitManager/UnitManager" index="6" instance=ExtResource("2_7l1s0")]
+[node name="Robo Poly5" parent="Main_Controller/Grid/InitManager/UnitManager" index="6" instance=ExtResource("2_cmv7p")]
 position = Vector2(867, 543)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
@@ -50,7 +50,7 @@ MaxAP = 6
 TrueInit = 28
 Faction = 1
 
-[node name="Robo Poly7" parent="Main_Controller/Grid/InitManager/UnitManager" index="7" instance=ExtResource("2_7l1s0")]
+[node name="Robo Poly7" parent="Main_Controller/Grid/InitManager/UnitManager" index="7" instance=ExtResource("2_cmv7p")]
 position = Vector2(925, 796)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
@@ -60,7 +60,7 @@ MaxAP = 6
 TrueInit = 28
 Faction = 1
 
-[node name="Robo Poly8" parent="Main_Controller/Grid/InitManager/UnitManager" index="8" instance=ExtResource("2_7l1s0")]
+[node name="Robo Poly8" parent="Main_Controller/Grid/InitManager/UnitManager" index="8" instance=ExtResource("2_cmv7p")]
 position = Vector2(935, 671)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
@@ -70,7 +70,7 @@ MaxAP = 6
 TrueInit = 28
 Faction = 1
 
-[node name="Robo Poly6" parent="Main_Controller/Grid/InitManager/UnitManager" index="9" instance=ExtResource("2_7l1s0")]
+[node name="Robo Poly6" parent="Main_Controller/Grid/InitManager/UnitManager" index="9" instance=ExtResource("2_cmv7p")]
 position = Vector2(795, 412)
 scale = Vector2(1, 1)
 Name = "Robo Poly"

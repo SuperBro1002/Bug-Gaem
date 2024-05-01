@@ -1,0 +1,137 @@
+[gd_scene load_steps=3 format=3 uid="uid://kxb1h8p58bx0"]
+
+[ext_resource type="PackedScene" uid="uid://u4oeqtd2cyye" path="res://Scenes/Main Controller.tscn" id="1_vwiob"]
+[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="2_aagc2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Main_Controller" parent="." instance=ExtResource("1_vwiob")]
+
+[node name="Grid" parent="Main_Controller" index="2"]
+visible = true
+layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608, 0, 6, 262144, 0, 6, 1, 0, 6, 65537, 0, 6, 131073, 0, 6, 262145, 0, 6, 2, 0, 6, 65538, 0, 6, 131074, 0, 6, 262146, 0, 6, 3, 0, 6, 65539, 0, 6, 131075, 0, 6, 196611, 0, 6, 262147, 0, 6, 4, 0, 6, 65540, 0, 6, 131076, 0, 6, 196612, 0, 3, 262148, 0, 3, 327680, 0, 6, 393216, 0, 6, 458752, 0, 6, 524288, 0, 6, 589824, 0, 6, 327681, 0, 6, 393217, 0, 6, 458753, 0, 6, 524289, 0, 6, 589825, 0, 6, 327682, 0, 6, 393218, 0, 6, 458754, 0, 6, 524290, 0, 6, 589826, 0, 6, 327683, 0, 6, 393219, 0, 6, 458755, 0, 6, 524291, 0, 6, 589827, 0, 6, 327684, 0, 3, 393220, 0, 5, 458756, 0, 5, 524292, 0, 5, 589828, 0, 5, 5, 0, 6, 65541, 0, 6, 131077, 0, 6, 196613, 0, 3, 262149, 0, 3, 327685, 0, 3, 393221, 0, 5, 458757, 0, 5, 524293, 0, 5, 589829, 0, 5, 6, 0, 6, 65542, 0, 3, 131078, 0, 3, 196614, 0, 3, 262150, 0, 3, 327686, 0, 3, 393222, 0, 6, 458758, 0, 6, 524294, 0, 6, 589830, 0, 6, 7, 0, 6, 65543, 0, 3, 131079, 0, 3, 196615, 0, 3, 262151, 0, 3, 327687, 0, 3, 393223, 0, 6, 458759, 0, 6, 524295, 0, 6, 589831, 0, 6, 8, 0, 6, 65544, 0, 3, 131080, 0, 6, 196616, 0, 6, 262152, 0, 3, 327688, 0, 3, 458760, 0, 3, 524296, 0, 3, 589832, 0, 3, 9, 0, 6, 65545, 0, 3, 131081, 0, 6, 196617, 0, 6, 262153, 0, 3, 327689, 0, 3, 393225, 0, 3, 458761, 0, 3, 524297, 0, 3, 589833, 0, 3, 196609, 0, 6, 655361, 0, 6, 196610, 0, 6, 655362, 0, 6, 655363, 0, 3, 655364, 0, 3, 655365, 0, 3, 655366, 0, 3, 655367, 0, 3, 393224, 0, 3, 655368, 0, 3, 655369, 0, 3, 10, 0, 6, 65546, 0, 3, 131082, 0, 3, 196618, 0, 3, 262154, 0, 3, 327690, 0, 3, 393226, 0, 6, 458762, 0, 6, 524298, 0, 6, 589834, 0, 6, 655370, 0, 3, 720904, 0, 3, 720905, 0, 3, 720906, 0, 3, 11, 0, 6, 65547, 0, 3, 131083, 0, 3, 196619, 0, 3, 262155, 0, 3, 327691, 0, 3, 393227, 0, 6, 458763, 0, 6, 524299, 0, 6, 589835, 0, 6, 655371, 0, 3, 720907, 0, 3, 655360, 0, 6, 720896, 0, 6, 720897, 0, 6, 720898, 0, 3, 720899, 0, 3, 720900, 0, 3, 720901, 0, 3, 720902, 0, 3, 720903, 0, 3, 65548, 0, 6, 65549, 0, 6, 65550, 0, 6, 65551, 0, 6, 65552, 0, 6, 786433, 0, 3, 851969, 0, 6, 917505, 0, 6, 983041, 0, 6, 1048577, 0, 6, 1048578, 0, 6, 1048579, 0, 6, 1048580, 0, 6, 1048581, 0, 3, 1048582, 0, 3, 1048583, 0, 3, 1048584, 0, 3, 1048585, 0, 3, 1048586, 0, 3, 1048587, 0, 3, 1048588, 0, 3, 786443, 0, 3, 851979, 0, 3, 917515, 0, 3, 983051, 0, 3, 1048589, 0, 6, 1048590, 0, 6, 1048591, 0, 6, 1048592, 0, 6, 983056, 0, 6, 917520, 0, 6, 851984, 0, 6, 786448, 0, 3, 720912, 0, 6, 655376, 0, 6, 589840, 0, 6, 524304, 0, 6, 524303, 0, 6, 458767, 0, 6, 393231, 0, 6, 327695, 0, 6, 262159, 0, 6, 196623, 0, 6, 131087, 0, 6, 131088, 0, 6, 196624, 0, 6, 262160, 0, 6, 327696, 0, 6, 393232, 0, 6, 458768, 0, 6, 131086, 0, 6, 131085, 0, 6, 131084, 0, 6, 196620, 0, 3, 262156, 0, 3, 393228, 0, 5, 458764, 0, 5, 524300, 0, 5, 589836, 0, 5, 655372, 0, 3, 393229, 0, 5, 327693, 0, 3, 327692, 0, 3, 786434, 0, 3, 851970, 0, 3, 851971, 0, 3, 917507, 0, 3, 786435, 0, 3, 786436, 0, 3, 786437, 0, 3, 786438, 0, 3, 720908, 0, 3, 720909, 0, 3, 720910, 0, 3, 262157, 0, 3, 196621, 0, 3, 458765, 0, 5, 524301, 0, 5, 589837, 0, 5, 655373, 0, 3, 196622, 0, 6, 262158, 0, 6, 327694, 0, 6, 393230, 0, 6, 458766, 0, 6, 524302, 0, 6, 589838, 0, 6, 655374, 0, 3, 786446, 0, 3, 786447, 0, 3, 720911, 0, 3, 655375, 0, 6, 589839, 0, 6, 851983, 0, 3, 917519, 0, 6, 983055, 0, 6, 983054, 0, 6, 983053, 0, 3, 983052, 0, 3, 983050, 0, 3, 983049, 0, 3, 983048, 0, 3, 983047, 0, 3, 983046, 0, 3, 983045, 0, 3, 983044, 0, 3, 983043, 0, 6, 983042, 0, 6, 917506, 0, 6, 917508, 0, 3, 917509, 0, 3, 917510, 0, 3, 917511, 0, 3, 917512, 0, 3, 917513, 0, 3, 917514, 0, 3, 917516, 0, 3, 917517, 0, 3, 851981, 0, 3, 851982, 0, 3, 851980, 0, 3, 851978, 0, 3, 786441, 0, 3, 786440, 0, 3, 786439, 0, 3, 851973, 0, 3, 851972, 0, 3, 851974, 0, 3, 851975, 0, 3, 851976, 0, 3, 851977, 0, 3, 786442, 0, 3, 786444, 0, 3, 786445, 0, 3, 917518, 0, 3, 786432, 0, 6, 851968, 0, 6, 917504, 0, 6, 983040, 0, 6, 1048576, 0, 6, 1114112, 0, 6, 1114113, 0, 6, 1114114, 0, 6, 1114115, 0, 6, 1114116, 0, 6, 1114117, 0, 6, 1114118, 0, 6, 1114119, 0, 6, 1114120, 0, 6, 1114121, 0, 6, 1114122, 0, 6, 1114123, 0, 6, 1114124, 0, 6, 1114125, 0, 6, 1114126, 0, 6, 1114127, 0, 6, 1114128, 0, 6, 1114129, 0, 6, 1048593, 0, 6, 983057, 0, 6, 917521, 0, 6, 851985, 0, 6, 786449, 0, 6, 720913, 0, 6, 655377, 0, 6, 589841, 0, 6, 524305, 0, 6, 458769, 0, 6, 393233, 0, 6, 327697, 0, 6, 262161, 0, 6, 196625, 0, 6, 131089, 0, 6, 65553, 0, 6, 17, 0, 6, 16, 0, 6, 15, 0, 6, 14, 0, 6, 13, 0, 6, 12, 0, 6, 655359, 0, 6, 589823, 0, 6, 524306, 0, 6, 589842, 0, 6)
+
+[node name="Atlus" parent="Main_Controller/Grid/InitManager/UnitManager" index="0"]
+position = Vector2(544, 993)
+TrueInit = 50
+
+[node name="Triss" parent="Main_Controller/Grid/InitManager/UnitManager" index="1"]
+position = Vector2(481, 1051)
+
+[node name="Lumoth" parent="Main_Controller/Grid/InitManager/UnitManager" index="2"]
+position = Vector2(611, 991)
+
+[node name="Paramantis" parent="Main_Controller/Grid/InitManager/UnitManager" index="3"]
+position = Vector2(672, 1056)
+MaxAP = 4
+
+[node name="Robo Poly" parent="Main_Controller/Grid/InitManager/UnitManager" index="4"]
+position = Vector2(293, 343)
+MaxHP = 3
+BatonPass = 2
+
+[node name="Robo Poly10" parent="Main_Controller/Grid/InitManager/UnitManager" index="5" instance=ExtResource("2_aagc2")]
+position = Vector2(856, 352)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+fileName = "Robopoly"
+MaxHP = 3
+MaxAP = 6
+TrueInit = 28
+Faction = 1
+
+[node name="Robo Poly4" parent="Main_Controller/Grid/InitManager/UnitManager" index="6" instance=ExtResource("2_aagc2")]
+position = Vector2(612, 351)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+fileName = "Robopoly"
+MaxHP = 3
+MaxAP = 6
+TrueInit = 28
+Faction = 1
+
+[node name="Robo Poly5" parent="Main_Controller/Grid/InitManager/UnitManager" index="7" instance=ExtResource("2_aagc2")]
+position = Vector2(547, 348)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+fileName = "Robopoly"
+MaxHP = 3
+MaxAP = 6
+TrueInit = 28
+Faction = 1
+
+[node name="Robo Poly7" parent="Main_Controller/Grid/InitManager/UnitManager" index="8" instance=ExtResource("2_aagc2")]
+position = Vector2(610, 478)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+fileName = "Robopoly"
+MaxHP = 3
+MaxAP = 6
+TrueInit = 28
+Faction = 1
+
+[node name="Robo Poly8" parent="Main_Controller/Grid/InitManager/UnitManager" index="9" instance=ExtResource("2_aagc2")]
+position = Vector2(917, 795)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+fileName = "Robopoly"
+MaxHP = 3
+MaxAP = 6
+TrueInit = 28
+Faction = 1
+
+[node name="Robo Poly9" parent="Main_Controller/Grid/InitManager/UnitManager" index="10" instance=ExtResource("2_aagc2")]
+position = Vector2(550, 470)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+fileName = "Robopoly"
+MaxHP = 3
+MaxAP = 6
+TrueInit = 28
+Faction = 1
+
+[node name="Robo Poly6" parent="Main_Controller/Grid/InitManager/UnitManager" index="11" instance=ExtResource("2_aagc2")]
+position = Vector2(673, 283)
+scale = Vector2(1, 1)
+Name = "Robo Poly"
+fileName = "Robopoly"
+MaxHP = 3
+MaxAP = 6
+TrueInit = 28
+Faction = 1
+
+[node name="Robo Poly2" parent="Main_Controller/Grid/InitManager/UnitManager" index="12"]
+position = Vector2(228, 802)
+
+[node name="Robo Poly3" parent="Main_Controller/Grid/InitManager/UnitManager" index="13"]
+position = Vector2(482, 293)
+BatonPass = 2
+
+[node name="UILayer" parent="Main_Controller" index="3"]
+visible = false
+
+[node name="Camera2D" parent="Main_Controller" index="4"]
+position = Vector2(580, 606)
+zoom = Vector2(0.8, 0.8)
+
+[node name="TutorialMapSprite" parent="Main_Controller" index="5"]
+visible = false
+
+[node name="Spawner2" parent="Main_Controller" index="7"]
+position = Vector2(416, 422)
+
+[editable path="Main_Controller"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Atlus"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Triss"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Lumoth"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Paramantis"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly10"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly4"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly5"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly7"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly8"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly9"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly6"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly2"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly3"]
