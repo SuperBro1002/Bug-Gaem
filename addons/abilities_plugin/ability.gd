@@ -40,7 +40,8 @@ func queue():
 		
 		for i in AutoloadMe.globalUnitList.size() - 1:
 			if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position):
-				if clickedDistance.size() - 1 <= distanceRange and AutoloadMe.globalUnitList[i].get_faction() == targetType:
+				if clickedDistance.size() - 1 <= distanceRange and AutoloadMe.globalUnitList[i].get_faction() == targetType and clickedPos != get_parent().grid.local_to_map(get_parent().position):
+					print("ME ", clickedPos != get_parent().grid.local_to_map(get_parent().position))
 					$Area2D.position = get_parent().grid.map_to_local(clickedPos)
 					$Area2D/SelectionBox.set_visible(true)
 					
@@ -76,7 +77,7 @@ func get_ap_cost():
 	return apCost
 
 func _on_area_2d_area_entered(area):
-	if area.get_parent() == self.get_parent().get_parent() and area.get_faction() == targetType:
+	if area.get_parent() == self.get_parent().get_parent() and area.get_faction() == targetType and area != get_parent():
 		print("HI")
 		targetUnits.append(area)
 

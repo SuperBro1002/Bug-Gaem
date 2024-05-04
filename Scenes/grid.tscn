@@ -869,3 +869,5 @@ script = ExtResource("2_fmfcx")
 [node name="ValidTiles" type="Node" parent="."]
 
 [node name="PathTiles" type="Node" parent="."]
+
+[node name="TargetTiles" type="Node" parent="."]

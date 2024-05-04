@@ -24,7 +24,7 @@ func queue():
 			clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,clickedPos) # Makes a list of the shortest path of tiles between the parent and clickedPos
 			
 			for i in AutoloadMe.globalUnitList.size() - 1:
-				if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position): # Checks if a unit is present at clickedPos
+				if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position) and clickedPos != get_parent().grid.local_to_map(get_parent().position): # Checks if a unit is present at clickedPos
 					if clickedDistance.size() - 1 <= distanceRange: # Checks if ClickedPos is within the ability's designated tile range and is the proper alignment
 						$Area2D.position = get_parent().grid.map_to_local(clickedPos) # Moves the collision box to clickedPos. If any unit is within this box, they are added to a targetList
 						$Area2D/SelectionBox.set_visible(true)
@@ -43,7 +43,7 @@ func queue():
 				return
 		clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,newPos) # Makes a list of the shortest path of tiles between the parent and clickedPos
 		print(clickedDistance.size() - 1)
-		if clickedDistance.size() - 1 <= 5 and newPos.x >= 1 and newPos.y >= 1 and newPos.x <= AutoloadMe.gridSize.x - 2 and newPos.y <= AutoloadMe.gridSize.y - 2:
+		if clickedDistance.size() - 1 <= 5 and newPos.x >= 1 and newPos.y >= 1 and newPos.x <= AutoloadMe.gridSize.x - 2 and newPos.y <= AutoloadMe.gridSize.y - 2 and newPos != get_parent().grid.local_to_map(get_parent().position):
 			validTargetPos = true
 			for i in AutoloadMe.globalUnitList.size() - 1:
 				if newPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position):
