@@ -74,7 +74,8 @@ func death(toBeDeleted):
 		if myUnit.Faction == myUnit.fac.ENEMY:
 			AutoloadMe.deathCount += 1
 		
-		SignalBus.updateInitBox.emit()
+		#SignalBus.updateInitBox.emit()
+		get_parent().get_parent().get_parent().remove_init_box(self)
 		SignalBus.updateGrid.emit()
 		SignalBus.updateUI.emit(AutoloadMe.turnPointer)
 		myUnit.queue_free()

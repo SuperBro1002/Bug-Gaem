@@ -12,9 +12,11 @@ func _ready():
 	SignalBus.connect("currentUnit", set_ui)
 	SignalBus.connect("updateUI", set_ui)
 	SignalBus.connect("updateInitBox", draw_init_box)
+	SignalBus.connect("addInitBox", add_init_box)
 	SignalBus.connect("actedUI", set_init_colors)
 	SignalBus.connect("mouseHovering", toggle_secondary)
 	SignalBus.connect("startTurn", show_infoBox)
+	SignalBus.connect("abilityExecuted", clear_tile_paths)
 	draw_init_box()
 
 func set_ui(unit):
@@ -36,8 +38,12 @@ func set_ui(unit):
 		ability3 = unit.ability3
 	
 	flood_fill()
-	
+	draw_tile_path()
+	boxArray = get_node("../UI/ColorRect/HBoxContainer").get_children()
 	for i in boxArray.size():
+		print("HERE ", boxArray)
+	#	ifboxArray[i] == null:
+			
 		boxArray[i].update_display()
 
 func toggle_UI():
@@ -66,6 +72,21 @@ func set_init_colors():
 	for i in nodeList.size():
 		nodeList[i].set_colors()
 
+func add_init_box(target):
+	var sceneNode
+	var scene = load("res://Scenes/Unit_Initiative_Box.tscn")
+	sceneNode = scene.instantiate()
+	sceneNode.assign_unit(target)
+	get_node("../UI/ColorRect/HBoxContainer").add_child(sceneNode)
+
+func remove_init_box(target):
+	print("BEFORE: ", nodeList)
+	nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
+	nodeList.pop_at(nodeList.find(target))
+	get_node("../UI/ColorRect/HBoxContainer").remove_child(target)
+	
+	print("AFTER: ", get_node("../UI/ColorRect/HBoxContainer").get_children())
+
 func clear_init_box():
 	nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
 	for i in nodeList:
@@ -84,6 +105,26 @@ func show_infoBox():
 		$InfoBox.set_visible(true)
 	elif AutoloadMe.turnPointer.get_faction() == AutoloadMe.turnPointer.fac.ENEMY and $InfoBox.is_visible() == true:
 		$InfoBox.set_visible(false)
+
+func draw_tile_path():
+	clear_tile_paths(null)
+	if AutoloadMe.turnPointer.get_faction() != AutoloadMe.turnPointer.fac.ALLY or AutoloadMe.turnPointer.start == AutoloadMe.turnPointer.end:
+		return
+	var tiles = AutoloadMe.turnPointer.pathArray
+	if tiles == null:
+		return
+	for i in tiles.size():
+		var tileOverlay = Sprite2D.new()
+		tileOverlay.texture = load("res://Assets/HUD/PathTile.png")
+		$"../../Grid/PathTiles".add_child(tileOverlay)
+		tileOverlay.position = tiles[i]
+
+func clear_tile_paths(_unit):
+	var tiles = $"../../Grid/PathTiles".get_children()
+	if tiles != null:
+		print("running")
+		for i in tiles.size():
+			tiles[i].queue_free()
 
 func flood_fill():
 	clear_tile_Overlays()

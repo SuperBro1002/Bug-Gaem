@@ -8,6 +8,7 @@ func _ready():
 	SignalBus.connect("endTurn", next_turn)
 	SignalBus.connect("endRound", next_round)
 	SignalBus.connect("remakeUnitList", make_unit_list)
+	SignalBus.connect("addToUnitList", add_unit_list)
 
 # Probably main function
 func next_turn():
@@ -43,7 +44,7 @@ func make_unit_list():
 	var allyList = []
 	var enemyList = []
 	AutoloadMe.globalUnitList = unitList
-	
+	print("MAKING UNITLIST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 	sort_unit_list()
 	for i in unitList.size():
 		unitList[i].position = unitList[i].grid.map_to_local(unitList[i].grid.local_to_map(unitList[i].position))
@@ -58,6 +59,19 @@ func make_unit_list():
 	print("UnitList: ", unitList)
 	print("AllList: ", allyList)
 	print("EnemyList: ", enemyList)
+
+func add_unit_list(unit):
+	AutoloadMe.globalUnitList.append(unit)
+	sort_unit_list()
+	
+	if unit.get_faction() == unit.fac.ALLY:
+		AutoloadMe.globalAllyList.append(unit)
+		AutoloadMe.globalAllyList.sort_custom(func(a,b): return a.CurrentInit > b.CurrentInit)
+	elif unit.get_faction() == unit.fac.ENEMY:
+		AutoloadMe.globalEnemyList.append(unit)
+		AutoloadMe.globalEnemyList.sort_custom(func(a,b): return a.CurrentInit > b.CurrentInit)
+	
+	SignalBus.addInitBox.emit(unit)
 
 func get_unit_list():
 	return AutoloadMe.globalUnitList

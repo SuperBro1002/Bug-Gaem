@@ -20,7 +20,8 @@ func execute():
 			get_node("../..").add_child(sceneNode)
 			sceneNode.clone(targetUnits[i])
 			
-			SignalBus.remakeUnitList.emit()
+			SignalBus.addToUnitList.emit(sceneNode)
+			#SignalBus.remakeUnitList.emit()
 			#await get_tree().create_timer(1).timeout
 		else:
 			targetUnits[i].give_batonpass()

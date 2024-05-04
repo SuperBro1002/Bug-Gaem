@@ -66,7 +66,6 @@ func clone(OGUnit):
 	set_name("Possessed " + Name)
 	MaxHP = OGUnit.MaxHP
 	CurrentHP = OGUnit.CurrentHP
-	SignalBus.updateFloatingHP.emit(self)
 	MaxAP = OGUnit.MaxAP
 	CurrentAP = OGUnit.CurrentAP
 	TrueInit = OGUnit.TrueInit
@@ -75,6 +74,9 @@ func clone(OGUnit):
 	SetAbility2 = OGUnit.SetAbility2
 	SetAbility3 = OGUnit.SetAbility3
 	Faction = fac.ALLY
+	delete_floating_hp()
+	make_floating_hp()
+	SignalBus.updateFloatingHP.emit(self)
 	BatonPass = TS.BATONPASS
 	tempAP = CurrentAP
 	position = OGUnit.position
@@ -93,6 +95,9 @@ func make_floating_hp():
 	var sceneNode = scene.instantiate()
 	add_child(sceneNode)
  
+func delete_floating_hp():
+	myHPBar.queue_free()
+
 func make_floating_ap():
 	var scene = load("res://Scenes/floating_ap.tscn")
 	var sceneNode = scene.instantiate()

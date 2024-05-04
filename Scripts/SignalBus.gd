@@ -15,6 +15,7 @@ signal abilityExecuted(ability)
 signal updateUI
 signal changeButtonState
 signal updateInitBox
+signal addInitBox(initBox)
 signal deleteInitObject
 signal adjustZoom
 signal moveCamera
@@ -24,6 +25,7 @@ signal updateFloatingHP
 signal updateFloatingAP
 signal mouseHovering(isHovering)
 signal remakeUnitList
+signal addToUnitList(unit)
 signal spawnGroup(id)
 signal changeMainPortrait(filename)
 signal changeReplyPortrait(filename)

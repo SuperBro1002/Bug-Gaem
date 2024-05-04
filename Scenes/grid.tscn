@@ -867,3 +867,5 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 script = ExtResource("2_fmfcx")
 
 [node name="ValidTiles" type="Node" parent="."]
+
+[node name="PathTiles" type="Node" parent="."]

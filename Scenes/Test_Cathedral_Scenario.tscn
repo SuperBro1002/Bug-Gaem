@@ -29,9 +29,8 @@ MaxAP = 4
 [node name="Robo Poly" parent="Main_Controller/Grid/InitManager/UnitManager" index="4"]
 position = Vector2(219, 797)
 MaxHP = 3
-BatonPass = 2
 
-[node name="Robo Poly4" parent="Main_Controller/Grid/InitManager/UnitManager" index="5" instance=ExtResource("2_7l1s0")]
+[node name="Robo Poly6" parent="Main_Controller/Grid/InitManager/UnitManager" index="5" instance=ExtResource("2_7l1s0")]
 position = Vector2(735, 290)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
@@ -41,7 +40,7 @@ MaxAP = 6
 TrueInit = 28
 Faction = 1
 
-[node name="Robo Poly5" parent="Main_Controller/Grid/InitManager/UnitManager" index="6" instance=ExtResource("2_7l1s0")]
+[node name="Robo Poly7" parent="Main_Controller/Grid/InitManager/UnitManager" index="6" instance=ExtResource("2_7l1s0")]
 position = Vector2(867, 543)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
@@ -51,7 +50,7 @@ MaxAP = 6
 TrueInit = 28
 Faction = 1
 
-[node name="Robo Poly7" parent="Main_Controller/Grid/InitManager/UnitManager" index="7" instance=ExtResource("2_7l1s0")]
+[node name="Robo Poly8" parent="Main_Controller/Grid/InitManager/UnitManager" index="7" instance=ExtResource("2_7l1s0")]
 position = Vector2(925, 796)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
@@ -61,7 +60,7 @@ MaxAP = 6
 TrueInit = 28
 Faction = 1
 
-[node name="Robo Poly8" parent="Main_Controller/Grid/InitManager/UnitManager" index="8" instance=ExtResource("2_7l1s0")]
+[node name="Robo Poly9" parent="Main_Controller/Grid/InitManager/UnitManager" index="8" instance=ExtResource("2_7l1s0")]
 position = Vector2(935, 671)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
@@ -71,7 +70,7 @@ MaxAP = 6
 TrueInit = 28
 Faction = 1
 
-[node name="Robo Poly6" parent="Main_Controller/Grid/InitManager/UnitManager" index="9" instance=ExtResource("2_7l1s0")]
+[node name="Robo Poly10" parent="Main_Controller/Grid/InitManager/UnitManager" index="9" instance=ExtResource("2_7l1s0")]
 position = Vector2(795, 412)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
@@ -86,7 +85,6 @@ position = Vector2(214, 670)
 
 [node name="Robo Poly3" parent="Main_Controller/Grid/InitManager/UnitManager" index="11"]
 position = Vector2(100, 227)
-BatonPass = 2
 
 [node name="UILayer" parent="Main_Controller" index="3"]
 visible = false
@@ -110,10 +108,8 @@ position = Vector2(416, 422)
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Lumoth"]
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Paramantis"]
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly"]
-[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly4"]
-[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly5"]
+[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly6"]
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly7"]
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly8"]
-[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly6"]
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly2"]
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly3"]

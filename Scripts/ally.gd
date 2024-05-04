@@ -5,6 +5,7 @@ var ray
 var animationSpeed = 4
 var moving = false
 var abilityQueued = null
+var pathArray
 
 @onready var ability1 = load_ability(SetAbility1)
 @onready var ability2 = load_ability(SetAbility2)
@@ -39,10 +40,10 @@ func move(dir):
 				$AnimatedSprite2D.set_flip_h(true)
 		ray.target_position = dir * tileSize.x
 		ray.force_raycast_update()
-
+		
 		if !ray.is_colliding():
 			end = grid.local_to_map(position) + Vector2i(dir) #WEIRD STUFF WITH GRID.LOCAL
-			var pathArray = astarGrid.get_point_path(start, end)
+			pathArray = astarGrid.get_point_path(start, end)
 			
 			if get_current_ap() >= (pathArray.size() - 1):
 				var tween = create_tween()
