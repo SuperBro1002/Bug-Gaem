@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dei8pblwcqo6t"]
+
+[ext_resource type="Script" path="res://Scripts/obstacle.gd" id="1_0r6ou"]
+[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlus/Atlus_Base_Still.png" id="2_lksen"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcgqv"]
+size = Vector2(75, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vwuj"]
+resource_name = "Atlus"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lksen")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Obstacle" type="Area2D"]
+scale = Vector2(0.8, 0.8)
+collision_layer = 2
+script = ExtResource("1_0r6ou")
+MaxHP = 15
+MaxAP = 0
+TrueInit = 0
+Faction = 3
+BatonPass = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.81728e-06, -7.82312e-07)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_jcgqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = -3.14159
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1vwuj")

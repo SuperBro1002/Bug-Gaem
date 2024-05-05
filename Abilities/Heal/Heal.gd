@@ -3,7 +3,7 @@ extends Ability_class
 var healNum = 2
 
 func _enter_tree():
-	targetType = get_parent().fac.ALLY
+	targetType = [get_parent().fac.ALLY]
 	Name = "Heal"
 	description = "Heals an adjacent ally for 3 health. 6 AP"
 

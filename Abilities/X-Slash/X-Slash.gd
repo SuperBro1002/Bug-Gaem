@@ -3,7 +3,7 @@ extends Ability_class
 var sceneNode
 
 func _enter_tree():
-	targetType = get_parent().fac.ENEMY
+	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
 	Name = "X-Slash"
 	description = "Deals 3 damage to a single enemy and grants baton pass. If the target dies from this attack, they become possessed, and receive baton pass. They then perish after taking one turn. 3 AP"
 
@@ -14,7 +14,7 @@ func execute():
 	print(targetUnits)
 	
 	for i in targetUnits.size():
-		if targetUnits[i].get_current_hp() - 3 <= 0:
+		if targetUnits[i].get_current_hp() - 3 <= 0 and targetUnits[i].Faction != get_parent().fac.OBSTACLE:
 			var scene = load("res://Scenes/ally.tscn")
 			sceneNode = scene.instantiate()
 			get_node("../..").add_child(sceneNode)

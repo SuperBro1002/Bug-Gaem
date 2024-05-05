@@ -19,7 +19,7 @@ enum abilityType{
 @export var myType = abilityType.DAMAGING
 
 var dmgMod = 1
-var targetType = 0
+var targetType = []
 var clickedPos
 var targetUnits = []
 var clickedDistance
@@ -38,9 +38,9 @@ func queue():
 			return
 		clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,clickedPos)
 		
-		for i in AutoloadMe.globalUnitList.size() - 1:
-			if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position):
-				if clickedDistance.size() - 1 <= distanceRange and AutoloadMe.globalUnitList[i].get_faction() == targetType and clickedPos != get_parent().grid.local_to_map(get_parent().position):
+		for i in AutoloadMe.globalTargetList.size() - 1:
+			if clickedPos == AutoloadMe.globalTargetList[i].grid.local_to_map(AutoloadMe.globalTargetList[i].position):
+				if clickedDistance.size() - 1 <= distanceRange and type_matches(AutoloadMe.globalTargetList[i].get_faction()) and clickedPos != get_parent().grid.local_to_map(get_parent().position):
 					print("ME ", clickedPos != get_parent().grid.local_to_map(get_parent().position))
 					$Area2D.position = get_parent().grid.map_to_local(clickedPos)
 					$Area2D/SelectionBox.set_visible(true)
@@ -53,6 +53,13 @@ func queue():
 						SignalBus.activelyQueueing.emit(false)
 					
 					print(targetUnits)
+
+func type_matches(faction):
+	for i in targetType:
+		if faction == i:
+			print("IM HERE")
+			return true
+	return false
 
 func dequeue(num, state):
 	if state == false:
@@ -77,7 +84,7 @@ func get_ap_cost():
 	return apCost
 
 func _on_area_2d_area_entered(area):
-	if area.get_parent() == self.get_parent().get_parent() and area.get_faction() == targetType and area != get_parent():
+	if area.areaType != "spawner" and type_matches(area.get_faction()) and area != get_parent():
 		print("HI")
 		targetUnits.append(area)
 

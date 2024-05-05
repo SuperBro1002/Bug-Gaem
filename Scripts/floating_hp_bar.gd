@@ -41,7 +41,7 @@ func update(myUnit):
 			await get_tree().create_timer(0.05).timeout
 		
 	if currentHP == 0:
-		SignalBus.deleteMe.emit(get_parent())
+		SignalBus.deleteUnit.emit(get_parent())
 
 func fade(isHovering):
 	var tween = create_tween()

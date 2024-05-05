@@ -2,6 +2,7 @@ extends Node
 
 var currentUnitTurn
 @onready var unitMan = $UnitManager
+@onready var obsHold = get_node("../ObstacleHolder")
 
 func _ready():
 	make_unit_list()
@@ -43,25 +44,35 @@ func make_unit_list():
 	print("Children are ", unitList)
 	var allyList = []
 	var enemyList = []
+	var targetList = obsHold.get_children()
 	AutoloadMe.globalUnitList = unitList
 	print("MAKING UNITLIST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 	sort_unit_list()
+	
 	for i in unitList.size():
-		unitList[i].position = unitList[i].grid.map_to_local(unitList[i].grid.local_to_map(unitList[i].position))
+		targetList.append(AutoloadMe.globalUnitList[i])
+		
 		if unitList[i].get_faction() == unitList[i].fac.ALLY:
 			allyList.append(AutoloadMe.globalUnitList[i])
 		elif unitList[i].get_faction() == unitList[i].fac.ENEMY:
 			enemyList.append(AutoloadMe.globalUnitList[i])
 	
+	AutoloadMe.globalTargetList = targetList
 	AutoloadMe.globalAllyList = allyList
 	AutoloadMe.globalEnemyList = enemyList
 	SignalBus.updateInitBox.emit()
 	print("UnitList: ", unitList)
 	print("AllList: ", allyList)
 	print("EnemyList: ", enemyList)
+	print("TARGETLIST: ", targetList)
+	
+	for i in targetList.size():
+		targetList[i].position = targetList[i].grid.map_to_local(targetList[i].grid.local_to_map(targetList[i].position))
+	
 
 func add_unit_list(unit):
 	AutoloadMe.globalUnitList.append(unit)
+	AutoloadMe.globalTargetList.append(unit)
 	sort_unit_list()
 	
 	if unit.get_faction() == unit.fac.ALLY:

@@ -6,7 +6,7 @@ var colorTween
 
 func _ready():
 	SignalBus.connect("deleteInitObject", remove_me)
-	SignalBus.connect("deleteMe", death)
+	SignalBus.connect("deleteMe", delete_box)
 	SignalBus.connect("startTurn", glow)
 	SignalBus.connect("endTurn", kill_glow)
 	SignalBus.connect("endRound", reset_colors)
@@ -64,21 +64,20 @@ func kill_glow():
 func remove_me():
 	queue_free()
 
-func death(toBeDeleted):
+func delete_box(toBeDeleted):
 	# Removes unit from UnitLists so it won't be added to InitBox
 	if toBeDeleted == myUnit:
-		print("I AM DYING")
-		AutoloadMe.globalUnitList.erase(myUnit)
-		AutoloadMe.globalEnemyList.erase(myUnit)
-		AutoloadMe.globalAllyList.erase(myUnit)
-		if myUnit.Faction == myUnit.fac.ENEMY:
-			AutoloadMe.deathCount += 1
+		#print("I AM DYING")
+		#AutoloadMe.globalUnitList.erase(myUnit)
+		#AutoloadMe.globalEnemyList.erase(myUnit)
+		#AutoloadMe.globalAllyList.erase(myUnit)
+		#if myUnit.Faction == myUnit.fac.ENEMY:
+			#AutoloadMe.deathCount += 1
+		#SignalBus.updateGrid.emit()
 		
-		#SignalBus.updateInitBox.emit()
 		get_parent().get_parent().get_parent().remove_init_box(self)
-		SignalBus.updateGrid.emit()
 		SignalBus.updateUI.emit(AutoloadMe.turnPointer)
-		myUnit.queue_free()
+		#myUnit.queue_free()
 		
 		if AutoloadMe.turnPointer == toBeDeleted:
 			SignalBus.endTurn.emit()

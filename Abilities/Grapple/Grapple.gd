@@ -1,7 +1,7 @@
 extends Ability_class
 
 func _enter_tree():
-	targetType = get_parent().fac.ENEMY
+	targetType = [get_parent().fac.ENEMY]
 	Name = "Grapple"
 	description = "Deals 2 damage to a single target. The attacking unit and the defending unit are both trapped in-place through their next turn. 3 AP"
 

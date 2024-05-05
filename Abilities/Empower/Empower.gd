@@ -1,7 +1,7 @@
 extends Ability_class
 
 func _enter_tree():
-	targetType = get_parent().fac.ALLY
+	targetType = [get_parent().fac.ALLY]
 	Name = "Empower"
 	description = "Target's next attack does double damage. 2 AP"
 

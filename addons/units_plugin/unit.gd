@@ -5,7 +5,8 @@ class_name Unit_class
 enum fac {
 	ALLY,
 	ENEMY,
-	NONE
+	NONE,
+	OBSTACLE
 }
 
 enum TS {
@@ -43,10 +44,11 @@ var incoming_dmg_type = null # pierce, null
 @export var BatonPass = TS.NOTACTED
 
 @onready var tempAP = get_max_ap()
-@onready var grid = get_parent().get_parent().get_parent()
+@onready var grid = find_parent("Grid")
 @onready var start = grid.convert_to_map(position)
 @onready var abilityStartPoint = grid.convert_to_map(position)
 @onready var end = grid.convert_to_map(position)
+@onready var areaType = "unit"
 
 var isPossessed = false
 var myHPBar
@@ -55,6 +57,7 @@ var storedBatonPass = TS.NOTACTED
 
 func _enter_tree():
 	SignalBus.connect("abilityExecuted",on_execute)
+	SignalBus.connect("deleteUnit", delete)
 	make_floating_hp()
 	make_floating_ap()
 
@@ -67,7 +70,7 @@ func clone(OGUnit):
 	MaxHP = OGUnit.MaxHP
 	CurrentHP = OGUnit.CurrentHP
 	MaxAP = OGUnit.MaxAP
-	CurrentAP = OGUnit.CurrentAP
+	CurrentAP = MaxAP
 	TrueInit = OGUnit.TrueInit
 	CurrentInit = OGUnit.CurrentInit
 	SetAbility1 = OGUnit.SetAbility1
@@ -78,7 +81,7 @@ func clone(OGUnit):
 	make_floating_hp()
 	SignalBus.updateFloatingHP.emit(self)
 	BatonPass = TS.BATONPASS
-	tempAP = CurrentAP
+	tempAP = MaxAP
 	position = OGUnit.position
 	start = grid.convert_to_map(OGUnit.position)
 	end = grid.convert_to_map(OGUnit.position)
@@ -293,6 +296,19 @@ func find_and_delete_passives():
 			SignalBus.deletePassives.emit()
 		else:
 			i = 0 # THIS SEEMS TO WORK BUT I FEEL LIKE IT SHOULDN'T
+
+func delete(unit):
+	if unit == self:
+		print("I AM DYING")
+		AutoloadMe.globalUnitList.erase(unit)
+		AutoloadMe.globalEnemyList.erase(unit)
+		AutoloadMe.globalAllyList.erase(unit)
+		AutoloadMe.globalTargetList.erase(unit)
+		if unit.Faction == self.fac.ENEMY:
+			AutoloadMe.deathCount += 1
+		SignalBus.updateGrid.emit()
+		SignalBus.deleteMe.emit(self)
+		queue_free()
 
 func _mouse_shape_enter(shape_idx):
 		myHPBar.fade(true)

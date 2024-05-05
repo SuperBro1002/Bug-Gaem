@@ -4,7 +4,7 @@ var isCarrying = false
 var storedUnit
 
 func _enter_tree():
-	targetType = get_parent().fac.ALLY
+	targetType = [get_parent().fac.ALLY]
 	Name = "Carry"
 	description = "Deals 2 damage to a single target. 4 AP"
 
@@ -21,7 +21,7 @@ func queue():
 			
 			for i in AutoloadMe.globalUnitList.size() - 1:
 				if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position):
-					if clickedDistance.size() - 1 <= distanceRange and AutoloadMe.globalUnitList[i].get_faction() == targetType and clickedPos != get_parent().grid.local_to_map(get_parent().position):
+					if clickedDistance.size() - 1 <= distanceRange and type_matches(AutoloadMe.globalUnitList[i].get_faction()) and clickedPos != get_parent().grid.local_to_map(get_parent().position):
 						$Area2D.position = get_parent().grid.map_to_local(clickedPos)
 						$Area2D/SelectionBox.set_visible(true)
 						
@@ -43,7 +43,7 @@ func queue():
 			clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,clickedPos)
 			
 			for i in AutoloadMe.globalUnitList.size() - 1:
-				if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position):
+				if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position) or AutoloadMe.movementGrid.is_point_solid(clickedPos):
 					return
 			if clickedDistance.size() - 1 <= distanceRange:
 				$Area2D.position = get_parent().grid.map_to_local(clickedPos)
@@ -52,7 +52,6 @@ func queue():
 				await get_tree().create_timer(0.1).timeout
 				
 				SignalBus.activelyQueueing.emit(true)
-
 
 func dequeue(num, state):
 	if state == false and storedUnit == null:

@@ -22,9 +22,11 @@ func update_grid_collision():
 				AutoloadMe.movementGrid.set_point_solid(tilePos)
 			
 			# Looks thru the unitList, determines if the 
-			for i in AutoloadMe.globalUnitList.size():
-				match[local_to_map(AutoloadMe.globalUnitList[i].position) == tilePos, AutoloadMe.isAllyTurn, AutoloadMe.globalUnitList[i].get_faction() == 1]:
-					[true,true,true]:
+			for i in AutoloadMe.globalTargetList.size():
+				match[local_to_map(AutoloadMe.globalTargetList[i].position) == tilePos, AutoloadMe.isAllyTurn, AutoloadMe.globalTargetList[i].get_faction() == 1, AutoloadMe.globalTargetList[i].get_faction() == 3]:
+					[true,true,true,false]:
+						AutoloadMe.movementGrid.set_point_solid(tilePos)
+					[true,true,false,true]:
 						AutoloadMe.movementGrid.set_point_solid(tilePos)
 
 func set_enemy_collision():
@@ -38,9 +40,16 @@ func set_enemy_collision():
 			if tileData == null or tileData.get_custom_data("walkable") == false:
 				AutoloadMe.movementGrid.set_point_solid(tilePos)
 			
+			for i in AutoloadMe.globalTargetList.size():
+				if local_to_map(AutoloadMe.globalTargetList[i].position) == tilePos and AutoloadMe.globalTargetList[i].get_faction() == 3:
+					AutoloadMe.movementGrid.set_point_solid(tilePos)
+			
 			for i in AutoloadMe.globalEnemyList.size():
 				if local_to_map(AutoloadMe.globalEnemyList[i].position) == tilePos and AutoloadMe.globalEnemyList[i] != AutoloadMe.turnPointer:
 					AutoloadMe.movementGrid.set_point_solid(tilePos)
+			
+			for i in AutoloadMe.globalTargetList.size():
+				pass
 
 func set_enemies_solid():
 	AutoloadMe.movementGrid.update()
@@ -54,9 +63,11 @@ func set_enemies_solid():
 				AutoloadMe.movementGrid.set_point_solid(tilePos)
 			
 			# Looks thru the unitList, determines if the 
-			for i in AutoloadMe.globalUnitList.size():
-				match[local_to_map(AutoloadMe.globalUnitList[i].position) == tilePos, AutoloadMe.globalUnitList[i].get_faction() == 1]:
-					[true,true]:
+			for i in AutoloadMe.globalTargetList.size():
+				match[local_to_map(AutoloadMe.globalTargetList[i].position) == tilePos, AutoloadMe.globalTargetList[i].get_faction() == 1, AutoloadMe.globalTargetList[i].get_faction() == 3]:
+					[true,true,false]:
+						AutoloadMe.movementGrid.set_point_solid(tilePos)
+					[true,false,true]:
 						AutoloadMe.movementGrid.set_point_solid(tilePos)
 
 func convert_to_map(localPos):

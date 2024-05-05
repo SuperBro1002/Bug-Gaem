@@ -8,7 +8,7 @@ var validTargetPos
 
 func _enter_tree():
 	$Area2D2/SelectionBox.set_visible(false)
-	targetType = get_parent().fac.ALLY
+	targetType = [get_parent().fac.ALLY]
 	Name = "Throw"
 	description = "Select an adjacent unit to throw to a space within 5 tiles. If there is a unit in the target's new space, both units take 3 damage and the former is pushed off the tile. Unit being thrown gains Baton Pass. 6 AP"
 
@@ -24,7 +24,7 @@ func queue():
 			clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,clickedPos) # Makes a list of the shortest path of tiles between the parent and clickedPos
 			
 			for i in AutoloadMe.globalUnitList.size() - 1:
-				if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position) and clickedPos != get_parent().grid.local_to_map(get_parent().position): # Checks if a unit is present at clickedPos
+				if clickedPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position) and clickedPos != get_parent().grid.local_to_map(get_parent().position) and AutoloadMe.globalUnitList[i].Faction != get_parent().fac.OBSTACLE: # Checks if a unit is present at clickedPos
 					if clickedDistance.size() - 1 <= distanceRange: # Checks if ClickedPos is within the ability's designated tile range and is the proper alignment
 						$Area2D.position = get_parent().grid.map_to_local(clickedPos) # Moves the collision box to clickedPos. If any unit is within this box, they are added to a targetList
 						$Area2D/SelectionBox.set_visible(true)
@@ -45,10 +45,10 @@ func queue():
 		print(clickedDistance.size() - 1)
 		if clickedDistance.size() - 1 <= 5 and newPos.x >= 1 and newPos.y >= 1 and newPos.x <= AutoloadMe.gridSize.x - 2 and newPos.y <= AutoloadMe.gridSize.y - 2 and newPos != get_parent().grid.local_to_map(get_parent().position):
 			validTargetPos = true
-			for i in AutoloadMe.globalUnitList.size() - 1:
-				if newPos == AutoloadMe.globalUnitList[i].grid.local_to_map(AutoloadMe.globalUnitList[i].position):
+			for i in AutoloadMe.globalTargetList.size() - 1:
+				if newPos == AutoloadMe.globalTargetList[i].grid.local_to_map(AutoloadMe.globalTargetList[i].position):
 					occupiedPos = true
-					collatUnit = AutoloadMe.globalUnitList[i]
+					collatUnit = AutoloadMe.globalTargetList[i]
 					bouncePos = get_parent().grid.flood_fill_first(newPos)
 					break
 			if AutoloadMe.movementGrid.is_point_solid(newPos) and occupiedPos == false:
@@ -99,5 +99,5 @@ func dequeue(_num, state):
 		$Area2D2.position = Vector2(0,0)
 
 func _on_area_2d_area_entered(area):
-	if area.get_parent() == self.get_parent().get_parent():
+	if area.areaType != "spawner":
 		targetUnits.append(area)

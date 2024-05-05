@@ -17,7 +17,12 @@ func fill_me(_isHovering):
 	
 	$Name.set_text(unit.Name)
 	$HPValue.set_text(str(unit.get_current_hp(), " / ", unit.get_max_hp()))
+	
+	if unit.Faction == unit.fac.OBSTACLE:
+		return
+	
 	$APValue.set_text(str(unit.get_current_ap(), " / ", unit.get_max_ap()))
+	
 	
 	$GridContainer/MarginContainer/Ability1.set_text(unit.ability1.Name)
 	$GridContainer/Description1.set_text(unit.ability1.description)

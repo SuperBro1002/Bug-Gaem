@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var myPos = position
 @onready var spawnPos = myPos
+@onready var areaType = "spawner"
 @export var groupID = 0
 @export var setName = ""
 @export var setFileName = ""

@@ -2,7 +2,7 @@ extends Ability_class
 
 
 func _enter_tree():
-	targetType = get_parent().fac.ENEMY
+	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
 	Name = "Blood Moon"
 	description = "Deals 1 damage to a single target and temporarily increases Heal's effects by 1 HP. 4 AP"
 

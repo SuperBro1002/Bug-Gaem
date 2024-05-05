@@ -9,6 +9,7 @@ var isAllyTurn = false
 var globalUnitList
 var globalAllyList
 var globalEnemyList
+var globalTargetList
 var validQueue = false
 var queueState = false
 var allowEndTurn = true
