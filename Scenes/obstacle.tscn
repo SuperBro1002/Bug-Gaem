@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dei8pblwcqo6t"]
+[gd_scene load_steps=6 format=3 uid="uid://dei8pblwcqo6t"]
 
 [ext_resource type="Script" path="res://Scripts/obstacle.gd" id="1_0r6ou"]
 [ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlus/Atlus_Base_Still.png" id="2_lksen"]
@@ -18,7 +18,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0dpcw"]
+
 [node name="Obstacle" type="Area2D"]
+modulate = Color(0.211765, 0.0823529, 0, 1)
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_0r6ou")
@@ -34,7 +37,13 @@ scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_jcgqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 rotation = -3.14159
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1vwuj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.86102e-06, -2.86102e-06)
+scale = Vector2(60, 60)
+texture = SubResource("PlaceholderTexture2D_0dpcw")

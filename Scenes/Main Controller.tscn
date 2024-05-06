@@ -213,7 +213,6 @@ ability1 = "Tackle"
 ability2 = "Tackle"
 ability3 = "Tackle"
 
-[editable path="Grid/ObstacleHolder/Obstacle"]
 [editable path="Grid/InitManager/UnitManager/Atlus"]
 [editable path="Grid/InitManager/UnitManager/Triss"]
 [editable path="Grid/InitManager/UnitManager/Lumoth"]
