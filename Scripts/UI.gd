@@ -37,7 +37,7 @@ func set_ui(unit):
 		ability2 = unit.ability2
 		ability3 = unit.ability3
 	
-	flood_fill()
+	display_movement_range()
 	draw_tile_path()
 	boxArray = get_node("../UI/ColorRect/HBoxContainer").get_children()
 	for i in boxArray.size():
@@ -126,7 +126,7 @@ func clear_tile_paths(_unit):
 		for i in tiles.size():
 			tiles[i].queue_free()
 
-func flood_fill():
+func display_movement_range():
 	clear_tile_Overlays()
 	if AutoloadMe.turnPointer.get_faction() != AutoloadMe.turnPointer.fac.ALLY:
 		return

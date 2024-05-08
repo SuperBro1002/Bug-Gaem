@@ -4,6 +4,7 @@ class_name Ability_class
 
 var Tackle
 var Name
+var fileName
 var description
 
 enum abilityType{
@@ -23,10 +24,13 @@ var targetType = []
 var clickedPos
 var targetUnits = []
 var clickedDistance
+var areaType = "selection_box"
 @onready var abilityGrid = AutoloadMe.abilityRangeGrid
 
 func _ready():
 	SignalBus.connect("ability",dequeue)
+	SignalBus.connect("showRangeTiles", draw_range_tiles)
+	SignalBus.connect("endRangeTiles", kill_range_tiles)
 	$Area2D/SelectionBox.set_visible(false)
 
 func queue():
@@ -80,11 +84,33 @@ func post_execute():
 	if get_parent().Faction == get_parent().fac.ALLY:
 		SignalBus.changeButtonState.emit()
 
+func draw_range_tiles(activeName):
+	if fileName != activeName:
+		return
+	print("Children: ", )
+	if get_parent() == AutoloadMe.turnPointer:
+		print(get_parent())
+		var tiles = get_parent().grid.flood_fill_ability_range(get_parent().position, distanceRange)
+		var sceneNode
+		print("TILES: ", tiles)
+		for i in tiles.size():
+			var scene = load("res://Scenes/Ability_Tile.tscn")
+			sceneNode = scene.instantiate()
+			$AbilityRanges.add_child(sceneNode)
+			sceneNode.position = tiles[i]
+		#kill_range_tiles()
+
+func kill_range_tiles():
+	if get_parent() == AutoloadMe.turnPointer:
+		var tiles = $AbilityRanges.get_children()
+		for i in tiles.size():
+			tiles.pop_back().queue_free()
+
 func get_ap_cost():
 	return apCost
 
 func _on_area_2d_area_entered(area):
-	if area.areaType != "spawner" and type_matches(area.get_faction()) and area != get_parent():
+	if area.areaType != "spawner" and area.areaType != "range_box" and type_matches(area.get_faction()) and area != get_parent():
 		print("HI")
 		targetUnits.append(area)
 

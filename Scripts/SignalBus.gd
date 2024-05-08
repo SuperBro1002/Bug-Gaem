@@ -13,6 +13,8 @@ signal activelyQueueing(status)
 signal abilityIsQueued
 signal abilityExecuted(ability)
 signal updateUI
+signal showRangeTiles(name)
+signal endRangeTiles
 signal changeButtonState
 signal updateInitBox
 signal addInitBox(initBox)

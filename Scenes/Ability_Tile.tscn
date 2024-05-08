@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://4m076vxfxaqy"]
+
+[ext_resource type="Texture2D" uid="uid://bh5l1rj1wenx0" path="res://Assets/HUD/AbilityRangeTile.png" id="1_3dqr4"]
+[ext_resource type="Script" path="res://Scripts/Ability_Tile.gd" id="1_hc452"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pksmb"]
+size = Vector2(62, 62)
+
+[node name="AbilityTile" type="Area2D"]
+modulate = Color(1, 1, 1, 0.501961)
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_hc452")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3dqr4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_pksmb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

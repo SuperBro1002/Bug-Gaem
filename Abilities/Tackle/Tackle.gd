@@ -4,6 +4,7 @@ extends Ability_class
 func _enter_tree():
 	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
 	Name = "Tackle"
+	fileName = "Tackle"
 	description = "Deals 2 damage to a single target. 4 AP"
 
 func execute():

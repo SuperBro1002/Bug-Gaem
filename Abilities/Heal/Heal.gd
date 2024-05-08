@@ -5,6 +5,7 @@ var healNum = 2
 func _enter_tree():
 	targetType = [get_parent().fac.ALLY]
 	Name = "Heal"
+	fileName = "Heal"
 	description = "Heals an adjacent ally for 3 health. 6 AP"
 
 func execute():

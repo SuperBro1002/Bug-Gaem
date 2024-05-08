@@ -179,7 +179,8 @@ MaxHP = 4
 
 [node name="Atlus" parent="Main_Controller/Grid/InitManager/UnitManager" index="0"]
 position = Vector2(544, 993)
-TrueInit = 50
+MaxAP = 8
+TrueInit = 30
 
 [node name="Triss" parent="Main_Controller/Grid/InitManager/UnitManager" index="1"]
 position = Vector2(481, 1051)

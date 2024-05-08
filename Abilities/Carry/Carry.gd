@@ -6,11 +6,12 @@ var storedUnit
 func _enter_tree():
 	targetType = [get_parent().fac.ALLY]
 	Name = "Carry"
-	description = "Deals 2 damage to a single target. 4 AP"
+	fileName = "Carry"
+	description = "Pick up an ally. Re-use to place them down and grant baton pass. 2 AP"
 
 func queue():
 	AutoloadMe.currentAbility = self
-	if isCarrying == false:
+	if isCarrying == false and AutoloadMe.turnPointer.get_temp_ap() - 2 >= 0:
 		print("STEP 1")
 		if get_parent().get_temp_ap() - apCost >= 0:
 			clickedPos = get_parent().grid.get_global_mouse_position()

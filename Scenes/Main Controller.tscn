@@ -55,8 +55,8 @@ scale = Vector2(1, 1)
 Name = "Atlus"
 fileName = "Atlus"
 MaxHP = 12
-MaxAP = 8
-TrueInit = 25
+MaxAP = 13
+TrueInit = 315
 SetAbility1 = "Knockback"
 SetAbility2 = "Empower"
 SetAbility3 = "Throw"
@@ -114,7 +114,7 @@ Faction = 0
 sprite_frames = ExtResource("5_73cei")
 
 [node name="Robo Poly" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(353, 159)
+position = Vector2(414, 616)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
@@ -190,7 +190,7 @@ texture = ExtResource("17_lbcx0")
 
 [node name="Spawner" parent="." instance=ExtResource("16_uxiej")]
 z_index = -1
-position = Vector2(671, 414)
+position = Vector2(674, 671)
 setName = "Robo Poly"
 setFileName = "Robopoly"
 setHP = 10
@@ -202,7 +202,7 @@ ability3 = "Tackle"
 
 [node name="Spawner2" parent="." instance=ExtResource("16_uxiej")]
 z_index = -1
-position = Vector2(227, 419)
+position = Vector2(616, 672)
 groupID = 1
 setName = "Robo Poly"
 setFileName = "Robopoly"

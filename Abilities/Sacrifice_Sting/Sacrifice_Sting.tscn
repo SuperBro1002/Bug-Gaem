@@ -40,5 +40,7 @@ z_index = 1
 scale = Vector2(64, 64)
 texture = SubResource("PlaceholderTexture2D_mw3e8")
 
+[node name="AbilityRanges" type="Node" parent="."]
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -5,14 +5,17 @@ var collatUnit
 var newPos
 var bouncePos
 var validTargetPos
+var range = 1
 
 func _enter_tree():
 	$Area2D2/SelectionBox.set_visible(false)
 	targetType = [get_parent().fac.ALLY]
 	Name = "Throw"
-	description = "Select an adjacent unit to throw to a space within 5 tiles. If there is a unit in the target's new space, both units take 3 damage and the former is pushed off the tile. Unit being thrown gains Baton Pass. 6 AP"
+	fileName = "Throw"
+	description = "Select an adjacent unit to throw to a space within 5 tiles. If there is a unit in the target's new space, both units take 4 damage and the former is pushed off the tile. Unit being thrown gains Baton Pass. 6 AP"
 
 func queue():
+	range = 1
 	AutoloadMe.currentAbility = self
 	collatUnit = null
 	validTargetPos = false
@@ -28,7 +31,9 @@ func queue():
 					if clickedDistance.size() - 1 <= distanceRange: # Checks if ClickedPos is within the ability's designated tile range and is the proper alignment
 						$Area2D.position = get_parent().grid.map_to_local(clickedPos) # Moves the collision box to clickedPos. If any unit is within this box, they are added to a targetList
 						$Area2D/SelectionBox.set_visible(true)
-						
+						kill_range_tiles()
+						range = 5
+						draw_range_tiles(Name)
 						await get_tree().create_timer(0.1).timeout
 						if !targetUnits.is_empty(): # Checks if a target is found and signals if the game can allow an input to trigger the execute method
 							SignalBus.activelyQueueing.emit(true)
@@ -87,6 +92,22 @@ func execute():
 		post_execute()
 	else:
 		AutoloadMe.isExecuting = false
+
+func draw_range_tiles(activeName):
+	if Name != activeName:
+		return
+	print("Children: ", )
+	if get_parent() == AutoloadMe.turnPointer:
+		print(get_parent())
+		var tiles = get_parent().grid.flood_fill_ability_range(get_parent().position, range)
+		var sceneNode
+		print("TILES: ", tiles)
+		for i in tiles.size():
+			var scene = load("res://Scenes/Ability_Tile.tscn")
+			sceneNode = scene.instantiate()
+			$AbilityRanges.add_child(sceneNode)
+			sceneNode.position = tiles[i]
+		#kill_range_tiles()
 
 func dequeue(_num, state):
 	if state == false:
