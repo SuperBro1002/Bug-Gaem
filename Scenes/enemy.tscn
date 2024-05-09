@@ -11,6 +11,7 @@ z_index = 1
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_15b7p")
+aggroRange = 5
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
