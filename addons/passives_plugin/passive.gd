@@ -16,7 +16,6 @@ var turnsRemaining = 1000
 var type
 var is_narrative = false
 var timeline = null
-var label = null
 
 func get_type():
 	return type

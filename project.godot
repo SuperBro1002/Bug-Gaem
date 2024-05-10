@@ -19,10 +19,8 @@ config/icon="res://icon.svg"
 
 AutoloadMe="*res://Scripts/AutoloadMe.gd"
 SignalBus="*res://Scripts/SignalBus.gd"
-
 PortraitManager="*res://Scripts/PortraitManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-
 
 [debug]
 
@@ -32,9 +30,16 @@ settings/stdout/print_fps=true
 
 directories/dch_directory={
 "Atlas": "res://Dialogic Assets/Characters/Atlas.dch",
+"Atlas2": "res://Dialogic Assets/Characters/Atlas2.dch",
+"Auri": "res://Dialogic Assets/Characters/Auri.dch",
+"Drone": "res://Dialogic Assets/Characters/Drone.dch",
 "Lumoth": "res://Dialogic Assets/Characters/Lumoth.dch",
+"Lumoth2": "res://Dialogic Assets/Characters/Lumoth2.dch",
 "Paramantis": "res://Dialogic Assets/Characters/Paramantis.dch",
-"Triss": "res://Dialogic Assets/Characters/Triss.dch"
+"Paramantis2": "res://Dialogic Assets/Characters/Paramantis2.dch",
+"Thoraxe": "res://Dialogic Assets/Characters/Thoraxe.dch",
+"Triss": "res://Dialogic Assets/Characters/Triss.dch",
+"Triss2": "res://Dialogic Assets/Characters/Triss2.dch"
 }
 directories/dtl_directory={
 "testline": "res://Dialogic Assets/Timelines/testline.dtl"
@@ -43,7 +48,10 @@ layout/style_list=["res://Dialogic Assets/Styles/Default.tres"]
 layout/default_style="res://Dialogic Assets/Styles/Default.tres"
 glossary/default_case_sensitive=true
 variables={
-"hp_percent": 0.0
+"atlas_important_label": "Intro",
+"lumoth_important_label": "Intro",
+"paramantis_important_label": "Intro",
+"triss_important_label": "Intro"
 }
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -61,6 +69,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+glossary/glossary_files=["res://Dialogic Assets/Glossary/Bug Glossary.tres"]
 
 [display]
 

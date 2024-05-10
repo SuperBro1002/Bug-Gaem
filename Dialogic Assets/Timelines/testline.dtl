@@ -1,6 +1,6 @@
 label First
-if {AutoloadMe.turnPointer.get_current_hp()} != 2:
-	jump Low HP
+# if {AutoloadMe.turnPointer.get_current_hp()} != 2:
+# 	jump Low HP
 label Intro
 Lumoth: By the light of Lunalesca, we shall not falter! [pause=0.2] Let her moonlight heal you!
 [end_timeline]
