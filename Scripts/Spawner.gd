@@ -56,10 +56,10 @@ func spawn(idCalled):
 # on_enter signal nodes to determine when new spawn needs to be set by changed notObstructed
 
 
-func _on_area_entered(area):
+func _on_area_entered(_area):
 	print("ENTERED")
 	notObstructed = false
 
-func _on_area_exited(area):
+func _on_area_exited(_area):
 	if AutoloadMe.turnPointer.grid.is_tile_open(position):
 		notObstructed = true

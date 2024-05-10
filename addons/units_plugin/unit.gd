@@ -140,6 +140,8 @@ func lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
 	dmgVal *= AutoloadMe.currentAbility.dmgMod
 	CurrentHP = CurrentHP - dmgVal
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.play("Damaged")
 	if CurrentHP < 0:
 		CurrentHP = 0
 	SignalBus.updateFloatingHP.emit(self)

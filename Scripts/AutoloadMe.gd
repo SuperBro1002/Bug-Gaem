@@ -57,9 +57,12 @@ func _unhandled_input(event):
 		print("NO UNIT")
 		return
 	
-	if Input.is_action_just_pressed("right_click"):
+	if Input.is_action_pressed("right_click"):
 		SignalBus.moveCamera.emit()
-		
+	
+	if Input.is_action_just_released("right_click"):
+		SignalBus.showUI.emit()
+	
 	if Input.is_action_just_pressed("zoom_in"):
 		SignalBus.adjustZoom.emit(0.5)
 		
@@ -72,6 +75,8 @@ func _unhandled_input(event):
 			return
 		for dir in inputs.keys():
 			if event.is_action_pressed(dir) and !turnPointer.abilityQueued:
+				turnPointer.get_node("AnimatedSprite2D").stop()
+				turnPointer.get_node("AnimatedSprite2D").play("Jump1")
 				turnPointer.move(inputs[dir])
 		
 # Sometimes "left_click" double clicks(usually if you click while dragging the mouse across the screen) idk why. Is definitely this line below and only happens with mouse inputs!!!!!!!!!!!!!!!!!

@@ -5,7 +5,7 @@ var collatUnit
 var newPos
 var bouncePos
 var validTargetPos
-var range = 1
+var secondRange = 1
 
 func _enter_tree():
 	$Area2D2/SelectionBox.set_visible(false)
@@ -15,7 +15,7 @@ func _enter_tree():
 	description = "Select an adjacent unit to throw to a space within 5 tiles. If there is a unit in the target's new space, both units take 4 damage and the former is pushed off the tile. Unit being thrown gains Baton Pass. 6 AP"
 
 func queue():
-	range = 1
+	secondRange = 1
 	AutoloadMe.currentAbility = self
 	collatUnit = null
 	validTargetPos = false
@@ -32,7 +32,7 @@ func queue():
 						$Area2D.position = get_parent().grid.map_to_local(clickedPos) # Moves the collision box to clickedPos. If any unit is within this box, they are added to a targetList
 						$Area2D/SelectionBox.set_visible(true)
 						kill_range_tiles()
-						range = 5
+						secondRange = 5
 						draw_range_tiles(Name)
 						await get_tree().create_timer(0.1).timeout
 						if !targetUnits.is_empty(): # Checks if a target is found and signals if the game can allow an input to trigger the execute method
@@ -73,7 +73,12 @@ func execute():
 	if newPos != null and validTargetPos == true:
 		print("EXECUTED Throw")
 		print(targetUnits)
-	
+		
+		face_target()
+		get_parent().get_node("AnimatedSprite2D").stop()
+		get_parent().get_node("AnimatedSprite2D").play("Cast1")
+		await get_tree().create_timer(0.7).timeout
+		
 		for i in targetUnits.size():
 			targetUnits[i].position = get_parent().grid.map_to_local(newPos)
 			
@@ -99,7 +104,7 @@ func draw_range_tiles(activeName):
 	print("Children: ", )
 	if get_parent() == AutoloadMe.turnPointer:
 		print(get_parent())
-		var tiles = get_parent().grid.flood_fill_ability_range(get_parent().position, range)
+		var tiles = get_parent().grid.flood_fill_ability_range(get_parent().position, secondRange)
 		var sceneNode
 		print("TILES: ", tiles)
 		for i in tiles.size():

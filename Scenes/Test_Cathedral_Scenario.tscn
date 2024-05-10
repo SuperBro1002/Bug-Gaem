@@ -178,9 +178,7 @@ fileName = "Atlus"
 MaxHP = 4
 
 [node name="Atlus" parent="Main_Controller/Grid/InitManager/UnitManager" index="0"]
-position = Vector2(544, 993)
-MaxAP = 8
-TrueInit = 30
+position = Vector2(545, 987)
 
 [node name="Triss" parent="Main_Controller/Grid/InitManager/UnitManager" index="1"]
 position = Vector2(481, 1051)
@@ -266,7 +264,6 @@ visible = false
 position = Vector2(416, 422)
 
 [editable path="Main_Controller"]
-[editable path="Main_Controller/Grid/InitManager/UnitManager/Atlus"]
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Triss"]
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Lumoth"]
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Paramantis"]

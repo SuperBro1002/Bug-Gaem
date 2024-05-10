@@ -17,6 +17,8 @@ func _ready():
 	SignalBus.connect("mouseHovering", toggle_secondary)
 	SignalBus.connect("startTurn", show_infoBox)
 	SignalBus.connect("abilityExecuted", clear_tile_paths)
+	SignalBus.connect("moveCamera", hide_ui)
+	SignalBus.connect("showUI",show_ui)
 	draw_init_box()
 
 func set_ui(unit):
@@ -142,6 +144,14 @@ func clear_tile_Overlays():
 	if tiles != null:
 		for i in tiles.size():
 			tiles[i].queue_free()
+
+func hide_ui():
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+
+func show_ui():
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 
 func _on_ability_1_button_mouse_entered():

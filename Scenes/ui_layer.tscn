@@ -64,10 +64,11 @@ anchor_left = 0.991
 anchor_top = 0.024
 anchor_right = 0.991
 anchor_bottom = 0.024
-offset_left = -574.448
+offset_left = -484.448
 offset_top = -0.232
-offset_right = -0.44812
+offset_right = 89.5519
 offset_bottom = 357.768
+scale = Vector2(0.8, 0.8)
 
 [node name="InfoBox" type="ColorRect" parent="UI"]
 layout_mode = 1
@@ -77,12 +78,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -848.0
-offset_top = 316.0
+offset_top = 340.0
 offset_right = -208.0
-offset_bottom = 508.0
+offset_bottom = 532.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.774753, 0.774753)
+scale = Vector2(0.6, 0.6)
 color = Color(0.141176, 0.352941, 0.843137, 1)
 
 [node name="AbilityBox" type="HBoxContainer" parent="UI/InfoBox"]
@@ -192,10 +193,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 8.0
-offset_top = 313.0
-offset_right = 848.0
-offset_bottom = 465.0
+offset_left = 343.0
+offset_top = 370.0
+offset_right = 1183.0
+offset_bottom = 522.0
+scale = Vector2(0.6, 0.6)
 color = Color(0.356863, 0.266667, 0.843137, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/ColorRect"]
@@ -206,10 +208,11 @@ offset_bottom = 152.0
 [node name="AbilityDescBox" parent="UI" instance=ExtResource("7_kxv4v")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 16.0
-offset_top = 677.0
-offset_right = 656.0
-offset_bottom = 825.0
+offset_left = 18.0
+offset_top = 701.0
+offset_right = 658.0
+offset_bottom = 849.0
+scale = Vector2(0.6, 0.6)
 
 [connection signal="mouse_entered" from="UI/InfoBox/AbilityBox/Ability1Button" to="UI" method="_on_ability_1_button_mouse_entered"]
 [connection signal="mouse_exited" from="UI/InfoBox/AbilityBox/Ability1Button" to="UI" method="_on_ability_1_button_mouse_exited"]

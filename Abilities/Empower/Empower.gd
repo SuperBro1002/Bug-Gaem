@@ -12,6 +12,11 @@ func execute():
 	print("EXECUTED ", AutoloadMe.currentAbility)
 	print(targetUnits)
 	
+	face_target()
+	get_parent().get_node("AnimatedSprite2D").stop()
+	get_parent().get_node("AnimatedSprite2D").play("Cast1")
+	await get_tree().create_timer(0.7).timeout
+	
 	for i in targetUnits.size():
 		targetUnits[i].add_passive("Empowered_Attack")
 	

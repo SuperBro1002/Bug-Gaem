@@ -36,10 +36,10 @@ func on_turn_start():
 func on_turn_end():
 	pass
 
-func _mouse_shape_enter(shape_idx):
+func _mouse_shape_enter(_shape_idx):
 	AutoloadMe.hoveredUnit = self
 	SignalBus.mouseHovering.emit(true)
 
-func _mouse_shape_exit(shape_idx):
+func _mouse_shape_exit(_shape_idx):
 	if AutoloadMe.hoveredUnit == self:
 		SignalBus.mouseHovering.emit(false)

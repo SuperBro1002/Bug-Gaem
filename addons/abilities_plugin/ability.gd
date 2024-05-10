@@ -109,6 +109,12 @@ func kill_range_tiles():
 func get_ap_cost():
 	return apCost
 
+func face_target():
+	if targetUnits[0].position.x < get_parent().position.x:
+		get_parent().get_node("AnimatedSprite2D").set_flip_h(true)
+	else:
+		get_parent().get_node("AnimatedSprite2D").set_flip_h(false)
+
 func _on_area_2d_area_entered(area):
 	if area.areaType != "spawner" and area.areaType != "range_box" and type_matches(area.get_faction()) and area != get_parent():
 		print("HI")

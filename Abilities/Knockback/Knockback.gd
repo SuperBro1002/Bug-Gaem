@@ -13,6 +13,11 @@ func execute():
 	print("EXECUTED")
 	print(targetUnits)
 	
+	face_target()
+	get_parent().get_node("AnimatedSprite2D").stop()
+	get_parent().get_node("AnimatedSprite2D").play("Attack1")
+	await get_tree().create_timer(0.7).timeout
+	
 	for i in targetUnits.size():
 		if targetUnits == null:
 			return

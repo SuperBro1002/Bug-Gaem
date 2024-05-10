@@ -54,7 +54,7 @@ func queue():
 				
 				SignalBus.activelyQueueing.emit(true)
 
-func dequeue(num, state):
+func dequeue(_num, state):
 	if state == false and storedUnit == null:
 		isCarrying = false
 		clickedPos = null
