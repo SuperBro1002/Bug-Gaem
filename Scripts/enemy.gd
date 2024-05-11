@@ -65,13 +65,16 @@ func unique_turn_start():
 		pathArray = AutoloadMe.movementGrid.get_point_path(grid.local_to_map(position), end)
 		
 		while CurrentAP >= ability1.get_ap_cost() and pathArray.size() <= 2:
-			ability1.targetUnits.append(target)
 			AutoloadMe.currentAbility = ability1
 			run_passives(methodType.ABILITY_EXECUTE, null)
-			ability1.execute()
+			await ability1.enemy_execute(target)
 			CurrentAP -= ability1.get_ap_cost()
 			
+			#await get_tree().create_timer(1).timeout
+			await SignalBus.HpUiFinish
 			await get_tree().create_timer(1).timeout
+			# NOTE: MAY NEED TO TWEAK WHEN MORE ANIMATIONS ADDED
 	else:
 		print("Short path ", shortestPath)
+	
 	on_turn_end()

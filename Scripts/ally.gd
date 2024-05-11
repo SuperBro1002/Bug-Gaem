@@ -100,4 +100,3 @@ func _on_area_exited(area):
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation != "Idle":
 		$AnimatedSprite2D.play("Idle")
-

@@ -5,6 +5,11 @@
 [resource]
 resource_name = "Paramantis"
 animations = [{
+"frames": [],
+"loop": false,
+"name": &"Damaged",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_sux0n")

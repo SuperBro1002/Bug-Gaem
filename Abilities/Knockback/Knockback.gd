@@ -25,8 +25,8 @@ func execute():
 		var pushDirection = targetUnits[i].position - get_parent().position
 		var targetPos = targetUnits[i].position + pushDirection
 		for j in AutoloadMe.globalTargetList.size():
-			if targetPos == AutoloadMe.globalTargetList[j].position:
+			if targetPos == AutoloadMe.globalTargetList[j].position or AutoloadMe.movementGrid.is_point_solid(get_parent().grid.local_to_map(targetPos)):
 				post_execute()
 				return
 		targetUnits[i].position = targetPos
-		post_execute()
+	post_execute()

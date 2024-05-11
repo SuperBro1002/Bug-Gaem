@@ -23,4 +23,6 @@ shape = SubResource("RectangleShape2D_ygsnb")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_6qnsw")
+animation = &"Idle"
+autoplay = "Idle"
 flip_h = true

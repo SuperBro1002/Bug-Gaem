@@ -39,9 +39,11 @@ func update(myUnit):
 		else:
 			segList[i].set_visible(true)
 			await get_tree().create_timer(0.05).timeout
-		
+	
 	if currentHP == 0:
 		SignalBus.deleteUnit.emit(get_parent())
+	else:
+		SignalBus.HpUiFinish.emit()
 
 func fade(isHovering):
 	var tween = create_tween()

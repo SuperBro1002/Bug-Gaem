@@ -27,7 +27,7 @@ func button_state():
 		self.set_disabled(true)
 		if AutoloadMe.turnPointer.get_faction() == AutoloadMe.turnPointer.fac.ALLY:
 			AutoloadMe.queueState = false
-			SignalBus.ability.emit(1,false)
+			SignalBus.ability.emit(3,false)
 			button_pressed = false
 	else:
 		self.set_disabled(false)

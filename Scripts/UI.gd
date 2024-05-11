@@ -43,7 +43,7 @@ func set_ui(unit):
 	draw_tile_path()
 	boxArray = get_node("../UI/ColorRect/HBoxContainer").get_children()
 	for i in boxArray.size():
-		print("HERE ", boxArray)
+		#print("HERE ", boxArray)
 	#	ifboxArray[i] == null:
 			
 		boxArray[i].update_display()

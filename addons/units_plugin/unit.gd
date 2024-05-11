@@ -140,8 +140,7 @@ func lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
 	dmgVal *= AutoloadMe.currentAbility.dmgMod
 	CurrentHP = CurrentHP - dmgVal
-	$AnimatedSprite2D.stop()
-	$AnimatedSprite2D.play("Damaged")
+	await animated_Damaged()
 	if CurrentHP < 0:
 		CurrentHP = 0
 	SignalBus.updateFloatingHP.emit(self)
@@ -321,3 +320,8 @@ func _mouse_shape_exit(shape_idx):
 	if AutoloadMe.hoveredUnit == self:
 		myHPBar.fade(false)
 		SignalBus.mouseHovering.emit(false)
+
+func animated_Damaged():
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.play("Damaged")
+	await $AnimatedSprite2D.animation_finished

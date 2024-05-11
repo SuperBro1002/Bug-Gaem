@@ -5,11 +5,31 @@
 [resource]
 resource_name = "Robo_Poly"
 animations = [{
+"frames": [],
+"loop": false,
+"name": &"Attack1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"Cast1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"Damaged",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_0ek3w")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"Jump1",
 "speed": 5.0
 }]

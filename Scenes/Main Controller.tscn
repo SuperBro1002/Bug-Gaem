@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=21 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
@@ -7,12 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dimryoawtb8dt" path="res://Scenes/narrative_manager.tscn" id="3_fr05d"]
 [ext_resource type="PackedScene" uid="uid://cofaiq0bowqml" path="res://Scenes/ally.tscn" id="4_tt5vw"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="5_4smxl"]
-[ext_resource type="SpriteFrames" uid="uid://dwsvpciaod0yg" path="res://Scenes/Sprite Frames/Paramantis.tres" id="5_73cei"]
-[ext_resource type="SpriteFrames" uid="uid://fy8e8wgvo05l" path="res://Scenes/Sprite Frames/Triss.tres" id="5_l4uwr"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="6_cdygi"]
 [ext_resource type="SpriteFrames" uid="uid://d4ellltyf6slv" path="res://Scenes/Sprite Frames/Lumoth.tres" id="6_o1qg1"]
 [ext_resource type="PackedScene" uid="uid://ctmmj1ycr05sc" path="res://Scenes/Units/Atlus.tscn" id="7_yodps"]
 [ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="11_p2cr2"]
+[ext_resource type="SpriteFrames" uid="uid://bg2fds46ouabi" path="res://Scenes/Sprite Frames/Atlus.tres" id="11_p3a64"]
 [ext_resource type="Texture2D" uid="uid://bofj7xwd6mfhg" path="res://Assets/Maps_Tiles/tutorial_map.png" id="13_pfrlb"]
 [ext_resource type="Texture2D" uid="uid://cxhgdv3ubm0ks" path="res://Assets/Maps_Tiles/fountain.png" id="14_fai0c"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="14_i827p"]
@@ -50,11 +49,12 @@ MaxHP = 4
 [node name="UnitManager" type="Node" parent="Grid/InitManager"]
 
 [node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_yodps")]
-position = Vector2(163, 416)
+position = Vector2(286, 224)
 scale = Vector2(1, 1)
+SetAbility1 = "Knockback"
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
-position = Vector2(226, 481)
+position = Vector2(226, 542)
 scale = Vector2(1, 1)
 Name = "Triss"
 fileName = "Triss"
@@ -65,10 +65,6 @@ SetAbility1 = "Sting"
 SetAbility2 = "Carry"
 SetAbility3 = "Sacrifice_Sting"
 Faction = 0
-
-[node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Triss" index="1"]
-sprite_frames = ExtResource("5_l4uwr")
-animation = &"default"
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
 position = Vector2(551, 287)
@@ -86,9 +82,10 @@ Faction = 0
 [node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Lumoth" index="1"]
 sprite_frames = ExtResource("6_o1qg1")
 animation = &"default"
+autoplay = ""
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
-position = Vector2(226, 355)
+position = Vector2(352, 222)
 scale = Vector2(1, 1)
 Name = "Paramantis"
 fileName = "Paramantis"
@@ -99,10 +96,6 @@ SetAbility1 = "X-Slash"
 SetAbility2 = "Toxic_Thrash"
 SetAbility3 = "Pheromones"
 Faction = 0
-
-[node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Paramantis" index="1"]
-sprite_frames = ExtResource("5_73cei")
-animation = &"default"
 
 [node name="Robo Poly" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 position = Vector2(414, 616)
@@ -115,14 +108,18 @@ TrueInit = 28
 Faction = 1
 
 [node name="Robo Poly2" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(94, 292)
+position = Vector2(228, 223)
 scale = Vector2(1, 1)
 Name = "Robo Poly"
 fileName = "Robopoly"
 MaxHP = 3
 MaxAP = 6
 TrueInit = 31
+SetAbility1 = "Chainsaw"
 Faction = 1
+
+[node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Robo Poly2" index="1"]
+sprite_frames = ExtResource("11_p3a64")
 
 [node name="Robo Poly3" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 position = Vector2(95, 480)

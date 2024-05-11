@@ -70,9 +70,29 @@ func dequeue(num, state):
 		clickedPos = null
 		$Area2D/SelectionBox.set_visible(false)
 		$Area2D.position = Vector2(0,0)
+		kill_range_tiles()
 
 func execute():
 	pass
+
+func enemy_execute(initTarget):
+	targetUnits.append(initTarget)
+	$Area2D/SelectionBox.set_visible(true)
+	if initTarget.position.x > get_parent().position.x:
+		$Area2D.set_rotation_degrees(0)
+		#print("Right")
+	elif initTarget.position.x < get_parent().position.x:
+		$Area2D.set_rotation_degrees(180)
+		#print("Left")
+	elif initTarget.position.y < get_parent().position.y:
+		$Area2D.set_rotation_degrees(270)
+		#print("Above")
+	elif initTarget.position.y > get_parent().position.y:
+		$Area2D.set_rotation_degrees(90)
+		#print("Below")
+	$Area2D.position = initTarget.position
+	
+	execute()
 
 func post_execute():
 	dmgMod = 1
@@ -83,6 +103,8 @@ func post_execute():
 	AutoloadMe.isExecuting = false
 	if get_parent().Faction == get_parent().fac.ALLY:
 		SignalBus.changeButtonState.emit()
+	elif get_parent().Faction == get_parent().fac.ENEMY:
+		dequeue(1,false)
 
 func draw_range_tiles(activeName):
 	if fileName != activeName:
@@ -110,15 +132,17 @@ func get_ap_cost():
 	return apCost
 
 func face_target():
-	if targetUnits[0].position.x < get_parent().position.x:
-		get_parent().get_node("AnimatedSprite2D").set_flip_h(true)
-	else:
-		get_parent().get_node("AnimatedSprite2D").set_flip_h(false)
+	print("Targets: ", targetUnits)
+	#if targetUnits[0].position.x < get_parent().position.x:
+		#get_parent().get_node("AnimatedSprite2D").set_flip_h(true)
+	#else:
+		#get_parent().get_node("AnimatedSprite2D").set_flip_h(false)
 
 func _on_area_2d_area_entered(area):
-	if area.areaType != "spawner" and area.areaType != "range_box" and type_matches(area.get_faction()) and area != get_parent():
+	if area.areaType != "spawner" and area.areaType != "range_box" and type_matches(area.get_faction()) and area != get_parent() and targetUnits.find(area) == -1:
 		print("HI")
 		targetUnits.append(area)
+		print(targetUnits.size())
 
 func _on_area_2d_area_exited(area):
 	if area.get_parent() == self.get_parent().get_parent():

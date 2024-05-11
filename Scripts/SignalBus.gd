@@ -14,6 +14,7 @@ signal abilityIsQueued
 signal abilityExecuted(ability)
 signal updateUI
 signal showUI
+signal HpUiFinish # Emitted when floating_hp_bar.gd finishes decrementing health bar
 signal showRangeTiles(name)
 signal endRangeTiles
 signal changeButtonState

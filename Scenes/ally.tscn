@@ -23,7 +23,8 @@ shape = SubResource("RectangleShape2D_rh4pl")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_uig1a")
-animation = &"Jump1"
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 visible = false

@@ -105,7 +105,7 @@ func draw_range_tiles(activeName):
 	if get_parent() == AutoloadMe.turnPointer:
 		print(get_parent())
 		var tiles = get_parent().grid.flood_fill_ability_range(get_parent().position, secondRange)
-		var sceneNode
+		var sceneNode 
 		print("TILES: ", tiles)
 		for i in tiles.size():
 			var scene = load("res://Scenes/Ability_Tile.tscn")
@@ -116,6 +116,7 @@ func draw_range_tiles(activeName):
 
 func dequeue(_num, state):
 	if state == false:
+		secondRange = 1
 		clickedPos = null
 		AutoloadMe.isExecuting = false
 		newPos = null
@@ -123,6 +124,7 @@ func dequeue(_num, state):
 		$Area2D.position = Vector2(0,0)
 		$Area2D2/SelectionBox.set_visible(false)
 		$Area2D2.position = Vector2(0,0)
+		kill_range_tiles()
 
 func _on_area_2d_area_entered(area):
 	if area.areaType != "spawner":
