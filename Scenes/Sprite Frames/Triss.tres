@@ -5,11 +5,16 @@
 [resource]
 resource_name = "Triss"
 animations = [{
+"frames": [],
+"loop": false,
+"name": &"Damaged",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_2mano")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle",
 "speed": 5.0
 }]

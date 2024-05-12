@@ -3,9 +3,9 @@ extends Ability_class
 
 func _enter_tree():
 	targetType = [get_parent().fac.ALLY, get_parent().fac.OBSTACLE]
-	Name = "Chainsaw Boomerang"
-	fileName = "Chainsaw"
-	description = "Deals 2 damage to targets in a 4-tile line in front of the user. 6 AP"
+	Name = "Purebred Sting"
+	fileName = "Purebred_Sting"
+	description = "Deals 3 damage to an adjacent target. 6 AP"
 
 func execute():
 	# for every target in target units[]
@@ -21,10 +21,6 @@ func execute():
 	await get_tree().create_timer(0.7).timeout
 	
 	for i in targetUnits.size():
-		#print(targetUnits.size())
-		#print(targetUnits, " ", i)
-		if targetUnits == null:
-			return
-		#await
-		targetUnits[i].lose_health(2)
+		targetUnits[i].lose_health(3)
+	
 	post_execute()

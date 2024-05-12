@@ -38,7 +38,11 @@ func set_ui(unit):
 		ability1 = unit.ability1
 		ability2 = unit.ability2
 		ability3 = unit.ability3
-	
+		
+		$InfoBox/AbilityBox/Ability1Button.set_text(ability1.Name)
+		$InfoBox/AbilityBox/Ability2Button.set_text(ability2.Name)
+		$InfoBox/AbilityBox/Ability3Button.set_text(ability3.Name)
+		
 	display_movement_range()
 	draw_tile_path()
 	boxArray = get_node("../UI/ColorRect/HBoxContainer").get_children()

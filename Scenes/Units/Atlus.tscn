@@ -15,4 +15,3 @@ Faction = 0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(-2.38419e-06, -2.38419e-06)
-animation = &"Cast1"

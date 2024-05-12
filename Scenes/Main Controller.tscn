@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://u4oeqtd2cyye"]
+[gd_scene load_steps=23 format=3 uid="uid://u4oeqtd2cyye"]
 
 [ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_7imgs"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_8duao"]
@@ -10,8 +10,10 @@
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="6_cdygi"]
 [ext_resource type="SpriteFrames" uid="uid://d4ellltyf6slv" path="res://Scenes/Sprite Frames/Lumoth.tres" id="6_o1qg1"]
 [ext_resource type="PackedScene" uid="uid://ctmmj1ycr05sc" path="res://Scenes/Units/Atlus.tscn" id="7_yodps"]
+[ext_resource type="SpriteFrames" uid="uid://fy8e8wgvo05l" path="res://Scenes/Sprite Frames/Triss.tres" id="9_taqex"]
 [ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="11_p2cr2"]
-[ext_resource type="SpriteFrames" uid="uid://bg2fds46ouabi" path="res://Scenes/Sprite Frames/Atlus.tres" id="11_p3a64"]
+[ext_resource type="SpriteFrames" uid="uid://dwsvpciaod0yg" path="res://Scenes/Sprite Frames/Paramantis.tres" id="11_xb6jh"]
+[ext_resource type="PackedScene" uid="uid://rw51msc2xqkb" path="res://Scenes/Units/Robopoly.tscn" id="12_rsv82"]
 [ext_resource type="Texture2D" uid="uid://bofj7xwd6mfhg" path="res://Assets/Maps_Tiles/tutorial_map.png" id="13_pfrlb"]
 [ext_resource type="Texture2D" uid="uid://cxhgdv3ubm0ks" path="res://Assets/Maps_Tiles/fountain.png" id="14_fai0c"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="14_i827p"]
@@ -60,11 +62,14 @@ Name = "Triss"
 fileName = "Triss"
 MaxHP = 8
 MaxAP = 8
-TrueInit = 60
+TrueInit = 20
 SetAbility1 = "Sting"
 SetAbility2 = "Carry"
 SetAbility3 = "Sacrifice_Sting"
 Faction = 0
+
+[node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Triss" index="1"]
+sprite_frames = ExtResource("9_taqex")
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
 position = Vector2(551, 287)
@@ -97,39 +102,20 @@ SetAbility2 = "Toxic_Thrash"
 SetAbility3 = "Pheromones"
 Faction = 0
 
-[node name="Robo Poly" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(414, 616)
-scale = Vector2(1, 1)
-Name = "Robo Poly"
-fileName = "Robopoly"
-MaxHP = 10
-MaxAP = 6
-TrueInit = 28
-Faction = 1
+[node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Paramantis" index="1"]
+sprite_frames = ExtResource("11_xb6jh")
 
-[node name="Robo Poly2" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(228, 223)
+[node name="Robopoly1" parent="Grid/InitManager/UnitManager" instance=ExtResource("12_rsv82")]
+position = Vector2(157, 223)
 scale = Vector2(1, 1)
-Name = "Robo Poly"
-fileName = "Robopoly"
-MaxHP = 3
-MaxAP = 6
-TrueInit = 31
-SetAbility1 = "Chainsaw"
-Faction = 1
 
-[node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Robo Poly2" index="1"]
-sprite_frames = ExtResource("11_p3a64")
-
-[node name="Robo Poly3" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
-position = Vector2(95, 480)
+[node name="Robopoly2" parent="Grid/InitManager/UnitManager" instance=ExtResource("12_rsv82")]
+position = Vector2(411, 614)
 scale = Vector2(1, 1)
-Name = "Robo Poly"
-fileName = "Robopoly"
-MaxHP = 3
-MaxAP = 6
-TrueInit = 28
-Faction = 1
+
+[node name="Robopoly3" parent="Grid/InitManager/UnitManager" instance=ExtResource("12_rsv82")]
+position = Vector2(545, 546)
+scale = Vector2(1, 1)
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 visible = false
@@ -204,6 +190,3 @@ ability3 = "Tackle"
 [editable path="Grid/InitManager/UnitManager/Triss"]
 [editable path="Grid/InitManager/UnitManager/Lumoth"]
 [editable path="Grid/InitManager/UnitManager/Paramantis"]
-[editable path="Grid/InitManager/UnitManager/Robo Poly"]
-[editable path="Grid/InitManager/UnitManager/Robo Poly2"]
-[editable path="Grid/InitManager/UnitManager/Robo Poly3"]

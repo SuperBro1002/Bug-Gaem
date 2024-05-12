@@ -36,6 +36,7 @@ var incoming_dmg_type = null # pierce, null
 @export var MaxAP = 5
 @onready var CurrentAP = MaxAP
 @export var TrueInit = 7
+@export var InitVariance = 0
 @onready var CurrentInit = TrueInit
 @export var SetAbility1 = "Tackle"
 @export var SetAbility2 = "Tackle"
@@ -58,6 +59,8 @@ var storedBatonPass = TS.NOTACTED
 func _enter_tree():
 	SignalBus.connect("abilityExecuted",on_execute)
 	SignalBus.connect("deleteUnit", delete)
+	SignalBus.connect("highlightUnit", glow)
+	vary_init()
 	make_floating_hp()
 	make_floating_ap()
 
@@ -140,7 +143,8 @@ func lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
 	dmgVal *= AutoloadMe.currentAbility.dmgMod
 	CurrentHP = CurrentHP - dmgVal
-	await animated_Damaged()
+	#await 
+	animated_Damaged()
 	if CurrentHP < 0:
 		CurrentHP = 0
 	SignalBus.updateFloatingHP.emit(self)
@@ -201,6 +205,15 @@ func get_true_init():
 	# Returns unit's actual initiative stat
 	return TrueInit
 
+func vary_init():
+	var x = randi() % 3
+	match [x]:
+		[0]:
+			TrueInit -= InitVariance
+		[1]:
+			return
+		[2]:
+			TrueInit += InitVariance
 
 
 func get_faction():
@@ -283,9 +296,9 @@ func add_passive(name):
 
 # PROBABLY VERY JANK. MAY NEED TO CHANGE HOW RESIZING THE ARRAY IS HANDLED
 func run_passives(mType, arg):
-	for i in passiveList.size():
-		if passiveList[i] != null and mType == passiveList[i].get_type():
-			arg = passiveList[i].execute(arg)
+	for i in passiveList:
+		if i != null and mType == i.get_type():
+			arg = i.execute(arg)
 	return arg
 
 func find_and_delete_passives():
@@ -325,3 +338,16 @@ func animated_Damaged():
 	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.play("Damaged")
 	await $AnimatedSprite2D.animation_finished
+
+func glow(unit):
+	var tween
+	if unit == self:
+		tween = create_tween()
+		
+		tween.tween_property($AnimatedSprite2D/Glow, "modulate:a", 0.6, 1.0).set_trans(Tween.TRANS_SINE)
+		await tween.finished
+		
+		tween = create_tween()
+		
+		tween.tween_property($AnimatedSprite2D/Glow, "modulate:a", 0, 1.0).set_trans(Tween.TRANS_SINE)
+		await tween.finished

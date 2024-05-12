@@ -83,3 +83,13 @@ func delete_box(toBeDeleted):
 			SignalBus.endTurn.emit()
 		
 		queue_free()
+
+
+func _on_mouse_entered():
+	print("Hovering")
+	AutoloadMe.hoveredUnit = myUnit
+	SignalBus.mouseHovering.emit(true)
+	SignalBus.highlightUnit.emit(myUnit)
+
+func _on_mouse_exited():
+	SignalBus.mouseHovering.emit(false)

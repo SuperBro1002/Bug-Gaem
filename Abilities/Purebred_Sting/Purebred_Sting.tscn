@@ -1,16 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1ceubwohxui3"]
+[gd_scene load_steps=5 format=3 uid="uid://8ul8uvlmpoir"]
 
-[ext_resource type="Script" path="res://Abilities/Tackle/Tackle.gd" id="1_cg4l3"]
-[ext_resource type="Texture2D" uid="uid://doxc8dv2sdn5o" path="res://icon.svg" id="2_0ea2x"]
+[ext_resource type="Script" path="res://Abilities/Purebred_Sting/Purebred_Sting.gd" id="1_tq56r"]
+[ext_resource type="Texture2D" uid="uid://doxc8dv2sdn5o" path="res://icon.svg" id="2_opy64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyjuf"]
 size = Vector2(64, 64)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mw3e8"]
 
-[node name="Tackle" type="Node"]
-script = ExtResource("1_cg4l3")
-apCost = 5
+[node name="Purebred_Sting" type="Node"]
+script = ExtResource("1_tq56r")
+apCost = 6
 
 [node name="Hitbox" type="RayCast2D" parent="."]
 
@@ -18,7 +18,7 @@ apCost = 5
 visible = false
 position = Vector2(0.093643, 31.9599)
 scale = Vector2(-0.0533166, 0.57609)
-texture = ExtResource("2_0ea2x")
+texture = ExtResource("2_opy64")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
@@ -32,7 +32,7 @@ visible = false
 position = Vector2(-0.0108279, 0.104773)
 rotation = 1.57057
 scale = Vector2(0.508015, -0.579799)
-texture = ExtResource("2_0ea2x")
+texture = ExtResource("2_opy64")
 
 [node name="SelectionBox" type="Sprite2D" parent="Area2D"]
 modulate = Color(0, 0, 1, 0.301961)

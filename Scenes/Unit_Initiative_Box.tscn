@@ -23,6 +23,7 @@ layout_mode = 0
 offset_top = 32.0
 offset_right = 64.0
 offset_bottom = 112.0
+mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
@@ -30,6 +31,7 @@ layout_mode = 0
 offset_top = 32.0
 offset_right = 64.0
 offset_bottom = 112.0
+mouse_filter = 1
 color = Color(0, 0.172549, 0.517647, 1)
 
 [node name="affilBox" type="ColorRect" parent="."]
@@ -38,6 +40,7 @@ offset_left = 2.0
 offset_top = 34.0
 offset_right = 62.0
 offset_bottom = 110.0
+mouse_filter = 1
 color = Color(0, 0.517647, 0.968627, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -51,6 +54,7 @@ layout_mode = 0
 offset_top = 120.0
 offset_right = 64.0
 offset_bottom = 143.0
+mouse_filter = 1
 text = "HP: 1111"
 label_settings = SubResource("LabelSettings_mbmbs")
 
@@ -59,5 +63,9 @@ layout_mode = 0
 offset_top = 134.0
 offset_right = 64.0
 offset_bottom = 157.0
+mouse_filter = 1
 text = "AP: 1111"
 label_settings = SubResource("LabelSettings_wkm5q")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

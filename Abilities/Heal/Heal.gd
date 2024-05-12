@@ -1,6 +1,6 @@
 extends Ability_class
 
-var healNum = 2
+var healNum = 3
 
 func _enter_tree():
 	targetType = [get_parent().fac.ALLY]

@@ -1,35 +1,4 @@
-extends Unit_class
-
-var speed = 225
-var screenSize
-
-@onready var ability1 = load_ability(SetAbility1)
-@onready var ability2 = load_ability(SetAbility1)
-@onready var ability3 = load_ability(SetAbility1)
-
-@export var aggroRange = 8
-var animationSpeed = 4
-var type = fac.ENEMY
-var lengthList = []
-var target
-var shortestPath = 10000
-@onready var astarGrid = AutoloadMe.movementGrid
-
-func _ready():
-	screenSize = get_viewport_rect().size
-	#add_passive("Trap")
-
-func spawning_in():
-	set_modulate(Color(1,1,1,0))
-	get_node("AnimatedSprite2D:sprite_frames").set_sprite_frames(load("res://Scenes/Sprite Frames/" + fileName + ".tres"))
-	get_node(".:Scale").set_scale(Vector2(1,1))
-	get_node("AnimatedSprite2D:Scale").set_scale(Vector2(2,2))
-	
-	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
-	
-	SignalBus.updateFloatingHP.emit(self)
-	SignalBus.remakeUnitList.emit()
+extends "res://Scripts/enemy.gd"
 
 func unique_turn_start():
 	shortestPath = 10000
@@ -39,7 +8,6 @@ func unique_turn_start():
 	
 	await get_tree().create_timer(2).timeout
 	
-	# Determines the distances to each ally and adds it to a list
 	for i in AutoloadMe.globalAllyList.size():
 		end = grid.local_to_map(AutoloadMe.globalAllyList[i].position)
 		lengthList.append(AutoloadMe.movementGrid.get_point_path(start, end).size())

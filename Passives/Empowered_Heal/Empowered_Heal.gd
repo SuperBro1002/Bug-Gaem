@@ -6,6 +6,7 @@ func _enter_tree():
 
 func execute(num):
 	if AutoloadMe.currentAbility.Name == "Heal":
+		print("RECOVERY BOOSTED")
 		AutoloadMe.currentAbility.healNum += 1
 		turnsRemaining = 0
 		get_parent().find_and_delete_passives()

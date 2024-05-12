@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://rw51msc2xqkb"]
+
+[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_gv80i"]
+[ext_resource type="Script" path="res://Scenes/Units/Robopoly.gd" id="2_4xfsr"]
+
+[node name="Enemy" instance=ExtResource("1_gv80i")]
+script = ExtResource("2_4xfsr")
+Name = "Robo Poly"
+fileName = "Robopoly"
+MaxHP = 3
+MaxAP = 8
+TrueInit = 20
+InitVariance = 10
+Faction = 1

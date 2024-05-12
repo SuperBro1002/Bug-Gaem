@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqik5a7fuwabx"]
+
+[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_q364i"]
+
+[node name="Enemy" instance=ExtResource("1_q364i")]
+Name = "Yellowjacket Grunt"
+fileName = "Grunt"
+MaxHP = 7
+MaxAP = 9
+TrueInit = 18
+InitVariance = 5
+SetAbility1 = "Purebred_Sting"
+Faction = 1

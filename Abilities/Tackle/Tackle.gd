@@ -3,9 +3,9 @@ extends Ability_class
 
 func _enter_tree():
 	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
-	Name = "Tackle"
+	Name = "Flail"
 	fileName = "Tackle"
-	description = "Deals 2 damage to a single target. 4 AP"
+	description = "Deals 1 damage to a single target. 5 AP"
 
 func execute():
 	# for every target in target units[]
@@ -16,6 +16,6 @@ func execute():
 	for i in targetUnits.size():
 		if targetUnits == null:
 			return
-		targetUnits[i].lose_health(2)
+		targetUnits[i].lose_health(3)
 	
 	post_execute()

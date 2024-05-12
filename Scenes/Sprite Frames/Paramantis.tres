@@ -15,6 +15,6 @@ animations = [{
 "texture": ExtResource("1_sux0n")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle",
 "speed": 5.0
 }]
