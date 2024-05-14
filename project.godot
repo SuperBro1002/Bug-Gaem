@@ -44,7 +44,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "testline": "res://Dialogic Assets/Timelines/testline.dtl"
 }
-layout/style_list=["res://Dialogic Assets/Styles/Default.tres"]
+layout/style_list=["res://Dialogic Assets/Styles/Default.tres", "res://Dialogic Assets/Styles/Box.tres"]
 layout/default_style="res://Dialogic Assets/Styles/Default.tres"
 glossary/default_case_sensitive=true
 variables={
