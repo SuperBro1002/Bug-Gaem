@@ -17,8 +17,10 @@ func _ready():
 	SignalBus.connect("mouseHovering", toggle_secondary)
 	SignalBus.connect("startTurn", show_infoBox)
 	SignalBus.connect("abilityExecuted", clear_tile_paths)
+	SignalBus.connect("wipeTilePaths", clear_tile_paths)
 	SignalBus.connect("moveCamera", hide_ui)
-	SignalBus.connect("showUI",show_ui)
+	SignalBus.connect("showUI", show_ui)
+	SignalBus.connect("changeControls", set_control_text)
 	draw_init_box()
 
 func set_ui(unit):
@@ -148,6 +150,23 @@ func clear_tile_Overlays():
 	if tiles != null:
 		for i in tiles.size():
 			tiles[i].queue_free()
+
+func set_control_text():
+	if AutoloadMe.queueState:
+		$ControlsOverlay/ContextButtons1.set_text("Left Click - Select Target")
+		$ControlsOverlay/AbilityQueueControls.set_text("1,2,3 - Deselect/Change Ability")
+		if AutoloadMe.validQueue:
+			$ControlsOverlay/ContextButtons2.set_text("Z - Confirm Ability")
+		else:
+			$ControlsOverlay/ContextButtons2.set_text("")
+	else:
+		$ControlsOverlay/ContextButtons1.set_text("WASD - Move")
+		$ControlsOverlay/AbilityQueueControls.set_text("1,2,3 - Select Ability")
+		if AutoloadMe.allowEndTurn and AutoloadMe.notOverlapped:
+			$ControlsOverlay/ContextButtons2.set_text("X - End Turn")
+		else:
+			$ControlsOverlay/ContextButtons2.set_text("")
+			$ControlsOverlay/AbilityQueueControls.set_text("")
 
 func hide_ui():
 	var tween = create_tween()

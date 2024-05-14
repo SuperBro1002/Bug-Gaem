@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://clws6xe5hm1lu"]
 
 [ext_resource type="PackedScene" uid="uid://u4oeqtd2cyye" path="res://Scenes/Main Controller.tscn" id="1_uxtqp"]
-[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="2_7l1s0"]
 [ext_resource type="PackedScene" uid="uid://dei8pblwcqo6t" path="res://Scenes/obstacle.tscn" id="2_bmmit"]
+[ext_resource type="PackedScene" uid="uid://rw51msc2xqkb" path="res://Scenes/Units/Robopoly.tscn" id="3_81bm5"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -190,55 +190,21 @@ position = Vector2(611, 991)
 position = Vector2(672, 1056)
 MaxAP = 4
 
-[node name="Robo Poly6" parent="Main_Controller/Grid/InitManager/UnitManager" index="5" instance=ExtResource("2_7l1s0")]
-position = Vector2(735, 290)
+[node name="Robopoly4" parent="Main_Controller/Grid/InitManager/UnitManager" index="5" instance=ExtResource("3_81bm5")]
+position = Vector2(735, 415)
 scale = Vector2(1, 1)
-Name = "Robo Poly"
-fileName = "Robopoly"
-MaxHP = 3
-MaxAP = 6
-TrueInit = 28
-Faction = 1
 
-[node name="Robo Poly7" parent="Main_Controller/Grid/InitManager/UnitManager" index="6" instance=ExtResource("2_7l1s0")]
-position = Vector2(867, 543)
+[node name="Robopoly5" parent="Main_Controller/Grid/InitManager/UnitManager" index="6" instance=ExtResource("3_81bm5")]
+position = Vector2(806, 538)
 scale = Vector2(1, 1)
-Name = "Robo Poly"
-fileName = "Robopoly"
-MaxHP = 3
-MaxAP = 6
-TrueInit = 28
-Faction = 1
 
-[node name="Robo Poly8" parent="Main_Controller/Grid/InitManager/UnitManager" index="7" instance=ExtResource("2_7l1s0")]
-position = Vector2(925, 796)
+[node name="Robopoly6" parent="Main_Controller/Grid/InitManager/UnitManager" index="7" instance=ExtResource("3_81bm5")]
+position = Vector2(862, 666)
 scale = Vector2(1, 1)
-Name = "Robo Poly"
-fileName = "Robopoly"
-MaxHP = 3
-MaxAP = 6
-TrueInit = 28
-Faction = 1
 
-[node name="Robo Poly9" parent="Main_Controller/Grid/InitManager/UnitManager" index="8" instance=ExtResource("2_7l1s0")]
-position = Vector2(935, 671)
+[node name="Robopoly7" parent="Main_Controller/Grid/InitManager/UnitManager" index="8" instance=ExtResource("3_81bm5")]
+position = Vector2(930, 806)
 scale = Vector2(1, 1)
-Name = "Robo Poly"
-fileName = "Robopoly"
-MaxHP = 3
-MaxAP = 6
-TrueInit = 28
-Faction = 1
-
-[node name="Robo Poly10" parent="Main_Controller/Grid/InitManager/UnitManager" index="9" instance=ExtResource("2_7l1s0")]
-position = Vector2(795, 412)
-scale = Vector2(1, 1)
-Name = "Robo Poly"
-fileName = "Robopoly"
-MaxHP = 3
-MaxAP = 6
-TrueInit = 28
-Faction = 1
 
 [node name="UILayer" parent="Main_Controller" index="3"]
 visible = false
@@ -257,6 +223,3 @@ position = Vector2(416, 422)
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Triss"]
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Lumoth"]
 [editable path="Main_Controller/Grid/InitManager/UnitManager/Paramantis"]
-[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly6"]
-[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly7"]
-[editable path="Main_Controller/Grid/InitManager/UnitManager/Robo Poly8"]

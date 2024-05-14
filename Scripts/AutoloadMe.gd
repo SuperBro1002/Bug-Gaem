@@ -90,7 +90,7 @@ func _unhandled_input(event):
 				isExecuting = true
 				turnPointer.run_passives(turnPointer.methodType.ABILITY_EXECUTE, null)
 				turnPointer.abilityQueued.execute()
-				
+		
 		if Input.is_action_just_pressed("end_turn") and !isExecuting and queueState == false and notOverlapped == true and allowEndTurn == true:
 			turnPointer.on_turn_end()
 	
@@ -99,11 +99,13 @@ func _unhandled_input(event):
 func valid_spot_queued(status):
 	if status == true:
 		validQueue = true
+		SignalBus.changeControls.emit()
 	else:
 		validQueue = false
 
 func queue_active():
 	queueState = true
+	SignalBus.changeControls.emit()
 
 func set_current_unit(unit):
 	turnPointer = unit

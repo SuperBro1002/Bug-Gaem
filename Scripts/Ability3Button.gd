@@ -15,6 +15,7 @@ func _toggled(button_pressed):
 		SignalBus.showRangeTiles.emit(AutoloadMe.turnPointer.SetAbility3)
 	else:
 		AutoloadMe.queueState = false
+		SignalBus.changeControls.emit()
 		SignalBus.ability.emit(3,false)
 		SignalBus.endRangeTiles.emit()
 
@@ -27,6 +28,7 @@ func button_state():
 		self.set_disabled(true)
 		if AutoloadMe.turnPointer.get_faction() == AutoloadMe.turnPointer.fac.ALLY:
 			AutoloadMe.queueState = false
+			SignalBus.changeControls.emit()
 			SignalBus.ability.emit(3,false)
 			button_pressed = false
 	else:

@@ -240,6 +240,7 @@ func get_batonpass():
 
 func on_turn_start():
 	print(self, " ", CurrentAP)
+	SignalBus.wipeTilePaths.emit(null)
 	SignalBus.startTurn.emit()
 	SignalBus.changeButtonState.emit()
 	start = grid.local_to_map(position)

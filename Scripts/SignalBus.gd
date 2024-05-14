@@ -18,9 +18,11 @@ signal HpUiFinish # Emitted when floating_hp_bar.gd finishes decrementing health
 signal showRangeTiles(name)
 signal endRangeTiles
 signal changeButtonState
+signal wipeTilePaths
 signal updateInitBox
 signal addInitBox(initBox)
 signal deleteInitObject
+signal changeControls
 signal adjustZoom
 signal moveCamera
 signal deleteMe(unit)

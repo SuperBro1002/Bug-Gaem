@@ -9,6 +9,7 @@ extends Node2D
 @export var setHP = 1
 @export var setAP = 1
 @export var setInit = 1
+@export var setVary = 1
 @export var ability1 = ""
 @export var ability2 = ""
 @export var ability3 = ""
@@ -36,6 +37,7 @@ func spawn(idCalled):
 	newUnit.CurrentAP = setAP
 	newUnit.tempAP = setAP
 	newUnit.TrueInit = setInit
+	newUnit.InitVariance = setVary
 	newUnit.CurrentInit = setInit
 	newUnit.SetAbility1 = ability1
 	newUnit.SetAbility2 = ability2
