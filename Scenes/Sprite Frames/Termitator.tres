@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://qll4q72cqi8s"]
+
+[ext_resource type="Texture2D" uid="uid://bg0fsw0q2sxwa" path="res://Assets/Sprites/Robopoly/Robopoly_Base_Still.png" id="1_ysgat"]
+
+[resource]
+resource_name = "Termitator"
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"Attack1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"Cast1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"Damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ysgat")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"Jump1",
+"speed": 5.0
+}]

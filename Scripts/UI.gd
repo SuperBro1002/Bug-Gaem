@@ -37,13 +37,25 @@ func set_ui(unit):
 		var apVal = str(unit.get_temp_ap()) + " / " + str(unit.get_max_ap())
 		$InfoBox/APValue.set_text(apVal)
 		SignalBus.updateFloatingAP.emit(unit.get_temp_ap())
-		ability1 = unit.ability1
-		ability2 = unit.ability2
-		ability3 = unit.ability3
 		
+		
+		ability1 = unit.ability1
 		$InfoBox/AbilityBox/Ability1Button.set_text(ability1.Name)
-		$InfoBox/AbilityBox/Ability2Button.set_text(ability2.Name)
-		$InfoBox/AbilityBox/Ability3Button.set_text(ability3.Name)
+		
+		if !unit.isPossessed:
+			ability2 = unit.ability2
+			$InfoBox/AbilityBox/Ability2Button.set_text(ability2.Name)
+			$InfoBox/AbilityBox/Ability2Button.set_visible(true)
+		else:
+			$InfoBox/AbilityBox/Ability2Button.set_visible(false)
+		
+		if !unit.isPossessed:
+			ability3 = unit.ability3
+			$InfoBox/AbilityBox/Ability3Button.set_text(ability3.Name)
+			$InfoBox/AbilityBox/Ability3Button.set_visible(true)
+		else:
+			$InfoBox/AbilityBox/Ability3Button.set_visible(false)
+		
 		
 	display_movement_range()
 	draw_tile_path()

@@ -52,12 +52,9 @@ MaxHP = 4
 
 [node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_yodps")]
 position = Vector2(286, 224)
-scale = Vector2(1, 1)
-SetAbility1 = "Knockback"
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
 position = Vector2(226, 542)
-scale = Vector2(1, 1)
 Name = "Triss"
 fileName = "Triss"
 MaxHP = 8
@@ -73,7 +70,6 @@ sprite_frames = ExtResource("9_taqex")
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
 position = Vector2(551, 287)
-scale = Vector2(1, 1)
 Name = "Lumoth"
 fileName = "Lumoth"
 MaxHP = 8
@@ -91,7 +87,6 @@ autoplay = ""
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("4_tt5vw")]
 position = Vector2(352, 222)
-scale = Vector2(1, 1)
 Name = "Paramantis"
 fileName = "Paramantis"
 MaxHP = 12
@@ -107,15 +102,12 @@ sprite_frames = ExtResource("11_xb6jh")
 
 [node name="Robopoly1" parent="Grid/InitManager/UnitManager" instance=ExtResource("12_rsv82")]
 position = Vector2(157, 223)
-scale = Vector2(1, 1)
 
 [node name="Robopoly2" parent="Grid/InitManager/UnitManager" instance=ExtResource("12_rsv82")]
 position = Vector2(411, 614)
-scale = Vector2(1, 1)
 
 [node name="Robopoly3" parent="Grid/InitManager/UnitManager" instance=ExtResource("12_rsv82")]
 position = Vector2(545, 546)
-scale = Vector2(1, 1)
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_4smxl")]
 visible = false

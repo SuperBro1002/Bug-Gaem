@@ -1,18 +1,51 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkfp0y46rm1jd"]
+[gd_scene load_steps=6 format=3 uid="uid://dkfp0y46rm1jd"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_15b7p"]
-[ext_resource type="SpriteFrames" uid="uid://bndyutjeu0niy" path="res://Scenes/Sprite Frames/Robopoly.tres" id="2_6qnsw"]
+[ext_resource type="Texture2D" uid="uid://bg0fsw0q2sxwa" path="res://Assets/Sprites/Robopoly/Robopoly_Base_Still.png" id="2_o6qwk"]
 [ext_resource type="Texture2D" uid="uid://cralknjgxd6ry" path="res://Assets/HUD/Glow.png" id="3_cby3p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygsnb"]
 size = Vector2(75, 75)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_xt1bc"]
+resource_name = "Robo_Poly"
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"Attack1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"Cast1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"Damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o6qwk")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"Jump1",
+"speed": 5.0
+}]
+
 [node name="Enemy" type="Area2D"]
 z_index = 1
-scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_15b7p")
 aggroRange = 5
+SetAbility2 = ""
+SetAbility3 = ""
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -24,7 +57,7 @@ shape = SubResource("RectangleShape2D_ygsnb")
 clip_children = 2
 texture_filter = 1
 scale = Vector2(2, 2)
-sprite_frames = ExtResource("2_6qnsw")
+sprite_frames = SubResource("SpriteFrames_xt1bc")
 animation = &"Idle"
 autoplay = "Idle"
 flip_h = true

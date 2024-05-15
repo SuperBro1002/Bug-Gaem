@@ -1,13 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqik5a7fuwabx"]
+[gd_scene load_steps=4 format=3 uid="uid://cqik5a7fuwabx"]
 
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_q364i"]
+[ext_resource type="SpriteFrames" uid="uid://c268svi0k4dik" path="res://Scenes/Sprite Frames/Grunt.tres" id="2_f1m48"]
+[ext_resource type="Script" path="res://Scenes/Units/Grunt.gd" id="2_tudqr"]
 
 [node name="Enemy" instance=ExtResource("1_q364i")]
-Name = "Yellowjacket Grunt"
-fileName = "Grunt"
-MaxHP = 7
-MaxAP = 9
-TrueInit = 18
-InitVariance = 5
-SetAbility1 = "Purebred_Sting"
-Faction = 1
+script = ExtResource("2_tudqr")
+aggroRange = 8
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+modulate = Color(1, 1, 0, 1)
+sprite_frames = ExtResource("2_f1m48")

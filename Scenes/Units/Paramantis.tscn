@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgphmxq3rd4q1"]
+
+[ext_resource type="PackedScene" uid="uid://cofaiq0bowqml" path="res://Scenes/ally.tscn" id="1_0t3kg"]
+[ext_resource type="SpriteFrames" uid="uid://dwsvpciaod0yg" path="res://Scenes/Sprite Frames/Paramantis.tres" id="2_xxq2g"]
+
+[node name="Paramantis" instance=ExtResource("1_0t3kg")]
+Name = "Paramantis"
+fileName = "Paramantis"
+MaxHP = 12
+MaxAP = 10
+TrueInit = 30
+SetAbility1 = "X-Slash"
+SetAbility2 = "Toxic_Thrash"
+SetAbility3 = "Pheromones"
+Faction = 0
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_xxq2g")

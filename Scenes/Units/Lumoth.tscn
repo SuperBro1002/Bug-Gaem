@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://be86imrav20o6"]
+
+[ext_resource type="PackedScene" uid="uid://cofaiq0bowqml" path="res://Scenes/ally.tscn" id="1_krylu"]
+[ext_resource type="SpriteFrames" uid="uid://d4ellltyf6slv" path="res://Scenes/Sprite Frames/Lumoth.tres" id="2_chvyg"]
+
+[node name="Lumoth" instance=ExtResource("1_krylu")]
+Name = "Lumoth"
+fileName = "Lumoth"
+MaxHP = 8
+MaxAP = 10
+TrueInit = 15
+SetAbility1 = "Heal"
+SetAbility2 = "Shield"
+SetAbility3 = "Blood_Moon"
+Faction = 0
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_chvyg")
+animation = &"default"
+autoplay = ""

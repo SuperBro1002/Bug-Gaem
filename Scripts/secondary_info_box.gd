@@ -27,11 +27,19 @@ func fill_me(_isHovering):
 	$GridContainer/MarginContainer/Ability1.set_text(unit.ability1.Name)
 	$GridContainer/Description1.set_text(unit.ability1.description)
 	
-	$GridContainer/MarginContainer2/Ability2.set_text(unit.ability2.Name)
-	$GridContainer/Description2.set_text(unit.ability2.description)
+	if unit.ability2 != null:
+		$GridContainer/MarginContainer2/Ability2.set_text(unit.ability2.Name)
+		$GridContainer/Description2.set_text(unit.ability2.description)
+	else:
+		$GridContainer/MarginContainer2/Ability2.set_text("")
+		$GridContainer/Description2.set_text("")
 	
-	$GridContainer/MarginContainer3/Ability3.set_text(unit.ability3.Name)
-	$GridContainer/Description3.set_text(unit.ability3.description)
+	if unit.ability3 != null:
+		$GridContainer/MarginContainer3/Ability3.set_text(unit.ability3.Name)
+		$GridContainer/Description3.set_text(unit.ability3.description)
+	else:
+		$GridContainer/MarginContainer3/Ability3.set_text("")
+		$GridContainer/Description3.set_text("")
 
 func handleDead(DyingUnit):
 	if DyingUnit == unit:

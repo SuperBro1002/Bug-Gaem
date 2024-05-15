@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2rerqtddscuk"]
+[gd_scene load_steps=3 format=3 uid="uid://b2rerqtddscuk"]
 
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_q2gxn"]
+[ext_resource type="SpriteFrames" uid="uid://qll4q72cqi8s" path="res://Scenes/Sprite Frames/Termitator.tres" id="2_61fcs"]
 
 [node name="Enemy" instance=ExtResource("1_q2gxn")]
 Name = "Termitator"
@@ -10,3 +11,8 @@ MaxAP = 8
 TrueInit = 23
 InitVariance = 5
 SetAbility1 = "Chainsaw"
+Faction = 1
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+modulate = Color(0, 1, 0, 1)
+sprite_frames = ExtResource("2_61fcs")

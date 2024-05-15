@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyo2sovvjhomr"]
+[gd_scene load_steps=3 format=3 uid="uid://dyo2sovvjhomr"]
 
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_05l1h"]
+[ext_resource type="SpriteFrames" uid="uid://comucy01lopkd" path="res://Scenes/Sprite Frames/Millibyte.tres" id="2_xypt0"]
 
 [node name="Enemy" instance=ExtResource("1_05l1h")]
 Name = "Millibyte"
@@ -10,3 +11,7 @@ MaxAP = 10
 TrueInit = 15
 InitVariance = 5
 Faction = 1
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+modulate = Color(0, 0, 1, 1)
+sprite_frames = ExtResource("2_xypt0")
