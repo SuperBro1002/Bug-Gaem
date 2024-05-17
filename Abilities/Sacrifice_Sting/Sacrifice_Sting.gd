@@ -5,7 +5,7 @@ func _enter_tree():
 	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
 	Name = "Sacrifice Sting"
 	fileName = " Sacrifice_Sting"
-	description = "Lose all HP and attack all enemies surrounding you. (All HP)"
+	description = "Lose all HP and deal 4 damage to all enemies surrounding you. (All HP)"
 	SignalBus.connect("ability",hijack)
 
 func hijack(num, state):
@@ -38,7 +38,7 @@ func execute():
 	print(targetUnits)
 	
 	for i in targetUnits.size():
-		targetUnits[i].lose_health(6)
+		targetUnits[i].lose_health(4)
 		get_parent().lose_health(get_parent().get_max_hp())
 	
 	post_execute()

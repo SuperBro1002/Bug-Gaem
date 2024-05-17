@@ -6,6 +6,7 @@
 
 [node name="Enemy" instance=ExtResource("1_gv80i")]
 script = ExtResource("2_4xfsr")
+aggroRange = 8
 Name = "Robo Poly"
 fileName = "Robopoly"
 MaxHP = 3

@@ -6,7 +6,7 @@ func _ready():
 func activate_spawners():
 	match AutoloadMe.roundNum:
 		2:
-			SignalBus.spawnGroup.emit(0)
+			pass#SignalBus.spawnGroup.emit(0)
 		3:
 			pass
 		4:

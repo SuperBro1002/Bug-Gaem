@@ -32,12 +32,12 @@ func spawning_in():
 	SignalBus.remakeUnitList.emit()
 
 func unique_turn_start():
+	await get_tree().create_timer(2).timeout
+	
 	shortestPath = 10000
 	lengthList = [] # List of distances to different opposing units
 	target = null
 	grid.set_enemy_collision()
-	
-	await get_tree().create_timer(2).timeout
 	
 	# Determines the distances to each ally and adds it to a list
 	for i in AutoloadMe.globalAllyList.size():

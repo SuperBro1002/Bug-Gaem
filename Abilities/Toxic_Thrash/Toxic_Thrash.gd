@@ -15,6 +15,6 @@ func execute():
 	
 	for i in targetUnits.size():
 		targetUnits[i].lose_health(2)
-		targetUnits[i].add_passive("poison")
+		targetUnits[i].add_passive("Poison")
 	
 	post_execute()

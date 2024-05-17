@@ -30,6 +30,12 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 
 [node name="ObstacleHolder" type="Node" parent="Grid"]
 
+[node name="Obstacle" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
+position = Vector2(736, 869)
+Name = "Obstacle"
+fileName = "Atlus"
+MaxHP = 4
+
 [node name="Obstacle2" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(803, 870)
 Name = "Obstacle"
@@ -192,12 +198,6 @@ Name = "Obstacle"
 fileName = "Atlus"
 MaxHP = 4
 
-[node name="Obstacle" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
-position = Vector2(736, 869)
-Name = "Obstacle"
-fileName = "Atlus"
-MaxHP = 4
-
 [node name="InitManager" parent="Grid" instance=ExtResource("4_orkdb")]
 
 [node name="UnitManager" type="Node" parent="Grid/InitManager"]
@@ -256,7 +256,7 @@ SetAbility2 = "Tackle"
 SetAbility3 = "Tackle"
 
 [node name="Term" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_ofnsr")]
-position = Vector2(354, 416)
+position = Vector2(667, 930)
 SetAbility2 = "Tackle"
 SetAbility3 = "Tackle"
 

@@ -10,6 +10,7 @@ var ability3
 func _ready():
 	get_parent().set_visible(true)
 	SignalBus.connect("currentUnit", set_ui)
+	SignalBus.connect("currentUnit", start_anim)
 	SignalBus.connect("updateUI", set_ui)
 	SignalBus.connect("updateInitBox", draw_init_box)
 	SignalBus.connect("addInitBox", add_init_box)
@@ -56,10 +57,9 @@ func set_ui(unit):
 		else:
 			$InfoBox/AbilityBox/Ability3Button.set_visible(false)
 		
-		
 	display_movement_range()
 	draw_tile_path()
-	boxArray = get_node("../UI/ColorRect/HBoxContainer").get_children()
+	boxArray = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
 	for i in boxArray.size():
 		#print("HERE ", boxArray)
 	#	ifboxArray[i] == null:
@@ -72,7 +72,7 @@ func toggle_UI():
 func draw_init_box():
 	boxArray = []
 	var sceneNode
-	nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
+	nodeList = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
 	
 	if nodeList != []:
 		clear_init_box()
@@ -83,12 +83,12 @@ func draw_init_box():
 		sceneNode.assign_unit(AutoloadMe.globalUnitList[i])
 		boxArray.append(sceneNode)
 		if i == 0:
-			get_node("../UI/ColorRect/HBoxContainer").add_child(sceneNode)
+			get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").add_child(sceneNode)
 		else:
 			boxArray[i - 1].add_sibling(sceneNode)
 
 func set_init_colors():
-	nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
+	nodeList = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
 	for i in nodeList.size():
 		nodeList[i].set_colors()
 
@@ -97,20 +97,20 @@ func add_init_box(target):
 	var scene = load("res://Scenes/Unit_Initiative_Box.tscn")
 	sceneNode = scene.instantiate()
 	sceneNode.assign_unit(target)
-	get_node("../UI/ColorRect/HBoxContainer").add_child(sceneNode)
+	get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").add_child(sceneNode)
 
 func remove_init_box(target):
 	print("BEFORE: ", nodeList)
-	nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
+	nodeList = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
 	nodeList.pop_at(nodeList.find(target))
-	get_node("../UI/ColorRect/HBoxContainer").remove_child(target)
+	get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").remove_child(target)
 	
-	print("AFTER: ", get_node("../UI/ColorRect/HBoxContainer").get_children())
+	print("AFTER: ", get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children())
 
 func clear_init_box():
-	nodeList = get_node("../UI/ColorRect/HBoxContainer").get_children()
+	nodeList = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
 	for i in nodeList:
-		get_node("../UI/ColorRect/HBoxContainer").remove_child(i)
+		get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").remove_child(i)
 		SignalBus.deleteInitObject.emit()
 
 func toggle_secondary(isHovering):
@@ -187,6 +187,23 @@ func hide_ui():
 func show_ui():
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+
+func start_anim(unit):
+	$ControlsOverlay.set_visible(false)
+	show_ui()
+	$TurnGraphic.set_text(unit.Name + " Start")
+	if unit.get_faction() == unit.fac.ENEMY:
+		$TurnGraphic.label_settings.font_color = Color(1,0.1,0.2,1)
+	elif unit.get_faction() == unit.fac.ALLY:
+		$TurnGraphic.label_settings.font_color = Color(0, 0.518, 0.969,1)
+		
+	var tween = create_tween()
+	tween.tween_property($TurnGraphic, "position:x", -1300, 3.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT_IN)
+	await tween.finished
+	$TurnGraphic.position.x = 1934
+	AutoloadMe.set_process_unhandled_input(true)
+	$ControlsOverlay.set_visible(true)
+
 
 
 func _on_ability_1_button_mouse_entered():

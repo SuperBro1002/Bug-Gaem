@@ -5,9 +5,9 @@ func _enter_tree():
 
 func execute(num):
 	if get_parent().incoming_dmg_type != "pierce":
-		num = num - 1
-		if num < 0:
-			num = 0
+		num = 0
+		#if num < 0:
+			#num = 0
 		turnsRemaining = 0
 		return num
 	else: return num

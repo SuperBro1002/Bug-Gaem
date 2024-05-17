@@ -104,7 +104,8 @@ func draw_range_tiles(activeName):
 	print("Children: ", )
 	if get_parent() == AutoloadMe.turnPointer:
 		print(get_parent())
-		var tiles = get_parent().grid.flood_fill_ability_range(get_parent().position, secondRange)
+		var tiles = get_parent().grid.flood_fill_in_range(get_parent().position, secondRange)
+		tiles = get_parent().grid.remove_solid(tiles)
 		var sceneNode 
 		print("TILES: ", tiles)
 		for i in tiles.size():

@@ -19,7 +19,7 @@ func _on_area_entered(area):
 			print("HAS A UNIT")
 
 
-func _on_area_exited(area):
+func _on_area_exited(_area):
 	hasUnit = false
 
 

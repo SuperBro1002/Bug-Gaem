@@ -1,12 +1,12 @@
 extends "res://Scripts/enemy.gd"
 
 func unique_turn_start():
+	await get_tree().create_timer(2).timeout
+	
 	shortestPath = 10000
 	lengthList = [] # List of distances to different opposing units
 	target = null
 	grid.set_enemy_collision()
-	
-	await get_tree().create_timer(2).timeout
 	
 	for i in AutoloadMe.globalAllyList.size():
 		end = grid.local_to_map(AutoloadMe.globalAllyList[i].position)

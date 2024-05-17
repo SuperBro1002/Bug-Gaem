@@ -5,7 +5,7 @@ func _enter_tree():
 	targetType = [get_parent().fac.ALLY]
 	Name = "Shield"
 	fileName = "Shield"
-	description = "Grants an adjacent ally a shield that reduces damage from the next attack against them by 1. Also grants baton pass. 4 AP"
+	description = "Grants an adjacent ally a shield that nullifies damage from 1 attack. Also grants baton pass. 4 AP"
 
 func execute():
 	# for every target in target units[]

@@ -52,6 +52,7 @@ var incoming_dmg_type = null # pierce, null
 @onready var areaType = "unit"
 
 var isPossessed = false
+var OG
 var myHPBar
 var canMove = true
 var storedBatonPass = TS.NOTACTED
@@ -60,11 +61,14 @@ func _enter_tree():
 	SignalBus.connect("abilityExecuted",on_execute)
 	SignalBus.connect("deleteUnit", delete)
 	SignalBus.connect("highlightUnit", glow)
+	#await get_tree().create_timer(3).timeout
+	print(Name, " MY ABILITY IS ", SetAbility1)
 	vary_init()
 	make_floating_hp()
 	make_floating_ap()
 
 func clone(OGUnit):
+	OG = OGUnit
 	set_visible(false)
 	isPossessed = true
 	Name = OGUnit.Name
@@ -239,8 +243,11 @@ func get_batonpass():
 
 
 func on_turn_start():
+	AutoloadMe.set_process_unhandled_input(false)
 	print(self, " ", CurrentAP)
+	print("UnitList: ", AutoloadMe.globalUnitList)
 	SignalBus.wipeTilePaths.emit(null)
+	await get_tree().create_timer(3).timeout
 	SignalBus.startTurn.emit()
 	SignalBus.changeButtonState.emit()
 	start = grid.local_to_map(position)
@@ -258,6 +265,8 @@ func unique_turn_start():
 
 func on_turn_end():
 	run_passives(methodType.ON_TURN_END, null)
+	if isPossessed:
+		print("MY OG: ", OG)
 	find_and_delete_passives()
 	if BatonPass == TS.BATONPASS:
 		BatonPass = storedBatonPass
@@ -267,6 +276,7 @@ func on_turn_end():
 	canMove = true
 	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
 	SignalBus.actedUI.emit()
+	SignalBus.wipeTilePaths.emit(null)
 	print("	", Name, " has acted.")
 	unique_turn_end()
 

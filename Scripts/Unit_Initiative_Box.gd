@@ -75,7 +75,7 @@ func delete_box(toBeDeleted):
 			#AutoloadMe.deathCount += 1
 		#SignalBus.updateGrid.emit()
 		
-		get_parent().get_parent().get_parent().remove_init_box(self)
+		get_parent().get_parent().get_parent().get_parent().remove_init_box(self)
 		SignalBus.updateUI.emit(AutoloadMe.turnPointer)
 		#myUnit.queue_free()
 		

@@ -5,6 +5,6 @@ func _enter_tree():
 	SignalBus.connect("deletePassives", passive_remove)
 	type = methodType.ON_TURN_END
 
-func execute(num):
+func execute(_num):
 	get_parent().incoming_dmg_type = "pierce"
 	get_parent().lose_health(get_parent().get_current_hp())

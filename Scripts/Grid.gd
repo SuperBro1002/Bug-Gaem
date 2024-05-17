@@ -40,16 +40,20 @@ func set_enemy_collision():
 			if tileData == null or tileData.get_custom_data("walkable") == false:
 				AutoloadMe.movementGrid.set_point_solid(tilePos)
 			
-			for i in AutoloadMe.globalTargetList.size():
-				if local_to_map(AutoloadMe.globalTargetList[i].position) == tilePos and AutoloadMe.globalTargetList[i].get_faction() == 3:
+			for i in AutoloadMe.globalTargetList:
+				if local_to_map(i.position) == tilePos and i.get_faction() == 3:
 					AutoloadMe.movementGrid.set_point_solid(tilePos)
+					#var scene = load("res://Assets/HUD/AbilityRangeTile.png")
+					#var sprite = Sprite2D.new()
+					#sprite.texture = scene
+					#add_child(sprite)
+					#sprite.position = map_to_local(tilePos)
 			
 			for i in AutoloadMe.globalEnemyList.size():
 				if local_to_map(AutoloadMe.globalEnemyList[i].position) == tilePos and AutoloadMe.globalEnemyList[i] != AutoloadMe.turnPointer:
 					AutoloadMe.movementGrid.set_point_solid(tilePos)
 			
-			for i in AutoloadMe.globalTargetList.size():
-				pass
+
 
 func set_enemies_solid():
 	AutoloadMe.movementGrid.update()
@@ -149,14 +153,16 @@ func flood_fill_movement(start, maxDistance):
 		validTiles[i] = map_to_local(validTiles[i])
 	return validTiles
 
-func flood_fill_ability_range(start, maxDistance):
-	set_ability_range_ui_grid()
+func flood_fill_in_range(start, maxDistance):
+	AutoloadMe.abilityRangeGridUI.update()
 	var validTiles = []
 	var searchStack = [local_to_map(start)]
 	
 	while !searchStack.is_empty():
 		var current = Vector2i(searchStack.pop_back())
 		
+		if !AutoloadMe.abilityRangeGridUI.is_in_boundsv(current):
+			continue
 		var pathArray = AutoloadMe.abilityRangeGridUI.get_point_path(local_to_map(start),current)
 		var distance = pathArray.size() - 1
 		
@@ -165,21 +171,14 @@ func flood_fill_ability_range(start, maxDistance):
 			#continue
 		if distance > maxDistance:
 			continue
-		if !is_in_bounds(current):
-			continue
 		if current in validTiles:
 			continue
-		if AutoloadMe.abilityRangeGridUI.is_point_solid(current):
-			continue
 		
-		print(current, " !!!!!! ", local_to_map(start))
-		print(Vector2i(current) == local_to_map(start))
-		#validTiles.pop_front()
 		validTiles.append(current)
 		
 		for i in directions:
 			var coords = Vector2(Vector2i(current) + Vector2i(i))
-			if AutoloadMe.abilityRangeGridUI.is_point_solid(coords):
+			if !AutoloadMe.abilityRangeGridUI.is_in_boundsv(coords):
 				continue
 			pathArray = AutoloadMe.abilityRangeGridUI.get_point_path(local_to_map(start),coords)
 			distance = pathArray.size() - 1
@@ -190,10 +189,68 @@ func flood_fill_ability_range(start, maxDistance):
 			
 			searchStack.append(coords)
 	
-	for i in validTiles.size():
-		validTiles[i] = map_to_local(validTiles[i])
 	validTiles.pop_front()
 	return validTiles
+
+func remove_solid(tiles):
+	set_ability_range_ui_grid()
+	var newTiles = []
+	for i in tiles:
+		if !AutoloadMe.abilityRangeGridUI.is_in_boundsv(i):
+			continue
+		if AutoloadMe.abilityRangeGridUI.is_point_solid(i):
+			continue
+		else:
+			newTiles.append(i)
+	for i in newTiles.size():
+		newTiles[i] = map_to_local(newTiles[i])
+	return newTiles
+
+#func flood_fill_ability_range(start, maxDistance):
+	#set_ability_range_ui_grid()
+	#var validTiles = []
+	#var searchStack = [local_to_map(start)]
+	#
+	#while !searchStack.is_empty():
+		#var current = Vector2i(searchStack.pop_back())
+		#
+		#var pathArray = AutoloadMe.abilityRangeGridUI.get_point_path(local_to_map(start),current)
+		#var distance = pathArray.size() - 1
+		#
+		##print(current, " !!!!!! ", local_to_map(start))
+		##if Vector2i(current) == Vector2i(start):
+			##continue
+		#if distance > maxDistance:
+			#continue
+		#if !is_in_bounds(current):
+			#continue
+		#if current in validTiles:
+			#continue
+		#if AutoloadMe.abilityRangeGridUI.is_point_solid(current):
+			#continue
+		#
+		#print(current, " !!!!!! ", local_to_map(start))
+		#print(Vector2i(current) == local_to_map(start))
+		##validTiles.pop_front()
+		#validTiles.append(current)
+		#
+		#for i in directions:
+			#var coords = Vector2(Vector2i(current) + Vector2i(i))
+			#if AutoloadMe.abilityRangeGridUI.is_point_solid(coords):
+				#continue
+			#pathArray = AutoloadMe.abilityRangeGridUI.get_point_path(local_to_map(start),coords)
+			#distance = pathArray.size() - 1
+			#if distance > maxDistance:
+				#continue
+			#if coords in validTiles:
+				#continue
+			#
+			#searchStack.append(coords)
+	#
+	#for i in validTiles.size():
+		#validTiles[i] = map_to_local(validTiles[i])
+	#validTiles.pop_front()
+	#return validTiles
 
 func flood_fill_first(start):
 	set_enemies_solid()

@@ -1,6 +1,7 @@
 extends Node
 
 var currentUnitTurn
+var unitList
 @onready var unitMan = $UnitManager
 @onready var obsHold = get_node("../ObstacleHolder")
 
@@ -40,7 +41,7 @@ func next_round():
 
 # Secret unit in last pos to end round
 func make_unit_list():
-	var unitList = unitMan.get_children()
+	unitList = unitMan.get_children()
 	print("Children are ", unitList)
 	var allyList = []
 	var enemyList = []
@@ -68,7 +69,6 @@ func make_unit_list():
 	
 	for i in targetList.size():
 		targetList[i].position = targetList[i].grid.map_to_local(targetList[i].grid.local_to_map(targetList[i].position))
-	
 
 func add_unit_list(unit):
 	AutoloadMe.globalUnitList.append(unit)
@@ -89,6 +89,7 @@ func get_unit_list():
 
 func sort_unit_list():
 	AutoloadMe.globalUnitList.sort_custom(func(a,b): return a.CurrentInit > b.CurrentInit)
+	unitList.sort_custom(func(a,b): return a.CurrentInit > b.CurrentInit)
 
 func get_current_turn():
 	return currentUnitTurn

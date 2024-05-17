@@ -91,7 +91,7 @@ func enemy_execute(initTarget):
 		$Area2D.set_rotation_degrees(90)
 		#print("Below")
 	$Area2D.position = initTarget.position
-	
+	await get_tree().create_timer(0.7).timeout
 	execute()
 
 func post_execute():
@@ -113,7 +113,8 @@ func draw_range_tiles(activeName):
 	print("Children: ", )
 	if get_parent() == AutoloadMe.turnPointer:
 		print(get_parent())
-		var tiles = get_parent().grid.flood_fill_ability_range(get_parent().position, distanceRange)
+		var tiles = get_parent().grid.flood_fill_in_range(get_parent().position, distanceRange)
+		tiles = get_parent().grid.remove_solid(tiles)
 		var sceneNode
 		print("TILES: ", tiles)
 		for i in tiles.size():
@@ -140,10 +141,16 @@ func face_target():
 		#get_parent().get_node("AnimatedSprite2D").set_flip_h(false)
 
 func _on_area_2d_area_entered(area):
-	if area.areaType != "spawner" and area.areaType != "range_box" and type_matches(area.get_faction()) and area != get_parent() and targetUnits.find(area) == -1:
-		print("HI")
-		targetUnits.append(area)
-		print(targetUnits.size())
+	if AutoloadMe.turnPointer.get_faction() == get_parent().fac.ALLY:
+		if area.areaType != "spawner" and area.areaType != "range_box" and type_matches(area.get_faction()) and area != get_parent() and targetUnits.find(area) == -1:
+			print("HI")
+			targetUnits.append(area)
+			print("SIZE OF TARGET",targetUnits.size())
+	elif AutoloadMe.turnPointer.get_faction() == get_parent().fac.ENEMY:
+		if area.areaType != "spawner" and area.areaType != "range_box" and area.get_faction() == area.fac.ALLY and area != get_parent() and targetUnits.find(area) == -1:
+			print("HI")
+			targetUnits.append(area)
+			print("SIZE OF TARGET",targetUnits.size())
 
 func _on_area_2d_area_exited(area):
 	if area.get_parent() == self.get_parent().get_parent():

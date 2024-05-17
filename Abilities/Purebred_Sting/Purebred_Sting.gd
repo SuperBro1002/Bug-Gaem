@@ -2,7 +2,7 @@ extends Ability_class
 
 
 func _enter_tree():
-	targetType = [get_parent().fac.ALLY, get_parent().fac.OBSTACLE]
+	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
 	Name = "Purebred Sting"
 	fileName = "Purebred_Sting"
 	description = "Deals 3 damage to an adjacent target. 6 AP"
