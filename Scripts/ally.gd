@@ -16,13 +16,52 @@ var pathArray
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("READY")
 	SignalBus.connect("ability",toggle_unit_ability)
 	ray = $RayCast2D
 	# NOTE: NEED TO FIGURE OUT A WAY TO SET INHERENT PASSIVES FOR DIFFERENT UNITS IN EDITOR
 #	add_passive("Trap")
 #	add_passive("Poison")
-	
 	position = position.snapped((Vector2.ZERO) * tileSize.x)
+
+func clone(OGUnit):
+	print("CLONE")
+	OG = OGUnit
+	set_visible(false)
+	isPossessed = true
+	Name = OGUnit.Name
+	fileName = OGUnit.fileName
+	set_name("Possessed " + Name)
+	MaxHP = OGUnit.MaxHP
+	CurrentHP = OGUnit.CurrentHP
+	MaxAP = OGUnit.MaxAP
+	CurrentAP = MaxAP
+	TrueInit = OGUnit.TrueInit
+	CurrentInit = OGUnit.CurrentInit
+	SetAbility1 = OGUnit.SetAbility1
+	SetAbility2 = OGUnit.SetAbility2
+	SetAbility3 = OGUnit.SetAbility3
+	
+	ability1 = load_ability(SetAbility1)
+	ability2 = load_ability(SetAbility2)
+	ability3 = load_ability(SetAbility3)
+	
+	Faction = fac.ALLY
+	delete_floating_hp()
+	make_floating_hp()
+	SignalBus.updateFloatingHP.emit(self)
+	BatonPass = TS.BATONPASS
+	tempAP = MaxAP
+	position = OGUnit.position
+	start = grid.convert_to_map(OGUnit.position)
+	end = grid.convert_to_map(OGUnit.position)
+	abilityStartPoint = grid.convert_to_map(OGUnit.position)
+	get_node("AnimatedSprite2D:sprite_frames").set_sprite_frames(load("res://Scenes/Sprite Frames/" + OGUnit.fileName + ".tres"))
+	get_node(".:Scale").set_scale(Vector2(1,1))
+	get_node("AnimatedSprite2D:Scale").set_scale(Vector2(2,2))
+	add_passive("Doom")
+	await get_tree().create_timer(0.5).timeout
+	set_visible(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

@@ -19,6 +19,7 @@ func execute():
 			var scene = load("res://Scenes/ally.tscn")
 			sceneNode = scene.instantiate()
 			get_node("../..").add_child(sceneNode)
+			#sceneNode.isPossessed = true
 			sceneNode.clone(targetUnits[i])
 			
 			SignalBus.addToUnitList.emit(sceneNode)

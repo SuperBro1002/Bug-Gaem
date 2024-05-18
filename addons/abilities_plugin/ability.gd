@@ -18,6 +18,7 @@ enum abilityType{
 @export var apCost = 0
 @export var distanceRange = 1
 @export var myType = abilityType.DAMAGING
+@export var canRotate = false
 
 var dmgMod = 1
 var targetType = []
@@ -46,6 +47,8 @@ func queue():
 			if clickedPos == AutoloadMe.globalTargetList[i].grid.local_to_map(AutoloadMe.globalTargetList[i].position):
 				if clickedDistance.size() - 1 <= distanceRange and type_matches(AutoloadMe.globalTargetList[i].get_faction()) and clickedPos != get_parent().grid.local_to_map(get_parent().position):
 					print("ME ", clickedPos != get_parent().grid.local_to_map(get_parent().position))
+					if canRotate:
+						rotate(clickedPos)
 					$Area2D.position = get_parent().grid.map_to_local(clickedPos)
 					$Area2D/SelectionBox.set_visible(true)
 					
@@ -64,6 +67,21 @@ func type_matches(faction):
 			print("IM HERE")
 			return true
 	return false
+
+func rotate(initTarget):
+	initTarget = get_parent().grid.map_to_local(initTarget)
+	if initTarget.x > get_parent().position.x:
+		$Area2D.set_rotation_degrees(0)
+		print("Right")
+	elif initTarget.x < get_parent().position.x:
+		$Area2D.set_rotation_degrees(180)
+		print("Left")
+	elif initTarget.y < get_parent().position.y:
+		$Area2D.set_rotation_degrees(270)
+		print("Above")
+	elif initTarget.y > get_parent().position.y:
+		$Area2D.set_rotation_degrees(90)
+		print("Below")
 
 func dequeue(num, state):
 	if state == false:

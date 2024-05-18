@@ -84,8 +84,10 @@ func draw_init_box():
 		boxArray.append(sceneNode)
 		if i == 0:
 			get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").add_child(sceneNode)
+			sceneNode.UINode = self
 		else:
 			boxArray[i - 1].add_sibling(sceneNode)
+			sceneNode.UINode = self
 
 func set_init_colors():
 	nodeList = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
@@ -98,6 +100,7 @@ func add_init_box(target):
 	sceneNode = scene.instantiate()
 	sceneNode.assign_unit(target)
 	get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").add_child(sceneNode)
+	sceneNode.UINode = self
 
 func remove_init_box(target):
 	print("BEFORE: ", nodeList)
@@ -189,13 +192,24 @@ func show_ui():
 	tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 func start_anim(unit):
+	if unit.get_faction() != unit.fac.ALLY and unit.get_faction() != unit.fac.ENEMY:
+		return
 	$ControlsOverlay.set_visible(false)
 	show_ui()
-	$TurnGraphic.set_text(unit.Name + " Start")
+	if unit.get_batonpass() == unit.TS.NOTACTED:
+		$TurnGraphic.set_text(unit.Name + "\nStart")
+		$TurnGraphic.label_settings.shadow_color = Color(0, 0, 0, 1)
+	elif unit.get_batonpass() == unit.TS.BATONPASS:
+		$TurnGraphic.set_text(unit.Name + "\nBaton Pass")
+		if unit.get_faction() == unit.fac.ALLY:
+			$TurnGraphic.label_settings.shadow_color = Color(0, 1, 1, 1)
+		else:
+			$TurnGraphic.label_settings.shadow_color = Color(1, 0.5, 0, 1)
+	
 	if unit.get_faction() == unit.fac.ENEMY:
-		$TurnGraphic.label_settings.font_color = Color(1,0.1,0.2,1)
+		$TurnGraphic.label_settings.font_color = Color(1, 0.1, 0.2, 1)
 	elif unit.get_faction() == unit.fac.ALLY:
-		$TurnGraphic.label_settings.font_color = Color(0, 0.518, 0.969,1)
+		$TurnGraphic.label_settings.font_color = Color(0, 0.518, 0.969, 1)
 		
 	var tween = create_tween()
 	tween.tween_property($TurnGraphic, "position:x", -1300, 3.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT_IN)

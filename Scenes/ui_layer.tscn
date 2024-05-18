@@ -40,6 +40,7 @@ font_size = 36
 font_size = 26
 
 [sub_resource type="LabelSettings" id="LabelSettings_lvjvs"]
+line_spacing = -65.0
 font_size = 150
 font_color = Color(0, 0.517647, 0.968627, 1)
 shadow_size = 0
@@ -280,7 +281,7 @@ offset_bottom = 413.36
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(504, 214)
-text = "Paramantis 
+text = "Paramantis
 Start"
 label_settings = SubResource("LabelSettings_lvjvs")
 horizontal_alignment = 1

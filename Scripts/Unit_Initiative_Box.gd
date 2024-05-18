@@ -3,6 +3,7 @@ extends Control
 var myUnit
 var tween
 var colorTween
+var UINode
 
 func _ready():
 	SignalBus.connect("deleteInitObject", remove_me)
@@ -75,7 +76,7 @@ func delete_box(toBeDeleted):
 			#AutoloadMe.deathCount += 1
 		#SignalBus.updateGrid.emit()
 		
-		get_parent().get_parent().get_parent().get_parent().remove_init_box(self)
+		UINode.remove_init_box(self)
 		SignalBus.updateUI.emit(AutoloadMe.turnPointer)
 		#myUnit.queue_free()
 		

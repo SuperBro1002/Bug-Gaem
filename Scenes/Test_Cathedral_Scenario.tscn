@@ -236,7 +236,7 @@ SetAbility2 = "Tackle"
 SetAbility3 = "Tackle"
 
 [node name="Robo5" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
-position = Vector2(926, 802)
+position = Vector2(926, 803)
 SetAbility2 = "Tackle"
 SetAbility3 = "Tackle"
 
@@ -256,7 +256,7 @@ SetAbility2 = "Tackle"
 SetAbility3 = "Tackle"
 
 [node name="Term" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_ofnsr")]
-position = Vector2(667, 930)
+position = Vector2(350, 420)
 SetAbility2 = "Tackle"
 SetAbility3 = "Tackle"
 

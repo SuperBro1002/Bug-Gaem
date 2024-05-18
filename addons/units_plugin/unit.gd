@@ -51,13 +51,15 @@ var incoming_dmg_type = null # pierce, null
 @onready var end = grid.convert_to_map(position)
 @onready var areaType = "unit"
 
-var isPossessed = false
+var isPossessed #= false
 var OG
 var myHPBar
 var canMove = true
 var storedBatonPass = TS.NOTACTED
 
 func _enter_tree():
+	print("TREE")
+	#print(isPossessed, " <-----------------------")
 	SignalBus.connect("abilityExecuted",on_execute)
 	SignalBus.connect("deleteUnit", delete)
 	SignalBus.connect("highlightUnit", glow)
@@ -67,7 +69,11 @@ func _enter_tree():
 	make_floating_hp()
 	make_floating_ap()
 
+func _ready():
+	print("READY")
+
 func clone(OGUnit):
+	print("CLONE")
 	OG = OGUnit
 	set_visible(false)
 	isPossessed = true
@@ -83,6 +89,7 @@ func clone(OGUnit):
 	SetAbility1 = OGUnit.SetAbility1
 	SetAbility2 = OGUnit.SetAbility2
 	SetAbility3 = OGUnit.SetAbility3
+	
 	Faction = fac.ALLY
 	delete_floating_hp()
 	make_floating_hp()
@@ -325,6 +332,7 @@ func find_and_delete_passives():
 func delete(unit):
 	if unit == self:
 		print("I AM DYING")
+		set_visible(false)
 		AutoloadMe.globalUnitList.erase(unit)
 		AutoloadMe.globalEnemyList.erase(unit)
 		AutoloadMe.globalAllyList.erase(unit)
@@ -333,6 +341,7 @@ func delete(unit):
 			AutoloadMe.deathCount += 1
 		SignalBus.updateGrid.emit()
 		SignalBus.deleteMe.emit(self)
+		await get_tree().create_timer(2).timeout
 		queue_free()
 
 func _mouse_shape_enter(shape_idx):

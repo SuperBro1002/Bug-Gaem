@@ -68,7 +68,6 @@ window/size/mode=2
 window/size/initial_screen=1
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
-window/stretch/scale_mode="integer"
 window/vsync/vsync_mode=0
 
 [editor_plugins]

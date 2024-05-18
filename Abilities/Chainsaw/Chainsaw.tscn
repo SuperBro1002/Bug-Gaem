@@ -10,6 +10,7 @@ size = Vector2(256, 64)
 [node name="Chainsaw" type="Node"]
 script = ExtResource("1_p7isf")
 apCost = 6
+canRotate = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
