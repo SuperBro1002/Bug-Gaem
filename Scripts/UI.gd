@@ -163,8 +163,8 @@ func display_movement_range():
 func clear_tile_Overlays():
 	var tiles = $"../../Grid/ValidTiles".get_children()
 	if tiles != null:
-		for i in tiles.size():
-			tiles[i].queue_free()
+		for i in tiles:
+			i.queue_free()
 
 func set_control_text():
 	if AutoloadMe.queueState:

@@ -18,7 +18,7 @@ func unique_turn_start():
 			shortestPath = lengthList[i]
 			target = AutoloadMe.globalAllyList[i]
 	
-	if shortestPath <= aggroRange + 1:
+	if shortestPath <= aggroRange + 1 and shortestPath > 0:
 		end = grid.local_to_map(target.position)
 		
 		var pathArray = AutoloadMe.movementGrid.get_point_path(start, end)

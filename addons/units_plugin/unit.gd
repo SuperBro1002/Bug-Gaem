@@ -263,7 +263,7 @@ func on_turn_start():
 	find_and_delete_passives()
 	
 	grid.update_grid_collision()
-	
+	SignalBus.updateUI.emit(self)
 	print("	", Name, " turn start.")
 	unique_turn_start()
 
