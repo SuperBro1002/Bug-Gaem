@@ -39,6 +39,7 @@ func execute():
 	
 	for i in targetUnits.size():
 		targetUnits[i].lose_health(4)
-		get_parent().lose_health(get_parent().get_max_hp())
+	get_parent().incoming_dmg_type = "pierce"
+	get_parent().lose_health(get_parent().get_max_hp())
 	
 	post_execute()

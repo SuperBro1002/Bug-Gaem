@@ -6,6 +6,7 @@ var animationSpeed = 4
 var moving = false
 var abilityQueued = null
 var pathArray
+var overlapTween
 
 @onready var ability1 = load_ability(SetAbility1)
 @onready var ability2 = load_ability(SetAbility2)
@@ -129,14 +130,22 @@ func _on_area_entered(area):
 		AutoloadMe.notOverlapped = false
 		SignalBus.changeControls.emit()
 		SignalBus.changeButtonState.emit()
+	elif self != AutoloadMe.turnPointer and get_parent() == area.get_parent():
+		if overlapTween:
+			overlapTween.kill()
+		overlapTween = create_tween()
+		overlapTween.tween_property(self, "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 func _on_area_exited(area):
-	if (self == AutoloadMe.turnPointer and get_parent() == area.get_parent()) or (self == AutoloadMe.turnPointer and !has_overlapping_areas()):
-		print(get_overlapping_areas(), !has_overlapping_areas())
+	if self == AutoloadMe.turnPointer and get_parent() == area.get_parent() and !has_overlapping_areas():
 		AutoloadMe.notOverlapped = true
 		SignalBus.changeControls.emit()
 		SignalBus.changeButtonState.emit()
-		print(self ," Is it clear? ", AutoloadMe.notOverlapped)
+	elif self != AutoloadMe.turnPointer and get_parent() == area.get_parent() and !has_overlapping_areas():
+		if overlapTween:
+			overlapTween.kill()
+		overlapTween = create_tween()
+		overlapTween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation != "Idle":

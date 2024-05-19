@@ -250,6 +250,10 @@ func get_batonpass():
 
 
 func on_turn_start():
+	start = grid.local_to_map(position)
+	abilityStartPoint = grid.convert_to_map(position)
+	SignalBus.updateUI.emit(self)
+	SignalBus.startAnimate.emit(self)
 	AutoloadMe.set_process_unhandled_input(false)
 	print(self, " ", CurrentAP)
 	print("UnitList: ", AutoloadMe.globalUnitList)
@@ -257,8 +261,6 @@ func on_turn_start():
 	await get_tree().create_timer(3).timeout
 	SignalBus.startTurn.emit()
 	SignalBus.changeButtonState.emit()
-	start = grid.local_to_map(position)
-	abilityStartPoint = grid.convert_to_map(position)
 	run_passives(methodType.ON_TURN_START, null)
 	find_and_delete_passives()
 	
@@ -272,6 +274,7 @@ func unique_turn_start():
 
 func on_turn_end():
 	run_passives(methodType.ON_TURN_END, null)
+	SignalBus.wipeTilePaths.emit(null)
 	if isPossessed:
 		print("MY OG: ", OG)
 	find_and_delete_passives()
@@ -283,7 +286,6 @@ func on_turn_end():
 	canMove = true
 	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
 	SignalBus.actedUI.emit()
-	SignalBus.wipeTilePaths.emit(null)
 	print("	", Name, " has acted.")
 	unique_turn_end()
 

@@ -34,169 +34,169 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 position = Vector2(736, 869)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle2" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(803, 870)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle3" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(863, 866)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle4" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(936, 868)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle5" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(929, 748)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle6" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(860, 739)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle7" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(796, 737)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle8" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(744, 742)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle9" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(740, 614)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle10" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(803, 611)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle11" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(861, 609)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle12" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(925, 608)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle13" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(926, 482)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle14" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(870, 481)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle15" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(797, 478)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle16" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(737, 485)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle17" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(732, 357)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle18" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(804, 357)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle19" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(871, 352)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle20" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(930, 354)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle21" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(415, 732)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle22" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(356, 737)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle23" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(290, 736)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle24" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(221, 742)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle25" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(228, 868)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle26" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(288, 864)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle27" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(354, 864)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="Obstacle28" parent="Grid/ObstacleHolder" instance=ExtResource("2_bmmit")]
 position = Vector2(408, 863)
 Name = "Obstacle"
 fileName = "Atlus"
-MaxHP = 4
+MaxHP = 1
 
 [node name="InitManager" parent="Grid" instance=ExtResource("4_orkdb")]
 

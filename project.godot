@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bug Game"
-run/main_scene="res://Scenes/Main Controller.tscn"
+run/main_scene="res://Scenes/Test_Cathedral_Scenario.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,10 +21,6 @@ AutoloadMe="*res://Scripts/AutoloadMe.gd"
 SignalBus="*res://Scripts/SignalBus.gd"
 PortraitManager="*res://Scripts/PortraitManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-
-[debug]
-
-settings/stdout/print_fps=true
 
 [dialogic]
 

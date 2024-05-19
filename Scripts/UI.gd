@@ -10,7 +10,7 @@ var ability3
 func _ready():
 	get_parent().set_visible(true)
 	SignalBus.connect("currentUnit", set_ui)
-	SignalBus.connect("currentUnit", start_anim)
+	SignalBus.connect("startAnimate", start_anim)
 	SignalBus.connect("updateUI", set_ui)
 	SignalBus.connect("updateInitBox", draw_init_box)
 	SignalBus.connect("addInitBox", add_init_box)
@@ -145,9 +145,11 @@ func draw_tile_path():
 func clear_tile_paths(_unit):
 	var tiles = $"../../Grid/PathTiles".get_children()
 	if tiles != null:
-		print("running")
+		print("Clearing ", _unit, "tile paths!")
 		for i in tiles.size():
 			tiles[i].queue_free()
+	else:
+		print(_unit, " has no paths to clear!")
 
 func display_movement_range():
 	clear_tile_Overlays()
