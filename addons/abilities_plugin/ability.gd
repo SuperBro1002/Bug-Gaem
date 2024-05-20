@@ -171,5 +171,5 @@ func _on_area_2d_area_entered(area):
 			print("SIZE OF TARGET",targetUnits.size())
 
 func _on_area_2d_area_exited(area):
-	if area.get_parent() == self.get_parent().get_parent():
+	if area.get_parent() == self.get_parent().get_parent() or area.areaType == "obstacle":
 		targetUnits.erase(area)

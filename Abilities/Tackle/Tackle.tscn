@@ -10,7 +10,7 @@ size = Vector2(64, 64)
 
 [node name="Tackle" type="Node"]
 script = ExtResource("1_cg4l3")
-apCost = 5
+apCost = 3
 
 [node name="Hitbox" type="RayCast2D" parent="."]
 

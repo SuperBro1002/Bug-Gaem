@@ -6,10 +6,13 @@ var nodeList
 var ability1
 var ability2
 var ability3
+var enemyPhase = false
+var camTween
 
 func _ready():
 	get_parent().set_visible(true)
 	SignalBus.connect("currentUnit", set_ui)
+	SignalBus.connect("currentUnit", move_camera)
 	SignalBus.connect("startAnimate", start_anim)
 	SignalBus.connect("updateUI", set_ui)
 	SignalBus.connect("updateInitBox", draw_init_box)
@@ -119,7 +122,7 @@ func clear_init_box():
 func toggle_secondary(isHovering):
 	var tween = create_tween()
 	if isHovering:
-		tween.tween_property(get_node("../UI/SecondaryInfoBox"), "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(get_node("../UI/SecondaryInfoBox"), "modulate:a", 0.8, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 	else:
 		tween.tween_property(get_node("../UI/SecondaryInfoBox"), "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
@@ -195,14 +198,29 @@ func show_ui():
 
 func start_anim(unit):
 	if unit.get_faction() != unit.fac.ALLY and unit.get_faction() != unit.fac.ENEMY:
+		enemyPhase = false
 		return
+	
+	if enemyPhase == true and unit.get_faction() == unit.fac.ENEMY:
+		return
+	elif unit.get_faction() == unit.fac.ALLY:
+		enemyPhase = false
+	
 	$ControlsOverlay.set_visible(false)
 	show_ui()
 	if unit.get_batonpass() == unit.TS.NOTACTED:
-		$TurnGraphic.set_text(unit.Name + "\nStart")
+		
+		if unit.get_faction() == unit.fac.ALLY:
+			$TurnGraphic.set_text(unit.Name + "\nStart")
+		elif unit.get_faction() == unit.fac.ENEMY:
+			$TurnGraphic.set_text("Robugs\nStart")
+		
 		$TurnGraphic.label_settings.shadow_color = Color(0, 0, 0, 1)
+		
 	elif unit.get_batonpass() == unit.TS.BATONPASS:
+		
 		$TurnGraphic.set_text(unit.Name + "\nBaton Pass")
+		
 		if unit.get_faction() == unit.fac.ALLY:
 			$TurnGraphic.label_settings.shadow_color = Color(0, 1, 1, 1)
 		else:
@@ -210,16 +228,24 @@ func start_anim(unit):
 	
 	if unit.get_faction() == unit.fac.ENEMY:
 		$TurnGraphic.label_settings.font_color = Color(1, 0.1, 0.2, 1)
+		enemyPhase = true
 	elif unit.get_faction() == unit.fac.ALLY:
 		$TurnGraphic.label_settings.font_color = Color(0, 0.518, 0.969, 1)
-		
+	
 	var tween = create_tween()
 	tween.tween_property($TurnGraphic, "position:x", -1300, 3.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT_IN)
 	await tween.finished
 	$TurnGraphic.position.x = 1934
+		
 	AutoloadMe.set_process_unhandled_input(true)
 	$ControlsOverlay.set_visible(true)
 
+func move_camera(unit):
+	if camTween:
+		camTween.kill()
+	camTween = create_tween()
+	camTween.tween_property(get_node("../../Camera2D"), "position", unit.position, 1.0).set_trans(Tween.TRANS_QUART)#.set_ease(Tween.EASE_OUT_IN)
+	await camTween.finished
 
 
 func _on_ability_1_button_mouse_entered():

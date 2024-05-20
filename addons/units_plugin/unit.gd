@@ -258,7 +258,7 @@ func on_turn_start():
 	print(self, " ", CurrentAP)
 	print("UnitList: ", AutoloadMe.globalUnitList)
 	SignalBus.wipeTilePaths.emit(null)
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
 	SignalBus.startTurn.emit()
 	SignalBus.changeButtonState.emit()
 	run_passives(methodType.ON_TURN_START, null)

@@ -80,6 +80,7 @@ offset_bottom = 357.768
 scale = Vector2(0.8, 0.8)
 
 [node name="InfoBox" type="ColorRect" parent="UI"]
+modulate = Color(1, 1, 1, 0.8)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -200,6 +201,7 @@ text = "num"
 label_settings = SubResource("LabelSettings_s1hfu")
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
+modulate = Color(1, 1, 1, 0.8)
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
