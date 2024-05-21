@@ -12,8 +12,7 @@ func _ready():
 
 func make_bar():
 	get_parent().myHPBar = self
-	$Temp_HP_Box/ProgressBar.set_max(maxHP)
-	$Temp_HP_Box/ProgressBar.set_value(maxHP)
+	$HP_Text.set_text(str(maxHP))
 	
 	for i in maxHP:
 		var scene = load("res://Scenes/hp_seg.tscn")
@@ -31,8 +30,7 @@ func update(myUnit):
 		return
 	
 	currentHP = get_parent().get_current_hp()
-	
-	$Temp_HP_Box/ProgressBar.set_value(currentHP)
+	$HP_Text.set_text(str(currentHP))
 	
 	for i in segList.size():
 		if i > currentHP - 1:

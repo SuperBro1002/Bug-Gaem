@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/EM2.gd" id="2_q2fgc"]
 [ext_resource type="PackedScene" uid="uid://tgpcor2pwjrk" path="res://Scenes/init_manager.tscn" id="4_orkdb"]
 [ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="5_a7dvg"]
-[ext_resource type="PackedScene" uid="uid://ctmmj1ycr05sc" path="res://Scenes/Units/Atlus.tscn" id="5_els4m"]
+[ext_resource type="PackedScene" uid="uid://ci8wrykm1vixs" path="res://Scenes/Units/Atlas.tscn" id="5_els4m"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="6_rvry4"]
 [ext_resource type="PackedScene" uid="uid://be86imrav20o6" path="res://Scenes/Units/Lumoth.tscn" id="6_t6s40"]
 [ext_resource type="PackedScene" uid="uid://bgphmxq3rd4q1" path="res://Scenes/Units/Paramantis.tscn" id="7_uvqbh"]
@@ -66,6 +66,11 @@ SetAbility3 = "Tackle"
 
 [node name="Robo5" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
 position = Vector2(225, 416)
+SetAbility2 = "Tackle"
+SetAbility3 = "Tackle"
+
+[node name="Robo9" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
+position = Vector2(97, 224)
 SetAbility2 = "Tackle"
 SetAbility3 = "Tackle"
 

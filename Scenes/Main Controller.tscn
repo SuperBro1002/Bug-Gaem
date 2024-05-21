@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="5_4smxl"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="6_cdygi"]
 [ext_resource type="SpriteFrames" uid="uid://d4ellltyf6slv" path="res://Scenes/Sprite Frames/Lumoth.tres" id="6_o1qg1"]
-[ext_resource type="PackedScene" uid="uid://ctmmj1ycr05sc" path="res://Scenes/Units/Atlus.tscn" id="7_yodps"]
+[ext_resource type="PackedScene" uid="uid://ci8wrykm1vixs" path="res://Scenes/Units/Atlas.tscn" id="7_yodps"]
 [ext_resource type="SpriteFrames" uid="uid://fy8e8wgvo05l" path="res://Scenes/Sprite Frames/Triss.tres" id="9_taqex"]
 [ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="11_p2cr2"]
 [ext_resource type="SpriteFrames" uid="uid://dwsvpciaod0yg" path="res://Scenes/Sprite Frames/Paramantis.tres" id="11_xb6jh"]

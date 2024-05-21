@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drc43v81fyvl5"
-path="res://.godot/imported/Atlus_ReceiveHit_Still.png-b1e6137c6bd000aa6cd73e50143a5fa6.ctex"
+uid="uid://b4xbotxeidxtw"
+path="res://.godot/imported/Arrow.png-716c656ce05fb3dc9ba202c628c1ff5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Atlus/Atlus_ReceiveHit_Still.png"
-dest_files=["res://.godot/imported/Atlus_ReceiveHit_Still.png-b1e6137c6bd000aa6cd73e50143a5fa6.ctex"]
+source_file="res://Assets/HUD/Arrow.png"
+dest_files=["res://.godot/imported/Arrow.png-716c656ce05fb3dc9ba202c628c1ff5a.ctex"]
 
 [params]
 

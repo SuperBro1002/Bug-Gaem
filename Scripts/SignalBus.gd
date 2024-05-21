@@ -33,6 +33,7 @@ signal updateFloatingHP
 signal updateFloatingAP
 signal mouseHovering(isHovering)
 signal highlightUnit(unit)
+signal highlightInit(unit)
 signal remakeUnitList
 signal addToUnitList(unit)
 signal spawnGroup(id)

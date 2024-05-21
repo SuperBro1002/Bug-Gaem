@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctmmj1ycr05sc"]
+[gd_scene load_steps=2 format=3 uid="uid://ci8wrykm1vixs"]
 
 [ext_resource type="PackedScene" uid="uid://cofaiq0bowqml" path="res://Scenes/ally.tscn" id="1_l2376"]
 
-[node name="Atlus" instance=ExtResource("1_l2376")]
-Name = "Atlus"
-fileName = "Atlus"
-MaxHP = 12
+[node name="Atlas" instance=ExtResource("1_l2376")]
+Name = "Atlas"
+fileName = "Atlas"
+MaxHP = 30
 MaxAP = 8
 TrueInit = 30
 SetAbility1 = "Knockback"

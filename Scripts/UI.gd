@@ -8,11 +8,13 @@ var ability2
 var ability3
 var enemyPhase = false
 var camTween
+var arrowTween
 
 func _ready():
 	get_parent().set_visible(true)
 	SignalBus.connect("currentUnit", set_ui)
 	SignalBus.connect("currentUnit", move_camera)
+	SignalBus.connect("currentUnit", move_arrow)
 	SignalBus.connect("startAnimate", start_anim)
 	SignalBus.connect("updateUI", set_ui)
 	SignalBus.connect("updateInitBox", draw_init_box)
@@ -91,6 +93,15 @@ func draw_init_box():
 		else:
 			boxArray[i - 1].add_sibling(sceneNode)
 			sceneNode.UINode = self
+
+func move_arrow(unit):
+	if unit.myInitBox == null:
+		return
+	if arrowTween:
+		arrowTween.kill()
+	arrowTween = create_tween()
+	arrowTween.tween_property($ColorRect/CurrentPointer, "position:x", unit.myInitBox.position.x + 32, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	
 
 func set_init_colors():
 	nodeList = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
@@ -216,7 +227,7 @@ func start_anim(unit):
 			$TurnGraphic.set_text("Robugs\nStart")
 		
 		$TurnGraphic.label_settings.shadow_color = Color(0, 0, 0, 1)
-		
+	
 	elif unit.get_batonpass() == unit.TS.BATONPASS:
 		
 		$TurnGraphic.set_text(unit.Name + "\nBaton Pass")
@@ -236,7 +247,7 @@ func start_anim(unit):
 	tween.tween_property($TurnGraphic, "position:x", -1300, 3.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT_IN)
 	await tween.finished
 	$TurnGraphic.position.x = 1934
-		
+	
 	AutoloadMe.set_process_unhandled_input(true)
 	$ControlsOverlay.set_visible(true)
 
@@ -245,6 +256,7 @@ func move_camera(unit):
 		camTween.kill()
 	camTween = create_tween()
 	camTween.tween_property(get_node("../../Camera2D"), "position", unit.position, 1.0).set_trans(Tween.TRANS_QUART)#.set_ease(Tween.EASE_OUT_IN)
+	camTween.tween_property(get_node("../../Camera2D"), "zoom", Vector2(0.9,0.9), 1).set_trans(Tween.TRANS_SINE)
 	await camTween.finished
 
 

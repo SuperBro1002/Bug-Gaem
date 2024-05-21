@@ -20,6 +20,7 @@ var notOverlapped = true
 var isExecuting = false
 var roundNum = 1
 var currentAbility
+var passingAP
 
 var inputs = {"move_right": Vector2.RIGHT,
 			"move_left": Vector2.LEFT,

@@ -1,19 +1,20 @@
 extends Control
 
 var myUnit
-var tween
+var glowTween
 var colorTween
 var UINode
 
 func _ready():
 	SignalBus.connect("deleteInitObject", remove_me)
 	SignalBus.connect("deleteMe", delete_box)
-	SignalBus.connect("startTurn", glow)
-	SignalBus.connect("endTurn", kill_glow)
+	SignalBus.connect("highlightInit", glow)
+	#SignalBus.connect("endTurn", kill_glow)
 	SignalBus.connect("endRound", reset_colors)
 
 func assign_unit(unit):
 	myUnit = unit
+	myUnit.myInitBox = self
 	var spritePath = load("res://Assets/HUD/Init_Sprites/" + myUnit.fileName + "_Base_Still.png")
 	get_node("Sprite2D").texture = spritePath
 	if unit.get_faction() == unit.fac.ENEMY:
@@ -29,6 +30,8 @@ func update_display():
 
 
 func set_colors():
+	if glowTween:
+		glowTween.kill()
 	if myUnit.get_batonpass() == myUnit.TS.ACTED and myUnit == AutoloadMe.turnPointer:
 		colorTween = create_tween()
 		colorTween.tween_property(self, "modulate", Color(0.42, 0.42, 0.42), 0.2).set_trans(Tween.TRANS_SINE)
@@ -42,25 +45,17 @@ func reset_colors():
 	colorTween = create_tween()
 	colorTween.tween_property(self, "modulate", Color(1, 1, 1), 0.2).set_trans(Tween.TRANS_SINE)
 
-func glow():
-	if get_parent() == null:
+func glow(unit, switch):
+	if get_parent() == null or myUnit != unit:
 		return
-	if tween:
-		tween.kill()
-	while AutoloadMe.turnPointer == myUnit:
-			tween = create_tween()
-			
-			tween.tween_property($CurrentUnit, "color:a", 0.4, 1.0).set_trans(Tween.TRANS_SINE)
-			await tween.finished
-			
-			tween = create_tween()
-			
-			tween.tween_property($CurrentUnit, "color:a", 0, 1.0).set_trans(Tween.TRANS_SINE)
-			await tween.finished
-
-
-func kill_glow():
-	$CurrentUnit.set_color(Color(1,1,1,0))
+	if switch:
+		glowTween = create_tween().set_loops().bind_node(self)
+		glowTween.tween_property($CurrentUnit, "color:a", 0.6, 0.5).set_trans(Tween.TRANS_SINE)
+		glowTween.tween_property($CurrentUnit, "color:a", 0, 0.5).set_trans(Tween.TRANS_SINE)
+	elif glowTween:
+		glowTween.kill()
+		glowTween = create_tween().bind_node(self)
+		glowTween.tween_property($CurrentUnit, "color:a", 0, 0.5).set_trans(Tween.TRANS_SINE)
 
 func remove_me():
 	queue_free()
@@ -68,18 +63,10 @@ func remove_me():
 func delete_box(toBeDeleted):
 	# Removes unit from UnitLists so it won't be added to InitBox
 	if toBeDeleted == myUnit:
-		#print("I AM DYING")
-		#AutoloadMe.globalUnitList.erase(myUnit)
-		#AutoloadMe.globalEnemyList.erase(myUnit)
-		#AutoloadMe.globalAllyList.erase(myUnit)
-		#if myUnit.Faction == myUnit.fac.ENEMY:
-			#AutoloadMe.deathCount += 1
-		#SignalBus.updateGrid.emit()
-		
 		UINode.remove_init_box(self)
 		SignalBus.updateUI.emit(AutoloadMe.turnPointer)
 		#myUnit.queue_free()
-		
+		myUnit.myInitBox = null
 		if AutoloadMe.turnPointer == toBeDeleted:
 			SignalBus.endTurn.emit()
 		
@@ -90,7 +77,8 @@ func _on_mouse_entered():
 	print("Hovering")
 	AutoloadMe.hoveredUnit = myUnit
 	SignalBus.mouseHovering.emit(true)
-	SignalBus.highlightUnit.emit(myUnit)
+	SignalBus.highlightUnit.emit(myUnit, true)
 
 func _on_mouse_exited():
 	SignalBus.mouseHovering.emit(false)
+	SignalBus.highlightUnit.emit(myUnit, false)

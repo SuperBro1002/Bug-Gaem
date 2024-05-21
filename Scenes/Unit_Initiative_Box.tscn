@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5cxgfyv2wrj8"]
 
-[ext_resource type="Texture2D" uid="uid://dj1fiy06dxn1l" path="res://Assets/HUD/Init_Sprites/Atlus_Base_Still.png" id="1_755gw"]
+[ext_resource type="Texture2D" uid="uid://dj1fiy06dxn1l" path="res://Assets/HUD/Init_Sprites/Atlas_Base_Still.png" id="1_755gw"]
 [ext_resource type="Script" path="res://Scripts/Unit_Initiative_Box.gd" id="1_ldvsk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mbmbs"]

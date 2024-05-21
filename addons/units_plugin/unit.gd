@@ -54,8 +54,10 @@ var incoming_dmg_type = null # pierce, null
 var isPossessed #= false
 var OG
 var myHPBar
+var myInitBox
 var canMove = true
 var storedBatonPass = TS.NOTACTED
+var glowTween
 
 func _enter_tree():
 	print("TREE")
@@ -174,6 +176,8 @@ func get_current_ap():
 
 func set_current_ap(num):
 	CurrentAP = num
+	if CurrentAP > MaxAP:
+		CurrentAP = MaxAP
 
 func gain_ap(num):
 	# Adds given num to unit's current ap
@@ -250,6 +254,7 @@ func get_batonpass():
 
 
 func on_turn_start():
+	tempAP = CurrentAP
 	start = grid.local_to_map(position)
 	abilityStartPoint = grid.convert_to_map(position)
 	SignalBus.updateUI.emit(self)
@@ -350,26 +355,27 @@ func _mouse_shape_enter(shape_idx):
 		myHPBar.fade(true)
 		AutoloadMe.hoveredUnit = self
 		SignalBus.mouseHovering.emit(true)
+		SignalBus.highlightInit.emit(self, true)
 
 func _mouse_shape_exit(shape_idx):
 	if AutoloadMe.hoveredUnit == self:
 		myHPBar.fade(false)
 		SignalBus.mouseHovering.emit(false)
+		SignalBus.highlightInit.emit(self, false)
 
 func animated_Damaged():
 	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.play("Damaged")
 	await $AnimatedSprite2D.animation_finished
 
-func glow(unit):
-	var tween
+func glow(unit, switch):
 	if unit == self:
-		tween = create_tween()
-		
-		tween.tween_property($AnimatedSprite2D/Glow, "modulate:a", 0.6, 1.0).set_trans(Tween.TRANS_SINE)
-		await tween.finished
-		
-		tween = create_tween()
-		
-		tween.tween_property($AnimatedSprite2D/Glow, "modulate:a", 0, 1.0).set_trans(Tween.TRANS_SINE)
-		await tween.finished
+		if switch:
+			glowTween = create_tween().set_loops().bind_node(self)
+			glowTween.tween_property($AnimatedSprite2D/Glow, "modulate:a", 0.6, 0.5).set_trans(Tween.TRANS_SINE)
+			glowTween.tween_property($AnimatedSprite2D/Glow, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_SINE)
+		else:
+			if glowTween:
+				glowTween.kill()
+				glowTween = create_tween().bind_node(self)
+				glowTween.tween_property($AnimatedSprite2D/Glow, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_SINE)
