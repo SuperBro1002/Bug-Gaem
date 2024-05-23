@@ -13,9 +13,20 @@ func execute():
 	print("EXECUTED")
 	print(targetUnits)
 	
+	face_target()
+	get_parent().get_node("AnimatedSprite2D").stop()
+	get_parent().get_node("AnimatedSprite2D").play("Attack1")
+	$VFX.set_visible(true)
+	$VFX.position = targetUnits[0].position
+	$VFX.position.x -= 50
+	$VFX.play("Effect")
+	await get_tree().create_timer(0.7).timeout
+	
 	for i in targetUnits.size():
 		targetUnits[i].lose_health(4)
+		await get_tree().create_timer(0.3).timeout
 		get_parent().incoming_dmg_type = "pierce"
 		get_parent().lose_health(1)
 	
+	$VFX.set_visible(false)
 	post_execute()

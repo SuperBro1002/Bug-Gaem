@@ -46,9 +46,17 @@ func reset_colors():
 	colorTween.tween_property(self, "modulate", Color(1, 1, 1), 0.2).set_trans(Tween.TRANS_SINE)
 
 func glow(unit, switch):
-	if get_parent() == null or myUnit != unit:
+	if get_parent() == null:
+		return
+	if myUnit != unit:
+		if glowTween:
+			glowTween.kill()
+			glowTween = create_tween().bind_node(self)
+			glowTween.tween_property($CurrentUnit, "color:a", 0, 0.5).set_trans(Tween.TRANS_SINE)
 		return
 	if switch:
+		if glowTween:
+			glowTween.kill()
 		glowTween = create_tween().set_loops().bind_node(self)
 		glowTween.tween_property($CurrentUnit, "color:a", 0.6, 0.5).set_trans(Tween.TRANS_SINE)
 		glowTween.tween_property($CurrentUnit, "color:a", 0, 0.5).set_trans(Tween.TRANS_SINE)

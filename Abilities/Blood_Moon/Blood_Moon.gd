@@ -13,7 +13,16 @@ func execute():
 	print("EXECUTED")
 	print(targetUnits)
 	
-	get_parent().run_passives(get_parent().methodType.ON_TURN_START, null)
+	#get_parent().run_passives(get_parent().methodType.ON_TURN_START, null)
+	face_target()
+	get_parent().get_node("AnimatedSprite2D").stop()
+	get_parent().get_node("AnimatedSprite2D").play("Attack1")
+	$VFX.position = targetUnits[0].position
+	$VFX.position.x -= 65
+	$VFX.set_visible(true)
+	$VFX.play("Effect")
+	await get_tree().create_timer(0.3).timeout
+	$VFX.set_visible(false)
 	
 	for i in targetUnits.size():
 		if targetUnits == null:

@@ -69,10 +69,25 @@ func queue():
 	# If occupied, find an the nearest open tile and note it for damage later
 	# Move target to target position
 
+func post_execute():
+	dmgMod = 1
+	targetUnits.clear()
+	get_parent().grid.update_grid_collision()
+	SignalBus.abilityExecuted.emit(self)
+	SignalBus.updateUI.emit(get_parent())
+	AutoloadMe.isExecuting = false
+	SignalBus.changeControls.emit()
+	if get_parent().Faction == get_parent().fac.ALLY:
+		SignalBus.changeButtonState.emit()
+	elif get_parent().Faction == get_parent().fac.ENEMY:
+		dequeue(1,false)
+	
+
 func execute():
 	if newPos != null and validTargetPos == true:
 		print("EXECUTED Throw")
 		print(targetUnits)
+		AutoloadMe.passingUnit = get_parent()
 		
 		face_target()
 		get_parent().get_node("AnimatedSprite2D").stop()

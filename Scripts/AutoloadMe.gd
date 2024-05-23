@@ -6,6 +6,7 @@ var abilityRangeGrid = AStarGrid2D.new()
 var abilityRangeGridUI = AStarGrid2D.new()
 var gridSize
 var turnPointer
+var passingUnit
 var isAllyTurn = false
 var globalUnitList
 var globalAllyList

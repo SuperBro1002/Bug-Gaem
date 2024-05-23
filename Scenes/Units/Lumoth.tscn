@@ -16,5 +16,6 @@ Faction = 0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_chvyg")
-animation = &"default"
-autoplay = ""
+animation = &"Jump1"
+frame = 14
+frame_progress = 1.0

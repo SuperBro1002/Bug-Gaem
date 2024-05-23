@@ -67,6 +67,10 @@ func execute():
 	if !isCarrying:
 		print("EXECUTED 1")
 		print(targetUnits)
+		face_target()
+		get_parent().get_node("AnimatedSprite2D").stop()
+		get_parent().get_node("AnimatedSprite2D").play("Jump1")
+		await get_tree().create_timer(0.5).timeout
 		AutoloadMe.allowEndTurn = false
 		for i in targetUnits.size():
 			if targetUnits == null:
@@ -80,6 +84,11 @@ func execute():
 			post_execute()
 	else:
 		print("EXECUTED 2")
+		
+		get_parent().get_node("AnimatedSprite2D").stop()
+		get_parent().get_node("AnimatedSprite2D").play("Jump1")
+		await get_tree().create_timer(0.5).timeout
+		
 		storedUnit.position = get_parent().grid.map_to_local(clickedPos)
 		storedUnit.set_visible(true)
 		storedUnit.give_batonpass()

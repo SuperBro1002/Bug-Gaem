@@ -153,10 +153,10 @@ func get_ap_cost():
 
 func face_target():
 	print("Targets: ", targetUnits)
-	#if targetUnits[0].position.x < get_parent().position.x:
-		#get_parent().get_node("AnimatedSprite2D").set_flip_h(true)
-	#else:
-		#get_parent().get_node("AnimatedSprite2D").set_flip_h(false)
+	if targetUnits[0].position.x < get_parent().position.x:
+		get_parent().get_node("AnimatedSprite2D").set_flip_h(true)
+	else:
+		get_parent().get_node("AnimatedSprite2D").set_flip_h(false)
 
 func _on_area_2d_area_entered(area):
 	if AutoloadMe.turnPointer.get_faction() == get_parent().fac.ALLY:

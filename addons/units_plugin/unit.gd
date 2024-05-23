@@ -374,8 +374,7 @@ func glow(unit, switch):
 			glowTween = create_tween().set_loops().bind_node(self)
 			glowTween.tween_property($AnimatedSprite2D/Glow, "modulate:a", 0.6, 0.5).set_trans(Tween.TRANS_SINE)
 			glowTween.tween_property($AnimatedSprite2D/Glow, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_SINE)
-		else:
-			if glowTween:
+		elif glowTween:
 				glowTween.kill()
 				glowTween = create_tween().bind_node(self)
 				glowTween.tween_property($AnimatedSprite2D/Glow, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_SINE)

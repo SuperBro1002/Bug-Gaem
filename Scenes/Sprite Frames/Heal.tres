@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://cfqcctr07j0fq"]
+
+[ext_resource type="Texture2D" uid="uid://dtqsbts0exp4d" path="res://Assets/Sprites/Lumoth/Allies_Lumoth_VFX_Animations.png" id="1_47xyh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fhnd"]
+atlas = ExtResource("1_47xyh")
+region = Rect2(672, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q2br"]
+atlas = ExtResource("1_47xyh")
+region = Rect2(768, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yev2"]
+atlas = ExtResource("1_47xyh")
+region = Rect2(864, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q3h6"]
+atlas = ExtResource("1_47xyh")
+region = Rect2(960, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1551"]
+atlas = ExtResource("1_47xyh")
+region = Rect2(0, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5gxl"]
+atlas = ExtResource("1_47xyh")
+region = Rect2(96, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cwbl"]
+atlas = ExtResource("1_47xyh")
+region = Rect2(192, 288, 96, 96)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fhnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6q2br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yev2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q3h6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1551")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5gxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cwbl")
+}],
+"loop": true,
+"name": &"Effect",
+"speed": 12.0
+}]

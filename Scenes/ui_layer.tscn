@@ -89,27 +89,28 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -848.0
-offset_top = 348.0
+offset_top = 364.0
 offset_right = -208.0
-offset_bottom = 540.0
+offset_bottom = 529.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 color = Color(0.141176, 0.352941, 0.843137, 1)
 
-[node name="AbilityBox" type="HBoxContainer" parent="UI/InfoBox"]
+[node name="AbilityBox" type="VBoxContainer" parent="UI/InfoBox"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.499
 anchor_top = 0.5
 anchor_right = 0.499
 anchor_bottom = 0.5
-offset_left = 58.9733
-offset_top = -36.0
-offset_right = 317.974
-offset_bottom = 56.0
+offset_left = 40.64
+offset_top = -50.8333
+offset_right = 299.64
+offset_bottom = 50.1667
 grow_horizontal = 0
 mouse_filter = 2
+alignment = 1
 
 [node name="Ability1Button" type="Button" parent="UI/InfoBox/AbilityBox"]
 layout_mode = 2
@@ -117,6 +118,7 @@ size_flags_horizontal = 3
 toggle_mode = true
 shortcut = SubResource("Shortcut_11fnr")
 text = "Ability 1"
+text_overrun_behavior = 1
 script = ExtResource("3_t2pqd")
 
 [node name="Ability2Button" type="Button" parent="UI/InfoBox/AbilityBox"]
@@ -125,6 +127,7 @@ size_flags_horizontal = 3
 toggle_mode = true
 shortcut = SubResource("Shortcut_wweb6")
 text = "Ability 2"
+text_overrun_behavior = 1
 script = ExtResource("4_7yk03")
 
 [node name="Ability3Button" type="Button" parent="UI/InfoBox/AbilityBox"]
@@ -133,15 +136,16 @@ size_flags_horizontal = 3
 toggle_mode = true
 shortcut = SubResource("Shortcut_1reh3")
 text = "Ability 3"
+text_overrun_behavior = 1
 script = ExtResource("5_vdsmd")
 
 [node name="Name" type="Label" parent="UI/InfoBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.306612
-anchor_top = 0.103959
-anchor_right = 0.306612
-anchor_bottom = 0.171667
+anchor_left = 0.253187
+anchor_top = 0.157333
+anchor_right = 0.253187
+anchor_bottom = 0.217939
 offset_left = -0.0400085
 offset_top = -19.96
 offset_right = 199.96
@@ -152,10 +156,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PortraitBox" type="ColorRect" parent="UI/InfoBox"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 182.0
-offset_bottom = 180.0
+offset_left = 20.0
+offset_top = 18.3333
+offset_right = 190.0
+offset_bottom = 186.333
+scale = Vector2(0.775892, 0.775892)
 color = Color(0.168627, 0.164706, 0.592157, 1)
 
 [node name="PortraitSprite" type="Sprite2D" parent="UI/InfoBox/PortraitBox"]
@@ -167,37 +172,37 @@ script = ExtResource("7_eif3x")
 
 [node name="HPLabel" type="Label" parent="UI/InfoBox"]
 layout_mode = 0
-offset_left = 206.517
-offset_top = 69.6998
-offset_right = 249.517
-offset_bottom = 108.7
+offset_left = 191.667
+offset_top = 55.0
+offset_right = 234.667
+offset_bottom = 94.0002
 text = "HP:"
 label_settings = SubResource("LabelSettings_s1hfu")
 
 [node name="HPValue" type="Label" parent="UI/InfoBox"]
 layout_mode = 0
-offset_left = 258.147
-offset_top = 69.6998
-offset_right = 317.147
-offset_bottom = 108.7
+offset_left = 243.297
+offset_top = 55.0
+offset_right = 302.297
+offset_bottom = 94.0002
 text = "num"
 label_settings = SubResource("LabelSettings_s1hfu")
 
 [node name="APLabel" type="Label" parent="UI/InfoBox"]
 layout_mode = 0
-offset_left = 206.517
-offset_top = 109.713
-offset_right = 249.517
-offset_bottom = 148.713
+offset_left = 191.667
+offset_top = 95.0132
+offset_right = 234.667
+offset_bottom = 134.013
 text = "AP:"
 label_settings = SubResource("LabelSettings_s1hfu")
 
 [node name="APValue" type="Label" parent="UI/InfoBox"]
 layout_mode = 2
-offset_left = 256.856
-offset_top = 108.422
-offset_right = 315.856
-offset_bottom = 147.422
+offset_left = 242.006
+offset_top = 93.7222
+offset_right = 301.006
+offset_bottom = 132.722
 text = "num"
 label_settings = SubResource("LabelSettings_s1hfu")
 

@@ -14,6 +14,17 @@ func execute():
 	print("EXECUTED ", AutoloadMe.currentAbility)
 	print(targetUnits)
 	
+	face_target()
+	get_parent().get_node("AnimatedSprite2D").stop()
+	get_parent().get_node("AnimatedSprite2D").play("Cast1")
+	await get_tree().create_timer(1).timeout
+	$VFX.position = targetUnits[0].position
+	$VFX.position.x -= 65
+	$VFX.set_visible(true)
+	$VFX.play("Effect")
+	await get_tree().create_timer(0.3).timeout
+	$VFX.set_visible(false)
+	
 	for i in targetUnits.size():
 		targetUnits[i].gain_health(healNum)
 	

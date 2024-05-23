@@ -1,0 +1,10 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://p7oscdas3pq2"]
+
+[resource]
+resource_name = "Sting"
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"Effect",
+"speed": 12.0
+}]
