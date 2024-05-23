@@ -13,7 +13,7 @@ func set_timeline():
 				if cur_unit.passiveList[p].is_narrative:
 					var passive = cur_unit.passiveList[p]
 					current_timeline = "res://Dialogic Assets/Timelines/" + passive.timeline + ".dtl"
-					var node := Dialogic.start(current_timeline, "First")
+					var node := Dialogic.start(current_timeline, "first")
 					node.register_character(load("res://Dialogic Assets/Characters/Atlas.dch"), get_child(0))
 					node.register_character(load("res://Dialogic Assets/Characters/Lumoth.dch"), get_child(0))
 					node.register_character(load("res://Dialogic Assets/Characters/Triss.dch"), get_child(0))
@@ -22,4 +22,6 @@ func set_timeline():
 					node.register_character(load("res://Dialogic Assets/Characters/Lumoth2.dch"), get_child(1))
 					node.register_character(load("res://Dialogic Assets/Characters/Triss2.dch"), get_child(1))
 					node.register_character(load("res://Dialogic Assets/Characters/Paramantis2.dch"), get_child(1))
+					node.register_character(load("res://Dialogic Assets/Characters/Drone.dch"), get_child(1))
+					node.register_character(load("res://Dialogic Assets/Characters/Thoraxe.dch"), get_child(1))
 	print("No timeline to use")

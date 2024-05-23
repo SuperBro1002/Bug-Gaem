@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DialogicStyle" load_steps=17 format=3 uid="uid://ckeey014m3vhg"]
 
-[ext_resource type="PackedScene" path="res://Dialogic Assets/Styles/FullBackground/custom_full_background_layer.tscn" id="1_nagod"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://Dialogic Assets/Styles/FullBackground/custom_full_background_layer.tscn" id="1_nagod"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_5ggjl"]
 [ext_resource type="PackedScene" uid="uid://by6waso0mjpjp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/textbox_with_speaker_portrait.tscn" id="3_ykpu5"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_sb4om"]
@@ -60,4 +60,4 @@ base_overrides = {
 "global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
 }
 layers = Array[ExtResource("2_5ggjl")]([SubResource("Resource_g8qt7"), SubResource("Resource_m8lue"), SubResource("Resource_whxfk"), SubResource("Resource_mmmde"), SubResource("Resource_pa7c1"), SubResource("Resource_g5ccn"), SubResource("Resource_nwvnn")])
-metadata/_latest_layer = 6
+metadata/_latest_layer = 1

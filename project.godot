@@ -42,16 +42,19 @@ directories/dch_directory={
 "Triss2": "res://Dialogic Assets/Characters/Triss2.dch"
 }
 directories/dtl_directory={
-"testline": "res://Dialogic Assets/Timelines/testline.dtl"
+"Cleric": "res://Dialogic Assets/Timelines/Cleric.dtl",
+"Nobeelity": "res://Dialogic Assets/Timelines/Nobeelity.dtl",
+"Shaman": "res://Dialogic Assets/Timelines/Shaman.dtl",
+"Veteran": "res://Dialogic Assets/Timelines/Veteran.dtl"
 }
 layout/style_list=["res://Dialogic Assets/Styles/Default.tres", "res://Dialogic Assets/Styles/Box.tres"]
 layout/default_style="res://Dialogic Assets/Styles/Default.tres"
 glossary/default_case_sensitive=true
 variables={
-"atlas_important_label": "Intro",
-"lumoth_important_label": "Intro",
-"paramantis_important_label": "Intro",
-"triss_important_label": "Intro"
+"Atl": "1-Breathe",
+"Lum": "1-Breathe",
+"Par": "1-Breathe",
+"Tri": "1-Breathe"
 }
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
