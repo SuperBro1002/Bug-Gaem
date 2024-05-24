@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://jraxkejfvpqy"]
+
+[ext_resource type="Texture2D" uid="uid://bmxknt8vhxi81" path="res://Assets/Sprites/Paramantis/Allies_Paramantis_VFX_Animations.png" id="1_61yd0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v43i4"]
+atlas = ExtResource("1_61yd0")
+region = Rect2(480, 204, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjebm"]
+atlas = ExtResource("1_61yd0")
+region = Rect2(576, 204, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k43v5"]
+atlas = ExtResource("1_61yd0")
+region = Rect2(672, 204, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfit4"]
+atlas = ExtResource("1_61yd0")
+region = Rect2(768, 204, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2fsa"]
+atlas = ExtResource("1_61yd0")
+region = Rect2(864, 204, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riue2"]
+atlas = ExtResource("1_61yd0")
+region = Rect2(960, 204, 96, 68)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v43i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjebm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k43v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfit4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2fsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_riue2")
+}],
+"loop": true,
+"name": &"Effect",
+"speed": 12.0
+}]

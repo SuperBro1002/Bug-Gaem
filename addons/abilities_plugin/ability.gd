@@ -158,6 +158,12 @@ func face_target():
 	else:
 		get_parent().get_node("AnimatedSprite2D").set_flip_h(false)
 
+func target_is_right():
+	if targetUnits[0].position.x < get_parent().position.x:
+		return false
+	else:
+		return true
+
 func _on_area_2d_area_entered(area):
 	if AutoloadMe.turnPointer.get_faction() == get_parent().fac.ALLY:
 		if area.areaType != "spawner" and area.areaType != "range_box" and type_matches(area.get_faction()) and area != get_parent() and targetUnits.find(area) == -1:

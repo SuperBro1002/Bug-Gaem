@@ -1,0 +1,74 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://clb2h3wcqa6sh"]
+
+[ext_resource type="Texture2D" uid="uid://bmxknt8vhxi81" path="res://Assets/Sprites/Paramantis/Allies_Paramantis_VFX_Animations.png" id="1_mgwg3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i74jk"]
+atlas = ExtResource("1_mgwg3")
+region = Rect2(192, 272, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvnct"]
+atlas = ExtResource("1_mgwg3")
+region = Rect2(288, 272, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agv6m"]
+atlas = ExtResource("1_mgwg3")
+region = Rect2(384, 272, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqfuc"]
+atlas = ExtResource("1_mgwg3")
+region = Rect2(480, 272, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckj0b"]
+atlas = ExtResource("1_mgwg3")
+region = Rect2(576, 272, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wao2"]
+atlas = ExtResource("1_mgwg3")
+region = Rect2(672, 272, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pakk"]
+atlas = ExtResource("1_mgwg3")
+region = Rect2(768, 272, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmfub"]
+atlas = ExtResource("1_mgwg3")
+region = Rect2(864, 272, 96, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scqde"]
+atlas = ExtResource("1_mgwg3")
+region = Rect2(960, 272, 96, 68)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i74jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvnct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agv6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqfuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckj0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wao2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pakk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmfub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scqde")
+}],
+"loop": false,
+"name": &"Effect",
+"speed": 12.0
+}]

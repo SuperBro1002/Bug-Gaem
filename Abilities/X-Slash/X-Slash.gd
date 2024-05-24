@@ -14,6 +14,23 @@ func execute():
 	print("EXECUTED")
 	print(targetUnits)
 	
+	face_target()
+	get_parent().get_node("AnimatedSprite2D").stop()
+	get_parent().get_node("AnimatedSprite2D").play("Attack1")
+	
+	$VFX.position = targetUnits[0].position
+	
+	if target_is_right():
+		$VFX.set_flip_h(false)
+		$VFX.position.x -= 60
+	else:
+		$VFX.set_flip_h(true)
+		$VFX.position.x += 60
+	
+	$VFX.set_visible(true)
+	$VFX.play("Effect")
+	await get_tree().create_timer(0.7).timeout
+	
 	for i in targetUnits.size():
 		if targetUnits[i].get_current_hp() - 3 <= 0 and targetUnits[i].Faction != get_parent().fac.OBSTACLE:
 			var scene = load("res://Scenes/ally.tscn")
@@ -29,4 +46,5 @@ func execute():
 			targetUnits[i].give_batonpass()
 		targetUnits[i].lose_health(3)
 	
+	$VFX.set_visible(false)
 	post_execute()

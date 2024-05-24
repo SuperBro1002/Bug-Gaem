@@ -19,6 +19,15 @@ func execute():
 	print("EXECUTED")
 	print(AutoloadMe.globalAllyList)
 	
+	face_target()
+	get_parent().get_node("AnimatedSprite2D").stop()
+	get_parent().get_node("AnimatedSprite2D").play("Cast1")
+	$VFX.set_visible(true)
+	$VFX.position = get_parent().position
+	$VFX.position -= Vector2(65,120)
+	$VFX.play("Effect")
+	await get_tree().create_timer(0.7).timeout
+	$VFX.set_visible(false)
 	# LOOK INTO USING BELOW AS ENEMY'S ASTAR FUNCTION MIGHT FIX THE ISSUE OF SOLID UNITS NOT BEING PATH-FINDABLE TO
 	
 	for i in targetUnits.size():
