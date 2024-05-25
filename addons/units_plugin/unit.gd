@@ -89,8 +89,8 @@ func clone(OGUnit):
 	TrueInit = OGUnit.TrueInit
 	CurrentInit = OGUnit.CurrentInit
 	SetAbility1 = OGUnit.SetAbility1
-	SetAbility2 = OGUnit.SetAbility2
-	SetAbility3 = OGUnit.SetAbility3
+	SetAbility2 = null
+	SetAbility3 = null
 	
 	Faction = fac.ALLY
 	delete_floating_hp()
@@ -156,7 +156,6 @@ func lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
 	dmgVal *= AutoloadMe.currentAbility.dmgMod
 	CurrentHP = CurrentHP - dmgVal
-	#await 
 	animated_Damaged()
 	if CurrentHP < 0:
 		CurrentHP = 0
@@ -178,6 +177,12 @@ func set_current_ap(num):
 	CurrentAP = num
 	if CurrentAP > MaxAP:
 		CurrentAP = MaxAP
+
+func inherit_ap(num):
+	if num > CurrentAP:
+		CurrentAP = num
+		if CurrentAP > MaxAP:
+			CurrentAP = MaxAP
 
 func gain_ap(num):
 	# Adds given num to unit's current ap
@@ -254,6 +259,17 @@ func get_batonpass():
 
 
 func on_turn_start():
+	if AutoloadMe.passingUnit != null:
+		var prevUnit = AutoloadMe.passingUnit
+		inherit_ap(prevUnit.CurrentAP)
+		tempAP = CurrentAP
+		prevUnit.CurrentAP = 0
+		prevUnit.tempAP = 0
+		AutoloadMe.passingUnit = null
+	
+	if Faction == fac.ENEMY:
+		SignalBus.showUI.emit()
+	
 	tempAP = CurrentAP
 	start = grid.local_to_map(position)
 	abilityStartPoint = grid.convert_to_map(position)
@@ -306,6 +322,8 @@ func on_execute(abilityUsed):
 
 
 func load_ability(name):
+	if name == null:
+		return null
 	var scene = load("res://Abilities/" + name + "/" + name + ".tscn")
 	var sceneNode = scene.instantiate()
 	add_child(sceneNode)
@@ -346,6 +364,7 @@ func delete(unit):
 		AutoloadMe.globalTargetList.erase(unit)
 		if unit.Faction == self.fac.ENEMY:
 			AutoloadMe.deathCount += 1
+			SignalBus.checkObjective.emit()
 		SignalBus.updateGrid.emit()
 		SignalBus.deleteMe.emit(self)
 		await get_tree().create_timer(2).timeout

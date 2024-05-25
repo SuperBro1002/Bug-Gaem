@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://crwrt8s5xftkv"]
+
+[ext_resource type="Texture2D" uid="uid://ctq7rc01n648t" path="res://Assets/Maps_Tiles/Garden/siphonpoint.png" id="1_jijab"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8v5b"]
+atlas = ExtResource("1_jijab")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewpfr"]
+atlas = ExtResource("1_jijab")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ra5o"]
+atlas = ExtResource("1_jijab")
+region = Rect2(0, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8v5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewpfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ra5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewpfr")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]

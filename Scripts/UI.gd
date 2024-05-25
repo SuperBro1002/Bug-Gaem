@@ -115,13 +115,16 @@ func add_init_box(target):
 	sceneNode.assign_unit(target)
 	get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").add_child(sceneNode)
 	sceneNode.UINode = self
+	await get_tree().create_timer(0.1).timeout
+	move_arrow(AutoloadMe.turnPointer)
 
 func remove_init_box(target):
 	print("BEFORE: ", nodeList)
 	nodeList = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
 	nodeList.pop_at(nodeList.find(target))
 	get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").remove_child(target)
-	
+	await get_tree().create_timer(0.1).timeout
+	move_arrow(AutoloadMe.turnPointer)
 	print("AFTER: ", get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children())
 
 func clear_init_box():

@@ -1,33 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://dei8pblwcqo6t"]
+[gd_scene load_steps=5 format=3 uid="uid://dei8pblwcqo6t"]
 
 [ext_resource type="Script" path="res://Scripts/obstacle.gd" id="1_0r6ou"]
-[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlus/Atlus_Base_Still.png" id="2_lksen"]
+[ext_resource type="SpriteFrames" uid="uid://crwrt8s5xftkv" path="res://Scenes/Sprite Frames/Siphon.tres" id="2_7d5hn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcgqv"]
 size = Vector2(75, 75)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1vwuj"]
-resource_name = "Atlus"
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_lksen")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0dpcw"]
 
 [node name="Obstacle" type="Area2D"]
-modulate = Color(0.211765, 0.0823529, 0, 1)
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_0r6ou")
 MaxHP = 1
 MaxAP = 0
 TrueInit = 0
+SetAbility1 = ""
+SetAbility2 = ""
+SetAbility3 = ""
 Faction = 3
 BatonPass = 1
 
@@ -37,13 +27,15 @@ scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_jcgqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 texture_filter = 1
-rotation = -3.14159
 scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_1vwuj")
+sprite_frames = ExtResource("2_7d5hn")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.0616095
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2.86102e-06, -2.86102e-06)
 scale = Vector2(60, 60)
 texture = SubResource("PlaceholderTexture2D_0dpcw")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bofj7xwd6mfhg"
-path="res://.godot/imported/tutorial_map.png-c0966646081a3d08ef9c3c441b0555ac.ctex"
+uid="uid://ctq7rc01n648t"
+path="res://.godot/imported/siphonpoint.png-d1d48f790deab6ea528b37ad81adb829.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Maps_Tiles/tutorial_map.png"
-dest_files=["res://.godot/imported/tutorial_map.png-c0966646081a3d08ef9c3c441b0555ac.ctex"]
+source_file="res://Assets/Maps_Tiles/Garden/siphonpoint.png"
+dest_files=["res://.godot/imported/siphonpoint.png-d1d48f790deab6ea528b37ad81adb829.ctex"]
 
 [params]
 

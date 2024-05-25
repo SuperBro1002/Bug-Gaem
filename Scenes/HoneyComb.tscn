@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://carvro0dc4pm2"]
+
+[ext_resource type="PackedScene" uid="uid://dei8pblwcqo6t" path="res://Scenes/obstacle.tscn" id="1_fdydj"]
+[ext_resource type="Texture2D" uid="uid://mhfuf5res3ow" path="res://Assets/Maps_Tiles/Garden/honeycomb.png" id="2_lnq7x"]
+
+[node name="Obstacle" instance=ExtResource("1_fdydj")]
+Name = "Honeycomb"
+fileName = "Atlas"
+MaxHP = 3
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+visible = false
+scale = Vector2(1, 1)
+autoplay = ""
+frame_progress = 0.0
+
+[node name="Sprite2D" parent="." index="2"]
+visible = true
+scale = Vector2(2, 2)
+texture = ExtResource("2_lnq7x")

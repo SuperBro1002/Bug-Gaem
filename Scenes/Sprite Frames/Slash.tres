@@ -47,7 +47,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_riue2")
 }],
-"loop": true,
+"loop": false,
 "name": &"Effect",
 "speed": 12.0
 }]

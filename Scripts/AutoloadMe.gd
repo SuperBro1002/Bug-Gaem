@@ -6,7 +6,7 @@ var abilityRangeGrid = AStarGrid2D.new()
 var abilityRangeGridUI = AStarGrid2D.new()
 var gridSize
 var turnPointer
-var passingUnit
+var passingUnit = null
 var isAllyTurn = false
 var globalUnitList
 var globalAllyList
@@ -89,6 +89,7 @@ func _unhandled_input(event):
 		if Input.is_action_just_pressed("trigger_ability") and !isExecuting:
 			print(validQueue, " ", queueState)
 			if validQueue == true and queueState == true:
+				AutoloadMe.set_process_unhandled_input(false)
 				isExecuting = true
 				turnPointer.run_passives(turnPointer.methodType.ABILITY_EXECUTE, null)
 				turnPointer.abilityQueued.execute()

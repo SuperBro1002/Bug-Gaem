@@ -8,6 +8,22 @@ func _enter_tree():
 	fileName = "X-Slash"
 	description = "Deals 3 damage to a single enemy and grants baton pass. If the target dies from this attack, they become possessed, and receive baton pass. They then perish after taking one turn. 3 AP"
 
+func post_execute():
+	dmgMod = 1
+	targetUnits.clear()
+	get_parent().grid.update_grid_collision()
+	SignalBus.abilityExecuted.emit(self)
+	SignalBus.updateUI.emit(get_parent())
+	AutoloadMe.isExecuting = false
+	SignalBus.changeControls.emit()
+	if get_parent().Faction == get_parent().fac.ALLY:
+		SignalBus.changeButtonState.emit()
+	elif get_parent().Faction == get_parent().fac.ENEMY:
+		dequeue(1,false)
+	await get_tree().create_timer(1).timeout
+	AutoloadMe.passingUnit = get_parent()
+	get_parent().on_turn_end()
+
 func execute():
 	# for every target in target units[]
 		# For each target in target_tiles[]

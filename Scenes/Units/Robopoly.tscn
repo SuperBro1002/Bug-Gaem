@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/Units/Robopoly.gd" id="2_4xfsr"]
 [ext_resource type="SpriteFrames" uid="uid://bndyutjeu0niy" path="res://Scenes/Sprite Frames/Robopoly.tres" id="3_pffm4"]
 
-[node name="Enemy" instance=ExtResource("1_gv80i")]
+[node name="Robo" instance=ExtResource("1_gv80i")]
 script = ExtResource("2_4xfsr")
 aggroRange = 8
 Name = "Robo Poly"

@@ -40,3 +40,4 @@ signal spawnGroup(id)
 signal changeMainPortrait(filename)
 signal changeReplyPortrait(filename)
 signal checkEvents
+signal checkObjective

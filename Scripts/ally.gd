@@ -40,12 +40,12 @@ func clone(OGUnit):
 	TrueInit = OGUnit.TrueInit
 	CurrentInit = OGUnit.CurrentInit
 	SetAbility1 = OGUnit.SetAbility1
-	SetAbility2 = OGUnit.SetAbility2
-	SetAbility3 = OGUnit.SetAbility3
+	SetAbility2 = "Heal"
+	SetAbility3 = "Sting"
 	
 	ability1 = load_ability(SetAbility1)
-	ability2 = load_ability(SetAbility2)
-	ability3 = load_ability(SetAbility3)
+	ability2 = load_ability("Heal")
+	ability3 = load_ability("Sting")
 	
 	Faction = fac.ALLY
 	delete_floating_hp()

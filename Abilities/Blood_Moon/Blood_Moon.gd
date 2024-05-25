@@ -17,6 +17,7 @@ func execute():
 	face_target()
 	get_parent().get_node("AnimatedSprite2D").stop()
 	get_parent().get_node("AnimatedSprite2D").play("Attack1")
+	await get_tree().create_timer(0.7).timeout
 	$VFX.position = targetUnits[0].position
 	$VFX.position.x -= 65
 	$VFX.set_visible(true)

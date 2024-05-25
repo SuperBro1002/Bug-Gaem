@@ -5,7 +5,7 @@
 [node name="Atlas" instance=ExtResource("1_l2376")]
 Name = "Atlas"
 fileName = "Atlas"
-MaxHP = 30
+MaxHP = 12
 MaxAP = 8
 TrueInit = 30
 SetAbility1 = "Knockback"

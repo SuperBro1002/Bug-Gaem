@@ -34,4 +34,5 @@ func execute():
 		targetUnits[i].lose_health(2)
 		targetUnits[i].add_passive("Poison")
 	
+	$VFX.set_visible(false)
 	post_execute()
