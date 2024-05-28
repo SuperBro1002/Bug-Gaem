@@ -1,6 +1,8 @@
 extends Node
 
 var current_timeline
+var node
+var passive
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,11 +13,16 @@ func set_timeline():
 	if cur_unit.Faction == cur_unit.fac.ALLY:
 			for p in cur_unit.passiveList.size():
 				if cur_unit.passiveList[p].is_narrative:
-					var passive = cur_unit.passiveList[p]
+					passive = cur_unit.passiveList[p]
 					current_timeline = "res://Dialogic Assets/Timelines/" + passive.timeline + ".dtl"
-					var node := Dialogic.start(current_timeline, passive.label)
+					node = Dialogic.start(current_timeline, "First")
 					node.register_character(load("res://Dialogic Assets/Characters/Atlas.dch"), get_child(0))
 					node.register_character(load("res://Dialogic Assets/Characters/Lumoth.dch"), get_child(0))
 					node.register_character(load("res://Dialogic Assets/Characters/Triss.dch"), get_child(0))
 					node.register_character(load("res://Dialogic Assets/Characters/Paramantis.dch"), get_child(0))
-	print("No timeline to use")
+					node.register_character(load("res://Dialogic Assets/Characters/Atlas2.dch"), get_child(1))
+					node.register_character(load("res://Dialogic Assets/Characters/Lumoth2.dch"), get_child(1))
+					node.register_character(load("res://Dialogic Assets/Characters/Triss2.dch"), get_child(1))
+					node.register_character(load("res://Dialogic Assets/Characters/Paramantis2.dch"), get_child(1))
+					node.register_character(load("res://Dialogic Assets/Characters/Drone.dch"), get_child(1))
+					node.register_character(load("res://Dialogic Assets/Characters/Thoraxe.dch"), get_child(1))

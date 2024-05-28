@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://batl7dw1ds002"]
+[gd_scene load_steps=20 format=3 uid="uid://batl7dw1ds002"]
 
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="1_gtd5a"]
 [ext_resource type="PackedScene" uid="uid://gdr7wfqwmtao" path="res://Scenes/secondary_info_box.tscn" id="2_qk2sv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/MainPortrait.gd" id="7_eif3x"]
 [ext_resource type="PackedScene" uid="uid://42m7teprqnkh" path="res://Scenes/ability_box_object.tscn" id="7_kxv4v"]
 [ext_resource type="Texture2D" uid="uid://b4xbotxeidxtw" path="res://Assets/HUD/Arrow.png" id="8_e4ah7"]
+[ext_resource type="PackedScene" uid="uid://dimryoawtb8dt" path="res://Scenes/narrative_manager.tscn" id="10_w1ttm"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_gei7j"]
 device = -1
@@ -297,6 +298,8 @@ text = "Paramantis
 Start"
 label_settings = SubResource("LabelSettings_lvjvs")
 horizontal_alignment = 1
+
+[node name="NarrativeManager" parent="UI" instance=ExtResource("10_w1ttm")]
 
 [connection signal="mouse_entered" from="UI/InfoBox/AbilityBox/Ability1Button" to="UI" method="_on_ability_1_button_mouse_entered"]
 [connection signal="mouse_exited" from="UI/InfoBox/AbilityBox/Ability1Button" to="UI" method="_on_ability_1_button_mouse_exited"]

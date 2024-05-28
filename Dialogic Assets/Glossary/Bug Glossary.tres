@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="DialogicGlossary" load_steps=2 format=3 uid="uid://dj80ct4vkxjk"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Glossary/glossary_resource.gd" id="1_i4d1t"]
+
+[resource]
+script = ExtResource("1_i4d1t")
+entries = {
+"Atlas": {
+"alternatives": ["Atlas'"],
+"case_sensitive": true,
+"name": "Atlas"
+},
+"Atlas'": "Atlas",
+"Drone": {
+"alternatives": ["Drone's"],
+"name": "Drone"
+},
+"Drone's": "Drone",
+"Lumoth": {
+"alternatives": ["Lumoth's"],
+"case_sensitive": true,
+"name": "Lumoth"
+},
+"Lumoth's": "Lumoth",
+"Lunalesca": {
+"case_sensitive": true,
+"color": Color(0.738281, 0.944794, 1, 1),
+"extra": "",
+"name": "Lunalesca",
+"text": "Divine aspect of the Moon, Lunalesca is worshipped by almost all nocturnal bugs, but the Moths are her most faithful. Her church preaches a doctrine of non-violence and non-intervention.",
+"title": "Lunalesca, the Moth Goddess of the Moon"
+},
+"Paramantis": {
+"alternatives": ["Paramantis'"],
+"name": "Paramantis"
+},
+"Paramantis'": "Paramantis",
+"Robug": {
+"alternatives": ["Robugs", "Robug's"],
+"name": "Robug"
+},
+"Robug's": "Robug",
+"Robugs": "Robug",
+"The Garden of Lights": {
+"alternatives": ["The Garden of Lights'"],
+"name": "The Garden of Lights"
+},
+"The Garden of Lights'": "The Garden of Lights",
+"The Great Tree": {
+"alternatives": ["The Great Tree's"],
+"name": "The Great Tree"
+},
+"The Great Tree's": "The Great Tree",
+"Thor'axe": {
+"alternatives": ["Thor'axe's"],
+"name": "Thor'axe"
+},
+"Thor'axe's": "Thor'axe",
+"Triss": {
+"alternatives": ["Triss'"],
+"name": "Triss"
+},
+"Triss'": "Triss",
+"Zephyr": {
+"alternatives": ["Zephyr's"],
+"name": "Zephyr"
+},
+"Zephyr's": "Zephyr"
+}
+enabled = true
+_translation_id = ""
+_translation_keys = {}

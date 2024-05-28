@@ -1,0 +1,132 @@
+# CATHEDRAL FIRST VISIT START
+label First
+[style name="Default"]
+
+if {Lum} == "1-Breathe":
+	jump 1-Breathe
+if {Lum} == "2-Crisis of Faith":
+	jump 2-Crisis of Faith
+if {Lum} == "3-Bargaining":
+	jump 3-Bargaining
+if {Lum} == "4-AuriAcceptance":
+	jump 4-AuriAcceptance
+if {Lum} == "5-AuriEnding":
+	jump 5-AuriEnding
+if {Lum} == "6-MeetingThoraxe":
+	jump 6-MeetingThoraxe
+if {Lum} == "7-ThoraxeTriss":
+	jump 7-ThoraxeTriss
+if {Lum} == "8-ThoraxeAtlas":
+	jump 8-ThoraxeAtlas
+if {Lum} == "9-DoubtingAtlas":
+	jump 9-DoubtingAtlas
+if {Lum} == "10-BackToThoraxe":
+	jump 10-BackToThoraxe
+if {Lum} == "11-DroneReturns":
+	jump 11-DroneReturns
+if {Lum} == "12-Reflection":
+	jump 12-Reflection
+if {Lum} == "13-Revelation":
+	jump 13-Revelation
+if {Lum} == "14-Determination":
+	jump 14-Determination
+if {Lum} == "15-SavingAtlas":
+	jump 15-SavingAtlas
+if {Lum} == "16-BreachArrival":
+	jump 16-BreachArrival
+if {Lum} == "17-FinalReflection":
+	jump 17-FinalReflection
+[end_timeline]
+
+label 1-Breathe
+Lumoth: Oh Lunalesca, I know you called me to fight, but please forgive me if I make a m-mess in your Cathedral.
+set {Lum} = "2-Crisis of Faith"
+[end_timeline]
+
+label 2-Crisis of Faith
+Lumoth: Not Auri. Au- No, we had just sent you off.
+set {Lum} = "3-Bargaining"
+[end_timeline]
+
+label 3-Bargaining
+Lumoth: W-why call us to fight, only to die, L-lunalesca?
+set {Lum} = "4-AuriAcceptance"
+[end_timeline]
+
+label 4-AuriAcceptance
+Lumoth: I see now…
+Lumoth: Lunalesca, I have only cowered behind your protection, but you called me to be your champion.
+Lumoth: For in this darkest night, the Blood Moon rises!
+Lumoth: Through penumbral hexes, I will free Auri’s soul from his cursed body!
+Lumoth: Hear this Robugs, your mercy is granted by a swift death! I shall free you from the torment of your w-wretched lives!
+set {Lum} = "5-AuriEnding"
+[end_timeline]
+
+label 5-AuriEnding
+Lumoth: Know peace, Auri…
+set {Lum} = "6-MeetingThoraxe"
+[end_timeline]
+
+# GARDEN OF LIGHTS START
+label 6-MeetingThoraxe
+Lumoth: You Yellowjackets are not safe from Lunalesca’s wrath!
+set {Lum} = "7-ThoraxeTriss"
+[end_timeline]
+
+label 7-ThoraxeTriss
+Lumoth: So your father attempts to drag you down with him, Triss? Soon we will free you of this burden.
+set {Lum} = "8-ThoraxeAtlas"
+[end_timeline]
+
+label 8-ThoraxeAtlas
+Lumoth: … Atlas? Your chitin?
+set {Lum} = "9-DoubtingAtlas"
+[end_timeline]
+
+label 9-DoubtingAtlas
+Lumoth: Atlas, what if…
+set {Lum} = "10-BackToThoraxe"
+[end_timeline]
+
+label 10-BackToThoraxe
+Lumoth: Lunalesca’s enemies shall fall!
+set {Lum} = "11-DroneReturns"
+[end_timeline]
+
+# GARDEN OF LIGHTS 2 START
+label 11-DroneReturns
+Lumoth: I will stop you, and the Robugs here and now! You will never harm another bug again!
+set {Lum} = "12-Reflection"
+[end_timeline]
+
+label 12-Reflection
+Lumoth: Triss…
+set {Lum} = "13-Revelation"
+[end_timeline]
+
+label 13-Revelation
+Lumoth: I was cast from the church and sent to the 100th for believing Lunalesca spoke to me. They believe the silence of the moon means inaction, but I heard her voice guide me here to help these people.
+set {Lum} = "14-Determination"
+[end_timeline]
+
+label 14-Determination
+Lumoth: Triss, for Auri!
+Triss2: For Auri!
+set {Lum} = "15-SavingAtlas"
+[end_timeline]
+
+# CATHEDRAL SECOND VISIT START
+label 15-SavingAtlas
+Lumoth: Then it shall be done, Triss!
+set {Lum} = "16-BreachArrival"
+[end_timeline]
+
+# FINALE START
+label 16-BreachArrival
+Lumoth: Rejoice Robugs, for your deaths serve a holy purpose!
+set {Lum} = "17-FinalReflection"
+[end_timeline]
+
+label 17-FinalReflection
+Lumoth: The suffering ends here!
+[end_timeline]

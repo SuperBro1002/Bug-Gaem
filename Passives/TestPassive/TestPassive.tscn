@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://Passives/TestPassive/TestPassive.gd" id="1_a813e"]
 
-[node name="TestPassive" type="Node"]
+[node name="Nobeelity" type="Node"]
 script = ExtResource("1_a813e")

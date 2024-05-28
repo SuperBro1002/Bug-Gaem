@@ -119,5 +119,6 @@ script = ExtResource("6_rvry4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
 visible = false
-scale = Vector2(-116.691, 103.457)
+rotation = -3.14159
+scale = Vector2(116.691, -103.457)
 texture = SubResource("PlaceholderTexture2D_55un7")

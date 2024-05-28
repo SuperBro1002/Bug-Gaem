@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/NarrativeManager.gd" id="1_f0ixf"]
 
-[node name="NarrativeManager" type="Node"]
+[node name="NarrativeManager" type="CanvasLayer"]
 script = ExtResource("1_f0ixf")
 
 [node name="BubbleMarker1" type="Marker2D" parent="."]
-position = Vector2(-345, 726)
+position = Vector2(85, 890)
 
 [node name="BubbleMarker2" type="Marker2D" parent="."]
-position = Vector2(982, -51)
+position = Vector2(1282, 79)

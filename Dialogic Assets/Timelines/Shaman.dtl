@@ -1,0 +1,138 @@
+# CATHEDRAL FIRST VISIT START
+label First
+if {Par} == "1-Breathe":
+	jump 1-Breathe
+if {Par} == "2-Crisis of Faith":
+	jump 2-Crisis of Faith
+if {Par} == "3-Bargaining":
+	jump 3-Bargaining
+if {Par} == "4-AuriAcceptance":
+	jump 4-AuriAcceptance
+if {Par} == "5-AuriEnding":
+	jump 5-AuriEnding
+if {Par} == "6-MeetingThoraxe":
+	jump 6-MeetingThoraxe
+if {Par} == "7-ThoraxeTriss":
+	jump 7-ThoraxeTriss
+if {Par} == "8-ThoraxeAtlas":
+	jump 8-ThoraxeAtlas
+if {Par} == "9-DoubtingAtlas":
+	jump 9-DoubtingAtlas
+if {Par} == "10-BackToThoraxe":
+	jump 10-BackToThoraxe
+if {Par} == "11-DroneReturns":
+	jump 11-DroneReturns
+if {Par} == "12-Reflection":
+	jump 12-Reflection
+if {Par} == "13-Revelation":
+	jump 13-Revelation
+if {Par} == "14-Determination":
+	jump 14-Determination
+if {Par} == "15-SavingAtlas":
+	jump 15-SavingAtlas
+if {Par} == "16-BreachArrival":
+	jump 16-BreachArrival
+if {Par} == "17-FinalReflection":
+	jump 17-FinalReflection
+[end_timeline]
+
+label 1-Breathe
+Paramantis: Disssturbing such a holy place, Robugs? Unwise.
+set {Par} = "2-Crisis of Faith"
+[end_timeline]
+
+label 2-Crisis of Faith
+Paramantis: Sssuch dishonorable desecration. Auri did not deserve this fate.
+set {Par} = "3-Bargaining"
+[end_timeline]
+
+label 3-Bargaining
+Paramantis: Gah! These Robug machines have taken so much of him.
+set {Par} = "4-AuriAcceptance"
+[end_timeline]
+
+label 4-AuriAcceptance
+Paramantis: Auri died before we arrived. Hisss body is piloted by Drone now.
+set {Par} = "5-AuriEnding"
+[end_timeline]
+
+label 5-AuriEnding
+Paramantis: We will find a way to bring you back into the Cccycle, Auri.
+set {Par} = "6-MeetingThoraxe"
+[end_timeline]
+
+# GARDEN OF LIGHTS START
+label 6-MeetingThoraxe
+Paramantis: Ssso, the Yellowjacket chief ssseeks to sssiphon the sssap into himssself!
+Drone: TEEHEE! You figured it out, but save the talking for people that can SSSpeak HA!
+Paramantis: ? … ! 
+Paramantis: Sssurely there isss a sssimple sssolution to ssstop thisss-
+Drone: GAH! Get to the point and stop BUGGING me!!
+Paramantis: Sssee here! The sssteel ssstill shows sssigns of sssome weakne--
+Drone: YES! You did it! You figured out the screws are the heat sink that keeps the drill from overheating! Very good! Now STOP talking!!!1!
+Paramantis: Asss you wish…
+set {Par} = "7-ThoraxeTriss"
+[end_timeline]
+
+label 7-ThoraxeTriss
+Paramantis: Thor’axe, stop this madnesss! You not only harm the Bees and the Great Tree, but the Cycle itself!
+Thoraxe: The Cycle that the Bees use to keep us out of cities? The Cycle that turned my ancestors malnourished bodies into crops for the rich?
+Paramantis: …
+set {Par} = "8-ThoraxeAtlas"
+[end_timeline]
+
+label 8-ThoraxeAtlas
+Paramantis: … I am yours to command, Zephyr.
+set {Par} = "9-DoubtingAtlas"
+[end_timeline]
+
+label 9-DoubtingAtlas
+Paramantis: You are no better than Thor’axe, Atlasss! You would follow Auri to your death for a return to glory?
+set {Par} = "10-BackToThoraxe"
+[end_timeline]
+
+label 10-BackToThoraxe
+Paramantis: The Robugs are the greater threat, for now.
+set {Par} = "11-DroneReturns"
+[end_timeline]
+
+# GARDEN OF LIGHTS 2 START
+label 11-DroneReturns
+Paramantis: You betrayed the bugs of the Great Tree. You taught the Robugs how to drill through the Soft Bark. And all for a mote of power?
+Thoraxe: Aye! And I don’t regret it! With this power, I can end the war and secure a home for the Yellowjackets among the Robugs!
+Drone: A clever deal we made! Unlike soOome cultures, we don’t cast out bugs for their heritage. If they remain useful, they are treated equally.
+set {Par} = "12-Reflection"
+[end_timeline]
+
+label 12-Reflection
+Paramantis: The sssap has enhanced him beyond the power of a normal Yellowjacket. We must be cautiousss.
+set {Par} = "13-Revelation"
+[end_timeline]
+
+label 13-Revelation
+Paramantis: We were cast out of our home when we became infected. We were deformed, ugly, changed. We became a hermit, and discovered the true wisdom in our condition, the Cycle of the Great Tree flowing through me. We feel more powerful than we ever wasss as Mantisss Warrior.
+set {Par} = "14-Determination"
+[end_timeline]
+
+label 14-Determination
+Paramantis: Change happens quickly in the bleak strife of war. Triss has changed.
+set {Par} = "15-SavingAtlas"
+[end_timeline]
+
+# CATHEDRAL SECOND VISIT START
+label 15-SavingAtlas
+Paramantis: As you command, ma’am. I shall attack Atlas with care.
+set {Par} = "16-BreachArrival"
+[end_timeline]
+
+# FINALE START
+label 16-BreachArrival
+Paramantis: It seems we were not careful enough, Thor’axe returns! 
+Thor’axe: Aye, the Robugs offered me a second chance.
+Paramantis: Even the mighty Thor’axe becomes a pawn in Drone’s game.
+set {Par} = "17-FinalReflection"
+[end_timeline]
+
+label 17-FinalReflection
+Paramantis: And so the steel of the Robugs still serves the Cycle. How fitting.
+[end_timeline]
