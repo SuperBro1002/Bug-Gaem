@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cww8uyntcnme1"]
+
+[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_hvx6h"]
+[ext_resource type="Script" path="res://Scenes/Units/Bob.gd" id="2_7exa5"]
+
+[node name="Atlas" instance=ExtResource("1_hvx6h")]
+script = ExtResource("2_7exa5")
+aggroRange = 8
+Name = "Atlas"
+fileName = "Bob"
+MaxHP = 16
+MaxAP = 12
+TrueInit = 30
+SetAbility2 = "Tackle"
+SetAbility3 = "Tackle"
+Faction = 1

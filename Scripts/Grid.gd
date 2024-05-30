@@ -29,6 +29,17 @@ func update_grid_collision():
 					[true,true,false,true]:
 						AutoloadMe.movementGrid.set_point_solid(tilePos)
 
+func set_wall_collision():
+	AutoloadMe.movementGrid.update()
+	for x in gridLengthX:
+		for y in gridLengthY:
+			var tilePos = Vector2i(x,y)
+			
+			var tileData = get_cell_tile_data(0, tilePos)
+			
+			if tileData == null or tileData.get_custom_data("walkable") == false:
+				AutoloadMe.movementGrid.set_point_solid(tilePos)
+
 func set_enemy_collision():
 	AutoloadMe.movementGrid.update()
 	for x in gridLengthX:
@@ -52,7 +63,6 @@ func set_enemy_collision():
 			for i in AutoloadMe.globalEnemyList.size():
 				if local_to_map(AutoloadMe.globalEnemyList[i].position) == tilePos and AutoloadMe.globalEnemyList[i] != AutoloadMe.turnPointer:
 					AutoloadMe.movementGrid.set_point_solid(tilePos)
-			
 
 
 func set_enemies_solid():

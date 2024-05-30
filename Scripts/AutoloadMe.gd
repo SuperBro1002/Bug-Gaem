@@ -16,6 +16,7 @@ var validQueue = false
 var queueState = false
 var allowEndTurn = true
 var deathCount = 0
+var siphonsDestroyed = 0
 var hoveredUnit = null
 var notOverlapped = true
 var isExecuting = false

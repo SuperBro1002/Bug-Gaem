@@ -41,3 +41,6 @@ signal changeMainPortrait(filename)
 signal changeReplyPortrait(filename)
 signal checkEvents
 signal checkObjective
+signal midObjective
+signal midObjectiveChecked
+signal phaseChange

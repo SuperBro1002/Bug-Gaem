@@ -50,6 +50,7 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_755gw")
 
 [node name="hpField" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 120.0
 offset_right = 64.0
@@ -59,6 +60,7 @@ text = "HP: 1111"
 label_settings = SubResource("LabelSettings_mbmbs")
 
 [node name="apField" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 134.0
 offset_right = 64.0

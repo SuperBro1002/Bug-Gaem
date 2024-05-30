@@ -65,11 +65,11 @@ func set_ui(unit):
 	display_movement_range()
 	draw_tile_path()
 	boxArray = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
-	for i in boxArray.size():
-		#print("HERE ", boxArray)
-	#	ifboxArray[i] == null:
-			
-		boxArray[i].update_display()
+	#for i in boxArray.size():
+		##print("HERE ", boxArray)
+	##	ifboxArray[i] == null:
+			#
+		#boxArray[i].update_display()
 
 func toggle_UI():
 	pass

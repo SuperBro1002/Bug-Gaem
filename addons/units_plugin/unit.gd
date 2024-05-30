@@ -368,6 +368,7 @@ func delete(unit):
 		SignalBus.updateGrid.emit()
 		SignalBus.deleteMe.emit(self)
 		await get_tree().create_timer(2).timeout
+		SignalBus.HpUiFinish.emit()
 		queue_free()
 
 func _mouse_shape_enter(shape_idx):

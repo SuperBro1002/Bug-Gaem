@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b2rerqtddscuk" path="res://Scenes/Units/Termitator.tscn" id="14_k301f"]
 [ext_resource type="Texture2D" uid="uid://bxy6448qr3ycn" path="res://Assets/Maps_Tiles/Garden/GridLayer2.png" id="14_y4n4e"]
 [ext_resource type="PackedScene" uid="uid://bvip1ddh8purj" path="res://Scenes/Units/Thor.tscn" id="15_futsm"]
-[ext_resource type="Texture2D" uid="uid://bovv0wtw6jpea" path="res://Assets/Maps_Tiles/Garden/well.png" id="16_48nk3"]
+[ext_resource type="Texture2D" uid="uid://imgcuvnvrfp" path="res://Assets/Maps_Tiles/Garden/well.png" id="16_48nk3"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yb3wm"]
 
@@ -60,6 +60,7 @@ script = ExtResource("1_574vu")
 
 [node name="EM3" type="Node" parent="."]
 script = ExtResource("2_ubhqf")
+objectiveNum = 6
 
 [node name="Grid" parent="." instance=ExtResource("2_bbw0h")]
 visible = false
@@ -155,13 +156,13 @@ scale = Vector2(1, 1)
 position = Vector2(544, 992)
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_msf3w")]
-position = Vector2(480, 1056)
+position = Vector2(608, 992)
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_vdhge")]
 position = Vector2(672, 1056)
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("8_mc8hb")]
-position = Vector2(608, 992)
+position = Vector2(480, 1056)
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_3sxn8")]
 visible = false
@@ -230,4 +231,5 @@ position = Vector2(0, -17.6)
 sprite_frames = SubResource("SpriteFrames_4uwah")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.213752
+frame = 1
+frame_progress = 0.17059

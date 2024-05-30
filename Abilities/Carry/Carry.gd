@@ -59,7 +59,7 @@ func dequeue(_num, state):
 		isCarrying = false
 		clickedPos = null
 		$Area2D/SelectionBox.set_visible(false)
-		$Area2D.position = Vector2(0,0)
+		$Area2D.position = Vector2(-900,-900)
 
 func post_execute2():
 		dmgMod = 1

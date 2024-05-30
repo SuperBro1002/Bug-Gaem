@@ -139,9 +139,9 @@ func dequeue(_num, state):
 		AutoloadMe.isExecuting = false
 		newPos = null
 		$Area2D/SelectionBox.set_visible(false)
-		$Area2D.position = Vector2(0,0)
+		$Area2D.position = Vector2(-900,-900)
 		$Area2D2/SelectionBox.set_visible(false)
-		$Area2D2.position = Vector2(0,0)
+		$Area2D2.position = Vector2(-900,-900)
 		kill_range_tiles()
 
 func _on_area_2d_area_entered(area):

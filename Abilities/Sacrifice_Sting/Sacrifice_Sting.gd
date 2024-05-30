@@ -37,7 +37,7 @@ func execute():
 	print("EXECUTED")
 	print(targetUnits)
 	
-	face_target()
+	#face_target()
 	get_parent().get_node("AnimatedSprite2D").stop()
 	get_parent().get_node("AnimatedSprite2D").play("Cast1")
 	$VFX.set_visible(true)

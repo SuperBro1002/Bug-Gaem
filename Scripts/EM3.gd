@@ -3,6 +3,7 @@ extends event_man
 func _ready():
 	SignalBus.connect("checkEvents", start_round_event_check)
 	SignalBus.connect("checkObjective", check_objective)
+	SignalBus.connect("midObjective", checkSiphons)
 
 func activate_spawners():
 	match AutoloadMe.roundNum:
@@ -12,3 +13,8 @@ func activate_spawners():
 			pass
 		4:
 			pass
+
+func checkSiphons():
+	if AutoloadMe.siphonsDestroyed == 4:
+		SignalBus.phaseChange.emit()
+	#SignalBus.midObjectiveChecked.emit()
