@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvxbo256nlqxu"]
+
+[ext_resource type="Script" path="res://Scripts/passive_box.gd" id="1_ycvwq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sxu0j"]
+line_spacing = 0.0
+font_size = 14
+shadow_size = 0
+
+[sub_resource type="Theme" id="Theme_lcyb5"]
+RichTextLabel/font_sizes/normal_font_size = 10
+
+[node name="PassiveBox" type="ColorRect"]
+offset_right = 119.0
+offset_bottom = 99.0
+mouse_filter = 1
+color = Color(0.172549, 0.341176, 0.733333, 1)
+script = ExtResource("1_ycvwq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 2.0
+offset_right = 55.5
+offset_bottom = 97.0
+grow_horizontal = 2
+
+[node name="PassiveTitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Penumbra"
+label_settings = SubResource("LabelSettings_sxu0j")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_lcyb5")
+text = "The Great Tree protects the fighter with a life-granting aura just before the moment of death. They will need to rest for the remainder of battle.\""

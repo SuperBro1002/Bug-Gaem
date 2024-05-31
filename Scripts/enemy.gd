@@ -46,7 +46,7 @@ func unique_turn_start():
 	
 	# Determines the closest unit
 	for i in lengthList.size():
-		if lengthList[i] < shortestPath:
+		if lengthList[i] < shortestPath && !AutoloadMe.globalAllyList[i].isDown:
 			shortestPath = lengthList[i]
 			target = AutoloadMe.globalAllyList[i]
 	

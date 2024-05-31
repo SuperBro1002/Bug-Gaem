@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bgphmxq3rd4q1" path="res://Scenes/Units/Paramantis.tscn" id="7_uvqbh"]
 [ext_resource type="PackedScene" uid="uid://ct1ngvul81kpp" path="res://Scenes/Units/Triss.tscn" id="8_6gg46"]
 [ext_resource type="PackedScene" uid="uid://rw51msc2xqkb" path="res://Scenes/Units/Robopoly.tscn" id="9_j7rty"]
-[ext_resource type="PackedScene" uid="uid://b2rerqtddscuk" path="res://Scenes/Units/Termitator.tscn" id="10_ofnsr"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="12_shhy2"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="13_ravbx"]
+[ext_resource type="PackedScene" uid="uid://dimryoawtb8dt" path="res://Scenes/narrative_manager.tscn" id="14_5vdku"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_55un7"]
 
@@ -37,6 +37,7 @@ position = Vector2(544, 736)
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_t6s40")]
 position = Vector2(609, 736)
+MaxHP = 4
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_uvqbh")]
 position = Vector2(672, 799)
@@ -46,56 +47,6 @@ position = Vector2(480, 798)
 
 [node name="Robo" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
 position = Vector2(797, 292)
-SetAbility2 = "Tackle"
-SetAbility3 = "Tackle"
-
-[node name="Robo2" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
-position = Vector2(854, 416)
-SetAbility2 = "Tackle"
-SetAbility3 = "Tackle"
-
-[node name="Robo3" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
-position = Vector2(922, 545)
-SetAbility2 = "Tackle"
-SetAbility3 = "Tackle"
-
-[node name="Robo4" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
-position = Vector2(1045, 673)
-SetAbility2 = "Tackle"
-SetAbility3 = "Tackle"
-
-[node name="Robo5" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
-position = Vector2(225, 416)
-SetAbility2 = "Tackle"
-SetAbility3 = "Tackle"
-
-[node name="Robo9" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
-position = Vector2(97, 224)
-SetAbility2 = "Tackle"
-SetAbility3 = "Tackle"
-
-[node name="Robo6" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
-position = Vector2(227, 544)
-SetAbility2 = "Tackle"
-SetAbility3 = "Tackle"
-
-[node name="Robo7" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
-position = Vector2(98, 674)
-SetAbility2 = "Tackle"
-SetAbility3 = "Tackle"
-
-[node name="Robo8" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_j7rty")]
-position = Vector2(731, 161)
-SetAbility2 = "Tackle"
-SetAbility3 = "Tackle"
-
-[node name="Term" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_ofnsr")]
-position = Vector2(353, 288)
-SetAbility2 = "Tackle"
-SetAbility3 = "Tackle"
-
-[node name="Term2" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_ofnsr")]
-position = Vector2(227, 100)
 SetAbility2 = "Tackle"
 SetAbility3 = "Tackle"
 
@@ -122,3 +73,5 @@ visible = false
 rotation = -3.14159
 scale = Vector2(116.691, -103.457)
 texture = SubResource("PlaceholderTexture2D_55un7")
+
+[node name="NarrativeManager" parent="." instance=ExtResource("14_5vdku")]

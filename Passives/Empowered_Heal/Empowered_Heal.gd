@@ -1,6 +1,8 @@
 extends Passive_class
 
 func _enter_tree():
+	Name = "Empowered Heal"
+	description = "Healing is increased by 1."
 	SignalBus.connect("deletePassives", passive_remove)
 	type = methodType.ABILITY_EXECUTE
 

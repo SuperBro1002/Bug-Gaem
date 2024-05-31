@@ -1,0 +1,73 @@
+# label Tutorial Plot
+# if {StoryProgress} == 0:
+# 	if AutoloadMe.turnPointer.Name == "Paramantis":
+# 		do PortraitManager.change_main_portrait("")
+# 		Paramantis: ooo
+# 		set {DialogueComplete} = true
+# 		[end_timeline]
+# 	elif AutoloadMe.turnPointer.Name == "Atlas":
+# 		do PortraitManager.change_main_portrait("")
+# 		Atlas: ooo
+# 		[end_timeline]
+# 	elif AutoloadMe.turnPointer.Name == "Triss":
+# 		do PortraitManager.change_main_portrait("")
+# 		Triss: ooo
+# 		[end_timeline]
+# 	elif AutoloadMe.turnPointer.Name == "Lumoth":
+# 		do PortraitManager.change_main_portrait("")
+# 		Lumoth: ooo
+# 		[end_timeline]
+# label Tutorial Barks
+# if AutoloadMe.turnPointer.Name == "Paramantis":
+# 	do PortraitManager.change_main_portrait("")
+# 	Paramantis: ooo
+# 	[end_timeline]
+# elif AutoloadMe.turnPointer.Name == "Atlas":
+# 	do PortraitManager.change_main_portrait("")
+# 	Atlas: ooo
+# 	[end_timeline]
+# elif AutoloadMe.turnPointer.Name == "Triss":
+# 	do PortraitManager.change_main_portrait("")
+# 	Triss: ooo
+# 	[end_timeline]
+# elif AutoloadMe.turnPointer.Name == "Lumoth":
+# 	do PortraitManager.change_main_portrait("")
+# 	Lumoth: ooo
+# 	[end_timeline]
+# # CATHEDRAL 1 STARTS HERE =============================
+# # CATHEDRAL 1 STARTS HERE =============================
+# label Cathedral 1 Plot
+# if {StoryProgress} == 0:
+# 	if AutoloadMe.turnPointer.Name == "Paramantis":
+# 		do PortraitManager.change_main_portrait("")
+# 		Paramantis: ooo
+# 		[end_timeline]
+# 	elif AutoloadMe.turnPointer.Name == "Atlas":
+# 		do PortraitManager.change_main_portrait("")
+# 		Atlas: ooo
+# 		[end_timeline]
+# 	elif AutoloadMe.turnPointer.Name == "Triss":
+# 		do PortraitManager.change_main_portrait("")
+# 		Triss: ooo
+# 		[end_timeline]
+# 	elif AutoloadMe.turnPointer.Name == "Lumoth":
+# 		do PortraitManager.change_main_portrait("")
+# 		Lumoth: ooo
+# 		[end_timeline]
+# label Cathedral 1 Barks
+# if AutoloadMe.turnPointer.Name == "Paramantis":
+# 	do PortraitManager.change_main_portrait("")
+# 	Paramantis: ooo
+# 	[end_timeline]
+# elif AutoloadMe.turnPointer.Name == "Atlas":
+# 	do PortraitManager.change_main_portrait("")
+# 	Atlas: ooo
+# 	[end_timeline]
+# elif AutoloadMe.turnPointer.Name == "Triss":
+# 	do PortraitManager.change_main_portrait("")
+# 	Triss: ooo
+# 	[end_timeline]
+# elif AutoloadMe.turnPointer.Name == "Lumoth":
+# 	do PortraitManager.change_main_portrait("")
+# 	Lumoth: ooo
+# 	[end_timeline]

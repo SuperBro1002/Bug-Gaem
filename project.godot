@@ -38,21 +38,14 @@ directories/dch_directory={
 "Triss2": "res://Dialogic Assets/Characters/Triss2.dch"
 }
 directories/dtl_directory={
-"Cleric": "res://Dialogic Assets/Timelines/Cleric.dtl",
-"Init": "res://Dialogic Assets/Timelines/Init.dtl",
-"Nobeelity": "res://Dialogic Assets/Timelines/Nobeelity.dtl",
-"Shaman": "res://Dialogic Assets/Timelines/Shaman.dtl",
-"Veteran": "res://Dialogic Assets/Timelines/Veteran.dtl",
-"testline": "res://Dialogic Assets/Timelines/testline.dtl"
+"UnitedTimeline": "res://Dialogic Assets/Timelines/UnitedTimeline.dtl"
 }
-layout/style_list=["res://Dialogic Assets/Styles/Default.tres", "res://Dialogic Assets/Styles/Box.tres", "res://Dialogic Assets/Styles/test.tres"]
+layout/style_list=["res://Dialogic Assets/Styles/Default.tres", "res://Dialogic Assets/Styles/Box.tres"]
 layout/default_style="res://Dialogic Assets/Styles/Default.tres"
 glossary/default_case_sensitive=true
 variables={
-"Atl": "1-Breathe",
-"Lum": "1-Breathe",
-"Par": "1-Breathe",
-"Tri": "1-Breathe"
+"DialogueComplete": false,
+"StoryProgress": 0
 }
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true

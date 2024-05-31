@@ -7,6 +7,7 @@ var moving = false
 var abilityQueued = null
 var pathArray
 var overlapTween
+var isDown = false
 
 @onready var ability1 = load_ability(SetAbility1)
 @onready var ability2 = load_ability(SetAbility2)
@@ -72,6 +73,7 @@ func get_reachable_tiles():
 	return grid.flood_fill_movement(grid.map_to_local(start), CurrentAP)
 
 func move(dir):
+	if isDown: return
 	if canMove == true:
 		match [dir == Vector2.RIGHT, dir == Vector2.LEFT]:
 			[true,false]:
@@ -98,6 +100,7 @@ func move(dir):
 				abilityStartPoint = grid.convert_to_map(position)
 
 func unique_turn_start():
+	if isDown: MaxAP = 0
 	SignalBus.changeButtonState.emit()
 	SignalBus.updateUI.emit(self)
 

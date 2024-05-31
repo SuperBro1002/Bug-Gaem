@@ -1,6 +1,8 @@
 extends Passive_class
 
 func _enter_tree():
+	Name = "Empowered Attack"
+	description = "Damage dealt is doubled."
 	SignalBus.connect("deletePassives", passive_remove)
 	type = methodType.ABILITY_EXECUTE
 

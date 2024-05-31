@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bg5kvd8dd6a1e"]
-
-[ext_resource type="Script" path="res://Passives/Shaman/Shaman.gd" id="1_7mkx8"]
-
-[node name="Shaman" type="Node"]
-script = ExtResource("1_7mkx8")

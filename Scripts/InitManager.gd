@@ -29,6 +29,7 @@ func next_turn():
 
 func next_round():
 	AutoloadMe.roundNum += 1
+	Dialogic.VAR.StoryProgress += 1
 	SignalBus.checkEvents.emit()
 	for j in (AutoloadMe.globalUnitList.size()):
 		AutoloadMe.globalUnitList[j].reset_acted()

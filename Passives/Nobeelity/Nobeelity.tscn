@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://diw4xa00h5uj0"]
-
-[ext_resource type="Script" path="res://Passives/Nobeelity/Nobeelity.gd" id="1_jnudi"]
-
-[node name="Nobeelity" type="Node"]
-script = ExtResource("1_jnudi")

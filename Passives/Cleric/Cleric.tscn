@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://wreoxairubfd"]
-
-[ext_resource type="Script" path="res://Passives/Cleric/Cleric.gd" id="1_21rwp"]
-
-[node name="Cleric" type="Node"]
-script = ExtResource("1_21rwp")

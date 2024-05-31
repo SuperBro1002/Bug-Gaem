@@ -154,7 +154,7 @@ func gain_health(recoverVal):
 
 func lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
-	dmgVal *= AutoloadMe.currentAbility.dmgMod
+	if AutoloadMe.currentAbility != null: dmgVal *= AutoloadMe.currentAbility.dmgMod
 	CurrentHP = CurrentHP - dmgVal
 	#await 
 	animated_Damaged()

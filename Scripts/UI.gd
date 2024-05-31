@@ -30,6 +30,7 @@ func _ready():
 	draw_init_box()
 
 func set_ui(unit):
+	remove_passive_boxes()
 	if unit.get_faction() == unit.fac.ALLY:
 		var portraitRes = load("res://Assets/Sprites/" + unit.fileName + "/" + unit.fileName + "_Base_Still.png")
 		get_node("../UI/InfoBox/PortraitBox/PortraitSprite").texture = portraitRes
@@ -64,6 +65,7 @@ func set_ui(unit):
 		
 	display_movement_range()
 	draw_tile_path()
+	draw_passive_boxes(unit)
 	boxArray = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
 	for i in boxArray.size():
 		#print("HERE ", boxArray)
@@ -93,6 +95,26 @@ func draw_init_box():
 		else:
 			boxArray[i - 1].add_sibling(sceneNode)
 			sceneNode.UINode = self
+
+func draw_passive_boxes(unit):
+	var passiveBox
+	var marker
+	for p in unit.passiveList.size():
+		if p > 8: break
+		passiveBox = load("res://Scenes/passive_box.tscn").instantiate()
+		marker = $PassiveMarkerMarker.get_child(p)
+		print(marker)
+		marker.add_child(passiveBox)
+		passiveBox.set_my_text(unit.passiveList[p])
+		print("Passive Box loop complete")
+
+func remove_passive_boxes():
+	var passiveBox
+	var marker
+	for m in $PassiveMarkerMarker.get_child_count():
+		marker = $PassiveMarkerMarker.get_child(m)
+		passiveBox = marker.get_child(0)
+		marker.remove_child(passiveBox)
 
 func move_arrow(unit):
 	if unit.myInitBox == null:

@@ -15,9 +15,8 @@ enum methodType {
 
 var turnsRemaining = 1000
 var type
-var is_narrative = false
-var timeline = null
-var label = null
+var Name
+var description
 
 func get_type():
 	return type

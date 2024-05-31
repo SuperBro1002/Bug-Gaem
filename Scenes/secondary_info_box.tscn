@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://gdr7wfqwmtao"]
 
 [ext_resource type="Script" path="res://Scripts/secondary_info_box.gd" id="1_oorkw"]
-[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlus/Atlus_Base_Still.png" id="2_pfi1r"]
+[ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlas/Atlas_Base_Still.png" id="2_pfi1r"]
 [ext_resource type="Script" path="res://Scripts/ReplyPortrait.gd" id="3_c87lh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8j6oi"]
