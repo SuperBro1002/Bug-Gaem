@@ -27,7 +27,6 @@ signal changeControls
 signal adjustZoom
 signal moveCamera
 signal deleteMe(unit)
-signal deleteUnit(unit)
 signal actedUI
 signal updateFloatingHP
 signal updateFloatingAP

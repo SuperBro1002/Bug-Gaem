@@ -12,6 +12,7 @@ var globalUnitList
 var globalAllyList
 var globalEnemyList
 var globalTargetList
+var unitDying = false
 var validQueue = false
 var queueState = false
 var allowEndTurn = true

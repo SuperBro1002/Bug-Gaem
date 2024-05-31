@@ -9,6 +9,7 @@ var ability3
 var enemyPhase = false
 var camTween
 var arrowTween
+var AnimTween
 
 func _ready():
 	get_parent().set_visible(true)
@@ -161,12 +162,16 @@ func draw_tile_path():
 
 func clear_tile_paths(_unit):
 	var tiles = $"../../Grid/PathTiles".get_children()
+	print("TILESSSSSSSSS ", tiles)
 	if tiles != null:
 		print("Clearing ", _unit, "tile paths!")
-		for i in tiles.size():
-			tiles[i].queue_free()
+		for i in tiles:
+			i.set_visible(false)
+			print("RUNNING")
+			i.free()
 	else:
 		print(_unit, " has no paths to clear!")
+	print("TILESSSSSSSSS?????????? ", tiles)
 
 func display_movement_range():
 	clear_tile_Overlays()
@@ -211,6 +216,15 @@ func show_ui():
 	tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 func start_anim(unit):
+	if unit.get_current_hp() == 0:
+		return
+	
+	if AnimTween:
+		AnimTween.kill()
+		$TurnGraphic.position.x = 1934
+	
+	AnimTween = create_tween()
+	
 	if unit.get_faction() != unit.fac.ALLY and unit.get_faction() != unit.fac.ENEMY:
 		enemyPhase = false
 		return
@@ -225,7 +239,7 @@ func start_anim(unit):
 	if unit.get_batonpass() == unit.TS.NOTACTED:
 		
 		if unit.get_faction() == unit.fac.ALLY:
-			$TurnGraphic.set_text(unit.Name + "\nStart")
+			$TurnGraphic.set_text("Ally\nStart")
 		elif unit.get_faction() == unit.fac.ENEMY:
 			$TurnGraphic.set_text("Robugs\nStart")
 		
@@ -233,7 +247,7 @@ func start_anim(unit):
 	
 	elif unit.get_batonpass() == unit.TS.BATONPASS:
 		
-		$TurnGraphic.set_text(unit.Name + "\nBaton Pass")
+		$TurnGraphic.set_text("Baton Pass")
 		
 		if unit.get_faction() == unit.fac.ALLY:
 			$TurnGraphic.label_settings.shadow_color = Color(0, 1, 1, 1)
@@ -246,9 +260,8 @@ func start_anim(unit):
 	elif unit.get_faction() == unit.fac.ALLY:
 		$TurnGraphic.label_settings.font_color = Color(0, 0.518, 0.969, 1)
 	
-	var tween = create_tween()
-	tween.tween_property($TurnGraphic, "position:x", -1300, 3.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT_IN)
-	await tween.finished
+	AnimTween.tween_property($TurnGraphic, "position:x", -1300, 3.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT_IN)
+	await AnimTween.finished
 	$TurnGraphic.position.x = 1934
 	
 	AutoloadMe.set_process_unhandled_input(true)

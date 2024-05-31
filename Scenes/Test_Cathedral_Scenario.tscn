@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://clws6xe5hm1lu"]
+[gd_scene load_steps=21 format=3 uid="uid://clws6xe5hm1lu"]
 
 [ext_resource type="Script" path="res://Scripts/Test_Cathedral_Scenario.gd" id="1_iiil2"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_6phgg"]
@@ -14,8 +14,15 @@
 [ext_resource type="PackedScene" uid="uid://b2rerqtddscuk" path="res://Scenes/Units/Termitator.tscn" id="10_ofnsr"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="12_shhy2"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="13_ravbx"]
+[ext_resource type="Texture2D" uid="uid://xybeeql63ytc" path="res://Assets/Maps_Tiles/Cathedral/horizontal_bench.png" id="15_24vko"]
+[ext_resource type="Texture2D" uid="uid://bxy6448qr3ycn" path="res://Assets/Maps_Tiles/Garden/GridLayer2.png" id="15_wbgex"]
+[ext_resource type="Texture2D" uid="uid://o5ea4stjb8ep" path="res://Assets/Maps_Tiles/Cathedral/cathedral_bg.png" id="16_5tyfo"]
+[ext_resource type="Texture2D" uid="uid://c5qpe742k42v5" path="res://Assets/Maps_Tiles/Cathedral/diagonal_bench.png" id="16_hl2ih"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_55un7"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1dnjr"]
+size = Vector2(1152, 1152)
 
 [node name="Cathedral" type="Node2D"]
 script = ExtResource("1_iiil2")
@@ -100,3 +107,144 @@ script = ExtResource("6_rvry4")
 visible = false
 scale = Vector2(-116.691, 103.457)
 texture = SubResource("PlaceholderTexture2D_55un7")
+
+[node name="CathedralMapSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576.875, 289.142)
+scale = Vector2(2, 2)
+texture = ExtResource("16_5tyfo")
+
+[node name="GridOverlayMask" type="Sprite2D" parent="CathedralMapSprite"]
+clip_children = 1
+position = Vector2(-0.437561, 80.1791)
+scale = Vector2(0.444444, 0.334635)
+texture = SubResource("PlaceholderTexture2D_1dnjr")
+
+[node name="GridOverlay" type="Sprite2D" parent="CathedralMapSprite/GridOverlayMask"]
+modulate = Color(1, 1, 1, 0.235294)
+texture_filter = 1
+position = Vector2(6.10352e-05, 189.012)
+scale = Vector2(1.125, 1.49416)
+texture = ExtResource("15_wbgex")
+
+[node name="Chairs" type="Node2D" parent="CathedralMapSprite"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(79.5625, -32.571)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(175.562, -32.571)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(143.562, -32.571)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(111.562, -32.571)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(79.5625, 31.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D6" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(175.562, 31.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D7" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(143.562, 31.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D8" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(111.562, 31.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D9" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(79.5625, 95.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D10" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(175.562, 95.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D11" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(143.562, 95.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D12" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(111.562, 95.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D13" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(79.5625, 159.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D14" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(175.562, 159.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D15" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(143.562, 159.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D16" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(111.562, 159.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D17" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-176.438, 95.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D18" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-80.4375, 95.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D19" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-112.438, 95.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D20" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-144.438, 95.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D21" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-176.438, 159.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D22" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-80.4375, 159.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D23" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-112.438, 159.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D24" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-144.438, 159.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D25" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-208.438, 31.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D26" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-240.438, 31.429)
+texture = ExtResource("15_24vko")
+
+[node name="Sprite2D27" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-144.438, -0.57103)
+texture = ExtResource("16_hl2ih")
+
+[node name="Sprite2D28" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-176.438, -32.571)
+texture = ExtResource("16_hl2ih")
+
+[node name="Sprite2D29" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-208.438, -64.571)
+texture = ExtResource("16_hl2ih")
+
+[node name="Sprite2D30" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
+position = Vector2(-240.438, -96.571)
+texture = ExtResource("16_hl2ih")

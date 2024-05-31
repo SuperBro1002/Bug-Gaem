@@ -107,6 +107,6 @@ func execute():
 		print(targetUnits, " ", i)
 		if targetUnits == null:
 			return
-		targetUnits[i].lose_health(6)
+		await targetUnits[i].lose_health(6)
 	
 	post_execute()

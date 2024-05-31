@@ -75,8 +75,6 @@ func delete_box(toBeDeleted):
 		SignalBus.updateUI.emit(AutoloadMe.turnPointer)
 		#myUnit.queue_free()
 		myUnit.myInitBox = null
-		if AutoloadMe.turnPointer == toBeDeleted:
-			SignalBus.endTurn.emit()
 		
 		queue_free()
 

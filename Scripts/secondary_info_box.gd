@@ -22,7 +22,7 @@ func fill_me(_isHovering):
 		return
 	
 	if unit.Faction == unit.fac.ENEMY:
-		$APValue.set_text(str(unit.get_temp_ap(), " / ", unit.get_max_ap()))
+		$APValue.set_text(str(unit.get_current_ap(), " / ", unit.get_max_ap()))
 	elif unit.Faction == unit.fac.ALLY:
 		$APValue.set_text(str(unit.get_current_ap(), " / ", unit.get_max_ap()))
 	

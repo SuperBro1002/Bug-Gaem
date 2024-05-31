@@ -97,6 +97,39 @@ func move(dir):
 				moving = false
 				abilityStartPoint = grid.convert_to_map(position)
 
+func on_turn_start():
+	pathArray = null
+	if AutoloadMe.passingUnit != null:
+		var prevUnit = AutoloadMe.passingUnit
+		inherit_ap(prevUnit.CurrentAP)
+		tempAP = CurrentAP
+		prevUnit.CurrentAP = 0
+		prevUnit.tempAP = 0
+		AutoloadMe.passingUnit = null
+	
+	if Faction == fac.ENEMY:
+		SignalBus.showUI.emit()
+	
+	tempAP = CurrentAP
+	start = grid.local_to_map(position)
+	abilityStartPoint = grid.convert_to_map(position)
+	SignalBus.updateUI.emit(self)
+	SignalBus.startAnimate.emit(self)
+	AutoloadMe.set_process_unhandled_input(false)
+	print(self, " ", CurrentAP)
+	print("UnitList: ", AutoloadMe.globalUnitList)
+	SignalBus.wipeTilePaths.emit(null)
+	await get_tree().create_timer(1).timeout
+	SignalBus.startTurn.emit()
+	SignalBus.changeButtonState.emit()
+	run_passives(methodType.ON_TURN_START, null)
+	find_and_delete_passives()
+	
+	grid.update_grid_collision()
+	SignalBus.updateUI.emit(self)
+	print("	", Name, " turn start.")
+	unique_turn_start()
+
 func unique_turn_start():
 	SignalBus.changeButtonState.emit()
 	SignalBus.updateUI.emit(self)

@@ -63,7 +63,6 @@ func _enter_tree():
 	print("TREE")
 	#print(isPossessed, " <-----------------------")
 	SignalBus.connect("abilityExecuted",on_execute)
-	SignalBus.connect("deleteUnit", delete)
 	SignalBus.connect("highlightUnit", glow)
 	#await get_tree().create_timer(3).timeout
 	print(Name, " MY ABILITY IS ", SetAbility1)
@@ -156,11 +155,17 @@ func lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
 	dmgVal *= AutoloadMe.currentAbility.dmgMod
 	CurrentHP = CurrentHP - dmgVal
+	incoming_dmg_type = null
 	animated_Damaged()
 	if CurrentHP < 0:
 		CurrentHP = 0
+		
 	SignalBus.updateFloatingHP.emit(self)
-	incoming_dmg_type = null
+	await SignalBus.HpUiFinish
+	
+	if CurrentHP == 0:
+		delete(self)
+
 
 
 func get_max_hp():
@@ -308,6 +313,7 @@ func on_turn_end():
 	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
 	SignalBus.actedUI.emit()
 	print("	", Name, " has acted.")
+	
 	unique_turn_end()
 
 func unique_turn_end():
@@ -369,6 +375,9 @@ func delete(unit):
 		SignalBus.deleteMe.emit(self)
 		await get_tree().create_timer(2).timeout
 		SignalBus.HpUiFinish.emit()
+		
+		if AutoloadMe.turnPointer == self:
+			SignalBus.endTurn.emit()
 		queue_free()
 
 func _mouse_shape_enter(shape_idx):
