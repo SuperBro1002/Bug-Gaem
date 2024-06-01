@@ -48,7 +48,7 @@ func execute():
 	await get_tree().create_timer(0.7).timeout
 	
 	for i in targetUnits.size():
-		if targetUnits[i].get_current_hp() - 3 <= 0 and targetUnits[i].Faction != get_parent().fac.OBSTACLE:
+		if targetUnits[i].get_current_hp() - 3 <= 0 and targetUnits[i].Faction != get_parent().fac.OBSTACLE and targetUnits[i].Controllable == true:
 			var scene = load("res://Scenes/ally.tscn")
 			sceneNode = scene.instantiate()
 			get_node("../..").add_child(sceneNode)

@@ -21,7 +21,7 @@ var siphonsDestroyed = 0
 var hoveredUnit = null
 var notOverlapped = true
 var isExecuting = false
-var roundNum = 1
+var roundNum = 0
 var currentAbility
 var passingAP
 

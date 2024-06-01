@@ -1,16 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cww8uyntcnme1"]
+[gd_scene load_steps=4 format=3 uid="uid://cww8uyntcnme1"]
 
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_hvx6h"]
 [ext_resource type="Script" path="res://Scenes/Units/Bob.gd" id="2_7exa5"]
+[ext_resource type="SpriteFrames" uid="uid://dtiv15ugb3c3k" path="res://Scenes/Sprite Frames/Bob.tres" id="3_ypxt8"]
 
 [node name="Atlas" instance=ExtResource("1_hvx6h")]
 script = ExtResource("2_7exa5")
-aggroRange = 8
+aggroRange = 3
 Name = "Atlas"
 fileName = "Bob"
 MaxHP = 16
 MaxAP = 12
 TrueInit = 30
+SetAbility1 = "Knockback2"
 SetAbility2 = "Tackle"
 SetAbility3 = "Tackle"
 Faction = 1
+Controllable = false
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_ypxt8")

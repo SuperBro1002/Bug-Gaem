@@ -10,7 +10,10 @@ MaxHP = 10
 MaxAP = 10
 TrueInit = 15
 InitVariance = 5
+SetAbility1 = null
 Faction = 1
+BatonPass = null
+Controllable = null
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 modulate = Color(0, 0, 1, 1)

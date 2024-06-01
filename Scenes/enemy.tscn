@@ -43,9 +43,11 @@ animations = [{
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_15b7p")
-aggroRange = 5
+Name = "Robo Poly"
+fileName = "Robopoly"
 SetAbility2 = ""
 SetAbility3 = ""
+Faction = 1
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -65,3 +67,5 @@ flip_h = true
 [node name="Glow" type="Sprite2D" parent="AnimatedSprite2D"]
 modulate = Color(1, 1, 1, 0)
 texture = ExtResource("3_cby3p")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

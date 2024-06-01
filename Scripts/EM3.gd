@@ -18,3 +18,7 @@ func checkSiphons():
 	if AutoloadMe.siphonsDestroyed == 4:
 		SignalBus.phaseChange.emit()
 	#SignalBus.midObjectiveChecked.emit()
+
+func check_routed():
+	if AutoloadMe.deathCount >= objectiveNum:
+		get_tree().change_scene_to_file("res://Scenes/Cathedral 2.tscn")

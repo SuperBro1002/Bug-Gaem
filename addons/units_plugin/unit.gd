@@ -43,6 +43,7 @@ var incoming_dmg_type = null # pierce, null
 @export var SetAbility3 = "Tackle"
 @export var Faction = fac.NONE
 @export var BatonPass = TS.NOTACTED
+@export var Controllable = true
 
 @onready var tempAP = get_max_ap()
 @onready var grid = find_parent("Grid")
@@ -58,6 +59,7 @@ var myInitBox
 var canMove = true
 var storedBatonPass = TS.NOTACTED
 var glowTween
+var animationSpeed = 4
 
 func _enter_tree():
 	print("TREE")
@@ -360,10 +362,24 @@ func find_and_delete_passives():
 		else:
 			i = 0 # THIS SEEMS TO WORK BUT I FEEL LIKE IT SHOULDN'T
 
+func spawning_in():
+	set_modulate(Color(1,1,1,0))
+	get_node("AnimatedSprite2D:sprite_frames").set_sprite_frames(load("res://Scenes/Sprite Frames/" + fileName + ".tres"))
+	get_node(".:Scale").set_scale(Vector2(1,1))
+	get_node("AnimatedSprite2D:Scale").set_scale(Vector2(2,2))
+	
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	
+	SignalBus.updateFloatingHP.emit(self)
+	SignalBus.remakeUnitList.emit()
+
 func delete(unit):
 	if unit == self:
 		print("I AM DYING")
 		set_visible(false)
+		set_collision_layer_value(1,false)
+		set_collision_layer_value(2,false)
 		AutoloadMe.globalUnitList.erase(unit)
 		AutoloadMe.globalEnemyList.erase(unit)
 		AutoloadMe.globalAllyList.erase(unit)

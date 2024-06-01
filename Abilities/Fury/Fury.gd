@@ -12,7 +12,7 @@ func _enter_tree():
 
 func enemy_execute(initTarget):
 	print("INTIATING FURY")
-	targetUnits.append(initTarget)
+	#targetUnits.append(initTarget)
 	
 	$Area2D/SelectionBox.set_visible(true)
 	if initTarget.position.x > get_parent().position.x:
@@ -57,6 +57,11 @@ func execute():
 			tween.tween_property(get_parent(), "position", get_parent().position + localDirection, 1.0 / get_parent().animationSpeed).set_trans(Tween.TRANS_SINE)
 			await tween.finished
 			$Area2D.position = get_parent().position
+	
+	var tween2 = create_tween()
+	tween2.tween_property(get_parent(), "position", get_parent().grid.flood_fill_first(get_parent().grid.local_to_map(get_parent().position)), 1.0 / get_parent().animationSpeed).set_trans(Tween.TRANS_SINE)
+	await tween2.finished
+	
 	print("After Loop")
 	for i in targetUnits.size():
 		print(targetUnits.size())

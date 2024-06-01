@@ -12,6 +12,7 @@ MaxAP = 11
 TrueInit = 33
 SetAbility1 = "Chloroblast"
 Faction = 1
+Controllable = false
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 modulate = Color(1, 1, 0, 1)

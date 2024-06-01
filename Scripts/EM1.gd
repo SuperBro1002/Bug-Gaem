@@ -6,9 +6,16 @@ func _ready():
 
 func activate_spawners():
 	match AutoloadMe.roundNum:
-		2:
+		1:
 			SignalBus.spawnGroup.emit(1)
+		2:
+			SignalBus.spawnGroup.emit(2)
 		3:
-			pass
+			SignalBus.spawnGroup.emit(3)
 		4:
 			pass
+
+func check_routed():
+	if AutoloadMe.deathCount >= objectiveNum:
+		get_node("/root/Main_Controller").free()
+		get_tree().change_scene_to_file("res://Scenes/Cathedral 1.tscn")

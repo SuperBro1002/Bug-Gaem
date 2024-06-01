@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var UnitSpawn = "Robopoly"
 @onready var myPos = position
 @onready var spawnPos = myPos
 @onready var areaType = "spawner"
@@ -25,24 +26,24 @@ func spawn(idCalled):
 	if idCalled != groupID:
 		return
 	
-	var node = load("res://Scenes/enemy.tscn")
+	var node = load("res://Scenes/Units/" + UnitSpawn + ".tscn")
 	var newUnit = node.instantiate()
 	
-	newUnit.name = setName
-	newUnit.Name = setName
-	newUnit.fileName = setFileName
-	newUnit.MaxHP = setHP
-	newUnit.CurrentHP = setHP
-	newUnit.MaxAP = setAP
-	newUnit.CurrentAP = setAP
-	newUnit.tempAP = setAP
-	newUnit.TrueInit = setInit
-	newUnit.InitVariance = setVary
-	newUnit.CurrentInit = setInit
-	newUnit.SetAbility1 = ability1
-	newUnit.SetAbility2 = ability2
-	newUnit.SetAbility3 = ability3
-	newUnit.Faction = setFaction
+	#newUnit.name = setName
+	#newUnit.Name = setName
+	#newUnit.fileName = setFileName
+	#newUnit.MaxHP = setHP
+	#newUnit.CurrentHP = setHP
+	#newUnit.MaxAP = setAP
+	#newUnit.CurrentAP = setAP
+	#newUnit.tempAP = setAP
+	#newUnit.TrueInit = setInit
+	#newUnit.InitVariance = setVary
+	#newUnit.CurrentInit = setInit
+	#newUnit.SetAbility1 = ability1
+	#newUnit.SetAbility2 = null
+	#newUnit.SetAbility3 = null
+	#newUnit.Faction = setFaction
 	print("OBI? ", notObstructed)
 	if notObstructed:
 		newUnit.position = myPos

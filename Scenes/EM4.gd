@@ -15,4 +15,5 @@ func activate_spawners():
 
 func check_routed():
 	if AutoloadMe.deathCount >= objectiveNum:
-		get_tree().change_scene_to_file("res://Scenes/Garden.tscn")
+		get_tree().quit()
+		#get_tree().change_scene_to_file("res://Scenes/Cathedral 2.tscn")

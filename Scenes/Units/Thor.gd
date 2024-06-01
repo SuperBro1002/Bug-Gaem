@@ -8,7 +8,7 @@ func _ready():
 func unique_turn_start():
 	print("PHASE ", phase)
 	if phase == 2:
-		set_phase()
+		position = grid.map_to_local(await set_phase())
 	await get_tree().create_timer(2).timeout
 	
 	if phase == 1:
@@ -92,6 +92,11 @@ func unique_turn_start():
 	on_turn_end()
 
 func set_phase():
+	collision_layer = 2
+	set_visible(true)
+	get_node("/root/Garden/FakeThor").set_visible(false)
+	#position = grid.map_to_local(Vector2i(9,9))
 	phase = 2
 	ability1 = load_ability("Fury")
 	ability2 = load_ability("Sniper")
+	return Vector2i(9,9)

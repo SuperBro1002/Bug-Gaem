@@ -162,16 +162,13 @@ func draw_tile_path():
 
 func clear_tile_paths(_unit):
 	var tiles = $"../../Grid/PathTiles".get_children()
-	print("TILESSSSSSSSS ", tiles)
 	if tiles != null:
 		print("Clearing ", _unit, "tile paths!")
 		for i in tiles:
 			i.set_visible(false)
-			print("RUNNING")
 			i.free()
 	else:
 		print(_unit, " has no paths to clear!")
-	print("TILESSSSSSSSS?????????? ", tiles)
 
 func display_movement_range():
 	clear_tile_Overlays()

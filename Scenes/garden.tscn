@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://7qps6ox2sfna"]
+[gd_scene load_steps=28 format=3 uid="uid://7qps6ox2sfna"]
 
 [ext_resource type="Script" path="res://Scripts/Garden.gd" id="1_574vu"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_bbw0h"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bxy6448qr3ycn" path="res://Assets/Maps_Tiles/Garden/GridLayer2.png" id="14_y4n4e"]
 [ext_resource type="PackedScene" uid="uid://bvip1ddh8purj" path="res://Scenes/Units/Thor.tscn" id="15_futsm"]
 [ext_resource type="Texture2D" uid="uid://imgcuvnvrfp" path="res://Assets/Maps_Tiles/Garden/well.png" id="16_48nk3"]
+[ext_resource type="SpriteFrames" uid="uid://dtiv15ugb3c3k" path="res://Scenes/Sprite Frames/Bob.tres" id="18_vxh52"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yb3wm"]
 
@@ -189,7 +190,9 @@ position = Vector2(1056, 160)
 position = Vector2(160, 1056)
 
 [node name="Thor" parent="Grid/InitManager/UnitManager" instance=ExtResource("15_futsm")]
-position = Vector2(608, 480)
+visible = false
+position = Vector2(608, 544)
+collision_layer = 0
 
 [node name="UILayer" parent="." instance=ExtResource("4_2f1wn")]
 visible = false
@@ -204,6 +207,15 @@ script = ExtResource("5_2fsto")
 visible = false
 scale = Vector2(-116.691, 103.457)
 texture = SubResource("PlaceholderTexture2D_yb3wm")
+
+[node name="FakeThor" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(576, 568)
+scale = Vector2(1.81818, 1.81818)
+sprite_frames = ExtResource("18_vxh52")
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="GardenMapSprite" type="Sprite2D" parent="."]
 texture_filter = 1

@@ -25,12 +25,12 @@ func execute():
 	face_target()
 	get_parent().get_node("AnimatedSprite2D").stop()
 	get_parent().get_node("AnimatedSprite2D").play("Attack1")
-	$VFX.set_visible(true)
 	$VFX.position = targetUnits[0].position
 	$VFX.position.x -= 50
+	$VFX.set_visible(true)
 	$VFX.play("Effect")
 	await get_tree().create_timer(0.7).timeout
-	
+	$VFX.set_visible(false)
 	for i in targetUnits.size():
 		print(targetUnits.size())
 		print(targetUnits, " ", i)
