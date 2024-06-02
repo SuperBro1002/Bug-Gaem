@@ -6,22 +6,27 @@ var abilityRangeGrid = AStarGrid2D.new()
 var abilityRangeGridUI = AStarGrid2D.new()
 var gridSize
 var turnPointer
-var passingUnit
+var passingUnit = null
 var isAllyTurn = false
 var globalUnitList
 var globalAllyList
 var globalEnemyList
 var globalTargetList
+var unitDying = false
 var validQueue = false
 var queueState = false
 var allowEndTurn = true
 var deathCount = 0
+var bossdead = false
+#var finalBattle = false
+var siphonsDestroyed = 0
 var hoveredUnit = null
 var notOverlapped = true
 var isExecuting = false
 var roundNum = 1
 var currentAbility
 var passingAP
+var mapID
 
 var inputs = {"move_right": Vector2.RIGHT,
 			"move_left": Vector2.LEFT,
@@ -33,6 +38,11 @@ func _ready():
 	SignalBus.connect("currentUnit",set_current_unit)
 	SignalBus.connect("activelyQueueing", valid_spot_queued)
 	SignalBus.connect("abilityIsQueued", queue_active)
+
+func new_level():
+	deathCount = 0
+	siphonsDestroyed = 0
+	roundNum = 1
 
 func initialize_grid(gridLengthX, gridLengthY):
 	gridSize = Vector2i(gridLengthX,gridLengthY)
@@ -89,6 +99,7 @@ func _unhandled_input(event):
 		if Input.is_action_just_pressed("trigger_ability") and !isExecuting:
 			print(validQueue, " ", queueState)
 			if validQueue == true and queueState == true:
+				AutoloadMe.set_process_unhandled_input(false)
 				isExecuting = true
 				turnPointer.run_passives(turnPointer.methodType.ABILITY_EXECUTE, null)
 				turnPointer.abilityQueued.execute()

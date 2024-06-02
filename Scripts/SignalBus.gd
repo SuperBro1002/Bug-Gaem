@@ -27,7 +27,6 @@ signal changeControls
 signal adjustZoom
 signal moveCamera
 signal deleteMe(unit)
-signal deleteUnit(unit)
 signal actedUI
 signal updateFloatingHP
 signal updateFloatingAP
@@ -40,3 +39,9 @@ signal spawnGroup(id)
 signal changeMainPortrait(filename)
 signal changeReplyPortrait(filename)
 signal checkEvents
+signal checkObjective
+signal midObjective
+signal midObjectiveChecked
+signal phaseChange
+signal finalBattle
+signal spawnDrone

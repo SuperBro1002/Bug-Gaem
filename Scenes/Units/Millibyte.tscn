@@ -10,7 +10,6 @@ MaxHP = 10
 MaxAP = 10
 TrueInit = 15
 InitVariance = 5
-Faction = 1
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 modulate = Color(0, 0, 1, 1)

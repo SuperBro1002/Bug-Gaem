@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxhgdv3ubm0ks"
-path="res://.godot/imported/fountain.png-1713d8749ae01ca42f50fadad3eb326c.ctex"
+uid="uid://dfkmyltepkbq6"
+path="res://.godot/imported/honey.png-52ea37e24e407cfd38d9097e91bddfa9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Maps_Tiles/fountain.png"
-dest_files=["res://.godot/imported/fountain.png-1713d8749ae01ca42f50fadad3eb326c.ctex"]
+source_file="res://Assets/Maps_Tiles/Garden/honey.png"
+dest_files=["res://.godot/imported/honey.png-52ea37e24e407cfd38d9097e91bddfa9.ctex"]
 
 [params]
 

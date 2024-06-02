@@ -46,7 +46,7 @@ func execute():
 			pathArray.resize(4)
 		
 		for j in pathArray.size() - 1:
-			if pathArray[j] != get_parent().position :
+			if pathArray[j] != get_parent().position and targetUnits[i].fileName != "Thor":
 				var tween = create_tween()
 				tween.tween_property(targetUnits[i], "position", pathArray[j], 1.0 / targetUnits[i].animationSpeed).set_trans(Tween.TRANS_SINE)
 				await tween.finished

@@ -1,0 +1,137 @@
+[gd_scene load_steps=22 format=3 uid="uid://doph4kac6skoi"]
+
+[ext_resource type="Script" path="res://Scripts/Main Controller.gd" id="1_deuc8"]
+[ext_resource type="Script" path="res://Scenes/EM5.gd" id="2_lgrmy"]
+[ext_resource type="PackedScene" uid="uid://dimryoawtb8dt" path="res://Scenes/narrative_manager.tscn" id="3_wgadh"]
+[ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="4_fub1d"]
+[ext_resource type="PackedScene" uid="uid://tgpcor2pwjrk" path="res://Scenes/init_manager.tscn" id="5_yypas"]
+[ext_resource type="PackedScene" uid="uid://ct1ngvul81kpp" path="res://Scenes/Units/Triss.tscn" id="6_naygy"]
+[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="7_pgy0f"]
+[ext_resource type="PackedScene" uid="uid://ci8wrykm1vixs" path="res://Scenes/Units/Atlas.tscn" id="7_sccqh"]
+[ext_resource type="Script" path="res://Scripts/jeff.gd" id="8_df8tx"]
+[ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="9_fcinn"]
+[ext_resource type="PackedScene" uid="uid://be86imrav20o6" path="res://Scenes/Units/Lumoth.tscn" id="10_4tp4v"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="10_ndpdp"]
+[ext_resource type="Texture2D" uid="uid://htxwl3ri1iev" path="res://Assets/Maps_Tiles/Fountain/tutorial_map_empty.png" id="11_lxd3a"]
+[ext_resource type="PackedScene" uid="uid://bgphmxq3rd4q1" path="res://Scenes/Units/Paramantis.tscn" id="11_ordxo"]
+[ext_resource type="PackedScene" uid="uid://bvip1ddh8purj" path="res://Scenes/Units/Thor.tscn" id="12_ca2f7"]
+[ext_resource type="Texture2D" uid="uid://0hgw2imncrvb" path="res://Assets/Maps_Tiles/GridLayer.png" id="13_5cnvc"]
+[ext_resource type="PackedScene" uid="uid://b31vcfng888xw" path="res://Scenes/spawner.tscn" id="14_xmqnd"]
+[ext_resource type="Texture2D" uid="uid://bjnybyvdkso6r" path="res://Assets/Maps_Tiles/Fountain/hole.png" id="15_7k6yr"]
+[ext_resource type="PackedScene" uid="uid://bq8sleerhf7s4" path="res://Scenes/Units/Drone.tscn" id="19_0wuf6"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rfeji"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_46uv7"]
+size = Vector2(645, 643)
+
+[node name="Main_Controller" type="Node2D"]
+script = ExtResource("1_deuc8")
+
+[node name="EM5" type="Node" parent="."]
+script = ExtResource("2_lgrmy")
+currentObjective = 2
+
+[node name="NarrativeManager" parent="." instance=ExtResource("3_wgadh")]
+
+[node name="Grid" parent="." instance=ExtResource("4_fub1d")]
+layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608, 0, 6, 262144, 0, 6, 1, 0, 6, 65537, 0, 3, 131073, 0, 3, 262145, 0, 3, 2, 0, 6, 65538, 0, 3, 131074, 0, 3, 262146, 0, 3, 3, 0, 6, 65539, 0, 3, 131075, 0, 3, 196611, 0, 3, 262147, 0, 3, 4, 0, 6, 65540, 0, 3, 131076, 0, 3, 196612, 0, 3, 262148, 0, 6, 327680, 0, 6, 393216, 0, 6, 458752, 0, 6, 524288, 0, 6, 589824, 0, 6, 327681, 0, 3, 393217, 0, 3, 458753, 0, 3, 524289, 0, 3, 589825, 0, 3, 327682, 0, 3, 393218, 0, 3, 458754, 0, 3, 524290, 0, 3, 589826, 0, 3, 327683, 0, 3, 393219, 0, 3, 458755, 0, 3, 524291, 0, 3, 589827, 0, 3, 327684, 0, 6, 393220, 0, 6, 458756, 0, 6, 524292, 0, 3, 589828, 0, 3, 5, 0, 6, 65541, 0, 3, 131077, 0, 3, 196613, 0, 3, 262149, 0, 6, 327685, 0, 6, 393221, 0, 6, 458757, 0, 6, 524293, 0, 3, 589829, 0, 3, 6, 0, 6, 65542, 0, 3, 131078, 0, 3, 196614, 0, 3, 262150, 0, 6, 327686, 0, 6, 393222, 0, 6, 458758, 0, 6, 524294, 0, 3, 589830, 0, 3, 7, 0, 6, 65543, 0, 3, 131079, 0, 3, 196615, 0, 3, 262151, 0, 6, 327687, 0, 6, 393223, 0, 6, 458759, 0, 6, 524295, 0, 3, 589831, 0, 3, 8, 0, 6, 65544, 0, 3, 131080, 0, 3, 196616, 0, 3, 262152, 0, 3, 327688, 0, 3, 458760, 0, 3, 524296, 0, 3, 589832, 0, 3, 9, 0, 6, 65545, 0, 3, 131081, 0, 3, 196617, 0, 3, 262153, 0, 3, 327689, 0, 3, 393225, 0, 3, 458761, 0, 3, 524297, 0, 3, 589833, 0, 3, 196609, 0, 3, 655361, 0, 3, 196610, 0, 3, 655362, 0, 3, 655363, 0, 3, 655364, 0, 3, 655365, 0, 3, 655366, 0, 3, 655367, 0, 3, 393224, 0, 3, 655368, 0, 3, 655369, 0, 3, 10, 0, 6, 65546, 0, 3, 131082, 0, 3, 196618, 0, 3, 262154, 0, 3, 327690, 0, 3, 393226, 0, 3, 458762, 0, 3, 524298, 0, 3, 589834, 0, 3, 655370, 0, 3, 720904, 0, 6, 720905, 0, 6, 720906, 0, 6, 11, 0, 6, 65547, 0, 6, 131083, 0, 6, 196619, 0, 6, 262155, 0, 6, 327691, 0, 6, 393227, 0, 6, 458763, 0, 6, 524299, 0, 6, 589835, 0, 6, 655371, 0, 6, 720907, 0, 6, 655360, 0, 6, 720896, 0, 6, 720897, 0, 6, 720898, 0, 6, 720899, 0, 6, 720900, 0, 6, 720901, 0, 6, 720902, 0, 6, 720903, 0, 6)
+
+[node name="ObstacleHolder" type="Node" parent="Grid"]
+
+[node name="InitManager" parent="Grid" instance=ExtResource("5_yypas")]
+
+[node name="UnitManager" type="Node" parent="Grid/InitManager"]
+
+[node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_naygy")]
+position = Vector2(288, 672)
+
+[node name="Atlas" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_sccqh")]
+position = Vector2(352, 608)
+
+[node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_4tp4v")]
+position = Vector2(416, 608)
+
+[node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("11_ordxo")]
+position = Vector2(480, 672)
+
+[node name="Thor" parent="Grid/InitManager/UnitManager" instance=ExtResource("12_ca2f7")]
+position = Vector2(352, 160)
+phase = 2
+startPhaseTwo = true
+aggroRange = 5
+MaxHP = 30
+
+[node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_pgy0f")]
+visible = false
+position = Vector2(384, -48)
+script = ExtResource("8_df8tx")
+Name = "Jeff"
+fileName = "Jeff"
+MaxHP = 200
+TrueInit = -100
+Faction = 2
+
+[node name="UILayer" parent="." instance=ExtResource("9_fcinn")]
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+z_index = 4
+position = Vector2(384, 384)
+script = ExtResource("10_ndpdp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+visible = false
+scale = Vector2(-116.691, 103.457)
+texture = SubResource("PlaceholderTexture2D_rfeji")
+
+[node name="TutorialMapSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(383.5, 388.5)
+scale = Vector2(2.10742, 2.10742)
+texture = ExtResource("11_lxd3a")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="FountainSprite" type="Sprite2D" parent="TutorialMapSprite"]
+z_index = 1
+texture_filter = 1
+texture = ExtResource("15_7k6yr")
+
+[node name="GridOverlayMask" type="Sprite2D" parent="TutorialMapSprite"]
+clip_children = 1
+position = Vector2(0.237259, -2.60983)
+scale = Vector2(0.474514, 0.474514)
+texture = SubResource("PlaceholderTexture2D_46uv7")
+
+[node name="GridOverlay" type="Sprite2D" parent="TutorialMapSprite/GridOverlayMask"]
+modulate = Color(1, 1, 1, 0.113725)
+texture_filter = 1
+texture = ExtResource("13_5cnvc")
+
+[node name="SpawnerR1" parent="." instance=ExtResource("14_xmqnd")]
+position = Vector2(352, 224)
+groupID = 1
+
+[node name="SpawnerR2" parent="." instance=ExtResource("14_xmqnd")]
+position = Vector2(544, 480)
+scale = Vector2(1, 0.984734)
+groupID = 1
+
+[node name="SpawnerR3" parent="." instance=ExtResource("14_xmqnd")]
+position = Vector2(288, 544)
+groupID = 1
+
+[node name="SpawnerT1" parent="." instance=ExtResource("14_xmqnd")]
+position = Vector2(224, 416)
+UnitSpawn = "Termitator"
+groupID = 2
+
+[node name="SpawnerT2" parent="." instance=ExtResource("14_xmqnd")]
+position = Vector2(544, 288)
+UnitSpawn = "Termitator"
+groupID = 2
+
+[node name="Drone" parent="." instance=ExtResource("19_0wuf6")]
+position = Vector2(376, 392)

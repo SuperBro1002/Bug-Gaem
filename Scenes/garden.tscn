@@ -1,30 +1,153 @@
-[gd_scene load_steps=14 format=3 uid="uid://7qps6ox2sfna"]
+[gd_scene load_steps=28 format=3 uid="uid://7qps6ox2sfna"]
 
 [ext_resource type="Script" path="res://Scripts/Garden.gd" id="1_574vu"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_bbw0h"]
 [ext_resource type="Script" path="res://Scripts/EM3.gd" id="2_ubhqf"]
 [ext_resource type="PackedScene" uid="uid://tgpcor2pwjrk" path="res://Scenes/init_manager.tscn" id="3_457fh"]
 [ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="4_2f1wn"]
+[ext_resource type="PackedScene" uid="uid://egt8255q2y5k" path="res://Scenes/Siphon.tscn" id="4_wxpws"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="5_2fsto"]
 [ext_resource type="PackedScene" uid="uid://ci8wrykm1vixs" path="res://Scenes/Units/Atlas.tscn" id="5_amhp3"]
+[ext_resource type="PackedScene" uid="uid://carvro0dc4pm2" path="res://Scenes/HoneyComb.tscn" id="5_w8d78"]
 [ext_resource type="PackedScene" uid="uid://be86imrav20o6" path="res://Scenes/Units/Lumoth.tscn" id="6_msf3w"]
 [ext_resource type="PackedScene" uid="uid://bgphmxq3rd4q1" path="res://Scenes/Units/Paramantis.tscn" id="7_vdhge"]
 [ext_resource type="PackedScene" uid="uid://ct1ngvul81kpp" path="res://Scenes/Units/Triss.tscn" id="8_mc8hb"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="9_3sxn8"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="10_y20ma"]
+[ext_resource type="Texture2D" uid="uid://dcb6wnjsdifue" path="res://Assets/Maps_Tiles/Garden/treeoflight.png" id="13_3vd1y"]
+[ext_resource type="PackedScene" uid="uid://cqik5a7fuwabx" path="res://Scenes/Units/Grunt.tscn" id="13_8xthp"]
+[ext_resource type="PackedScene" uid="uid://b2rerqtddscuk" path="res://Scenes/Units/Termitator.tscn" id="14_k301f"]
+[ext_resource type="Texture2D" uid="uid://bxy6448qr3ycn" path="res://Assets/Maps_Tiles/Garden/GridLayer2.png" id="14_y4n4e"]
+[ext_resource type="PackedScene" uid="uid://bvip1ddh8purj" path="res://Scenes/Units/Thor.tscn" id="15_futsm"]
+[ext_resource type="Texture2D" uid="uid://imgcuvnvrfp" path="res://Assets/Maps_Tiles/Garden/well.png" id="16_48nk3"]
+[ext_resource type="SpriteFrames" uid="uid://dtiv15ugb3c3k" path="res://Scenes/Sprite Frames/Bob.tres" id="18_vxh52"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yb3wm"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ii0lb"]
+size = Vector2(1152, 1152)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jt44l"]
+atlas = ExtResource("16_48nk3")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el8rn"]
+atlas = ExtResource("16_48nk3")
+region = Rect2(0, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wpe3"]
+atlas = ExtResource("16_48nk3")
+region = Rect2(0, 64, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4uwah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jt44l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el8rn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wpe3")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}]
 
 [node name="Garden" type="Node2D"]
 script = ExtResource("1_574vu")
 
 [node name="EM3" type="Node" parent="."]
 script = ExtResource("2_ubhqf")
+objectiveNum = 6
 
 [node name="Grid" parent="." instance=ExtResource("2_bbw0h")]
-layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608, 0, 6, 262144, 0, 6, 1, 0, 6, 65537, 0, 3, 131073, 0, 3, 262145, 0, 3, 2, 0, 6, 65538, 0, 3, 131074, 0, 3, 262146, 0, 3, 3, 0, 6, 65539, 0, 3, 131075, 0, 3, 196611, 0, 3, 262147, 0, 3, 4, 0, 6, 65540, 0, 3, 131076, 0, 3, 196612, 0, 3, 262148, 0, 3, 327680, 0, 6, 393216, 0, 6, 458752, 0, 6, 524288, 0, 6, 589824, 0, 6, 327681, 0, 3, 393217, 0, 3, 458753, 0, 3, 524289, 0, 3, 589825, 0, 3, 327682, 0, 3, 393218, 0, 3, 458754, 0, 3, 524290, 0, 3, 589826, 0, 3, 327683, 0, 3, 393219, 0, 3, 458755, 0, 6, 524291, 0, 6, 589827, 0, 3, 327684, 0, 3, 393220, 0, 3, 458756, 0, 3, 524292, 0, 3, 589828, 0, 3, 5, 0, 6, 65541, 0, 3, 131077, 0, 3, 196613, 0, 3, 262149, 0, 6, 327685, 0, 3, 393221, 0, 3, 458757, 0, 3, 524293, 0, 3, 589829, 0, 3, 6, 0, 6, 65542, 0, 3, 131078, 0, 3, 196614, 0, 3, 262150, 0, 6, 327686, 0, 3, 393222, 0, 3, 458758, 0, 3, 524294, 0, 3, 589830, 0, 3, 7, 0, 6, 65543, 0, 3, 131079, 0, 3, 196615, 0, 3, 262151, 0, 3, 327687, 0, 3, 393223, 0, 3, 458759, 0, 3, 524295, 0, 3, 589831, 0, 3, 8, 0, 6, 65544, 0, 3, 131080, 0, 3, 196616, 0, 6, 262152, 0, 3, 327688, 0, 3, 458760, 0, 3, 524296, 0, 6, 589832, 0, 3, 9, 0, 6, 65545, 0, 3, 131081, 0, 3, 196617, 0, 6, 262153, 0, 3, 327689, 0, 3, 393225, 0, 3, 458761, 0, 3, 524297, 0, 6, 589833, 0, 3, 393224, 0, 3, 196610, 0, 3, 196609, 0, 3, 65546, 0, 3, 65547, 0, 3, 65548, 0, 3, 65549, 0, 3, 65550, 0, 3, 65551, 0, 3, 65552, 0, 3, 10, 0, 6, 11, 0, 6, 12, 0, 6, 13, 0, 6, 14, 0, 6, 15, 0, 6, 16, 0, 6, 17, 0, 6, 65553, 0, 6, 131089, 0, 6, 196625, 0, 6, 262161, 0, 6, 327697, 0, 6, 393233, 0, 6, 458769, 0, 6, 524305, 0, 6, 589841, 0, 6, 655377, 0, 6, 720913, 0, 6, 786449, 0, 6, 655361, 0, 3, 720897, 0, 3, 786433, 0, 3, 851969, 0, 3, 917505, 0, 3, 983041, 0, 3, 1048577, 0, 3, 1048578, 0, 3, 1048579, 0, 3, 1048580, 0, 3, 1048581, 0, 3, 1048582, 0, 3, 1048583, 0, 3, 1048584, 0, 3, 1048585, 0, 3, 1048586, 0, 3, 1048587, 0, 3, 1048588, 0, 3, 1048589, 0, 3, 1048590, 0, 3, 1048591, 0, 3, 983055, 0, 3, 983056, 0, 3, 917519, 0, 3, 851983, 0, 3, 851982, 0, 3, 1048592, 0, 3, 917520, 0, 3, 851984, 0, 3, 786448, 0, 3, 720912, 0, 3, 655376, 0, 3, 655375, 0, 3, 589839, 0, 3, 524303, 0, 3, 524302, 0, 6, 524301, 0, 3, 589837, 0, 3, 589836, 0, 3, 655372, 0, 3, 655373, 0, 3, 720909, 0, 3, 786445, 0, 3, 786446, 0, 3, 720911, 0, 3, 786447, 0, 3, 589840, 0, 3, 524304, 0, 3, 589838, 0, 3, 655374, 0, 3, 720910, 0, 3, 458768, 0, 3, 393232, 0, 3, 327696, 0, 3, 262160, 0, 3, 196624, 0, 3, 131088, 0, 3, 131087, 0, 3, 131086, 0, 3, 131085, 0, 3, 131084, 0, 3, 131083, 0, 3, 131082, 0, 3, 589834, 0, 3, 589835, 0, 3, 524299, 0, 3, 458763, 0, 3, 458762, 0, 3, 393226, 0, 3, 327690, 0, 3, 262154, 0, 3, 196618, 0, 3, 196619, 0, 3, 196620, 0, 3, 196621, 0, 3, 196622, 0, 3, 196623, 0, 3, 262159, 0, 3, 262158, 0, 3, 262157, 0, 3, 262156, 0, 6, 262155, 0, 6, 327691, 0, 3, 393227, 0, 3, 393228, 0, 3, 327692, 0, 3, 327693, 0, 3, 327694, 0, 3, 327695, 0, 3, 393231, 0, 3, 393230, 0, 3, 458766, 0, 6, 393229, 0, 3, 458764, 0, 3, 524298, 0, 3, 524300, 0, 3, 458765, 0, 3, 458767, 0, 3, 655370, 0, 3, 655371, 0, 3, 655369, 0, 3, 655368, 0, 3, 655367, 0, 3, 655366, 0, 3, 655365, 0, 3, 655364, 0, 3, 655363, 0, 3, 655362, 0, 3, 720898, 0, 3, 720899, 0, 3, 720900, 0, 3, 720901, 0, 3, 720902, 0, 3, 720903, 0, 3, 720904, 0, 3, 720905, 0, 3, 720906, 0, 3, 720907, 0, 3, 720908, 0, 3, 786444, 0, 6, 786443, 0, 6, 786442, 0, 3, 786441, 0, 3, 786440, 0, 3, 786439, 0, 3, 786436, 0, 3, 786435, 0, 3, 851971, 0, 3, 851970, 0, 3, 786434, 0, 3, 786437, 0, 6, 786438, 0, 6, 851972, 0, 3, 851973, 0, 3, 851974, 0, 3, 851975, 0, 3, 851976, 0, 6, 851977, 0, 6, 851978, 0, 3, 851979, 0, 3, 851980, 0, 3, 851981, 0, 3, 917518, 0, 3, 917517, 0, 3, 917516, 0, 3, 917515, 0, 3, 917514, 0, 3, 917513, 0, 3, 917512, 0, 3, 917511, 0, 3, 917510, 0, 3, 917509, 0, 3, 917508, 0, 3, 917507, 0, 3, 917506, 0, 3, 983042, 0, 3, 983043, 0, 3, 983044, 0, 3, 983045, 0, 3, 983046, 0, 3, 983047, 0, 3, 983048, 0, 3, 983049, 0, 3, 983050, 0, 3, 983051, 0, 3, 983052, 0, 3, 983053, 0, 3, 983054, 0, 3, 655360, 0, 6, 720896, 0, 6, 786432, 0, 6, 851968, 0, 6, 917504, 0, 6, 983040, 0, 6, 1048576, 0, 6, 1114112, 0, 6, 1114113, 0, 6, 1114114, 0, 6, 1114115, 0, 6, 1114116, 0, 6, 1114117, 0, 6, 1114118, 0, 6, 1114119, 0, 6, 1114120, 0, 6, 1114121, 0, 6, 1114122, 0, 6, 1114123, 0, 6, 1114124, 0, 6, 1114125, 0, 6, 1114126, 0, 6, 1114127, 0, 6, 1114128, 0, 6, 1114129, 0, 6, 1048593, 0, 6, 983057, 0, 6, 917521, 0, 6, 851985, 0, 6)
+visible = false
+layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608, 0, 6, 262144, 0, 6, 1, 0, 6, 65537, 0, 3, 131073, 0, 3, 262145, 0, 3, 2, 0, 6, 65538, 0, 3, 131074, 0, 3, 262146, 0, 3, 3, 0, 6, 65539, 0, 3, 131075, 0, 3, 196611, 0, 3, 262147, 0, 3, 4, 0, 6, 65540, 0, 3, 131076, 0, 3, 196612, 0, 3, 262148, 0, 3, 327680, 0, 6, 393216, 0, 6, 458752, 0, 6, 524288, 0, 6, 589824, 0, 6, 327681, 0, 3, 393217, 0, 3, 458753, 0, 3, 524289, 0, 3, 589825, 0, 3, 327682, 0, 3, 393218, 0, 3, 458754, 0, 3, 524290, 0, 3, 589826, 0, 3, 327683, 0, 3, 393219, 0, 3, 458755, 0, 3, 524291, 0, 3, 589827, 0, 3, 327684, 0, 3, 393220, 0, 3, 458756, 0, 3, 524292, 0, 3, 589828, 0, 3, 5, 0, 6, 65541, 0, 3, 131077, 0, 3, 196613, 0, 3, 262149, 0, 3, 327685, 0, 3, 393221, 0, 3, 458757, 0, 3, 524293, 0, 3, 589829, 0, 3, 6, 0, 6, 65542, 0, 3, 131078, 0, 3, 196614, 0, 3, 262150, 0, 3, 327686, 0, 3, 393222, 0, 3, 458758, 0, 3, 524294, 0, 3, 589830, 0, 3, 7, 0, 6, 65543, 0, 3, 131079, 0, 3, 196615, 0, 3, 262151, 0, 3, 327687, 0, 3, 393223, 0, 3, 458759, 0, 3, 524295, 0, 3, 589831, 0, 3, 8, 0, 6, 65544, 0, 3, 131080, 0, 3, 196616, 0, 3, 262152, 0, 3, 327688, 0, 3, 458760, 0, 3, 524296, 0, 6, 589832, 0, 3, 9, 0, 6, 65545, 0, 3, 131081, 0, 3, 196617, 0, 3, 262153, 0, 3, 327689, 0, 3, 393225, 0, 3, 458761, 0, 3, 524297, 0, 6, 589833, 0, 3, 393224, 0, 3, 196610, 0, 3, 196609, 0, 3, 65546, 0, 3, 65547, 0, 3, 65548, 0, 3, 65549, 0, 3, 65550, 0, 3, 65551, 0, 3, 65552, 0, 3, 10, 0, 6, 11, 0, 6, 12, 0, 6, 13, 0, 6, 14, 0, 6, 15, 0, 6, 16, 0, 6, 17, 0, 6, 65553, 0, 6, 131089, 0, 6, 196625, 0, 6, 262161, 0, 6, 327697, 0, 6, 393233, 0, 6, 458769, 0, 6, 524305, 0, 6, 589841, 0, 6, 655377, 0, 6, 720913, 0, 6, 786449, 0, 6, 655361, 0, 3, 720897, 0, 3, 786433, 0, 3, 851969, 0, 3, 917505, 0, 3, 983041, 0, 3, 1048577, 0, 3, 1048578, 0, 3, 1048579, 0, 3, 1048580, 0, 3, 1048581, 0, 3, 1048582, 0, 3, 1048583, 0, 3, 1048584, 0, 3, 1048585, 0, 3, 1048586, 0, 3, 1048587, 0, 3, 1048588, 0, 3, 1048589, 0, 3, 1048590, 0, 3, 1048591, 0, 3, 983055, 0, 3, 983056, 0, 3, 917519, 0, 3, 851983, 0, 3, 851982, 0, 3, 1048592, 0, 3, 917520, 0, 3, 851984, 0, 3, 786448, 0, 3, 720912, 0, 3, 655376, 0, 3, 655375, 0, 3, 589839, 0, 3, 524303, 0, 3, 524302, 0, 3, 524301, 0, 3, 589837, 0, 3, 589836, 0, 3, 655372, 0, 3, 655373, 0, 3, 720909, 0, 3, 786445, 0, 3, 786446, 0, 3, 720911, 0, 3, 786447, 0, 3, 589840, 0, 3, 524304, 0, 3, 589838, 0, 3, 655374, 0, 3, 720910, 0, 3, 458768, 0, 3, 393232, 0, 3, 327696, 0, 3, 262160, 0, 3, 196624, 0, 3, 131088, 0, 3, 131087, 0, 3, 131086, 0, 3, 131085, 0, 3, 131084, 0, 3, 131083, 0, 3, 131082, 0, 3, 589834, 0, 3, 589835, 0, 3, 524299, 0, 3, 458763, 0, 3, 458762, 0, 3, 393226, 0, 3, 327690, 0, 3, 262154, 0, 3, 196618, 0, 3, 196619, 0, 3, 196620, 0, 3, 196621, 0, 3, 196622, 0, 3, 196623, 0, 3, 262159, 0, 3, 262158, 0, 3, 262157, 0, 3, 262156, 0, 3, 262155, 0, 3, 327691, 0, 3, 393227, 0, 3, 393228, 0, 3, 327692, 0, 3, 327693, 0, 3, 327694, 0, 3, 327695, 0, 3, 393231, 0, 3, 393230, 0, 3, 458766, 0, 3, 393229, 0, 3, 458764, 0, 3, 524298, 0, 3, 524300, 0, 3, 458765, 0, 3, 458767, 0, 3, 655370, 0, 3, 655371, 0, 3, 655369, 0, 3, 655368, 0, 3, 655367, 0, 3, 655366, 0, 3, 655365, 0, 3, 655364, 0, 3, 655363, 0, 3, 655362, 0, 3, 720898, 0, 3, 720899, 0, 3, 720900, 0, 3, 720901, 0, 3, 720902, 0, 3, 720903, 0, 3, 720904, 0, 3, 720905, 0, 3, 720906, 0, 3, 720907, 0, 3, 720908, 0, 3, 786444, 0, 3, 786443, 0, 3, 786442, 0, 3, 786441, 0, 3, 786440, 0, 3, 786439, 0, 3, 786436, 0, 3, 786435, 0, 3, 851971, 0, 3, 851970, 0, 3, 786434, 0, 3, 786437, 0, 3, 786438, 0, 3, 851972, 0, 3, 851973, 0, 3, 851974, 0, 3, 851975, 0, 3, 851976, 0, 3, 851977, 0, 3, 851978, 0, 3, 851979, 0, 3, 851980, 0, 3, 851981, 0, 3, 917518, 0, 3, 917517, 0, 3, 917516, 0, 3, 917515, 0, 3, 917514, 0, 3, 917513, 0, 3, 917512, 0, 3, 917511, 0, 3, 917510, 0, 3, 917509, 0, 3, 917508, 0, 3, 917507, 0, 3, 917506, 0, 3, 983042, 0, 3, 983043, 0, 3, 983044, 0, 3, 983045, 0, 3, 983046, 0, 3, 983047, 0, 3, 983048, 0, 3, 983049, 0, 3, 983050, 0, 3, 983051, 0, 3, 983052, 0, 3, 983053, 0, 3, 983054, 0, 3, 655360, 0, 6, 720896, 0, 6, 786432, 0, 6, 851968, 0, 6, 917504, 0, 6, 983040, 0, 6, 1048576, 0, 6, 1114112, 0, 6, 1114113, 0, 6, 1114114, 0, 6, 1114115, 0, 6, 1114116, 0, 6, 1114117, 0, 6, 1114118, 0, 6, 1114119, 0, 6, 1114120, 0, 6, 1114121, 0, 6, 1114122, 0, 6, 1114123, 0, 6, 1114124, 0, 6, 1114125, 0, 6, 1114126, 0, 6, 1114127, 0, 6, 1114128, 0, 6, 1114129, 0, 6, 1048593, 0, 6, 983057, 0, 6, 917521, 0, 6, 851985, 0, 6)
 
 [node name="ObstacleHolder" type="Node" parent="Grid"]
+
+[node name="Obstacle" parent="Grid/ObstacleHolder" instance=ExtResource("4_wxpws")]
+position = Vector2(1056, 1056)
+MaxHP = 2
+
+[node name="Obstacle2" parent="Grid/ObstacleHolder" instance=ExtResource("4_wxpws")]
+position = Vector2(96, 1056)
+MaxHP = 2
+
+[node name="Obstacle3" parent="Grid/ObstacleHolder" instance=ExtResource("4_wxpws")]
+position = Vector2(96, 96)
+MaxHP = 2
+
+[node name="Obstacle4" parent="Grid/ObstacleHolder" instance=ExtResource("4_wxpws")]
+position = Vector2(1056, 96)
+MaxHP = 2
+
+[node name="Honeycomb" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(608, 864)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb2" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(544, 864)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb3" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(736, 800)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb4" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(800, 800)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb5" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(352, 800)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb6" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(416, 800)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb7" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(736, 288)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb8" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(800, 288)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb9" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(544, 224)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb10" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(608, 224)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb11" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(352, 288)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb12" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(416, 288)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb13" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(224, 480)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb14" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(224, 544)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb15" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(928, 480)
+scale = Vector2(1, 1)
+
+[node name="Honeycomb16" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
+position = Vector2(928, 544)
+scale = Vector2(1, 1)
 
 [node name="InitManager" parent="Grid" instance=ExtResource("3_457fh")]
 
@@ -34,13 +157,13 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 position = Vector2(544, 992)
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_msf3w")]
-position = Vector2(480, 1056)
+position = Vector2(608, 992)
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_vdhge")]
 position = Vector2(672, 1056)
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("8_mc8hb")]
-position = Vector2(608, 992)
+position = Vector2(480, 1056)
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_3sxn8")]
 visible = false
@@ -50,6 +173,26 @@ Name = "Jeff"
 fileName = "Jeff"
 MaxHP = 200
 TrueInit = -100
+
+[node name="Grunt" parent="Grid/InitManager/UnitManager" instance=ExtResource("13_8xthp")]
+position = Vector2(96, 160)
+
+[node name="Grunt2" parent="Grid/InitManager/UnitManager" instance=ExtResource("13_8xthp")]
+position = Vector2(992, 1056)
+
+[node name="Grunt3" parent="Grid/InitManager/UnitManager" instance=ExtResource("13_8xthp")]
+position = Vector2(992, 96)
+
+[node name="Grunt4" parent="Grid/InitManager/UnitManager" instance=ExtResource("13_8xthp")]
+position = Vector2(1056, 160)
+
+[node name="Termitator" parent="Grid/InitManager/UnitManager" instance=ExtResource("14_k301f")]
+position = Vector2(160, 1056)
+
+[node name="Thor" parent="Grid/InitManager/UnitManager" instance=ExtResource("15_futsm")]
+visible = false
+position = Vector2(608, 544)
+collision_layer = 0
 
 [node name="UILayer" parent="." instance=ExtResource("4_2f1wn")]
 visible = false
@@ -64,3 +207,41 @@ script = ExtResource("5_2fsto")
 visible = false
 scale = Vector2(-116.691, 103.457)
 texture = SubResource("PlaceholderTexture2D_yb3wm")
+
+[node name="FakeThor" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(576, 568)
+scale = Vector2(1.81818, 1.81818)
+sprite_frames = ExtResource("18_vxh52")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="GardenMapSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 576)
+scale = Vector2(1.81818, 1.81818)
+texture = ExtResource("13_3vd1y")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="GridOverlayMask" type="Sprite2D" parent="GardenMapSprite"]
+clip_children = 1
+position = Vector2(-1.71661e-05, -1.71661e-05)
+scale = Vector2(0.488889, 0.488889)
+texture = SubResource("PlaceholderTexture2D_ii0lb")
+
+[node name="GridOverlay" type="Sprite2D" parent="GardenMapSprite/GridOverlayMask"]
+modulate = Color(1, 1, 1, 0.235294)
+texture_filter = 1
+position = Vector2(6.10352e-05, 6.10352e-05)
+scale = Vector2(1.125, 1.125)
+texture = ExtResource("14_y4n4e")
+
+[node name="Altar" type="AnimatedSprite2D" parent="GardenMapSprite"]
+position = Vector2(0, -17.6)
+sprite_frames = SubResource("SpriteFrames_4uwah")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 1
+frame_progress = 0.17059

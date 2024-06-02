@@ -59,7 +59,23 @@ func dequeue(_num, state):
 		isCarrying = false
 		clickedPos = null
 		$Area2D/SelectionBox.set_visible(false)
-		$Area2D.position = Vector2(0,0)
+		$Area2D.position = Vector2(-900,-900)
+
+func post_execute2():
+		dmgMod = 1
+		targetUnits.clear()
+		get_parent().grid.update_grid_collision()
+		SignalBus.abilityExecuted.emit(self)
+		SignalBus.updateUI.emit(get_parent())
+		AutoloadMe.isExecuting = false
+		SignalBus.changeControls.emit()
+		if get_parent().Faction == get_parent().fac.ALLY:
+			SignalBus.changeButtonState.emit()
+		elif get_parent().Faction == get_parent().fac.ENEMY:
+			dequeue(1,false)
+		await get_tree().create_timer(1).timeout
+		AutoloadMe.passingUnit = get_parent()
+		get_parent().on_turn_end()
 
 func execute():
 	# for every target in target units[]
@@ -96,4 +112,4 @@ func execute():
 		isCarrying = false
 		storedUnit = null
 		AutoloadMe.allowEndTurn = true
-		post_execute()
+		post_execute2()

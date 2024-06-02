@@ -19,7 +19,7 @@ func assign_unit(unit):
 	get_node("Sprite2D").texture = spritePath
 	if unit.get_faction() == unit.fac.ENEMY:
 		$affilBox.set_color(Color(1,0.1,0.2,1,))
-	update_display()
+	#update_display()
 
 func update_display():
 	var hpVal = str(myUnit.get_current_hp()) + " / " + str(myUnit.get_max_hp())
@@ -75,8 +75,6 @@ func delete_box(toBeDeleted):
 		SignalBus.updateUI.emit(AutoloadMe.turnPointer)
 		#myUnit.queue_free()
 		myUnit.myInitBox = null
-		if AutoloadMe.turnPointer == toBeDeleted:
-			SignalBus.endTurn.emit()
 		
 		queue_free()
 

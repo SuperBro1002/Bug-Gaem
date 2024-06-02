@@ -1,9 +1,67 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://p7oscdas3pq2"]
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://p7oscdas3pq2"]
+
+[ext_resource type="Texture2D" uid="uid://2gu3l4s1350g" path="res://Assets/Sprites/Triss/Allies_Triss_VFX_Animations.png" id="1_qgj1v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qks1m"]
+atlas = ExtResource("1_qgj1v")
+region = Rect2(320, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u5ng"]
+atlas = ExtResource("1_qgj1v")
+region = Rect2(480, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c325u"]
+atlas = ExtResource("1_qgj1v")
+region = Rect2(640, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwbor"]
+atlas = ExtResource("1_qgj1v")
+region = Rect2(800, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyhc1"]
+atlas = ExtResource("1_qgj1v")
+region = Rect2(960, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hjkp"]
+atlas = ExtResource("1_qgj1v")
+region = Rect2(1120, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s08gr"]
+atlas = ExtResource("1_qgj1v")
+region = Rect2(1280, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oow5j"]
+atlas = ExtResource("1_qgj1v")
+region = Rect2(1440, 320, 160, 160)
 
 [resource]
 resource_name = "Sting"
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qks1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u5ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c325u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwbor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyhc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hjkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s08gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oow5j")
+}],
 "loop": false,
 "name": &"Effect",
 "speed": 12.0

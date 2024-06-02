@@ -13,6 +13,7 @@ func hijack(num, state):
 		queue()
 
 func queue():
+	AutoloadMe.currentAbility = self
 	if get_parent().get_temp_ap() - apCost >= 0:
 		clickedPos = get_parent().grid.local_to_map(get_parent().position)
 		
@@ -37,7 +38,7 @@ func execute():
 	print("EXECUTED")
 	print(targetUnits)
 	
-	face_target()
+	#face_target()
 	get_parent().get_node("AnimatedSprite2D").stop()
 	get_parent().get_node("AnimatedSprite2D").play("Cast1")
 	$VFX.set_visible(true)

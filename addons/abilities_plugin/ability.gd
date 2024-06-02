@@ -32,6 +32,7 @@ func _ready():
 	SignalBus.connect("ability",dequeue)
 	SignalBus.connect("showRangeTiles", draw_range_tiles)
 	SignalBus.connect("endRangeTiles", kill_range_tiles)
+	$Area2D.position = Vector2(-900,-900)
 	$Area2D/SelectionBox.set_visible(false)
 
 func queue():
@@ -87,7 +88,7 @@ func dequeue(num, state):
 	if state == false:
 		clickedPos = null
 		$Area2D/SelectionBox.set_visible(false)
-		$Area2D.position = Vector2(0,0)
+		$Area2D.position = Vector2(-900,-900)
 		kill_range_tiles()
 
 func execute():
@@ -120,6 +121,7 @@ func post_execute():
 	SignalBus.updateUI.emit(get_parent())
 	AutoloadMe.isExecuting = false
 	SignalBus.changeControls.emit()
+	AutoloadMe.set_process_unhandled_input(true)
 	if get_parent().Faction == get_parent().fac.ALLY:
 		SignalBus.changeButtonState.emit()
 	elif get_parent().Faction == get_parent().fac.ENEMY:
@@ -171,11 +173,14 @@ func _on_area_2d_area_entered(area):
 			targetUnits.append(area)
 			print("SIZE OF TARGET",targetUnits.size())
 	elif AutoloadMe.turnPointer.get_faction() == get_parent().fac.ENEMY:
-		if area.areaType != "spawner" and area.areaType != "range_box" and area.get_faction() == area.fac.ALLY and area != get_parent() and targetUnits.find(area) == -1:
+		print("Enemy hitbox entered")
+		if area.areaType != "spawner" and area.areaType != "range_box" and (area.get_faction() == area.fac.ALLY or area.get_faction() == area.fac.OBSTACLE) and area != get_parent() and targetUnits.find(area) == -1:
+			print(area)
 			print("HI")
 			targetUnits.append(area)
 			print("SIZE OF TARGET",targetUnits.size())
 
 func _on_area_2d_area_exited(area):
-	if area.get_parent() == self.get_parent().get_parent() or area.areaType == "obstacle":
+	if (area.get_parent() == self.get_parent().get_parent() or area.areaType == "obstacle") and AutoloadMe.turnPointer.get_faction() != get_parent().fac.ENEMY:
+		print("Erased ", area)
 		targetUnits.erase(area)

@@ -4,9 +4,15 @@
 [ext_resource type="SpriteFrames" uid="uid://c268svi0k4dik" path="res://Scenes/Sprite Frames/Grunt.tres" id="2_f1m48"]
 [ext_resource type="Script" path="res://Scenes/Units/Grunt.gd" id="2_tudqr"]
 
-[node name="Enemy" instance=ExtResource("1_q364i")]
+[node name="Grunt" instance=ExtResource("1_q364i")]
 script = ExtResource("2_tudqr")
-aggroRange = 8
+Name = "Yellowjacket Grunt"
+fileName = "Grunt"
+MaxHP = 7
+MaxAP = 9
+TrueInit = 18
+InitVariance = 5
+SetAbility1 = "Purebred_Sting"
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 modulate = Color(1, 1, 0, 1)

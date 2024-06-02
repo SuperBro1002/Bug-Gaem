@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvip1ddh8purj"]
+
+[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_j27fl"]
+[ext_resource type="Script" path="res://Scenes/Units/Thor.gd" id="2_d2lgt"]
+
+[node name="Thor" instance=ExtResource("1_j27fl")]
+script = ExtResource("2_d2lgt")
+phase = 1
+startPhaseTwo = false
+aggroRange = 12
+Name = "Thor'axe"
+fileName = "Thor"
+MaxAP = 11
+TrueInit = 33
+SetAbility1 = "Chloroblast"
+Controllable = false
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+modulate = Color(1, 1, 0, 1)
+rotation = 0.628319

@@ -43,6 +43,7 @@ var incoming_dmg_type = null # pierce, null
 @export var SetAbility3 = "Tackle"
 @export var Faction = fac.NONE
 @export var BatonPass = TS.NOTACTED
+@export var Controllable = true
 
 @onready var tempAP = get_max_ap()
 @onready var grid = find_parent("Grid")
@@ -58,12 +59,12 @@ var myInitBox
 var canMove = true
 var storedBatonPass = TS.NOTACTED
 var glowTween
+var animationSpeed = 4
 
 func _enter_tree():
 	print("TREE")
 	#print(isPossessed, " <-----------------------")
 	SignalBus.connect("abilityExecuted",on_execute)
-	SignalBus.connect("deleteUnit", delete)
 	SignalBus.connect("highlightUnit", glow)
 	#await get_tree().create_timer(3).timeout
 	print(Name, " MY ABILITY IS ", SetAbility1)
@@ -89,8 +90,8 @@ func clone(OGUnit):
 	TrueInit = OGUnit.TrueInit
 	CurrentInit = OGUnit.CurrentInit
 	SetAbility1 = OGUnit.SetAbility1
-	SetAbility2 = OGUnit.SetAbility2
-	SetAbility3 = OGUnit.SetAbility3
+	SetAbility2 = null
+	SetAbility3 = null
 	
 	Faction = fac.ALLY
 	delete_floating_hp()
@@ -156,12 +157,17 @@ func lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
 	if AutoloadMe.currentAbility != null: dmgVal *= AutoloadMe.currentAbility.dmgMod
 	CurrentHP = CurrentHP - dmgVal
-	#await 
+	incoming_dmg_type = null
 	animated_Damaged()
 	if CurrentHP < 0:
 		CurrentHP = 0
+		
 	SignalBus.updateFloatingHP.emit(self)
-	incoming_dmg_type = null
+	await SignalBus.HpUiFinish
+	
+	if CurrentHP == 0:
+		delete(self)
+
 
 
 func get_max_hp():
@@ -178,6 +184,12 @@ func set_current_ap(num):
 	CurrentAP = num
 	if CurrentAP > MaxAP:
 		CurrentAP = MaxAP
+
+func inherit_ap(num):
+	if num > CurrentAP:
+		CurrentAP = num
+		if CurrentAP > MaxAP:
+			CurrentAP = MaxAP
 
 func gain_ap(num):
 	# Adds given num to unit's current ap
@@ -254,6 +266,17 @@ func get_batonpass():
 
 
 func on_turn_start():
+	if AutoloadMe.passingUnit != null:
+		var prevUnit = AutoloadMe.passingUnit
+		inherit_ap(prevUnit.CurrentAP)
+		tempAP = CurrentAP
+		prevUnit.CurrentAP = 0
+		prevUnit.tempAP = 0
+		AutoloadMe.passingUnit = null
+	
+	if Faction == fac.ENEMY:
+		SignalBus.showUI.emit()
+	
 	tempAP = CurrentAP
 	start = grid.local_to_map(position)
 	abilityStartPoint = grid.convert_to_map(position)
@@ -292,6 +315,7 @@ func on_turn_end():
 	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
 	SignalBus.actedUI.emit()
 	print("	", Name, " has acted.")
+	
 	unique_turn_end()
 
 func unique_turn_end():
@@ -306,6 +330,8 @@ func on_execute(abilityUsed):
 
 
 func load_ability(name):
+	if name == null:
+		return null
 	var scene = load("res://Abilities/" + name + "/" + name + ".tscn")
 	var sceneNode = scene.instantiate()
 	add_child(sceneNode)
@@ -336,19 +362,38 @@ func find_and_delete_passives():
 		else:
 			i = 0 # THIS SEEMS TO WORK BUT I FEEL LIKE IT SHOULDN'T
 
+func spawning_in():
+	set_modulate(Color(1,1,1,0))
+	get_node("AnimatedSprite2D:sprite_frames").set_sprite_frames(load("res://Scenes/Sprite Frames/" + fileName + ".tres"))
+	get_node(".:Scale").set_scale(Vector2(1,1))
+	get_node("AnimatedSprite2D:Scale").set_scale(Vector2(2,2))
+	
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1, 2).set_trans(Tween.TRANS_SINE)
+	
+	SignalBus.updateFloatingHP.emit(self)
+	SignalBus.remakeUnitList.emit()
+
 func delete(unit):
 	if unit == self:
 		print("I AM DYING")
 		set_visible(false)
+		set_collision_layer_value(1,false)
+		set_collision_layer_value(2,false)
 		AutoloadMe.globalUnitList.erase(unit)
 		AutoloadMe.globalEnemyList.erase(unit)
 		AutoloadMe.globalAllyList.erase(unit)
 		AutoloadMe.globalTargetList.erase(unit)
 		if unit.Faction == self.fac.ENEMY:
 			AutoloadMe.deathCount += 1
+			SignalBus.checkObjective.emit()
 		SignalBus.updateGrid.emit()
 		SignalBus.deleteMe.emit(self)
 		await get_tree().create_timer(2).timeout
+		SignalBus.HpUiFinish.emit()
+		
+		if AutoloadMe.turnPointer == self:
+			SignalBus.endTurn.emit()
 		queue_free()
 
 func _mouse_shape_enter(shape_idx):

@@ -5,10 +5,8 @@ var grid
 
 func _ready():
 	Engine.max_fps = 60
-	get_node("Grid/InitManager/UnitManager/Atlus").add_passive("Armor")
-	#get_node("Grid/InitManager/UnitManager/Atlus").add_passive("Poison")
-	get_node("Grid/InitManager/UnitManager/Atlus").add_passive("Bless")
-	get_node("Grid/InitManager/UnitManager/Atlus").add_passive("Empowered_Attack")
+	AutoloadMe.new_level()
+	#get_node("Grid/InitManager/UnitManager/Lumoth").add_passive("TestPassive")
 	get_node("Grid/InitManager").next_turn()
 
 func process():

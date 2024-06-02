@@ -40,13 +40,7 @@ func update(myUnit):
 			segList[i].set_visible(true)
 			await get_tree().create_timer(0.05).timeout
 	
-	if currentHP == 0 && !(myUnit.type == myUnit.fac.ALLY):
-		SignalBus.deleteUnit.emit(get_parent())
-	elif currentHP == 0 && myUnit.type == myUnit.fac.ALLY:
-		myUnit.lose_ap(1000)
-		myUnit.add_passive("Down")
-	else:
-		SignalBus.HpUiFinish.emit()
+	SignalBus.HpUiFinish.emit()
 
 func fade(isHovering):
 	var tween = create_tween()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bofj7xwd6mfhg"
-path="res://.godot/imported/tutorial_map.png-c0966646081a3d08ef9c3c441b0555ac.ctex"
+uid="uid://xybeeql63ytc"
+path="res://.godot/imported/horizontal_bench.png-715cfe60bd4104eac30c5d618eaa0904.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Maps_Tiles/tutorial_map.png"
-dest_files=["res://.godot/imported/tutorial_map.png-c0966646081a3d08ef9c3c441b0555ac.ctex"]
+source_file="res://Assets/Maps_Tiles/Cathedral/horizontal_bench.png"
+dest_files=["res://.godot/imported/horizontal_bench.png-715cfe60bd4104eac30c5d618eaa0904.ctex"]
 
 [params]
 

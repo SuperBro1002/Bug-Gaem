@@ -9,6 +9,7 @@ var ability3
 var enemyPhase = false
 var camTween
 var arrowTween
+var AnimTween
 
 func _ready():
 	get_parent().set_visible(true)
@@ -67,11 +68,11 @@ func set_ui(unit):
 	draw_tile_path()
 	draw_passive_boxes(unit)
 	boxArray = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
-	for i in boxArray.size():
-		#print("HERE ", boxArray)
-	#	ifboxArray[i] == null:
-			
-		boxArray[i].update_display()
+	#for i in boxArray.size():
+		##print("HERE ", boxArray)
+	##	ifboxArray[i] == null:
+			#
+		#boxArray[i].update_display()
 
 func toggle_UI():
 	pass
@@ -137,13 +138,16 @@ func add_init_box(target):
 	sceneNode.assign_unit(target)
 	get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").add_child(sceneNode)
 	sceneNode.UINode = self
+	await get_tree().create_timer(0.1).timeout
+	move_arrow(AutoloadMe.turnPointer)
 
 func remove_init_box(target):
 	print("BEFORE: ", nodeList)
 	nodeList = get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children()
 	nodeList.pop_at(nodeList.find(target))
 	get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").remove_child(target)
-	
+	await get_tree().create_timer(0.1).timeout
+	move_arrow(AutoloadMe.turnPointer)
 	print("AFTER: ", get_node("../UI/ColorRect/ScrollContainer/HBoxContainer").get_children())
 
 func clear_init_box():
@@ -182,8 +186,9 @@ func clear_tile_paths(_unit):
 	var tiles = $"../../Grid/PathTiles".get_children()
 	if tiles != null:
 		print("Clearing ", _unit, "tile paths!")
-		for i in tiles.size():
-			tiles[i].queue_free()
+		for i in tiles:
+			i.set_visible(false)
+			i.free()
 	else:
 		print(_unit, " has no paths to clear!")
 
@@ -230,6 +235,15 @@ func show_ui():
 	tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 func start_anim(unit):
+	if unit.get_current_hp() == 0:
+		return
+	
+	if AnimTween:
+		AnimTween.kill()
+		$TurnGraphic.position.x = 1934
+	
+	AnimTween = create_tween()
+	
 	if unit.get_faction() != unit.fac.ALLY and unit.get_faction() != unit.fac.ENEMY:
 		enemyPhase = false
 		return
@@ -244,7 +258,7 @@ func start_anim(unit):
 	if unit.get_batonpass() == unit.TS.NOTACTED:
 		
 		if unit.get_faction() == unit.fac.ALLY:
-			$TurnGraphic.set_text(unit.Name + "\nStart")
+			$TurnGraphic.set_text("Ally\nStart")
 		elif unit.get_faction() == unit.fac.ENEMY:
 			$TurnGraphic.set_text("Robugs\nStart")
 		
@@ -252,7 +266,7 @@ func start_anim(unit):
 	
 	elif unit.get_batonpass() == unit.TS.BATONPASS:
 		
-		$TurnGraphic.set_text(unit.Name + "\nBaton Pass")
+		$TurnGraphic.set_text("Baton Pass")
 		
 		if unit.get_faction() == unit.fac.ALLY:
 			$TurnGraphic.label_settings.shadow_color = Color(0, 1, 1, 1)
@@ -265,9 +279,8 @@ func start_anim(unit):
 	elif unit.get_faction() == unit.fac.ALLY:
 		$TurnGraphic.label_settings.font_color = Color(0, 0.518, 0.969, 1)
 	
-	var tween = create_tween()
-	tween.tween_property($TurnGraphic, "position:x", -1300, 3.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT_IN)
-	await tween.finished
+	AnimTween.tween_property($TurnGraphic, "position:x", -1300, 3.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT_IN)
+	await AnimTween.finished
 	$TurnGraphic.position.x = 1934
 	
 	AutoloadMe.set_process_unhandled_input(true)

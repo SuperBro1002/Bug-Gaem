@@ -35,5 +35,5 @@ func button_state():
 		self.set_disabled(false)
 
 func assign_ap_cost(current):
-	if current.get_faction() == current.fac.ALLY:
+	if current.get_faction() == current.fac.ALLY and current.ability2 != null:
 		APcost = current.ability2.get_ap_cost()
