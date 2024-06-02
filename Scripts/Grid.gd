@@ -216,6 +216,24 @@ func remove_solid(tiles):
 		newTiles[i] = map_to_local(newTiles[i])
 	return newTiles
 
+func remove_solid_throw(tiles, pos):
+	pos = local_to_map(pos)
+	set_ability_range_ui_grid()
+	var newTiles = []
+	for i in tiles:
+		var minDist = AutoloadMe.abilityRangeGrid.get_point_path(pos,i).size() - 1
+		if !AutoloadMe.abilityRangeGridUI.is_in_boundsv(i):
+			continue
+		if AutoloadMe.abilityRangeGridUI.is_point_solid(i):
+			continue
+		if minDist < 3:
+			continue
+		else:
+			newTiles.append(i)
+	for i in newTiles.size():
+		newTiles[i] = map_to_local(newTiles[i])
+	return newTiles
+
 #func flood_fill_ability_range(start, maxDistance):
 	#set_ability_range_ui_grid()
 	#var validTiles = []

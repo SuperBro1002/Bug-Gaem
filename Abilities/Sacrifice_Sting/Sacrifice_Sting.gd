@@ -13,6 +13,7 @@ func hijack(num, state):
 		queue()
 
 func queue():
+	AutoloadMe.currentAbility = self
 	if get_parent().get_temp_ap() - apCost >= 0:
 		clickedPos = get_parent().grid.local_to_map(get_parent().position)
 		

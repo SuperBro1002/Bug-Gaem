@@ -9,7 +9,7 @@ size = Vector2(64, 64)
 
 [node name="Fury" type="Node"]
 script = ExtResource("1_oar3b")
-apCost = 1
+apCost = 9
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

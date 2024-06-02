@@ -369,7 +369,7 @@ func spawning_in():
 	get_node("AnimatedSprite2D:Scale").set_scale(Vector2(2,2))
 	
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(self, "modulate:a", 1, 2).set_trans(Tween.TRANS_SINE)
 	
 	SignalBus.updateFloatingHP.emit(self)
 	SignalBus.remakeUnitList.emit()

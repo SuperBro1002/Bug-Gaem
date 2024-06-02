@@ -42,7 +42,6 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 
 [node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_x54jv")]
 position = Vector2(544, 736)
-MaxHP = 15
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_bcenj")]
 position = Vector2(609, 736)

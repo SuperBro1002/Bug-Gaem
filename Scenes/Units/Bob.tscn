@@ -15,7 +15,6 @@ TrueInit = 30
 SetAbility1 = "Knockback2"
 SetAbility2 = "Tackle"
 SetAbility3 = "Tackle"
-Faction = 1
 Controllable = false
 
 [node name="AnimatedSprite2D" parent="." index="1"]

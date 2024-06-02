@@ -33,7 +33,8 @@ func queue():
 						$Area2D/SelectionBox.set_visible(true)
 						kill_range_tiles()
 						secondRange = 5
-						draw_range_tiles(Name)
+						draw_range_tiles2(Name)
+						print("DUMB")
 						await get_tree().create_timer(0.1).timeout
 						if !targetUnits.is_empty(): # Checks if a target is found and signals if the game can allow an input to trigger the execute method
 							SignalBus.activelyQueueing.emit(true)
@@ -48,7 +49,7 @@ func queue():
 				return
 		clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,newPos) # Makes a list of the shortest path of tiles between the parent and clickedPos
 		print(clickedDistance.size() - 1)
-		if clickedDistance.size() - 1 <= 5 and newPos.x >= 1 and newPos.y >= 1 and newPos.x <= AutoloadMe.gridSize.x - 2 and newPos.y <= AutoloadMe.gridSize.y - 2 and newPos != get_parent().grid.local_to_map(get_parent().position):
+		if clickedDistance.size() - 1 <= 5 and clickedDistance.size() - 1 >= 3 and newPos.x >= 1 and newPos.y >= 1 and newPos.x <= AutoloadMe.gridSize.x - 2 and newPos.y <= AutoloadMe.gridSize.y - 2 and newPos != get_parent().grid.local_to_map(get_parent().position):
 			validTargetPos = true
 			for i in AutoloadMe.globalTargetList.size() - 1:
 				if newPos == AutoloadMe.globalTargetList[i].grid.local_to_map(AutoloadMe.globalTargetList[i].position):
@@ -123,6 +124,23 @@ func draw_range_tiles(activeName):
 		print(get_parent())
 		var tiles = get_parent().grid.flood_fill_in_range(get_parent().position, secondRange)
 		tiles = get_parent().grid.remove_solid(tiles)
+		var sceneNode 
+		print("TILES: ", tiles)
+		for i in tiles.size():
+			var scene = load("res://Scenes/Ability_Tile.tscn")
+			sceneNode = scene.instantiate()
+			$AbilityRanges.add_child(sceneNode)
+			sceneNode.position = tiles[i]
+		#kill_range_tiles()
+
+func draw_range_tiles2(activeName):
+	if Name != activeName:
+		return
+	print("Children: ", )
+	if get_parent() == AutoloadMe.turnPointer:
+		print(get_parent())
+		var tiles = get_parent().grid.flood_fill_in_range(get_parent().position, secondRange)
+		tiles = get_parent().grid.remove_solid_throw(tiles, get_parent().position)
 		var sceneNode 
 		print("TILES: ", tiles)
 		for i in tiles.size():

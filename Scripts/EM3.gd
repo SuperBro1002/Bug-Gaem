@@ -1,6 +1,9 @@
 extends event_man
 
+var begunTwo = false
+
 func _ready():
+	AutoloadMe.mapID = 3
 	SignalBus.connect("checkEvents", start_round_event_check)
 	SignalBus.connect("checkObjective", check_objective)
 	SignalBus.connect("midObjective", checkSiphons)
@@ -15,10 +18,12 @@ func activate_spawners():
 			pass
 
 func checkSiphons():
-	if AutoloadMe.siphonsDestroyed == 4:
+	if AutoloadMe.siphonsDestroyed == 4 and begunTwo == false:
+		begunTwo = true
 		SignalBus.phaseChange.emit()
 	#SignalBus.midObjectiveChecked.emit()
 
 func check_routed():
 	if AutoloadMe.deathCount >= objectiveNum:
+		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://Scenes/Cathedral 2.tscn")

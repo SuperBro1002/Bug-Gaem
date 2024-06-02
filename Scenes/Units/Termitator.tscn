@@ -6,7 +6,6 @@
 
 [node name="Termitator" instance=ExtResource("1_q2gxn")]
 script = ExtResource("2_ffc10")
-aggroRange = 8
 Name = "Termitator"
 fileName = "Termitator"
 MaxHP = 5
@@ -14,7 +13,6 @@ MaxAP = 8
 TrueInit = 23
 InitVariance = 5
 SetAbility1 = "Chainsaw"
-Faction = 1
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 modulate = Color(0, 1, 0, 1)

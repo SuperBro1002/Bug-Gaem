@@ -4,7 +4,8 @@ class_name event_man
 
 enum objectiveType {
 	ROUTED,
-	SURVIVAL
+	SURVIVAL,
+	BOSS
 }
 
 @export var currentObjective = objectiveType.ROUTED
@@ -52,6 +53,8 @@ func check_objective():
 		check_routed()
 	elif currentObjective == objectiveType.SURVIVAL:
 		isComplete = check_survival()
+	elif currentObjective == objectiveType.BOSS:
+		check_boss_routed()
 
 # Compares current enemy kill count with preset var
 func check_routed():
@@ -62,3 +65,7 @@ func check_routed():
 func check_survival():
 	if AutoloadMe.roundNum >= objectiveNum:
 		return true
+
+func check_boss_routed():
+	if AutoloadMe.bossdead == true:
+		get_tree().quit()

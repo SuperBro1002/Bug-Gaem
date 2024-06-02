@@ -25,7 +25,7 @@ script = ExtResource("1_jpy62")
 
 [node name="EM1" type="Node" parent="."]
 script = ExtResource("2_mf4f4")
-objectiveNum = 1
+objectiveNum = 6
 
 [node name="NarrativeManager" parent="." instance=ExtResource("3_u2aib")]
 
@@ -92,68 +92,26 @@ texture = ExtResource("19_g70p0")
 [node name="Spawner" parent="." instance=ExtResource("20_46dud")]
 position = Vector2(416, 232)
 groupID = 1
-setName = "Robo Poly"
-setFileName = "Robopoly"
-setHP = 3
-setAP = 8
-setInit = 20
-setVary = 10
-ability1 = "Tackle"
 
 [node name="Spawner2" parent="." instance=ExtResource("20_46dud")]
 position = Vector2(352, 544)
 groupID = 1
-setName = "Robo Poly"
-setFileName = "Robopoly"
-setHP = 3
-setAP = 8
-setInit = 20
-setVary = 10
-ability1 = "Tackle"
 
 [node name="Spawner6" parent="." instance=ExtResource("20_46dud")]
 position = Vector2(224, 416)
 groupID = 2
-setName = "Robo Poly"
-setFileName = "Robopoly"
-setHP = 3
-setAP = 8
-setInit = 20
-setVary = 10
-ability1 = "Tackle"
 
 [node name="Spawner7" parent="." instance=ExtResource("20_46dud")]
 position = Vector2(536, 352)
 groupID = 2
-setName = "Robo Poly"
-setFileName = "Robopoly"
-setHP = 3
-setAP = 8
-setInit = 20
-setVary = 10
-ability1 = "Tackle"
 
 [node name="Spawner8" parent="." instance=ExtResource("20_46dud")]
 position = Vector2(544, 480)
 groupID = 3
-setName = "Robo Poly"
-setFileName = "Robopoly"
-setHP = 3
-setAP = 8
-setInit = 20
-setVary = 10
-ability1 = "Tackle"
 
 [node name="Spawner9" parent="." instance=ExtResource("20_46dud")]
 position = Vector2(224, 288)
 groupID = 3
-setName = "Robo Poly"
-setFileName = "Robopoly"
-setHP = 3
-setAP = 8
-setInit = 20
-setVary = 10
-ability1 = "Tackle"
 
 [node name="Spawner3" parent="." instance=ExtResource("20_46dud")]
 position = Vector2(352, 672)

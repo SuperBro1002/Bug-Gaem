@@ -6,7 +6,6 @@
 
 [node name="Grunt" instance=ExtResource("1_q364i")]
 script = ExtResource("2_tudqr")
-aggroRange = 8
 Name = "Yellowjacket Grunt"
 fileName = "Grunt"
 MaxHP = 7
@@ -14,7 +13,6 @@ MaxAP = 9
 TrueInit = 18
 InitVariance = 5
 SetAbility1 = "Purebred_Sting"
-Faction = 1
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 modulate = Color(1, 1, 0, 1)

@@ -1,14 +1,16 @@
 extends "res://Scripts/enemy.gd"
 
-var phase = 1
+@export var phase = 1
+@export var startPhaseTwo = false
 
 func _ready():
 	SignalBus.connect("phaseChange", set_phase)
 
 func unique_turn_start():
 	print("PHASE ", phase)
-	if phase == 2:
+	if phase == 2 and startPhaseTwo == true:
 		position = grid.map_to_local(await set_phase())
+		startPhaseTwo = false
 	await get_tree().create_timer(2).timeout
 	
 	if phase == 1:
@@ -88,15 +90,42 @@ func unique_turn_start():
 					await ability2.enemy_execute(target)
 					CurrentAP -= ability2.get_ap_cost()
 					await get_tree().create_timer(1).timeout
-	
 	on_turn_end()
 
 func set_phase():
 	collision_layer = 2
+	startPhaseTwo = true
 	set_visible(true)
-	get_node("/root/Garden/FakeThor").set_visible(false)
+	if AutoloadMe.mapID == 3:
+		get_node("/root/Garden/FakeThor").set_visible(false)
 	#position = grid.map_to_local(Vector2i(9,9))
 	phase = 2
 	ability1 = load_ability("Fury")
 	ability2 = load_ability("Sniper")
-	return Vector2i(9,9)
+	if AutoloadMe.mapID == 3:
+		return Vector2i(9,9)
+	else:
+		return Vector2i(5,2)
+
+func delete(unit):
+	if unit == self:
+		print("I AM DYING")
+		set_visible(false)
+		set_collision_layer_value(1,false)
+		set_collision_layer_value(2,false)
+		AutoloadMe.globalUnitList.erase(unit)
+		AutoloadMe.globalEnemyList.erase(unit)
+		AutoloadMe.globalAllyList.erase(unit)
+		AutoloadMe.globalTargetList.erase(unit)
+		AutoloadMe.deathCount += 1
+		if AutoloadMe.mapID == 5:
+			SignalBus.finalBattle.emit()
+		SignalBus.checkObjective.emit()
+		SignalBus.updateGrid.emit()
+		SignalBus.deleteMe.emit(self)
+		await get_tree().create_timer(2).timeout
+		SignalBus.HpUiFinish.emit()
+		
+		if AutoloadMe.turnPointer == self:
+			SignalBus.endTurn.emit()
+		queue_free()

@@ -43,3 +43,5 @@ signal checkObjective
 signal midObjective
 signal midObjectiveChecked
 signal phaseChange
+signal finalBattle
+signal spawnDrone
