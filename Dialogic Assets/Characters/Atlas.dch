@@ -2,18 +2,127 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.820313, 0.668306, 0.608826, 1),
+"color": Color(1, 0.686275, 0.403922, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "",
+"default_portrait": "Neutral",
 "description": "",
 "display_name": "Atlas",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
-"portraits": {},
-"scale": 1.0
+"portraits": {
+"Angry": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/Angry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"AngryF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/AngryF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/Happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"HappyF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/HappyF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neutral": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/Neutral.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"NeutralF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/NeutralF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Proud": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/Proud.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"ProudF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/ProudF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/Sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"SadF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/SadF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Thinking": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/Thinking.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"ThinkingF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Atlas/ThinkingF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 0.8
 }

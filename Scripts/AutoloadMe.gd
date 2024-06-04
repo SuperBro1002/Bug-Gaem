@@ -81,6 +81,7 @@ func _unhandled_input(event):
 	if Input.is_action_just_pressed("zoom_out"):
 		SignalBus.adjustZoom.emit(-0.5)
 	
+	if Dialogic.VAR.CutsceneUp == true: return
 	
 	if turnPointer.Faction == turnPointer.fac.ALLY:
 		if turnPointer.moving:
@@ -128,3 +129,9 @@ func set_current_unit(unit):
 		isAllyTurn = false
 	
 	SignalBus.updateGrid.emit()
+
+func start_first_turn():
+	SignalBus.endTurn.emit()
+	
+func start_next_round():
+	SignalBus.endRound.emit()

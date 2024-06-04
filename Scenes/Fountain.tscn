@@ -25,7 +25,7 @@ script = ExtResource("1_jpy62")
 
 [node name="EM1" type="Node" parent="."]
 script = ExtResource("2_mf4f4")
-objectiveNum = 6
+objectiveNum = 1
 
 [node name="NarrativeManager" parent="." instance=ExtResource("3_u2aib")]
 

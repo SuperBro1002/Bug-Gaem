@@ -6,7 +6,7 @@
 script = ExtResource("1_f0ixf")
 
 [node name="BubbleMarker1" type="Marker2D" parent="."]
-position = Vector2(85, 890)
+position = Vector2(85, 870)
 
 [node name="BubbleMarker2" type="Marker2D" parent="."]
-position = Vector2(1282, 79)
+position = Vector2(1600, 735)

@@ -2,18 +2,127 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.606248, 0.808594, 0.549591, 1),
+"color": Color(0.580392, 0.878431, 0.356863, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "",
+"default_portrait": "Neutral",
 "description": "",
 "display_name": "Paramantis",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
-"portraits": {},
-"scale": 1.0
+"portraits": {
+"Angry": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/Angry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"AngryF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/AngryF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Crazy": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/Crazy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"CrazyF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/CrazyF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/Happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"HappyF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/HappyF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Hurt": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/Hurt.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"HurtF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/HurtF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neutral": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/Neutral.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"NeutralF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/NeutralF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/Sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"SadF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Paramantis/SadF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 0.8
 }

@@ -2,18 +2,127 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(1, 1, 1, 1),
+"color": Color(0.996078, 0.811765, 0.270588, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "",
+"default_portrait": "Angry",
 "description": "",
-"display_name": "Triss2",
+"display_name": "Triss",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
-"portraits": {},
+"portraits": {
+"Angry": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/Angry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"AngryF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/AngryF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/Happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"HappyF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/HappyF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Hurt": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/Hurt.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"HurtF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/HurtF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neutral": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/Neutral.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"NeutralF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/NeutralF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/Sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"SadF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/SadF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Snobby": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/Snobby.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"SnobbyF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Triss/SnobbyF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
 "scale": 1.0
 }

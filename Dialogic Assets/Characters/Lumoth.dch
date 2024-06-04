@@ -2,18 +2,127 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.753789, 0.637817, 0.859375, 1),
+"color": Color(0.8, 0.635294, 0.960784, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "",
+"default_portrait": "Neutral",
 "description": "",
 "display_name": "Lumoth",
 "mirror": false,
 "nicknames": [""],
+"offset": Vector2(400, 0),
+"portraits": {
+"Angry": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/Angry.png\""
+},
+"mirror": false,
 "offset": Vector2(0, 0),
-"portraits": {},
-"scale": 1.0
+"scale": 1,
+"scene": ""
+},
+"AngryF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/AngryF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Channeling": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/Channeling.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"ChannelingF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/ChannelingF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/Happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"HappyF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/HappyF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Hurt": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/Hurt.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"HurtF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/HurtF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neutral": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/Neutral.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"NeutralF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/NeutralF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/Sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"SadF": {
+"export_overrides": {
+"image": "\"res://Assets/Portraits/Lumoth/SadF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 0.8
 }

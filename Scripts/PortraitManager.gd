@@ -1,19 +1,29 @@
 extends Node
 
-# This is an autoloaded script that connects Dialogic and the PortraitSprite nodes via Signals
-# Dialogic can only handle one signal in line, so I figured this would be a little easier to track visually
-# This simply runs two signals, saying which portrait should be displayed
-# IMPORTANT: The format should always be the same: "nameOfCharacter_mood"
-# This will be the actual filename of the desired portrait
+var main_portrait
+var reply_portrait
+var reply_portrait_visible
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 	
 func change_main_portrait(filename):
 	SignalBus.changeMainPortrait.emit(filename)
+	main_portrait = "res://Assets/Portraits/" + AutoloadMe.turnPointer.Name + "/" + filename + ".png"
 	return
 
-func change_reply_portrait(filename):
-	SignalBus.changeReplyPortrait.emit(filename)
+func change_reply_portrait(character, filename):
+	SignalBus.changeReplyPortrait.emit(character, filename)
+	reply_portrait = "res://Assets/Portraits/" + character + "/" + filename + ".png"
+	return
+
+func show_reply_portrait(character, filename):
+	change_reply_portrait(character, filename)
+	SignalBus.showReplyPortrait.emit()
+	reply_portrait_visible = true
+	return
+
+func hide_reply_portrait():
+	SignalBus.hideReplyPortrait.emit()
+	reply_portrait_visible = false
 	return

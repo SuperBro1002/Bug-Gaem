@@ -45,3 +45,5 @@ signal midObjectiveChecked
 signal phaseChange
 signal finalBattle
 signal spawnDrone
+signal showReplyPortrait
+signal hideReplyPortrait

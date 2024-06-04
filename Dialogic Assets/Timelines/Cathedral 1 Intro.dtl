@@ -1,0 +1,21 @@
+[style name="VNStyle2"]
+[background arg="res://Dialogic Assets/Styles/Blaground.png" fade="0.0" transition="Simple Fade"]
+The thick walls and ornate stained glass make the Cathedral of Moths feel impenetrable...
+But long shadows and echoes of clinking metal tell the 100th Bug Brigade they are not alone.
+join Atlas (Angry) 3 [animation="Slide In Left" length="2"]
+join Paramantis (Neutral) 2 [animation="Slide In Left" length="2" wait="true"]
+join Triss (Neutral) 1 [animation="Slide In Left" length="2" wait="true"]
+update Atlas [ mirrored="true"]
+Atlas (Neutral): Triss, Paramantis, find the source of those sounds and secure the Cathedral.
+Paramantis (Angry): A relaxing hunt already? We shall do it gladly.
+leave Paramantis [animation="Slide Out Right" length="1.2" wait="true"]
+Triss (Snobby): Save your breath, beetle. I know what needs to be done.
+Atlas (Thinking): You don't get to act on your own, Cadet.
+Triss (Snobby): ... whatever.
+Atlas (Angry): You're a soldier now, honeysucker, better start acting like one.
+Triss (Neutral): ... yes.
+Atlas (Angry): Yes what, Cadet?
+Triss (Angry): ... yes, ma'am ...
+[background fade="1.2"]
+leave Triss [animation="Slide Out Right" length="1.2" wait="true"]
+do AutoloadMe.start_first_turn()

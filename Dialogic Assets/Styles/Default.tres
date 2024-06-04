@@ -21,8 +21,6 @@ overrides = {}
 script = ExtResource("2_urnm0")
 scene = ExtResource("4_pqne1")
 overrides = {
-"behaviour_direction": "Vector2(0, -1)",
-"behaviour_distance": "0.0",
 "box_modulate_by_character_color": "true",
 "box_padding": "Vector2(5, 5)",
 "name_label_box_modulate_use_character_color": "true",

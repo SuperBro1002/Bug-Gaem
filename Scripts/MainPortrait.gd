@@ -7,5 +7,5 @@ func _ready():
 	return
 	
 func change(filename):
-	texture = "res://Assets/Portraits/" + AutoloadMe.turnPointer.Name + "/" + filename + ".png"
+	texture = load("res://Assets/Portraits/" + AutoloadMe.turnPointer.Name + "/" + filename + ".png")
 	return

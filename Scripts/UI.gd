@@ -33,8 +33,9 @@ func _ready():
 func set_ui(unit):
 	remove_passive_boxes()
 	if unit.get_faction() == unit.fac.ALLY:
-		var portraitRes = load("res://Assets/Sprites/" + unit.fileName + "/" + unit.fileName + "_Base_Still.png")
-		get_node("../UI/InfoBox/PortraitBox/PortraitSprite").texture = portraitRes
+		#var portraitRes = load("res://Assets/Sprites/" + unit.fileName + "/" + unit.fileName + "_Base_Still.png")
+		#get_node("../UI/InfoBox/PortraitBox/PortraitSprite").texture = portraitRes
+		if PortraitManager.main_portrait == null: PortraitManager.change_main_portrait("NeutralF")
 		
 		var nameVal = unit.Name
 		$InfoBox/Name.set_text(nameVal)
@@ -107,15 +108,15 @@ func draw_passive_boxes(unit):
 		print(marker)
 		marker.add_child(passiveBox)
 		passiveBox.set_my_text(unit.passiveList[p])
-		print("Passive Box loop complete")
 
 func remove_passive_boxes():
 	var passiveBox
 	var marker
-	for m in $PassiveMarkerMarker.get_child_count():
+	for m in $PassiveMarkerMarker.get_children().size():
 		marker = $PassiveMarkerMarker.get_child(m)
-		passiveBox = marker.get_child(0)
-		marker.remove_child(passiveBox)
+		if marker.get_child(0) != null:
+			passiveBox = marker.get_child(0)
+			if passiveBox != null: marker.remove_child(passiveBox)
 
 func move_arrow(unit):
 	if unit.myInitBox == null:

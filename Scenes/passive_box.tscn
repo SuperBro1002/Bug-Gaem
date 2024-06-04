@@ -31,7 +31,7 @@ grow_horizontal = 2
 [node name="PassiveTitle" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Penumbra"
+text = "Doom"
 label_settings = SubResource("LabelSettings_sxu0j")
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -40,4 +40,4 @@ autowrap_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_lcyb5")
-text = "The Great Tree protects the fighter with a life-granting aura just before the moment of death. They will need to rest for the remainder of battle.\""
+text = "Will die at the end of their turn."

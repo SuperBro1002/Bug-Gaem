@@ -1,0 +1,7 @@
+[style name="VNStyle2"]
+[background arg="res://Dialogic Assets/Styles/Blaground.png" fade="0.0"]
+join Atlas 1
+Atlas: Blah blah blah is drone still in the game?????
+[background fade="0.0"]
+
+do AutoloadMe.start_next_scene("res://Scenes/Cathedral 1.tscn")

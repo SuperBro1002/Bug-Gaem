@@ -7,7 +7,8 @@ func _ready():
 	Engine.max_fps = 60
 	AutoloadMe.new_level()
 	#get_node("Grid/InitManager/UnitManager/Lumoth").add_passive("TestPassive")
-	get_node("Grid/InitManager").next_turn()
-
+	if AutoloadMe.mapID == 1: Dialogic.start("res://Dialogic Assets/Timelines/Fountain Intro.dtl")
+	if AutoloadMe.mapID == 5: pass
+	
 func process():
 	pass

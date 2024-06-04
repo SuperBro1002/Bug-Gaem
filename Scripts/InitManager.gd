@@ -14,6 +14,7 @@ func _ready():
 
 # Probably main function
 func next_turn():
+	PortraitManager.main_portrait = null
 	for i in (AutoloadMe.globalUnitList.size()):
 		if AutoloadMe.globalUnitList[i].get_batonpass() == AutoloadMe.globalUnitList[i].TS.BATONPASS:
 			currentUnitTurn = AutoloadMe.globalUnitList[i]
@@ -29,8 +30,11 @@ func next_turn():
 
 func next_round():
 	AutoloadMe.roundNum += 1
-	Dialogic.VAR.StoryProgress += 1
 	SignalBus.checkEvents.emit()
+	if Dialogic.VAR.CutsceneUp == true:
+		AutoloadMe.roundNum -= 1
+		return
+	Dialogic.VAR.StoryProgress += 1
 	for j in (AutoloadMe.globalUnitList.size()):
 		AutoloadMe.globalUnitList[j].reset_acted()
 		AutoloadMe.globalUnitList[j].reset_ap()

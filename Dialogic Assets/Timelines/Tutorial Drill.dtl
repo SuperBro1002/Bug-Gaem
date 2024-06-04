@@ -1,0 +1,23 @@
+[style name="VNStyle2"]
+[background arg="res://Dialogic Assets/Styles/Blaground.png" fade="2.0"]
+join Triss (Hurt) 1 [animation="Slide Up In" length="1.5"]
+update Triss 1 [animation="Shake X" length="1"]
+Bark, stone, water, and sparks shoot into the air!
+Stunned by the shaking, deafened by the sound, Zephyr and Triss can only watch as a giant Robug drill carves a path through the fountain and further beyond.
+Triss (Hurt): H-how??
+join Atlas (Neutral) 3 [animation="Slide In Right" length="1.5" wait="true" mirrored="true"]
+Atlas (Angry): Robugs?! We're under attack!
+Atlas (Neutral): Auri, get out here!
+join Auri (Auri) 2
+Auri (Auri): What's happening, ma'am??
+Atlas (Neutral): Auri, I need you to bring the rest of the 100th here. Then head towards the main army and use your firefly signal to call for reinforcements.
+Auri (Auri): You got it, ma'am.
+Atlas (Proud): We'll handle the rest.
+leave Auri [animation="Slide Out Right" length="1"]
+Atlas (Neutral): Zephyr, give us your orders!
+[background fade="1.0"]
+[clear time="0.0" step="false"]
+set {DialogueComplete} = true
+set {CutsceneUp} = false
+set {TutorialDrillSeen} = true
+do AutoloadMe.start_next_round()

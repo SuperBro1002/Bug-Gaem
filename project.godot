@@ -35,17 +35,25 @@ directories/dch_directory={
 "Paramantis2": "res://Dialogic Assets/Characters/Paramantis2.dch",
 "Thoraxe": "res://Dialogic Assets/Characters/Thoraxe.dch",
 "Triss": "res://Dialogic Assets/Characters/Triss.dch",
-"Triss2": "res://Dialogic Assets/Characters/Triss2.dch"
+"Triss2": "res://Dialogic Assets/Characters/Triss2.dch",
+"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"Cathedral 1 Intro": "res://Dialogic Assets/Timelines/Cathedral 1 Intro.dtl",
+"Cathedral 1 Outro": "res://Dialogic Assets/Timelines/Cathedral 1 Outro.dtl",
+"Fountain Intro": "res://Dialogic Assets/Timelines/Fountain Intro.dtl",
+"Fountain Outro": "res://Dialogic Assets/Timelines/Fountain Outro.dtl",
+"Tutorial Drill": "res://Dialogic Assets/Timelines/Tutorial Drill.dtl",
 "UnitedTimeline": "res://Dialogic Assets/Timelines/UnitedTimeline.dtl"
 }
-layout/style_list=["res://Dialogic Assets/Styles/Default.tres", "res://Dialogic Assets/Styles/Box.tres"]
+layout/style_list=["res://Dialogic Assets/Styles/Default.tres", "res://Dialogic Assets/Styles/PortraitBoxStyle2.tres", "res://Dialogic Assets/Styles/VNStyle2.tres"]
 layout/default_style="res://Dialogic Assets/Styles/Default.tres"
 glossary/default_case_sensitive=true
 variables={
+"CutsceneUp": false,
 "DialogueComplete": false,
-"StoryProgress": 0
+"StoryProgress": 0,
+"TutorialDrillSeen": false
 }
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -63,6 +71,10 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+extensions_folder="res://addons/dialogic_additions"
+text/advance_delay=0.1
+animations/cross_fade_default_length=0.5
+animations/cross_fade_default_wait=true
 
 [display]
 

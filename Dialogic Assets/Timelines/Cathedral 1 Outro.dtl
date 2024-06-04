@@ -1,0 +1,5 @@
+[style name="VNStyle2"]
+[background arg="res://Dialogic Assets/Styles/Blaground.png" fade="0.0"]
+Blah blah blah I need to rewrite this depending on if Drone is still in the game or not.
+[background fade="1.0"]
+do AutoloadMe.start_first_turn()
