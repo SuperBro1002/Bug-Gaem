@@ -3,9 +3,9 @@ extends Ability_class
 
 func _enter_tree():
 	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
-	Name = "Knockback"
+	Name = "Horn Thrust"
 	fileName = "Knockback"
-	description = "Deals 2 damage to a single target and pushes them 1 tile away. 4 AP"
+	description = "Deals 2 damage to an adjacent target and pushes them 1 tile away. 4 AP"
 
 func execute():
 	# for every target in target units[]

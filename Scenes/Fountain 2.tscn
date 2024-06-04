@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bjnybyvdkso6r" path="res://Assets/Maps_Tiles/Fountain/hole.png" id="15_7k6yr"]
 [ext_resource type="PackedScene" uid="uid://bq8sleerhf7s4" path="res://Scenes/Units/Drone.tscn" id="19_0wuf6"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rfeji"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6thoy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_46uv7"]
 size = Vector2(645, 643)
@@ -79,12 +79,17 @@ visible = false
 visible = false
 z_index = 4
 position = Vector2(384, 384)
+limit_left = -1000
+limit_top = -500
+limit_right = 1600
+limit_bottom = 1300
+position_smoothing_enabled = true
 script = ExtResource("10_ndpdp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
 visible = false
 scale = Vector2(-116.691, 103.457)
-texture = SubResource("PlaceholderTexture2D_rfeji")
+texture = SubResource("PlaceholderTexture2D_6thoy")
 
 [node name="TutorialMapSprite" type="Sprite2D" parent="."]
 texture_filter = 1

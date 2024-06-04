@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c3xg8fmtqopu7" path="res://Assets/Maps_Tiles/Cathedral/broken_bench_2.png" id="19_76ghs"]
 [ext_resource type="Texture2D" uid="uid://dcu7n72l2pf4w" path="res://Assets/Maps_Tiles/Cathedral/brokenbench.png" id="20_8ba0k"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_55un7"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oqhyq"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1dnjr"]
 size = Vector2(1152, 1152)
@@ -41,16 +41,22 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 [node name="UnitManager" type="Node" parent="Grid/InitManager"]
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_y8s2b")]
+modulate = Color(1, 0.607843, 0.454902, 1)
 position = Vector2(480, 160)
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_minfg")]
+modulate = Color(1, 0.607843, 0.454902, 1)
 position = Vector2(608, 160)
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("8_u7uuq")]
+modulate = Color(1, 0.607843, 0.454902, 1)
 position = Vector2(544, 96)
 
 [node name="Atlas" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_bdv12")]
+modulate = Color(1, 0.607843, 0.454902, 1)
 position = Vector2(544, 800)
+TrueInit = 18
+InitVariance = 5
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("11_dw1rj")]
 visible = false
@@ -68,12 +74,17 @@ visible = false
 visible = false
 z_index = 4
 position = Vector2(576, 577)
+limit_left = -800
+limit_top = -600
+limit_right = 2200
+limit_bottom = 1400
+limit_smoothed = true
 script = ExtResource("14_m21jk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
 visible = false
 scale = Vector2(-116.691, 103.457)
-texture = SubResource("PlaceholderTexture2D_55un7")
+texture = SubResource("PlaceholderTexture2D_oqhyq")
 
 [node name="CathedralMapSprite" type="Sprite2D" parent="."]
 texture_filter = 1

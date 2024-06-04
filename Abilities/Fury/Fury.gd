@@ -8,7 +8,7 @@ func _enter_tree():
 	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
 	Name = "Fury Skewer"
 	fileName = "Fury"
-	description = "Thor'axe dashes 9 spaces forward, dealing 6 damage to anyone in his path. 9 AP"
+	description = "Thor'axe dashes 9 spaces forward, dealing 6 damage to foes in his path. 9 AP"
 
 func enemy_execute(initTarget):
 	print("INTIATING FURY")

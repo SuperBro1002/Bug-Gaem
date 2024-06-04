@@ -3,9 +3,9 @@ extends Ability_class
 
 func _enter_tree():
 	targetType = [get_parent().fac.ALLY]
-	Name = "Shield"
+	Name = "Shining Barrier"
 	fileName = "Shield"
-	description = "Grants an adjacent ally a shield that nullifies damage from 1 attack. Also grants baton pass. 4 AP"
+	description = "Grants an adjacent ally a barrier that nullifies damage from 1 attack. Also grants baton pass. 4 AP"
 
 func post_execute():
 	dmgMod = 1

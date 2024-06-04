@@ -95,12 +95,16 @@ MaxHP = 200
 TrueInit = -100
 
 [node name="UILayer" parent="." instance=ExtResource("13_g2w6b")]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 z_index = 4
 position = Vector2(576, 577)
+limit_left = -800
+limit_top = -600
+limit_right = 2200
+limit_bottom = 1400
+limit_smoothed = true
 script = ExtResource("14_d6avv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]

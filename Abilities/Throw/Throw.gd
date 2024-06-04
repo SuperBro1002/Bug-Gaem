@@ -10,9 +10,9 @@ var secondRange = 1
 func _enter_tree():
 	$Area2D2/SelectionBox.set_visible(false)
 	targetType = [get_parent().fac.ALLY]
-	Name = "Throw"
+	Name = "Horn Catapult"
 	fileName = "Throw"
-	description = "Select an adjacent unit to throw to a space within 5 tiles. If there is a unit in the target's new space, both units take 4 damage and the former is pushed off the tile. Unit being thrown gains Baton Pass. 6 AP"
+	description = "Select an adjacent unit to throw to a nearby space. Unit being thrown gains Baton Pass. If there is a unit in the target's new space, both take 4 damage and the former is pushed off the tile. 6 AP"
 
 func queue():
 	secondRange = 1
@@ -115,6 +115,7 @@ func execute():
 		post_execute()
 	else:
 		AutoloadMe.isExecuting = false
+		AutoloadMe.set_process_unhandled_input(true)
 
 func draw_range_tiles(activeName):
 	if Name != activeName:

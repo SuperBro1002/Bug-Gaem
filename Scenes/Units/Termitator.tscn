@@ -15,5 +15,5 @@ InitVariance = 5
 SetAbility1 = "Chainsaw"
 
 [node name="AnimatedSprite2D" parent="." index="1"]
-modulate = Color(0, 1, 0, 1)
 sprite_frames = ExtResource("2_61fcs")
+animation = &"Jump1"

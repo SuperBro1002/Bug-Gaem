@@ -5,7 +5,7 @@ func _enter_tree():
 	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
 	Name = "Sting"
 	fileName = "Sting"
-	description = "Deals 4 damage to an adjacent target and 1 damage to self. 5 AP"
+	description = "Deals 4 damage to an adjacent target. User takes 1 recoil damage. 4 AP"
 
 func execute():
 	# for every target in target units[]

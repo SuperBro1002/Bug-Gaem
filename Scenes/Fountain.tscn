@@ -58,6 +58,11 @@ visible = false
 visible = false
 z_index = 4
 position = Vector2(384, 384)
+limit_left = -1000
+limit_top = -500
+limit_right = 1600
+limit_bottom = 1300
+position_smoothing_enabled = true
 script = ExtResource("16_rdajh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]

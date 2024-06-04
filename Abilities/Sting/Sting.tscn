@@ -10,7 +10,7 @@ size = Vector2(64, 64)
 
 [node name="Sting" type="Node"]
 script = ExtResource("1_23aoe")
-apCost = 5
+apCost = 4
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

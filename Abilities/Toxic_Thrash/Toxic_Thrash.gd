@@ -5,7 +5,7 @@ func _enter_tree():
 	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
 	Name = "Toxic Thrash"
 	fileName = "Toxic_Thrash"
-	description = "Deals 2 damage and inflicts poison to a single target. 2 AP"
+	description = "Deals 2 damage and inflicts poison to an adjacent target. 2 AP"
 
 func execute():
 	# for every target in target units[]

@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://ctohbo5o6j0y6"]
+
+[ext_resource type="Texture2D" uid="uid://cyk6raiued7se" path="res://Assets/Sprites/Termitator/Robugs_Termitator_VFX_Animations.png" id="1_6b8j8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqgpt"]
+atlas = ExtResource("1_6b8j8")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efjxi"]
+atlas = ExtResource("1_6b8j8")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kybhw"]
+atlas = ExtResource("1_6b8j8")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_harkf"]
+atlas = ExtResource("1_6b8j8")
+region = Rect2(768, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnlvd"]
+atlas = ExtResource("1_6b8j8")
+region = Rect2(864, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m61rr"]
+atlas = ExtResource("1_6b8j8")
+region = Rect2(960, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yldc"]
+atlas = ExtResource("1_6b8j8")
+region = Rect2(1056, 0, 96, 96)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqgpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efjxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kybhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_harkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnlvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m61rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yldc")
+}],
+"loop": false,
+"name": &"Effect",
+"speed": 12.0
+}]
