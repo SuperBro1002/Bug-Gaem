@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clpg7shq730me"
-path="res://.godot/imported/Allies_Triss_NoVFX_Animations.png-eeb9ae1b3ec59e122ed68c56b6f9b2a0.ctex"
+uid="uid://cyk6raiued7se"
+path="res://.godot/imported/Robugs_Termitator_VFX_Animations.png-e6e6fdcfd1850d794fab5caa4766c786.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Triss/Allies_Triss_NoVFX_Animations.png"
-dest_files=["res://.godot/imported/Allies_Triss_NoVFX_Animations.png-eeb9ae1b3ec59e122ed68c56b6f9b2a0.ctex"]
+source_file="res://Assets/Sprites/Termitator/Robugs_Termitator_VFX_Animations.png"
+dest_files=["res://.godot/imported/Robugs_Termitator_VFX_Animations.png-e6e6fdcfd1850d794fab5caa4766c786.ctex"]
 
 [params]
 

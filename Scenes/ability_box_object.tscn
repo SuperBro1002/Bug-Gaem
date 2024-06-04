@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://42m7teprqnkh"]
+[gd_scene load_steps=4 format=3 uid="uid://42m7teprqnkh"]
 
 [ext_resource type="Script" path="res://Scripts/ability_box_object.gd" id="1_hhao4"]
+[ext_resource type="Texture2D" uid="uid://dpvrgtnb21t3e" path="res://Assets/HUD/HUD Boxes/infobox_384x90.png" id="2_io5l7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vjti6"]
 font_size = 19
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="AbilityBox" type="ColorRect"]
+self_modulate = Color(1, 1, 1, 0)
 offset_right = 640.0
 offset_bottom = 148.0
 scale = Vector2(0.775, 0.775)
@@ -16,9 +19,9 @@ script = ExtResource("1_hhao4")
 [node name="MarginContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 3.87097
+offset_top = 4.0
 offset_right = 630.0
-offset_bottom = 131.871
+offset_bottom = 152.0
 
 [node name="Ability" type="Label" parent="MarginContainer"]
 layout_mode = 2
@@ -28,8 +31,14 @@ max_lines_visible = 1
 
 [node name="Description" type="Label" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat placerat ipsum quis faucibus. Pellentesque condimentum risus eu urna imperdiet, ac imperdiet libero iaculis. Integer metus turpis, eleifend quis accumsan id, vehicula a elit."
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat placerat ipsum quis faucibus. Pellentesque condimentum risus eu urna imperdiet, ac imperdiet libero iaculis."
 label_settings = SubResource("LabelSettings_vjti6")
 autowrap_mode = 2
 max_lines_visible = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(321.032, 73.1855)
+scale = Vector2(1.65502, 1.65502)
+texture = ExtResource("2_io5l7")

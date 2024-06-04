@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clpg7shq730me"
-path="res://.godot/imported/Allies_Triss_NoVFX_Animations.png-eeb9ae1b3ec59e122ed68c56b6f9b2a0.ctex"
+uid="uid://dpvrgtnb21t3e"
+path="res://.godot/imported/infobox_384x90.png-f0f00d006dff79282e3e5e2432f7e428.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Triss/Allies_Triss_NoVFX_Animations.png"
-dest_files=["res://.godot/imported/Allies_Triss_NoVFX_Animations.png-eeb9ae1b3ec59e122ed68c56b6f9b2a0.ctex"]
+source_file="res://Assets/HUD/HUD Boxes/infobox_384x90.png"
+dest_files=["res://.godot/imported/infobox_384x90.png-f0f00d006dff79282e3e5e2432f7e428.ctex"]
 
 [params]
 

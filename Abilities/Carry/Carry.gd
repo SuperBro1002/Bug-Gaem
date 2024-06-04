@@ -5,9 +5,9 @@ var storedUnit
 
 func _enter_tree():
 	targetType = [get_parent().fac.ALLY]
-	Name = "Carry"
+	Name = "Companion Carry"
 	fileName = "Carry"
-	description = "Pick up an ally. Re-use to place them down and grant baton pass. 2 AP"
+	description = "Pick up an adjacent ally. Re-use to place them down and grant baton pass. 2 AP"
 
 func queue():
 	AutoloadMe.currentAbility = self

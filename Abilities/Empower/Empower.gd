@@ -2,9 +2,9 @@ extends Ability_class
 
 func _enter_tree():
 	targetType = [get_parent().fac.ALLY]
-	Name = "Empower"
+	Name = "Rage Boost"
 	fileName = "Empower"
-	description = "Target's next attack does double damage. 2 AP"
+	description = "Target's next attack deals double damage. 2 AP"
 
 func execute():
 	# for every target in target units[]

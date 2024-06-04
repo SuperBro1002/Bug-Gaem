@@ -10,7 +10,7 @@ size = Vector2(64, 64)
 
 [node name="Blood_Moon" type="Node"]
 script = ExtResource("1_5u5en")
-apCost = 4
+apCost = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

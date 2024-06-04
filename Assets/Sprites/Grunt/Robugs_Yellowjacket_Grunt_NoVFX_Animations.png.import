@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clpg7shq730me"
-path="res://.godot/imported/Allies_Triss_NoVFX_Animations.png-eeb9ae1b3ec59e122ed68c56b6f9b2a0.ctex"
+uid="uid://bx1ekq33u8h58"
+path="res://.godot/imported/Robugs_Yellowjacket_Grunt_NoVFX_Animations.png-b5d344fb4040ec3fd4ab859f59b1b3e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Triss/Allies_Triss_NoVFX_Animations.png"
-dest_files=["res://.godot/imported/Allies_Triss_NoVFX_Animations.png-eeb9ae1b3ec59e122ed68c56b6f9b2a0.ctex"]
+source_file="res://Assets/Sprites/Grunt/Robugs_Yellowjacket_Grunt_NoVFX_Animations.png"
+dest_files=["res://.godot/imported/Robugs_Yellowjacket_Grunt_NoVFX_Animations.png-b5d344fb4040ec3fd4ab859f59b1b3e0.ctex"]
 
 [params]
 

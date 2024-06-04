@@ -4,9 +4,9 @@ var healNum = 3
 
 func _enter_tree():
 	targetType = [get_parent().fac.ALLY]
-	Name = "Heal"
+	Name = "Healing Light"
 	fileName = "Heal"
-	description = "Heals an adjacent ally for 3 health. 6 AP"
+	description = "Heals an ally within 3 spaces for 3 health. 6 AP"
 
 func execute():
 	# for every target in target units[]

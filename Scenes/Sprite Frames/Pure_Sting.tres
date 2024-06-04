@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://cgbvc1dooayu7"]
+
+[ext_resource type="Texture2D" uid="uid://dar5gdbp0qqac" path="res://Assets/Sprites/Grunt/Robugs_Yellowjacket_Grunt_VFX_Animations.png" id="1_w7n0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyyec"]
+atlas = ExtResource("1_w7n0d")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtq36"]
+atlas = ExtResource("1_w7n0d")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh0nn"]
+atlas = ExtResource("1_w7n0d")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlcdn"]
+atlas = ExtResource("1_w7n0d")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqwjh"]
+atlas = ExtResource("1_w7n0d")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wes3l"]
+atlas = ExtResource("1_w7n0d")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhoon"]
+atlas = ExtResource("1_w7n0d")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6guso"]
+atlas = ExtResource("1_w7n0d")
+region = Rect2(768, 0, 96, 96)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyyec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtq36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh0nn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlcdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqwjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wes3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhoon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6guso")
+}],
+"loop": false,
+"name": &"Effect",
+"speed": 12.0
+}]

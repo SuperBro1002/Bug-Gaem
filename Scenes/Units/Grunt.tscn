@@ -15,5 +15,4 @@ InitVariance = 5
 SetAbility1 = "Purebred_Sting"
 
 [node name="AnimatedSprite2D" parent="." index="1"]
-modulate = Color(1, 1, 0, 1)
 sprite_frames = ExtResource("2_f1m48")

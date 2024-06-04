@@ -27,6 +27,8 @@ func unique_turn_start():
 			for i in pathArray.size() - 1:
 				if CurrentAP != 0 and i > 0:
 					CurrentAP -= 1
+					get_node("AnimatedSprite2D").stop()
+					get_node("AnimatedSprite2D").play("Jump1")
 					var tween = create_tween()
 					tween.tween_property(self, "position", pathArray[i], 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 					await tween.finished

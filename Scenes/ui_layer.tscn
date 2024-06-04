@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://b4xbotxeidxtw" path="res://Assets/HUD/Arrow.png" id="8_e4ah7"]
 [ext_resource type="Texture2D" uid="uid://cs6xmwsiehppj" path="res://Assets/Portraits/Auri/AuriC.png" id="10_qwjdi"]
 [ext_resource type="Script" path="res://Scripts/ReplyPortrait.gd" id="11_hiy2j"]
+[ext_resource type="Texture2D" uid="uid://b810ak5te0bor" path="res://Assets/HUD/HUD Boxes/infobox_384x100.png" id="8_f8in8"]
+[ext_resource type="Texture2D" uid="uid://b6of34dit4q6q" path="res://Assets/HUD/HUD Boxes/infobox_800x100.png" id="9_an2am"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_gei7j"]
 device = -1
@@ -38,9 +40,11 @@ events = [SubResource("InputEventKey_n7owk")]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4gjyx"]
 font_size = 36
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1hfu"]
 font_size = 26
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lvjvs"]
 line_spacing = -65.0
@@ -84,6 +88,7 @@ scale = Vector2(0.8, 0.8)
 
 [node name="InfoBox" type="ColorRect" parent="UI"]
 modulate = Color(1, 1, 1, 0.8)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -107,9 +112,9 @@ anchor_top = 0.5
 anchor_right = 0.499
 anchor_bottom = 0.5
 offset_left = 40.64
-offset_top = -50.8333
-offset_right = 299.64
-offset_bottom = 50.1667
+offset_top = -50.5
+offset_right = 255.64
+offset_bottom = 50.5
 grow_horizontal = 0
 mouse_filter = 2
 alignment = 1
@@ -208,8 +213,17 @@ offset_bottom = 132.722
 text = "num"
 label_settings = SubResource("LabelSettings_s1hfu")
 
+[node name="Sprite2D" type="Sprite2D" parent="UI/InfoBox"]
+z_index = -1
+texture_filter = 1
+position = Vector2(323.961, 81.4138)
+scale = Vector2(1.65406, 1.65406)
+texture = ExtResource("8_f8in8")
+flip_v = true
+
 [node name="ColorRect" type="ColorRect" parent="UI"]
 modulate = Color(1, 1, 1, 0.8)
+self_modulate = Color(1, 1, 1, 0)
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
@@ -229,7 +243,7 @@ color = Color(0.356863, 0.266667, 0.843137, 1)
 layout_mode = 0
 offset_right = 1330.0
 offset_bottom = 162.0
-horizontal_scroll_mode = 2
+horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/ColorRect/ScrollContainer"]
@@ -238,6 +252,13 @@ layout_mode = 2
 [node name="CurrentPointer" type="Sprite2D" parent="UI/ColorRect"]
 position = Vector2(33.3333, 16.6667)
 texture = ExtResource("8_e4ah7")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/ColorRect"]
+z_index = -1
+texture_filter = 1
+position = Vector2(666.028, 83.1409)
+scale = Vector2(1.66742, 1.66742)
+texture = ExtResource("9_an2am")
 
 [node name="AbilityDescBox" parent="UI" instance=ExtResource("7_kxv4v")]
 modulate = Color(1, 1, 1, 0)
