@@ -28,4 +28,4 @@ name = "Default"
 base_scene = ExtResource("1_ptu6f")
 base_overrides = {}
 layers = Array[ExtResource("2_urnm0")]([SubResource("Resource_yfwk2"), SubResource("Resource_ikat8")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 1

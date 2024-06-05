@@ -14,6 +14,7 @@ func execute():
 	
 	face_target()
 	get_parent().get_node("AnimatedSprite2D").stop()
+	SignalBus.playSFX.emit("Empower")
 	get_parent().get_node("AnimatedSprite2D").play("Cast1")
 	await get_tree().create_timer(0.7).timeout
 	

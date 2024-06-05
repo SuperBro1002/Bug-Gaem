@@ -5,7 +5,18 @@
 "color": Color(0.580392, 0.878431, 0.356863, 1),
 "custom_info": {
 "sound_mood_default": "",
-"sound_moods": {},
+"sound_moods": {
+"Mood 1": {
+"mode": 2,
+"name": "Mood 1",
+"pitch_base": 1.0,
+"pitch_variance": 0.5,
+"skip_characters": 0.0,
+"sound_path": "res://Assets/Audio/SFX/Square.wav",
+"volume_base": -8.0,
+"volume_variance": 0.0
+}
+},
 "style": ""
 },
 "default_portrait": "Angry",

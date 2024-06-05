@@ -21,6 +21,7 @@ AutoloadMe="*res://Scripts/AutoloadMe.gd"
 SignalBus="*res://Scripts/SignalBus.gd"
 PortraitManager="*res://Scripts/PortraitManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+MusicPlayer="*res://Scenes/music_player.tscn"
 
 [dialogic]
 

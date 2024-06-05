@@ -86,6 +86,7 @@ func execute():
 		face_target()
 		get_parent().get_node("AnimatedSprite2D").stop()
 		get_parent().get_node("AnimatedSprite2D").play("Jump1")
+		SignalBus.playSFX.emit("TrissFly1")
 		await get_tree().create_timer(0.5).timeout
 		AutoloadMe.allowEndTurn = false
 		for i in targetUnits.size():
@@ -106,6 +107,7 @@ func execute():
 		await get_tree().create_timer(0.5).timeout
 		
 		storedUnit.position = get_parent().grid.map_to_local(clickedPos)
+		SignalBus.playSFX.emit("TrissFly2")
 		storedUnit.set_visible(true)
 		storedUnit.give_batonpass()
 		

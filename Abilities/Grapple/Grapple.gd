@@ -15,7 +15,7 @@ func execute():
 	for i in targetUnits.size():
 		targetUnits[i].lose_health(2)
 		targetUnits[i].add_passive("Trap")
-	
+	SignalBus.playSFX.emit("RogbugAttack1")
 	get_parent().add_passive("Trap")
 	get_parent().canMove = false
 	

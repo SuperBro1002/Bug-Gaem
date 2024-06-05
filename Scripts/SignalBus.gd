@@ -49,3 +49,5 @@ signal showReplyPortrait
 signal hideReplyPortrait
 signal droneFlyIn
 signal droneFlyOut
+signal playMusic
+signal playSFX

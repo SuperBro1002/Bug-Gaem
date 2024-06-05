@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://7qps6ox2sfna"]
+[gd_scene load_steps=29 format=3 uid="uid://7qps6ox2sfna"]
 
 [ext_resource type="Script" path="res://Scripts/Garden.gd" id="1_574vu"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_bbw0h"]
 [ext_resource type="Script" path="res://Scripts/EM3.gd" id="2_ubhqf"]
 [ext_resource type="PackedScene" uid="uid://tgpcor2pwjrk" path="res://Scenes/init_manager.tscn" id="3_457fh"]
+[ext_resource type="PackedScene" uid="uid://dimryoawtb8dt" path="res://Scenes/narrative_manager.tscn" id="3_cfmxi"]
 [ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="4_2f1wn"]
 [ext_resource type="PackedScene" uid="uid://egt8255q2y5k" path="res://Scenes/Siphon.tscn" id="4_wxpws"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="5_2fsto"]
@@ -62,6 +63,8 @@ script = ExtResource("1_574vu")
 [node name="EM3" type="Node" parent="."]
 script = ExtResource("2_ubhqf")
 objectiveNum = 6
+
+[node name="NarrativeManager" parent="." instance=ExtResource("3_cfmxi")]
 
 [node name="Grid" parent="." instance=ExtResource("2_bbw0h")]
 visible = false

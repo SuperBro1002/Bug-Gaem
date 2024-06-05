@@ -100,6 +100,7 @@ func execute():
 	#get_parent().get_node("AnimatedSprite2D").stop()
 	#get_parent().get_node("AnimatedSprite2D").play("Attack1")
 	await get_tree().create_timer(0.7).timeout
+	SignalBus.playSFX.emit("PassingDanger")
 	if targetUnits == null:
 		post_execute()
 	for i in targetUnits.size():

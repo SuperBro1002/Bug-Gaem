@@ -87,6 +87,8 @@ func move(dir):
 			pathArray = astarGrid.get_point_path(start, end)
 			
 			if get_current_ap() >= (pathArray.size() - 1):
+				var walkingSFX = str(Name, "Walk", randi_range(1,3))
+				SignalBus.playSFX.emit(walkingSFX)
 				var tween = create_tween()
 				tween.tween_property(self, "position",
 				position + dir * tileSize.x, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)

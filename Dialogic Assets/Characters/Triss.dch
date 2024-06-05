@@ -4,8 +4,19 @@
 "_translation_id": "",
 "color": Color(0.996078, 0.811765, 0.270588, 1),
 "custom_info": {
-"sound_mood_default": "",
-"sound_moods": {},
+"sound_mood_default": "TrissBuzz",
+"sound_moods": {
+"TrissBuzz": {
+"mode": 2,
+"name": "TrissBuzz",
+"pitch_base": 1.1,
+"pitch_variance": 0.1,
+"skip_characters": 0.0,
+"sound_path": "res://Assets/Audio/SFX/Buzz.wav",
+"volume_base": -9.0,
+"volume_variance": 0.0
+}
+},
 "style": ""
 },
 "default_portrait": "Neutral",

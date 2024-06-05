@@ -16,6 +16,7 @@ func execute():
 	await get_tree().create_timer(0.1).timeout
 	
 	face_target()
+	SignalBus.playSFX.emit("Sting")
 	get_parent().get_node("AnimatedSprite2D").stop()
 	get_parent().get_node("AnimatedSprite2D").play("Attack1")
 	$VFX.set_visible(true)

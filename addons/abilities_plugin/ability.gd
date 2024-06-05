@@ -59,7 +59,6 @@ func queue():
 						SignalBus.activelyQueueing.emit(true)
 					else:
 						SignalBus.activelyQueueing.emit(false)
-					
 					print(targetUnits)
 
 func type_matches(faction):
@@ -131,6 +130,7 @@ func draw_range_tiles(activeName):
 	if fileName != activeName:
 		return
 	print("Children: ", )
+	SignalBus.playSFX.emit("Queue")
 	if get_parent() == AutoloadMe.turnPointer:
 		print(get_parent())
 		var tiles = get_parent().grid.flood_fill_in_range(get_parent().position, distanceRange)

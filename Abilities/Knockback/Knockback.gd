@@ -15,6 +15,7 @@ func execute():
 	
 	face_target()
 	get_parent().get_node("AnimatedSprite2D").stop()
+	SignalBus.playSFX.emit("Knockback")
 	get_parent().get_node("AnimatedSprite2D").play("Attack1")
 	await get_tree().create_timer(0.7).timeout
 	
@@ -24,6 +25,7 @@ func execute():
 		targetUnits[i].lose_health(2)
 		var pushDirection = targetUnits[i].position - get_parent().position
 		var targetPos = targetUnits[i].position + pushDirection
+		SignalBus.playSFX.emit("Crash2")
 		for j in AutoloadMe.globalTargetList.size():
 			if targetPos == AutoloadMe.globalTargetList[j].position or AutoloadMe.movementGrid.is_point_solid(get_parent().grid.local_to_map(targetPos)):
 				post_execute()

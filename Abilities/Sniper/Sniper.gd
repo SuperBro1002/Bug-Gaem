@@ -27,6 +27,7 @@ func execute():
 	get_parent().get_node("AnimatedSprite2D").play("Attack1")
 	$VFX.position = targetUnits[0].position
 	$VFX.position.x -= 50
+	SignalBus.playSFX.emit("powerflutter")
 	$VFX.set_visible(true)
 	$VFX.play("Effect")
 	await get_tree().create_timer(0.7).timeout

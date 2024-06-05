@@ -93,6 +93,7 @@ func execute():
 		AutoloadMe.passingUnit = get_parent()
 		
 		face_target()
+		SignalBus.playSFX.emit("Throw")
 		get_parent().get_node("AnimatedSprite2D").stop()
 		get_parent().get_node("AnimatedSprite2D").play("Cast1")
 		await get_tree().create_timer(0.7).timeout

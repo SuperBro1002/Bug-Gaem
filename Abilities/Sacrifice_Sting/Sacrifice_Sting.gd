@@ -41,6 +41,7 @@ func execute():
 	#face_target()
 	get_parent().get_node("AnimatedSprite2D").stop()
 	get_parent().get_node("AnimatedSprite2D").play("Cast1")
+	SignalBus.playSFX.emit("SacrificialSting")
 	$VFX.set_visible(true)
 	$VFX.position = get_parent().position
 	$VFX.play("Effect")

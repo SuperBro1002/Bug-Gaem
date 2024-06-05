@@ -4,8 +4,29 @@
 "_translation_id": "",
 "color": Color(0.968627, 0.498039, 0.721569, 1),
 "custom_info": {
-"sound_mood_default": "",
-"sound_moods": {},
+"sound_mood_default": "Chillin",
+"sound_moods": {
+"Chillin": {
+"mode": 2,
+"name": "Chillin",
+"pitch_base": 2.0,
+"pitch_variance": 0.1,
+"skip_characters": 0.0,
+"sound_path": "res://Assets/Audio/SFX/Zo.wav",
+"volume_base": -8.0,
+"volume_variance": 0.0
+},
+"Robug": {
+"mode": 2,
+"name": "Robug",
+"pitch_base": 1.0,
+"pitch_variance": 0.3,
+"skip_characters": 0.0,
+"sound_path": "res://Assets/Audio/SFX/Grrzz.wav",
+"volume_base": -8.0,
+"volume_variance": 0.0
+}
+},
 "style": ""
 },
 "default_portrait": "Auri",

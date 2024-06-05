@@ -15,6 +15,7 @@ func enemy_execute(initTarget):
 	#targetUnits.append(initTarget)
 	
 	$Area2D/SelectionBox.set_visible(true)
+	SignalBus.playSFX.emit("powerflutter")
 	if initTarget.position.x > get_parent().position.x:
 		direction = Vector2.RIGHT
 		#print("Right")

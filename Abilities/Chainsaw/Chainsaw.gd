@@ -23,6 +23,7 @@ func execute():
 		$VFX.position = targetUnits[i].position
 		$VFX.position.x -= 50
 		$VFX.set_visible(true)
+		SignalBus.playSFX.emit("powerflutter")
 		$VFX.play("Effect")
 		await get_tree().create_timer(0.7).timeout
 		print(targetUnits.size())

@@ -377,6 +377,7 @@ func spawning_in():
 func delete(unit):
 	if unit == self:
 		print("I AM DYING")
+		SignalBus.playSFX.emit("Death")
 		set_visible(false)
 		set_collision_layer_value(1,false)
 		set_collision_layer_value(2,false)

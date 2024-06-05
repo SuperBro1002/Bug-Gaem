@@ -31,6 +31,7 @@ func execute():
 	print(targetUnits)
 	
 	face_target()
+	SignalBus.playSFX.emit("X-slash")
 	get_parent().get_node("AnimatedSprite2D").stop()
 	get_parent().get_node("AnimatedSprite2D").play("Attack1")
 	

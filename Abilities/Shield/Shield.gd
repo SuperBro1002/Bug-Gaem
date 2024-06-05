@@ -35,6 +35,7 @@ func execute():
 	await get_tree().create_timer(0.8).timeout
 	$VFX.position = targetUnits[0].position
 	$VFX.position.x -= 65
+	SignalBus.playSFX.emit("Shield")
 	$VFX.set_visible(true)
 	$VFX.play("Effect")
 	await get_tree().create_timer(0.3).timeout

@@ -11,7 +11,7 @@ Drone: Okay, okay. That's enough. I have a high tech drill and a small army to b
 Drone: Peace, noobs!
 leave Drone [animation="Slide Out Up" length="2" wait="true"]
 join Atlas 1
-join Lumoth 1 [ mirrored="true"]
+join Lumoth 2 [ mirrored="true"]
 join Paramantis 3 [ mirrored="true"]
 join Triss 4 [ mirrored="true"]
 Lumoth (Angry): We can't let him escape!
@@ -28,7 +28,7 @@ leave Triss [animation="Slide Out Right" length="1"]
 leave Atlas [animation="Slide Out Left" length="2"]
 [background arg="res://Dialogic Assets/Styles/Blaground.png" fade="4.0"]
 Triss, Paramantis, Lumoth, and Zephyr rush out of the Cathedral of Moths, down the path to the Sap Root Garden.
-join Paramantis (Neutral) 1
+join Paramantis (Neutral) 0
 join Lumoth 1
 join Triss 2
 In the distance they can see the drill dig into the soft bark at the center of the garden.

@@ -338,7 +338,7 @@ if AutoloadMe.turnPointer.Name == "Paramantis":
 	do PortraitManager.change_main_portrait("AngryF")
 	Paramantis: ???
 	do PortraitManager.change_main_portrait("HappyF")
-	Drone: !!!
+	Paramantis: !!!
 	do PortraitManager.change_main_portrait("CrazyF")
 	Paramantis: Sssurely there is a sssimple sssolution to ssstop thi-
 	Drone: GAH! Get to the point and stop BUGGING me!!

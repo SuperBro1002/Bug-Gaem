@@ -19,6 +19,7 @@ func execute():
 	$VFX.set_visible(true)
 	$VFX.position = targetUnits[0].position
 	$VFX.position.x -= 50
+	SignalBus.playSFX.emit("Sting")
 	$VFX.play("Effect")
 	await get_tree().create_timer(0.7).timeout
 	
