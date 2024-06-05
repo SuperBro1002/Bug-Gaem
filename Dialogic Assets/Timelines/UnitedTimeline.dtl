@@ -127,23 +127,19 @@ if {StoryProgress} == 3:
 # #####################
 label Tutorial Barks
 if AutoloadMe.turnPointer.Name == "Paramantis":
-	do PortraitManager.change_main_portrait("")
-	Paramantis: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Atlas":
-	do PortraitManager.change_main_portrait("")
-	Atlas: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Triss":
-	do PortraitManager.change_main_portrait("")
-	Triss: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Lumoth":
-	do PortraitManager.change_main_portrait("")
-	Lumoth: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 # ##########################
@@ -310,23 +306,19 @@ if {StoryProgress} == 4:
 # ##########################
 label Cathedral 1 Barks
 if AutoloadMe.turnPointer.Name == "Paramantis":
-	do PortraitManager.change_main_portrait("")
-	Paramantis: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Atlas":
-	do PortraitManager.change_main_portrait("")
-	Atlas: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Triss":
-	do PortraitManager.change_main_portrait("")
-	Triss: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Lumoth":
-	do PortraitManager.change_main_portrait("")
-	Lumoth: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 # ##########################
@@ -496,23 +488,19 @@ if {StoryProgress} == 4:
 # ##########################
 label Garden 1 Barks
 if AutoloadMe.turnPointer.Name == "Paramantis":
-	do PortraitManager.change_main_portrait("")
-	Paramantis: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Atlas":
-	do PortraitManager.change_main_portrait("")
-	Atlas: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Triss":
-	do PortraitManager.change_main_portrait("")
-	Triss: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Lumoth":
-	do PortraitManager.change_main_portrait("")
-	Lumoth: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 # ##########################
@@ -652,23 +640,19 @@ if {StoryProgress} == 3:
 # ##########################
 label Garden 2 Barks
 if AutoloadMe.turnPointer.Name == "Paramantis":
-	do PortraitManager.change_main_portrait("")
-	Paramantis: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Atlas":
-	do PortraitManager.change_main_portrait("")
-	Atlas: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Triss":
-	do PortraitManager.change_main_portrait("")
-	Triss: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Lumoth":
-	do PortraitManager.change_main_portrait("")
-	Lumoth: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 # ##########################
@@ -699,23 +683,19 @@ if {StoryProgress} == 0:
 # ##########################
 label Cathedral 2 Barks
 if AutoloadMe.turnPointer.Name == "Paramantis":
-	do PortraitManager.change_main_portrait("")
-	Paramantis: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Atlas":
-	do PortraitManager.change_main_portrait("")
-	Atlas: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Triss":
-	do PortraitManager.change_main_portrait("")
-	Triss: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Lumoth":
-	do PortraitManager.change_main_portrait("")
-	Lumoth: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 # ##########################
@@ -790,22 +770,18 @@ if {StoryProgress} == 1:
 # ##########################
 label Fountain 2 Barks
 if AutoloadMe.turnPointer.Name == "Paramantis":
-	do PortraitManager.change_main_portrait("")
-	Paramantis: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Atlas":
-	do PortraitManager.change_main_portrait("")
-	Atlas: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Triss":
-	do PortraitManager.change_main_portrait("")
-	Triss: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Lumoth":
-	do PortraitManager.change_main_portrait("")
-	Lumoth: <Empty Text Event>
+	do PortraitManager.change_main_portrait("NeutralF")
 	set {DialogueComplete} = true
 	[end_timeline]
