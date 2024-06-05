@@ -24,6 +24,8 @@ func zoom_me(factor):
 	if !isZooming:
 		isZooming = true
 		var tween = create_tween()
+		if tween == null:
+			return
 		tween.tween_property(self, "zoom", zoomAmount, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 		await tween.finished
 		isZooming = false

@@ -43,9 +43,9 @@ func clone(OGUnit):
 	SetAbility2 = "Heal"
 	SetAbility3 = "Sting"
 	
-	ability1 = load_ability(SetAbility1)
-	ability2 = load_ability("Heal")
-	ability3 = load_ability("Sting")
+	#ability1 = load_ability(SetAbility1)
+	ability2 = load_ability(null)
+	ability3 = load_ability(null)
 	
 	Faction = fac.ALLY
 	delete_floating_hp()

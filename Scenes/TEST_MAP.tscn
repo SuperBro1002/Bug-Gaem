@@ -1,24 +1,23 @@
-[gd_scene load_steps=23 format=3 uid="uid://clws6xe5hm1lu"]
+[gd_scene load_steps=22 format=3 uid="uid://cctdo75gd8kdw"]
 
-[ext_resource type="Script" path="res://Scripts/Test_Cathedral_Scenario.gd" id="1_4f1ot"]
-[ext_resource type="Script" path="res://Scripts/EM2.gd" id="2_mmmtd"]
-[ext_resource type="PackedScene" uid="uid://dimryoawtb8dt" path="res://Scenes/narrative_manager.tscn" id="2_ukhfg"]
-[ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="3_8p5eo"]
-[ext_resource type="PackedScene" uid="uid://tgpcor2pwjrk" path="res://Scenes/init_manager.tscn" id="4_ddvxi"]
-[ext_resource type="PackedScene" uid="uid://ci8wrykm1vixs" path="res://Scenes/Units/Atlas.tscn" id="5_x54jv"]
-[ext_resource type="PackedScene" uid="uid://be86imrav20o6" path="res://Scenes/Units/Lumoth.tscn" id="6_bcenj"]
-[ext_resource type="PackedScene" uid="uid://bgphmxq3rd4q1" path="res://Scenes/Units/Paramantis.tscn" id="7_vpwuv"]
-[ext_resource type="PackedScene" uid="uid://ct1ngvul81kpp" path="res://Scenes/Units/Triss.tscn" id="8_yv7f8"]
-[ext_resource type="PackedScene" uid="uid://rw51msc2xqkb" path="res://Scenes/Units/Robopoly.tscn" id="9_4iena"]
-[ext_resource type="PackedScene" uid="uid://b2rerqtddscuk" path="res://Scenes/Units/Termitator.tscn" id="10_jv0gs"]
-[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="11_f5vmc"]
-[ext_resource type="Script" path="res://Scripts/jeff.gd" id="12_0fd0v"]
-[ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="13_g2w6b"]
-[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="14_d6avv"]
-[ext_resource type="Texture2D" uid="uid://o5ea4stjb8ep" path="res://Assets/Maps_Tiles/Cathedral/cathedral_bg.png" id="15_m74i6"]
-[ext_resource type="Texture2D" uid="uid://bxy6448qr3ycn" path="res://Assets/Maps_Tiles/Garden/GridLayer2.png" id="16_y0p63"]
-[ext_resource type="Texture2D" uid="uid://xybeeql63ytc" path="res://Assets/Maps_Tiles/Cathedral/horizontal_bench.png" id="17_kh1eb"]
-[ext_resource type="Texture2D" uid="uid://c5qpe742k42v5" path="res://Assets/Maps_Tiles/Cathedral/diagonal_bench.png" id="18_gwnk7"]
+[ext_resource type="Script" path="res://Scripts/Test_Cathedral_Scenario.gd" id="1_y43yc"]
+[ext_resource type="Script" path="res://Scenes/EMTEST.gd" id="2_1jsor"]
+[ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="3_qnggt"]
+[ext_resource type="PackedScene" uid="uid://tgpcor2pwjrk" path="res://Scenes/init_manager.tscn" id="4_tk47b"]
+[ext_resource type="PackedScene" uid="uid://ci8wrykm1vixs" path="res://Scenes/Units/Atlas.tscn" id="5_yc3je"]
+[ext_resource type="PackedScene" uid="uid://be86imrav20o6" path="res://Scenes/Units/Lumoth.tscn" id="6_nwap2"]
+[ext_resource type="PackedScene" uid="uid://bgphmxq3rd4q1" path="res://Scenes/Units/Paramantis.tscn" id="7_nr15p"]
+[ext_resource type="PackedScene" uid="uid://ct1ngvul81kpp" path="res://Scenes/Units/Triss.tscn" id="8_u6yh4"]
+[ext_resource type="PackedScene" uid="uid://rw51msc2xqkb" path="res://Scenes/Units/Robopoly.tscn" id="9_n1vw4"]
+[ext_resource type="PackedScene" uid="uid://b2rerqtddscuk" path="res://Scenes/Units/Termitator.tscn" id="9_rdejj"]
+[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="10_r7pth"]
+[ext_resource type="Script" path="res://Scripts/jeff.gd" id="11_2gt8l"]
+[ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="12_jv0gm"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="13_xtuqq"]
+[ext_resource type="Texture2D" uid="uid://o5ea4stjb8ep" path="res://Assets/Maps_Tiles/Cathedral/cathedral_bg.png" id="14_g38gc"]
+[ext_resource type="Texture2D" uid="uid://bxy6448qr3ycn" path="res://Assets/Maps_Tiles/Garden/GridLayer2.png" id="15_p00r2"]
+[ext_resource type="Texture2D" uid="uid://xybeeql63ytc" path="res://Assets/Maps_Tiles/Cathedral/horizontal_bench.png" id="16_ey5tk"]
+[ext_resource type="Texture2D" uid="uid://c5qpe742k42v5" path="res://Assets/Maps_Tiles/Cathedral/diagonal_bench.png" id="17_lavym"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_55un7"]
 
@@ -28,79 +27,71 @@ size = Vector2(1152, 1152)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_usygw"]
 
 [node name="Cathedral" type="Node2D"]
-script = ExtResource("1_4f1ot")
+script = ExtResource("1_y43yc")
 
-[node name="NarrativeManager" parent="." instance=ExtResource("2_ukhfg")]
+[node name="EMTEST" type="Node" parent="."]
+script = ExtResource("2_1jsor")
 
-[node name="EM2" type="Node" parent="."]
-script = ExtResource("2_mmmtd")
-objectiveNum = 11
-
-[node name="Grid" parent="." instance=ExtResource("3_8p5eo")]
+[node name="Grid" parent="." instance=ExtResource("3_qnggt")]
 visible = false
 layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608, 0, 6, 262144, 0, 6, 1, 0, 6, 65537, 0, 6, 131073, 0, 3, 262145, 0, 3, 2, 0, 6, 65538, 0, 3, 131074, 0, 6, 262146, 0, 3, 3, 0, 6, 65539, 0, 3, 131075, 0, 3, 196611, 0, 6, 262147, 0, 3, 4, 0, 6, 65540, 0, 3, 131076, 0, 3, 196612, 0, 3, 262148, 0, 6, 327680, 0, 6, 393216, 0, 6, 458752, 0, 6, 524288, 0, 6, 589824, 0, 6, 327681, 0, 6, 393217, 0, 3, 458753, 0, 3, 524289, 0, 3, 589825, 0, 3, 327682, 0, 6, 393218, 0, 3, 458754, 0, 3, 524290, 0, 3, 589826, 0, 3, 327683, 0, 3, 393219, 0, 3, 458755, 0, 6, 524291, 0, 3, 589827, 0, 6, 327684, 0, 3, 393220, 0, 3, 458756, 0, 6, 524292, 0, 3, 589828, 0, 6, 5, 0, 6, 65541, 0, 3, 131077, 0, 3, 196613, 0, 3, 262149, 0, 3, 327685, 0, 3, 393221, 0, 3, 458757, 0, 6, 524293, 0, 3, 589829, 0, 6, 6, 0, 6, 65542, 0, 3, 131078, 0, 3, 196614, 0, 3, 262150, 0, 3, 327686, 0, 3, 393222, 0, 3, 458758, 0, 6, 524294, 0, 3, 589830, 0, 6, 7, 0, 6, 65543, 0, 3, 131079, 0, 3, 196615, 0, 3, 262151, 0, 3, 327687, 0, 3, 393223, 0, 3, 458759, 0, 3, 524295, 0, 3, 589831, 0, 3, 8, 0, 6, 65544, 0, 3, 131080, 0, 3, 196616, 0, 3, 262152, 0, 3, 327688, 0, 3, 458760, 0, 3, 524296, 0, 3, 589832, 0, 3, 9, 0, 6, 65545, 0, 3, 131081, 0, 3, 196617, 0, 3, 262153, 0, 3, 327689, 0, 3, 393225, 0, 3, 458761, 0, 3, 524297, 0, 3, 589833, 0, 3, 65553, 0, 6, 10, 0, 6, 11, 0, 6, 12, 0, 6, 13, 0, 6, 14, 0, 6, 15, 0, 6, 16, 0, 6, 17, 0, 6, 655360, 0, 6, 720896, 0, 6, 786432, 0, 6, 851968, 0, 6, 131089, 0, 6, 196625, 0, 6, 262161, 0, 6, 327697, 0, 6, 393233, 0, 6, 458769, 0, 6, 524305, 0, 6, 589841, 0, 6, 655377, 0, 6, 720913, 0, 6, 786449, 0, 6, 851985, 0, 6, 393224, 0, 3, 196609, 0, 3, 655361, 0, 3, 720897, 0, 6, 786433, 0, 3, 851969, 0, 6, 851970, 0, 6, 786434, 0, 6, 720898, 0, 3, 655362, 0, 3, 196610, 0, 3, 655363, 0, 3, 720899, 0, 3, 786435, 0, 3, 851971, 0, 6, 851972, 0, 6, 786436, 0, 3, 720900, 0, 3, 655364, 0, 3, 655365, 0, 3, 720901, 0, 3, 786437, 0, 3, 851973, 0, 6, 851974, 0, 6, 786438, 0, 3, 720902, 0, 3, 655366, 0, 3, 655367, 0, 3, 720903, 0, 3, 786439, 0, 3, 851975, 0, 6, 851976, 0, 6, 786440, 0, 3, 720904, 0, 3, 655368, 0, 3, 65546, 0, 3, 131082, 0, 3, 196618, 0, 3, 262154, 0, 3, 327690, 0, 3, 393226, 0, 3, 458762, 0, 3, 524298, 0, 3, 589834, 0, 3, 655369, 0, 3, 720905, 0, 3, 786441, 0, 3, 851977, 0, 6, 851978, 0, 6, 786442, 0, 3, 720906, 0, 3, 655370, 0, 3, 655371, 0, 3, 589835, 0, 6, 524299, 0, 3, 458763, 0, 6, 393227, 0, 3, 327691, 0, 6, 262155, 0, 3, 196619, 0, 6, 131083, 0, 3, 65547, 0, 3, 65548, 0, 3, 131084, 0, 3, 196620, 0, 6, 262156, 0, 3, 327692, 0, 6, 393228, 0, 3, 458764, 0, 6, 524300, 0, 3, 589836, 0, 6, 655372, 0, 3, 720908, 0, 3, 720907, 0, 3, 786443, 0, 3, 851979, 0, 6, 851980, 0, 6, 786444, 0, 3, 786445, 0, 3, 720909, 0, 3, 655373, 0, 3, 589837, 0, 6, 524301, 0, 3, 458765, 0, 6, 393229, 0, 3, 327693, 0, 6, 262157, 0, 3, 196621, 0, 6, 65549, 0, 3, 65550, 0, 3, 131086, 0, 3, 262158, 0, 3, 327694, 0, 6, 393230, 0, 3, 458766, 0, 6, 524302, 0, 3, 589838, 0, 6, 655374, 0, 3, 720910, 0, 3, 786446, 0, 3, 851982, 0, 6, 851981, 0, 6, 851983, 0, 6, 786447, 0, 6, 720911, 0, 3, 655375, 0, 3, 589839, 0, 3, 524303, 0, 3, 458767, 0, 3, 393231, 0, 3, 131087, 0, 3, 65551, 0, 3, 65552, 0, 3, 131088, 0, 3, 196624, 0, 3, 262160, 0, 3, 393232, 0, 3, 458768, 0, 3, 524304, 0, 3, 589840, 0, 3, 655376, 0, 3, 720912, 0, 6, 786448, 0, 3, 851984, 0, 6, 131085, 0, 3, 196622, 0, 6, 196623, 0, 3, 262159, 0, 3, 327696, 0, 3, 327695, 0, 3)
 
 [node name="ObstacleHolder" type="Node" parent="Grid"]
 
-[node name="InitManager" parent="Grid" instance=ExtResource("4_ddvxi")]
+[node name="InitManager" parent="Grid" instance=ExtResource("4_tk47b")]
 
 [node name="UnitManager" type="Node" parent="Grid/InitManager"]
 
-[node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_x54jv")]
+[node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_yc3je")]
 position = Vector2(544, 736)
+MaxAP = 20
 
-[node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_bcenj")]
-position = Vector2(609, 736)
+[node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_nwap2")]
+position = Vector2(544, 800)
+MaxHP = 30
+MaxAP = 20
 
-[node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_vpwuv")]
+[node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_nr15p")]
 position = Vector2(672, 799)
+MaxAP = 24
 
-[node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("8_yv7f8")]
+[node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("8_u6yh4")]
 position = Vector2(480, 798)
+MaxAP = 20
+TrueInit = 15
 
-[node name="Robo" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_4iena")]
-position = Vector2(800, 288)
+[node name="Robo" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_n1vw4")]
+position = Vector2(736, 800)
+TrueInit = 21
+InitVariance = 0
 
-[node name="Robo2" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_4iena")]
-position = Vector2(864, 416)
+[node name="Robo2" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_n1vw4")]
+position = Vector2(672, 736)
+TrueInit = 21
+InitVariance = 0
 
-[node name="Robo3" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_4iena")]
-position = Vector2(928, 544)
+[node name="Term" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_rdejj")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(608, 672)
+MaxHP = 15
+TrueInit = 14
+InitVariance = 0
 
-[node name="Robo4" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_4iena")]
-position = Vector2(1056, 672)
+[node name="Term2" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_rdejj")]
+position = Vector2(736, 672)
+TrueInit = 17
+InitVariance = 0
 
-[node name="Robo5" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_4iena")]
-position = Vector2(224, 416)
-
-[node name="Robo9" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_4iena")]
-position = Vector2(97, 224)
-
-[node name="Robo6" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_4iena")]
-position = Vector2(227, 544)
-
-[node name="Robo7" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_4iena")]
-position = Vector2(96, 672)
-
-[node name="Robo8" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_4iena")]
-position = Vector2(736, 160)
-
-[node name="Term" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_jv0gs")]
-position = Vector2(353, 288)
-
-[node name="Term2" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_jv0gs")]
-position = Vector2(227, 100)
-
-[node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("11_f5vmc")]
+[node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_r7pth")]
 visible = false
 position = Vector2(384, -48)
-script = ExtResource("12_0fd0v")
+script = ExtResource("11_2gt8l")
 Name = "Jeff"
 fileName = "Jeff"
 MaxHP = 200
 TrueInit = -100
 
-[node name="UILayer" parent="." instance=ExtResource("13_g2w6b")]
+[node name="UILayer" parent="." instance=ExtResource("12_jv0gm")]
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -112,7 +103,7 @@ limit_top = -600
 limit_right = 2200
 limit_bottom = 1400
 limit_smoothed = true
-script = ExtResource("14_d6avv")
+script = ExtResource("13_xtuqq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
 visible = false
@@ -123,7 +114,7 @@ texture = SubResource("PlaceholderTexture2D_55un7")
 texture_filter = 1
 position = Vector2(576.875, 289.142)
 scale = Vector2(2, 2)
-texture = ExtResource("15_m74i6")
+texture = ExtResource("14_g38gc")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -138,145 +129,145 @@ modulate = Color(1, 1, 1, 0.235294)
 texture_filter = 1
 position = Vector2(6.10352e-05, 189.012)
 scale = Vector2(1.125, 1.49416)
-texture = ExtResource("16_y0p63")
+texture = ExtResource("15_p00r2")
 
 [node name="Chairs" type="Node2D" parent="CathedralMapSprite"]
 
 [node name="Sprite2D" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(79.5625, -32.571)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(175.562, -32.571)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(143.562, -32.571)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D4" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(111.562, -32.571)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D5" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(79.5625, 31.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D6" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(175.562, 31.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D7" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(143.562, 31.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D8" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(111.562, 31.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D9" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(79.5625, 95.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D10" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(175.562, 95.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D11" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(143.562, 95.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D12" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(111.562, 95.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D13" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(79.5625, 159.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D14" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(175.562, 159.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D15" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(143.562, 159.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D16" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(111.562, 159.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D17" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-176.438, 95.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D18" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-80.4375, 95.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D19" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-112.438, 95.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D20" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-144.438, 95.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D21" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-176.438, 159.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D22" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-80.4375, 159.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D23" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-112.438, 159.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D24" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-144.438, 159.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D25" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-208.438, 31.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D26" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-240.438, 31.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D27" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-144.438, -0.57103)
-texture = ExtResource("18_gwnk7")
+texture = ExtResource("17_lavym")
 
 [node name="Sprite2D28" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-176.438, -32.571)
-texture = ExtResource("18_gwnk7")
+texture = ExtResource("17_lavym")
 
 [node name="Sprite2D29" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-208.438, -64.571)
-texture = ExtResource("18_gwnk7")
+texture = ExtResource("17_lavym")
 
 [node name="Sprite2D30" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-240.438, -96.571)
-texture = ExtResource("18_gwnk7")
+texture = ExtResource("17_lavym")
 
 [node name="Sprite2D31" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(239.563, 223.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D32" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(207.563, 255.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D33" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-208.438, 255.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Sprite2D34" type="Sprite2D" parent="CathedralMapSprite/Chairs"]
 position = Vector2(-240.438, 223.429)
-texture = ExtResource("17_kh1eb")
+texture = ExtResource("16_ey5tk")
 
 [node name="Black Layer" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)

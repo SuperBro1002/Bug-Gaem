@@ -5,7 +5,7 @@ func _enter_tree():
 	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
 	Name = "Chainsaw Boomerang"
 	fileName = "Chainsaw"
-	description = "Deals 2 damage to targets in a 4-tile line in front of the user. 6 AP"
+	description = "Deals 2 damage to targets in a 4-tile line in front of the user. 5 AP"
 
 func execute():
 	# for every target in target units[]

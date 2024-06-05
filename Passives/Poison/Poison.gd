@@ -9,7 +9,7 @@ func _enter_tree():
 
 func execute(num):
 	get_parent().incoming_dmg_type = "pierce"
-	SignalBus.playSFX.emit("")
-	get_parent().lose_health(1)
+	SignalBus.playSFX.emit("PoisonSwipe")
+	get_parent().passive_lose_health(1)
 	turnsRemaining -= 1
 	#print("Turns remaining: ", turnsRemaining)

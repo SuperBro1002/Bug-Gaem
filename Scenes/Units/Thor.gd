@@ -13,6 +13,11 @@ func unique_turn_start():
 		startPhaseTwo = false
 	await get_tree().create_timer(2).timeout
 	
+	if CurrentHP <= 0:
+		#SignalBus.endTurn.emit()
+		on_turn_end()
+		return
+	
 	if phase == 1:
 		AutoloadMe.currentAbility = ability1
 		run_passives(methodType.ABILITY_EXECUTE, null)

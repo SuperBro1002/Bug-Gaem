@@ -7,4 +7,4 @@ func _enter_tree():
 
 func execute(_num):
 	get_parent().incoming_dmg_type = "pierce"
-	get_parent().lose_health(get_parent().get_current_hp())
+	get_parent().passive_lose_health(get_parent().get_current_hp())

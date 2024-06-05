@@ -4,14 +4,14 @@
 [ext_resource type="SpriteFrames" uid="uid://fy8e8wgvo05l" path="res://Scenes/Sprite Frames/Triss.tres" id="2_0ulm1"]
 
 [node name="Triss" instance=ExtResource("1_74s6p")]
+MaxHP = 8
+SetAbility2 = "Carry"
+SetAbility3 = "Sacrifice_Sting"
 Name = "Triss"
 fileName = "Triss"
-MaxHP = 8
 MaxAP = 8
 TrueInit = 20
 SetAbility1 = "Sting"
-SetAbility2 = "Carry"
-SetAbility3 = "Sacrifice_Sting"
 Faction = 0
 
 [node name="AnimatedSprite2D" parent="." index="1"]

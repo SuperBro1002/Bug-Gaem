@@ -21,10 +21,10 @@ func fill_me(_isHovering):
 	if unit.Faction == unit.fac.OBSTACLE:
 		return
 	
-	if unit.Faction == unit.fac.ENEMY:
-		$APValue.set_text(str(unit.get_current_ap(), " / ", unit.get_max_ap()))
-	elif unit.Faction == unit.fac.ALLY:
-		$APValue.set_text(str(unit.get_current_ap(), " / ", unit.get_max_ap()))
+	#if unit.Faction == unit.fac.ENEMY:
+	$APValue.set_text(str(unit.get_current_ap(), " / ", unit.get_max_ap()))
+	#elif unit.Faction == unit.fac.ALLY:
+		#$APValue.set_text(str(unit.get_current_ap(), " / ", unit.get_max_ap()))
 	
 	
 	$GridContainer/MarginContainer/Ability1.set_text(unit.ability1.Name)

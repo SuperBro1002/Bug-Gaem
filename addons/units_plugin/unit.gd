@@ -155,7 +155,26 @@ func gain_health(recoverVal):
 
 func lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
-	if AutoloadMe.currentAbility != null: dmgVal *= AutoloadMe.currentAbility.dmgMod
+	if AutoloadMe.currentAbility != null:
+		print("Losing HP: ", self , ": ", Name)
+		print(AutoloadMe.currentAbility)
+		dmgVal *= AutoloadMe.currentAbility.dmgMod
+	CurrentHP = CurrentHP - dmgVal
+	incoming_dmg_type = null
+	animated_Damaged()
+	if CurrentHP < 0:
+		CurrentHP = 0
+		
+	SignalBus.updateFloatingHP.emit(self)
+	await SignalBus.HpUiFinish
+	
+	if CurrentHP == 0:
+		delete(self)
+
+func passive_lose_health(dmgVal):
+	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
+	print("Losing HP through a passive: ", self , ": ", Name)
+	print(AutoloadMe.currentAbility)
 	CurrentHP = CurrentHP - dmgVal
 	incoming_dmg_type = null
 	animated_Damaged()

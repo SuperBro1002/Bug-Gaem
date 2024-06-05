@@ -3,6 +3,11 @@ extends "res://Scripts/enemy.gd"
 func unique_turn_start():
 	await get_tree().create_timer(2).timeout
 	
+	if CurrentHP <= 0:
+		#SignalBus.endTurn.emit()
+		on_turn_end()
+		return
+	
 	shortestPath = 10000
 	lengthList = [] # List of distances to different opposing units
 	target = null

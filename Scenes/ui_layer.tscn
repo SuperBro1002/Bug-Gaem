@@ -265,11 +265,12 @@ texture = ExtResource("9_an2am")
 
 [node name="AbilityDescBox" parent="UI" instance=ExtResource("7_kxv4v")]
 modulate = Color(1, 1, 1, 0)
+z_index = -2
 layout_mode = 0
 offset_left = 18.0
-offset_top = 701.0
+offset_top = 826.791
 offset_right = 658.0
-offset_bottom = 849.0
+offset_bottom = 974.791
 scale = Vector2(0.6, 0.6)
 
 [node name="ControlsOverlay" type="VBoxContainer" parent="UI"]

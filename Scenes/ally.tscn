@@ -12,6 +12,8 @@ z_index = 1
 position = Vector2(1.90735e-06, 1.90735e-06)
 script = ExtResource("1_xhul3")
 MaxHP = 10
+SetAbility2 = "Sting"
+SetAbility3 = "Knockback"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
