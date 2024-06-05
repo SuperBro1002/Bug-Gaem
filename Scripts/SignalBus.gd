@@ -45,3 +45,4 @@ signal midObjectiveChecked
 signal phaseChange
 signal finalBattle
 signal spawnDrone
+signal showInfoBox

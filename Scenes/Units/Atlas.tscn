@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci8wrykm1vixs"]
+[gd_scene load_steps=3 format=3 uid="uid://ci8wrykm1vixs"]
 
 [ext_resource type="PackedScene" uid="uid://cofaiq0bowqml" path="res://Scenes/ally.tscn" id="1_l2376"]
+[ext_resource type="SpriteFrames" uid="uid://cm8p86i48ibo4" path="res://Scenes/Sprite Frames/Atlas.tres" id="2_omy6j"]
 
 [node name="Atlas" instance=ExtResource("1_l2376")]
 Name = "Atlas"
@@ -15,4 +16,5 @@ Faction = 0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(-2.38419e-06, -2.38419e-06)
-animation = &"Jump1"
+sprite_frames = ExtResource("2_omy6j")
+animation = &"Damaged"

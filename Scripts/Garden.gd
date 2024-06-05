@@ -8,6 +8,7 @@ func _ready():
 	AutoloadMe.new_level()
 	#get_node("Grid/InitManager/UnitManager/Lumoth").add_passive("TestPassive")
 	get_node("Grid/InitManager").next_turn()
+	SignalBus.showInfoBox.emit()
 
 func process():
 	pass

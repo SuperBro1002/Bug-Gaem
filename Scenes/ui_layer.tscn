@@ -85,6 +85,7 @@ offset_bottom = 357.768
 scale = Vector2(0.8, 0.8)
 
 [node name="InfoBox" type="ColorRect" parent="UI"]
+visible = false
 modulate = Color(1, 1, 1, 0.8)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1

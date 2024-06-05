@@ -130,14 +130,13 @@ func post_execute():
 func draw_range_tiles(activeName):
 	if fileName != activeName:
 		return
-	print("Children: ", )
 	if get_parent() == AutoloadMe.turnPointer:
-		print(get_parent())
 		var tiles = get_parent().grid.flood_fill_in_range(get_parent().position, distanceRange)
 		tiles = get_parent().grid.remove_solid(tiles)
 		var sceneNode
 		print("TILES: ", tiles)
 		for i in tiles.size():
+			print("RED BOXES")
 			var scene = load("res://Scenes/Ability_Tile.tscn")
 			sceneNode = scene.instantiate()
 			$AbilityRanges.add_child(sceneNode)
@@ -169,14 +168,12 @@ func target_is_right():
 func _on_area_2d_area_entered(area):
 	if AutoloadMe.turnPointer.get_faction() == get_parent().fac.ALLY:
 		if area.areaType != "spawner" and area.areaType != "range_box" and type_matches(area.get_faction()) and area != get_parent() and targetUnits.find(area) == -1:
-			print("HI")
 			targetUnits.append(area)
 			print("SIZE OF TARGET",targetUnits.size())
 	elif AutoloadMe.turnPointer.get_faction() == get_parent().fac.ENEMY:
 		print("Enemy hitbox entered")
 		if area.areaType != "spawner" and area.areaType != "range_box" and (area.get_faction() == area.fac.ALLY or area.get_faction() == area.fac.OBSTACLE) and area != get_parent() and targetUnits.find(area) == -1:
 			print(area)
-			print("HI")
 			targetUnits.append(area)
 			print("SIZE OF TARGET",targetUnits.size())
 

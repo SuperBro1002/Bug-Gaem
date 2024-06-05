@@ -10,7 +10,7 @@ size = Vector2(256, 64)
 
 [node name="Chainsaw" type="Node"]
 script = ExtResource("1_p7isf")
-apCost = 6
+apCost = 5
 canRotate = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -31,6 +31,7 @@ texture = SubResource("PlaceholderTexture2D_mw3e8")
 [node name="AbilityRanges" type="Node" parent="."]
 
 [node name="VFX" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = 3
 texture_filter = 1
 scale = Vector2(1.5, 1.5)

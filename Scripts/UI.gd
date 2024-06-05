@@ -12,7 +12,7 @@ var arrowTween
 var AnimTween
 
 func _ready():
-	get_parent().set_visible(true)
+	$InfoBox.set_visible(false)
 	SignalBus.connect("currentUnit", set_ui)
 	SignalBus.connect("currentUnit", move_camera)
 	SignalBus.connect("currentUnit", move_arrow)
@@ -23,12 +23,15 @@ func _ready():
 	SignalBus.connect("actedUI", set_init_colors)
 	SignalBus.connect("mouseHovering", toggle_secondary)
 	SignalBus.connect("startTurn", show_infoBox)
+	SignalBus.connect("showInfoBox", show_infoBox)
 	SignalBus.connect("abilityExecuted", clear_tile_paths)
 	SignalBus.connect("wipeTilePaths", clear_tile_paths)
 	SignalBus.connect("moveCamera", hide_ui)
 	SignalBus.connect("showUI", show_ui)
 	SignalBus.connect("changeControls", set_control_text)
 	draw_init_box()
+	get_parent().set_visible(true)
+	#$InfoBox.set_visible(true)
 
 func set_ui(unit):
 	if unit.get_faction() == unit.fac.ALLY:
