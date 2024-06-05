@@ -5,5 +5,5 @@ func _ready():
 
 func set_my_text(passive):
 	if passive.Name == null: return
-	$VBoxContainer/PassidveTitle.set_text(passive.Name)
+	$VBoxContainer/PassiveTitle.set_text(passive.Name)
 	$VBoxContainer/Description.set_text(passive.description)

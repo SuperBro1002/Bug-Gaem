@@ -1,4 +1,6 @@
 label First
+if AutoloadMe.turnPointer.BatonPass != AutoloadMe.turnPointer.TS.NOTACTED:
+	jump Tutorial Barks
 if AutoloadMe.mapID == 1:
 	jump Tutorial Plot
 elif AutoloadMe.mapID == 2:
