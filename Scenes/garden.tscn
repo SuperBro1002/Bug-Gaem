@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://7qps6ox2sfna"]
+[gd_scene load_steps=29 format=3 uid="uid://7qps6ox2sfna"]
 
 [ext_resource type="Script" path="res://Scripts/Garden.gd" id="1_574vu"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_bbw0h"]
@@ -55,6 +55,8 @@ animations = [{
 "name": &"Idle",
 "speed": 3.0
 }]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d6v81"]
 
 [node name="Garden" type="Node2D"]
 script = ExtResource("1_574vu")
@@ -161,6 +163,7 @@ position = Vector2(608, 992)
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_vdhge")]
 position = Vector2(672, 1056)
+MaxAP = 126
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("8_mc8hb")]
 position = Vector2(480, 1056)
@@ -250,3 +253,11 @@ animation = &"Idle"
 autoplay = "Idle"
 frame = 1
 frame_progress = 0.17059
+
+[node name="Black Layer" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -2
+position = Vector2(600, 552)
+scale = Vector2(4224.25, 2368)
+texture = SubResource("PlaceholderTexture2D_d6v81")
+metadata/_edit_lock_ = true

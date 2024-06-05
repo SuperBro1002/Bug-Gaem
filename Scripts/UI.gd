@@ -12,7 +12,7 @@ var arrowTween
 var AnimTween
 
 func _ready():
-	get_parent().set_visible(true)
+	$InfoBox.set_visible(false)
 	SignalBus.connect("currentUnit", set_ui)
 	SignalBus.connect("currentUnit", move_camera)
 	SignalBus.connect("currentUnit", move_arrow)
@@ -23,12 +23,15 @@ func _ready():
 	SignalBus.connect("actedUI", set_init_colors)
 	SignalBus.connect("mouseHovering", toggle_secondary)
 	SignalBus.connect("startTurn", show_infoBox)
+	SignalBus.connect("showInfoBox", show_infoBox)
 	SignalBus.connect("abilityExecuted", clear_tile_paths)
 	SignalBus.connect("wipeTilePaths", clear_tile_paths)
 	SignalBus.connect("moveCamera", hide_ui)
 	SignalBus.connect("showUI", show_ui)
 	SignalBus.connect("changeControls", set_control_text)
 	draw_init_box()
+	get_parent().set_visible(true)
+	#$InfoBox.set_visible(true)
 
 func set_ui(unit):
 	remove_passive_boxes()
@@ -298,29 +301,41 @@ func move_camera(unit):
 
 func _on_ability_1_button_mouse_entered():
 	var tween = create_tween()
+	var tween2 = create_tween()
 	$AbilityDescBox.set_my_text(ability1)
-	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0.8, 1.3 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	tween2.tween_property(get_node("../UI/AbilityDescBox"), "position:y", 756, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 func _on_ability_1_button_mouse_exited():
 	var tween = create_tween()
-	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	var tween2 = create_tween()
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.3 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	tween2.tween_property(get_node("../UI/AbilityDescBox"), "position:y", 826, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 
 func _on_ability_2_button_mouse_entered():
 	var tween = create_tween()
+	var tween2 = create_tween()
 	$AbilityDescBox.set_my_text(ability2)
-	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0.8, 1.3 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	tween2.tween_property(get_node("../UI/AbilityDescBox"), "position:y", 756, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 func _on_ability_2_button_mouse_exited():
 	var tween = create_tween()
-	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	var tween2 = create_tween()
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.3 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	tween2.tween_property(get_node("../UI/AbilityDescBox"), "position:y", 826, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 
 func _on_ability_3_button_mouse_entered():
 	var tween = create_tween()
+	var tween2 = create_tween()
 	$AbilityDescBox.set_my_text(ability3)
-	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0.8, 1.3 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	tween2.tween_property(get_node("../UI/AbilityDescBox"), "position:y", 756, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 func _on_ability_3_button_mouse_exited():
 	var tween = create_tween()
-	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	var tween2 = create_tween()
+	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.3 / animationSpeed).set_trans(Tween.TRANS_SINE)
+	tween2.tween_property(get_node("../UI/AbilityDescBox"), "position:y", 826, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)

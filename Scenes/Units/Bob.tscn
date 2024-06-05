@@ -19,3 +19,4 @@ Controllable = false
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_ypxt8")
+animation = &"Damaged"
