@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://clws6xe5hm1lu"]
+[gd_scene load_steps=23 format=3 uid="uid://clws6xe5hm1lu"]
 
 [ext_resource type="Script" path="res://Scripts/Test_Cathedral_Scenario.gd" id="1_4f1ot"]
 [ext_resource type="Script" path="res://Scripts/EM2.gd" id="2_mmmtd"]
@@ -34,7 +34,7 @@ script = ExtResource("1_4f1ot")
 
 [node name="EM2" type="Node" parent="."]
 script = ExtResource("2_mmmtd")
-objectiveNum = 1
+objectiveNum = 11
 
 [node name="Grid" parent="." instance=ExtResource("3_8p5eo")]
 visible = false

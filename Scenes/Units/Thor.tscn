@@ -5,11 +5,11 @@
 
 [node name="Thor" instance=ExtResource("1_j27fl")]
 script = ExtResource("2_d2lgt")
+Name = "Thor'axe"
+fileName = "Thor"
 phase = 1
 startPhaseTwo = false
 aggroRange = 12
-Name = "Thor'axe"
-fileName = "Thor"
 MaxAP = 11
 TrueInit = 33
 SetAbility1 = "Chloroblast"

@@ -71,9 +71,9 @@ position = Vector2(384, -48)
 script = ExtResource("8_df8tx")
 Name = "Jeff"
 fileName = "Jeff"
+Faction = 2
 MaxHP = 200
 TrueInit = -100
-Faction = 2
 
 [node name="UILayer" parent="." instance=ExtResource("9_fcinn")]
 visible = false

@@ -27,7 +27,7 @@ script = ExtResource("1_jpy62")
 
 [node name="EM1" type="Node" parent="."]
 script = ExtResource("2_mf4f4")
-objectiveNum = 1
+objectiveNum = 6
 
 [node name="NarrativeManager" parent="." instance=ExtResource("3_u2aib")]
 
@@ -50,9 +50,9 @@ position = Vector2(384, -48)
 script = ExtResource("14_nhih3")
 Name = "Jeff"
 fileName = "Jeff"
+Faction = 2
 MaxHP = 200
 TrueInit = -100
-Faction = 2
 
 [node name="UILayer" parent="." instance=ExtResource("15_scrj4")]
 visible = false

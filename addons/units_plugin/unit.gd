@@ -155,10 +155,10 @@ func gain_health(recoverVal):
 
 func lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
-	if AutoloadMe.currentAbility != null: 
-	print("Losing HP: ", self , ": ", Name)
-	print(AutoloadMe.currentAbility)
-	dmgVal *= AutoloadMe.currentAbility.dmgMod
+	if AutoloadMe.currentAbility != null:
+		print("Losing HP: ", self , ": ", Name)
+		print(AutoloadMe.currentAbility)
+		dmgVal *= AutoloadMe.currentAbility.dmgMod
 	CurrentHP = CurrentHP - dmgVal
 	incoming_dmg_type = null
 	animated_Damaged()
