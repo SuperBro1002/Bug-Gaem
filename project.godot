@@ -41,8 +41,13 @@ directories/dch_directory={
 directories/dtl_directory={
 "Cathedral 1 Intro": "res://Dialogic Assets/Timelines/Cathedral 1 Intro.dtl",
 "Cathedral 1 Outro": "res://Dialogic Assets/Timelines/Cathedral 1 Outro.dtl",
+"Cathedral 2 Intro": "res://Dialogic Assets/Timelines/Cathedral 2 Intro.dtl",
+"Drone": "res://Dialogic Assets/Timelines/Drone.dtl",
+"Finale": "res://Dialogic Assets/Timelines/Finale.dtl",
+"Fountain 2 Intro": "res://Dialogic Assets/Timelines/Fountain 2 Intro.dtl",
 "Fountain Intro": "res://Dialogic Assets/Timelines/Fountain Intro.dtl",
 "Fountain Outro": "res://Dialogic Assets/Timelines/Fountain Outro.dtl",
+"Garden Intro": "res://Dialogic Assets/Timelines/Garden Intro.dtl",
 "Tutorial Drill": "res://Dialogic Assets/Timelines/Tutorial Drill.dtl",
 "UnitedTimeline": "res://Dialogic Assets/Timelines/UnitedTimeline.dtl"
 }
@@ -52,6 +57,7 @@ glossary/default_case_sensitive=true
 variables={
 "CutsceneUp": false,
 "DialogueComplete": false,
+"GardenPhase2": false,
 "StoryProgress": 0,
 "TutorialDrillSeen": false
 }

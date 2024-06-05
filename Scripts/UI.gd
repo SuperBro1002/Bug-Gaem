@@ -49,18 +49,18 @@ func set_ui(unit):
 		
 		
 		ability1 = unit.ability1
-		$InfoBox/AbilityBox/Ability1Button.set_text(ability1.Name)
+		$InfoBox/AbilityBox/Ability1Button.set_text(str(ability1.Name, " | AP: ", ability1.apCost))
 		
 		if !unit.isPossessed:
 			ability2 = unit.ability2
-			$InfoBox/AbilityBox/Ability2Button.set_text(ability2.Name)
+			$InfoBox/AbilityBox/Ability2Button.set_text(str(ability2.Name, " | AP: ", ability2.apCost))
 			$InfoBox/AbilityBox/Ability2Button.set_visible(true)
 		else:
 			$InfoBox/AbilityBox/Ability2Button.set_visible(false)
 		
 		if !unit.isPossessed:
 			ability3 = unit.ability3
-			$InfoBox/AbilityBox/Ability3Button.set_text(ability3.Name)
+			$InfoBox/AbilityBox/Ability3Button.set_text(str(ability3.Name, " | AP: ", ability3.apCost))
 			$InfoBox/AbilityBox/Ability3Button.set_visible(true)
 		else:
 			$InfoBox/AbilityBox/Ability3Button.set_visible(false)

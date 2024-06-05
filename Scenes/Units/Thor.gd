@@ -102,6 +102,7 @@ func set_phase():
 	phase = 2
 	ability1 = load_ability("Fury")
 	ability2 = load_ability("Sniper")
+	Dialogic.VAR.GardenPhase2 = true
 	if AutoloadMe.mapID == 3:
 		return Vector2i(9,9)
 	else:

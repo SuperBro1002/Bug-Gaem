@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bq8sleerhf7s4"]
 
 [ext_resource type="Script" path="res://Scenes/Units/Drone.gd" id="1_wmkpk"]
-[ext_resource type="SpriteFrames" uid="uid://cm8p86i48ibo4" path="res://Scenes/Sprite Frames/Atlas.tres" id="1_xcm85"]
+[ext_resource type="Texture2D" uid="uid://16ypf30x7is3" path="res://Assets/Portraits/Drone/Drone.png" id="2_n7sj8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22tiu"]
 size = Vector2(64, 64)
@@ -15,10 +15,9 @@ script = ExtResource("1_wmkpk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_22tiu")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(2, 2)
-sprite_frames = ExtResource("1_xcm85")
-animation = &"Idle"
+scale = Vector2(3, 3)
+texture = ExtResource("2_n7sj8")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

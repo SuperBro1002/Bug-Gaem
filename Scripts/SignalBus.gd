@@ -47,3 +47,5 @@ signal finalBattle
 signal spawnDrone
 signal showReplyPortrait
 signal hideReplyPortrait
+signal droneFlyIn
+signal droneFlyOut

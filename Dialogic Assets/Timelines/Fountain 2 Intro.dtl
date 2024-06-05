@@ -1,0 +1,41 @@
+do AutoloadMe.start_first_turn()
+[style name="VNStyle2"]
+[background arg="res://Dialogic Assets/Styles/Black.png" fade="0.0"]
+join Atlas (Sad) 1
+join Lumoth 3 [ mirrored="true"]
+join Triss 2 [ mirrored="true"]
+join Paramantis 4 [ mirrored="true"]
+Robug steel flies acorss the Cathedral in a flurry of sparks.
+Atlas slumps over, breathing heavily.
+Triss (Neutral): Lumoth, heal her now!
+Lumoth (Channeling): Lunalesca, grant her succor-
+Paramantis (Happy): She is stable! Her mind is afraid, but her body is hers again.
+Atlas (Sad): I- I'm so sorry...
+Atlas (Thinking): I thought I could help lead again. I thought I could protect you all better.
+Atlas (Sad): But, I was wrong, you all rose to the challenge of Thor’axe, and I was the one being saved.
+Atlas (Thinking): Triss, you took command when needed, well done.
+Triss (Snobby): Don't forget Zephyr!
+Atlas (Happy): Ha, of course.
+Atlas (Happy): It seems the young blood is ready to take the lead. After what you said to Thor'axe... I feel a lot better, knowing you are taking the reigns.
+Triss (Neutral): But the fight isn’t over. Drone is going to bring more reinforcements through that breach any moment now. We won’t be able to stop them if they get through.
+Atlas (Neutral): You’re right… Lumoth, thank you, I’m feeling back to fighting shape.
+Triss (Neutral): Let’s go!
+leave --All--
+[background arg="res://Dialogic Assets/Styles/Blaground.png" fade="3.0"]
+The Robugs pour from the breach like a divine flood.
+join Drone 3 [animation="Slide In Down" length="1" mirrored="true"]
+The 100th Bug Brigade is barely able to push the waves back, where they meet Drone victoriously directing reinforcements.
+join Paramantis (Angry) 1
+join Triss (Angry) 2
+Paramantis: Drone, we know you only serve your masters, but do you not know the damage you cause to the Cycle is also damage to yourself? The world you rely on and live in will be in shambles!
+update Drone [ mirrored="false"]
+Drone: BAHA the Cycle?? We’ve evolved past that!
+Drone: Our steel chitin does not rot or decay! It’s made out of a material that even the greatest Robug machines can barely damage.
+Drone: We are eternal hahaaaa!
+Triss: Nothing we have is strong enough to stop another drill from just rolling through here again, and we can't take on the army ourselves.
+Triss: We need to fill the breach with something even the Robugs can't destroy-
+Triss (Snobby): Their own steel!
+Triss (Neutral): We'll fight off what we can, then throw their clunky steel into the breach!
+Triss (Angry): We'll fill the hole with their corpses!
+leave --All--
+[background arg="res://Dialogic Assets/Styles/Clear.png" fade="1.5"]

@@ -1,5 +1,14 @@
 [style name="VNStyle2"]
-[background arg="res://Dialogic Assets/Styles/Blaground.png" fade="0.0" transition="Simple Fade"]
+[background arg="res://Dialogic Assets/Styles/Black.png" fade="0.0" transition="Simple Fade"]
+The waves were ceaseless. Following Atlas, the 100th Bug Brigade retreat to the nearest structure\:
+The Cathedral of Moths.
+join Lumoth 2
+Lumoth (Happy): Lunalesca's blessing is strong here. I'm sure we will be safe!
+Lumoth (Neutral): When I joined the Bug Brigades, I told them that Lunalesca spoke to me in my prayers, and told me to protect the Great Tree from the Robugs.
+Lumoth (Sad): Although it cost me my place in the church...
+Lumoth (Happy): I'm sure that us arrive here is a sign! Lunalesca is watching over us.
+leave Lumoth
+[background arg="res://Dialogic Assets/Styles/Blaground.png" fade="4.0"]
 The thick walls and ornate stained glass make the Cathedral of Moths feel impenetrable...
 But long shadows and echoes of clinking metal tell the 100th Bug Brigade they are not alone.
 join Atlas (Angry) 3 [animation="Slide In Left" length="2"]
@@ -16,6 +25,6 @@ Atlas (Angry): You're a soldier now, honeysucker, better start acting like one.
 Triss (Neutral): ... yes.
 Atlas (Angry): Yes what, Cadet?
 Triss (Angry): ... yes, ma'am ...
-[background fade="1.2"]
+[background arg="res://Dialogic Assets/Styles/Clear.png" fade="1.0"]
 leave Triss [animation="Slide Out Right" length="1.2" wait="true"]
 do AutoloadMe.start_first_turn()

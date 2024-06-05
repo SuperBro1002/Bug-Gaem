@@ -1,0 +1,56 @@
+[style name="VNStyle2"]
+[background arg="res://Dialogic Assets/Styles/Black.png" fade="0.0"]
+join Atlas 3
+join Lumoth 1
+join Paramantis 2
+join Triss 1
+Thor'axe, the proud Yellowjacket chief who led the Robugs through the Great Tree's defenses, falls in the Sap Root Garden.
+And then-
+join Drone 3 [animation="Slide In Down" length="1"]
+update Atlas (Angry)
+update Lumoth (Angry)
+update Paramantis (Angry)
+update Triss (Angry)
+Drone: Dammit! Lost another one.
+Drone: That's the weakness of the flesh for ya, baHAA!
+Drone: Say, you know a lot about that, don't you, Atlaaaaas.
+update Atlas (Thinking)
+Drone: But it looks like you don’t know a lot about that Robug tech you’ve stuck on your chitin.
+Atlas: Hah! I’ve turned this Robug power against you! Fly a little closer and I’ll show you what I know!
+Drone: Silly girl, Robug parts are built for efficiency and power. Having an army of thinking, feeling individuals leads to so many mistakes, so we made all the Robug parts respond to someone with an actual aptitude for strategy-
+Drone: Me!
+update Drone [animation="Shake X"]
+Drone: Tada!
+update Drone [animation="Tada" length="1"]
+Atlas (Sad): My arms, my legs! Wha-
+Drone: TEEHEE!! You fleshy little freaks make it too easy!
+Drone: Now go play with your grubs while I bring in some reinforcements to take the Great Tree down.
+Atlas: No! I won't hurt them!
+With the last fleeting moments of her strength, she runs into the shadowy Cathedral.
+leave Atlas [animation="Slide Out Right"]
+Lumoth and Paramantis follow, leaving Triss behind.
+leave Lumoth [animation="Slide Out Right" length="1"]
+leave Paramantis [animation="Slide Out Right" length="1"]
+Realizing what could happen, Triss chases after them.
+[background arg="res://Dialogic Assets/Styles/Blaground.png" fade="3.0"]
+join Triss 0 [animation="Slide In Right"]
+Triss enters the cathedral to see Atlas destroying the Cathedral on one end, while Lumoth and Paramantis deliberate on the other.
+join Atlas 4 [ mirrored="true"]
+join Lumoth 2
+join Paramantis 3
+Lumoth (Hurt): Dont' make this any harder, Atlas!
+Paramantis (Sad): The Cycle can be cruel, but we will be an arm of mercy. Let us be done with it, Atlas!
+Atlas (Angry): GET BACK! I don't want to hurt you!
+Atlas (Sad): ... but do what you must.
+Triss (Angry): What are you two doing?? Atlas is not our enemy!
+Lumoth (Sad): But she is just like Auri! We have to ...
+Triss (Neutral): Listen to Atlas' voice! She still speaks! Paramantis, your spores. I'm sure you can reach her.
+Paramantis (Crazy): ...
+Paramantis (Happy): It is as she says! Atlas' mind is still hers, but her body is commanded by Drone.
+Lumoth (Happy): Yes! This is amazing!!
+Triss (Neutral): Not quite. We'll have to strike the Robug steel off of her chitin. It's going to hurt.
+Lumoth (Sad): Yes, of course.
+Lumoth (Neutral): I'll heal you after the battle, Atlas!
+leave --All--
+[background arg="res://Dialogic Assets/Styles/Clear.png" fade="1.5"]
+do AutoloadMe.start_first_turn()

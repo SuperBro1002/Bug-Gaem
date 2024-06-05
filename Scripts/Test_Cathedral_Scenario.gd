@@ -8,7 +8,7 @@ func _ready():
 	AutoloadMe.new_level()
 	#get_node("Grid/InitManager/UnitManager/Lumoth").add_passive("TestPassive")
 	#get_node("Grid/InitManager").next_turn()
-	Dialogic.start("res://Dialogic Assets/Timelines/Cathedral 1 Intro.dtl")
-
+	if AutoloadMe.mapID == 2: Dialogic.start("res://Dialogic Assets/Timelines/Cathedral 1 Intro.dtl")
+	if AutoloadMe.mapID == 4: Dialogic.start("res://Dialogic Assets/Timelines/Cathedral 2 Intro.dtl")
 func process():
 	pass

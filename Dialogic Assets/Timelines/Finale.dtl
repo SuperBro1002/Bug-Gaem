@@ -1,0 +1,4 @@
+[style name="VNStyle2"]
+[background arg="res://Dialogic Assets/Styles/Black.png" fade="0.0"]
+With the Robugs pushed back and the breach sealed, the 100th Bug Brigade took a well deserved rest, knowing this battle was one of many to come.
+do AutoloadMe.start_first_turn()

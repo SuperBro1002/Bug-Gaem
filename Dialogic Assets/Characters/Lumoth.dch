@@ -13,7 +13,7 @@
 "display_name": "Lumoth",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(400, 0),
+"offset": Vector2(0, 0),
 "portraits": {
 "Angry": {
 "export_overrides": {
@@ -124,5 +124,5 @@
 "scene": ""
 }
 },
-"scale": 0.8
+"scale": 0.75
 }

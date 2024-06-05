@@ -1,18 +1,21 @@
-[gd_scene load_steps=21 format=3 uid="uid://batl7dw1ds002"]
+[gd_scene load_steps=26 format=3 uid="uid://batl7dw1ds002"]
 
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="1_gtd5a"]
 [ext_resource type="PackedScene" uid="uid://gdr7wfqwmtao" path="res://Scenes/secondary_info_box.tscn" id="2_qk2sv"]
 [ext_resource type="Script" path="res://Scripts/Ability1Button.gd" id="3_t2pqd"]
 [ext_resource type="Script" path="res://Scripts/Ability2Button.gd" id="4_7yk03"]
 [ext_resource type="Script" path="res://Scripts/Ability3Button.gd" id="5_vdsmd"]
-[ext_resource type="Texture2D" uid="uid://b6e1ds0gcbvge" path="res://Assets/Portraits/Atlas/NeutralF.png" id="6_lk0pg"]
 [ext_resource type="Script" path="res://Scripts/MainPortrait.gd" id="7_eif3x"]
 [ext_resource type="PackedScene" uid="uid://42m7teprqnkh" path="res://Scenes/ability_box_object.tscn" id="7_kxv4v"]
+[ext_resource type="Texture2D" uid="uid://bh6dswr8krybs" path="res://Assets/Portraits/Triss/HappyF.png" id="7_ta7ol"]
 [ext_resource type="Texture2D" uid="uid://b4xbotxeidxtw" path="res://Assets/HUD/Arrow.png" id="8_e4ah7"]
-[ext_resource type="Texture2D" uid="uid://cs6xmwsiehppj" path="res://Assets/Portraits/Auri/AuriC.png" id="10_qwjdi"]
-[ext_resource type="Script" path="res://Scripts/ReplyPortrait.gd" id="11_hiy2j"]
 [ext_resource type="Texture2D" uid="uid://b810ak5te0bor" path="res://Assets/HUD/HUD Boxes/infobox_384x100.png" id="8_f8in8"]
 [ext_resource type="Texture2D" uid="uid://b6of34dit4q6q" path="res://Assets/HUD/HUD Boxes/infobox_800x100.png" id="9_an2am"]
+[ext_resource type="Texture2D" uid="uid://cs6xmwsiehppj" path="res://Assets/Portraits/Auri/AuriC.png" id="10_qwjdi"]
+[ext_resource type="Script" path="res://Scripts/ReplyPortrait.gd" id="11_hiy2j"]
+[ext_resource type="Texture2D" uid="uid://bmdmm1u7vrmiw" path="res://Assets/HUD/HUD Boxes/infobox_386x300.png" id="14_0w616"]
+[ext_resource type="Texture2D" uid="uid://16ypf30x7is3" path="res://Assets/Portraits/Drone/Drone.png" id="14_6ky0y"]
+[ext_resource type="Script" path="res://Scripts/DroneSprite.gd" id="16_k2xij"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_gei7j"]
 device = -1
@@ -62,10 +65,10 @@ anchor_left = 0.5
 anchor_top = 0.498
 anchor_right = 0.5
 anchor_bottom = 0.498
-offset_left = -864.0
-offset_top = -484.056
-offset_right = 864.0
-offset_bottom = 483.944
+offset_left = -858.0
+offset_top = -474.056
+offset_right = 870.0
+offset_bottom = 493.944
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -149,9 +152,9 @@ script = ExtResource("5_vdsmd")
 [node name="Name" type="Label" parent="UI/InfoBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.253187
+anchor_left = 0.297458
 anchor_top = 0.157333
-anchor_right = 0.253187
+anchor_right = 0.297458
 anchor_bottom = 0.217939
 offset_left = -0.0400085
 offset_top = -19.96
@@ -160,22 +163,6 @@ offset_bottom = 20.04
 text = "Atlus"
 label_settings = SubResource("LabelSettings_4gjyx")
 metadata/_edit_use_anchors_ = true
-
-[node name="PortraitBox" type="ColorRect" parent="UI/InfoBox"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 18.3333
-offset_right = 190.0
-offset_bottom = 186.333
-scale = Vector2(0.775892, 0.775892)
-color = Color(0.168627, 0.164706, 0.592157, 1)
-
-[node name="PortraitSprite" type="Sprite2D" parent="UI/InfoBox/PortraitBox"]
-texture_filter = 1
-position = Vector2(118.919, 52.3301)
-scale = Vector2(0.291827, 0.291827)
-texture = ExtResource("6_lk0pg")
-script = ExtResource("7_eif3x")
 
 [node name="HPLabel" type="Label" parent="UI/InfoBox"]
 layout_mode = 0
@@ -220,6 +207,22 @@ position = Vector2(323.961, 81.4138)
 scale = Vector2(1.65406, 1.65406)
 texture = ExtResource("8_f8in8")
 flip_v = true
+
+[node name="PortraitBox" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 859.0
+offset_right = 198.0
+offset_bottom = 1027.0
+scale = Vector2(0.775892, 0.775892)
+color = Color(0.168627, 0.164706, 0.592157, 0)
+
+[node name="PortraitSprite2" type="Sprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(82.637, 884.363)
+scale = Vector2(0.155907, 0.155907)
+texture = ExtResource("7_ta7ol")
+script = ExtResource("7_eif3x")
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
 modulate = Color(1, 1, 1, 0.8)
@@ -355,6 +358,20 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("10_qwjdi")
 flip_h = true
 script = ExtResource("11_hiy2j")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/PortraitSprite"]
+z_index = -1
+position = Vector2(79.9998, 166.667)
+scale = Vector2(1.54445, 1.54445)
+texture = ExtResource("14_0w616")
+
+[node name="DroneSprite" type="Sprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(2200, 772)
+scale = Vector2(3, 3)
+texture = ExtResource("14_6ky0y")
+flip_h = true
+script = ExtResource("16_k2xij")
 
 [connection signal="mouse_entered" from="UI/InfoBox/AbilityBox/Ability1Button" to="UI" method="_on_ability_1_button_mouse_entered"]
 [connection signal="mouse_exited" from="UI/InfoBox/AbilityBox/Ability1Button" to="UI" method="_on_ability_1_button_mouse_exited"]

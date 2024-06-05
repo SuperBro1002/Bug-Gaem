@@ -19,13 +19,13 @@ func start_round_event_check():
 
 func activate_spawners():
 	print("CURRENT ROUND: ", AutoloadMe.roundNum)
-	
 	if finalPhase == 1:
 		match AutoloadMe.roundNum % 3:
 			0:
 				SignalBus.spawnGroup.emit(1)
 	else:
 		SignalBus.spawnGroup.emit(2)
+		Dialogic.VAR.CutsceneUp = true
 		SignalBus.spawnDrone.emit()
 
 func phase_two():

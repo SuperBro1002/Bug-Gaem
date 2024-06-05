@@ -27,3 +27,9 @@ func hide_reply_portrait():
 	SignalBus.hideReplyPortrait.emit()
 	reply_portrait_visible = false
 	return
+
+func drone_fly_in():
+	SignalBus.droneFlyIn.emit()
+
+func drone_fly_out():
+	SignalBus.droneFlyOut.emit()
