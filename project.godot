@@ -95,7 +95,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/events_plugin/plugin.cfg", "res://addons/passives_plugin/plugin.cfg", "res://addons/units_plugin/plugin.cfg")
+enabled=PackedStringArray("res://addons/abilities_plugin/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/events_plugin/plugin.cfg", "res://addons/passives_plugin/plugin.cfg")
 
 [input]
 

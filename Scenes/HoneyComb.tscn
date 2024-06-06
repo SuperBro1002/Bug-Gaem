@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dxiwrx0p7h7o2" path="res://Assets/Maps_Tiles/Garden/honeycomb.png" id="2_lnq7x"]
 
 [node name="Obstacle" instance=ExtResource("1_fdydj")]
-MaxHP = 2
 Name = "Honeycomb"
 fileName = "Atlas"
+MaxHP = 2
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 visible = false
