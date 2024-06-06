@@ -8,6 +8,7 @@ func _ready():
 	AutoloadMe.new_level()
 	#get_node("Grid/InitManager/UnitManager/Lumoth").add_passive("TestPassive")
 	#get_node("Grid/InitManager").next_turn()
+	SignalBus.silenceMusic.emit()
 	Dialogic.start("res://Dialogic Assets/Timelines/Garden Intro.dtl")
 	#SignalBus.showInfoBox.emit()
 

@@ -5,6 +5,7 @@ func delete(unit):
 		print("SIPHON IS DYING")
 		SignalBus.playSFX.emit("Death")
 		AutoloadMe.siphonsDestroyed += 1
+		SignalBus.quickSwap.emit(str("Lifeline-Phase ", AutoloadMe.siphonsDestroyed+1))
 		AutoloadMe.globalTargetList.erase(unit)
 		SignalBus.updateGrid.emit()
 		SignalBus.deleteMe.emit(self)

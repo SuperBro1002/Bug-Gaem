@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://h5sks30v78s6"
+path="res://.godot/imported/Lunar Eclipse Demo.mp3-a5a8813000cb54594aaa5a64520d4179.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Lunar Eclipse Demo.mp3"
+dest_files=["res://.godot/imported/Lunar Eclipse Demo.mp3-a5a8813000cb54594aaa5a64520d4179.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

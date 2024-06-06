@@ -12,6 +12,7 @@ func activate_spawners():
 	match AutoloadMe.roundNum:
 		2:
 			if Dialogic.VAR.TutorialDrillSeen == true: return
+			SignalBus.playSFX.emit("BossDeath2")
 			get_node("../TutorialMapSprite/FountainSprite").texture = holeSprite
 			SignalBus.spawnGroup.emit(1)
 			Dialogic.VAR.CutsceneUp = true

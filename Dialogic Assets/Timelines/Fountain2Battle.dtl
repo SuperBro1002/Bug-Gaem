@@ -1,0 +1,87 @@
+label Fountain 2 Plot
+if AutoloadMe.turnPointer.TS == 0:
+	jump Fountain 2 Barks
+if {StoryProgress} > 1:
+	jump Fountain 2 Barks
+if {StoryProgress} == 0:
+	if AutoloadMe.turnPointer.Name == "Paramantis":
+		do PortraitManager.change_main_portrait("AngryF")
+		Paramantis: It seems we were not careful enough, Thor’axe returns!
+		do PortraitManager.show_reply_portrait("Thoraxe", "ThoraxeC")
+		Thoraxe: Aye, the Robugs offered me a second chance.
+		do PortraitManager.change_main_portrait("NeutralF")
+		Paramantis: Even the mighty Thor’axe becomes a pawn in Drone’s game.
+		do PortraitManager.hide_reply_portrait()
+		[wait time="0.5"]
+		do PortraitManager.drone_fly_in()
+		Drone: Hehee staaaahp
+		do PortraitManager.drone_fly_out()
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Atlas":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Atlas: Wouldn’t you rather stay dead, Thor’axe?
+		do PortraitManager.show_reply_portrait("Thoraxe", "ThoraxeC")
+		Thoraxe: I have my reasons.
+		do PortraitManager.hide_reply_portrait()
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Triss: Taking on the power of the Robugs, just to end up one of Drone’s pawns. 
+		do PortraitManager.change_main_portrait("SnobbyF")
+		Triss: Hah! I’ll kill you twice, father.
+		do PortraitManager.show_reply_portrait("Thoraxe", "ThoraxeC")
+		Thoraxe: Then let me be your final test. 
+		Thoraxe: If you truly have what it takes, then my steeled corpse shall become a bulwark against the Robugs. 
+		Thoraxe: If not, then I shall make your deaths swift.
+		do PortraitManager.hide_reply_portrait()
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Lumoth":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Lumoth: Rejoice Robugs, for your deaths serve a holy purpose!
+		set {DialogueComplete} = true
+		[end_timeline]
+if {StoryProgress} == 1:
+	if AutoloadMe.turnPointer.Name == "Paramantis":
+		do PortraitManager.change_main_portrait("CrazyF")
+		Paramantis: In the end, the steel of the Robugs still serves the Cycle. How fitting.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Atlas":
+		do PortraitManager.change_main_portrait("ProudF")
+		Atlas: We no longer fight for just the Bug Brigade, but for Triss, and our future!
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("SnobbyF")
+		Triss: Seems you’ll be another brick in my wall, father!
+		do PortraitManager.show_reply_portrait("Thoraxe", "ThoraxeC")
+		Thoraxe: ... to protect his child, a father has no greater duty.
+		do PortraitManager.hide_reply_portrait()
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Lumoth":
+		do PortraitManager.change_main_portrait("ChannelingF")
+		Lumoth: The suffering ends here!
+		set {DialogueComplete} = true
+		[end_timeline]
+# ##########################
+label Fountain 2 Barks
+if AutoloadMe.turnPointer.Name == "Paramantis":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]
+if AutoloadMe.turnPointer.Name == "Atlas":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]
+if AutoloadMe.turnPointer.Name == "Triss":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]
+if AutoloadMe.turnPointer.Name == "Lumoth":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]

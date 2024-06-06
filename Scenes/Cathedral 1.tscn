@@ -48,15 +48,19 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 
 [node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_x54jv")]
 position = Vector2(544, 736)
+InitVariance = 1
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_bcenj")]
 position = Vector2(609, 736)
+InitVariance = 1
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_vpwuv")]
 position = Vector2(672, 799)
+InitVariance = 1
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("8_yv7f8")]
 position = Vector2(480, 798)
+InitVariance = 1
 
 [node name="Robo" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_4iena")]
 position = Vector2(800, 288)

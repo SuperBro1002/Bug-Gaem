@@ -6,7 +6,6 @@ var moving = false
 var abilityQueued = null
 var pathArray
 var overlapTween
-var isDown = false
 
 @onready var ability1 = load_ability(SetAbility1)
 @onready var ability2 = load_ability(SetAbility2)

@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=56 format=3 uid="uid://dwsvpciaod0yg"]
+[gd_resource type="SpriteFrames" load_steps=57 format=3 uid="uid://dwsvpciaod0yg"]
 
 [ext_resource type="Texture2D" uid="uid://jyfyy3la1hwx" path="res://Assets/Sprites/Paramantis/Allies_Paramantis_NoVFX_Animations.png" id="1_cpaif"]
+[ext_resource type="Texture2D" uid="uid://b8saabmpg8vvs" path="res://Assets/Sprites/Paramantis/Paramantis_Downed.png" id="2_j07on"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ohbn1"]
 atlas = ExtResource("1_cpaif")
@@ -331,6 +332,14 @@ animations = [{
 "loop": false,
 "name": &"Damaged",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j07on")
+}],
+"loop": true,
+"name": &"Downed",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

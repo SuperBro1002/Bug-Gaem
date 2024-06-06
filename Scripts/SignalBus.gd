@@ -52,3 +52,4 @@ signal droneFlyOut
 signal playMusic
 signal playSFX
 signal showInfoBox
+signal quickSwap

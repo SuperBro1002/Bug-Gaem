@@ -60,6 +60,7 @@ var canMove = true
 var storedBatonPass = TS.NOTACTED
 var glowTween
 var animationSpeed = 4
+var isDown = false
 
 func _enter_tree():
 	print("TREE")
@@ -161,14 +162,18 @@ func lose_health(dmgVal):
 		dmgVal *= AutoloadMe.currentAbility.dmgMod
 	CurrentHP = CurrentHP - dmgVal
 	incoming_dmg_type = null
-	animated_Damaged()
+	if !isDown: animated_Damaged()
 	if CurrentHP < 0:
 		CurrentHP = 0
-		
 	SignalBus.updateFloatingHP.emit(self)
 	await SignalBus.HpUiFinish
-	
 	if CurrentHP == 0:
+		if Faction == 0:
+			if isPossessed == true: delete(self)
+			if isDown: return
+			get_node("AnimatedSprite2D").play("Downed")
+			add_passive("Down")
+			return
 		delete(self)
 
 func passive_lose_health(dmgVal):
@@ -185,7 +190,11 @@ func passive_lose_health(dmgVal):
 	await SignalBus.HpUiFinish
 	
 	if CurrentHP == 0:
-		delete(self)
+		if Faction == fac.ALLY and isPossessed == false:
+			print(Name, " downed.")
+			get_node("AnimatedSprite2D").play("Downed")
+			add_passive("Down")
+		else: delete(self)
 
 
 

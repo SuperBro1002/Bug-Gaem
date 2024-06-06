@@ -5,12 +5,12 @@ extends Sprite2D
 func _ready():
 	SignalBus.connect("droneFlyIn", fly_in)
 	SignalBus.connect("droneFlyOut", fly_out)
-	pass # Replace with function body.
+	pass
 
 func fly_in():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", Vector2(1664, 772), 1).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property(self, "position", Vector2(1664, 772), 0.5).set_trans(Tween.TRANS_ELASTIC)
 
 func fly_out():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", Vector2(2200, 772), 1).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property(self, "position", Vector2(2200, 772), 0.5).set_trans(Tween.TRANS_ELASTIC)

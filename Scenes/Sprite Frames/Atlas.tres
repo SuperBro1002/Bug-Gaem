@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=74 format=3 uid="uid://cm8p86i48ibo4"]
+[gd_resource type="SpriteFrames" load_steps=75 format=3 uid="uid://cm8p86i48ibo4"]
 
 [ext_resource type="Texture2D" uid="uid://c5vw6jia3pjmu" path="res://Assets/Sprites/Atlas/Atlas_Animations.png" id="1_g6nt1"]
+[ext_resource type="Texture2D" uid="uid://bww273c0dypi8" path="res://Assets/Sprites/Atlas/Atlas_Downed.png" id="2_r3t1l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3yo1"]
 atlas = ExtResource("1_g6nt1")
@@ -455,6 +456,14 @@ animations = [{
 "loop": false,
 "name": &"Damaged",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r3t1l")
+}],
+"loop": true,
+"name": &"Downed",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

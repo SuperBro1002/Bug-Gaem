@@ -9,6 +9,7 @@ Lumoth (Sad): Although it cost me my place in the church...
 Lumoth (Happy): I'm sure that us arrive here is a sign! Lunalesca is watching over us.
 leave Lumoth
 [background arg="res://Dialogic Assets/Styles/Blaground.png" fade="4.0"]
+do SignalBus.playMusic.emit("Lunar Eclipse")
 The thick walls and ornate stained glass make the Cathedral of Moths feel impenetrable...
 But long shadows and echoes of clinking metal tell the 100th Bug Brigade they are not alone.
 join Atlas (Angry) 3 [animation="Slide In Left" length="1"]

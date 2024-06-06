@@ -1,0 +1,42 @@
+label Cathedral 2 Plot
+if AutoloadMe.turnPointer.TS == 0:
+	jump Cathedral 2 Barks
+if {StoryProgress} > 0:
+	jump Cathedral 2 Barks
+if {StoryProgress} == 0:
+	if AutoloadMe.turnPointer.Name == "Paramantis":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Paramantis: As you say, ma’am. I shall attack Atlas with care.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Triss: She’s tough, so hit her hard. Knock those pieces off in anyway you can! 
+		Triss: We’ll get you free soon enough, Atlas!
+		do PortraitManager.show_reply_portrait("Atlas2", "HurtF")
+		Atlas2: Be careful! I can’t hold back- GAH!
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Lumoth":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Lumoth: Then it shall be done, Triss!
+		set {DialogueComplete} = true
+		[end_timeline]
+# ##########################
+label Cathedral 2 Barks
+if AutoloadMe.turnPointer.Name == "Paramantis":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]
+if AutoloadMe.turnPointer.Name == "Atlas":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]
+if AutoloadMe.turnPointer.Name == "Triss":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]
+if AutoloadMe.turnPointer.Name == "Lumoth":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]

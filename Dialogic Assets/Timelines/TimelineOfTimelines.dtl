@@ -1,0 +1,17 @@
+label First
+if AutoloadMe.turnPointer.BatonPass != AutoloadMe.turnPointer.TS.NOTACTED:
+	jump Tutorial Barks
+if AutoloadMe.mapID == 1:
+	jump Tutorial Plot
+elif AutoloadMe.mapID == 2:
+	jump Cathedral 1 Plot
+elif AutoloadMe.mapID == 3:
+	if {GardenPhase2} == true:
+		jump Garden 2 Plot
+	jump Garden 1 Plot
+elif AutoloadMe.mapID == 4:
+	jump Cathedral 2 Plot
+elif AutoloadMe.mapID == 5:
+	jump Fountain 2 Plot
+else:
+	Drone: Get fucked

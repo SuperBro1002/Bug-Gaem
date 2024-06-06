@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1eti8hwsogre"
+path="res://.godot/imported/Lifeline-Phase 1.mp3-db477b6353bd68331d64ee88370bd53c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Lifeline-Phase 1.mp3"
+dest_files=["res://.godot/imported/Lifeline-Phase 1.mp3-db477b6353bd68331d64ee88370bd53c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=11.636
+bpm=0
+beat_count=0
+bar_beats=4

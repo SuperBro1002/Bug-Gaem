@@ -1,0 +1,122 @@
+if {StoryProgress} > 3:
+	jump Fountain Barks
+if AutoloadMe.turnPointer.TS == 0:
+	jump Fountain Barks
+if {StoryProgress} == 0:
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("SnobbyF")
+		Triss (SnobbyF): Alright, Zephyr. Let's take it slow for that 'cunning' mind of yours. Press E to hear what I have to say next.
+		do PortraitManager.change_main_portrait("NeutralF")
+		Triss (NeutralF): Great, now that you've mastered talking, use W A S and D to direct my movements.
+		do PortraitManager.change_main_portrait("SnobbyF")
+		Triss (SnobbyF): Since I'm sure you haven't noticed, I spend Action Points when moving. I also use AP for abilities.
+		do PortraitManager.change_main_portrait("HappyF")
+		Triss (HappyF): I would show you, but I won't waste my precious AP without a valid target.
+		do PortraitManager.change_main_portrait("HappyF")
+		Triss (HappyF): Well I tire. We'll use the X key as a signal to end my "turn," so to speak.
+		do PortraitManager.change_main_portrait("SnobbyF")
+		Triss (SnobbyF): Oh, and don't even think of trying to end turns before you're done speaking. No manners...
+		set {DialogueComplete} = true
+		[end_timeline]
+if {StoryProgress} == 1:
+	if AutoloadMe.turnPointer.Name == "Atlas":
+		do PortraitManager.drone_fly_in()
+		Drone: HELLO THERE!
+		do PortraitManager.change_main_portrait("AngryF")
+		Atlas (HurtF): GAH! What is that?
+		Drone: Oh- is this it? Are you all that is up here?
+		Drone: I guess they didn't expect my clever tactics haHAHA!
+		Drone: Robo Polys, squash these bugs! We have other places to be!
+		do PortraitManager.drone_fly_out()
+		do PortraitManager.change_main_portrait("NeutralF")
+		Atlas (NeutralF): Zephyr, we need to protect the others! Get me on the front lines!
+		Atlas (NeutralF): Once I'm next to an enemy, use the 1 2 and 3 keys to select and deselect my abilities.
+		do PortraitManager.change_main_portrait("HappyF")
+		Atlas (HappyF): Don't worry! I'll get my AP back at the end of the round.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Triss (NeutralF): Read the abilities carefully, Zephyr! I'm still a Bee- use my Sting wisely.
+		set {DialogueComplete} = true
+		[end_timeline]
+if {StoryProgress} == 2:
+	if AutoloadMe.turnPointer.Name == "Lumoth":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Lumoth (NeutralF): WAHH!! Is anyone hurt??
+		do PortraitManager.drone_fly_in()
+		Drone: SUCH FEELING!
+		Lumoth (NeutralF): AHH!!!
+		Drone: Such fear and concern. Us Robugs don't carry such burdens.
+		Drone: We were built for victory.
+		Lumoth (NeutralF): Oh are you-
+		Drone: My name is Drone, and I will be your conQUEROR!
+		do PortraitManager.change_main_portrait("SadF")
+		Lumoth (SadF): Oka-
+		Drone: HAHAHAA
+		do PortraitManager.drone_fly_out()
+		do PortraitManager.change_main_portrait("NeutralF")
+		Lumoth (NeutralF): ... so these are the Robugs.
+		Lumoth (NeutralF): Lunalesca, give me strength.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Atlas":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Atlas (NeutralF): If we need, I can use my horn to Horn Catapult to throw someone to save them AP.
+		do PortraitManager.change_main_portrait("ProudF")
+		Atlas (ProudF): Certain abilities have what we vets on the battlefield call a Baton Pass.
+		do PortraitManager.change_main_portrait("NeutralF")
+		Atlas (NeutralF): That means whoever I Throw gets to go next, even if they already took a turn.
+		do PortraitManager.change_main_portrait("ProudF")
+		Atlas (ProudF): Careful, though! It works on enemies too, but I'm sure you can think of ways to use that to our advantage.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("SnobbyF")
+		Triss ("AngryF"): You're out of your league, Robo Poly.
+		set {DialogueComplete} = true
+		[end_timeline]
+if {StoryProgress} == 3:
+	if AutoloadMe.turnPointer.Name == "Paramantis":
+		do PortraitManager.change_main_portrait("SadF")
+		Paramantis (SadF): We deeply apologize for the latenesss.
+		do PortraitManager.change_main_portrait("NeutralF")
+		Paramantis (NeutralF): If you can sssecure me the killing blow on an enemy with my X-slash, I can more than make up for it.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Atlas":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Atlas (NeutralF): Still more! Clear this wave, then we retreat.
+		do PortraitManager.show_reply_portrait("Triss", "AngryF")
+		Triss2 (AngryF): How am I supposed to earn back my title if I we retreat at the first sign of battle?
+		do PortraitManager.change_main_portrait("AngryF")
+		Atlas (AngryF): Can't rule a kingdom if you're dead, Triss!
+		do PortraitManager.change_reply_portrait("Triss", "SnobbyF")
+		Triss2 (SnobbyF): Bah, true enough.
+		do PortraitManager.hide_reply_portrait()
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("HappyF")
+		Triss (NeutralF): All those machine parts and for what? Ha!
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Lumoth":
+		do PortraitManager.change_main_portrait("ChannelingF")
+		Lumoth (ChannelingF): Lunalesca, guide my hand.
+		set {DialogueComplete} = true
+		[end_timeline]
+# #####################
+label Fountain Barks
+if AutoloadMe.turnPointer.Name == "Paramantis":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]
+if AutoloadMe.turnPointer.Name == "Atlas":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]
+if AutoloadMe.turnPointer.Name == "Triss":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]

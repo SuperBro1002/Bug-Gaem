@@ -20,6 +20,7 @@ Atlas: Hah! I’ve turned this Robug power against you! Fly a little closer and 
 Drone: Silly girl, Robug parts are built for efficiency and power. Having an army of thinking, feeling individuals leads to so many mistakes, so we made all the Robug parts respond to someone with an actual aptitude for strategy-
 Drone: Me!
 update Drone [animation="Shake X"]
+do SignalBus.playSFX.emit("longSpell")
 Drone: Tada!
 Atlas (Sad): My arms, my legs! Wha-
 Drone: TEEHEE!! You fleshy little freaks make it too easy!
@@ -33,6 +34,7 @@ leave Paramantis [animation="Slide Out Right" length="1"]
 leave Drone [animation="Slide Out Up"]
 Realizing what could happen, Triss chases after them.
 [background arg="res://Dialogic Assets/Styles/Blaground.png" fade="3.0"]
+do SignalBus.playMusic.emit("Metamorphosis")
 join Triss 0 [animation="Slide In Right"]
 Triss enters the cathedral to see Atlas destroying the Cathedral on one end, while Lumoth and Paramantis deliberate on the other.
 join Atlas 4 [ mirrored="true"]

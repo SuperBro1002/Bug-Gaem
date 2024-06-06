@@ -160,6 +160,7 @@ scale = Vector2(1, 1)
 
 [node name="Atlas" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_amhp3")]
 position = Vector2(544, 992)
+MaxAP = 300
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_msf3w")]
 position = Vector2(608, 992)

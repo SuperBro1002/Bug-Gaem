@@ -105,7 +105,7 @@ func draw_passive_boxes(unit):
 	var passiveBox
 	var marker
 	for p in unit.passiveList.size():
-		if p > 8: break
+		if p > 8: return
 		passiveBox = load("res://Scenes/passive_box.tscn").instantiate()
 		marker = $PassiveMarkerMarker.get_child(p)
 		print(marker)

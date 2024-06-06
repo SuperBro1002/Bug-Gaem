@@ -1,0 +1,179 @@
+label Cathedral 1 Plot
+if AutoloadMe.turnPointer.TS == 0:
+	jump Cathedral 1 Barks
+if {StoryProgress} > 4:
+	jump Cathedral 1 Barks
+if {StoryProgress} == 0:
+	if AutoloadMe.turnPointer.Name == "Paramantis":
+		do PortraitManager.change_main_portrait("CrazyF")
+		Paramantis (CrazyF): Disssturbing such a holy place, Robugs? Unwise.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Atlas":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Atlas (NeutralF): Is that?
+		[wait time="0.5"]
+		do PortraitManager.drone_fly_in()
+		Drone: -almost finished...
+		Drone: oh they thought they were clever hehee-
+		do PortraitManager.drone_fly_out()
+		[wait time="1.0"]
+		do PortraitManager.show_reply_portrait("Auri", "AuriC")
+		Auri: Bzzzzzaaagt!
+		do PortraitManager.change_main_portrait("ThinkingF")
+		Atlas (ThinkingF): Where is that coming from? Is that...?
+		do PortraitManager.hide_reply_portrait()
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("SnobbyF")
+		Triss (SnobbyF): Ha! Even in retreat, my spear spills oil. I’ll reclaim my title before the battle is won.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Lumoth":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Lumoth (NeutralF): Oh Lunalesca, I know you called me to fight, but p-please forgive me if I make a mess in your Cathedral.
+		set {DialogueComplete} = true
+		[end_timeline]
+if {StoryProgress} == 1:
+	if AutoloadMe.turnPointer.Name == "Paramantis":
+		do PortraitManager.change_main_portrait("SadF")
+		Paramantis (SadF): Auri? Sssuch dishonorable desecration by the Robugs.
+		do PortraitManager.show_reply_portrait("Auri", "AuriC")
+		Auri: ZZZzzzggh
+		do PortraitManager.hide_reply_portrait()
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Atlas":
+		do PortraitManager.change_main_portrait("SadF")
+		Atlas (SadF): Auri?! Listen to us! We can help you!
+		do PortraitManager.show_reply_portrait("Auri", "AuriC")
+		Auri: Grrrrrrzzzzzzz
+		do PortraitManager.hide_reply_portrait()
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("SadF")
+		Triss (SadF): Poor kid let himself get caught…
+		do PortraitManager.show_reply_portrait("Auri", "AuriC")
+		Auri: bz bzz BZZZZZ
+		do PortraitManager.hide_reply_portrait()
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Lumoth":
+		do PortraitManager.change_main_portrait("SadF")
+		Lumoth (SadF): What have the Robugs done to you...?
+		do PortraitManager.show_reply_portrait("Auri", "AuriC")
+		Auri: bzZZzzzzzZappapop POP!
+		do PortraitManager.hide_reply_portrait()
+		set {DialogueComplete} = true
+		[end_timeline]
+if {StoryProgress} == 2:
+	if AutoloadMe.turnPointer.Name == "Paramantis":
+		do PortraitManager.change_main_portrait("SadF")
+		Paramantis (SadF): These Robug machines have taken ssso much of him. Thisss must be how they grow their numbersss.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Atlas":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Atlas (NeutralF): Paramantis, possess him and make him see reason!
+		do PortraitManager.show_reply_portrait("Paramantis", "SadF")
+		Paramantis2 (SadF): We have tried, but our ssspores find only a mind filled with a maliciousss mechanical hiss.
+		do PortraitManager.hide_reply_portrait()
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("SadF")
+		Triss (SadF): I’m not sure that even Lunalesca could save him now.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Lumoth":
+		do PortraitManager.change_main_portrait("HurtF")
+		Lumoth (HurtF): Why c-call us to fight, only to die, Lunalesca?
+		set {DialogueComplete} = true
+		[end_timeline]
+if {StoryProgress} == 3:
+	if AutoloadMe.turnPointer.Name == "Paramantis":
+		do PortraitManager.change_main_portrait("SadF")
+		Paramantis (SadF): Auri died before we arrived. Hisss body is piloted by Drone now.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Atlas":
+		do PortraitManager.change_main_portrait("SadF")
+		Atlas (SadF): … I won’t let this happen again.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("SadF")
+		Triss (SadF): … We did all we could.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Lumoth":
+		do PortraitManager.change_main_portrait("HurtF")
+		Lumoth (HurtF): I see now...
+		do PortraitManager.change_main_portrait("SadF")
+		Lumoth (SadF): Lunalesca, I c-cowered behind your protection, but you called me to be your champion.
+		do PortraitManager.change_main_portrait("ChannelingF")
+		Lumoth (ChannelingF): For in this darkest night, the Blood Moon rises!
+		do PortraitManager.change_main_portrait("AngryF")
+		Lumoth (AngryF): Through penumbral hexes, I will free Auri’s soul from his cursed body!
+		do PortraitManager.change_main_portrait("ChannelingF")
+		Lumoth (ChannelingF): Hear this Robugs, your mercy is granted by a swift death! I shall free you from the t-torment of your wretched lives!
+		set {DialogueComplete} = true
+		[end_timeline]
+if {StoryProgress} == 4:
+	if AutoloadMe.turnPointer.Name == "Paramantis":
+		do PortraitManager.change_main_portrait("SadF")
+		Paramantis (SadF): We will find a way to bring you back into the Cccycle, Auri.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Atlas":
+		do PortraitManager.change_main_portrait("SadF")
+		Atlas (NeutralF): If only we had that kind of power…
+		do PortraitManager.drone_fly_in()
+		Drone: You could join us!
+		do PortraitManager.change_main_portrait("AngryF")
+		Atlas (AngerF): AH! N-no, never!
+		Drone: That's fine. I already have enough fleshy allies.
+		Drone: But I must say, this one I recently recruited...
+		Drone: I think it would BEE a shame to miss him heheeee!
+		do PortraitManager.change_main_portrait("ThinkingF")
+		Atlas (ThinkingF): Uh-
+		Drone: ooooo i love it when the fleshy ones fight haha
+		Drone: OFF TO THE GARDEN THEN HEHE
+		do PortraitManager.drone_fly_out()
+		[wait time="1.0"]
+		do PortraitManager.show_reply_portrait("Triss2", "SadF")
+		Triss2 (SadF): Oh no...
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Triss (SadF): Didn’t know you had it in you, Lumoth. Who even are you?
+		do PortraitManager.show_reply_portrait("ChannelingF")
+		Lumoth2 (ChannelingF): The answer to our prayers.
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Lumoth":
+		do PortraitManager.change_main_portrait("ChannelingF")
+		Lumoth (ChannelingF): Know peace, Auri...
+		set {DialogueComplete} = true
+		[end_timeline]
+# ##########################
+label Cathedral 1 Barks
+if AutoloadMe.turnPointer.Name == "Paramantis":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]
+if AutoloadMe.turnPointer.Name == "Atlas":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]
+if AutoloadMe.turnPointer.Name == "Triss":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]
+if AutoloadMe.turnPointer.Name == "Lumoth":
+	do PortraitManager.change_main_portrait("NeutralF")
+	set {DialogueComplete} = true
+	[end_timeline]

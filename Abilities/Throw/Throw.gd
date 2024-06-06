@@ -78,13 +78,14 @@ func post_execute():
 	SignalBus.updateUI.emit(get_parent())
 	AutoloadMe.isExecuting = false
 	SignalBus.changeControls.emit()
+	AutoloadMe.set_process_unhandled_input(true)
 	if get_parent().Faction == get_parent().fac.ALLY:
 		SignalBus.changeButtonState.emit()
 	elif get_parent().Faction == get_parent().fac.ENEMY:
 		dequeue(1,false)
-	await get_tree().create_timer(1).timeout
-	AutoloadMe.passingUnit = get_parent()
-	get_parent().on_turn_end()
+	#await get_tree().create_timer(1).timeout
+	#AutoloadMe.passingUnit = get_parent()
+	#get_parent().on_turn_end()
 
 func execute():
 	if newPos != null and validTargetPos == true:

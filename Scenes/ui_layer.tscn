@@ -340,16 +340,16 @@ position = Vector2(249, 0)
 position = Vector2(373, 0)
 
 [node name="PassiveMarker5" type="Marker2D" parent="UI/PassiveMarkerMarker"]
-position = Vector2(-8, -103)
+position = Vector2(372, -103)
 
 [node name="PassiveMarker6" type="Marker2D" parent="UI/PassiveMarkerMarker"]
-position = Vector2(-132, -103)
+position = Vector2(248, -103)
 
 [node name="PassiveMarker7" type="Marker2D" parent="UI/PassiveMarkerMarker"]
-position = Vector2(-256, -103)
+position = Vector2(124, -103)
 
 [node name="PassiveMarker8" type="Marker2D" parent="UI/PassiveMarkerMarker"]
-position = Vector2(-381, -103)
+position = Vector2(-1, -103)
 
 [node name="PortraitSprite" type="Sprite2D" parent="UI"]
 visible = false
