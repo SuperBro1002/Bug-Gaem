@@ -383,6 +383,10 @@ func find_and_delete_passives():
 
 func spawning_in():
 	set_modulate(Color(1,1,1,0))
+	
+	if AutoloadMe.mapID == 5:
+		set_modulate(Color(0.835, 0.898, 1))
+	
 	get_node("AnimatedSprite2D:sprite_frames").set_sprite_frames(load("res://Scenes/Sprite Frames/" + fileName + ".tres"))
 	get_node(".:Scale").set_scale(Vector2(1,1))
 	get_node("AnimatedSprite2D:Scale").set_scale(Vector2(2,2))

@@ -1,21 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://gdr7wfqwmtao"]
+[gd_scene load_steps=11 format=3 uid="uid://gdr7wfqwmtao"]
 
 [ext_resource type="Script" path="res://Scripts/secondary_info_box.gd" id="1_oorkw"]
 [ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlas/Atlas_Base_Still.png" id="2_pfi1r"]
+[ext_resource type="Texture2D" uid="uid://r3r0rs6ex4f6" path="res://Assets/HUD/HUD Boxes/infobox_460x300.png" id="3_mga8r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8j6oi"]
 font_size = 36
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cwfcy"]
 font_size = 26
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_byehj"]
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ds8f4"]
 font_size = 12
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eihvk"]
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cten2"]
 font_size = 12
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sbw4d"]
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="SecondaryInfoBox" type="ColorRect"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(380, 0)
 offset_left = 1113.0
 offset_top = 16.0
@@ -111,6 +126,7 @@ theme_override_constants/margin_bottom = 34
 [node name="Ability1" type="Label" parent="GridContainer/MarginContainer"]
 layout_mode = 2
 text = "Ability 1"
+label_settings = SubResource("LabelSettings_byehj")
 max_lines_visible = 1
 
 [node name="Description1" type="Label" parent="GridContainer"]
@@ -128,6 +144,7 @@ theme_override_constants/margin_bottom = 34
 [node name="Ability2" type="Label" parent="GridContainer/MarginContainer2"]
 layout_mode = 2
 text = "Ability 2"
+label_settings = SubResource("LabelSettings_eihvk")
 
 [node name="Description2" type="Label" parent="GridContainer"]
 layout_mode = 2
@@ -144,6 +161,7 @@ theme_override_constants/margin_bottom = 34
 [node name="Ability3" type="Label" parent="GridContainer/MarginContainer3"]
 layout_mode = 2
 text = "Ability 3"
+label_settings = SubResource("LabelSettings_sbw4d")
 
 [node name="Description3" type="Label" parent="GridContainer"]
 layout_mode = 2
@@ -152,3 +170,10 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue lor
 label_settings = SubResource("LabelSettings_cten2")
 autowrap_mode = 2
 max_lines_visible = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(291.433, 189.5)
+scale = Vector2(1.26333, 1.26333)
+texture = ExtResource("3_mga8r")

@@ -94,6 +94,10 @@ func _unhandled_input(event):
 		
 # Sometimes "left_click" double clicks(usually if you click while dragging the mouse across the screen) idk why. Is definitely this line below and only happens with mouse inputs!!!!!!!!!!!!!!!!!
 		if Input.is_action_just_pressed("left_click"):
+			
+			##NOTE: Below is for debug purposes
+			#Dialogic.VAR.DialogueComplete = true
+			
 			if turnPointer.abilityQueued != null:
 				turnPointer.abilityQueued.queue()
 		
