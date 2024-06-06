@@ -22,7 +22,7 @@ func set_timeline():
 		node.register_character(load("res://Dialogic Assets/Characters/Lumoth.dch"), get_child(0))
 		node.register_character(load("res://Dialogic Assets/Characters/Triss.dch"), get_child(0))
 		node.register_character(load("res://Dialogic Assets/Characters/Paramantis.dch"), get_child(0))
-		node.register_character(load("res://Dialogic Assets/Characters/Atlas2.dch"), get_child(1))
+		node.register_character(load("res://Dialogic Assets/Charscters/Atlas2.dch"), get_child(1))
 		node.register_character(load("res://Dialogic Assets/Characters/Lumoth2.dch"), get_child(1))
 		node.register_character(load("res://Dialogic Assets/Characters/Triss2.dch"), get_child(1))
 		node.register_character(load("res://Dialogic Assets/Characters/Paramantis2.dch"), get_child(1))
