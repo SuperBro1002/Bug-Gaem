@@ -673,7 +673,7 @@ if {StoryProgress} == 0:
 		do PortraitManager.change_main_portrait("NeutralF")
 		Triss: She’s tough, so hit her hard. Knock those pieces off in anyway you can! 
 		Triss: We’ll get you free soon enough, Atlas!
-		do PortraitManager.show_reply_portrait("Atlas2", "SadF")
+		do PortraitManager.show_reply_portrait("Atlas2", "HurtF")
 		Atlas2: Be careful! I can’t hold back- GAH!
 		set {DialogueComplete} = true
 		[end_timeline]

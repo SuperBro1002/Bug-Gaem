@@ -1,4 +1,3 @@
-do AutoloadMe.start_first_turn()
 [style name="VNStyle2"]
 [background arg="res://Dialogic Assets/Styles/Black.png" fade="0.0"]
 join Atlas (Sad) 1 [animation="Fade In Out" length="0.1"]
@@ -39,3 +38,4 @@ Triss (Neutral): We'll fight off what we can, then throw their clunky steel into
 Triss (Angry): We'll fill the hole with their corpses!
 leave --All--
 [background arg="res://Dialogic Assets/Styles/Clear.png" fade="1.5"]
+do AutoloadMe.start_first_turn()

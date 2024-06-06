@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://lit144ic7tye"]
+[gd_scene load_steps=23 format=3 uid="uid://lit144ic7tye"]
 
 [ext_resource type="Script" path="res://Scripts/Test_Cathedral_Scenario.gd" id="1_0l2kp"]
 [ext_resource type="Script" path="res://Scenes/EM4.gd" id="2_r0gba"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="3_o1qg3"]
+[ext_resource type="PackedScene" uid="uid://dimryoawtb8dt" path="res://Scenes/narrative_manager.tscn" id="3_r6g1s"]
 [ext_resource type="PackedScene" uid="uid://tgpcor2pwjrk" path="res://Scenes/init_manager.tscn" id="4_01voc"]
 [ext_resource type="PackedScene" uid="uid://be86imrav20o6" path="res://Scenes/Units/Lumoth.tscn" id="6_y8s2b"]
 [ext_resource type="PackedScene" uid="uid://bgphmxq3rd4q1" path="res://Scenes/Units/Paramantis.tscn" id="7_minfg"]
@@ -32,6 +33,8 @@ script = ExtResource("1_0l2kp")
 [node name="EM4" type="Node" parent="."]
 script = ExtResource("2_r0gba")
 objectiveNum = 1
+
+[node name="NarrativeManager" parent="." instance=ExtResource("3_r6g1s")]
 
 [node name="Grid" parent="." instance=ExtResource("3_o1qg3")]
 visible = false

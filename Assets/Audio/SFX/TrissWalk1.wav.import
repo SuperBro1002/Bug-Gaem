@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dfppdmn45qplc"
-path="res://.godot/imported/TrissFly1.wav-afae03011afdefad82139fed6459a8a1.sample"
+path="res://.godot/imported/TrissWalk1.wav-810764a626c002af7b0e06d06d69f1c8.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/TrissFly1.wav"
-dest_files=["res://.godot/imported/TrissFly1.wav-afae03011afdefad82139fed6459a8a1.sample"]
+source_file="res://Assets/Audio/SFX/TrissWalk1.wav"
+dest_files=["res://.godot/imported/TrissWalk1.wav-810764a626c002af7b0e06d06d69f1c8.sample"]
 
 [params]
 

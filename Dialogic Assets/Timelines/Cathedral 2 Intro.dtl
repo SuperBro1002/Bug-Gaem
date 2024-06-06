@@ -3,7 +3,7 @@
 join Atlas 3
 join Lumoth 1
 join Paramantis 2
-join Triss 1
+join Triss 0
 Thor'axe, the proud Yellowjacket chief who led the Robugs through the Great Tree's defenses, falls in the Sap Root Garden.
 And then-
 join Drone 3 [animation="Slide In Down" length="1"]
@@ -21,7 +21,6 @@ Drone: Silly girl, Robug parts are built for efficiency and power. Having an arm
 Drone: Me!
 update Drone [animation="Shake X"]
 Drone: Tada!
-update Drone [animation="Tada" length="1"]
 Atlas (Sad): My arms, my legs! Wha-
 Drone: TEEHEE!! You fleshy little freaks make it too easy!
 Drone: Now go play with your grubs while I bring in some reinforcements to take the Great Tree down.
@@ -31,6 +30,7 @@ leave Atlas [animation="Slide Out Right"]
 Lumoth and Paramantis follow, leaving Triss behind.
 leave Lumoth [animation="Slide Out Right" length="1"]
 leave Paramantis [animation="Slide Out Right" length="1"]
+leave Drone [animation="Slide Out Up"]
 Realizing what could happen, Triss chases after them.
 [background arg="res://Dialogic Assets/Styles/Blaground.png" fade="3.0"]
 join Triss 0 [animation="Slide In Right"]
