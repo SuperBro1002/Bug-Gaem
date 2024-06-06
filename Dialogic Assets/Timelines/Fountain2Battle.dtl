@@ -1,5 +1,5 @@
 label Fountain 2 Plot
-if AutoloadMe.turnPointer.TS == 0:
+if AutoloadMe.turnPointer.BatonPass == 0:
 	jump Fountain 2 Barks
 if {StoryProgress} > 1:
 	jump Fountain 2 Barks

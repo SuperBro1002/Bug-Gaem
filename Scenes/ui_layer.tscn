@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://batl7dw1ds002"]
+[gd_scene load_steps=25 format=3 uid="uid://batl7dw1ds002"]
 
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="1_gtd5a"]
 [ext_resource type="PackedScene" uid="uid://gdr7wfqwmtao" path="res://Scenes/secondary_info_box.tscn" id="2_qk2sv"]
@@ -8,7 +8,6 @@
 [ext_resource type="LabelSettings" uid="uid://cml5i2l567qij" path="res://Scenes/TextSettings.tres" id="6_lu50f"]
 [ext_resource type="Script" path="res://Scripts/MainPortrait.gd" id="7_eif3x"]
 [ext_resource type="PackedScene" uid="uid://42m7teprqnkh" path="res://Scenes/ability_box_object.tscn" id="7_kxv4v"]
-[ext_resource type="Texture2D" uid="uid://bh6dswr8krybs" path="res://Assets/Portraits/Triss/HappyF.png" id="7_ta7ol"]
 [ext_resource type="Texture2D" uid="uid://b4xbotxeidxtw" path="res://Assets/HUD/Arrow.png" id="8_e4ah7"]
 [ext_resource type="Texture2D" uid="uid://b810ak5te0bor" path="res://Assets/HUD/HUD Boxes/infobox_384x100.png" id="8_f8in8"]
 [ext_resource type="Texture2D" uid="uid://b6of34dit4q6q" path="res://Assets/HUD/HUD Boxes/infobox_800x100.png" id="9_an2am"]
@@ -213,11 +212,10 @@ offset_bottom = 1027.0
 scale = Vector2(0.775892, 0.775892)
 color = Color(0.168627, 0.164706, 0.592157, 0)
 
-[node name="PortraitSprite2" type="Sprite2D" parent="UI"]
+[node name="PortraitSprite2" type="Sprite2D" parent="UI/PortraitBox"]
 texture_filter = 1
-position = Vector2(82.637, 884.363)
-scale = Vector2(0.155907, 0.155907)
-texture = ExtResource("7_ta7ol")
+position = Vector2(70.4183, 32.6887)
+scale = Vector2(0.200939, 0.200939)
 script = ExtResource("7_eif3x")
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
@@ -291,7 +289,7 @@ autowrap_mode = 2
 [node name="ContextButtons2" type="Label" parent="UI/ControlsOverlay"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "X - End Turn"
+text = "Space or X - End Turn"
 autowrap_mode = 2
 
 [node name="CameraControls" type="Label" parent="UI/ControlsOverlay"]

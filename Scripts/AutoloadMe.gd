@@ -140,3 +140,6 @@ func start_first_turn():
 	
 func start_next_round():
 	SignalBus.endRound.emit()
+
+func play_music(fileName):
+	SignalBus.playMusic.emit(fileName)

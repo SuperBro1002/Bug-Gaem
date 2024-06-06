@@ -2,7 +2,7 @@ extends Camera2D
 
 var animationSpeed = 4
 var isZooming = false
-var DEFAULT_ZOOM = Vector2(0.9,0.9)
+var DEFAULT_ZOOM = Vector2(1.5, 1.5)
 
 func _ready():
 	zoom = DEFAULT_ZOOM
@@ -16,7 +16,7 @@ func zoom_to_default(unit):
 	await tween.finished
 
 func zoom_me(factor):
-	if (factor < 0 and get_zoom().x <= 0.9) or (factor > 0 and get_zoom().x >= 4.5):
+	if (factor < 0 and get_zoom().x <= 1) or (factor > 0 and get_zoom().x >= 4.5):
 		return
 	
 	var zoomAmount = get_zoom() + Vector2(factor,factor)

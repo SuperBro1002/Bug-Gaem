@@ -27,8 +27,8 @@ leave Paramantis [animation="Slide Out Right" length="1"]
 leave Triss [animation="Slide Out Right" length="1"]
 leave Atlas [animation="Slide Out Left" length="1"]
 [background arg="res://Dialogic Assets/Styles/Blaground.png" fade="4.0"]
-do SignalBus.playMusic.emit("Lifeline-Phase 1")
 Triss, Paramantis, Lumoth, and Zephyr rush out of the Cathedral of Moths, down the path to the Sap Root Garden.
+do AutoloadMe.play_music("Lifeline-Phase 1")
 join Paramantis (Neutral) 0
 join Lumoth 1
 join Triss 2

@@ -1,4 +1,4 @@
-if AutoloadMe.turnPointer.TS == 0:
+if AutoloadMe.turnPointer.BatonPass == 0:
 	jump Garden 1 Barks
 if {GardenPhase2} == true:
 	jump Garden 2 Plot

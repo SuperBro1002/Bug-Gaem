@@ -70,6 +70,7 @@ func play_music(fileName):
 		animation_player.play("Fade In Current Track")
 		return
 	else:
+		print("I SHOULD BE HEARING SOMETHING???")
 		current_track.set_stream(load(str("res://Assets/Audio/Music/", fileName, ".mp3")))
 		current_track.play(0)
 		animation_player.play("Fade In")

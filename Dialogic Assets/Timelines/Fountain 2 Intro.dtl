@@ -21,7 +21,7 @@ Atlas (Neutral): You’re right… Lumoth, thank you, I’m feeling back to figh
 Triss (Neutral): Let’s go!
 leave --All-- [animation="Fade In Out" length="0.1"]
 [background arg="res://Dialogic Assets/Styles/Blaground.png" fade="3.0"]
-do SignalBus.playMusic.emit("Lifeline-Phase 5")
+do AutoloadMe.play_music("Lifeline-Phase 5")
 The Robugs pour from the breach like a divine flood.
 join Drone 3 [animation="Slide In Down" length="1" mirrored="true"]
 The 100th Bug Brigade is barely able to push the waves back, where they meet Drone victoriously directing reinforcements.

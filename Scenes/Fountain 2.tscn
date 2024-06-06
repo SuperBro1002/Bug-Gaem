@@ -87,6 +87,7 @@ visible = false
 visible = false
 z_index = 4
 position = Vector2(384, 384)
+zoom = Vector2(1.5, 1.5)
 limit_left = -1000
 limit_top = -500
 limit_right = 1600

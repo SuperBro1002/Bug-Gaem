@@ -24,6 +24,8 @@ size = Vector2(645, 643)
 
 [node name="Main_Controller" type="Node2D"]
 script = ExtResource("1_jpy62")
+metadata/_edit_vertical_guides_ = [383.0]
+metadata/_edit_horizontal_guides_ = [408.0]
 
 [node name="EM1" type="Node" parent="."]
 script = ExtResource("2_mf4f4")
@@ -58,13 +60,13 @@ Faction = 2
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 z_index = 4
 position = Vector2(384, 384)
+zoom = Vector2(1.5, 1.5)
 limit_left = -1000
-limit_top = -500
-limit_right = 1600
-limit_bottom = 1300
+limit_top = -1000
+limit_right = 1200
+limit_bottom = 1000
 position_smoothing_enabled = true
 script = ExtResource("16_rdajh")
 

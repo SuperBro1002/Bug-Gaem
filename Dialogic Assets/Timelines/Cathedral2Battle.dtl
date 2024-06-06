@@ -1,5 +1,5 @@
 label Cathedral 2 Plot
-if AutoloadMe.turnPointer.TS == 0:
+if AutoloadMe.turnPointer.BatonPass == 0:
 	jump Cathedral 2 Barks
 if {StoryProgress} > 0:
 	jump Cathedral 2 Barks

@@ -296,7 +296,7 @@ func move_camera(unit):
 		camTween.kill()
 	camTween = create_tween()
 	camTween.tween_property(get_node("../../Camera2D"), "position", unit.position, 1.0).set_trans(Tween.TRANS_QUART)#.set_ease(Tween.EASE_OUT_IN)
-	camTween.tween_property(get_node("../../Camera2D"), "zoom", Vector2(0.9,0.9), 1).set_trans(Tween.TRANS_SINE)
+	camTween.tween_property(get_node("../../Camera2D"), "zoom", Vector2(1.5,1.5), 1).set_trans(Tween.TRANS_SINE)
 	await camTween.finished
 
 

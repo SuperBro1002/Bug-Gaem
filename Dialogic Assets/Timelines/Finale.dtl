@@ -1,4 +1,9 @@
 [style name="VNStyle2"]
 [background arg="res://Dialogic Assets/Styles/Black.png" fade="0.0"]
+join Atlas (Proud) 1
+join Lumoth (Channeling) 1
+join Paramantis (Crazy) 3 [ mirrored="true"]
+join Triss (Happy) 2
 With the Robugs pushed back and the breach sealed, the 100th Bug Brigade took a well deserved rest, knowing this battle was one of many to come.
+leave 
 do AutoloadMe.start_first_turn()

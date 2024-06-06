@@ -54,10 +54,12 @@ layout_mode = 2
 text = "Start Game"
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Options"
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Credits"
 
