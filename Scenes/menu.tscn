@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkko8mp44qie6"]
+[gd_scene load_steps=4 format=3 uid="uid://dkko8mp44qie6"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_baps1"]
+[ext_resource type="Texture2D" uid="uid://3kgjmbfdmivu" path="res://Assets/HUD/Bug_Game_Title.jpg" id="2_44m32"]
 
 [sub_resource type="SystemFont" id="SystemFont_eihvr"]
 font_names = PackedStringArray("Berlin Sans FB")
@@ -26,6 +27,11 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 96
 
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(863.668, 488.5)
+scale = Vector2(0.479004, 0.479004)
+texture = ExtResource("2_44m32")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
@@ -35,7 +41,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = SubResource("SystemFont_eihvr")
 theme_override_font_sizes/font_size = 64
-text = "The 100th Bug Brigade"
 horizontal_alignment = 1
 vertical_alignment = 1
 
