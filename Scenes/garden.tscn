@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://7qps6ox2sfna"]
+[gd_scene load_steps=30 format=3 uid="uid://7qps6ox2sfna"]
 
 [ext_resource type="Script" path="res://Scripts/Garden.gd" id="1_574vu"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_bbw0h"]

@@ -42,6 +42,7 @@ func enemy_execute(_initTarget):
 			$Area2D.position = get_parent().grid.map_to_local(Vector2i(9,9))
 	
 	print("ENEMY EXECUTE RUN")
+	SignalBus.playSFX.emit("PassingDanger")
 	await get_tree().create_timer(0.7).timeout
 	execute()
 	$Area2D/SelectionBox.set_visible(false)
@@ -100,7 +101,6 @@ func execute():
 	#get_parent().get_node("AnimatedSprite2D").stop()
 	#get_parent().get_node("AnimatedSprite2D").play("Attack1")
 	await get_tree().create_timer(0.7).timeout
-	SignalBus.playSFX.emit("PassingDanger")
 	if targetUnits == null:
 		post_execute()
 	for i in targetUnits.size():

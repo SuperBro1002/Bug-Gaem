@@ -105,8 +105,9 @@ func _unhandled_input(event):
 				turnPointer.run_passives(turnPointer.methodType.ABILITY_EXECUTE, null)
 				turnPointer.abilityQueued.execute()
 		
-		if Input.is_action_just_pressed("end_turn") and !isExecuting and queueState == false and notOverlapped == true and allowEndTurn == true and Dialogic.VAR.DialogueComplete == true:
-			turnPointer.on_turn_end()
+		if Input.is_action_just_pressed("end_turn") and !isExecuting and queueState == false and notOverlapped == true and allowEndTurn == true:
+			if Dialogic.VAR.DialogueComplete == true or turnPointer.isPossessed:
+				turnPointer.on_turn_end()
 	
 	else: return
 

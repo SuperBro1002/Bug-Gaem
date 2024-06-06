@@ -9,7 +9,7 @@ func _ready():
 	#get_node("Grid/InitManager/UnitManager/Lumoth").add_passive("TestPassive")
 	#get_node("Grid/InitManager").next_turn()
 	Dialogic.start("res://Dialogic Assets/Timelines/Garden Intro.dtl")
-	SignalBus.showInfoBox.emit()
+	#SignalBus.showInfoBox.emit()
 
 func process():
 	pass

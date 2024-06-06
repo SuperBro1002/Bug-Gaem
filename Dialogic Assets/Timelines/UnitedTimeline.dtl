@@ -330,48 +330,48 @@ label Garden 1 Plot
 if {StoryProgress} > 4:
 	jump Garden 1 Barks
 if {StoryProgress} == 0:
-if AutoloadMe.turnPointer.Name == "Paramantis":
-	do PortraitManager.change_main_portrait("NeutralF")
-	Paramantis: So, the Yellowjacket chief ssseeks to sssiphon the sssap into himself!
-	do PortraitManager.drone_fly_in()
-	Drone: TEEHEE! You figured it out, but save the talking for people that can SSSpeak HA!
-	do PortraitManager.change_main_portrait("AngryF")
-	Paramantis: ???
-	do PortraitManager.change_main_portrait("HappyF")
-	Paramantis: !!!
-	do PortraitManager.change_main_portrait("CrazyF")
-	Paramantis: Sssurely there is a sssimple sssolution to ssstop thi-
-	Drone: GAH! Get to the point and stop BUGGING me!!
-	Paramantis: Sssee here! The sssteel ssstill shows sssigns of sssome weakne--
-	Drone: YES! You did it! You figured out the screws are the heat sink that keeps the drill from overheating! Very good! Now STOP talking!!!1!
-	do PortraitManager.drone_fly_out()
-	do PortraitManager.change_main_portrait("HappyF")
-	Paramantis: Asss you wish...
-	set {DialogueComplete} = true
-	[end_timeline]
-if AutoloadMe.turnPointer.Name == "Atlas":
-	do PortraitManager.change_main_portrait("ProudF")
-	Atlas: Everyone, stop that drill! I’ll handle the Robugs! Ha-hah!
-	set {DialogueComplete} = true
-	[end_timeline]
-if AutoloadMe.turnPointer.Name == "Triss":
-	do PortraitManager.change_main_portrait("SnobbyF")
-	Triss: It’s been too long, father.
-	do PortraitManager.show_reply_portrait("Thoraxe", "Thoraxe")
-	Thoraxe: Bea’triss…?
-	do PortraitManager.change_main_portrait("NeutralF")
-	Triss: Why don’t you come down here and we’ll try to kill each other for old times sake?!
-	Thoraxe: … Then you still side with the pompous Bees?
-	do PortraitManager.change_main_portrait("AngryF")
-	Triss: Shut up! With your head on my spear, I’ll return home a Queen!
-	do PortraitManager.hide_reply_portrait()
-	set {DialogueComplete} = true
-	[end_timeline]
-if AutoloadMe.turnPointer.Name == "Lumoth":
-	do PortraitManager.change_main_portrait("ChannelingF")
-	Lumoth: You Yellowjackets are n-not safe from Lunalesca’s wrath!
-	set {DialogueComplete} = true
-	[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Paramantis":
+		do PortraitManager.change_main_portrait("NeutralF")
+		Paramantis: So, the Yellowjacket chief ssseeks to sssiphon the sssap into himself!
+		do PortraitManager.drone_fly_in()
+		Drone: TEEHEE! You figured it out, but save the talking for people that can SSSpeak HA!
+		do PortraitManager.change_main_portrait("AngryF")
+		Paramantis: ???
+		do PortraitManager.change_main_portrait("HappyF")
+		Paramantis: !!!
+		do PortraitManager.change_main_portrait("CrazyF")
+		Paramantis: Sssurely there is a sssimple sssolution to ssstop thi-
+		Drone: GAH! Get to the point and stop BUGGING me!!
+		Paramantis: Sssee here! The sssteel ssstill shows sssigns of sssome weakne--
+		Drone: YES! You did it! You figured out the screws are the heat sink that keeps the drill from overheating! Very good! Now STOP talking!!!1!
+		do PortraitManager.drone_fly_out()
+		do PortraitManager.change_main_portrait("HappyF")
+		Paramantis: Asss you wish...
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Atlas":
+		do PortraitManager.change_main_portrait("ProudF")
+		Atlas: Everyone, stop that drill! I’ll handle the Robugs! Ha-hah!
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Triss":
+		do PortraitManager.change_main_portrait("SnobbyF")
+		Triss: It’s been too long, father.
+		do PortraitManager.show_reply_portrait("Thoraxe", "Thoraxe")
+		Thoraxe: Bea’triss…?
+		do PortraitManager.change_main_portrait("NeutralF")
+		Triss: Why don’t you come down here and we’ll try to kill each other for old times sake?!
+		Thoraxe: … Then you still side with the pompous Bees?
+		do PortraitManager.change_main_portrait("AngryF")
+		Triss: Shut up! With your head on my spear, I’ll return home a Queen!
+		do PortraitManager.hide_reply_portrait()
+		set {DialogueComplete} = true
+		[end_timeline]
+	if AutoloadMe.turnPointer.Name == "Lumoth":
+		do PortraitManager.change_main_portrait("ChannelingF")
+		Lumoth: You Yellowjackets are n-not safe from Lunalesca’s wrath!
+		set {DialogueComplete} = true
+		[end_timeline]
 if {StoryProgress} == 1:
 	if AutoloadMe.turnPointer.Name == "Paramantis":
 		do PortraitManager.change_main_portrait("NeutralF")
@@ -384,7 +384,7 @@ if {StoryProgress} == 1:
 		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Atlas":
-		do PortraitManager.change_main_portrait("")
+		do PortraitManager.change_main_portrait("HappyF")
 		Atlas: Is that all you’ve got?? Hahaha!!
 		set {DialogueComplete} = true
 		[end_timeline]

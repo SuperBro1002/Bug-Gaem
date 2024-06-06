@@ -2,14 +2,14 @@
 [background arg="res://Dialogic Assets/Styles/Black.png" fade="0.0"]
 Auri is defeated. The Cathedral is near silent.
 Except for a growing mechanical chattering.
-join Drone 3 [animation="Slide In Down" length="2" wait="true"]
+join Drone 3 [animation="Slide In Down" length="1" wait="true"]
 Drone (Drone): Had to take out your own messenger? How are those reinforcements coming?
-update Drone [animation="Shake X" length="2"]
+update Drone [animation="Shake X" length="1"]
 Drone: BAHAHAHA!
 Drone: Bet that hits you right in the FEELS, doesn't it grubs!
 Drone: Okay, okay. That's enough. I have a high tech drill and a small army to babysit in that little park out back.
 Drone: Peace, noobs!
-leave Drone [animation="Slide Out Up" length="2" wait="true"]
+leave Drone [animation="Slide Out Up" length="1" wait="true"]
 join Atlas 1
 join Lumoth 2 [ mirrored="true"]
 join Paramantis 3 [ mirrored="true"]
@@ -25,7 +25,7 @@ Paramantis (Happy): It shall be done!
 leave Lumoth [animation="Slide Out Right" length="1"]
 leave Paramantis [animation="Slide Out Right" length="1"]
 leave Triss [animation="Slide Out Right" length="1"]
-leave Atlas [animation="Slide Out Left" length="2"]
+leave Atlas [animation="Slide Out Left" length="1"]
 [background arg="res://Dialogic Assets/Styles/Blaground.png" fade="4.0"]
 Triss, Paramantis, Lumoth, and Zephyr rush out of the Cathedral of Moths, down the path to the Sap Root Garden.
 join Paramantis (Neutral) 0
@@ -34,7 +34,7 @@ join Triss 2
 In the distance they can see the drill dig into the soft bark at the center of the garden.
 To their surprise, they see mighty Yellowjacket warriors working on the drill alongside Robugs.
 Paramantis (Neutral): Let's wait for Atlas, and ssstrike at our full force.
-join Atlas 3 [animation="Slide In Right" length="2" mirrored="true"]
+join Atlas 3 [animation="Slide In Right" length="1" mirrored="true"]
 Atlas (Happy): No need! I'm ready.
 Triss (Neutral): Aren't you quick.
 Atlas (Proud): Got my second wind. Let's go!

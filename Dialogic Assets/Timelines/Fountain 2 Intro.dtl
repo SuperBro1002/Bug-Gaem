@@ -1,10 +1,10 @@
 do AutoloadMe.start_first_turn()
 [style name="VNStyle2"]
 [background arg="res://Dialogic Assets/Styles/Black.png" fade="0.0"]
-join Atlas (Sad) 1
-join Lumoth 3 [ mirrored="true"]
-join Triss 2 [ mirrored="true"]
-join Paramantis 4 [ mirrored="true"]
+join Atlas (Sad) 1 [animation="Fade In Out" length="0.1"]
+join Lumoth 3 [animation="Fade In Out" length="0.1" mirrored="true"]
+join Triss 2 [animation="Fade In Out" length="0.1" mirrored="true"]
+join Paramantis 4 [animation="Fade In Out" length="0.1" mirrored="true"]
 Robug steel flies acorss the Cathedral in a flurry of sparks.
 Atlas slumps over, breathing heavily.
 Triss (Neutral): Lumoth, heal her now!
@@ -20,7 +20,7 @@ Atlas (Happy): It seems the young blood is ready to take the lead. After what yo
 Triss (Neutral): But the fight isn’t over. Drone is going to bring more reinforcements through that breach any moment now. We won’t be able to stop them if they get through.
 Atlas (Neutral): You’re right… Lumoth, thank you, I’m feeling back to fighting shape.
 Triss (Neutral): Let’s go!
-leave --All--
+leave --All-- [animation="Fade In Out" length="0.1"]
 [background arg="res://Dialogic Assets/Styles/Blaground.png" fade="3.0"]
 The Robugs pour from the breach like a divine flood.
 join Drone 3 [animation="Slide In Down" length="1" mirrored="true"]

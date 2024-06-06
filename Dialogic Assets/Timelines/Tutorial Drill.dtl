@@ -1,6 +1,6 @@
 [style name="VNStyle2"]
 [background arg="res://Dialogic Assets/Styles/Blaground.png" fade="2.0"]
-join Triss (Hurt) 1 [animation="Slide Up In" length="1.5"]
+join Triss (Hurt) 1 [animation="Slide Up In" length="1"]
 update Triss 1 [animation="Shake X" length="1"]
 Bark, stone, water, and sparks shoot into the air!
 Stunned by the shaking, deafened by the sound, Zephyr and Triss can only watch as a giant Robug drill carves a path through the fountain and further beyond.
