@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cctdo75gd8kdw"]
+[gd_scene load_steps=24 format=3 uid="uid://cctdo75gd8kdw"]
 
 [ext_resource type="Script" path="res://Scripts/TEST_MAP.gd" id="1_0rum6"]
 [ext_resource type="Script" path="res://Scenes/EMTEST.gd" id="2_1jsor"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://be86imrav20o6" path="res://Scenes/Units/Lumoth.tscn" id="6_nwap2"]
 [ext_resource type="PackedScene" uid="uid://bgphmxq3rd4q1" path="res://Scenes/Units/Paramantis.tscn" id="7_nr15p"]
 [ext_resource type="PackedScene" uid="uid://ct1ngvul81kpp" path="res://Scenes/Units/Triss.tscn" id="8_u6yh4"]
+[ext_resource type="PackedScene" uid="uid://cqik5a7fuwabx" path="res://Scenes/Units/Grunt.tscn" id="9_ecfnd"]
 [ext_resource type="PackedScene" uid="uid://rw51msc2xqkb" path="res://Scenes/Units/Robopoly.tscn" id="9_n1vw4"]
 [ext_resource type="PackedScene" uid="uid://b2rerqtddscuk" path="res://Scenes/Units/Termitator.tscn" id="9_rdejj"]
+[ext_resource type="PackedScene" uid="uid://bvip1ddh8purj" path="res://Scenes/Units/Thor.tscn" id="10_kg23x"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="10_r7pth"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="11_2gt8l"]
 [ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="12_jv0gm"]
@@ -38,48 +40,56 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 
 [node name="ObstacleHolder" type="Node" parent="Grid"]
 
+[node name="Robo" parent="Grid/ObstacleHolder" instance=ExtResource("9_n1vw4")]
+position = Vector2(928, 800)
+TrueInit = 21
+InitVariance = 0
+
+[node name="Robo2" parent="Grid/ObstacleHolder" instance=ExtResource("9_n1vw4")]
+position = Vector2(928, 736)
+TrueInit = 21
+InitVariance = 0
+
+[node name="Grunt" parent="Grid/ObstacleHolder" instance=ExtResource("9_ecfnd")]
+position = Vector2(416, 352)
+
+[node name="Lumoth" parent="Grid/ObstacleHolder" instance=ExtResource("6_nwap2")]
+position = Vector2(544, 480)
+MaxHP = 30
+MaxAP = 20
+
+[node name="Paramantis" parent="Grid/ObstacleHolder" instance=ExtResource("7_nr15p")]
+position = Vector2(544, 352)
+MaxAP = 24
+
+[node name="Triss" parent="Grid/ObstacleHolder" instance=ExtResource("8_u6yh4")]
+position = Vector2(544, 416)
+MaxAP = 20
+TrueInit = 15
+
+[node name="Term" parent="Grid/ObstacleHolder" instance=ExtResource("9_rdejj")]
+position = Vector2(672, 352)
+MaxHP = 15
+TrueInit = 14
+InitVariance = 0
+
+[node name="Term2" parent="Grid/ObstacleHolder" instance=ExtResource("9_rdejj")]
+position = Vector2(864, 672)
+TrueInit = 17
+InitVariance = 0
+
 [node name="InitManager" parent="Grid" instance=ExtResource("4_tk47b")]
 
 [node name="UnitManager" type="Node" parent="Grid/InitManager"]
 
 [node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_yc3je")]
-position = Vector2(544, 736)
+position = Vector2(544, 672)
 MaxAP = 20
 
-[node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_nwap2")]
-position = Vector2(544, 800)
-MaxHP = 30
-MaxAP = 20
-
-[node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_nr15p")]
-position = Vector2(672, 799)
-MaxAP = 24
-
-[node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("8_u6yh4")]
-position = Vector2(480, 798)
-MaxAP = 20
-TrueInit = 15
-
-[node name="Robo" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_n1vw4")]
-position = Vector2(736, 800)
-TrueInit = 21
-InitVariance = 0
-
-[node name="Robo2" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_n1vw4")]
-position = Vector2(672, 736)
-TrueInit = 21
-InitVariance = 0
-
-[node name="Term" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_rdejj")]
-position = Vector2(608, 672)
-MaxHP = 15
-TrueInit = 14
-InitVariance = 0
-
-[node name="Term2" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_rdejj")]
-position = Vector2(736, 672)
-TrueInit = 17
-InitVariance = 0
+[node name="Thor" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_kg23x")]
+position = Vector2(544, 544)
+phase = 2
+startPhaseTwo = true
 
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_r7pth")]
 visible = false

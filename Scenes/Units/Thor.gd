@@ -2,6 +2,7 @@ extends "res://Scripts/enemy.gd"
 
 @export var phase = 1
 @export var startPhaseTwo = false
+signal ThorAttack
 
 func _ready():
 	SignalBus.connect("phaseChange", set_phase)
@@ -63,6 +64,8 @@ func unique_turn_start():
 					for i in pathArray.size():
 						if CurrentAP != 0 and i > 0:
 							CurrentAP -= 1
+							get_node("AnimatedSprite2D").stop()
+							get_node("AnimatedSprite2D").play("Jump1")
 							var tween = create_tween()
 							print(pathArray[i])
 							tween.tween_property(self, "position", pathArray[i], 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
@@ -135,3 +138,10 @@ func delete(unit):
 		if AutoloadMe.turnPointer == self:
 			SignalBus.endTurn.emit()
 		queue_free()
+
+func _on_animated_sprite_2d_frame_changed():
+	if $AnimatedSprite2D.get_animation() == "Attack1" and $AnimatedSprite2D.get_frame() == 5:
+		$AnimatedSprite2D.pause()
+		await ThorAttack
+		print("DONE WAITING!!!!!!!")
+		$AnimatedSprite2D.play()

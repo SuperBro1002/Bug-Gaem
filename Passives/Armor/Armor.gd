@@ -2,7 +2,7 @@ extends Passive_class
 
 func _enter_tree():
 	Name = "Armor"
-	description = "Reduces incoming damage by 1. Piercing and poison-based damage avoid this effect."
+	description = "Damage from next attack is nullified. Damage from poison is unaffected."
 	type = methodType.LOSE_HEALTH
 
 func execute(num):
