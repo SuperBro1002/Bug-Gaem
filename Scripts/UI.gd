@@ -117,8 +117,9 @@ func remove_passive_boxes():
 	var marker
 	for m in $PassiveMarkerMarker.get_children().size():
 		marker = $PassiveMarkerMarker.get_child(m)
-		if marker.get_child(0) != null:
-			passiveBox = marker.get_child(0)
+		if !marker.get_children().is_empty():
+			var markerList = marker.get_children()
+			passiveBox = markerList[0]
 			if passiveBox != null: marker.remove_child(passiveBox)
 
 func move_arrow(unit):

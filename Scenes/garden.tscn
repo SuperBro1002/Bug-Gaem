@@ -166,7 +166,6 @@ position = Vector2(608, 992)
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_vdhge")]
 position = Vector2(672, 1056)
-MaxAP = 126
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("8_mc8hb")]
 position = Vector2(480, 1056)

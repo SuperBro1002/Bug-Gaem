@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cctdo75gd8kdw"]
 
-[ext_resource type="Script" path="res://Scripts/Test_Cathedral_Scenario.gd" id="1_y43yc"]
+[ext_resource type="Script" path="res://Scripts/TEST_MAP.gd" id="1_0rum6"]
 [ext_resource type="Script" path="res://Scenes/EMTEST.gd" id="2_1jsor"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="3_qnggt"]
 [ext_resource type="PackedScene" uid="uid://tgpcor2pwjrk" path="res://Scenes/init_manager.tscn" id="4_tk47b"]
@@ -27,7 +27,7 @@ size = Vector2(1152, 1152)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_usygw"]
 
 [node name="Cathedral" type="Node2D"]
-script = ExtResource("1_y43yc")
+script = ExtResource("1_0rum6")
 
 [node name="EMTEST" type="Node" parent="."]
 script = ExtResource("2_1jsor")
@@ -71,7 +71,6 @@ TrueInit = 21
 InitVariance = 0
 
 [node name="Term" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_rdejj")]
-modulate = Color(0, 1, 1, 1)
 position = Vector2(608, 672)
 MaxHP = 15
 TrueInit = 14
@@ -103,6 +102,7 @@ limit_top = -600
 limit_right = 2200
 limit_bottom = 1400
 limit_smoothed = true
+position_smoothing_enabled = true
 script = ExtResource("13_xtuqq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]

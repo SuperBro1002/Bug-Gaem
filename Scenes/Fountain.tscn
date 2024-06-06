@@ -50,9 +50,9 @@ position = Vector2(384, -48)
 script = ExtResource("14_nhih3")
 Name = "Jeff"
 fileName = "Jeff"
-Faction = 2
 MaxHP = 200
 TrueInit = -100
+Faction = 2
 
 [node name="UILayer" parent="." instance=ExtResource("15_scrj4")]
 visible = false

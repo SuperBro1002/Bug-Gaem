@@ -4,14 +4,14 @@
 [ext_resource type="SpriteFrames" uid="uid://dwsvpciaod0yg" path="res://Scenes/Sprite Frames/Paramantis.tres" id="2_xxq2g"]
 
 [node name="Paramantis" instance=ExtResource("1_0t3kg")]
-MaxHP = 12
-SetAbility2 = "Toxic_Thrash"
-SetAbility3 = "Pheromones"
 Name = "Paramantis"
 fileName = "Paramantis"
+MaxHP = 12
 MaxAP = 6
 TrueInit = 30
 SetAbility1 = "X-Slash"
+SetAbility2 = "Toxic_Thrash"
+SetAbility3 = "Pheromones"
 Faction = 0
 
 [node name="AnimatedSprite2D" parent="." index="1"]

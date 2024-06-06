@@ -4,14 +4,14 @@
 [ext_resource type="SpriteFrames" uid="uid://d4ellltyf6slv" path="res://Scenes/Sprite Frames/Lumoth.tres" id="2_chvyg"]
 
 [node name="Lumoth" instance=ExtResource("1_krylu")]
-MaxHP = 8
-SetAbility2 = "Shield"
-SetAbility3 = "Blood_Moon"
 Name = "Lumoth"
 fileName = "Lumoth"
+MaxHP = 8
 MaxAP = 10
 TrueInit = 15
 SetAbility1 = "Heal"
+SetAbility2 = "Shield"
+SetAbility3 = "Blood_Moon"
 Faction = 0
 
 [node name="AnimatedSprite2D" parent="." index="1"]

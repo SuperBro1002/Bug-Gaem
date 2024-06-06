@@ -119,8 +119,9 @@ func execute():
 		AutoloadMe.set_process_unhandled_input(true)
 
 func draw_range_tiles(activeName):
-	if Name != activeName:
+	if fileName != activeName:
 		return
+	SignalBus.playSFX.emit("Queue")
 	print("Children: ", )
 	if get_parent() == AutoloadMe.turnPointer:
 		print(get_parent())
@@ -138,7 +139,6 @@ func draw_range_tiles(activeName):
 func draw_range_tiles2(activeName):
 	if Name != activeName:
 		return
-	print("Children: ", )
 	if get_parent() == AutoloadMe.turnPointer:
 		print(get_parent())
 		var tiles = get_parent().grid.flood_fill_in_range(get_parent().position, secondRange)
