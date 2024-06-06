@@ -82,6 +82,7 @@ limit_top = -600
 limit_right = 2200
 limit_bottom = 1400
 limit_smoothed = true
+position_smoothing_enabled = true
 script = ExtResource("14_m21jk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]

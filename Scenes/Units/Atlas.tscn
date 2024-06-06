@@ -4,14 +4,14 @@
 [ext_resource type="SpriteFrames" uid="uid://cm8p86i48ibo4" path="res://Scenes/Sprite Frames/Atlas.tres" id="2_omy6j"]
 
 [node name="Atlas" instance=ExtResource("1_l2376")]
-MaxHP = 12
-SetAbility2 = "Empower"
-SetAbility3 = "Throw"
 Name = "Atlas"
 fileName = "Atlas"
+MaxHP = 12
 MaxAP = 8
 TrueInit = 30
 SetAbility1 = "Knockback"
+SetAbility2 = "Empower"
+SetAbility3 = "Throw"
 Faction = 0
 
 [node name="AnimatedSprite2D" parent="." index="1"]

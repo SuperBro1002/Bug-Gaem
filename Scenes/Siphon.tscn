@@ -6,6 +6,6 @@
 [node name="Obstacle" instance=ExtResource("1_3l3gt")]
 scale = Vector2(1, 1)
 script = ExtResource("2_c8vw3")
-MaxHP = 4
 Name = "Siphon"
 fileName = "Atlas"
+MaxHP = 4
