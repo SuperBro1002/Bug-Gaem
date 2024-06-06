@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/Ability1Button.gd" id="3_t2pqd"]
 [ext_resource type="Script" path="res://Scripts/Ability2Button.gd" id="4_7yk03"]
 [ext_resource type="Script" path="res://Scripts/Ability3Button.gd" id="5_vdsmd"]
+[ext_resource type="LabelSettings" uid="uid://cml5i2l567qij" path="res://Scenes/TextSettings.tres" id="6_lu50f"]
 [ext_resource type="Script" path="res://Scripts/MainPortrait.gd" id="7_eif3x"]
 [ext_resource type="PackedScene" uid="uid://42m7teprqnkh" path="res://Scenes/ability_box_object.tscn" id="7_kxv4v"]
 [ext_resource type="Texture2D" uid="uid://bh6dswr8krybs" path="res://Assets/Portraits/Triss/HappyF.png" id="7_ta7ol"]
@@ -43,10 +44,6 @@ events = [SubResource("InputEventKey_n7owk")]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4gjyx"]
 font_size = 36
-shadow_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_s1hfu"]
-font_size = 26
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lvjvs"]
@@ -114,10 +111,10 @@ anchor_left = 0.499
 anchor_top = 0.5
 anchor_right = 0.499
 anchor_bottom = 0.5
-offset_left = 40.64
-offset_top = -50.5
-offset_right = 255.64
-offset_bottom = 50.5
+offset_left = 2.81796
+offset_top = -31.7711
+offset_right = 201.818
+offset_bottom = 69.2289
 grow_horizontal = 0
 mouse_filter = 2
 alignment = 1
@@ -156,49 +153,48 @@ anchor_left = 0.297458
 anchor_top = 0.157333
 anchor_right = 0.297458
 anchor_bottom = 0.217939
-offset_left = -0.0400085
+offset_left = -17.2817
 offset_top = -19.96
-offset_right = 199.96
+offset_right = 182.718
 offset_bottom = 20.04
 text = "Atlus"
 label_settings = SubResource("LabelSettings_4gjyx")
-metadata/_edit_use_anchors_ = true
 
 [node name="HPLabel" type="Label" parent="UI/InfoBox"]
 layout_mode = 0
-offset_left = 191.667
+offset_left = 174.425
 offset_top = 55.0
-offset_right = 234.667
+offset_right = 217.425
 offset_bottom = 94.0002
 text = "HP:"
-label_settings = SubResource("LabelSettings_s1hfu")
+label_settings = ExtResource("6_lu50f")
 
 [node name="HPValue" type="Label" parent="UI/InfoBox"]
 layout_mode = 0
-offset_left = 243.297
+offset_left = 226.055
 offset_top = 55.0
-offset_right = 302.297
+offset_right = 285.055
 offset_bottom = 94.0002
 text = "num"
-label_settings = SubResource("LabelSettings_s1hfu")
+label_settings = ExtResource("6_lu50f")
 
 [node name="APLabel" type="Label" parent="UI/InfoBox"]
 layout_mode = 0
-offset_left = 191.667
+offset_left = 174.425
 offset_top = 95.0132
-offset_right = 234.667
+offset_right = 217.425
 offset_bottom = 134.013
 text = "AP:"
-label_settings = SubResource("LabelSettings_s1hfu")
+label_settings = ExtResource("6_lu50f")
 
 [node name="APValue" type="Label" parent="UI/InfoBox"]
 layout_mode = 2
-offset_left = 242.006
+offset_left = 224.764
 offset_top = 93.7222
-offset_right = 301.006
+offset_right = 283.764
 offset_bottom = 132.722
 text = "num"
-label_settings = SubResource("LabelSettings_s1hfu")
+label_settings = ExtResource("6_lu50f")
 
 [node name="Sprite2D" type="Sprite2D" parent="UI/InfoBox"]
 z_index = -1

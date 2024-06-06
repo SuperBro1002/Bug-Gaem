@@ -44,10 +44,11 @@ func execute():
 	print(targetUnits)
 	
 	await get_tree().create_timer(0.1).timeout
+	targetUnits.append(get_parent().target)
 	
-	#face_target()
-	#get_parent().get_node("AnimatedSprite2D").stop()
-	#get_parent().get_node("AnimatedSprite2D").play("Attack1")
+	face_target()
+	get_parent().get_node("AnimatedSprite2D").stop()
+	get_parent().get_node("AnimatedSprite2D").play("Attack1")
 	await get_tree().create_timer(0.7).timeout
 	
 	for i in 8:
@@ -55,10 +56,17 @@ func execute():
 			break
 		else:
 			var tween = create_tween()
+			SignalBus.playSFX.emit("RobugAttack3")
 			tween.tween_property(get_parent(), "position", get_parent().position + localDirection, 1.0 / get_parent().animationSpeed).set_trans(Tween.TRANS_SINE)
 			await tween.finished
 			$Area2D.position = get_parent().position
 	
+	get_parent().ThorAttack.emit()
+	SignalBus.playSFX.emit("Crash2")
+	await get_tree().create_timer(1).timeout
+	
+	get_parent().get_node("AnimatedSprite2D").stop()
+	get_parent().get_node("AnimatedSprite2D").play("Jump1")
 	var tween2 = create_tween()
 	tween2.tween_property(get_parent(), "position", get_parent().grid.flood_fill_first(get_parent().grid.local_to_map(get_parent().position)), 1.0 / get_parent().animationSpeed).set_trans(Tween.TRANS_SINE)
 	await tween2.finished
@@ -70,4 +78,5 @@ func execute():
 		if targetUnits == null:
 			return
 		targetUnits[i].lose_health(6)
+	
 	post_execute()

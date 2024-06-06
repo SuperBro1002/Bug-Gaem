@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvip1ddh8purj"]
+[gd_scene load_steps=4 format=3 uid="uid://bvip1ddh8purj"]
 
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_j27fl"]
 [ext_resource type="Script" path="res://Scenes/Units/Thor.gd" id="2_d2lgt"]
+[ext_resource type="SpriteFrames" uid="uid://0lcnll8ldbmc" path="res://Scenes/Sprite Frames/Thor.tres" id="3_yi1hn"]
 
 [node name="Thor" instance=ExtResource("1_j27fl")]
 script = ExtResource("2_d2lgt")
@@ -16,5 +17,6 @@ SetAbility1 = "Chloroblast"
 Controllable = false
 
 [node name="AnimatedSprite2D" parent="." index="1"]
-modulate = Color(1, 1, 0, 1)
-rotation = 0.628319
+sprite_frames = ExtResource("3_yi1hn")
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

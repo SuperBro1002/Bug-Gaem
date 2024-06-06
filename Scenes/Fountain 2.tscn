@@ -12,12 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="9_fcinn"]
 [ext_resource type="PackedScene" uid="uid://be86imrav20o6" path="res://Scenes/Units/Lumoth.tscn" id="10_4tp4v"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="10_ndpdp"]
-[ext_resource type="Texture2D" uid="uid://htxwl3ri1iev" path="res://Assets/Maps_Tiles/Fountain/tutorial_map_empty.png" id="11_lxd3a"]
 [ext_resource type="PackedScene" uid="uid://bgphmxq3rd4q1" path="res://Scenes/Units/Paramantis.tscn" id="11_ordxo"]
 [ext_resource type="PackedScene" uid="uid://bvip1ddh8purj" path="res://Scenes/Units/Thor.tscn" id="12_ca2f7"]
 [ext_resource type="Texture2D" uid="uid://0hgw2imncrvb" path="res://Assets/Maps_Tiles/GridLayer.png" id="13_5cnvc"]
 [ext_resource type="PackedScene" uid="uid://b31vcfng888xw" path="res://Scenes/spawner.tscn" id="14_xmqnd"]
 [ext_resource type="Texture2D" uid="uid://bjnybyvdkso6r" path="res://Assets/Maps_Tiles/Fountain/hole.png" id="15_7k6yr"]
+[ext_resource type="Texture2D" uid="uid://dyqa7jgbrq802" path="res://Assets/Maps_Tiles/Fountain/tutorial_map_variant3.png" id="16_n83rr"]
 [ext_resource type="PackedScene" uid="uid://bq8sleerhf7s4" path="res://Scenes/Units/Drone.tscn" id="19_0wuf6"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6thoy"]
@@ -47,18 +47,23 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 [node name="UnitManager" type="Node" parent="Grid/InitManager"]
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_naygy")]
+modulate = Color(0.835294, 0.898039, 1, 1)
 position = Vector2(288, 672)
 
 [node name="Atlas" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_sccqh")]
+modulate = Color(0.835294, 0.898039, 1, 1)
 position = Vector2(352, 608)
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_4tp4v")]
+modulate = Color(0.835294, 0.898039, 1, 1)
 position = Vector2(416, 608)
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("11_ordxo")]
+modulate = Color(0.835294, 0.898039, 1, 1)
 position = Vector2(480, 672)
 
 [node name="Thor" parent="Grid/InitManager/UnitManager" instance=ExtResource("12_ca2f7")]
+modulate = Color(0.835294, 0.898039, 1, 1)
 position = Vector2(352, 160)
 phase = 2
 startPhaseTwo = true
@@ -98,11 +103,12 @@ texture = SubResource("PlaceholderTexture2D_6thoy")
 texture_filter = 1
 position = Vector2(383.5, 388.5)
 scale = Vector2(2.10742, 2.10742)
-texture = ExtResource("11_lxd3a")
+texture = ExtResource("16_n83rr")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="FountainSprite" type="Sprite2D" parent="TutorialMapSprite"]
+modulate = Color(0.615686, 0.921569, 1, 1)
 z_index = 1
 texture_filter = 1
 texture = ExtResource("15_7k6yr")
@@ -151,3 +157,5 @@ position = Vector2(392, 392)
 scale = Vector2(4224.25, 2100.25)
 texture = SubResource("PlaceholderTexture2D_dbbyb")
 metadata/_edit_lock_ = true
+
+[editable path="Grid/InitManager/UnitManager/Thor"]

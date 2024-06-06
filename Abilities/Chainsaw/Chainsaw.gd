@@ -3,7 +3,7 @@ extends Ability_class
 
 func _enter_tree():
 	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
-	Name = "Chainsaw Boomerang"
+	Name = "Chain Boom"
 	fileName = "Chainsaw"
 	description = "Deals 2 damage to targets in a 4-tile line in front of the user. 5 AP"
 
