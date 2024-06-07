@@ -125,6 +125,7 @@ func post_execute():
 		SignalBus.changeButtonState.emit()
 	elif get_parent().Faction == get_parent().fac.ENEMY:
 		dequeue(1,false)
+	
 
 func draw_range_tiles(activeName):
 	if fileName != activeName:

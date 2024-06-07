@@ -65,9 +65,9 @@ func initialize_grid(gridLengthX, gridLengthY):
 	abilityRangeGridUI.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 
 func _unhandled_input(event):
-	if turnPointer == null:
-		print("NO UNIT")
-		return
+	#if turnPointer == null:
+		#print("NO UNIT")
+		#return
 	
 	if Input.is_action_pressed("right_click"):
 		SignalBus.moveCamera.emit()

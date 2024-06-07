@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgvl724djq5ns"]
+
+[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_1dcmg"]
+[ext_resource type="Script" path="res://Scenes/Units/Robopoly.gd" id="2_padam"]
+[ext_resource type="SpriteFrames" uid="uid://bndyutjeu0niy" path="res://Scenes/Sprite Frames/Robopoly.tres" id="3_v1jqr"]
+
+[node name="Auri" instance=ExtResource("1_1dcmg")]
+script = ExtResource("2_padam")
+Name = "Auri"
+fileName = "Auri"
+MaxHP = 12
+MaxAP = 10
+TrueInit = 20
+InitVariance = 10
+Controllable = false
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_v1jqr")

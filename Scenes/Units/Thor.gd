@@ -3,11 +3,14 @@ extends "res://Scripts/enemy.gd"
 @export var phase = 1
 @export var startPhaseTwo = false
 signal ThorAttack
+signal abilityFinished
+var chloroblastExecuting
 
 func _ready():
 	SignalBus.connect("phaseChange", set_phase)
 
 func unique_turn_start():
+	chloroblastExecuting = false
 	print("PHASE ", phase)
 	if phase == 2 and startPhaseTwo == true:
 		position = grid.map_to_local(await set_phase())
@@ -22,6 +25,7 @@ func unique_turn_start():
 	if phase == 1:
 		AutoloadMe.currentAbility = ability1
 		run_passives(methodType.ABILITY_EXECUTE, null)
+		chloroblastExecuting = true
 		await ability1.enemy_execute(target)
 		CurrentAP -= ability1.get_ap_cost()
 		
@@ -98,7 +102,31 @@ func unique_turn_start():
 					await ability2.enemy_execute(target)
 					CurrentAP -= ability2.get_ap_cost()
 					await get_tree().create_timer(1).timeout
+	
 	on_turn_end()
+
+func on_turn_end():
+	if chloroblastExecuting:
+		print("IM WAITING")
+		await abilityFinished
+	print("AND IM GOING")
+	run_passives(methodType.ON_TURN_END, null)
+	SignalBus.wipeTilePaths.emit(null)
+	if isPossessed:
+		print("MY OG: ", OG)
+	find_and_delete_passives()
+	if BatonPass == TS.BATONPASS:
+		BatonPass = storedBatonPass
+	else:
+		set_has_acted()
+	
+	canMove = true
+	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
+	SignalBus.actedUI.emit()
+	print("	", Name, " has acted.")
+	
+	unique_turn_end()
+
 
 func set_phase():
 	collision_layer = 2
