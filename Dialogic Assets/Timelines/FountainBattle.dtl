@@ -5,7 +5,7 @@ if AutoloadMe.turnPointer.BatonPass == 0:
 if {StoryProgress} == 0:
 	if AutoloadMe.turnPointer.Name == "Triss":
 		do PortraitManager.change_main_portrait("SnobbyF")
-		Triss (SnobbyF): Alright, Zephyr. Let's take it slow for that 'cunning' mind of yours. Press E to hear what I have to say next.
+		Triss (SnobbyF): Alright, Zephyr. Let's take it slow for that 'cunning' mind of yours. Press Q to hear what I have to say next.
 		do PortraitManager.change_main_portrait("NeutralF")
 		Triss (NeutralF): Great, now that you've mastered talking, use W A S and D to direct my movements.
 		do PortraitManager.change_main_portrait("SnobbyF")

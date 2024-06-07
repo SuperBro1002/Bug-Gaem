@@ -38,7 +38,7 @@ theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 96
 
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(861.304, 490)
+position = Vector2(861.304, 492)
 scale = Vector2(0.480469, 0.480469)
 texture = ExtResource("2_44m32")
 
