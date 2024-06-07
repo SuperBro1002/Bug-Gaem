@@ -4,7 +4,7 @@
 "_translation_id": "",
 "color": Color(0.815686, 0.443137, 0.2, 1),
 "custom_info": {
-"sound_mood_default": "",
+"sound_mood_default": "Robug",
 "sound_moods": {
 "Chillin": {
 "mode": 2,

@@ -98,7 +98,8 @@ window/size/initial_screen=1
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
-mouse_cursor/custom_image="res://Assets/Sprites/Zephyr/Zephyr.png"
+mouse_cursor/custom_image="res://Assets/Sprites/Zephyr/Zephyr-Big.png"
+mouse_cursor/custom_image_hotspot=Vector2(16, 16)
 
 [editor_plugins]
 
