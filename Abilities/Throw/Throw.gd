@@ -84,7 +84,7 @@ func post_execute():
 	elif get_parent().Faction == get_parent().fac.ENEMY:
 		dequeue(1,false)
 	#await get_tree().create_timer(1).timeout
-	#AutoloadMe.passingUnit = get_parent()
+	AutoloadMe.passingUnit = get_parent()
 	#get_parent().on_turn_end()
 
 func execute():

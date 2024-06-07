@@ -33,7 +33,7 @@ func unique_turn_start():
 				if CurrentAP != 0 and i > 0:
 					CurrentAP -= 1
 					face_direction(pathArray[i])
-					SignalBus.playSFX.emit(str("AtlusWalk", randi_range(1,3), ".wav"))
+					SignalBus.playSFX.emit(str("AtlusWalk", randi_range(1,3)))
 					get_node("AnimatedSprite2D").stop()
 					get_node("AnimatedSprite2D").play("Jump1")
 					var tween = create_tween()

@@ -40,6 +40,10 @@ layer_0/tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 6, 131072, 0, 6, 196608,
 
 [node name="ObstacleHolder" type="Node" parent="Grid"]
 
+[node name="Paramantis" parent="Grid/ObstacleHolder" instance=ExtResource("7_nr15p")]
+position = Vector2(544, 352)
+MaxAP = 24
+
 [node name="Robo" parent="Grid/ObstacleHolder" instance=ExtResource("9_n1vw4")]
 position = Vector2(928, 800)
 TrueInit = 21
@@ -52,20 +56,6 @@ InitVariance = 0
 
 [node name="Grunt" parent="Grid/ObstacleHolder" instance=ExtResource("9_ecfnd")]
 position = Vector2(416, 352)
-
-[node name="Lumoth" parent="Grid/ObstacleHolder" instance=ExtResource("6_nwap2")]
-position = Vector2(544, 480)
-MaxHP = 30
-MaxAP = 20
-
-[node name="Paramantis" parent="Grid/ObstacleHolder" instance=ExtResource("7_nr15p")]
-position = Vector2(544, 352)
-MaxAP = 24
-
-[node name="Triss" parent="Grid/ObstacleHolder" instance=ExtResource("8_u6yh4")]
-position = Vector2(544, 416)
-MaxAP = 20
-TrueInit = 15
 
 [node name="Term" parent="Grid/ObstacleHolder" instance=ExtResource("9_rdejj")]
 position = Vector2(672, 352)
@@ -85,6 +75,16 @@ InitVariance = 0
 [node name="Atlus" parent="Grid/InitManager/UnitManager" instance=ExtResource("5_yc3je")]
 position = Vector2(544, 672)
 MaxAP = 20
+
+[node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_nwap2")]
+position = Vector2(544, 480)
+MaxHP = 30
+MaxAP = 20
+
+[node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("8_u6yh4")]
+position = Vector2(544, 416)
+MaxAP = 20
+TrueInit = 15
 
 [node name="Thor" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_kg23x")]
 position = Vector2(544, 544)

@@ -298,11 +298,13 @@ func on_turn_start():
 		tempAP = 0
 		CurrentAP = 0
 	if AutoloadMe.passingUnit != null:
+		print("BATON PASSED")
 		var prevUnit = AutoloadMe.passingUnit
-		inherit_ap(prevUnit.CurrentAP)
+		#inherit_ap(prevUnit.CurrentAP)
+		gain_ap(MaxAP/2)
 		tempAP = CurrentAP
-		prevUnit.CurrentAP = 0
-		prevUnit.tempAP = 0
+		#prevUnit.CurrentAP = 0
+		#prevUnit.tempAP = 0
 		AutoloadMe.passingUnit = null
 	
 	if Faction == fac.ENEMY:
