@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://coee7n23v0urn"]
+
+[ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_irf8a"]
+[ext_resource type="Script" path="res://Scenes/Units/Robopoly.gd" id="2_u68ox"]
+[ext_resource type="SpriteFrames" uid="uid://bndyutjeu0niy" path="res://Scenes/Sprite Frames/Robopoly.tres" id="3_lyfjo"]
+
+[node name="Robo" instance=ExtResource("1_irf8a")]
+script = ExtResource("2_u68ox")
+aggroRange = 12
+MaxHP = 3
+MaxAP = 8
+TrueInit = 20
+InitVariance = 10
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_lyfjo")

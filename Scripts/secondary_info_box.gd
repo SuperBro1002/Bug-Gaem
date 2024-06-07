@@ -13,6 +13,8 @@ func fill_me(_isHovering):
 		return
 	
 	var portraitRes = load("res://Assets/Sprites/" + unit.fileName + "/" + unit.fileName + "_Base_Still.png")
+	if AutoloadMe.mapID == 5 and unit.fileName == "Thor":
+		portraitRes = load("res://Assets/Sprites/Thor/Corrupted_Thor_Base_Still.png")
 	get_node("../SecondaryInfoBox/PortraitBox/PortraitSprite").texture = portraitRes
 	
 	$Name.set_text(unit.Name)
