@@ -1,18 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkko8mp44qie6"]
+[gd_scene load_steps=7 format=3 uid="uid://dkko8mp44qie6"]
 
+[ext_resource type="Theme" uid="uid://cejg3obx7mh55" path="res://new_theme.tres" id="1_4w7nf"]
 [ext_resource type="Script" path="res://Menu.gd" id="1_baps1"]
 [ext_resource type="Texture2D" uid="uid://3kgjmbfdmivu" path="res://Assets/HUD/Bug_Game_Title.jpg" id="2_44m32"]
+
+[sub_resource type="Theme" id="Theme_0twow"]
+
+[sub_resource type="Theme" id="Theme_bs282"]
 
 [sub_resource type="SystemFont" id="SystemFont_eihvr"]
 font_names = PackedStringArray("Berlin Sans FB")
 
 [node name="Menu" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_4w7nf")
 script = ExtResource("1_baps1")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -22,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_0twow")
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
@@ -34,6 +42,7 @@ texture = ExtResource("2_44m32")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme = SubResource("Theme_bs282")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

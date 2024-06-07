@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Dialogic Assets/Styles/5Portraits/vn_portrait_layer.gd" id="1_1i7em"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_rxdcc"]
 
+
 [node name="VN_PortraitLayer" type="Control"]
 layout_mode = 3
 anchors_preset = 15

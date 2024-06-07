@@ -26,6 +26,7 @@ overrides = {
 script = ExtResource("2_7hv2j")
 scene = ExtResource("5_42cq1")
 overrides = {
+"next_indicator_texture": "\"res://Dialogic Assets/Styles/Rainy E.png\"",
 "typing_sounds_mode": "2",
 "typing_sounds_pitch_variance": "0.3",
 "typing_sounds_sounds_folder": "\"res://Dialogic Assets/Styles/SFX\""
@@ -58,4 +59,4 @@ base_overrides = {
 "global_bg_color": "Color(0.112183, 0.296875, 0.0904541, 1)"
 }
 layers = Array[ExtResource("2_7hv2j")]([SubResource("Resource_l4v8i"), SubResource("Resource_vspm6"), SubResource("Resource_n7wvy"), SubResource("Resource_p8s73"), SubResource("Resource_r1cv8"), SubResource("Resource_0kiar"), SubResource("Resource_0ds6n")])
-metadata/_latest_layer = 2
+metadata/_latest_layer = -1
