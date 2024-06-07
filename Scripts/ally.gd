@@ -100,6 +100,7 @@ func move(dir):
 				abilityStartPoint = grid.convert_to_map(position)
 
 func on_turn_start():
+	print("MY AP IS ", tempAP, "   ", CurrentAP)
 	pathArray = null
 	if AutoloadMe.passingUnit != null:
 		var prevUnit = AutoloadMe.passingUnit
@@ -115,6 +116,7 @@ func on_turn_start():
 		SignalBus.showUI.emit()
 	
 	tempAP = CurrentAP
+	print("MY AP IS ", tempAP, "   ", CurrentAP)
 	start = grid.local_to_map(position)
 	abilityStartPoint = grid.convert_to_map(position)
 	SignalBus.updateUI.emit(self)
@@ -128,7 +130,7 @@ func on_turn_start():
 	SignalBus.changeButtonState.emit()
 	run_passives(methodType.ON_TURN_START, null)
 	find_and_delete_passives()
-	
+	print("MY AP IS ", tempAP, "   ", CurrentAP)
 	grid.update_grid_collision()
 	SignalBus.updateUI.emit(self)
 	print("	", Name, " turn start.")
