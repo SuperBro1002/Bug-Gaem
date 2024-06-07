@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://duh6w5kcub85b"]
+[gd_scene load_steps=9 format=3 uid="uid://duh6w5kcub85b"]
 
 [ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="1_vl2ys"]
 [ext_resource type="Script" path="res://Scripts/SFXPlayer.gd" id="2_qiqwy"]
@@ -159,6 +159,8 @@ _data = {
 "Fade Out": SubResource("Animation_ik32w")
 }
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mc6a2"]
+
 [node name="MusicPlayer" type="Node"]
 script = ExtResource("1_vl2ys")
 
@@ -173,3 +175,11 @@ libraries = {
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 script = ExtResource("2_qiqwy")
+
+[node name="Black Layer" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -2
+position = Vector2(392, 392)
+scale = Vector2(4224.25, 2100.25)
+texture = SubResource("PlaceholderTexture2D_mc6a2")
+metadata/_edit_lock_ = true

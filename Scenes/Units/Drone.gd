@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var animation_player = $AnimationPlayer
+
 func _ready():
 	SignalBus.connect("spawnDrone", enter)
 
@@ -17,6 +19,8 @@ func enter():
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.get_button_index() == 1:
 		SignalBus.playSFX.emit("BossDeath2")
+		animation_player.play("Drone Death")
+		get_tree().create_timer(5)
 		AutoloadMe.bossdead = true
 		print("GAME IS DONE")
 		SignalBus.checkObjective.emit()
