@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdg2ufwiay24n"
-path="res://.godot/imported/Termitator_Base_Still.png-5d4e6fcb75b2f354ca701b6c4f65ea76.ctex"
+uid="uid://cnu8q24o0ynle"
+path="res://.godot/imported/Normal_Auri_Base_Still.png-b32da3e2009537e0aa8420dc8c8b0de8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Termitator/Termitator_Base_Still.png"
-dest_files=["res://.godot/imported/Termitator_Base_Still.png-5d4e6fcb75b2f354ca701b6c4f65ea76.ctex"]
+source_file="res://Assets/Sprites/Auri/Normal_Auri_Base_Still.png"
+dest_files=["res://.godot/imported/Normal_Auri_Base_Still.png-b32da3e2009537e0aa8420dc8c8b0de8.ctex"]
 
 [params]
 
