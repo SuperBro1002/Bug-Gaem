@@ -65,6 +65,8 @@ InitVariance = 1
 
 [node name="Auri" parent="Grid/InitManager/UnitManager" instance=ExtResource("10_ya811")]
 position = Vector2(96, 160)
+aggroRange = 10
+MaxAP = 10
 
 [node name="Robo" parent="Grid/InitManager/UnitManager" instance=ExtResource("9_4iena")]
 position = Vector2(800, 288)

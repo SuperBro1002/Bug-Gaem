@@ -424,6 +424,7 @@ func delete(unit):
 		AutoloadMe.globalTargetList.erase(unit)
 		if unit.Faction == self.fac.ENEMY:
 			AutoloadMe.deathCount += 1
+			print("------------------------", AutoloadMe.deathCount, "---------------------")
 			SignalBus.checkObjective.emit()
 		SignalBus.updateGrid.emit()
 		SignalBus.deleteMe.emit(self)

@@ -108,7 +108,7 @@ func execute():
 		await get_tree().create_timer(0.5).timeout
 		
 		storedUnit.position = get_parent().grid.map_to_local(clickedPos)
-		SignalBus.playSFX.emit("TrissFly2")
+		SignalBus.playSFX.emit("TrissWalk2")
 		storedUnit.set_visible(true)
 		storedUnit.give_batonpass()
 		

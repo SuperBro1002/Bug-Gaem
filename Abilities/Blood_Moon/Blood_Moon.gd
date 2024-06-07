@@ -27,7 +27,7 @@ func execute():
 	$VFX.set_visible(false)
 	
 	for i in targetUnits.size():
-		if targetUnits == null:
+		if targetUnits.is_empty():
 			return
 		targetUnits[i].lose_health(1)
 		get_parent().add_passive("Empowered_Heal")
