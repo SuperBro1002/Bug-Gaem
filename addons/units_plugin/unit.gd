@@ -294,6 +294,9 @@ func get_batonpass():
 
 
 func on_turn_start():
+	if isDown: 
+		tempAP = 0
+		CurrentAP = 0
 	if AutoloadMe.passingUnit != null:
 		var prevUnit = AutoloadMe.passingUnit
 		inherit_ap(prevUnit.CurrentAP)

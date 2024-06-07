@@ -10,6 +10,7 @@ size = Vector2(64, 64)
 
 [node name="Sacrifice Sting" type="Node"]
 script = ExtResource("1_fya3r")
+apCost = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(3, 3)

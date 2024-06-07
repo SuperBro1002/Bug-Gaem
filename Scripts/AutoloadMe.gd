@@ -88,6 +88,7 @@ func _unhandled_input(event):
 			return
 		for dir in inputs.keys():
 			if event.is_action_pressed(dir) and !turnPointer.abilityQueued:
+				if turnPointer.isDown: return
 				turnPointer.get_node("AnimatedSprite2D").stop()
 				turnPointer.get_node("AnimatedSprite2D").play("Jump1")
 				turnPointer.move(inputs[dir])
