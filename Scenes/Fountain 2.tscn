@@ -80,6 +80,10 @@ MaxHP = 200
 TrueInit = -100
 Faction = 2
 
+[node name="Drone" parent="." instance=ExtResource("19_0wuf6")]
+top_level = true
+position = Vector2(376, 392)
+
 [node name="UILayer" parent="." instance=ExtResource("9_fcinn")]
 visible = false
 
@@ -147,9 +151,6 @@ groupID = 2
 position = Vector2(544, 288)
 UnitSpawn = "Termitator"
 groupID = 2
-
-[node name="Drone" parent="." instance=ExtResource("19_0wuf6")]
-position = Vector2(376, 392)
 
 [node name="Black Layer" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)

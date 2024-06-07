@@ -58,8 +58,9 @@ func unique_turn_start():
 		if canMove == true:
 			for i in pathArray.size() - 1:
 				if CurrentAP != 0 and i > 0:
+					face_direction(pathArray[i])
 					CurrentAP -= 1
-					SignalBus.playSFX.emit(str("LumothWalk", randi_range(1,3), ".wav"))
+					SignalBus.playSFX.emit(str("LumothWalk", randi_range(1,3)))
 					get_node("AnimatedSprite2D").stop()
 					get_node("AnimatedSprite2D").play("Jump1")
 					var tween = create_tween()
@@ -83,6 +84,11 @@ func unique_turn_start():
 	
 	on_turn_end()
 
+func face_direction(targetPos):
+	if targetPos.x < position.x:
+		$AnimatedSprite2D.set_flip_h(true)
+	else:
+		$AnimatedSprite2D.set_flip_h(false)
 
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation != "Idle":

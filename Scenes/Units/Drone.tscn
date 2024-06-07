@@ -13,11 +13,14 @@ input_pickable = false
 script = ExtResource("1_wmkpk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13.3333, 16)
 shape = SubResource("RectangleShape2D_22tiu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3, 3)
+position = Vector2(13.3333, 16)
+scale = Vector2(1.88095, 1.88095)
 texture = ExtResource("2_n7sj8")
 
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

@@ -271,7 +271,7 @@ func start_anim(unit):
 	
 	elif unit.get_batonpass() == unit.TS.BATONPASS:
 		
-		$TurnGraphic.set_text("Baton Pass")
+		$TurnGraphic.set_text("Baton Pass\n50% AP Recovery")
 		
 		if unit.get_faction() == unit.fac.ALLY:
 			$TurnGraphic.label_settings.shadow_color = Color(0, 1, 1, 1)
