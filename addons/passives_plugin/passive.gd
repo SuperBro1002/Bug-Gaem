@@ -24,3 +24,4 @@ func get_type():
 func passive_remove():
 	if turnsRemaining <= 0:
 		queue_free()
+		SignalBus.redrawPassives.emit(get_parent())

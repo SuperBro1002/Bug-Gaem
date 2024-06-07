@@ -7,7 +7,7 @@ func _enter_tree():
 	type = methodType.ABILITY_EXECUTE
 
 func execute(num):
-	if AutoloadMe.currentAbility.Name == "Heal":
+	if AutoloadMe.currentAbility.fileName == "Heal":
 		print("RECOVERY BOOSTED")
 		AutoloadMe.currentAbility.healNum += 1
 		turnsRemaining = 0

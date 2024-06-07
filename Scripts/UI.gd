@@ -29,6 +29,7 @@ func _ready():
 	SignalBus.connect("moveCamera", hide_ui)
 	SignalBus.connect("showUI", show_ui)
 	SignalBus.connect("changeControls", set_control_text)
+	SignalBus.connect("redrawPassives", reset_passive_boxes)
 	draw_init_box()
 	get_parent().set_visible(true)
 	#$InfoBox.set_visible(true)
@@ -102,6 +103,7 @@ func draw_init_box():
 			sceneNode.UINode = self
 
 func draw_passive_boxes(unit):
+	if unit.Faction == unit.fac.ENEMY: return
 	var passiveBox
 	var marker
 	for p in unit.passiveList.size():
@@ -121,6 +123,10 @@ func remove_passive_boxes():
 			var markerList = marker.get_children()
 			passiveBox = markerList[0]
 			if passiveBox != null: marker.remove_child(passiveBox)
+
+func reset_passive_boxes(unit):
+	remove_passive_boxes()
+	draw_passive_boxes(unit)
 
 func move_arrow(unit):
 	if unit.myInitBox == null:

@@ -55,3 +55,4 @@ signal showInfoBox
 signal quickSwap
 signal silenceMusic
 signal hideMainPortrait
+signal redrawPassives
