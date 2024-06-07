@@ -68,6 +68,8 @@ func unique_turn_start():
 					for i in pathArray.size():
 						if CurrentAP != 0 and i > 0:
 							CurrentAP -= 1
+							face_direction(pathArray[i])
+							SignalBus.playSFX.emit(str("ParamantisWalk", randi_range(1,3), ".wav"))
 							get_node("AnimatedSprite2D").stop()
 							get_node("AnimatedSprite2D").play("Jump1")
 							var tween = create_tween()
