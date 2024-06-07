@@ -5,7 +5,7 @@ func _enter_tree():
 	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
 	Name = "Sacrifice Sting"
 	fileName = " Sacrifice_Sting"
-	description = "Lose all HP and deal 4 damage to all enemies surrounding you. (All HP)"
+	description = "Deals 4 damage to all enemies surrounding you. Your HP is reduced to 1. (HP)"
 	SignalBus.connect("ability",hijack)
 
 func hijack(num, state):

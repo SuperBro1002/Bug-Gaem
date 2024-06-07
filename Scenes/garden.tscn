@@ -107,11 +107,11 @@ position = Vector2(800, 800)
 scale = Vector2(1, 1)
 
 [node name="Honeycomb5" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
-position = Vector2(352, 800)
+position = Vector2(416, 800)
 scale = Vector2(1, 1)
 
 [node name="Honeycomb6" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]
-position = Vector2(416, 800)
+position = Vector2(352, 800)
 scale = Vector2(1, 1)
 
 [node name="Honeycomb7" parent="Grid/ObstacleHolder" instance=ExtResource("5_w8d78")]

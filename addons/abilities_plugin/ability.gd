@@ -154,6 +154,8 @@ func get_ap_cost():
 	return apCost
 
 func face_target():
+	if targetUnits.is_empty():
+		return
 	print("Targets: ", targetUnits)
 	if targetUnits[0].position.x < get_parent().position.x:
 		get_parent().get_node("AnimatedSprite2D").set_flip_h(true)

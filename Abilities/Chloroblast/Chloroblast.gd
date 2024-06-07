@@ -80,9 +80,13 @@ func execute():
 	await get_tree().create_timer(0.7).timeout
 	
 	if targetUnits.is_empty():
+		await get_tree().create_timer(0.5).timeout
 		post_execute()
 	else:
 		for i in targetUnits:
+			if targetUnits.size() == 1:
+				await get_tree().create_timer(0.5).timeout
+				print("SINGLE")
 			var myVFX = VFXScene.instantiate()
 			$VFXHolder.add_child(myVFX)
 			myVFX.position = i.position

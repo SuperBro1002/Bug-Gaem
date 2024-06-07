@@ -157,6 +157,8 @@ func delete(unit):
 		AutoloadMe.globalAllyList.erase(unit)
 		AutoloadMe.globalTargetList.erase(unit)
 		AutoloadMe.deathCount += 1
+		if AutoloadMe.mapID == 3:
+			AutoloadMe.ThorGardenDeath == true
 		if AutoloadMe.mapID == 5:
 			SignalBus.finalBattle.emit()
 		SignalBus.checkObjective.emit()

@@ -27,6 +27,7 @@ var roundNum = 1
 var currentAbility
 var passingAP
 var mapID
+var ThorGardenDeath = false
 
 var inputs = {"move_right": Vector2.RIGHT,
 			"move_left": Vector2.LEFT,

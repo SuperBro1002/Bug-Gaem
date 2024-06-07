@@ -24,6 +24,6 @@ func checkSiphons():
 	#SignalBus.midObjectiveChecked.emit()
 
 func check_routed():
-	if AutoloadMe.deathCount >= objectiveNum:
+	if AutoloadMe.deathCount >= objectiveNum and AutoloadMe.ThorGardenDeath:
 		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://Scenes/Cathedral 2.tscn")
