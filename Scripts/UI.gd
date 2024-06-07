@@ -240,7 +240,7 @@ func show_ui():
 	tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 
 func start_anim(unit):
-	if unit.get_current_hp() == 0:
+	if unit.get_current_hp() == 0 and !unit.isDown:
 		return
 	
 	if AnimTween:
@@ -289,6 +289,7 @@ func start_anim(unit):
 	$TurnGraphic.position.x = 1934
 	
 	AutoloadMe.set_process_unhandled_input(true)
+	print("I WANNA LISTEN AGAIN")
 	$ControlsOverlay.set_visible(true)
 
 func move_camera(unit):

@@ -71,7 +71,7 @@ func get_reachable_tiles():
 	return grid.flood_fill_movement(grid.map_to_local(start), CurrentAP)
 
 func move(dir):
-	if isDown: return
+
 	if canMove == true:
 		match [dir == Vector2.RIGHT, dir == Vector2.LEFT]:
 			[true,false]:
@@ -108,7 +108,9 @@ func on_turn_start():
 		prevUnit.CurrentAP = 0
 		prevUnit.tempAP = 0
 		AutoloadMe.passingUnit = null
-	
+	if isDown: 
+		tempAP = 0
+		CurrentAP = 0
 	if Faction == fac.ENEMY:
 		SignalBus.showUI.emit()
 	
@@ -133,7 +135,7 @@ func on_turn_start():
 	unique_turn_start()
 
 func unique_turn_start():
-	if isDown: MaxAP = 0
+	if isDown: CurrentAP = 0
 	SignalBus.changeButtonState.emit()
 	SignalBus.updateUI.emit(self)
 
