@@ -68,4 +68,5 @@ func check_survival():
 
 func check_boss_routed():
 	if AutoloadMe.bossdead == true:
-		get_tree().quit()
+		pass
+		##PUT STUFF HERE

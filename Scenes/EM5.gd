@@ -35,3 +35,8 @@ func check_routed():
 	if AutoloadMe.deathCount >= objectiveNum:
 		await get_tree().create_timer(1).timeout
 		get_tree().quit()
+
+func check_boss_routed():
+	if AutoloadMe.bossdead == true:
+		get_tree().quit()
+
