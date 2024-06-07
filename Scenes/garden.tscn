@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bxy6448qr3ycn" path="res://Assets/Maps_Tiles/Garden/GridLayer2.png" id="14_y4n4e"]
 [ext_resource type="PackedScene" uid="uid://bvip1ddh8purj" path="res://Scenes/Units/Thor.tscn" id="15_futsm"]
 [ext_resource type="Texture2D" uid="uid://imgcuvnvrfp" path="res://Assets/Maps_Tiles/Garden/well.png" id="16_48nk3"]
-[ext_resource type="SpriteFrames" uid="uid://dtiv15ugb3c3k" path="res://Scenes/Sprite Frames/Bob.tres" id="18_vxh52"]
+[ext_resource type="SpriteFrames" uid="uid://0lcnll8ldbmc" path="res://Scenes/Sprite Frames/Thor.tres" id="19_fdnto"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yb3wm"]
 
@@ -162,10 +162,10 @@ scale = Vector2(1, 1)
 position = Vector2(544, 992)
 
 [node name="Lumoth" parent="Grid/InitManager/UnitManager" instance=ExtResource("6_msf3w")]
-position = Vector2(608, 992)
+position = Vector2(672, 1056)
 
 [node name="Paramantis" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_vdhge")]
-position = Vector2(672, 1056)
+position = Vector2(608, 992)
 
 [node name="Triss" parent="Grid/InitManager/UnitManager" instance=ExtResource("8_mc8hb")]
 position = Vector2(480, 1056)
@@ -224,9 +224,10 @@ z_index = 1
 texture_filter = 1
 position = Vector2(576, 568)
 scale = Vector2(1.81818, 1.81818)
-sprite_frames = ExtResource("18_vxh52")
-animation = &"Idle"
+sprite_frames = ExtResource("19_fdnto")
+animation = &"Cast1Loop"
 autoplay = "Idle"
+frame_progress = 0.400794
 
 [node name="GardenMapSprite" type="Sprite2D" parent="."]
 texture_filter = 1

@@ -1,6 +1,7 @@
 extends Ability_class
 
 var corner = 1
+var VFXScene = preload("res://Abilities/Chloroblast/ChloroblastVFX.tscn")
 
 func _enter_tree():
 	targetType = [get_parent().fac.ALLY, get_parent().fac.OBSTACLE]
@@ -56,7 +57,6 @@ func post_execute():
 	get_parent().grid.update_grid_collision()
 	SignalBus.abilityExecuted.emit(self)
 	SignalBus.updateUI.emit(get_parent())
-	AutoloadMe.isExecuting = false
 	SignalBus.changeControls.emit()
 	AutoloadMe.set_process_unhandled_input(true)
 	$Area2D.rotation_degrees += 90
@@ -64,30 +64,7 @@ func post_execute():
 		SignalBus.changeButtonState.emit()
 	elif get_parent().Faction == get_parent().fac.ENEMY:
 		dequeue(1,false)
-
-#func enemy_execute(initTarget):
-	#targetUnits.append(initTarget)
-	#$Area2D/SelectionBox.set_visible(true)
-	#if initTarget.position.x > get_parent().position.x:
-		#$Area2D.position.y -= 64
-		#$Area2D.set_rotation_degrees(0)
-		##print("Right")
-	#elif initTarget.position.y > get_parent().position.y:
-		#$Area2D.position.x += 64
-		#$Area2D.set_rotation_degrees(90)
-		##print("Below")
-	#elif initTarget.position.x < get_parent().position.x:
-		#$Area2D.position.y += 64
-		#$Area2D.set_rotation_degrees(180)
-		##print("Left")
-	#elif initTarget.position.y < get_parent().position.y:
-		#$Area2D.position.x -= 64
-		#$Area2D.set_rotation_degrees(270)
-		##print("Above")
-	#
-	#$Area2D.position = initTarget.position
-	#await get_tree().create_timer(0.7).timeout
-	#execute()
+	get_parent().abilityFinished.emit()
 
 func execute():
 	# for every target in target units[]
@@ -102,14 +79,22 @@ func execute():
 	get_parent().get_node("AnimatedSprite2D").play("Attack1")
 	await get_tree().create_timer(0.7).timeout
 	
-	
-	if targetUnits == null:
+	if targetUnits.is_empty():
 		post_execute()
-	for i in targetUnits.size():
-		print(targetUnits.size())
-		print(targetUnits, " ", i)
-		if targetUnits == null:
-			return
-		await targetUnits[i].lose_health(6)
-	
-	post_execute()
+	else:
+		for i in targetUnits:
+			var myVFX = VFXScene.instantiate()
+			$VFXHolder.add_child(myVFX)
+			myVFX.position = i.position
+			myVFX.position.x -= 50
+			myVFX.set_visible(true)
+			SignalBus.playSFX.emit("Sting")
+			myVFX.play("Effect")
+			await get_tree().create_timer(0.1).timeout
+			print(targetUnits.size())
+			print(targetUnits, " ", i)
+			if targetUnits == null:
+				return
+			await i.lose_health(6)
+		
+		post_execute()
