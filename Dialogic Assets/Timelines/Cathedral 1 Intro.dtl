@@ -9,14 +9,14 @@ Lumoth (Sad): Although it cost me my place in the church...
 Lumoth (Happy): I'm sure that us arrive here is a sign! Lunalesca is watching over us.
 leave Lumoth
 [background arg="res://Dialogic Assets/Styles/Blaground.png" fade="4.0"]
-do SignalBus.playMusic.emit("Lunar Eclipse")
+do AutoloadMe.play_music("Lunar Eclipse")
 The thick walls and ornate stained glass make the Cathedral of Moths feel impenetrable...
 But long shadows and echoes of clinking metal tell the 100th Bug Brigade they are not alone.
 join Atlas (Angry) 3 [animation="Slide In Left" length="1"]
 join Paramantis (Neutral) 2 [animation="Slide In Left" length="1" wait="true"]
 join Triss (Neutral) 1 [animation="Slide In Left" length="1" wait="true"]
 update Atlas [ mirrored="true"]
-Atlas (Neutral): Triss, Paramantis, find the source of those sounds and secure the Cathedral.
+Atlas (Neutral): Triss, Paramantis, find the source of those sounds and secure the Cathedral. Break the chairs if you need to.
 Paramantis (Angry): A relaxing hunt already? We shall do it gladly.
 leave Paramantis [animation="Slide Out Right" length="1" wait="true"]
 Triss (Snobby): Save your breath, beetle. I know what needs to be done.

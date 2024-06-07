@@ -1,8 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://gdr7wfqwmtao"]
+[gd_scene load_steps=13 format=3 uid="uid://gdr7wfqwmtao"]
 
+[ext_resource type="FontFile" uid="uid://c5iqylmfrxcwh" path="res://Assets/Fonts/AveriaLibre-Regular.ttf" id="1_0qayj"]
 [ext_resource type="Script" path="res://Scripts/secondary_info_box.gd" id="1_oorkw"]
 [ext_resource type="Texture2D" uid="uid://baj87vuw4htut" path="res://Assets/Sprites/Atlas/Atlas_Base_Still.png" id="2_pfi1r"]
 [ext_resource type="Texture2D" uid="uid://r3r0rs6ex4f6" path="res://Assets/HUD/HUD Boxes/infobox_460x300.png" id="3_mga8r"]
+
+[sub_resource type="Theme" id="Theme_ianqd"]
+default_font = ExtResource("1_0qayj")
 
 [sub_resource type="LabelSettings" id="LabelSettings_8j6oi"]
 font_size = 36
@@ -16,14 +20,14 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ds8f4"]
-font_size = 12
+font_size = 14
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_eihvk"]
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cten2"]
-font_size = 12
+font_size = 14
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_sbw4d"]
@@ -38,6 +42,7 @@ offset_right = 1695.0
 offset_bottom = 396.0
 size_flags_vertical = 3
 mouse_filter = 2
+theme = SubResource("Theme_ianqd")
 color = Color(0.141176, 0.352941, 0.843137, 1)
 script = ExtResource("1_oorkw")
 

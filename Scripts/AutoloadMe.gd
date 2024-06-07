@@ -43,6 +43,7 @@ func new_level():
 	deathCount = 0
 	siphonsDestroyed = 0
 	roundNum = 1
+	Dialogic.VAR.StoryProgress = 0
 
 func initialize_grid(gridLengthX, gridLengthY):
 	gridSize = Vector2i(gridLengthX,gridLengthY)
@@ -65,9 +66,9 @@ func initialize_grid(gridLengthX, gridLengthY):
 	abilityRangeGridUI.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 
 func _unhandled_input(event):
-	#if turnPointer == null:
-		#print("NO UNIT")
-		#return
+	if turnPointer == null:
+		print("NO UNIT")
+		return
 	
 	if Input.is_action_pressed("right_click"):
 		SignalBus.moveCamera.emit()
@@ -144,3 +145,6 @@ func start_next_round():
 
 func play_music(fileName):
 	SignalBus.playMusic.emit(fileName)
+	
+func play_sfx(fileName):
+	SignalBus.playSFX.emit(fileName)

@@ -54,3 +54,4 @@ signal playSFX
 signal showInfoBox
 signal quickSwap
 signal silenceMusic
+signal hideMainPortrait

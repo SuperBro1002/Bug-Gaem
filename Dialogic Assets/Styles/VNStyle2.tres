@@ -26,7 +26,10 @@ overrides = {
 script = ExtResource("2_7hv2j")
 scene = ExtResource("5_42cq1")
 overrides = {
-"next_indicator_texture": "\"res://Dialogic Assets/Styles/Rainy E.png\"",
+"autoadvance_progressbar": "false",
+"name_label_custom_font_size": "24.0",
+"name_label_use_global_font_size": "false",
+"next_indicator_texture": "\"res://Assets/HUD/Q.png\"",
 "typing_sounds_mode": "2",
 "typing_sounds_pitch_variance": "0.3",
 "typing_sounds_sounds_folder": "\"res://Dialogic Assets/Styles/SFX\""
@@ -56,7 +59,8 @@ overrides = {}
 script = ExtResource("10_buqto")
 name = "VNStyle2"
 base_overrides = {
-"global_bg_color": "Color(0.112183, 0.296875, 0.0904541, 1)"
+"global_bg_color": "Color(0.109804, 0.298039, 0.121569, 1)",
+"global_font": "\"res://Assets/Fonts/AveriaLibre-Regular.ttf\""
 }
 layers = Array[ExtResource("2_7hv2j")]([SubResource("Resource_l4v8i"), SubResource("Resource_vspm6"), SubResource("Resource_n7wvy"), SubResource("Resource_p8s73"), SubResource("Resource_r1cv8"), SubResource("Resource_0kiar"), SubResource("Resource_0ds6n")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 2

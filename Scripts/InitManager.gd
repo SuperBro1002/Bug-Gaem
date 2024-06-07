@@ -14,7 +14,7 @@ func _ready():
 
 # Probably main function
 func next_turn():
-	PortraitManager.main_portrait = null
+	PortraitManager.hide_main_portrait()
 	for i in (AutoloadMe.globalUnitList.size()):
 		if AutoloadMe.globalUnitList[i].get_batonpass() == AutoloadMe.globalUnitList[i].TS.BATONPASS:
 			currentUnitTurn = AutoloadMe.globalUnitList[i]

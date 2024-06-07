@@ -63,10 +63,10 @@ visible = false
 z_index = 4
 position = Vector2(384, 384)
 zoom = Vector2(1.5, 1.5)
-limit_left = -1000
-limit_top = -1000
-limit_right = 1200
-limit_bottom = 1000
+limit_left = -250
+limit_top = 0
+limit_right = 1100
+limit_bottom = 700
 position_smoothing_enabled = true
 script = ExtResource("16_rdajh")
 

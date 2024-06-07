@@ -38,7 +38,7 @@ func set_ui(unit):
 	if unit.get_faction() == unit.fac.ALLY:
 		#var portraitRes = load("res://Assets/Sprites/" + unit.fileName + "/" + unit.fileName + "_Base_Still.png")
 		#get_node("../UI/InfoBox/PortraitBox/PortraitSprite").texture = portraitRes
-		if PortraitManager.main_portrait == null: PortraitManager.change_main_portrait("NeutralF")
+		if PortraitManager.main_portrait == null and !unit.isPossessed: PortraitManager.change_main_portrait("NeutralF")
 		
 		var nameVal = unit.Name
 		$InfoBox/Name.set_text(nameVal)
@@ -52,18 +52,18 @@ func set_ui(unit):
 		
 		
 		ability1 = unit.ability1
-		$InfoBox/AbilityBox/Ability1Button.set_text(str(ability1.Name, " | AP: ", ability1.apCost))
+		$InfoBox/AbilityBox/Ability1Button.set_text(str("(1) ", ability1.Name, " | AP: ", ability1.apCost))
 		
 		if !unit.isPossessed:
 			ability2 = unit.ability2
-			$InfoBox/AbilityBox/Ability2Button.set_text(str(ability2.Name, " | AP: ", ability2.apCost))
+			$InfoBox/AbilityBox/Ability2Button.set_text(str("(2) ", ability2.Name, " | AP: ", ability2.apCost))
 			$InfoBox/AbilityBox/Ability2Button.set_visible(true)
 		else:
 			$InfoBox/AbilityBox/Ability2Button.set_visible(false)
 		
 		if !unit.isPossessed:
 			ability3 = unit.ability3
-			$InfoBox/AbilityBox/Ability3Button.set_text(str(ability3.Name, " | AP: ", ability3.apCost))
+			$InfoBox/AbilityBox/Ability3Button.set_text(str("(3) ", ability3.Name, " | AP: ", ability3.apCost))
 			$InfoBox/AbilityBox/Ability3Button.set_visible(true)
 		else:
 			$InfoBox/AbilityBox/Ability3Button.set_visible(false)
@@ -219,14 +219,14 @@ func set_control_text():
 		$ControlsOverlay/ContextButtons1.set_text("Left Click - Select Target")
 		$ControlsOverlay/AbilityQueueControls.set_text("1,2,3 - Deselect/Change Ability")
 		if AutoloadMe.validQueue:
-			$ControlsOverlay/ContextButtons2.set_text("Z - Confirm Ability")
+			$ControlsOverlay/ContextButtons2.set_text("E - Confirm Ability")
 		else:
 			$ControlsOverlay/ContextButtons2.set_text("")
 	else:
 		$ControlsOverlay/ContextButtons1.set_text("WASD - Move")
 		$ControlsOverlay/AbilityQueueControls.set_text("1,2,3 - Select Ability")
 		if AutoloadMe.allowEndTurn and AutoloadMe.notOverlapped:
-			$ControlsOverlay/ContextButtons2.set_text("X - End Turn")
+			$ControlsOverlay/ContextButtons2.set_text("Space - End Turn")
 		else:
 			$ControlsOverlay/ContextButtons2.set_text("")
 			$ControlsOverlay/AbilityQueueControls.set_text("")
@@ -289,7 +289,6 @@ func start_anim(unit):
 	$TurnGraphic.position.x = 1934
 	
 	AutoloadMe.set_process_unhandled_input(true)
-	print("I WANNA LISTEN AGAIN")
 	$ControlsOverlay.set_visible(true)
 
 func move_camera(unit):

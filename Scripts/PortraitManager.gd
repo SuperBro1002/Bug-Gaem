@@ -28,6 +28,11 @@ func hide_reply_portrait():
 	reply_portrait_visible = false
 	return
 
+func hide_main_portrait():
+	SignalBus.hideMainPortrait.emit()
+	main_portrait = null
+	return
+
 func drone_fly_in():
 	SignalBus.droneFlyIn.emit()
 

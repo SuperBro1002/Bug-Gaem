@@ -9,7 +9,6 @@ But the 100th Bug Brigade are not mighty heroes. They are lowest numbered rank\:
 One of the 6 members, Triss, an exiled Bee noble, practices her stinger-spear fighting with the 100th Bug Brigades commander...
 ... You! You are Zephyr, a dragonfly with a cunning strategic mind, but no martial abilities of your own.
 Flying across the battlefield, you command the 100th Bug Brigade moment to moment, keeping them safe and effective.
-do SignalBus.playMusic.emit("Drill Sergeant")
 [background arg="res://Dialogic Assets/Styles/Clear.png" fade="3.0"]
 do AutoloadMe.start_first_turn()
 [end_timeline]

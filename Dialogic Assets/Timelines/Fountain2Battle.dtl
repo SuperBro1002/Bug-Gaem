@@ -71,17 +71,21 @@ if {StoryProgress} == 1:
 label Fountain 2 Barks
 if AutoloadMe.turnPointer.Name == "Paramantis":
 	do PortraitManager.change_main_portrait("NeutralF")
+	Paramantis: SSSS!!
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Atlas":
 	do PortraitManager.change_main_portrait("NeutralF")
+	Atlas: Here I come!
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Triss":
 	do PortraitManager.change_main_portrait("NeutralF")
+	Triss: Fools!
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Lumoth":
 	do PortraitManager.change_main_portrait("NeutralF")
+	Lumoth: Guide my hand.
 	set {DialogueComplete} = true
 	[end_timeline]

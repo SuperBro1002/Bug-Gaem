@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cejg3obx7mh55"]
+
+[ext_resource type="FontFile" uid="uid://c5iqylmfrxcwh" path="res://Assets/Fonts/AveriaLibre-Regular.ttf" id="1_42xdd"]
+
+[resource]
+default_font = ExtResource("1_42xdd")
+default_font_size = 30
+Label/constants/shadow_offset_x = 3
+Label/constants/shadow_offset_y = 2
+Label/constants/shadow_outline_size = 6

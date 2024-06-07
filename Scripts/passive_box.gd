@@ -4,6 +4,7 @@ func _ready():
 	pass
 
 func set_my_text(passive):
+	if AutoloadMe.turnPointer.Faction != AutoloadMe.turnPointer.fac.ALLY: return
 	if !is_instance_valid(passive): return
 	if passive.Name == null:
 		return

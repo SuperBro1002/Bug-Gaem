@@ -5,15 +5,10 @@ extends Control
 func _ready():
 	SignalBus.playMusic.emit("Bioluminescence")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_start_button_pressed():
 	SignalBus.playSFX.emit("Queue")
-	get_tree().change_scene_to_file("res://Scenes/garden.tscn")
+	await get_tree().create_timer(1)
+	get_tree().change_scene_to_file("res://Scenes/Fountain.tscn")
 
 
 func _on_options_button_pressed():

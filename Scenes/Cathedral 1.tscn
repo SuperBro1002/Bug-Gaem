@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ct1ngvul81kpp" path="res://Scenes/Units/Triss.tscn" id="8_yv7f8"]
 [ext_resource type="PackedScene" uid="uid://rw51msc2xqkb" path="res://Scenes/Units/Robopoly.tscn" id="9_4iena"]
 [ext_resource type="PackedScene" uid="uid://b2rerqtddscuk" path="res://Scenes/Units/Termitator.tscn" id="10_jv0gs"]
-[ext_resource type="PackedScene" uid="uid://dgvl724djq5ns" path="res://Scenes/Units/Auri.tscn" id="10_ya811"]
+[ext_resource type="PackedScene" path="res://Scenes/Units/Auri.tscn" id="10_ya811"]
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="11_f5vmc"]
 [ext_resource type="Script" path="res://Scripts/jeff.gd" id="12_0fd0v"]
 [ext_resource type="PackedScene" uid="uid://batl7dw1ds002" path="res://Scenes/ui_layer.tscn" id="13_g2w6b"]
@@ -109,13 +109,13 @@ TrueInit = -100
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 z_index = 4
 position = Vector2(576, 577)
-limit_left = -800
-limit_top = -600
-limit_right = 2200
-limit_bottom = 1400
+zoom = Vector2(1.5, 1.5)
+limit_left = -100
+limit_top = -500
+limit_right = 1250
+limit_bottom = 1000
 position_smoothing_enabled = true
 script = ExtResource("14_d6avv")
 

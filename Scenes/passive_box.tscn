@@ -1,20 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvxbo256nlqxu"]
+[gd_scene load_steps=6 format=3 uid="uid://dvxbo256nlqxu"]
 
+[ext_resource type="Theme" uid="uid://cejg3obx7mh55" path="res://new_theme.tres" id="1_oagb8"]
 [ext_resource type="Script" path="res://Scripts/passive_box.gd" id="1_ycvwq"]
 [ext_resource type="Texture2D" uid="uid://bmdmm1u7vrmiw" path="res://Assets/HUD/HUD Boxes/infobox_386x300.png" id="2_cgq4w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sxu0j"]
 line_spacing = 0.0
 font_size = 14
-shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_lcyb5"]
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/shadow_outline_size = 1
 RichTextLabel/font_sizes/normal_font_size = 10
 
 [node name="PassiveBox" type="ColorRect"]
 offset_right = 119.0
 offset_bottom = 99.0
 mouse_filter = 1
+theme = ExtResource("1_oagb8")
 color = Color(0.172549, 0.341176, 0.733333, 0)
 script = ExtResource("1_ycvwq")
 
@@ -35,10 +41,12 @@ offset_top = 2.0
 offset_right = 47.5
 offset_bottom = 97.0
 grow_horizontal = 2
+theme = ExtResource("1_oagb8")
 
 [node name="PassiveTitle" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("1_oagb8")
 text = "Doom"
 label_settings = SubResource("LabelSettings_sxu0j")
 horizontal_alignment = 1
