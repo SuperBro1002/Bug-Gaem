@@ -146,6 +146,7 @@ if {StoryProgress} == 4:
 		do PortraitManager.show_reply_portrait("Triss", "SadF")
 		Triss2 (SadF): Oh no...
 		set {DialogueComplete} = true
+		do PortraitManager.hide_reply_portrait()
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Triss":
 		do PortraitManager.change_main_portrait("NeutralF")
