@@ -6,7 +6,7 @@ join Lumoth 2
 Lumoth (Happy): Lunalesca's blessing is strong here. I'm sure we will be safe!
 Lumoth (Neutral): When I joined the Bug Brigades, I told them that Lunalesca spoke to me in my prayers, and told me to protect the Great Tree from the Robugs.
 Lumoth (Sad): Although it cost me my place in the church...
-Lumoth (Happy): I'm sure that us arrive here is a sign! Lunalesca is watching over us.
+Lumoth (Happy): I'm sure that our arrival here is a sign! Lunalesca is watching over us.
 leave Lumoth
 [background arg="res://Dialogic Assets/Styles/Blaground.png" fade="4.0"]
 do AutoloadMe.play_music("Lunar Eclipse")
