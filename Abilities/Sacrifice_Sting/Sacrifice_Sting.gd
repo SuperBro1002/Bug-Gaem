@@ -51,7 +51,8 @@ func execute():
 		targetUnits[i].lose_health(4)
 	await get_tree().create_timer(0.5).timeout
 	get_parent().incoming_dmg_type = "pierce"
-	get_parent().lose_health(get_parent().get_current_hp()-1)
+	# I don't think Triss should be ordered to kill herself so this now spares her with 1 hp
+	get_parent().lose_health(get_parent().get_current_hp()+1)
 	
 	$VFX.set_visible(false)
 	post_execute()

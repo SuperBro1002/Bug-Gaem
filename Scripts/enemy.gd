@@ -41,6 +41,8 @@ func unique_turn_start():
 	
 	# Determines the distances to each ally and adds it to a list
 	for i in AutoloadMe.globalAllyList.size():
+		# Enemies now do not 
+		if AutoloadMe.globalAllyList[i].isDown: pass
 		end = grid.local_to_map(AutoloadMe.globalAllyList[i].position)
 		lengthList.append(AutoloadMe.movementGrid.get_point_path(start, end).size())
 	
