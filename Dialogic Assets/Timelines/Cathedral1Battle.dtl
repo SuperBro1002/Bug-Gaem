@@ -143,7 +143,7 @@ if {StoryProgress} == 4:
 		Drone: OFF TO THE GARDEN THEN HEHE
 		do PortraitManager.drone_fly_out()
 		[wait time="1.0"]
-		do PortraitManager.show_reply_portrait("Triss2", "SadF")
+		do PortraitManager.show_reply_portrait("Triss", "SadF")
 		Triss2 (SadF): Oh no...
 		set {DialogueComplete} = true
 		[end_timeline]
