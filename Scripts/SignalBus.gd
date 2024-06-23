@@ -56,3 +56,4 @@ signal quickSwap
 signal silenceMusic
 signal hideMainPortrait
 signal redrawPassives
+signal unparentUnit(unit)

@@ -114,8 +114,6 @@ func on_turn_end():
 	print("AND IM GOING")
 	run_passives(methodType.ON_TURN_END, null)
 	SignalBus.wipeTilePaths.emit(null)
-	if isPossessed:
-		print("MY OG: ", OG)
 	find_and_delete_passives()
 	if BatonPass == TS.BATONPASS:
 		BatonPass = storedBatonPass
@@ -123,7 +121,6 @@ func on_turn_end():
 		set_has_acted()
 	
 	canMove = true
-	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
 	SignalBus.actedUI.emit()
 	print("	", Name, " has acted.")
 	
@@ -148,7 +145,8 @@ func set_phase():
 
 func delete(unit):
 	if unit == self:
-		print("I AM DYING")
+		print("--------------------I AM DYING---------------------")
+		print("Map: ", AutoloadMe.mapID)
 		set_visible(false)
 		set_collision_layer_value(1,false)
 		set_collision_layer_value(2,false)
@@ -158,13 +156,14 @@ func delete(unit):
 		AutoloadMe.globalTargetList.erase(unit)
 		AutoloadMe.deathCount += 1
 		if AutoloadMe.mapID == 3:
-			AutoloadMe.ThorGardenDeath == true
+			AutoloadMe.ThorGardenDeath = true
+			print("Thor is dead? ", AutoloadMe.ThorGardenDeath)
 		if AutoloadMe.mapID == 5:
 			SignalBus.finalBattle.emit()
-		SignalBus.checkObjective.emit()
 		SignalBus.updateGrid.emit()
 		SignalBus.deleteMe.emit(self)
 		await get_tree().create_timer(2).timeout
+		SignalBus.checkObjective.emit()
 		SignalBus.HpUiFinish.emit()
 		
 		if AutoloadMe.turnPointer == self:

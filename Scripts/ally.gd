@@ -33,7 +33,7 @@ func clone(OGUnit):
 	fileName = OGUnit.fileName
 	set_name("Possessed " + Name)
 	MaxHP = OGUnit.MaxHP
-	CurrentHP = OGUnit.CurrentHP
+	CurrentHP = OGUnit.MaxHP
 	MaxAP = OGUnit.MaxAP
 	CurrentAP = MaxAP
 	TrueInit = OGUnit.TrueInit
@@ -60,6 +60,7 @@ func clone(OGUnit):
 	get_node(".:Scale").set_scale(Vector2(1,1))
 	get_node("AnimatedSprite2D:Scale").set_scale(Vector2(2,2))
 	add_passive("Doom")
+	$AnimatedSprite2D.play("Idle")
 	await get_tree().create_timer(0.5).timeout
 	set_visible(true)
 
@@ -71,7 +72,6 @@ func get_reachable_tiles():
 	return grid.flood_fill_movement(grid.map_to_local(start), CurrentAP)
 
 func move(dir):
-
 	if canMove == true:
 		match [dir == Vector2.RIGHT, dir == Vector2.LEFT]:
 			[true,false]:

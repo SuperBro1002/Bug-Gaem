@@ -9,6 +9,7 @@ func _ready():
 	##get_node("Grid/InitManager").next_turn()
 	#get_node("Grid/InitManager/UnitManager/Lumoth").add_passive("TestPassive")
 	if AutoloadMe.mapID == 1: 
+		##get_node("Grid/InitManager").next_turn()
 		Dialogic.start("res://Dialogic Assets/Timelines/Fountain Intro.dtl")
 		SignalBus.playMusic.emit("Bioluminescence")
 	if AutoloadMe.mapID == 5: 

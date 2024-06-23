@@ -61,6 +61,7 @@ var storedBatonPass = TS.NOTACTED
 var glowTween
 var animationSpeed = 4
 var isDown = false
+var isDying = false
 
 func _enter_tree():
 	print("TREE")
@@ -161,6 +162,7 @@ func lose_health(dmgVal):
 		print(AutoloadMe.currentAbility)
 		dmgVal *= AutoloadMe.currentAbility.dmgMod
 	CurrentHP = CurrentHP - dmgVal
+	find_and_delete_passives()
 	incoming_dmg_type = null
 	if !isDown: animated_Damaged()
 	if CurrentHP < 0:
@@ -345,7 +347,6 @@ func on_turn_end():
 		set_has_acted()
 	
 	canMove = true
-	SignalBus.hasMoved.emit(self,grid.local_to_map(position)) #NOT USED YET
 	SignalBus.actedUI.emit()
 	print("	", Name, " has acted.")
 	
@@ -412,7 +413,8 @@ func spawning_in():
 	SignalBus.remakeUnitList.emit()
 
 func delete(unit):
-	if unit == self:
+	if unit == self and !isDying:
+		isDying = true
 		print("I AM DYING")
 		SignalBus.playSFX.emit("Death")
 		set_visible(false)
@@ -422,6 +424,7 @@ func delete(unit):
 		AutoloadMe.globalEnemyList.erase(unit)
 		AutoloadMe.globalAllyList.erase(unit)
 		AutoloadMe.globalTargetList.erase(unit)
+		print(self, " IS BEING DELETED FROM: ", AutoloadMe.globalUnitList)
 		if unit.Faction == self.fac.ENEMY:
 			AutoloadMe.deathCount += 1
 			print("------------------------", AutoloadMe.deathCount, "---------------------")
@@ -433,6 +436,7 @@ func delete(unit):
 		
 		if AutoloadMe.turnPointer == self:
 			SignalBus.endTurn.emit()
+		SignalBus.unparentUnit.emit(self)
 		queue_free()
 
 func _mouse_shape_enter(shape_idx):

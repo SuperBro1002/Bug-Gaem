@@ -23,6 +23,7 @@ func update_grid_collision():
 			
 			# Looks thru the unitList, determines if the 
 			for i in AutoloadMe.globalTargetList.size():
+				#if !is_instance_valid(i): print(i, " is NOT VALID!")
 				match[local_to_map(AutoloadMe.globalTargetList[i].position) == tilePos, AutoloadMe.isAllyTurn, AutoloadMe.globalTargetList[i].get_faction() == 1, AutoloadMe.globalTargetList[i].get_faction() == 3]:
 					[true,true,true,false]:
 						AutoloadMe.movementGrid.set_point_solid(tilePos)
@@ -52,6 +53,7 @@ func set_enemy_collision():
 				AutoloadMe.movementGrid.set_point_solid(tilePos)
 			
 			for i in AutoloadMe.globalTargetList:
+			#	if !is_instance_valid(i): print(i, " is NOT VALID!")
 				if local_to_map(i.position) == tilePos and i.get_faction() == 3:
 					AutoloadMe.movementGrid.set_point_solid(tilePos)
 					#var scene = load("res://Assets/HUD/AbilityRangeTile.png")
@@ -61,6 +63,7 @@ func set_enemy_collision():
 					#sprite.position = map_to_local(tilePos)
 			
 			for i in AutoloadMe.globalEnemyList.size():
+				#if !is_instance_valid(i): print(i, " is NOT VALID!")
 				if local_to_map(AutoloadMe.globalEnemyList[i].position) == tilePos and AutoloadMe.globalEnemyList[i] != AutoloadMe.turnPointer:
 					AutoloadMe.movementGrid.set_point_solid(tilePos)
 
@@ -78,6 +81,7 @@ func set_enemies_solid():
 			
 			# Looks thru the unitList, determines if the 
 			for i in AutoloadMe.globalTargetList.size():
+				#if !is_instance_valid(i): print(i, " is NOT VALID!")
 				match[local_to_map(AutoloadMe.globalTargetList[i].position) == tilePos, AutoloadMe.globalTargetList[i].get_faction() == 1, AutoloadMe.globalTargetList[i].get_faction() == 3]:
 					[true,true,false]:
 						AutoloadMe.movementGrid.set_point_solid(tilePos)

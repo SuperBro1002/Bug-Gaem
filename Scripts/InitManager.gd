@@ -11,6 +11,7 @@ func _ready():
 	SignalBus.connect("endRound", next_round)
 	SignalBus.connect("remakeUnitList", make_unit_list)
 	SignalBus.connect("addToUnitList", add_unit_list)
+	SignalBus.connect("unparentUnit", remove_from_manager)
 
 # Probably main function
 func next_turn():
@@ -101,3 +102,8 @@ func sort_unit_list():
 
 func get_current_turn():
 	return currentUnitTurn
+
+func remove_from_manager(unit):
+	if get_child(0).get_children().find(unit):
+		get_child(0).remove_child(unit)
+		print("	Removed ", unit, " from Unit Manager!")

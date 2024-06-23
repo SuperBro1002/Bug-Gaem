@@ -77,6 +77,7 @@ func execute():
 		print(targetUnits, " ", i)
 		if targetUnits == null:
 			return
+		SignalBus.playSFX.emit("SacrificialSting")
 		targetUnits[i].lose_health(6)
 	
 	post_execute()
