@@ -6,7 +6,7 @@ func _enter_tree():
 	targetType = [get_parent().fac.ENEMY]
 	Name = "Pheromones"
 	fileName = "Pheromones"
-	description = "Draws all enemies 2 tiles closer to this unit. 2 AP"
+	description = "Draws all enemies 2 tiles closer to this unit. 3 AP"
 
 func queue():
 	if AutoloadMe.turnPointer != get_parent() or get_parent().abilityQueued != get_parent().ability3:
