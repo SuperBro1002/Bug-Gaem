@@ -179,6 +179,7 @@ max_lines_visible = 5
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 1
-position = Vector2(291.433, 189.5)
+position = Vector2(1, 0)
 scale = Vector2(1.26333, 1.26333)
 texture = ExtResource("3_mga8r")
+centered = false

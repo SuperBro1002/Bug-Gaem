@@ -7,5 +7,5 @@
 scale = Vector2(1, 1)
 script = ExtResource("2_c8vw3")
 Name = "Siphon"
-fileName = "Atlas"
+fileName = "siphonpoint"
 MaxHP = 4

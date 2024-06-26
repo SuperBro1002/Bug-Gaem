@@ -10,7 +10,7 @@ size = Vector2(64, 64)
 
 [node name="Pheromones" type="Node"]
 script = ExtResource("1_bno81")
-apCost = 2
+apCost = 3
 distanceRange = 40
 myType = 3
 

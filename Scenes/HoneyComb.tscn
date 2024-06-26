@@ -5,7 +5,7 @@
 
 [node name="Obstacle" instance=ExtResource("1_fdydj")]
 Name = "Honeycomb"
-fileName = "Atlas"
+fileName = "honeycomb"
 MaxHP = 2
 
 [node name="AnimatedSprite2D" parent="." index="1"]

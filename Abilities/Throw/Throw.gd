@@ -4,7 +4,7 @@ var occupiedPos = false
 var collatUnit
 var newPos
 var bouncePos
-var validTargetPos
+var validTargetPos = false
 var secondRange = 1
 
 func _enter_tree():
@@ -17,9 +17,6 @@ func _enter_tree():
 func queue():
 	secondRange = 1
 	AutoloadMe.currentAbility = self
-	collatUnit = null
-	validTargetPos = false
-	occupiedPos = false
 	if AutoloadMe.validQueue == false:
 		if get_parent().get_temp_ap() - apCost >= 0: # Checks if parent has enough AP
 			clickedPos = get_parent().grid.get_global_mouse_position()
@@ -42,27 +39,21 @@ func queue():
 							SignalBus.activelyQueueing.emit(false)
 						print(targetUnits)
 	else:
-		newPos = get_parent().grid.get_global_mouse_position()
-		newPos = get_parent().grid.local_to_map(newPos) # Grabs mouse pos and converts it to grid
-		for i in targetUnits:
-			if newPos == get_parent().grid.local_to_map(i.position):
-				return
-		clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,newPos) # Makes a list of the shortest path of tiles between the parent and clickedPos
-		print(clickedDistance.size() - 1)
-		if clickedDistance.size() - 1 <= 5 and clickedDistance.size() - 1 >= 3 and newPos.x >= 1 and newPos.y >= 1 and newPos.x <= AutoloadMe.gridSize.x - 2 and newPos.y <= AutoloadMe.gridSize.y - 2 and newPos != get_parent().grid.local_to_map(get_parent().position):
-			validTargetPos = true
+		var tempPos = get_parent().grid.local_to_map(get_parent().grid.get_global_mouse_position())
+		clickedDistance = abilityGrid.get_point_path(get_parent().abilityStartPoint,tempPos) # Makes a list of the shortest path of tiles between the parent and clickedPos
+		if clickedDistance.size() - 1 <= 5 and clickedDistance.size() - 1 >= 3 and tempPos.x >= 1 and tempPos.y >= 1 and tempPos.x <= AutoloadMe.gridSize.x - 2 and tempPos.y <= AutoloadMe.gridSize.y - 2:
 			for i in AutoloadMe.globalTargetList.size() - 1:
-				if newPos == AutoloadMe.globalTargetList[i].grid.local_to_map(AutoloadMe.globalTargetList[i].position):
+				if tempPos == AutoloadMe.globalTargetList[i].grid.local_to_map(AutoloadMe.globalTargetList[i].position):
 					occupiedPos = true
 					collatUnit = AutoloadMe.globalTargetList[i]
-					bouncePos = get_parent().grid.flood_fill_first(newPos)
+					bouncePos = get_parent().grid.flood_fill_first(tempPos)
 					break
-			if AutoloadMe.movementGrid.is_point_solid(newPos) and occupiedPos == false:
+			if AutoloadMe.movementGrid.is_point_solid(tempPos) and occupiedPos == false:
 				return
+			newPos = tempPos
+			validTargetPos = true
 			$Area2D2.position = get_parent().grid.map_to_local(newPos)
-			$Area2D2/SelectionBox.set_visible(true)
-		
-		
+			$Area2D2/SelectionBox.set_visible(true)	
 	# Store mouse position after left click
 	# Find the shortest path between parent and target position
 	# Check if its in range
@@ -155,6 +146,9 @@ func draw_range_tiles2(activeName):
 
 func dequeue(_num, state):
 	if state == false:
+		validTargetPos = false
+		occupiedPos = false
+		collatUnit = null
 		secondRange = 1
 		clickedPos = null
 		AutoloadMe.isExecuting = false

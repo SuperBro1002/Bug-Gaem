@@ -225,7 +225,7 @@ func set_control_text():
 		$ControlsOverlay/ContextButtons1.set_text("Left Click - Select Target")
 		$ControlsOverlay/AbilityQueueControls.set_text("1,2,3 - Deselect/Change Ability")
 		if AutoloadMe.validQueue:
-			$ControlsOverlay/ContextButtons2.set_text("E - Confirm Ability")
+			$ControlsOverlay/ContextButtons2.set_text("E/Double Click Target Unit - Confirm Ability")
 		else:
 			$ControlsOverlay/ContextButtons2.set_text("")
 	else:

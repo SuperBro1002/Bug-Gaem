@@ -450,6 +450,7 @@ func _mouse_shape_exit(shape_idx):
 		myHPBar.fade(false)
 		SignalBus.mouseHovering.emit(false)
 		SignalBus.highlightInit.emit(self, false)
+		AutoloadMe.hoveredUnit = null
 
 func animated_Damaged():
 	$AnimatedSprite2D.stop()

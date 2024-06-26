@@ -97,6 +97,19 @@ func _unhandled_input(event):
 		
 # Sometimes "left_click" double clicks(usually if you click while dragging the mouse across the screen) idk why. Is definitely this line below and only happens with mouse inputs!!!!!!!!!!!!!!!!!
 		if Input.is_action_just_pressed("left_click"):
+			if event is InputEventMouseButton and event.is_double_click():
+				#print("-----------",event)
+				#print("I AM A DOUBLE CLICK")
+				#print(currentAbility.targetUnits)
+				#print(hoveredUnit)
+				#print(isExecuting, " ", validQueue, " ", queueState, " ", currentAbility.targetUnits.has(hoveredUnit))
+				if !isExecuting and validQueue and queueState:
+					if currentAbility.targetUnits.has(hoveredUnit):
+						#print("ABOUT TO EXECUTE")
+						AutoloadMe.set_process_unhandled_input(false)
+						isExecuting = true
+						turnPointer.run_passives(turnPointer.methodType.ABILITY_EXECUTE, null)
+						turnPointer.abilityQueued.execute()
 			
 			##NOTE: Below is for debug purposes
 			#Dialogic.VAR.DialogueComplete = true

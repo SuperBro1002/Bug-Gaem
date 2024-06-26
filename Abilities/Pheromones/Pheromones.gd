@@ -6,9 +6,10 @@ func _enter_tree():
 	targetType = [get_parent().fac.ENEMY]
 	Name = "Pheromones"
 	fileName = "Pheromones"
-	description = "Draws all enemies 2 tiles closer to this unit. 2 AP"
+	description = "Draws all enemies 2 tiles closer to this unit. 3 AP"
 
 func queue():
+	AutoloadMe.currentAbility = self
 	if AutoloadMe.turnPointer != get_parent() or get_parent().abilityQueued != get_parent().ability3:
 		return
 	if !AutoloadMe.globalEnemyList.is_empty():
@@ -48,6 +49,11 @@ func execute():
 		
 		for j in pathArray.size() - 1:
 			if pathArray[j] != get_parent().position and targetUnits[i].Controllable != false:
+				if pathArray[j].x > get_parent().position.x:
+					targetUnits[i].get_node("AnimatedSprite2D").set_flip_h(true)
+				else:
+					targetUnits[i].get_node("AnimatedSprite2D").set_flip_h(false)
+				targetUnits[i].get_node("AnimatedSprite2D").play("Jump1")
 				var tween = create_tween()
 				tween.tween_property(targetUnits[i], "position", pathArray[j], 1.0 / targetUnits[i].animationSpeed).set_trans(Tween.TRANS_SINE)
 				await tween.finished

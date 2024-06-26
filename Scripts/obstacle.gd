@@ -43,3 +43,4 @@ func _mouse_shape_enter(_shape_idx):
 func _mouse_shape_exit(_shape_idx):
 	if AutoloadMe.hoveredUnit == self:
 		SignalBus.mouseHovering.emit(false)
+		AutoloadMe.hoveredUnit = null

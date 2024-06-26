@@ -26,7 +26,9 @@ func unique_turn_start():
 		AutoloadMe.currentAbility = ability1
 		run_passives(methodType.ABILITY_EXECUTE, null)
 		chloroblastExecuting = true
+		get_node("/root/Garden/FakeThor").set_speed_scale(5.0)
 		await ability1.enemy_execute(target)
+		get_node("/root/Garden/FakeThor").set_speed_scale(1.0)
 		CurrentAP -= ability1.get_ap_cost()
 		
 		await get_tree().create_timer(1).timeout
