@@ -220,6 +220,7 @@ scale = Vector2(-116.691, 103.457)
 texture = SubResource("PlaceholderTexture2D_yb3wm")
 
 [node name="FakeThor" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.74902)
 z_index = 1
 texture_filter = 1
 position = Vector2(576, 568)

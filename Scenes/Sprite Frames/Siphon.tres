@@ -1,33 +1,33 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://crwrt8s5xftkv"]
 
-[ext_resource type="Texture2D" uid="uid://cmjta3lgwu6ku" path="res://Assets/Maps_Tiles/Garden/siphonpoint.png" id="1_jijab"]
+[ext_resource type="Texture2D" uid="uid://d0oerahklxs36" path="res://Assets/Maps_Tiles/Garden/siphonpoint_animation_outlined.png" id="1_6x0ha"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r8v5b"]
-atlas = ExtResource("1_jijab")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppycn"]
+atlas = ExtResource("1_6x0ha")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ewpfr"]
-atlas = ExtResource("1_jijab")
+[sub_resource type="AtlasTexture" id="AtlasTexture_w13u7"]
+atlas = ExtResource("1_6x0ha")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ra5o"]
-atlas = ExtResource("1_jijab")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqh8m"]
+atlas = ExtResource("1_6x0ha")
 region = Rect2(0, 64, 32, 32)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r8v5b")
+"texture": SubResource("AtlasTexture_ppycn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ewpfr")
+"texture": SubResource("AtlasTexture_w13u7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5ra5o")
+"texture": SubResource("AtlasTexture_kqh8m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ewpfr")
+"texture": SubResource("AtlasTexture_ppycn")
 }],
 "loop": true,
 "name": &"Idle",
