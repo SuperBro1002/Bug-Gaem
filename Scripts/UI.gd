@@ -6,7 +6,7 @@ var nodeList
 var ability1
 var ability2
 var ability3
-var enemyPhase = false
+#var enemyPhase = false
 var camTween
 var arrowTween
 var AnimTween
@@ -256,13 +256,13 @@ func start_anim(unit):
 	AnimTween = create_tween()
 	
 	if unit.get_faction() != unit.fac.ALLY and unit.get_faction() != unit.fac.ENEMY:
-		enemyPhase = false
+		AutoloadMe.enemyPhase = false
 		return
 	
-	if enemyPhase == true and unit.get_faction() == unit.fac.ENEMY:
+	if AutoloadMe.enemyPhase == true and unit.get_faction() == unit.fac.ENEMY:
 		return
 	elif unit.get_faction() == unit.fac.ALLY:
-		enemyPhase = false
+		AutoloadMe.enemyPhase = false
 	
 	$ControlsOverlay.set_visible(false)
 	show_ui()
@@ -286,18 +286,26 @@ func start_anim(unit):
 	
 	if unit.get_faction() == unit.fac.ENEMY:
 		$TurnGraphic.label_settings.font_color = Color(1, 0.1, 0.2, 1)
-		enemyPhase = true
+		#AutoloadMe.enemyPhase = true
 	elif unit.get_faction() == unit.fac.ALLY:
 		$TurnGraphic.label_settings.font_color = Color(0, 0.518, 0.969, 1)
 	
 	AnimTween.tween_property($TurnGraphic, "position:x", -1300, 3.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT_IN)
 	await AnimTween.finished
+	print("ANIMATION IS ", AnimTween.is_running())
 	$TurnGraphic.position.x = 1934
+	
+	SignalBus.endAnimate.emit()
+	
+	if unit.get_faction() == unit.fac.ENEMY:
+		AutoloadMe.enemyPhase = true
 	
 	AutoloadMe.set_process_unhandled_input(true)
 	$ControlsOverlay.set_visible(true)
 
 func move_camera(unit):
+	if unit.Faction == unit.fac.NONE:
+		return
 	if camTween:
 		camTween.kill()
 	camTween = create_tween()

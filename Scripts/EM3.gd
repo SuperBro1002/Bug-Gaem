@@ -21,7 +21,6 @@ func checkSiphons():
 	if AutoloadMe.siphonsDestroyed == 4 and begunTwo == false:
 		begunTwo = true
 		SignalBus.phaseChange.emit()
-	#SignalBus.midObjectiveChecked.emit()
 
 func check_routed():
 	print("--Checking objective--")

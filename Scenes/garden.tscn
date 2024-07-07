@@ -227,6 +227,7 @@ scale = Vector2(1.81818, 1.81818)
 sprite_frames = ExtResource("19_fdnto")
 animation = &"Cast1Loop"
 autoplay = "Cast1Loop"
+frame_progress = 0.246374
 
 [node name="GardenMapSprite" type="Sprite2D" parent="."]
 texture_filter = 1

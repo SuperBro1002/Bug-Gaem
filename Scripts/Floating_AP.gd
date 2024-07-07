@@ -4,6 +4,13 @@ func _ready():
 	SignalBus.connect("updateFloatingAP", update)
 	SignalBus.connect("startTurn", show_me)
 	SignalBus.connect("endTurn", hide_me)
+	get_parent().connect("displayAP", toggle_ap)
+
+func toggle_ap(state):
+	if state == false:
+		set_visible(false)
+	else:
+		set_visible(true)
 
 func show_me():
 	if get_parent() != AutoloadMe.turnPointer or AutoloadMe.turnPointer.get_faction() == AutoloadMe.turnPointer.fac.ENEMY:

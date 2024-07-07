@@ -19,19 +19,24 @@ func next_turn():
 	for i in (AutoloadMe.globalUnitList.size()):
 		if AutoloadMe.globalUnitList[i].get_batonpass() == AutoloadMe.globalUnitList[i].TS.BATONPASS:
 			currentUnitTurn = AutoloadMe.globalUnitList[i]
+			print("BatonPass: ", AutoloadMe.globalUnitList[i].get_batonpass())
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.on_turn_start()
 			return
 	for i in (AutoloadMe.globalUnitList.size()):
 		if AutoloadMe.globalUnitList[i].get_batonpass() == AutoloadMe.globalUnitList[i].TS.NOTACTED:
 			currentUnitTurn = AutoloadMe.globalUnitList[i]
+			print("BatonPass: ", AutoloadMe.globalUnitList[i].get_batonpass())
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.on_turn_start()
 			return
 
 func next_round():
+	print("---Next Round Called")
 	AutoloadMe.roundNum += 1
 	SignalBus.checkEvents.emit()
+	await SignalBus.eventsDone
+	print("----Received EventsDone")
 	if Dialogic.VAR.CutsceneUp == true:
 		AutoloadMe.roundNum -= 1
 		return
@@ -43,9 +48,6 @@ func next_round():
 	print("ROUND END. RESETTING: ", currentUnitTurn)
 	SignalBus.currentUnit.emit(currentUnitTurn)
 	SignalBus.midObjective.emit()
-	print("herte")
-	#await SignalBus.midObjectiveChecked
-	print("theret")
 	currentUnitTurn.on_turn_start()
 
 # Secret unit in last pos to end round

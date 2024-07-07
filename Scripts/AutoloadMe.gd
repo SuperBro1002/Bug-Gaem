@@ -28,6 +28,7 @@ var currentAbility
 var passingAP
 var mapID
 var ThorGardenDeath = false
+var enemyPhase = false
 
 var inputs = {"move_right": Vector2.RIGHT,
 			"move_left": Vector2.LEFT,
@@ -41,6 +42,7 @@ func _ready():
 	SignalBus.connect("abilityIsQueued", queue_active)
 
 func new_level():
+	enemyPhase = false
 	deathCount = 0
 	siphonsDestroyed = 0
 	roundNum = 1

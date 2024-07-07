@@ -5,9 +5,39 @@ extends "res://Scripts/enemy.gd"
 signal ThorAttack
 signal abilityFinished
 var chloroblastExecuting
+var g = 1
+var b = 1
+var glowDir = true
+var glowing = false
 
 func _ready():
 	SignalBus.connect("phaseChange", set_phase)
+
+func _process(delta):
+	if !glowing:
+		await color_change()
+
+func color_change():
+	if phase == 1:
+		glowing = true
+		if glowDir:
+			print("Yes")
+			g -= 0.05
+			b -= 0.05
+			if g <= 0.1:
+				glowDir = false
+		else:
+			print("No")
+			g += 0.05
+			b += 0.05
+			if g >= 1:
+				glowDir = true
+		
+		get_node("/root/Garden/FakeThor").set_modulate(Color(1,g,b,1))
+		
+		await get_tree().create_timer(0.1).timeout
+		glowing = false
+
 
 func unique_turn_start():
 	chloroblastExecuting = false
@@ -15,7 +45,7 @@ func unique_turn_start():
 	if phase == 2 and startPhaseTwo == true:
 		position = grid.map_to_local(await set_phase())
 		startPhaseTwo = false
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	
 	if CurrentHP <= 0:
 		#SignalBus.endTurn.emit()

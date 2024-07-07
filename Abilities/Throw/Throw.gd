@@ -88,22 +88,38 @@ func execute():
 		SignalBus.playSFX.emit("Throw")
 		get_parent().get_node("AnimatedSprite2D").stop()
 		get_parent().get_node("AnimatedSprite2D").play("Cast1")
-		await get_tree().create_timer(0.7).timeout
+		await get_tree().create_timer(0.1).timeout
 		
 		for i in targetUnits.size():
-			targetUnits[i].position = get_parent().grid.map_to_local(newPos)
+			var thrownUnit = targetUnits[i]
+			thrownUnit.set_z_index(2)
 			
-			targetUnits[i].abilityStartPoint = targetUnits[i].grid.convert_to_map(newPos) # CHANGE WHEN COLLATERAL MOVEMENT IS ADDED
+			thrownUnit.throw_up_tween()
+			
+			await get_tree().create_timer(1).timeout
+			thrownUnit.position = get_parent().grid.map_to_local(newPos)
+			
+			thrownUnit.abilityStartPoint = thrownUnit.grid.convert_to_map(newPos) # CHANGE WHEN COLLATERAL MOVEMENT IS ADDED
+			await thrownUnit.throw_down_tween()
 			
 			if occupiedPos == true:
 				#Tweens target to the bouncePos
-				targetUnits[i].lose_health(4)
+				var moveTween = create_tween()
+				thrownUnit.spin_me(2)
+				SignalBus.playSFX.emit("Sting")
+				thrownUnit.lose_health(4)
 				collatUnit.lose_health(4)
 				#await get_tree().create_timer(0.5).timeout
-				targetUnits[i].position = bouncePos
-				targetUnits[i].abilityStartPoint = targetUnits[i].grid.convert_to_map(bouncePos)
+				thrownUnit.abilityStartPoint = thrownUnit.grid.convert_to_map(bouncePos)
+				moveTween.tween_property(thrownUnit, "position", bouncePos, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+				thrownUnit.displayHP.emit(true)
+				#thrownUnit.position = bouncePos
+				await moveTween.finished
 			
-			targetUnits[i].give_batonpass()
+			if is_instance_valid(thrownUnit):
+				thrownUnit.set_z_index(1)
+				thrownUnit.enable_collision()
+				thrownUnit.give_batonpass()
 		
 		post_execute()
 	else:

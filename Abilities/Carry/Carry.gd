@@ -110,6 +110,8 @@ func execute():
 			isCarrying = true
 			$Area2D/SelectionBox.set_visible(false)
 			$Area2D.position = Vector2(0,0)
+			apCost = 0
+			description = "Pick up an adjacent ally. Re-use to place them down and grant baton pass. 0 AP"
 			post_execute()
 	else:
 		print("EXECUTED 2")
@@ -126,5 +128,7 @@ func execute():
 		
 		isCarrying = false
 		storedUnit = null
+		apCost = 2
+		description = "Pick up an adjacent ally. Re-use to place them down and grant baton pass. 2 AP"
 		AutoloadMe.allowEndTurn = true
 		post_execute2()

@@ -22,13 +22,14 @@ func execute():
 	for i in targetUnits.size():
 		if targetUnits == null:
 			return
-		targetUnits[i].lose_health(2)
-		var pushDirection = targetUnits[i].position - get_parent().position
-		var targetPos = targetUnits[i].position + pushDirection
-		SignalBus.playSFX.emit("Crash2")
-		for j in AutoloadMe.globalTargetList.size():
-			if targetPos == AutoloadMe.globalTargetList[j].position or AutoloadMe.movementGrid.is_point_solid(get_parent().grid.local_to_map(targetPos)):
-				post_execute()
-				return
-		targetUnits[i].position = targetPos
+		await targetUnits[i].lose_health(2)
+		if !targetUnits.is_empty():
+			var pushDirection = targetUnits[i].position - get_parent().position
+			var targetPos = targetUnits[i].position + pushDirection
+			SignalBus.playSFX.emit("Crash2")
+			for j in AutoloadMe.globalTargetList.size():
+				if targetPos == AutoloadMe.globalTargetList[j].position or AutoloadMe.movementGrid.is_point_solid(get_parent().grid.local_to_map(targetPos)):
+					post_execute()
+					return
+			targetUnits[i].position = targetPos
 	post_execute()

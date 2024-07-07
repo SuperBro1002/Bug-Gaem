@@ -62,6 +62,9 @@ var glowTween
 var animationSpeed = 4
 var isDown = false
 var isDying = false
+signal displayHP(state)
+signal displayAP(state)
+
 
 func _enter_tree():
 	print("TREE")
@@ -176,7 +179,7 @@ func lose_health(dmgVal):
 			get_node("AnimatedSprite2D").play("Downed")
 			add_passive("Down")
 			return
-		delete(self)
+		await delete(self)
 
 func passive_lose_health(dmgVal):
 	dmgVal = run_passives(methodType.LOSE_HEALTH, dmgVal)
@@ -196,7 +199,7 @@ func passive_lose_health(dmgVal):
 			print(Name, " downed.")
 			get_node("AnimatedSprite2D").play("Downed")
 			add_passive("Down")
-		else: delete(self)
+		else: await delete(self)
 
 
 
@@ -280,7 +283,8 @@ func get_faction():
 
 
 func give_batonpass():
-	storedBatonPass = BatonPass
+	if BatonPass != TS.BATONPASS:
+		storedBatonPass = BatonPass
 	BatonPass = TS.BATONPASS
 
 func set_has_acted():
@@ -296,6 +300,7 @@ func get_batonpass():
 
 
 func on_turn_start():
+	AutoloadMe.set_process_unhandled_input(false)
 	if isDown: 
 		tempAP = 0
 		CurrentAP = 0
@@ -317,11 +322,16 @@ func on_turn_start():
 	abilityStartPoint = grid.convert_to_map(position)
 	SignalBus.updateUI.emit(self)
 	SignalBus.startAnimate.emit(self)
-	AutoloadMe.set_process_unhandled_input(false)
 	print(self, " ", CurrentAP)
 	print("UnitList: ", AutoloadMe.globalUnitList)
 	SignalBus.wipeTilePaths.emit(null)
-	await get_tree().create_timer(1).timeout
+	
+	if AutoloadMe.enemyPhase == false:
+		await SignalBus.endAnimate
+	#else:
+		#print("###########TIMERRRRRRRR")
+		#await get_tree().create_timer(1).timeout
+	
 	SignalBus.startTurn.emit()
 	SignalBus.changeButtonState.emit()
 	run_passives(methodType.ON_TURN_START, null)
@@ -431,13 +441,14 @@ func delete(unit):
 			SignalBus.checkObjective.emit()
 		SignalBus.updateGrid.emit()
 		SignalBus.deleteMe.emit(self)
-		await get_tree().create_timer(2).timeout
+		#await get_tree().create_timer(2).timeout
 		SignalBus.HpUiFinish.emit()
 		
 		if AutoloadMe.turnPointer == self:
 			SignalBus.endTurn.emit()
 		SignalBus.unparentUnit.emit(self)
 		queue_free()
+		#await tree_exited
 
 func _mouse_shape_enter(shape_idx):
 		myHPBar.fade(true)
@@ -456,6 +467,37 @@ func animated_Damaged():
 	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.play("Damaged")
 	await $AnimatedSprite2D.animation_finished
+
+func throw_up_tween():
+	$CollisionShape2D.set_disabled(true)
+	displayHP.emit(false)
+	var throwTween = create_tween()
+	var spinTween = create_tween().set_loops()
+	throwTween.tween_property($AnimatedSprite2D, "position", Vector2(0,-2000), 1).set_trans(Tween.TRANS_SINE).as_relative()
+	spinTween.tween_property($AnimatedSprite2D, "rotation_degrees", 360, 1).set_trans(Tween.TRANS_SINE).as_relative()
+	
+	await throwTween.finished
+	spinTween.kill()
+
+func throw_down_tween():
+	var throwTween = create_tween()
+	var spinTween = create_tween().set_loops()
+	throwTween.tween_property($AnimatedSprite2D, "position", Vector2(0,0), 1).set_trans(Tween.TRANS_SINE)
+	spinTween.tween_property($AnimatedSprite2D, "rotation_degrees", 360, 0.5).set_trans(Tween.TRANS_SINE).as_relative()
+	$AnimatedSprite2D.set_rotation(0)
+	
+	await throwTween.finished
+	spinTween.kill()
+
+func spin_me(loopNum):
+	var spinTween = create_tween().set_loops(loopNum)
+	spinTween.tween_property($AnimatedSprite2D, "rotation_degrees", 360, 0.5).as_relative()
+	$AnimatedSprite2D.set_rotation(0)
+	await spinTween.finished
+	spinTween.kill()
+
+func enable_collision():
+	$CollisionShape2D.set_disabled(false)
 
 func glow(unit, switch):
 	if unit == self:

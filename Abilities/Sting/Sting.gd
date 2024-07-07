@@ -21,13 +21,13 @@ func execute():
 	$VFX.set_visible(true)
 	SignalBus.playSFX.emit("Sting")
 	$VFX.play("Effect")
-	await get_tree().create_timer(0.7).timeout
+	await get_tree().create_timer(0.5).timeout
 	
 	for i in targetUnits.size():
-		targetUnits[i].lose_health(4)
+		await targetUnits[i].lose_health(4)
+		$VFX.set_visible(false)
 		await get_tree().create_timer(0.3).timeout
 		get_parent().incoming_dmg_type = "pierce"
 		get_parent().lose_health(1)
 	
-	$VFX.set_visible(false)
 	post_execute()

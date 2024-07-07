@@ -7,6 +7,7 @@ var segList = []
 
 func _ready():
 	SignalBus.connect("updateFloatingHP", update)
+	get_parent().connect("displayHP", toggle_hp)
 	maxHP = get_parent().get_max_hp()
 	make_bar()
 
@@ -48,3 +49,9 @@ func fade(isHovering):
 		tween.tween_property(self, "modulate:a", 1, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
 	else:
 		tween.tween_property(self, "modulate:a", 0.5, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+
+func toggle_hp(state):
+	if state == false:
+		set_visible(false)
+	elif state == true:
+		set_visible(true)
