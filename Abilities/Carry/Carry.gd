@@ -50,6 +50,11 @@ func queue():
 				$Area2D.position = get_parent().grid.map_to_local(clickedPos)
 				$Area2D/SelectionBox.set_visible(true)
 				
+				targetUnits.append(storedUnit)
+				storedUnit.position = get_parent().grid.map_to_local(clickedPos)
+				storedUnit.set_modulate(Color(1,1,1,0.5))
+				storedUnit.set_visible(true)
+				
 				await get_tree().create_timer(0.1).timeout
 				
 				SignalBus.activelyQueueing.emit(true)
@@ -60,23 +65,29 @@ func dequeue(_num, state):
 		clickedPos = null
 		$Area2D/SelectionBox.set_visible(false)
 		$Area2D.position = Vector2(-900,-900)
+	elif storedUnit != null:
+		storedUnit.set_visible(false)
+		storedUnit.position = Vector2(0,0)
+		targetUnits.erase(storedUnit)
+		$Area2D/SelectionBox.set_visible(false)
+		$Area2D.position = Vector2(-900,-900)
 
 func post_execute2():
-		dmgMod = 1
-		targetUnits.clear()
-		get_parent().grid.update_grid_collision()
-		SignalBus.abilityExecuted.emit(self)
-		SignalBus.updateUI.emit(get_parent())
-		AutoloadMe.isExecuting = false
-		SignalBus.changeControls.emit()
-		AutoloadMe.set_process_unhandled_input(true) #
-		if get_parent().Faction == get_parent().fac.ALLY:
-			SignalBus.changeButtonState.emit()
-		elif get_parent().Faction == get_parent().fac.ENEMY:
-			dequeue(1,false)
-		#await get_tree().create_timer(1).timeout
-		AutoloadMe.passingUnit = get_parent()
-		#get_parent().on_turn_end()
+	dmgMod = 1
+	targetUnits.clear()
+	get_parent().grid.update_grid_collision()
+	SignalBus.abilityExecuted.emit(self)
+	SignalBus.updateUI.emit(get_parent())
+	AutoloadMe.isExecuting = false
+	SignalBus.changeControls.emit()
+	AutoloadMe.set_process_unhandled_input(true) 
+	if get_parent().Faction == get_parent().fac.ALLY:
+		SignalBus.changeButtonState.emit()
+	elif get_parent().Faction == get_parent().fac.ENEMY:
+		dequeue(1,false)
+	#await get_tree().create_timer(1).timeout
+	AutoloadMe.passingUnit = get_parent()
+	#get_parent().on_turn_end()
 
 func execute():
 	# for every target in target units[]
@@ -87,7 +98,7 @@ func execute():
 		face_target()
 		get_parent().get_node("AnimatedSprite2D").stop()
 		get_parent().get_node("AnimatedSprite2D").play("Jump1")
-		SignalBus.playSFX.emit("TrissFly1")
+		SignalBus.playSFX.emit("TrissWalk1")
 		await get_tree().create_timer(0.5).timeout
 		AutoloadMe.allowEndTurn = false
 		for i in targetUnits.size():
@@ -99,20 +110,25 @@ func execute():
 			isCarrying = true
 			$Area2D/SelectionBox.set_visible(false)
 			$Area2D.position = Vector2(0,0)
+			apCost = 0
+			description = "Pick up an adjacent ally. Re-use to place them down and grant baton pass. 0 AP"
 			post_execute()
 	else:
 		print("EXECUTED 2")
 		
 		get_parent().get_node("AnimatedSprite2D").stop()
 		get_parent().get_node("AnimatedSprite2D").play("Jump1")
+		SignalBus.playSFX.emit("TrissWalk2")
 		await get_tree().create_timer(0.5).timeout
 		
 		storedUnit.position = get_parent().grid.map_to_local(clickedPos)
-		SignalBus.playSFX.emit("TrissWalk2")
+		storedUnit.set_modulate(Color(1,1,1,1))
 		storedUnit.set_visible(true)
 		storedUnit.give_batonpass()
 		
 		isCarrying = false
 		storedUnit = null
+		apCost = 2
+		description = "Pick up an adjacent ally. Re-use to place them down and grant baton pass. 2 AP"
 		AutoloadMe.allowEndTurn = true
 		post_execute2()

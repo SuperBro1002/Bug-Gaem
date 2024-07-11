@@ -90,3 +90,4 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	SignalBus.mouseHovering.emit(false)
 	SignalBus.highlightUnit.emit(myUnit, false)
+	AutoloadMe.hoveredUnit = null

@@ -9,7 +9,7 @@ size = Vector2(64, 64)
 
 [node name="Carry" type="Node"]
 script = ExtResource("1_lgtlw")
-apCost = 1
+apCost = 2
 myType = 3
 
 [node name="Area2D" type="Area2D" parent="."]

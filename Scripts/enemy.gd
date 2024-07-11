@@ -32,7 +32,7 @@ func _ready():
 	#SignalBus.remakeUnitList.emit()
 
 func unique_turn_start():
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	
 	shortestPath = 10000
 	lengthList = [] # List of distances to different opposing units

@@ -15,6 +15,7 @@ signal abilityExecuted(ability)
 signal updateUI
 signal showUI
 signal startAnimate
+signal endAnimate
 signal HpUiFinish # Emitted when floating_hp_bar.gd finishes decrementing health bar
 signal showRangeTiles(name)
 signal endRangeTiles
@@ -41,7 +42,6 @@ signal changeReplyPortrait(filename)
 signal checkEvents
 signal checkObjective
 signal midObjective
-signal midObjectiveChecked
 signal phaseChange
 signal finalBattle
 signal spawnDrone
@@ -56,3 +56,5 @@ signal quickSwap
 signal silenceMusic
 signal hideMainPortrait
 signal redrawPassives
+signal unparentUnit(unit)
+signal eventsDone
