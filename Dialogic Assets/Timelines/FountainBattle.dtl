@@ -5,11 +5,11 @@ if AutoloadMe.turnPointer.BatonPass == 0:
 if {StoryProgress} == 0:
 	if AutoloadMe.turnPointer.Name == "Triss":
 		do PortraitManager.change_main_portrait("SnobbyF")
-		Triss (SnobbyF): Alright, Zephyr. Let's take it slow for that 'cunning' mind of yours. Press Q to hear what I have to say next.
+		Triss (SnobbyF): Alright, Zephyr, I've finished my training. Let's review yours. Press Q to hear what I have to say next.
 		do PortraitManager.change_main_portrait("NeutralF")
 		Triss (NeutralF): Great, now that you've mastered talking, use W A S and D to direct my movements.
 		do PortraitManager.change_main_portrait("SnobbyF")
-		Triss (SnobbyF): Since I'm sure you haven't noticed, I spend Action Points when moving. I also use AP for abilities.
+		Triss (SnobbyF): Look carefully, you'll see I spend Action Points when moving. I also use AP for abilities.
 		do PortraitManager.change_main_portrait("HappyF")
 		Triss (HappyF): I would show you, but I won't waste my precious AP without a valid target.
 		do PortraitManager.change_main_portrait("NeutralF")
@@ -17,7 +17,7 @@ if {StoryProgress} == 0:
 		do PortraitManager.change_main_portrait("SnobbyF")
 		Triss (SnobbyF): I'm sure it looked nice.
 		do PortraitManager.change_main_portrait("HappyF")
-		Triss: Well I tire. We'll use the space key as a signal to end my "turn," so to speak.
+		Triss: Well I tire. We'll use the space key as a signal to end my turn.
 		do PortraitManager.change_main_portrait("SnobbyF")
 		Triss (SnobbyF): Oh, and don't even think of trying to end turns before you're done speaking.
 		Triss: You'd be surprised what bugs reveal in the heat of battle.
@@ -36,8 +36,9 @@ if {StoryProgress} == 1:
 		do PortraitManager.change_main_portrait("NeutralF")
 		Atlas (NeutralF): Zephyr, we need to protect the others! Get me on the front lines!
 		Atlas (NeutralF): Once I'm next to an enemy, use the 1 2 and 3 keys to select and deselect my abilities.
+		Atlas (NeutralF): Once you have it selected, double click to give me the signal to strike the target you're floating by.
 		do PortraitManager.change_main_portrait("HappyF")
-		Atlas (HappyF): Don't worry! I'll get my AP back at the end of the round.
+		Atlas (HappyF): Oh and don't worry! I'll get my AP back at the end of the round.
 		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Triss":
@@ -53,7 +54,6 @@ if {StoryProgress} == 2:
 		Drone: SUCH FEELING!
 		Lumoth (NeutralF): AHH!!!
 		Drone: Such fear and concern. Us Robugs don't carry such burdens.
-		Drone: We were built for victory.
 		Lumoth (NeutralF): Oh are you-
 		Drone: My name is Drone, and I will be your conQUEROR!
 		do PortraitManager.change_main_portrait("SadF")
@@ -67,7 +67,7 @@ if {StoryProgress} == 2:
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Atlas":
 		do PortraitManager.change_main_portrait("NeutralF")
-		Atlas (NeutralF): If we need, I can use my horn to Horn Catapult to throw someone to save them AP.
+		Atlas (NeutralF): If we need, I can use my horn to Horn Catapult to throw someone to save them the AP of moving.
 		do PortraitManager.change_main_portrait("ProudF")
 		Atlas (ProudF): Certain abilities have what we vets on the battlefield call a Baton Pass.
 		do PortraitManager.change_main_portrait("NeutralF")
@@ -86,7 +86,7 @@ if {StoryProgress} == 3:
 		do PortraitManager.change_main_portrait("SadF")
 		Paramantis (SadF): We deeply apologize for the latenesss.
 		do PortraitManager.change_main_portrait("NeutralF")
-		Paramantis (NeutralF): If you can sssecure me the killing blow on an enemy with my X-slash, I can more than make up for it.
+		Paramantis (NeutralF): If you can sssecure us the killing blow on an enemy with my X-slash, I can more than make up for it.
 		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Atlas":
@@ -97,7 +97,7 @@ if {StoryProgress} == 3:
 		do PortraitManager.change_main_portrait("AngryF")
 		Atlas (AngryF): Can't rule a kingdom if you're dead, Triss!
 		do PortraitManager.change_reply_portrait("Triss", "SnobbyF")
-		Triss2 (SnobbyF): Bah, true enough.
+		Triss2 (SnobbyF): Hah, true enough.
 		do PortraitManager.hide_reply_portrait()
 		set {DialogueComplete} = true
 		[end_timeline]
@@ -108,7 +108,7 @@ if {StoryProgress} == 3:
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Lumoth":
 		do PortraitManager.change_main_portrait("ChannelingF")
-		Lumoth (ChannelingF): Lunalesca, guide my hand.
+		Lumoth (ChannelingF): Goddess Lunalesca, guide my hand.
 		set {DialogueComplete} = true
 		[end_timeline]
 # #####################
@@ -125,7 +125,7 @@ if AutoloadMe.turnPointer.Name == "Atlas":
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Triss":
 	do PortraitManager.change_main_portrait("NeutralF")
-	Triss: Fools!
+	Triss: Bring it on!
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Lumoth":

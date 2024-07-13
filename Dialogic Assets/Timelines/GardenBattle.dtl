@@ -28,17 +28,17 @@ if {StoryProgress} == 0:
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Atlas":
 		do PortraitManager.change_main_portrait("ProudF")
-		Atlas: Everyone, stop that drill! I’ll handle the Robugs! Ha-hah!
+		Atlas: We need to destroy those four screws! You all handle the screws while I handle the Robugs!
 		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Triss":
 		do PortraitManager.change_main_portrait("SnobbyF")
-		Triss: It’s been too long, father.
+		Triss: It’s been too long, Father.
 		do PortraitManager.show_reply_portrait("Thoraxe", "Thoraxe")
 		Thoraxe: Bea’triss…?
 		do PortraitManager.change_main_portrait("NeutralF")
-		Triss: Why don’t you come down here and we’ll try to kill each other for old times sake?!
-		Thoraxe: … Then you still side with the pompous Bees?
+		Triss: What? Want to try to kill each other for old time's sake?
+		Thoraxe: … So you still side with the pompous Bees?
 		do PortraitManager.change_main_portrait("AngryF")
 		Triss: Shut up! With your head on my spear, I’ll return home a Queen!
 		do PortraitManager.hide_reply_portrait()
@@ -52,13 +52,7 @@ if {StoryProgress} == 0:
 if {StoryProgress} == 1:
 	if AutoloadMe.turnPointer.Name == "Paramantis":
 		do PortraitManager.change_main_portrait("NeutralF")
-		Paramantis: Thor’axe, ssstop this madnesss! You not only harm the Bees and the Great Tree, but the Cycle itself!
-		do PortraitManager.show_reply_portrait("Thoraxe", "Thoraxe")
-		Thoraxe: The Cycle that the Bees use to keep us out of cities? The Cycle that turned my ancestors malnourished bodies into crops for the rich?
-		do PortraitManager.change_main_portrait("SadF")
-		Paramantis: ...
-		do PortraitManager.hide_reply_portrait()
-		set {DialogueComplete} = true
+		Paramantis: He takesss the very lifeblood of the Great Tree for himself!
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Atlas":
 		do PortraitManager.change_main_portrait("HappyF")
@@ -88,7 +82,7 @@ if {StoryProgress} == 1:
 if {StoryProgress} == 2:
 	if AutoloadMe.turnPointer.Name == "Paramantis":
 		do PortraitManager.change_main_portrait("SadF")
-		Paramantis: ... We are yours to command, Zephyr.
+		Paramantis: The wretched machine still churns. We must stop it!
 		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Atlas":
@@ -156,7 +150,7 @@ if {StoryProgress} == 4:
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Triss":
 		do PortraitManager.change_main_portrait("AngryF")
-		Triss: Gah!!
+		Triss: Well said!
 		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Lumoth":
