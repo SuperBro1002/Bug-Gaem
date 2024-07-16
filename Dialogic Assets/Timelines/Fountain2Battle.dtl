@@ -10,7 +10,7 @@ if {StoryProgress} == 0:
 		do PortraitManager.show_reply_portrait("Thoraxe", "ThoraxeC")
 		Thoraxe: Aye, the Robugs offered me a second chance.
 		do PortraitManager.change_main_portrait("NeutralF")
-		Paramantis: Even the mighty Thor’axe becomes a pawn in Drone’s game.
+		Paramantis: Even the mighty Thor’axe is but a pawn in Drone’s game.
 		do PortraitManager.hide_reply_portrait()
 		[wait time="0.5"]
 		do PortraitManager.drone_fly_in()
@@ -28,9 +28,9 @@ if {StoryProgress} == 0:
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Triss":
 		do PortraitManager.change_main_portrait("NeutralF")
-		Triss: Taking on the power of the Robugs, just to end up one of Drone’s pawns. 
+		Triss: All that just wind up another a pawn of Drone? 
 		do PortraitManager.change_main_portrait("SnobbyF")
-		Triss: Hah! I’ll kill you twice, father.
+		Triss: So be it... I’ll kill you twice, father.
 		do PortraitManager.show_reply_portrait("Thoraxe", "ThoraxeC")
 		Thoraxe: Then let me be your final test. 
 		Thoraxe: If you truly have what it takes, then my steeled corpse shall become a bulwark against the Robugs. 
@@ -46,7 +46,7 @@ if {StoryProgress} == 0:
 if {StoryProgress} == 1:
 	if AutoloadMe.turnPointer.Name == "Paramantis":
 		do PortraitManager.change_main_portrait("CrazyF")
-		Paramantis: In the end, the steel of the Robugs still serves the Cycle. How fitting.
+		Paramantis: In the end, the steel of the Robugs still serves the Great Tree. How fitting.
 		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Atlas":
@@ -56,7 +56,7 @@ if {StoryProgress} == 1:
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Triss":
 		do PortraitManager.change_main_portrait("SnobbyF")
-		Triss: Seems you’ll be another brick in my wall, father!
+		Triss: You're no match for all of us, Father!
 		do PortraitManager.show_reply_portrait("Thoraxe", "ThoraxeC")
 		Thoraxe: ... to protect his child, a father has no greater duty.
 		do PortraitManager.hide_reply_portrait()
@@ -81,7 +81,7 @@ if AutoloadMe.turnPointer.Name == "Atlas":
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Triss":
 	do PortraitManager.change_main_portrait("NeutralF")
-	Triss: Fools!
+	Triss: Let's end this!
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Lumoth":

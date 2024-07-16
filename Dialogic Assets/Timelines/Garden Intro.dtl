@@ -3,10 +3,10 @@
 Auri is defeated. The Cathedral is near silent.
 Except for a growing mechanical chattering.
 join Drone 3 [animation="Slide In Down" length="1" wait="true"]
-Drone (Drone): Had to take out your own messenger? How are those reinforcements coming?
+Drone (Drone): Had to take out your own messenger? HAHA! How are those reinforcements coming?
 update Drone [animation="Shake X" length="1"]
 Drone: BAHAHAHA!
-Drone: Bet that hits you right in the FEELS, doesn't it grubs!
+Drone: Bet that breaks your little emotional hearts, doesn't it grubs!
 Drone: Okay, okay. That's enough. I have a high tech drill and a small army to babysit in that little park out back.
 Drone: Peace, noobs!
 leave Drone [animation="Slide Out Up" length="1" wait="true"]
@@ -17,7 +17,7 @@ join Triss 4 [ mirrored="true"]
 Lumoth (Angry): We can't let him escape!
 Triss (Sad): And who is that "fleshy ally" he spoke of?
 Atlas (Sad): I don't know how much longer I can keep fighting. We need to wait for reinforcments.
-Triss (Neutral): No, Lumoth's right. Reinforcements aren't coming. We can't just let whatever that drill go without a fight.
+Triss (Neutral): No, Lumoth's right. Reinforcements aren't coming. We can't just let that drill go without a fight.
 Atlas (Thinking): ...
 Atlas (Neutral): Fine, you all go on ahead to the Sap Root Garden. That's likely where he is headed.
 Atlas (Neutral): I'll take care of Auri's body and catch up with you there.

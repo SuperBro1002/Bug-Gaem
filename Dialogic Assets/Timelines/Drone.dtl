@@ -4,3 +4,5 @@ Drone: You can't even reach me! You four puny bugs on the battlefield.
 Drone: Face me, lowly 100th Bug Brigade!
 Drone: MuhahaHaHAHAHA
 Drone: MUHAHAHAAAHAAAAHAHAHAA
+do PortraitManager.show_reply_portrait("Atlas", "ProudF")
+Atlas2 (ProudF): We can't reach him! Zephyr, you have to handle this one yourself!

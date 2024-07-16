@@ -89,12 +89,12 @@ if {StoryProgress} == 2:
 		do PortraitManager.change_main_portrait("ProudF")
 		Atlas: See sense, Thor’axe! We could be using this power for good!
 		do PortraitManager.show_reply_portrait("Thoraxe", "Thoraxe")
-		Thoraxe: Good? To keep our world stagnant, my people in poverty?
+		Thoraxe: Hah! "Good" keeps our world stagnant, my people in poverty!
 		Atlas: No! You have access to their technology, their knowledge, together we can turn the war!
-		Thoraxe: I’m not a fool to assume I can master their machines and steel...
+		Thoraxe: I’m not stupid enough to think I can overcome Robug steel...
 		Thoraxe: ... though it seems you are, Atlas.
 		Thoraxe: You are not as clever as you think, grating their steel to your chitin.
-		Thoraxe: You risk becoming a pawn like the ones you so proudly felled.
+		Thoraxe: You risk becoming a pawn- like the ones you so proudly felled.
 		do PortraitManager.change_main_portrait("ThinkingF")
 		Atlas: Guh- Yes, I did graft the Robug machines to myself-
 		do PortraitManager.change_main_portrait("AngryF")
@@ -104,9 +104,9 @@ if {StoryProgress} == 2:
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Triss":
 		do PortraitManager.change_main_portrait("SnobbyF")
-		Triss: Talk all you want, Thor’axe, but the Bees promised me nobility when I return a hero. 
+		Triss: Seems you've chosen your side, then. 
 		do PortraitManager.change_main_portrait("AngryF")
-		Triss: And no greater honor would there be than ending the traitorous Yellowjacket chief.
+		Triss: I'll return home a hero, for slaying the traitorous Yellowjacket chief!
 		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Lumoth":
@@ -187,7 +187,7 @@ if {StoryProgress} == 0:
 		do PortraitManager.change_main_portrait("AngryF")
 		Paramantis: You betrayed the bugs of the Great Tree. You taught the Robugs how to drill through the Soft Bark. And all for a mote of power?
 		do PortraitManager.show_reply_portrait("Thoraxe", "Thoraxe")
-		Thoraxe: Aye! And I don’t regret it! With this power, I can end the war and secure a home for the Yellowjackets among the Robugs!
+		Thoraxe: Aye! And I don’t regret it! With this power, I can end the war and secure a home for the Yellowjackets!
 		do PortraitManager.hide_reply_portrait()
 		do PortraitManager.drone_fly_in()
 		Drone: A clever deal we made! Unlike soOome cultures, we don’t cast out bugs for their heritage. If they remain useful, they are treated equally.
@@ -197,13 +197,6 @@ if {StoryProgress} == 0:
 	if AutoloadMe.turnPointer.Name == "Atlas":
 		do PortraitManager.change_main_portrait("ProudF")
 		Atlas: You don’t stand a chance, Thor’axe!
-		Atlas: Get behind me everyone, you’ll get hurt. I can take him!
-		do PortraitManager.show_reply_portrait("Thoraxe", "Thoraxe")
-		Thoraxe: Stubborn. 
-		Thoraxe: If you truly wish to stop me, to save the Great Tree, to earn your places back in society, then face me. 
-		Thoraxe: If you cannot defeat me here, what hope do you have of stopping the Robugs? 
-		Thoraxe: Let me be your test, prove to me, to yourselves, that you can see your dream through!
-		do PortraitManager.hide_reply_portrait()
 		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Triss":
@@ -241,7 +234,7 @@ if {StoryProgress} == 1:
 		Thoraxe: Then why do you fight?
 		do PortraitManager.change_main_portrait("HurtF")
 		Triss: ... so that I will become Queen ...
-		Thoraxe: And send your children part Yellowjacket children and weak friends off to die in the 100th, just like a Queen Bee should?
+		Thoraxe: And send your subjects off to die in the 100th, just like the Queens before you?
 		Thoraxe: Stop this madness and join the Robugs.
 		Thoraxe: You do not have what it takes to stop this.
 		do PortraitManager.hide_reply_portrait()
@@ -269,7 +262,7 @@ if {StoryProgress} == 2:
 		do PortraitManager.change_main_portrait("NeutralF")
 		Triss: -so I'll never have to fight again. 
 		do PortraitManager.change_main_portrait("AngryF")
-		Triss: I’ll stop you, become Queen, and use that power to stop the suffering that brought us all here. And I’ll start by taking your head!
+		Triss: With the power of the throne, I'll stop all the suffering that brought us here. And I'll start by stopping you!
 		do PortraitManager.show_reply_portrait("Thoraxe", "Thoraxe")
 		Thoraxe: ... Ha. HAHA! Now that is an answer!!
 		set {DialogueComplete} = true
@@ -282,7 +275,7 @@ if {StoryProgress} == 2:
 if {StoryProgress} == 3:
 	if AutoloadMe.turnPointer.Name == "Paramantis":
 		do PortraitManager.change_main_portrait("NeutralF")
-		Paramantis: Change happens quickly in the bleak strife of the battlefield. Triss proves it.
+		Paramantis: Change happens quickly in the bleak strife of the battlefield.
 		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Atlas":
@@ -292,14 +285,14 @@ if {StoryProgress} == 3:
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Triss":
 		do PortraitManager.change_main_portrait("NeutralF")
-		Triss: I’ll end this war, and, unlike you, I’ll change the world without burning it all down.
+		Triss: I can change the world without burning it down.
 		do PortraitManager.show_reply_portrait("Thoraxe", "Thoraxe")
-		Thoraxe: Many have tried, even myself.
-		Thoraxe: Why do you think you were born, Bea’triss? It takes more power and strength to change things that way.
-		Thoraxe: Even I could not do it. How can you?
+		Thoraxe: I tried that once.
+		Thoraxe: Why do you think you were born, Bea’triss? Only pure strength can change things.
+		Thoraxe: Even I could not do it without the Robugs' power. How can you?
 		do PortraitManager.change_main_portrait("SnobbyF")
 		Triss: Then I will become stronger!
-		Triss: I’ll turn to my friends, fight and protect them, and lead them until we have the world where we can live in peace.
+		Triss: I’ll turn to my friends, fight and protect them, and lead them until the world can live in peace.
 		do PortraitManager.hide_reply_portrait()
 		set {DialogueComplete} = true
 		[end_timeline]

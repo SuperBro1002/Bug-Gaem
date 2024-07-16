@@ -15,7 +15,7 @@ if {StoryProgress} == 0:
 		[wait time="0.5"]
 		do PortraitManager.drone_fly_in()
 		Drone: -almost finished...
-		Drone: oh they thought they were clever hehee-
+		Drone: oh they thought they were clever sending a messenger, but I'm clever-er.
 		do PortraitManager.drone_fly_out()
 		[wait time="1.0"]
 		do PortraitManager.show_reply_portrait("Auri", "AuriC")
@@ -27,7 +27,7 @@ if {StoryProgress} == 0:
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Triss":
 		do PortraitManager.change_main_portrait("SnobbyF")
-		Triss (SnobbyF): Ha! Even in retreat, my spear spills oil. I’ll reclaim my title before the battle is won.
+		Triss (SnobbyF): Even in retreat, my spear spills oil. I’ll reclaim my title before the battle is won.
 		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Lumoth":
@@ -64,7 +64,7 @@ if {StoryProgress} == 1:
 		do PortraitManager.change_main_portrait("SadF")
 		Lumoth (SadF): What have the Robugs done to you...?
 		do PortraitManager.show_reply_portrait("Auri", "AuriC")
-		Auri: bzZZzzzzzZappapop POP!
+		Auri: bzZZzzzzzZappap
 		do PortraitManager.hide_reply_portrait()
 		set {DialogueComplete} = true
 		[end_timeline]
@@ -78,7 +78,7 @@ if {StoryProgress} == 2:
 		do PortraitManager.change_main_portrait("NeutralF")
 		Atlas (NeutralF): Paramantis, possess him and make him see reason!
 		do PortraitManager.show_reply_portrait("Paramantis", "SadF")
-		Paramantis2 (SadF): We have tried, but our ssspores find only a mind filled with a maliciousss mechanical hiss.
+		Paramantis2 (SadF): We have tried, but the Robugs have taken too much of him. He isss under their control...
 		do PortraitManager.hide_reply_portrait()
 		set {DialogueComplete} = true
 		[end_timeline]
@@ -135,11 +135,11 @@ if {StoryProgress} == 4:
 		do PortraitManager.change_main_portrait("AngryF")
 		Atlas (AngerF): AH! N-no, never!
 		Drone: That's fine. I already have enough fleshy allies.
-		Drone: But I must say, this one I recently recruited...
+		Drone: But I must say, this ally I recently recruited...
 		Drone: I think it would BEE a shame to miss him heheeee!
 		do PortraitManager.change_main_portrait("ThinkingF")
 		Atlas (ThinkingF): Uh-
-		Drone: ooooo i love it when the fleshy ones fight haha
+		Drone: ooooo I love it when the fleshy ones fight haha
 		Drone: OFF TO THE GARDEN THEN HEHE
 		do PortraitManager.drone_fly_out()
 		[wait time="1.0"]
@@ -174,7 +174,7 @@ if AutoloadMe.turnPointer.Name == "Atlas":
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Triss":
 	do PortraitManager.change_main_portrait("NeutralF")
-	Triss: Fools!
+	Triss: Feel my sting!
 	set {DialogueComplete} = true
 	[end_timeline]
 if AutoloadMe.turnPointer.Name == "Lumoth":
