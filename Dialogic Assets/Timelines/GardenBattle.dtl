@@ -53,6 +53,7 @@ if {StoryProgress} == 1:
 	if AutoloadMe.turnPointer.Name == "Paramantis":
 		do PortraitManager.change_main_portrait("NeutralF")
 		Paramantis: He takesss the very lifeblood of the Great Tree for himself!
+		set {DialogueComplete} = true
 		[end_timeline]
 	if AutoloadMe.turnPointer.Name == "Atlas":
 		do PortraitManager.change_main_portrait("HappyF")
