@@ -48,6 +48,9 @@ func queue():
 					collatUnit = AutoloadMe.globalTargetList[i]
 					bouncePos = get_parent().grid.flood_fill_first(tempPos)
 					break
+				else:
+					occupiedPos = false
+					collatUnit = null
 			if AutoloadMe.movementGrid.is_point_solid(tempPos) and occupiedPos == false:
 				return
 			newPos = tempPos
