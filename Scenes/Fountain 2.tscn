@@ -74,6 +74,10 @@ MaxHP = 30
 [node name="AnimatedSprite2D" parent="Grid/InitManager/UnitManager/Thor" index="1"]
 sprite_frames = ExtResource("11_wd4ls")
 
+[node name="CPUParticles2D" parent="Grid/InitManager/UnitManager/Thor" index="2"]
+emitting = true
+color = Color(0, 0.517647, 0.968627, 1)
+
 [node name="Jeff" parent="Grid/InitManager/UnitManager" instance=ExtResource("7_pgy0f")]
 visible = false
 position = Vector2(384, -48)

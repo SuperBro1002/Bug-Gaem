@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://comucy01lopkd"]
 
-[ext_resource type="Texture2D" uid="uid://bg0fsw0q2sxwa" path="res://Assets/Sprites/Robopoly/Robopoly_Base_Still.png" id="1_2xlc6"]
+[ext_resource type="Texture2D" uid="uid://csuclaik0usnu" path="res://Assets/Sprites/Robopoly/Robopoly_Base_Still.png" id="1_2xlc6"]
 
 [resource]
 resource_name = "Millibyte"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://7qps6ox2sfna"]
+[gd_scene load_steps=33 format=3 uid="uid://7qps6ox2sfna"]
 
 [ext_resource type="Script" path="res://Scripts/Garden.gd" id="1_574vu"]
 [ext_resource type="PackedScene" uid="uid://5xiwvqroyk2d" path="res://Scenes/grid.tscn" id="2_bbw0h"]
@@ -24,6 +24,23 @@
 [ext_resource type="SpriteFrames" uid="uid://0lcnll8ldbmc" path="res://Scenes/Sprite Frames/Thor.tres" id="19_fdnto"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yb3wm"]
+
+[sub_resource type="Curve" id="Curve_b1t6k"]
+max_value = 10.0
+_data = [Vector2(0.0184332, 9.67132), 0.0, 0.0, 0, 0, Vector2(0.502304, 9.34264), 0.0, 0.0, 0, 0, Vector2(1, 9.097), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_lyouy"]
+min_value = -10.0
+max_value = 16.0
+_data = [Vector2(0.0506912, 10), 0.0, 0.0, 0, 0, Vector2(0.635945, 4.85714), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_2wh00"]
+min_value = -10.0
+max_value = 10.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.506912, -1.86813), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ii0lb"]
 size = Vector2(1152, 1152)
@@ -220,7 +237,7 @@ scale = Vector2(-116.691, 103.457)
 texture = SubResource("PlaceholderTexture2D_yb3wm")
 
 [node name="FakeThor" type="AnimatedSprite2D" parent="."]
-z_index = 1
+z_index = 2
 texture_filter = 1
 position = Vector2(576, 568)
 scale = Vector2(1.81818, 1.81818)
@@ -228,6 +245,29 @@ sprite_frames = ExtResource("19_fdnto")
 animation = &"Cast1Loop"
 autoplay = "Cast1Loop"
 frame_progress = 0.246374
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="FakeThor"]
+z_index = -1
+emitting = false
+amount = 100
+lifetime = 0.25
+speed_scale = 0.1
+randomness = 1.0
+lifetime_randomness = 0.65
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 90.0
+initial_velocity_max = 150.85
+radial_accel_max = 111.1
+radial_accel_curve = SubResource("Curve_b1t6k")
+angle_min = 20.0
+angle_max = 45.0
+angle_curve = SubResource("Curve_lyouy")
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+color = Color(0.815686, 0.32549, 0.360784, 1)
+hue_variation_max = 0.04
+hue_variation_curve = SubResource("Curve_2wh00")
 
 [node name="GardenMapSprite" type="Sprite2D" parent="."]
 texture_filter = 1

@@ -2,6 +2,7 @@ extends Node
 
 var currentUnitTurn
 var unitList
+var nextUnit = null
 @onready var unitMan = $UnitManager
 @onready var obsHold = get_node("../ObstacleHolder")
 
@@ -26,6 +27,8 @@ func next_turn():
 	for i in (AutoloadMe.globalUnitList.size()):
 		if AutoloadMe.globalUnitList[i].get_batonpass() == AutoloadMe.globalUnitList[i].TS.NOTACTED:
 			currentUnitTurn = AutoloadMe.globalUnitList[i]
+			if i + 1 < AutoloadMe.globalUnitList.size():
+				nextUnit = AutoloadMe.globalUnitList[i + 1]
 			print("BatonPass: ", AutoloadMe.globalUnitList[i].get_batonpass())
 			SignalBus.currentUnit.emit(currentUnitTurn)
 			currentUnitTurn.on_turn_start()
@@ -33,6 +36,7 @@ func next_turn():
 
 func next_round():
 	print("---Next Round Called")
+	nextUnit = null
 	AutoloadMe.roundNum += 1
 	SignalBus.checkEvents.emit()
 	await SignalBus.eventsDone
@@ -45,6 +49,7 @@ func next_round():
 		AutoloadMe.globalUnitList[j].reset_acted()
 		AutoloadMe.globalUnitList[j].reset_ap()
 	currentUnitTurn = AutoloadMe.globalUnitList[0]
+	nextUnit = AutoloadMe.globalUnitList[1]
 	print("ROUND END. RESETTING: ", currentUnitTurn)
 	SignalBus.currentUnit.emit(currentUnitTurn)
 	SignalBus.midObjective.emit()

@@ -10,6 +10,7 @@ func _ready():
 	
 	##get_node("Grid/InitManager").next_turn()
 	SignalBus.silenceMusic.emit()
+	AutoloadMe.set_process_unhandled_input(true)
 	Dialogic.start("res://Dialogic Assets/Timelines/Garden Intro.dtl")
 	
 	#SignalBus.showInfoBox.emit()

@@ -317,6 +317,7 @@ func on_turn_start():
 	if Faction == fac.ENEMY:
 		SignalBus.showUI.emit()
 	
+	start_particle()
 	tempAP = CurrentAP
 	start = grid.local_to_map(position)
 	abilityStartPoint = grid.convert_to_map(position)
@@ -348,8 +349,7 @@ func unique_turn_start():
 func on_turn_end():
 	run_passives(methodType.ON_TURN_END, null)
 	SignalBus.wipeTilePaths.emit(null)
-	if isPossessed:
-		print("MY OG: ", OG)
+	
 	find_and_delete_passives()
 	if BatonPass == TS.BATONPASS:
 		BatonPass = storedBatonPass
@@ -359,6 +359,7 @@ func on_turn_end():
 	canMove = true
 	SignalBus.actedUI.emit()
 	print("	", Name, " has acted.")
+	stop_particle()
 	
 	unique_turn_end()
 
@@ -462,6 +463,14 @@ func _mouse_shape_exit(shape_idx):
 		SignalBus.mouseHovering.emit(false)
 		SignalBus.highlightInit.emit(self, false)
 		AutoloadMe.hoveredUnit = null
+
+func start_particle():
+	if Faction == fac.ALLY or Faction == fac.ENEMY:
+		$CPUParticles2D.emitting = true
+
+func stop_particle():
+	if Faction == fac.ALLY or Faction == fac.ENEMY:
+		$CPUParticles2D.emitting = false
 
 func animated_Damaged():
 	$AnimatedSprite2D.stop()

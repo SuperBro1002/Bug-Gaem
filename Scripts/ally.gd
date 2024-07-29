@@ -117,6 +117,7 @@ func on_turn_start():
 	if Faction == fac.ENEMY:
 		SignalBus.showUI.emit()
 	
+	start_particle()
 	tempAP = CurrentAP
 	print("MY AP IS ", tempAP, "   ", CurrentAP)
 	start = grid.local_to_map(position)
@@ -142,6 +143,25 @@ func unique_turn_start():
 	if isDown: CurrentAP = 0
 	SignalBus.changeButtonState.emit()
 	SignalBus.updateUI.emit(self)
+	print("Next Unit: ", get_parent().get_parent().nextUnit)
+
+func on_turn_end():
+	run_passives(methodType.ON_TURN_END, null)
+	SignalBus.wipeTilePaths.emit(null)
+	if isPossessed:
+		print("MY OG: ", OG)
+	find_and_delete_passives()
+	if BatonPass == TS.BATONPASS and get_parent().get_parent().nextUnit != self:
+		BatonPass = storedBatonPass
+	else:
+		set_has_acted()
+	
+	canMove = true
+	SignalBus.actedUI.emit()
+	print("	", Name, " has acted.")
+	stop_particle()
+	
+	unique_turn_end()
 
 func unique_turn_end():
 	set_current_ap(get_temp_ap())

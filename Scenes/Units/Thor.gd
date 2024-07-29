@@ -38,6 +38,53 @@ func color_change():
 		await get_tree().create_timer(0.1).timeout
 		glowing = false
 
+func on_turn_start():
+	AutoloadMe.set_process_unhandled_input(false)
+	if isDown: 
+		tempAP = 0
+		CurrentAP = 0
+	if AutoloadMe.passingUnit != null:
+		print("BATON PASSED")
+		var prevUnit = AutoloadMe.passingUnit
+		#inherit_ap(prevUnit.CurrentAP)
+		gain_ap(MaxAP/2)
+		tempAP = CurrentAP
+		#prevUnit.CurrentAP = 0
+		#prevUnit.tempAP = 0
+		AutoloadMe.passingUnit = null
+	
+	if Faction == fac.ENEMY:
+		SignalBus.showUI.emit()
+	
+	if phase == 1:
+		get_node("/root/Garden/FakeThor/CPUParticles2D").emitting = true
+	else:
+		start_particle()
+	
+	tempAP = CurrentAP
+	start = grid.local_to_map(position)
+	abilityStartPoint = grid.convert_to_map(position)
+	SignalBus.updateUI.emit(self)
+	SignalBus.startAnimate.emit(self)
+	print(self, " ", CurrentAP)
+	print("UnitList: ", AutoloadMe.globalUnitList)
+	SignalBus.wipeTilePaths.emit(null)
+	
+	if AutoloadMe.enemyPhase == false:
+		await SignalBus.endAnimate
+	#else:
+		#print("###########TIMERRRRRRRR")
+		#await get_tree().create_timer(1).timeout
+	
+	SignalBus.startTurn.emit()
+	SignalBus.changeButtonState.emit()
+	run_passives(methodType.ON_TURN_START, null)
+	find_and_delete_passives()
+	
+	grid.update_grid_collision()
+	SignalBus.updateUI.emit(self)
+	print("	", Name, " turn start.")
+	unique_turn_start()
 
 func unique_turn_start():
 	chloroblastExecuting = false
@@ -155,6 +202,9 @@ func on_turn_end():
 	canMove = true
 	SignalBus.actedUI.emit()
 	print("	", Name, " has acted.")
+	stop_particle()
+	if AutoloadMe.mapID == 3 and phase == 1:
+		get_node("/root/Garden/FakeThor/CPUParticles2D").emitting = false
 	
 	unique_turn_end()
 
@@ -164,6 +214,7 @@ func set_phase():
 	startPhaseTwo = true
 	set_visible(true)
 	if AutoloadMe.mapID == 3:
+		get_node("/root/Garden/FakeThor/CPUParticles2D").emitting = false
 		get_node("/root/Garden/FakeThor").set_visible(false)
 	#position = grid.map_to_local(Vector2i(9,9))
 	phase = 2

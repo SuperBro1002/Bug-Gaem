@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyo2sovvjhomr"]
+[gd_scene load_steps=4 format=3 uid="uid://dyo2sovvjhomr"]
 
 [ext_resource type="PackedScene" uid="uid://dkfp0y46rm1jd" path="res://Scenes/enemy.tscn" id="1_05l1h"]
+[ext_resource type="Script" path="res://Scenes/Units/Millibyte.gd" id="2_fkxne"]
 [ext_resource type="SpriteFrames" uid="uid://comucy01lopkd" path="res://Scenes/Sprite Frames/Millibyte.tres" id="2_xypt0"]
 
-[node name="Enemy" instance=ExtResource("1_05l1h")]
+[node name="Mill" instance=ExtResource("1_05l1h")]
+script = ExtResource("2_fkxne")
 Name = "Millibyte"
-fileName = "Millibyte"
 MaxHP = 10
 MaxAP = 10
 TrueInit = 15
 InitVariance = 5
+SetAbility1 = "Chainsaw"
+SetAbility2 = "Tackle"
+SetAbility3 = "Tackle"
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 modulate = Color(0, 0, 1, 1)

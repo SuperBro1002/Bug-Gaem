@@ -13,6 +13,7 @@ func _ready():
 		Dialogic.start("res://Dialogic Assets/Timelines/Fountain Intro.dtl")
 		SignalBus.playMusic.emit("Bioluminescence")
 	if AutoloadMe.mapID == 5: 
+		AutoloadMe.set_process_unhandled_input(true)
 		Dialogic.start("res://Dialogic Assets/Timelines/Fountain 2 Intro.dtl")
 		SignalBus.silenceMusic.emit()
 	

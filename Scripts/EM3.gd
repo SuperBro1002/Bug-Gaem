@@ -25,5 +25,6 @@ func checkSiphons():
 func check_routed():
 	print("--Checking objective--")
 	if AutoloadMe.ThorGardenDeath:
+		AutoloadMe.set_process_unhandled_input(false)
 		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://Scenes/Cathedral 2.tscn")

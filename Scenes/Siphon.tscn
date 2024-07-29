@@ -1,11 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://egt8255q2y5k"]
+[gd_scene load_steps=6 format=3 uid="uid://egt8255q2y5k"]
 
 [ext_resource type="PackedScene" uid="uid://dei8pblwcqo6t" path="res://Scenes/obstacle.tscn" id="1_3l3gt"]
 [ext_resource type="Script" path="res://Scripts/Siphon.gd" id="2_c8vw3"]
 
+[sub_resource type="Curve" id="Curve_xot65"]
+max_value = 10.0
+_data = [Vector2(0.0184332, 9.67132), 0.0, 0.0, 0, 0, Vector2(0.502304, 9.34264), 0.0, 0.0, 0, 0, Vector2(1, 9.097), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ffmdd"]
+min_value = -10.0
+max_value = 16.0
+_data = [Vector2(0.0506912, 10), 0.0, 0.0, 0, 0, Vector2(0.635945, 4.85714), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_2yumo"]
+min_value = -10.0
+max_value = 10.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.506912, -1.86813), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="Obstacle" instance=ExtResource("1_3l3gt")]
+z_index = 1
 scale = Vector2(1, 1)
 script = ExtResource("2_c8vw3")
 Name = "Siphon"
 fileName = "siphonpoint"
 MaxHP = 4
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="3"]
+z_index = -1
+amount = 100
+lifetime = 0.25
+speed_scale = 0.1
+randomness = 1.0
+lifetime_randomness = 0.65
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 90.0
+initial_velocity_max = 150.85
+radial_accel_max = 111.1
+radial_accel_curve = SubResource("Curve_xot65")
+angle_min = 20.0
+angle_max = 45.0
+angle_curve = SubResource("Curve_ffmdd")
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+color = Color(0.815686, 0.32549, 0.360784, 1)
+hue_variation_max = 0.04
+hue_variation_curve = SubResource("Curve_2yumo")

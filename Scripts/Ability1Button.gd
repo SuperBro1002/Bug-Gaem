@@ -24,6 +24,7 @@ func unpress(_ability):
 
 #LOOK INTO CURRENT AP AT THIS POINT!!!!!!!!!!!
 func button_state():
+	assign_ap_cost(AutoloadMe.turnPointer)
 	if AutoloadMe.turnPointer.get_faction() != AutoloadMe.turnPointer.fac.ALLY or AutoloadMe.turnPointer.get_temp_ap() - APcost < 0 or AutoloadMe.notOverlapped == false:
 		self.set_disabled(true)
 		if AutoloadMe.turnPointer.get_faction() == AutoloadMe.turnPointer.fac.ALLY:

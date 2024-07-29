@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkfp0y46rm1jd"]
+[gd_scene load_steps=9 format=3 uid="uid://dkfp0y46rm1jd"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_15b7p"]
 [ext_resource type="Texture2D" uid="uid://csuclaik0usnu" path="res://Assets/Sprites/Robopoly/Robopoly_Base_Still.png" id="2_o6qwk"]
@@ -39,6 +39,23 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_pww5r"]
+max_value = 10.0
+_data = [Vector2(0.0184332, 9.67132), 0.0, 0.0, 0, 0, Vector2(0.502304, 9.34264), 0.0, 0.0, 0, 0, Vector2(1, 9.097), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_5h3rs"]
+min_value = -10.0
+max_value = 16.0
+_data = [Vector2(0.0506912, 10), 0.0, 0.0, 0, 0, Vector2(0.635945, 4.85714), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ercnv"]
+min_value = -10.0
+max_value = 10.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.506912, -1.86813), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="Enemy" type="Area2D"]
 z_index = 1
 collision_layer = 2
@@ -67,5 +84,28 @@ flip_h = true
 [node name="Glow" type="Sprite2D" parent="AnimatedSprite2D"]
 modulate = Color(1, 1, 1, 0)
 texture = ExtResource("3_cby3p")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 100
+lifetime = 0.25
+speed_scale = 0.1
+randomness = 1.0
+lifetime_randomness = 0.65
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 90.0
+initial_velocity_max = 150.85
+radial_accel_max = 111.1
+radial_accel_curve = SubResource("Curve_pww5r")
+angle_min = 20.0
+angle_max = 45.0
+angle_curve = SubResource("Curve_5h3rs")
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+color = Color(0.815686, 0.32549, 0.360784, 1)
+hue_variation_max = 0.04
+hue_variation_curve = SubResource("Curve_ercnv")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

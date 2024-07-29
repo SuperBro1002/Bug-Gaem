@@ -11,10 +11,12 @@ func _ready():
 	if AutoloadMe.mapID == 2:
 		#SignalBus.playMusic.emit("Lunar Eclipse")
 		SignalBus.silenceMusic.emit()
+		AutoloadMe.set_process_unhandled_input(true)
 		Dialogic.start("res://Dialogic Assets/Timelines/Cathedral 1 Intro.dtl")
 	if AutoloadMe.mapID == 4: 
 		#SignalBus.playMusic.emit("Metamorphosis")
 		SignalBus.silenceMusic.emit()
+		AutoloadMe.set_process_unhandled_input(true)
 		Dialogic.start("res://Dialogic Assets/Timelines/Cathedral 2 Intro.dtl")
 func process():
 	pass
