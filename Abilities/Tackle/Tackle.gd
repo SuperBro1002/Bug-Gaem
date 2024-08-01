@@ -13,11 +13,9 @@ func execute():
 	print("EXECUTED")
 	print(targetUnits)
 	
-	await get_tree().create_timer(0.1).timeout
-	
 	face_target()
-	SignalBus.playSFX.emit("RobugAttack1")
 	get_parent().get_node("AnimatedSprite2D").stop()
+	SignalBus.playSFX.emit("RobugAttack1")
 	get_parent().get_node("AnimatedSprite2D").play("Attack1")
 	$VFX.position = targetUnits[0].position
 	$VFX.position.x -= 50
@@ -29,7 +27,7 @@ func execute():
 	for i in targetUnits.size():
 		if targetUnits == null:
 			return
-		targetUnits[i].lose_health(1)
+		await targetUnits[i].lose_health(1)
 	
 	$VFX.set_visible(false)
 	post_execute()
