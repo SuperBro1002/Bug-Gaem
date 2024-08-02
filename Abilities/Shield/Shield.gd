@@ -5,7 +5,7 @@ func _enter_tree():
 	targetType = [get_parent().fac.ALLY]
 	Name = "Shining Barrier"
 	fileName = "Shield"
-	description = "Grants an adjacent ally a barrier that nullifies damage from 1 attack. Also grants baton pass. 5 AP"
+	description = "Grants an adjacent ally a barrier that nullifies damage from 1 attack. (Doesn't stack) Also grants baton pass. 5 AP"
 
 func post_execute():
 	dmgMod = 1
@@ -27,6 +27,7 @@ func post_execute():
 func execute():
 	# for every target in target units[]
 		# For each target in target_tiles[]
+	var hasArmor = false
 	print("EXECUTED")
 	print(targetUnits)
 	
@@ -43,7 +44,12 @@ func execute():
 	$VFX.set_visible(false)
 	
 	for i in targetUnits.size():
-		targetUnits[i].add_passive("Armor")
+		for j in targetUnits[i].passiveList.size():
+			if targetUnits[i].passiveList[j].Name == "Armor":
+				hasArmor = true
+		
 		targetUnits[i].give_batonpass()
+		if !hasArmor:
+			targetUnits[i].add_passive("Armor")
 	
 	post_execute()

@@ -3,7 +3,7 @@ extends Passive_class
 func _enter_tree():
 	SignalBus.connect("deletePassives", passive_remove)
 	Name = "Armor"
-	description = "Damage from next attack is nullified. Damage from poison is unaffected."
+	description = "Damage from next attack is nullified. Damage from poison is unaffected. Doesn't stack."
 	type = methodType.LOSE_HEALTH
 
 func execute(num):
