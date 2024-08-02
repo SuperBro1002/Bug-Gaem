@@ -10,7 +10,7 @@ size = Vector2(64, 64)
 
 [node name="Shield" type="Node"]
 script = ExtResource("1_gl0o1")
-apCost = 4
+apCost = 5
 myType = 2
 
 [node name="Area2D" type="Area2D" parent="."]
