@@ -12,7 +12,7 @@ func _enter_tree():
 	targetType = [get_parent().fac.ALLY]
 	Name = "Horn Catapult"
 	fileName = "Throw"
-	description = "Select an adjacent unit to throw to a nearby space. Unit being thrown gains Baton Pass. If there is a unit in the target's new space, both take 4 damage and the former is pushed off the tile. 6 AP"
+	description = "Select an adjacent unit to throw to a nearby space. Unit being thrown gains Baton Pass. If there is a unit in the target's new space, both take 4 damage and the former is pushed off the tile. 5 AP"
 
 func queue():
 	secondRange = 1

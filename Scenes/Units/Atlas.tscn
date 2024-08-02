@@ -7,7 +7,7 @@
 Name = "Atlas"
 fileName = "Atlas"
 MaxHP = 12
-MaxAP = 9
+MaxAP = 10
 TrueInit = 30
 SetAbility1 = "Knockback"
 SetAbility2 = "Empower"
