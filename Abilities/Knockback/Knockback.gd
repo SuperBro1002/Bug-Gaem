@@ -31,5 +31,7 @@ func execute():
 				if targetPos == AutoloadMe.globalTargetList[j].position or AutoloadMe.movementGrid.is_point_solid(get_parent().grid.local_to_map(targetPos)):
 					post_execute()
 					return
-			targetUnits[i].position = targetPos
+			var tween = create_tween()
+			tween.tween_property(targetUnits[i], "position", targetPos, 0.25).set_trans(Tween.TRANS_SINE)
+			#targetUnits[i].position = targetPos
 	post_execute()

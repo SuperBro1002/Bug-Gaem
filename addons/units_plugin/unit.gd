@@ -302,6 +302,7 @@ func get_batonpass():
 func on_turn_start():
 	AutoloadMe.set_process_unhandled_input(false)
 	if isDown: 
+		get_node("AnimatedSprite2D").play("Downed")
 		tempAP = 0
 		CurrentAP = 0
 	if AutoloadMe.passingUnit != null:
