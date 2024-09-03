@@ -1,0 +1,40 @@
+[style name="VNStyle2"]
+[background arg="res://Dialogic Assets/Styles/Blaground.png" fade="0.0"]
+Drone's voice fades into the abyss he created, ending with a satisfying metallic clang deep within.
+The breach is closed.
+The invasion is over...
+[background arg="res://Dialogic Assets/Styles/Black.png" fade="2.0"]
+A few weeks later...
+join Atlas 3 [ mirrored="true"]
+join Lumoth 1
+join Paramantis 0
+Atlas (Happy): Some familiar faces! Zephyr and I were beginning to worry you wouldn't make it to the feast.
+Atlas (Neutral): Finally gave you some leave, did they?
+Paramantis (Happy): We could not resissst sssuch an invitation!
+Lumoth (Happy): With how quiet the front is now, we could spare one evening for such a good friends!
+join Triss 2 [ mirrored="true"]
+Triss (Neutral): You made it just in time! I can't talk to those nobles a moment longer.
+Triss (Happy): But truly, I am so glad to see you two. Please make yourselves comfortable.
+Paramantis (Neutral): Of course, Princesssss.
+Triss (Snobby): Ha! Bleh! Please, no titles among friends. I get enough of that from the nobles.
+Triss (Neutral): Ah, but I must go. The court is discussing taking in the Yellow Jacket refugees and I swear nothing will be done unless I step in.
+Lumoth (Channeling): Of course, Triss. Lunalesca protect you.
+Triss (Snobby): Ha, I'll need it.
+leave Triss
+Atlas (Neutral): Though no longer a soldier, the Bee court is a battlefield all its own. Her stubborness pays off in politics.
+Lumoth (Channeling): I'm sure having you and Zephyr as advisors doesn't hurt either.
+Atlas (Proud): You flatter us. But at my age, this is where I can serve best. I learned that the hard way.
+Paramantis (Neutral): Do not diminish your contribution. With your expertise, the military reformsss have turned the tide.
+Paramantis (Crazy): The Robugs cannot exploit our egalitarian forcesss!
+Atlas (Neutral): It warms my heart to be hearing good news again.
+Atlas (Thinking): Ah but I can see Triss needs some assistance with the nobles. Please excuse me.
+leave Atlas
+Lumoth (Neutral): Seems they are handling things well... That's good.
+Paramantis (Neutral): Thisss is her way of healing, always moving from one battle to the next.
+Paramantis (Happy): Come Lumoth. Let usss enjoy thisss night of peace. Our fight is not yet over.
+leave --All--
+100th BUG BRIGADE
+Made with love by\:\
+Aidan Andreason, Alex Rovner, Ellen Brannon, Monica Santiago, Patrick Galang, Peter Ampudia, Sam Meyer, and Varick Santana
+THANK YOU FOR PLAYING!
+do AutoloadMe.start_first_turn()

@@ -4,7 +4,7 @@ extends Node2D
 func _ready():
 	SignalBus.connect("endTurn", run_credits)
 	SignalBus.playMusic.emit("Bioluminescence")
-	Dialogic.start("res://Dialogic Assets/Timelines/Finale.dtl")
+	Dialogic.start("res://Dialogic Assets/Timelines/Epilogue.dtl")
 	
 func run_credits():
 	#GET ALEX'S SCENES FOR HERE

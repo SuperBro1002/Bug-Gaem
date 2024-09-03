@@ -33,4 +33,3 @@ func check_boss_routed():
 		AutoloadMe.set_process_unhandled_input(false)
 		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file("res://Scenes/Finale.tscn")
-
