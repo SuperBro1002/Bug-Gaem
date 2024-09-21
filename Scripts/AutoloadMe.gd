@@ -30,6 +30,12 @@ var mapID
 var ThorGardenDeath = false
 var enemyPhase = false
 
+# Save data variables
+var savePath = "user://variable.save"
+var level = 1 # 1=Tutorial, 2=Cathedral 1, 3=Garden, 4=Cathedral 2, 5=Finale
+#level increments whenever a new stage is loaded
+#and returns to 1 when beating the game
+
 var inputs = {"move_right": Vector2.RIGHT,
 			"move_left": Vector2.LEFT,
 			"move_up": Vector2.UP,
@@ -164,3 +170,21 @@ func play_music(fileName):
 	
 func play_sfx(fileName):
 	SignalBus.playSFX.emit(fileName)
+	
+# Save data
+# Call this when a new level starts, after "level" is updated
+func save():
+	var file = FileAccess.open(savePath,FileAccess.WRITE)
+	file.store_var(level)
+	
+# Load data
+# Call this when playing game from main menu
+func load_data():
+	if FileAccess.file_exists(savePath):
+		var file = FileAccess.open(savePath, FileAccess.READ)
+		level = file.get_var(level)
+	else:
+		level = 1
+		print("No data saved...")
+		
+# TODO: Add save() and load_data() calls where appropriate
