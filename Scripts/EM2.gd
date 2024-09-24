@@ -18,4 +18,7 @@ func check_routed():
 	if AutoloadMe.deathCount >= objectiveNum:
 		AutoloadMe.set_process_unhandled_input(false)
 		await get_tree().create_timer(1).timeout
+		#Update and save level variable
+		AutoloadMe.level = 3
+		AutoloadMe.save()
 		get_tree().change_scene_to_file("res://Scenes/garden.tscn")
