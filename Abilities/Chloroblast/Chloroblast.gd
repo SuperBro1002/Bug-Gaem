@@ -8,7 +8,7 @@ func _enter_tree():
 	$Area2D.set_rotation_degrees(180)
 	Name = "Chloroblast"
 	fileName = "Chloroblast"
-	description = "Thor'axe throws an axe 9 tiles diagonally dealing 6 damage to targets. 11 AP"
+	description = "Thor'axe throws an axe 9 tiles diagonally, dealing 5 damage to targets. 10 AP"
 
 #func rotate(initTarget):
 	#await get_tree().create_timer(1).timeout
@@ -99,6 +99,6 @@ func execute():
 			print(targetUnits, " ", i)
 			if targetUnits == null:
 				return
-			await i.lose_health(6)
+			await i.lose_health(5)
 		
 		post_execute()

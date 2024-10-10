@@ -8,7 +8,7 @@ func _enter_tree():
 	targetType = [get_parent().fac.ENEMY, get_parent().fac.OBSTACLE]
 	Name = "Fury Skewer"
 	fileName = "Fury"
-	description = "Thor'axe dashes 9 spaces forward, dealing 6 damage to foes in his path. 9 AP"
+	description = "Thor'axe dashes 9 spaces forward, dealing 5 damage to foes in his path. 9 AP"
 
 func enemy_execute(initTarget):
 	print("INTIATING FURY")
@@ -78,6 +78,6 @@ func execute():
 		if targetUnits == null:
 			return
 		SignalBus.playSFX.emit("SacrificialSting")
-		targetUnits[i].lose_health(6)
+		targetUnits[i].lose_health(5)
 	
 	post_execute()

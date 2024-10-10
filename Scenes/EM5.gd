@@ -32,4 +32,7 @@ func check_boss_routed():
 	if AutoloadMe.bossdead == true:
 		AutoloadMe.set_process_unhandled_input(false)
 		await get_tree().create_timer(3).timeout
+		#Update and save level variable
+		AutoloadMe.level = 1
+		AutoloadMe.save()
 		get_tree().change_scene_to_file("res://Scenes/Finale.tscn")

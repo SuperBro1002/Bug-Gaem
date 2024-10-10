@@ -354,3 +354,8 @@ func _on_ability_3_button_mouse_exited():
 	var tween2 = create_tween()
 	tween.tween_property(get_node("../UI/AbilityDescBox"), "modulate:a", 0, 1.3 / animationSpeed).set_trans(Tween.TRANS_SINE)
 	tween2.tween_property(get_node("../UI/AbilityDescBox"), "position:y", 826, 1.0 / animationSpeed).set_trans(Tween.TRANS_SINE)
+
+# Not sure where best to put the Quit Game code so here it is
+func _on_quit_button_pressed():
+	SignalBus.playSFX.emit("Dequeue")
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")

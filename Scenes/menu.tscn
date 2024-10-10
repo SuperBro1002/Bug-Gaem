@@ -62,7 +62,7 @@ theme_override_constants/separation = 4
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Start Game"
+text = "Play "
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 visible = false
@@ -77,7 +77,7 @@ text = "Credits"
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-text = "Quit Game"
+text = "Quit to Desktop"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
