@@ -7,7 +7,7 @@
 Name = "Paramantis"
 fileName = "Paramantis"
 MaxHP = 12
-MaxAP = 6
+MaxAP = 7
 TrueInit = 35
 SetAbility1 = "X-Slash"
 SetAbility2 = "Toxic_Thrash"
